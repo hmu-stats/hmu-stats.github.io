@@ -178,8 +178,9 @@ a:active {
 </style>
 <script>
 
-function change_semester(semester, semester_str) {
+function change_semester(semester) {
 
+    let semester_str = semester.includes('ws') ? `Wintersemester ${2000+(+semester.slice(0, 2))}/${2001+(+semester.slice(0, 2))}` : `Sommersemester ${2000+(+semester.slice(0, 2))}`;
     const w3Button = document.querySelector('.dropbtn');
     const body = document.querySelector('body');
     const w3DropdownContent = document.querySelector('.dropdown-content');
@@ -198,12 +199,21 @@ function change_semester(semester, semester_str) {
     }
     document.getElementById('semester').innerHTML = semester_str.replace(' ', '<br />');
     document.getElementById('dropbtn-semester').textContent = `${semester_str}`;
+
+    window.history.pushState(null, 'location.host', `?${semester}`);
+}
+
+function checkURLSemester() {
+    if (location.href.includes('?')) {
+        let semester = location.href.split('?')[1];
+        change_semester(semester)
+    }
 }
 
 </script>
 </head>
 
-<body>
+<body onload="checkURLSemester()">
 
 
 
@@ -218,9 +228,9 @@ function change_semester(semester, semester_str) {
   </button>
   <div class="dropdown-content">
     
-        <a href="#" onclick="change_semester('23ws', 'Wintersemester 2023/2024')">Wintersemester 2023/2024</a>
+        <a href="javascript:;" onclick="change_semester('23ws')">Wintersemester 2023/2024</a>
     
-        <a href="#" onclick="change_semester('24ss', 'Sommersemester 2024')">Sommersemester 2024</a>
+        <a href="javascript:;" onclick="change_semester('24ss')">Sommersemester 2024</a>
     
   </div>
 </div>
