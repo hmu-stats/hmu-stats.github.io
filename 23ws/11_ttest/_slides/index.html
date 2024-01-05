@@ -415,11 +415,25 @@
 <li class="fragment">Das Symbol <span class="math inline">\(\hat{\theta}\)</span> ist ein allgemeines Symbol für alle statistischen Kennwerte, die wir bisher kennen-gelernt haben: Mittelwert <span class="math inline">\(\bar{x}\)</span>, Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span>, Korrelation <span class="math inline">\(r\)</span>, Regressionskoeffizient <span class="math inline">\(\hat{b}_1\)</span>,…</li>
 </ul>
 <div class="colorbox fragment" style="margin-top:6px">
-<p>Wir formulieren unsere Frage also etwas allgemeiner: welcher Verteilung folgt die Größe <span class="math display">\[
-\frac{\hat{\theta}}{\hat{se}(\hat{\theta})}\qquad\text{?}
+<p>Wir formulieren unsere Frage also etwas allgemeiner: welcher Verteilung folgt die Größe</p>
+<div style="margin-top: -10px">
+<p><span class="math display">\[
+\frac{\hat{\theta}}{\hat{se}}\qquad\text{?}
 \]</span></p>
 </div>
-<p><span class="math inline">\(\big(se(\hat{\theta})\)</span> ist der Standardfehler des statistischen Kennwertes <span class="math inline">\(\hat{\theta}\big)\)</span></p>
+</div>
+<div class="notabene" style="margin-top: 45px">
+<div class="columns">
+<div class="column" style="width:7%;">
+<div style="margin-top: 10px">
+<p><img data-src="images/notabene2.png" height="65"></p>
+</div>
+</div><div class="column" style="width:93%;">
+<p>Streng genommen lautet die fragliche Prüfgröße <span class="math inline">\(\frac{\hat{\theta}-\theta_0}{\hat{se}}\)</span>. Von einigen Ausnahmen abgesehen gilt jedoch zumeist <span class="math inline">\(\theta_0=0\)</span> und wir lassen <span class="math inline">\(\theta_0\)</span> aus diesem Grund auch im Folgenden weg.</p>
+<p>Ein Bespiel für eine Ausnahme ist, wenn <span class="math inline">\(\hat{\theta}\)</span> ein einfacher Mittelwert ist und gegen einen Referenzwert wie den Durchschnitts-IQ <span class="math inline">\(\theta_0=100\)</span> getestetet wird; in diesem Fall muss also <span class="math inline">\(\theta_0=100\)</span> zunächst vom Mittelwert <span class="math inline">\(\hat{\theta}\)</span> abgezogen werden.</p>
+</div>
+</div>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -427,24 +441,24 @@
 <section class="slide level2">
 <h2>Die t-Verteilung</h2>
 <div class="columns">
-<div class="column" style="width:77%;">
-<div>
+<div class="column" style="width:80%;">
+<div style="font-size: 26px">
 <ul>
-<li>An dieser Stelle kommt der englische Statistiker <strong>William Sealy Gosset</strong> in Spiel.</li>
+<li>An dieser Stelle kommt der englische Statistiker <strong>William Sealy Gosset</strong> ins Spiel.</li>
 </ul>
 </div>
-<div style="margin-top: -20px">
+<div style="margin-top: -20px; font-size: 26px">
 <ul>
-<li class="fragment">Er postulierte 1908, dass das Verhältnis eines normalverteilten Kennwertes <span class="math inline">\(\hat{\theta}\)</span> und einer Chi-verteilten Variable einer Wahrscheinlichkeitsverteilung folgt, die seither als <span style=" color: navy !important;"><strong>t-Verteilung</strong></span> bezeichnet wird.</li>
-<li class="fragment">Die Formel der Verteilung ist vergleichsweise kompliziert — für die Praxis entscheidend ist, dass sie <strong>durch einen einzigen Parameter definiert wird</strong>: die Zahl der Freiheitsgrade (<span class="math inline">\(\text{df}\,\)</span>):</li>
+<li class="fragment">Er postulierte 1908, dass das Verhältnis eines normalverteilten Kennwertes <span class="math inline">\(\hat{\theta}\)</span> und einer Chi-verteilten Variable einer Wahrscheinlichkeitsverteilung folgt, die seither als <span style=" color: navy !important;"><strong>t-Verteilung</strong></span> (oder auch <span style=" color: navy !important;"><strong>Studentsche t-Verteilung</strong></span>) bezeichnet wird.</li>
+<li class="fragment">Die Formel der Verteilung ist vergleichsweise kompliziert — für die Praxis entscheidend ist, dass sie <strong>durch einen einzigen Parameter (<span class="math inline">\(\text{df}\,\)</span>) definiert wird</strong>:</li>
 </ul>
 </div>
-<div class="fragment">
+<div class="fragment" style="margin-top:-10px; margin-bottom: 15px">
 <p><span class="math display">\[
 t\text{-Verteilung:}\qquad f_t(x|\scriptsize\text{df}\normalsize)
 \]</span></p>
 </div>
-</div><div class="column" style="width:23%;">
+</div><div class="column" style="width:20%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/portrait_gosset.png"></p>
@@ -453,11 +467,11 @@ t\text{-Verteilung:}\qquad f_t(x|\scriptsize\text{df}\normalsize)
 </div>
 </div>
 </div>
-<div style="margin-top: -10px">
+<div style="margin-top: -10px; font-size: 26px">
 <div class="columns">
 <div class="column" style="width:45%;">
 <ul>
-<li class="fragment">Die <span style=" color: navy !important;"><strong>Zahl der Freiheitsgrade</strong></span> hängt eng mit der Stichprobengröße <span class="math inline">\(n\)</span> zusammen.</li>
+<li class="fragment">Der Parameter <span class="math inline">\(\text{df}\)</span> steht für die <span style=" color: navy !important;"><strong>Zahl der Freiheitsgrade</strong></span> (<em>degrees of freedom</em>) und hängt eng mit der Stichprobengröße <span class="math inline">\(n\)</span> zusammen.</li>
 <li class="fragment">Im Bild rechts ist eine t-Verteilung mit 4 Freiheitsgraden im Vergleich zur Normalverteilung aufgetragen.</li>
 <li class="fragment">Erste Erkenntnis: die t-Verteilung hat etwas dickere Flanken (<em>fat tails</em>)!</li>
 </ul>
@@ -506,7 +520,8 @@ t = \frac{\hat{\theta}}{\hat{se}} = \frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Die t-Verteilung ist bereits standardisiert</h2>
+<h2><span style=" color: darkred !important;">Die t-Verteilung ist bereits standardisiert</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 295px; right: 0px; height: 100px; "></p>
 <p>Vor der Einführung des z-Tests hatten wir zunächst die <strong>unstandardisierte Normalverteilung</strong> kennengelernt, die durch zwei Parameter definiert ist: Mittelwert <span class="math inline">\(\mu\)</span> und Standardabweichung <span class="math inline">\(\sigma\)</span>:</p>
 <p><span class="math display">\[
 f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
@@ -578,7 +593,7 @@ f_t(x|\color{green}{\mu},\color{blue}{\sigma},\scriptsize\text{df}\normalsize) =
 <div>
 <ul>
 <li>Warum sind die Flanken der Verteilung der Testgröße <span class="math inline">\(t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}\)</span> stärker ausgeprägt, wenn <span class="math inline">\(\hat{\sigma}\)</span> auf Basis der Stichprobe geschätzt werden muss?</li>
-<li>Der Grund liegt in der (chi-)Verteilung der Zufallsvariable <span class="math inline">\(\hat{\sigma}\)</span> im Nenner:
+<li>Der Grund liegt in der (Chi-)Verteilung der Zufallsvariable <span class="math inline">\(\hat{\sigma}\)</span> im Nenner:
 <ul>
 <li>Bei kleinen Stichprobengrößen (kleines df), gibt es eine Assymmetrie der Verteilung hin zu Werten kleiner dem Mittelwert (welcher die korrekte Schätzung von <span class="math inline">\(\sigma\)</span> repräsentiert — in der Abbildung gestrichelte Linien)</li>
 <li>D.h. wir <em>teilen</em> <span class="math inline">\(\hat{\theta}\)</span> <em>überproportional häufig durch zu kleine Werte</em>, wodurch die <em>Teststatistik</em> <span class="math inline">\(t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}\)</span> <em>überproportional häufig zu extreme (negative oder positive) Werte</em> liefert.</li>
@@ -694,7 +709,7 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 <p>Zur Durchführung des t-Tests müssen wir uns über folgende Faktoren Gedanken machen:</p>
 <div class="fragment">
 <p><strong>0. Sind die Voraussetzungen für einen t-Test gegeben?</strong></p>
-<p>Jeder statistische Test basiert auf bestimmten Annahmen. Der Test sollte daher nur dann angewendet werden, wenn diese Annahmen erfüllt sind.</p>
+<p>Jeder statistische Test basiert auf bestimmten Annahmen. Der Test sollte daher nur dann angewendet werden, wenn diese Annahmen erfüllt sind (oder sich eine Verletzung der Annahme in der Praxis als wenig problematisch herausgestellt hat).</p>
 </div>
 <div class="fragment">
 <p><strong>1. Welche Art von t-Test benötige ich?</strong></p>
@@ -706,7 +721,7 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 </div>
 <div class="fragment">
 <p><strong>3. Zahl der Freiheitsgrade</strong></p>
-<p>Die Zahl der Freiheitsgrade <span class="math inline">\(df\)</span> ist als Parameter für die t-Verteilung notwendig, und damit auch notwendig um Flächen (wie p-Werte) unter der Verteilung zu berechnen. De facto übernehmen das heute Computerprogramme, jedoch ist es nach wie vor Usus die Zahl der Freiheitsgrade eine statistischen Testes in wissenschaftlichen Veröffentlichungen anzugeben.</p>
+<p>Die Zahl der Freiheitsgrade <span class="math inline">\(\text{df}\)</span> ist als Parameter für die t-Verteilung notwendig, und damit auch notwendig um Flächen (wie p-Werte) unter der Verteilung zu berechnen. De facto übernehmen das heute Computerprogramme, jedoch ist es nach wie vor Usus die Zahl der Freiheitsgrade eine statistischen Testes in wissenschaftlichen Veröffentlichungen anzugeben.</p>
 </div>
 <!----------------->
 <!--- New slide --->
