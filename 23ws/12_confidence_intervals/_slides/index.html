@@ -482,7 +482,7 @@ plt.savefig(os.path.join(root, 'images', 'paradoxia_ci_reg.png'), bbox_inches="t
 <ul>
 <li class="fragment">Zugleich definiert das Signifikanzniveau ein Intervall <span class="math inline">\([-z_\text{crit}; z_\text{crit}]\)</span>, in dem der Effekt nicht signifikant wäre.
 <ul>
-<li class="fragment">Dieses Intervall – der <strong>nicht-signifikante Bereich</strong> – hängt nicht von den Daten (<span class="math inline">\(\hat{\theta}\)</span>, <span class="math inline">\(se\)</span>) ab, sondern ausschließlich vom gewählten Signifikanzniveau <span class="math inline">\(\alpha\)</span>.</li>
+<li class="fragment">Dieses Intervall — in der Abbilung bezeichnet als “Nicht-signifikanter Bereich” — hängt nicht von den Daten (<span class="math inline">\(\hat{\theta}\)</span>, <span class="math inline">\(se\)</span>) ab, sondern ausschließlich vom gewählten Signifikanzniveau <span class="math inline">\(\alpha\)</span>.</li>
 <li class="fragment">Im nicht-signifikanten Bereich werden die Daten als <em>mit der Nullhypothese kompatibel</em> gewertet (wobei das Kriterium kompatibel/inkompatibel durch das Signifikanzniveau <span class="math inline">\(\alpha\)</span> bestimmt wird).</li>
 </ul></li>
 </ul>
@@ -558,7 +558,6 @@ Noch etwas allgemeiner gesprochen werden Konfidenzintervalle für **unbekannte P
 </div>
 <ul>
 <li class="fragment">Einfacher gesprochen enthält das Konfidenzintervall also mögliche Populationsparameter <span class="math inline">\(\theta\)</span>, die als statistisch kompatibel mit der Punktschätzung <span class="math inline">\(\hat{\theta}\)</span> gewertet werden.</li>
-<li class="fragment">Durch die Projektion in den Stichprobenkennwert-Raum vergleichen wir nicht mehr <span class="math inline">\(\hat{\theta}\)</span> mit der Null, sondern mögliche Populationsparameter <span class="math inline">\(\theta\)</span> mit der Punktschätzung <span class="math inline">\(\hat{\theta}\)</span>.</li>
 </ul>
 <div class="vspace-large">
 
@@ -571,10 +570,44 @@ Noch etwas allgemeiner gesprochen werden Konfidenzintervalle für **unbekannte P
 </div>
 </div><div class="column" style="width:93%;">
 <p>Im Kontext von Konfidenzintervallen wird der Stichprobenkennwert <span class="math inline">\(\hat{\theta}\)</span> häufig als “Punktschätzung” bezeichnet. Damit wird betont, dass es sich 1) um einen Einzelwert (und keinen Wertebereich) handelt und 2) dass dieser Wert nur eine Schätzung des wahren Wertes darstellt.</p>
+<p>Durch die Projektion in den Stichprobenkennwert-Raum (<span class="math inline">\(\cdot se\)</span>, <span class="math inline">\(+\hat{\theta}\)</span>) vergleichen wir konzeptuell gesehen nicht mehr <span class="math inline">\(\hat{\theta}\)</span> mit der Null (wie bei der Signifikanztestung), sondern mögliche Populationsparameter <span class="math inline">\(\theta\)</span> mit der Punktschätzung <span class="math inline">\(\hat{\theta}\)</span>. Dies sind aber “zwei Seiten der gleichen Medaille” — die Signifikanztestung etwa hatten wir zunächst ebenfalls im Stichprobenkennwert-Raum eingeführt!</p>
 <!-- Auch wenn das Konfidenzintervalls um die Punktschätzung herum konstruiert wird, kann ein Signifikanztest nie auf Basis einer Verteilung um die Punktschätzung durchgeführt werden. Wie bei der Nullhypothese basieren auch die (hypothetischen) Signifikanztests in der Definition des Konfidenzintervalls auf Verteilungen um fixe angenommene Werte der Population. Berechnet wird *immer* die Wahrscheinlichkeit der Stichprobendaten *gegegeben* einer Annahme über den Populationsparameter $\theta$ (bei der Nullhypothese $\theta=0$). -->
 </div>
 </div>
 </div>
+</section>
+<section class="slide level2">
+<h2>Intution zu Konfidenzintervallen</h2>
+<p><em>Was bedeutet es, ob ein Konfidenzintervall größer oder klein ist?</em> Auf Basis unserer Definition können wir feststellen:</p>
+<ul>
+<li class="fragment">Ist das <strong>Konfidenzintervall</strong> bei einem gegebenen <span class="math inline">\(\alpha\)</span> <strong>verhältnismäßig klein</strong>, so gäbe es auch nur einen kleinen Bereich möglicher Populationsparameter die kompatibel (im Sinn von “nicht signifikant verschieden”) mit unserer Punktschätzung sind.
+<ul>
+<li class="fragment">Wir können in diesem Fall davon ausgehen, dass unsere <strong>Punktschätzung recht präzise</strong> ist.</li>
+</ul></li>
+<li class="fragment">Ist das <strong>Konfidenzintervall</strong> (bei gleichem <span class="math inline">\(\alpha\)</span>) <strong>verhältnismäßig groß</strong>, so ist der Bereich kompatibler Populationsparameter größer.
+<ul>
+<li class="fragment">In diesem Fall ist unsere <strong>Punktschätzung mit mehr Unsicherheit behaftet</strong>.</li>
+</ul></li>
+<li class="fragment">Zusammenfassend bemisst das Konfidenzintervall also die <strong>Vertrauenswürdigkeit einer Punktschätzung <span class="math inline">\(\hat{\theta}\)</span></strong> (<span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(\Delta\bar{x}\)</span>, <span class="math inline">\(r\)</span>, usw.). <strong>Je kleiner</strong> das Intervall, <strong>desto präziser</strong> ist unsere Schätzung <span class="math inline">\(\hat{\theta}\)</span> des Populationsparameters <span class="math inline">\(\theta\)</span>.
+<div class="vspace-large">
+
+</div></li>
+</ul>
+<div class="notabene" style="font-size: 27px !important">
+<div class="columns">
+<div class="column" style="width:7%;">
+<div style="margin-top: 10px">
+<p><img data-src="images/notabene2.png" height="65"></p>
+</div>
+</div><div class="column" style="width:93%;">
+<p>Dürfte man den Namen von Konfidenzintervall neu wählen, wäre <span style=" color: navy !important;"><strong>Kompatibilitäsintervall</strong></span> ein sinnvoller(er) Begriff, da das Intervall im obigen Sinne eben genau <strong>jene Populationsparameter einschließt, die kompatibel mit dem Stichprobenkennwert sind</strong>.</p>
+</div>
+</div>
+</div>
+</section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Konfidenzniveau</h1>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -644,7 +677,7 @@ z_\text{crit} = z_{(1-\frac{\alpha}{2})}
 </div>
 <ul>
 <li class="fragment">Zu jedem <strong>Konfidenzniveau</strong> <span class="math inline">\(1-\alpha\)</span> lässt sich also ein <span style=" color: navy !important;"><strong>kritischer z-Wert</strong></span> <span class="math inline">\(\color{navy}{z_{(1-\frac{\alpha}{2})}}\)</span> zuordnen.</li>
-<li class="fragment">Damit haben wir folgende aktualisierte (und vorerst finale) Form des Konfidenzintervalls:</li>
+<li class="fragment">Damit haben wir folgende aktualisierte (und vorerst finale) Formel des Konfidenzintervalls:</li>
 </ul>
 <div class="colorbox fragment" style="margin-top: -7px">
 <p><span class="math display">\[
@@ -659,109 +692,6 @@ z_\text{crit} = z_{(1-\frac{\alpha}{2})}
 z_{(1-\frac{\alpha}{2})} = \Phi\left(1-\frac{\alpha}{2}\right)
 \]</span></p>
 </div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>Sie kennen bereits ein Konfidenzintervall</h2>
-<p>Konfidenzintervall.. umfasst einen gewissen Prozentsatz der Stichprobenverteilung — does that ring a bell?</p>
-<div class="columns">
-<div class="column" style="width:55%;">
-<p>Auch der <strong>Standardfehler</strong>, als Streuungsmaß der Stichprobenverteilung, umfasst einen gewissen Bereich dieser Verteilung. Präzise gesprochen ist der Standardfehler definiert als <em>Standardabweichung der Stichprobenverteilung</em> und umfasst damit gemäß der <em>68-95-99.7-Regel</em> ungefähr <strong>68% der Stichprobenverteilung</strong>.</p>
-<p>Der <strong>Standardfehler</strong> kann daher als ein recht <strong>laxes Konfidenzintervall</strong> betrachtet werden, mit einem Konfidenzniveau von 68%.</p>
-</div><div class="column" style="width:45%;">
-<p><img data-src="images/68_95_99.png"></p>
-</div>
-</div>
-</section>
-<section class="slide level2">
-<h2>Intution zu Konfidenzintervallen</h2>
-<p><em>Was bedeutet es, ob ein Konfidenzintervall größer oder klein ist?</em> Auf Basis unserer ersten Definition können wir feststellen:</p>
-<ul>
-<li class="fragment">Ist das <strong>Konfidenzintervall</strong> bei einem gegebenen <span class="math inline">\(\alpha\)</span> <strong>verhältnismäßig klein</strong>, so gäbe es auch nur einen kleinen Bereich möglicher Populationsparameter die kompatibel (im Sinn von “nicht signifikant verschieden”) mit unserer Punktschätzung sind.
-<ul>
-<li class="fragment">Wir können in diesem Fall davon ausgehen, dass unsere <strong>Punktschätzung recht präzise</strong> ist.</li>
-</ul></li>
-<li class="fragment">Ist das <strong>Konfidenzintervall</strong> (bei gleichem <span class="math inline">\(\alpha\)</span>) <strong>verhältnismäßig groß</strong>, so ist der Bereich kompatibler Populationsparameter größer.
-<ul>
-<li class="fragment">In diesem Fall ist unsere <strong>Punktschätzung mit mehr Unsicherheit behaftet</strong>.</li>
-</ul></li>
-<li class="fragment">Zusammenfassend bemisst das Konfidenzintervall also die <strong>Vertrauenswürdigkeit einer Punktschätzung <span class="math inline">\(\hat{\theta}\)</span></strong> (<span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(\Delta\bar{x}\)</span>, <span class="math inline">\(r\)</span>, usw.). <strong>Je kleiner</strong> das Intervall, <strong>desto präziser</strong> ist unsere Schätzung <span class="math inline">\(\hat{\theta}\)</span> des Populationsparameters <span class="math inline">\(\theta\)</span>.
-<div class="vspace-large">
-
-</div></li>
-</ul>
-<div class="notabene" style="font-size: 27px !important">
-<div class="columns">
-<div class="column" style="width:7%;">
-<div style="margin-top: 10px">
-<p><img data-src="images/notabene2.png" height="65"></p>
-</div>
-</div><div class="column" style="width:93%;">
-<p>Dürfte man den Namen von Konfidenzintervall neu wählen, wäre <span style=" color: navy !important;"><strong>Kompatibilitäsintervall</strong></span> ein sinnvoller(er) Begriff, da das Intervall im obigen Sinne eben genau <strong>jene Populationsparameter einschließt, die kompatibel mit dem Stichprobenkennwert sind</strong>.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-<h2>Konfidenzniveau</h2>
-<p>Es ist verführerisch anzunehmen, dass z.B. ein 95%-Konfidenzniveau bedeutet, dass der wahre Populationsparameter zu 95% innerhalb des Konfidenzintervalls liegt. <strong>Dem ist nicht so.</strong></p>
-<p>Wäre dem so, hätten wir auf magische Weise im Framework der Nullhypothesentestung die Möglichkeit eingeführt, die Wahrscheinlichkeit einer Hypothese zu bemessen (die Wahrscheinlichkeit einer Hypothese ist immer gleich der Wahrscheinlichkeit eines Parameterwertes oder -wertebereiches). <strong>Dies bleibt im Nullhypothesenframework unmöglich.</strong></p>
-<p>Der Populationskennwert ist ein fixer Wert und keine Zufallsvariable. Entweder liegt er in einem gegebenen Konfidenzintervall (p=1) oder nicht (p=0).</p>
-<p>Die Crux liegt im Detail der Formulierung “in einem <u>gegebenen</u> Konfidenzintervall”. <strong>Nach der Erhebung der Stichprobe</strong> (also für ein gegebenes Konfidenzintervall) ist es wie erwähnt im Kontext der Nullhypthesentestung sinnlos eine Wahrscheinlichkeit anzugeben, dass der Populationskennwert in diesem Intervall liegt.</p>
-<p>Anders ist die Situation <strong>vor Erhebung einer Stichprobe</strong> (d.h. bevor das Konfidenzintervall gegeben ist) — in diesem Fall können wir folgende Feststellung treffen:</p>
-<div class="greybox fragment">
-<p>Das Konfidenzniveau gibt die Wahrscheinlichkeit an, mit der das Konfidenzintervall einer <u>zu erhebenden</u> Stichprobe den wahren Populationsparameter einschließt.</p>
-</div>
-</section>
-<section class="slide level2">
-<h2>Konfidenzniveau</h2>
-<p>Diese Feststellung ist zugegebenermaßen etwas sehr theoretisch — schließlich interessieren wir uns in der Praxis für die Interpretation des Konfidenzintervalls genau dann, <em>wenn</em> wir Daten erhoben haben und das Intervall berechnet haben.</p>
-<p>Alternativ können wir daher das gleiche Prinzip einfach auf <u>zukünftige</u> hyothetische Stichprobenerhebungen nach der aktuellen Stichprobe anwenden. Wir gehen dabei von der <strong>Wahrscheinlichkeit</strong> einer einzelen (noch vor uns liegenden) Stichprobenerhebung zu einer <strong>Frequenz</strong> bei zukünftigen Stichprobenerhebungen über. Dies führt zur (wenig intuitiven 😉) <strong>Textbuchdefinition des Konfidenzniveaus</strong>:</p>
-<div class="definition table-justify">
-<!---  Definition--->
-<table>
-<colgroup>
-<col style="width: 15%">
-<col style="width: 85%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
-<td>Das <span style=" color: navy !important;"><strong>Konfidenzniveau</strong></span> gibt die relative Häufigkeit an, mit der Konfidenzintervalle zukünftiger Stichproben den wahren Populationsparameter einschließen.<br>
-Bei einem 95%-Konfidenzintervall erwarten wir also, dass 95% der hypothetischen (zukünftigen) Stichproben ein Konfidenzintervall aufweisen, das den Populationsparameter einschließt.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="vspace-large">
-
-</div>
-<p>Erscheint Ihnen die Definition des Konfidenzniveaus ähnlich unintuitiv wie die des Konfidenzintervalls selbst? Agreed. Es gilt die <em>Erste Regel von Konfidenzintervallen</em>:</p>
-<div class="colorbox fragment" style="text-align: center !important; margin-left: auto; margin-right: auto; background-color: white; border-width: 0">
-<p>Konfidenzintervalle sind <strong>nützlich</strong> aber <strong>nicht intuitiv</strong>.</p>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-<!--![Bei einem 95%-Konfidenzintervall weisen 95% aller hypothetischen zusätzlichen Stichproben Intervall-grenzen auf, die den wahren Wert einschließen. Im Beispiel sind die 5 Ausnahmen rot markiert, in denen der wahre Populationsparameter $\mu$ nicht innerhalb der Interallgrenzen liegt.^[https://shiny.rit.albany.edu/stat/confidence/]](images/CI95_simulation.png){width=262px style="margin-top: -35px !important"} -->
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>https://shiny.rit.albany.edu/stat/confidence/</h2>
-<iframe width="100%" height="100%" src="https://shiny.rit.albany.edu/stat/confidence/">
-</iframe>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -823,6 +753,31 @@ Bei einem 95%-Konfidenzintervall erwarten wir also, dass 95% der hypothetischen 
 </tr>
 </tbody>
 </table>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style="font-size: 41px">±Standardfehler ≙ Konfidenzintervall mit 68%-Konfidenzniveau</span></h2>
+<p>Konfidenzintervall.. umfasst einen gewissen Prozentsatz der Stichprobenverteilung — does that ring a bell?</p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<ul>
+<li class="fragment">Auch der <strong>Standardfehler</strong> — als Streuungsmaß der Stichprobenverteilung — umfasst einen gewissen Bereich dieser Verteilung.
+<ul>
+<li class="fragment">Reminder: Standardfehler = Standardabweichung der Stichprobenverteilung</li>
+</ul></li>
+<li class="fragment">Der <strong>Bereich [Kennwert <span class="math inline">\(\hat{\theta}\)</span> ± Standardfehler]</strong> umfasst gemäß der <em>68-95-99.7-Regel</em> ungefähr 68% der Stichprobenverteilung und entspricht damit einem recht laxen <strong>Konfidenzintervall mit einem Konfidenzniveau von 68%</strong>.</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><img data-src="images/68_95_99.png"></p>
+</div>
+</div>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Konfidenzintervall: ein erstes Beispiel</h1>
+
 </section>
 <section class="slide level2">
 <h2>Konfidenzintervall: ein Beispiel</h2>
@@ -901,6 +856,11 @@ CI_{95} = 4{,}5\pm 1{,}96\cdot\frac{0{,}5}{\sqrt{10}} = 4{,}5\pm 0{,}31\quad\ove
 <p>Die Messung der Nasenlängen ergab einen Mittelwert von <span class="math inline">\(4{,}5cm\)</span>. Das 95%-Konfidenzintervall der Mittelwertschätzung zeigte eine untere Grenze von <span class="math inline">\(4{,}19cm\)</span> und eine obere Grenze von <span class="math inline">\(4{,}81cm\)</span> an.</p>
 </blockquote>
 </div>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Einflussfaktoren auf das Konfidenzintervall</h1>
+
 </section>
 <section class="slide level2">
 <h2>Einflussfaktoren auf das Konfidenzintervall</h2>
@@ -956,7 +916,7 @@ CI=\bar{x}\pm z_{(1-\frac{\alpha}{2})}\cdot\frac{\sigma}{\sqrt{\color{blue}{n}}}
 CI=\Delta\bar{x}\pm\color{blue}{z_{(1-\frac{\alpha}{2})}}\cdot\frac{\sigma}{\sqrt{n}}
 \]</span></p>
 <p><span style="font-size: 25px; margin-top: 13px">Alternativ, für Pragmatiker: je kleiner <span class="math inline">\(\alpha\)</span>, desto größer <span class="math inline">\(z_{(1-\frac{\alpha}{2})}\)</span>, desto größer das Konfidenzintervall.</span></p>
-</section>
+</section></section>
 <section>
 <section class="title-slide slide level1 center">
 <h1>Konfidenzintervalle in der Praxis</h1>
@@ -1379,10 +1339,70 @@ CI_\text{Statista} = 0{,}075\pm 1{,}96\cdot0{,}0016 = [0{,}072; 0{,}078]
 </div>
 </div>
 </div>
+<aside></aside></section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Konfidenzniveau</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 90px; "></p>
+<p>Es ist verführerisch anzunehmen, dass z.B. ein 95%-Konfidenzniveau bedeutet, dass der wahre Populationsparameter zu 95% innerhalb des Konfidenzintervalls liegt. <strong>Dem ist nicht so.</strong></p>
+<p>Wäre dem so, hätten wir auf magische Weise im Framework der Nullhypothesentestung die Möglichkeit eingeführt, die Wahrscheinlichkeit einer Hypothese zu bemessen (die Wahrscheinlichkeit einer Hypothese ist immer gleich der Wahrscheinlichkeit eines Parameterwertes oder -wertebereiches). <strong>Dies bleibt im Nullhypothesenframework unmöglich.</strong></p>
+<p>Der Populationskennwert ist ein fixer Wert und keine Zufallsvariable. Entweder liegt er in einem gegebenen Konfidenzintervall (p=1) oder nicht (p=0).</p>
+<p>Die Crux liegt im Detail der Formulierung “in einem <u>gegebenen</u> Konfidenzintervall”. <strong>Nach der Erhebung der Stichprobe</strong> (also für ein gegebenes Konfidenzintervall) ist es wie erwähnt im Kontext der Nullhypthesentestung sinnlos eine Wahrscheinlichkeit anzugeben, dass der Populationskennwert in diesem Intervall liegt.</p>
+<p>Anders ist die Situation <strong>vor Erhebung einer Stichprobe</strong> (d.h. bevor das Konfidenzintervall gegeben ist) — in diesem Fall können wir folgende Feststellung treffen:</p>
+<div class="greybox fragment" style="width: 88%">
+<p>Das Konfidenzniveau gibt die Wahrscheinlichkeit an, mit der das Konfidenzintervall einer <u>zu erhebenden</u> Stichprobe den wahren Populationsparameter einschließt.</p>
+</div>
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Konfidenzniveau</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 90px; "></p>
+<p>Diese Feststellung ist zugegebenermaßen etwas sehr theoretisch — schließlich interessieren wir uns in der Praxis für die Interpretation des Konfidenzintervalls genau dann, <em>wenn</em> wir Daten erhoben haben und das Intervall berechnet haben.</p>
+<p>Alternativ können wir daher das gleiche Prinzip einfach auf <u>zukünftige</u> hyothetische Stichprobenerhebungen nach der aktuellen Stichprobe anwenden. Wir gehen dabei von der <strong>Wahrscheinlichkeit</strong> einer einzelen (noch vor uns liegenden) Stichprobenerhebung zu einer <strong>Frequenz</strong> bei zukünftigen Stichprobenerhebungen über. Dies führt zur (wenig intuitiven 😉) <strong>Textbuchdefinition des Konfidenzniveaus</strong>:</p>
+<div class="definition table-justify">
+<!---  Definition--->
+<table>
+<colgroup>
+<col style="width: 15%">
+<col style="width: 85%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
+<td>Das <span style=" color: navy !important;"><strong>Konfidenzniveau</strong></span> gibt die relative Häufigkeit an, mit der Konfidenzintervalle zukünftiger Stichproben den wahren Populationsparameter einschließen.<br>
+Bei einem 95%-Konfidenzintervall erwarten wir also, dass 95% der hypothetischen (zukünftigen) Stichproben ein Konfidenzintervall aufweisen, das den Populationsparameter einschließt.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="vspace-large">
+
+</div>
+<p>Erscheint Ihnen die Definition des Konfidenzniveaus ähnlich unintuitiv wie die des Konfidenzintervalls selbst? Agreed. Es gilt die <em>Erste Regel von Konfidenzintervallen</em>:</p>
+<div class="colorbox fragment" style="text-align: center !important; margin-left: auto; margin-right: auto; background-color: white; border-width: 0; width: 80%">
+<p>Konfidenzintervalle sind <strong>nützlich</strong> aber <strong>nicht intuitiv</strong>.</p>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
-<aside></aside></section>
+<!--![Bei einem 95%-Konfidenzintervall weisen 95% aller hypothetischen zusätzlichen Stichproben Intervall-grenzen auf, die den wahren Wert einschließen. Im Beispiel sind die 5 Ausnahmen rot markiert, in denen der wahre Populationsparameter $\mu$ nicht innerhalb der Interallgrenzen liegt.^[https://shiny.rit.albany.edu/stat/confidence/]](images/CI95_simulation.png){width=262px style="margin-top: -35px !important"} -->
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">https://shiny.rit.albany.edu/stat/confidence/e</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 100px; "> <iframe width="100%" height="100%" src="https://shiny.rit.albany.edu/stat/confidence/"></iframe></p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
 <section class="slide level2">
 <h2><span style=" color: darkred !important;">Konfidenzintervall-Beispiel von Welch</span></h2>
 <p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 100px; "></p>
