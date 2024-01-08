@@ -789,7 +789,7 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 <section class="slide level2">
 <h2>1. Welche Art von t-Test benötige ich?</h2>
 <div class="vcenter">
-<p><img data-src="images/ttest_decisiontree.png" height="400"></p>
+<p><img data-src="images/ttest_decisiontree.png" height="640"></p>
 </div>
 <!----------------->
 <!--- New slide --->
@@ -873,7 +873,8 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 <ul>
 <li>Einstichproben-t-Test: 1 Mittelwert für 1 Stichprobe ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
 <li>Zweistichproben-t-Test (ähnliche Varianzen): 2 Mittelwerte für 2 Stichproben ⟶ <span class="math inline">\(\text{df}=n-2\)</span></li>
-<li>Die Ausnahme ist der Zweistichprobentest mit unterschiedlichen Varianzen (Welch’s t-test). Hier wird zusätzlich noch berücksichtigt, dass bei sehr ungleichen Varianzen der beiden Gruppen die Gruppe mit geringerer Varianz weniger Einfluss auf das Gesamtergebnis hat. Die Zahl der Freiheitsgrade — man könnte auch sagen die <strong>effektive Stichprobengröße</strong> — ist aus diesem Grund geringer und muss durch die <strong>Welch–Satterthwaite-Gleichung</strong> bestimmt werden (siehe nächste Folie).</li>
+<li>(Ausnahme: Zweistichprobentest mit unterschiedlichen Varianzen ⟶ Welch–Satterthwaite-Gleichung)</li>
+<li>Korrelation und Regression: 2 Mittelwerte für die zwei Zusammenhangsvariablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> ⟶ <span class="math inline">\(\text{df}=n-2\)</span></li>
 </ul></li>
 </ul>
 </div>
@@ -907,90 +908,6 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 - Ein intuitiverer Ausdruck wäre **effektive Stichprobengröße**: wie viele Datenpunkte aus meiner Stichprobe kann ich effektiv zur Schätzung meines statistischen Zielkennwerts nutzbar machen?
 :::
 ::: -->
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style="font-size: 41px">3. Zahl der Freiheitsgrade für t-Tests von Mittelwertdifferenzen</span></h2>
-<div class="vspace-medium">
-
-</div>
-<!---  Table --->
-<table>
-<colgroup>
-<col style="width: 23%">
-<col style="width: 35%">
-<col style="width: 42%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Test</th>
-<th>Frage</th>
-<th>Zahl der Freiheitsgrade</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Einstichprobentest mit Einzelmessung</strong></td>
-<td>Ist <span class="math inline">\(\bar{x}\)</span> größer als ein Referenzwert <span class="math inline">\(\mu_0\)</span>?</td>
-<td><span class="math inline">\(\text{df} = n - 1\)</span>, da für die Berechnung von <span class="math inline">\(t\)</span> genau ein Zwischenparameter bestimmt werden muss (der Mittelwert <span class="math inline">\(\bar{x}\)</span>)</td>
-</tr>
-<tr class="even">
-<td><strong>Einstichprobentest mit zwei abhängigen Messungen</strong></td>
-<td>Unterscheiden sich die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> zwischen zwei Bedingungen A und B? In diesem Fall kann man auch fragen: ist der Mittelwert der Differenzvariable (<span class="math inline">\(\Delta\bar{x}=\overline{X_A-X_B}\)</span>) verschieden von Null?</td>
-<td><span class="math inline">\(\text{df} = n - 1\)</span>, da für die Berechnung von <span class="math inline">\(t\)</span> genau ein Zwischenparameter bestimmt werden muss (der Mittelwert <span class="math inline">\(\overline{X_A-X_B}\)</span>)</td>
-</tr>
-<tr class="odd">
-<td><strong>Zweistichprobentest (ähnliche Varianzen)</strong></td>
-<td>Unterscheiden sich die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> zwischen zwei Gruppen A und B? (<span class="math inline">\(\Delta\bar{x}=\bar{x}_A-\bar{x}_B\)</span>)</td>
-<td><span class="math inline">\(\text{df} = n_A + n_B - 2\)</span>, da für die Berechnung von <span class="math inline">\(t\)</span> genau zwei Zwischenparameter bestimmt werden müssen (die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span>)</td>
-</tr>
-<tr class="even">
-<td><strong>Zweistichprobentest (unterschiedliche Varianzen, aka Welch’s t-Test)</strong></td>
-<td>Unterscheiden sich die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> zwischen zwei Gruppen A und B? (<span class="math inline">\(\Delta\bar{x}=\bar{x}_A-\bar{x}_B\)</span>)</td>
-<td><strong>Welch–Satterthwaite-Gleichung:</strong><br>
-<span class="math inline">\(\text{df} = \frac{\left(\frac{\hat{\sigma}_A^2}{n_A}+\frac{\hat{\sigma}_B^2}{n_B}\right)^2}{\frac{\left(\hat{\sigma}_A^2/n_A\right)^2}{n_A-1}+\frac{\left(\hat{\sigma}_B^2/n_B\right)^2}{n_B-1}}\)</span><br>
-Falls <span class="math inline">\(n_A=n_B=n\)</span>: <span class="math inline">\(\text{df}=(n-1)\Big(1+\frac{2}{\left(\frac{\hat{\sigma}_A}{\hat{\sigma}_B}\right)^2+\left(\frac{\hat{\sigma}_B}{\hat{\sigma}_A}\right)^2}\Big)\)</span></td>
-</tr>
-</tbody>
-</table>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Intuition zur Welch–Satterthwaite-Gleichung</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<p>Auch wenn die Welch–Satterthwaite-Gleichung für die Freiheitsgrade beim Zweistichproben-t-Test mit unterschiedlicher Varianz recht kompliziert aussieht, ist eine nähere Betrachtung aufschlussreich.</p>
-<p>Für <span class="math inline">\(n_A=n_B=n\)</span> gilt:</p>
-<p><span class="math display">\[
-\text{df}=(n-1)\Big(1+\frac{2}{\left(\frac{\hat{\sigma}_A}{\hat{\sigma}_B}\right)^2+\left(\frac{\hat{\sigma}_B}{\hat{\sigma}_A}\right)^2}\Big)
-\]</span></p>
-<p>Zwei Fälle sind interessant:</p>
-<div class="vspace-small">
-
-</div>
-<p><u>Fall 1: Sind die Varianzen gleich</u> (entgegen der Annahme), d.h. <span class="math inline">\(\hat{\sigma}_A=\hat{\sigma}_B\)</span>, so vereinfacht sich die Formel zu</p>
-<p><span class="math display">\[
-\text{df} = (n-1)(1+\frac{2}{2}) = 2n -2,
-\]</span></p>
-<p><strong>also exakt die Formel des klassichen Zweistichprobentests.</strong></p>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Intuition zur Welch–Satterthwaite-Gleichung</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<p><u>Fall 2: Sind die Varianzen extrem unterschiedlich</u>, so wird entweder <span class="math inline">\(\left(\frac{\hat{\sigma}_A}{\hat{\sigma}_B}\right)^2\)</span> oder <span class="math inline">\(\left(\frac{\hat{\sigma}_B}{\hat{\sigma}_A}\right)^2\)</span> extrem groß und die Formel vereinfacht sich zu</p>
-<p><span class="math display">\[
-\text{df} = (n-1)(1+\frac{2}{\infty}) = (n-1)(1+0) = n-1
-\]</span></p>
-<p><strong>also exakt die Formel des Einstichprobentests.</strong></p>
-<p>Für extrem ungleiche Varianzen reduzieren sich also die Freiheitsgrade — und damit die <em>effektive Stichprobengröße</em> — auf die Größe einer der beiden verglichenen Gruppen.</p>
-<p>Das ist durchaus intuitiv: ist z.B. <span class="math inline">\(\hat{\sigma}_A\)</span> extrem viel kleiner als <span class="math inline">\(\hat{\sigma}_B\)</span>, so spielt die Varianz der Gruppe A nahezu keine Rolle mehr. Die Versuchspersonen dieser Gruppe gehen also für die Berechnung des Standardfehlers “verloren”, was sich entsprechend auf die Freiheitsgrade auswirkt.</p>
-<p><em>Im Grenzfall</em> spielt die Varianz dieser Gruppe überhaupt keine Rolle mehr, sondern nur noch ihr Mittelwert. Die Gruppe hat damit die gleiche Funktion wie der Referenzwert <span class="math inline">\(\mu_0\)</span> beim Einstichproben-t-Test.</p>
 </section>
 <section>
 <section class="title-slide slide level1 center">
@@ -1140,6 +1057,90 @@ Falls <span class="math inline">\(n_A=n_B=n\)</span>: <span class="math inline">
 \]</span></p>
 </div>
 </div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Zahl der Freiheitsgrade für t-Tests von Mittelwertdifferenzen</h2>
+<div class="vspace-medium">
+
+</div>
+<!---  Table --->
+<table>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 35%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>Frage</th>
+<th>Zahl der Freiheitsgrade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Einstichprobentest mit Einzelmessung</strong></td>
+<td>Ist <span class="math inline">\(\bar{x}\)</span> größer als ein Referenzwert <span class="math inline">\(\mu_0\)</span>?</td>
+<td><span class="math inline">\(\text{df} = n - 1\)</span>, da für die Berechnung von <span class="math inline">\(t\)</span> genau ein Zwischenparameter bestimmt werden muss (der Mittelwert <span class="math inline">\(\bar{x}\)</span>)</td>
+</tr>
+<tr class="even">
+<td><strong>Einstichprobentest mit zwei abhängigen Messungen</strong></td>
+<td>Unterscheiden sich die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> zwischen zwei Bedingungen A und B? In diesem Fall kann man auch fragen: ist der Mittelwert der Differenzvariable (<span class="math inline">\(\Delta\bar{x}=\overline{X_A-X_B}\)</span>) verschieden von Null?</td>
+<td><span class="math inline">\(\text{df} = n - 1\)</span>, da für die Berechnung von <span class="math inline">\(t\)</span> genau ein Zwischenparameter bestimmt werden muss (der Mittelwert <span class="math inline">\(\overline{X_A-X_B}\)</span>)</td>
+</tr>
+<tr class="odd">
+<td><strong>Zweistichprobentest (ähnliche Varianzen)</strong></td>
+<td>Unterscheiden sich die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> zwischen zwei Gruppen A und B? (<span class="math inline">\(\Delta\bar{x}=\bar{x}_A-\bar{x}_B\)</span>)</td>
+<td><span class="math inline">\(\text{df} = n_A + n_B - 2\)</span>, da für die Berechnung von <span class="math inline">\(t\)</span> genau zwei Zwischenparameter bestimmt werden müssen (die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span>)</td>
+</tr>
+<tr class="even">
+<td><strong>Zweistichprobentest (unterschiedliche Varianzen, aka Welch’s t-Test)</strong></td>
+<td>Unterscheiden sich die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> zwischen zwei Gruppen A und B? (<span class="math inline">\(\Delta\bar{x}=\bar{x}_A-\bar{x}_B\)</span>)</td>
+<td><strong>Welch–Satterthwaite-Gleichung:</strong><br>
+<span class="math inline">\(\text{df} = \frac{\left(\frac{\hat{\sigma}_A^2}{n_A}+\frac{\hat{\sigma}_B^2}{n_B}\right)^2}{\frac{\left(\hat{\sigma}_A^2/n_A\right)^2}{n_A-1}+\frac{\left(\hat{\sigma}_B^2/n_B\right)^2}{n_B-1}}\)</span><br>
+Falls <span class="math inline">\(n_A=n_B=n\)</span>: <span class="math inline">\(\text{df}=(n-1)\Big(1+\frac{2}{\left(\frac{\hat{\sigma}_A}{\hat{\sigma}_B}\right)^2+\left(\frac{\hat{\sigma}_B}{\hat{\sigma}_A}\right)^2}\Big)\)</span></td>
+</tr>
+</tbody>
+</table>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Intuition zur Welch–Satterthwaite-Gleichung</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
+<p>Auch wenn die Welch–Satterthwaite-Gleichung für die Freiheitsgrade beim Zweistichproben-t-Test mit unterschiedlicher Varianz recht kompliziert aussieht, ist eine nähere Betrachtung aufschlussreich.</p>
+<p>Für <span class="math inline">\(n_A=n_B=n\)</span> gilt:</p>
+<p><span class="math display">\[
+\text{df}=(n-1)\Big(1+\frac{2}{\left(\frac{\hat{\sigma}_A}{\hat{\sigma}_B}\right)^2+\left(\frac{\hat{\sigma}_B}{\hat{\sigma}_A}\right)^2}\Big)
+\]</span></p>
+<p>Zwei Fälle sind interessant:</p>
+<div class="vspace-small">
+
+</div>
+<p><u>Fall 1: Sind die Varianzen gleich</u> (entgegen der Annahme), d.h. <span class="math inline">\(\hat{\sigma}_A=\hat{\sigma}_B\)</span>, so vereinfacht sich die Formel zu</p>
+<p><span class="math display">\[
+\text{df} = (n-1)(1+\frac{2}{2}) = 2n -2,
+\]</span></p>
+<p><strong>also exakt die Formel des klassichen Zweistichprobentests.</strong></p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Intuition zur Welch–Satterthwaite-Gleichung</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
+<p><u>Fall 2: Sind die Varianzen extrem unterschiedlich</u>, so wird entweder <span class="math inline">\(\left(\frac{\hat{\sigma}_A}{\hat{\sigma}_B}\right)^2\)</span> oder <span class="math inline">\(\left(\frac{\hat{\sigma}_B}{\hat{\sigma}_A}\right)^2\)</span> extrem groß und die Formel vereinfacht sich zu</p>
+<p><span class="math display">\[
+\text{df} = (n-1)(1+\frac{2}{\infty}) = (n-1)(1+0) = n-1
+\]</span></p>
+<p><strong>also exakt die Formel des Einstichprobentests.</strong></p>
+<p>Für extrem ungleiche Varianzen reduzieren sich also die Freiheitsgrade — und damit die <em>effektive Stichprobengröße</em> — auf die Größe einer der beiden verglichenen Gruppen.</p>
+<p>Das ist durchaus intuitiv: ist z.B. <span class="math inline">\(\hat{\sigma}_A\)</span> extrem viel kleiner als <span class="math inline">\(\hat{\sigma}_B\)</span>, so spielt die Varianz der Gruppe A nahezu keine Rolle mehr. Die Versuchspersonen dieser Gruppe gehen also für die Berechnung des Standardfehlers “verloren”, was sich entsprechend auf die Freiheitsgrade auswirkt.</p>
+<p><em>Im Grenzfall</em> spielt die Varianz dieser Gruppe überhaupt keine Rolle mehr, sondern nur noch ihr Mittelwert. Die Gruppe hat damit die gleiche Funktion wie der Referenzwert <span class="math inline">\(\mu_0\)</span> beim Einstichproben-t-Test.</p>
 <!----------------->
 <!--- New slide --->
 <!----------------->
