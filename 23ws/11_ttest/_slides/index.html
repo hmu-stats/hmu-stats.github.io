@@ -947,7 +947,7 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 <td><span class="math inline">\(\text{df} = n_A + n_B - 2\)</span>, da für die Berechnung von <span class="math inline">\(t\)</span> genau zwei Zwischenparameter bestimmt werden müssen (die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span>)</td>
 </tr>
 <tr class="even">
-<td><strong>Zweistichprobentest (unterschiedliche Varianzen)</strong></td>
+<td><strong>Zweistichprobentest (unterschiedliche Varianzen, aka Welch’s t-Test)</strong></td>
 <td>Unterscheiden sich die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> zwischen zwei Gruppen A und B? (<span class="math inline">\(\Delta\bar{x}=\bar{x}_A-\bar{x}_B\)</span>)</td>
 <td><strong>Welch–Satterthwaite-Gleichung:</strong><br>
 <span class="math inline">\(\text{df} = \frac{\left(\frac{\hat{\sigma}_A^2}{n_A}+\frac{\hat{\sigma}_B^2}{n_B}\right)^2}{\frac{\left(\hat{\sigma}_A^2/n_A\right)^2}{n_A-1}+\frac{\left(\hat{\sigma}_B^2/n_B\right)^2}{n_B-1}}\)</span><br>
@@ -1509,7 +1509,7 @@ t = r\sqrt{\frac{n-2}{1-r^2}} = 0{,}4\sqrt{\frac{12-2}{1-0{,}4^2}} \overset{(Com
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
-t = \frac{b_1}{\hat{se}(b_1)}
+t = \frac{b_1}{\hat{se}(b_1)} \overset{\text{(s. nächste Folie)}}{=} r\sqrt{\frac{n-2}{1-r^2}}
 \]</span></p>
 </div>
 <ul>
@@ -1530,7 +1530,7 @@ t = \frac{b_1}{\hat{se}(b_1)}
 </ul>
 </div>
 <p><span class="math display">\[
-b_1 = \frac{\hat{\sigma}_y}{\hat{\sigma}_x}r
+b_1 = \frac{\hat{\sigma}_Y}{\hat{\sigma}_X}r
 \]</span></p>
 <div>
 <ul>
@@ -1539,7 +1539,7 @@ b_1 = \frac{\hat{\sigma}_y}{\hat{\sigma}_x}r
 </div>
 <div style="margin-top: -12px">
 <p><span class="math display">\[
-t = \frac{b_1}{SE(b_1)} = \frac{\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}r}{\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}\sqrt{\frac{1-r^2}{n-2}}} = \frac{r}{\sqrt{\frac{1-r^2}{n-2}}}
+t = \frac{b_1}{SE(b_1)} = \frac{\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}r}{\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}\sqrt{\frac{1-r^2}{n-2}}} = \frac{r}{\sqrt{\frac{1-r^2}{n-2}}} = r\sqrt{\frac{n-2}{1-r^2}}
 \]</span></p>
 </div>
 <div>
