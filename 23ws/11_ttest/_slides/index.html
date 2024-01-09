@@ -612,7 +612,7 @@ f_t(x|\color{green}{\mu},\color{blue}{\sigma},\scriptsize\text{df}\normalsize) =
 <div>
 <ul>
 <li>Der einzige Parameter der t-Verteilung, die Zahl der Freiheitsgrade <span class="math inline">\(\text{df}\)</span>, bestimmt die Form der Verteilung.</li>
-<li>Die Zahl der Freiheitsgrade df hängt eng mit der Stichprobengröße <span class="math inline">\(n\)</span> zusammen<br>(z.B. <span class="math inline">\(\text{df}=n-1\)</span> bei einem Mittelwertsunterschied abhängiger Messungen).</li>
+<li>Die Zahl der Freiheitsgrade df hängt eng mit der Stichprobengröße <span class="math inline">\(n\)</span> zusammen<br>(z.B. <span class="math inline">\(\text{df}=n-1\)</span> bei einer Mittelwertdifferenz abhängiger Messungen).</li>
 <li>Je größer df/Stichprobengröße, desto ähnlicher wird die t-Verteilung der Normalverteilung!</li>
 </ul>
 </div>
@@ -737,6 +737,10 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 <p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 110px; "></p>
 <p><img data-src="images/tdist_cdf.png" style="margin-left:40px !important" height="300"></p>
 <p><img data-src="images/tdist_cdfinv.png" height="400"></p>
+</section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Durchführung eines t-Testes</h1>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -750,15 +754,15 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 </div>
 <div class="fragment">
 <p><strong>1. Welche Art von t-Test benötige ich?</strong></p>
-<p>Für verschiedene Szenarien gibt es unterschiedliche t-Tests.</p>
+<p>Für verschiedene Szenarien gibt es unterschiedliche t-Tests, die sich unterscheiden in a) dem verwendeten Standardfehler und b) der Zahl der Freiheitsgrade <span class="math inline">\(\text{df}\)</span>.</p>
 </div>
 <div class="fragment">
-<p><strong>2. Signifikanzniveau &amp; ein/zweiseitige Testung</strong></p>
-<p>Welchen Wert bestimme ich als Signifikanzniveau <span class="math inline">\(\alpha\)</span>? Ist mein Test einseitig (gerichtete Hypothese) oder zweiseitig (ungerichtete Hypothese)? ⟶ siehe auch Vorlesung 10</p>
-</div>
-<div class="fragment">
-<p><strong>3. Zahl der Freiheitsgrade</strong></p>
+<p><strong>2. Zahl der Freiheitsgrade</strong></p>
 <p>Die Zahl der Freiheitsgrade <span class="math inline">\(\text{df}\)</span> ist als Parameter für die t-Verteilung notwendig, und damit auch notwendig um Flächen (wie p-Werte) unter der Verteilung zu berechnen. De facto übernehmen das heute Computerprogramme, jedoch ist es nach wie vor Usus die Zahl der Freiheitsgrade eine statistischen Testes in wissenschaftlichen Veröffentlichungen anzugeben.</p>
+</div>
+<div class="fragment">
+<p><strong>3. Signifikanzniveau &amp; ein/zweiseitige Testung</strong></p>
+<p>Welchen Wert bestimme ich als Signifikanzniveau <span class="math inline">\(\alpha\)</span>? Ist mein Test einseitig (gerichtete Hypothese) oder zweiseitig (ungerichtete Hypothese)? ⟶ siehe auch Vorlesung 10</p>
 </div>
 <!----------------->
 <!--- New slide --->
@@ -833,36 +837,11 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>2. Signifikanzniveau &amp; ein/zweiseitige Testung</h2>
-<p><strong>Erinnerung:</strong></p>
-<div class="colorbox">
-<p>Das <strong>Signifikanzniveau</strong> <span class="math inline">\(\alpha\)</span> gibt legt ein Kriterium für die Ablehnung der Nullhypothese fest.<br><br><u>Es gilt:</u> ist <span class="math inline">\(p&lt;\alpha\)</span> lehnen wir die Nullhypothese ab und werten unseren Effekt als statistisch signifikant.</p>
-</div>
-<div class="columns fragment">
-<div class="column" style="width:50%;">
-<div>
-<ul>
-<li>Der Wert <span class="math inline">\(\alpha\)</span> wird auch Irrtumswahrscheinlichkeit genannt — sie gibt das Risiko an, mit dem wir bereit sind, die Nullhypothese fälschlicherweise abzulehnen.
-<ul>
-<li>Beispiel: ist <span class="math inline">\(\alpha=0{,}05\)</span>, so gibt es eine 5%-ige Wahrscheinlichkeit, einen signifikanten Effekt zu erhalten <em>obwohl die Nullhypothese zutrifft</em>.</li>
-<li>Je kleiner <span class="math inline">\(\alpha\)</span>, desto “konservativer” der Test, d.h. desto eher will ich vermeiden, einen Effekt fälschlicherweise als signifikant zu werten (erhöhe aber dabei mein Risko, einen wahren Effekt zu “verpassen”).</li>
-</ul></li>
-</ul>
-</div>
-</div><div class="column" style="width:50%;">
-<p><img data-src="images/significance_level.png" style="margin-top:0px !important"></p>
-</div>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>3. Zahl der Freiheitsgrade</h2>
+<h2>2. Zahl der Freiheitsgrade</h2>
 <div style="font-size: 26px">
 <ul>
 <li>Die <span style=" color: navy !important;"><strong>Zahl der Freiheitsgrade</strong></span> gibt die <strong>Zahl der frei variierbaren Werte</strong> bei der Berechnung eines statistischen Kennwertes an.</li>
-<li>In vielen Fällen (wir werden eine Ausnahme kennenlernen) kann die Zahl der Freiheitsgrade berechnet werden, als die Stichprobengröße <span class="math inline">\(n\)</span> <em>minus</em> die Anzahl der Zwischenparameter, die für die Berechnung des statistischen Kennwertes geschätzt werden müssen.</li>
+<li>Häufig kann die Zahl der Freiheitsgrade recht einfach berechnet werden als Stichprobengröße <span class="math inline">\(n\)</span> <em>minus</em> die Anzahl der Zwischenparameter, die für die Berechnung des statistischen Kennwertes geschätzt werden müssen.</li>
 </ul>
 </div>
 <!---  Example --->
@@ -889,7 +868,7 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>3. Zahl der Freiheitsgrade: t-Test</h2>
+<h2>2. Zahl der Freiheitsgrade: t-Test</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
 <ul>
@@ -909,6 +888,7 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 <li>Häufig reicht es, zu zählen, wie viele Mittelwerte für die Berechnung von <span class="math inline">\(\hat{\sigma}\)</span> im Nenner des t-Wertes für die verschiedenen Tests verwendet werden:
 <ul>
 <li>Einstichproben-t-Test: 1 Mittelwert für 1 Stichprobe ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
+<li>Differenzen-t-Test: 1 Mittelwert für 1 Stichprobe (hier: Mittelwert <span class="math inline">\(\Delta\bar{x}\)</span> der Differenzen <span class="math inline">\(\Delta\bar{x}_i\)</span>) ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
 <li>Zweistichproben-t-Test (ähnliche Varianzen): 2 Mittelwerte für 2 Stichproben ⟶ <span class="math inline">\(\text{df}=n-2\)</span></li>
 <li>(Ausnahme: Zweistichprobentest mit unterschiedlichen Varianzen ⟶ Welch–Satterthwaite-Gleichung)</li>
 <li>Korrelation und Regression: 2 Mittelwerte für die zwei Zusammenhangsvariablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> ⟶ <span class="math inline">\(\text{df}=n-2\)</span></li>
@@ -945,18 +925,43 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 - Ein intuitiverer Ausdruck wäre **effektive Stichprobengröße**: wie viele Datenpunkte aus meiner Stichprobe kann ich effektiv zur Schätzung meines statistischen Zielkennwerts nutzbar machen?
 :::
 ::: -->
-</section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>t-Test für Mittelwertunterschiede</h1>
 <!----------------->
 <!--- New slide --->
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>t-Test für Mittelwertunterschiede</h2>
+<h2>3. Signifikanzniveau &amp; ein/zweiseitige Testung</h2>
+<p><strong>Erinnerung:</strong></p>
+<div class="colorbox">
+<p>Das <strong>Signifikanzniveau</strong> <span class="math inline">\(\alpha\)</span> gibt legt ein Kriterium für die Ablehnung der Nullhypothese fest.<br><br><u>Es gilt:</u> ist <span class="math inline">\(p&lt;\alpha\)</span> lehnen wir die Nullhypothese ab und werten unseren Effekt als statistisch signifikant.</p>
+</div>
+<div class="columns fragment">
+<div class="column" style="width:50%;">
+<div>
 <ul>
-<li class="fragment">Zur Erinnerung, bei einem statistischen Test zu Mittelwertunterschieden stellen wir folgende Fragen:
+<li>Der Wert <span class="math inline">\(\alpha\)</span> wird auch Irrtumswahrscheinlichkeit genannt — sie gibt das Risiko an, mit dem wir bereit sind, die Nullhypothese fälschlicherweise abzulehnen.
+<ul>
+<li>Beispiel: ist <span class="math inline">\(\alpha=0{,}05\)</span>, so gibt es eine 5%-ige Wahrscheinlichkeit, einen signifikanten Effekt zu erhalten <em>obwohl die Nullhypothese zutrifft</em>.</li>
+<li>Je kleiner <span class="math inline">\(\alpha\)</span>, desto “konservativer” der Test, d.h. desto eher will ich vermeiden, einen Effekt fälschlicherweise als signifikant zu werten (erhöhe aber dabei mein Risko, einen wahren Effekt zu “verpassen”).</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/significance_level.png" style="margin-top:0px !important"></p>
+</div>
+</div>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>t-Test für Mittelwertdifferenzen</h1>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>t-Test für Mittelwertdifferenzen</h2>
+<ul>
+<li class="fragment">Zur Erinnerung, bei einem statistischen Test zu Mittelwertdifferenzen stellen wir folgende Fragen:
 <ul>
 <li class="fragment">Unterscheiden sich die Mittelwerte von zwei unabhängigen Stichproben signifikant voneinander? (Zweistichproben-Test)</li>
 <li class="fragment">Unterscheiden sich die Mittelwerte von zwei abhängigen Bedingungen signifikant voneinander? (Einstichproben-Test mit zwei abhängigen Messungen)</li>
@@ -972,16 +977,17 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>t-Test für Mittelwertunterschiede</h2>
+<h2>t-Test für Mittelwertdifferenzen</h2>
 <ul>
-<li class="fragment">Um den t-Wert für einen Mittelwertunterschied <span class="math inline">\(\Delta\bar{x}\)</span> zu erhalten, ersetzen wir <span class="math inline">\(\hat{\theta}\)</span> durch <span class="math inline">\(\Delta\bar{x}\)</span>:</li>
+<li class="fragment">Um den t-Wert für eine Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span> zu erhalten, ersetzen wir <span class="math inline">\(\hat{\theta}\)</span> durch <span class="math inline">\(\Delta\bar{x}\)</span>:</li>
 </ul>
 <p><span class="math display">\[
-\text{t-Wert für Mittelwertunterschied:}\qquad t = \frac{\hat{\theta}}{\hat{se}} = \frac{\Delta\bar{x}}{\hat{se}}
+\text{t-Wert für Mittelwertdifferenz:}\qquad t = \frac{\hat{\theta}}{\hat{se}} = \frac{\Delta\bar{x}}{\hat{se}}
 \]</span></p>
 <ul>
-<li class="fragment">Der Mittelwertunterschied <span class="math inline">\(\Delta\bar{x}\)</span> ist einfach zu bestimmen, die zentrale Frage lautet daher: <strong>wie berechnet sich der Standardfehler <span class="math inline">\(\hat{se}\)</span> des Mittelwertunterschiedes <span class="math inline">\(\Delta\bar{x}\)</span>?</strong></li>
-<li class="fragment">Wie beim z-Test hängt die Berechnung dieses Standardfehlers von verschiedenen Faktoren ab.</li>
+<li class="fragment">Die Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span> ist einfach zu bestimmen, die zentrale Frage lautet daher: <strong>wie berechnet sich der Standardfehler <span class="math inline">\(\hat{se}\)</span> einer Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span>?</strong></li>
+<li class="fragment"><strong>Merke:</strong> der Standardfehler im Nenner des t-Wertes bezieht sich immer auf die Prüfgröße <span class="math inline">\(\hat{\theta}\)</span>. Die Frage lautet also bei jedem t-Test: was ist der Standardfehler von <span class="math inline">\(\hat{\theta}\)</span> bzw. was ist die Standardabweichung der Stichprobenverteilung von <span class="math inline">\(\hat{\theta}\)</span>?</li>
+<li class="fragment">Wie beim z-Test hängt die Berechnung des Standardfehlers von Mittelwertdifferenzen von verschiedenen Faktoren ab.</li>
 </ul>
 <!----------------->
 <!--- New slide --->
@@ -1029,11 +1035,12 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 <tr class="even">
 <td><strong>Mittelwertdifferenz abhängiger Messungen A und B in <u>einer Stichprobe</u></strong><br>(→ Differenzen-t-Test)</td>
 <td><span class="math inline">\(\hat{se} = \frac{\hat{\sigma}_\Delta}{\sqrt{n}}\qquad\text{mit}\)</span><br>
-<span class="math inline">\(\hat{\sigma}_\Delta=\sqrt{Var(\Delta x)}=\sqrt{\hat{\sigma}_A^2+\hat{\sigma}_B^2-2\,\hat{Cov}(X_A,X_B)}\)</span></td>
+<span class="math inline">\(\hat{\sigma}_\Delta=\sqrt{\hat{\sigma}_A^2+\hat{\sigma}_B^2-2\,\hat{Cov}(X_A,X_B)}\)</span><br>
+<span class="math inline">\(\text{oder}\qquad\hat{\sigma}_\Delta=\sqrt{\frac{1}{n-1}\left(\Delta x_i-\Delta\bar{x}\right)^2}\)</span></td>
 </tr>
 </tbody>
 </table>
-<div class="vspace-medium">
+<div class="vspace-small">
 
 </div>
 <div class="merke" style="font-size: 23px !important">
