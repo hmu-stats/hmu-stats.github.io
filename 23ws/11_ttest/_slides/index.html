@@ -382,6 +382,10 @@
       modifier: function() { this.node.style.fill = 'green'; }
     - element: "#inferencebg"
       modifier: function() { this.node.style.fill = '#d8ffe2';} --></div>
+</section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Einschub: Anmerkungen zur Klausur</h1>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -421,11 +425,54 @@
 <li class="fragment">Es soll verstanden werden, warum es sie gibt und wann sie prinzipiell angewendet (Stichprobe -&gt; Population) oder nicht angewendet (deskriptive Beschreibung der Stichprobe) wird.</li>
 <li class="fragment">Bei Rechenaufgaben wird die Besselkorrektur keine Rolle spielen, d.h. es wird nicht als Fehler gewertet, wenn Sie die Besselkorrektur irrtümlich anwenden oder nicht anwenden.</li>
 <li class="fragment">Das impliziert auch, dass Sie bei Rechenaufgaben wahlweise die Stichprobenvarianz <span class="math inline">\(s^2\)</span> oder die Populationsschätzung <span class="math inline">\(\hat{\sigma}^2\)</span> angeben bzw. verwenden können.</li>
+<li class="fragment">Der Grund ist, dass die Anwendung der Besselkorrektur selbst in akademischen Veröffentlichungen und Lehrbüchern sehr inkonsistent ist. Auf den folgenden beiden Folien finden Sie zwei Beispiele.</li>
 </ul></li>
 </ul>
 <!--- New slide --->
 <!----------------->
-<!-- ## Besselkorrektur: theory meets practise -->
+</section>
+<section class="slide level2">
+<h2>Besselkorrektur meets practise: z-Transformation</h2>
+<ul>
+<li class="fragment">Die <strong>z-Standardisierung</strong> oder <strong>z-Transformation</strong> ist eine häufig genutzte Methode, um Variablen zwischen verschiedenen Studien vergleichbar zu machen.</li>
+<li class="fragment"><em>Streng genommen</em> nimmt die z-Transformation an, dass Populationsmittelwert <span class="math inline">\(\mu\)</span> und die Populationsstreuung <span class="math inline">\(\sigma\)</span> bekannt sind. Die Formel lautet daher:</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+\text{z-Transformation:}\qquad Z = \frac{X-\mu}{\sigma}
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">In der Praxis sind <span class="math inline">\(\sigma\)</span> und <span class="math inline">\(\mu\)</span> aber nahezu nie bekannt und daher werden häufig der empirische Mittelwert <span class="math inline">\(\Delta\bar{x}\)</span> und die Populationsschätzung <span class="math inline">\(\hat{\sigma}\)</span> mit Besselkorrektur verwendet.</li>
+<li class="fragment">Seien Sie sich aber bewusst, dass dies aus theoretischer Sicht eine Ungenauigkeit darstellt, denn bei unbekannter Populationsstreuung handelt es sich bei <span class="math inline">\(Z\)</span> nicht um einen normalverteilten Wert, sondern um einen t-verteilten Wert (und damit eigentlich um eine <em>t-Transformation</em>).</li>
+<li class="fragment">Erst ab ca. <span class="math inline">\(N\ge 30\)</span> sind die Stichprobenschätzungen so gut, dass die z-Transformation guten Gewissens auch bei unbekannten Populationsparametern angwendet werden sollte.</li>
+</ul>
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Besselkorrektur meets practise: Korrelation</h2>
+<p>Für die Formel der Pearson-Korrelation hatten wir kennengelernt:</p>
+<p><span class="math display">\[
+r = \frac{1}{s_X s_Y}\frac{1}{n}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})
+\]</span></p>
+<ul>
+<li class="fragment">Dies ist <strong>Stichprobenkorrelationskoeffizient</strong>.</li>
+<li class="fragment">In der Regel sind wir aber an einer Schätzung der Korrelation in der Population interessiert ⟶ dies führt zum <strong>empirischen Korrelationskoeffizienten</strong>:</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+\hat{\rho} = \frac{1}{\hat{\sigma}_X \hat{\sigma}_Y}\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})
+\]</span> (beachten Sie den Übergang <span class="math inline">\(s\rightarrow\hat{\sigma}\)</span> und <span class="math inline">\(n\rightarrow n-1\)</span>, d.h. die Besselkorrektur)</p>
+</div>
+<ul>
+<li class="fragment">In der Praxis herrscht hier leider keine Einheitlichkeit. De facto wird in der Literatur standardmäßig die Bezeichnung <span class="math inline">\(r\)</span> für den Korrelationskoeffizienten verwendet, aber mit der Formel des empirischen Korrelationskoeffizienten.</li>
+</ul>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Der t-Test</h1>
+
 </section>
 <section class="slide level2">
 <h2>Problemstellung</h2>
@@ -449,9 +496,11 @@
 </section>
 <section class="slide level2">
 <h2>Statistischer Kennwert <span class="math inline">\(\hat{\theta}\)</span></h2>
+<div>
 <ul>
-<li class="fragment">Bevor wir uns der eigentlichen Frage widmen, führen wir ein neues Symbol ein, das als Platzhalter für einen statistischen Kennwert steht, der auf Basis einer Stichprobe berechnet wurde:</li>
+<li>Bevor wir uns der eigentlichen Frage widmen, führen wir ein neues Symbol ein, das als Platzhalter für einen statistischen Kennwert steht, der auf Basis einer Stichprobe berechnet wurde:</li>
 </ul>
+</div>
 <p><span class="math display">\[
 \text{Statistischer Kennwert:}\qquad\hat{\theta}
 \]</span></p>
@@ -466,7 +515,7 @@
 \]</span></p>
 </div>
 </div>
-<div class="notabene" style="margin-top: 45px">
+<div class="notabene fragment" style="margin-top: 45px">
 <div class="columns">
 <div class="column" style="width:7%;">
 <div style="margin-top: 10px">
@@ -559,6 +608,34 @@ t = \frac{\hat{\theta}}{\hat{se}} = \frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 </ul></li>
 <li class="fragment">Merke: der <em>t-Wert</em> ist zur <em>t-Verteilung</em> wie der <em>z-Wert</em> zur <em>Standardnormalverteilung</em>!</li>
 </ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<!-- ## [Herleitung der t-Verteilung]{style="font-size: 36px !important; color: darkred"}
+
+![](images/kein_klausurstoff.png){.absolute bottom=0 right=0 height=110px}
+
+:::: {.columns}
+::: {.column width="60%"}
+:::{.nonincremental}
+- Um ein Gefühl dafür zu bekommen, wie die t-Verteilung hergeleitet werden kann, ist es sinnvoll nochmals das Testen des **unstandardisierten Mittelwertunterschiedes** $\Delta\bar{x}$ zu betrachten.
+- Da die Streubreite $\hat{\sigma}/\sqrt{n}$ der Stichprobenverteilung nicht genau bekannt ist, sondern mit Unsicherheit behaftet ist (siehe gestrichelte Linien im unteren Bild), ist der p-Wert nicht eindeutig bestimmt.
+- Es ist dennoch möglich, den (erwarteten) p-Wert zu berechnen, in dem man nicht nur die Fläche auf Basis der eigentlichen Schätzung $\hat{\sigma}$ berechnet, sondern *für alle möglichen* Werte von $\sigma$.
+- Die so erhalteten Flächen mittelt man gewichtet an der Wahrscheinlichkeit jedes möglichen Wertes von $\sigma$ &mdash; dadurch wird die Unsicherheit von $\hat{\sigma}$ "marginalisiert".
+:::
+:::
+::: {.column width="40%"}
+:::{style="margin-top: -30px !important"}
+![](images/nulldist2d2.png)
+:::
+
+![](images/nulldist2d3.png)
+:::
+::::
+
+:::{.nonincremental style="margin-top: -15px"}
+- Betrachtet man diese Art der Integration mit Marginalisierung nicht für einen<br>konkreten Fall, sondern für die theoretische Verteilung, ergibt sich die t-Verteilung.
+::: -->
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -744,7 +821,7 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 <p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 110px; "></p>
 <p><img data-src="images/tdist_cdf.png" style="margin-left:40px !important" height="300"></p>
 <p><img data-src="images/tdist_cdfinv.png" height="400"></p>
-</section>
+</section></section>
 <section>
 <section class="title-slide slide level1 center">
 <h1>Durchführung eines t-Testes</h1>
@@ -878,9 +955,11 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 <h2>2. Zahl der Freiheitsgrade: t-Test</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
+<div>
 <ul>
-<li class="fragment">Für die Zahl der Freiheitsgrade beim t-Test gilt, dass die Zahl der Freiheitsgrade ausschließlich auf Basis der Streuung <span class="math inline">\(\hat{\sigma}\)</span> im Nenner bestimmt wird.</li>
+<li>Für die Zahl der Freiheitsgrade beim t-Test gilt, dass die Zahl der Freiheitsgrade ausschließlich auf Basis der Streuung <span class="math inline">\(\hat{\sigma}\)</span> im Nenner bestimmt wird.</li>
 </ul>
+</div>
 <p><span class="math display">\[
 t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 \]</span></p>
@@ -890,18 +969,16 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 </div>
 </div>
 </div>
-<div>
 <ul>
-<li>Häufig reicht es, zu zählen, wie viele Mittelwerte für die Berechnung von <span class="math inline">\(\hat{\sigma}\)</span> im Nenner des t-Wertes für die verschiedenen Tests verwendet werden:
+<li class="fragment">Häufig reicht es, zu zählen, wie viele Mittelwerte für die Berechnung von <span class="math inline">\(\hat{\sigma}\)</span> im Nenner des t-Wertes für die verschiedenen Tests verwendet werden:
 <ul>
-<li>Einstichproben-t-Test: 1 Mittelwert für 1 Stichprobe ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
-<li>Differenzen-t-Test: 1 Mittelwert für 1 Stichprobe (hier: Mittelwert <span class="math inline">\(\Delta\bar{x}\)</span> der Differenzen <span class="math inline">\(\Delta\bar{x}_i\)</span>) ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
-<li>Zweistichproben-t-Test (ähnliche Varianzen): 2 Mittelwerte für 2 Stichproben ⟶ <span class="math inline">\(\text{df}=n-2\)</span></li>
-<li>(Ausnahme: Zweistichprobentest mit unterschiedlichen Varianzen ⟶ Welch–Satterthwaite-Gleichung)</li>
-<li>Korrelation und Regression: 2 Mittelwerte für die zwei Zusammenhangsvariablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> ⟶ <span class="math inline">\(\text{df}=n-2\)</span></li>
+<li class="fragment">Einstichproben-t-Test: 1 Mittelwert für 1 Stichprobe ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
+<li class="fragment">Differenzen-t-Test: 1 Mittelwert für 1 Stichprobe (hier: Mittelwert <span class="math inline">\(\Delta\bar{x}\)</span> der Differenzen <span class="math inline">\(\Delta\bar{x}_i\)</span>) ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
+<li class="fragment">Zweistichproben-t-Test (ähnliche Varianzen): 2 Mittelwerte für 2 Stichproben ⟶ <span class="math inline">\(\text{df}=n-2\)</span></li>
+<li class="fragment">(Ausnahme: Zweistichprobentest mit unterschiedlichen Varianzen ⟶ Welch–Satterthwaite-Gleichung)</li>
+<li class="fragment">Korrelation und Regression: 2 Mittelwerte für die zwei Zusammenhangsvariablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> ⟶ <span class="math inline">\(\text{df}=n-2\)</span></li>
 </ul></li>
 </ul>
-</div>
 <!-- - Eine berechtigte Frage ist, warum beim t-Test die Streuung $\hat{\sigma}$ nicht auch als Freiheitsgrad abgezogen werden muss (schließlich wird dieser Parameter bei der Berechnung des t-Wertes verwendet).
 - Der Grund ist subtil und hängt damit zusammen, dass wir die t-Verteilung *unter der Voraussetzung verwenden, dass der Standardfehler geschätzt werden musste*. Der Verlust dieses Freiheitsgrades ist also in der Verteilung selbst bereits berücksichtigt und muss post-hoc nicht mehr als zusätzlicher Freiheitsgrad abgezogen werden.^[https://stats.stackexchange.com/questions/226483/does-the-determination-of-the-mean-and-sd-imply-the-loss-of-one-or-two-degrees-o] -->
 <!----------------->
@@ -985,9 +1062,11 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 </section>
 <section class="slide level2">
 <h2>t-Test für Mittelwertdifferenzen</h2>
+<div>
 <ul>
-<li class="fragment">Um den t-Wert für eine Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span> zu erhalten, ersetzen wir <span class="math inline">\(\hat{\theta}\)</span> durch <span class="math inline">\(\Delta\bar{x}\)</span>:</li>
+<li>Um den t-Wert für eine Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span> zu erhalten, ersetzen wir <span class="math inline">\(\hat{\theta}\)</span> durch <span class="math inline">\(\Delta\bar{x}\)</span>:</li>
 </ul>
+</div>
 <p><span class="math display">\[
 \text{t-Wert für Mittelwertdifferenz:}\qquad t = \frac{\hat{\theta}}{\hat{se}} = \frac{\Delta\bar{x}}{\hat{se}}
 \]</span></p>
@@ -1975,46 +2054,12 @@ plt.savefig('images/paradoxia_histogram_inflammation_sem_nonsig.png', bbox_inche
 <!----------------->
 <!--- New slide --->
 <!----------------->
-</section>
-<section class="slide level2 center">
-<h2></h2>
+<!-- ## {.center}
 
-<img data-src="images/xkcd1347.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://xkcd.com/1347/">xkcd#1347</a></p><ul>
-<li class="fragment">Siehe auch <a href="https://www.explainxkcd.com/wiki/index.php/1347">https://www.explainxkcd.com/wiki/index.php/1347</a></li>
-</ul>
-</section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>Appendix</h1>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style="font-size: 36px !important; color: darkred">Herleitung der t-Verteilung</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<div class="columns">
-<div class="column" style="width:60%;">
-<div>
-<ul>
-<li>Um ein Gefühl dafür zu bekommen, wie die t-Verteilung hergeleitet werden kann, ist es sinnvoll nochmals das Testen des <strong>unstandardisierten Mittelwertunterschiedes</strong> <span class="math inline">\(\Delta\bar{x}\)</span> zu betrachten.</li>
-<li>Da die Streubreite <span class="math inline">\(\hat{\sigma}/\sqrt{n}\)</span> der Stichprobenverteilung nicht genau bekannt ist, sondern mit Unsicherheit behaftet ist (siehe gestrichelte Linien im unteren Bild), ist der p-Wert nicht eindeutig bestimmt.</li>
-<li>Es ist dennoch möglich, den (erwarteten) p-Wert zu berechnen, in dem man nicht nur die Fläche auf Basis der eigentlichen Schätzung <span class="math inline">\(\hat{\sigma}\)</span> berechnet, sondern <em>für alle möglichen</em> Werte von <span class="math inline">\(\sigma\)</span>.</li>
-<li>Die so erhalteten Flächen mittelt man gewichtet an der Wahrscheinlichkeit jedes möglichen Wertes von <span class="math inline">\(\sigma\)</span> — dadurch wird die Unsicherheit von <span class="math inline">\(\hat{\sigma}\)</span> “marginalisiert”.</li>
-</ul>
-</div>
-</div><div class="column" style="width:40%;">
-<div style="margin-top: -30px !important">
-<p><img data-src="images/nulldist2d2.png"></p>
-</div>
-<p><img data-src="images/nulldist2d3.png"></p>
-</div>
-</div>
-<div style="margin-top: -15px">
-<ul>
-<li>Betrachtet man diese Art der Integration mit Marginalisierung nicht für einen<br>konkreten Fall, sondern für die theoretische Verteilung, ergibt sich die t-Verteilung.</li>
-</ul>
-</div>
+![[xkcd#1347](https://xkcd.com/1347/)](images/xkcd1347.png)
+
+- Siehe auch [https://www.explainxkcd.com/wiki/index.php/1347](https://www.explainxkcd.com/wiki/index.php/1347)
+ -->
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Vorlesung 11: t-Test</p>
