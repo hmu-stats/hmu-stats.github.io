@@ -420,7 +420,6 @@
 <ul>
 <li class="fragment"><u>Aber:</u> Sie sollten konzeptuell verstehen, was der prinzipielle Einsatzzweck des z-Testes ist (verglichen mit dem t-Test).</li>
 </ul></li>
-<li class="fragment"><strong>Binäres Entscheidungskonzept nach Neyman-Pearson:</strong> hier reicht es die Begriffe <em>Alternativhypothese</em>, <em>Fehler erster und zweiter Art</em> und <em>Power</em> zu verstehen. Es wird keine Rechenaufgaben zu Neyman-Pearson geben.</li>
 <li class="fragment"><strong>Bessel-Korrektur:</strong>
 <ul>
 <li class="fragment">Es soll verstanden werden, warum es sie gibt und wann sie prinzipiell angewendet (Stichprobe -&gt; Population) oder nicht angewendet (deskriptive Beschreibung der Stichprobe) wird.</li>
@@ -506,7 +505,7 @@ r = \frac{1}{s_X s_Y}\frac{1}{n}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})
 \text{Statistischer Kennwert:}\qquad\hat{\theta}
 \]</span></p>
 <ul>
-<li class="fragment">Das Symbol <span class="math inline">\(\hat{\theta}\)</span> ist ein allgemeines Symbol für alle statistischen Kennwerte, die wir bisher kennen-gelernt haben: Mittelwert <span class="math inline">\(\bar{x}\)</span>, Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span>, Korrelation <span class="math inline">\(r\)</span>, Regressionskoeffizient <span class="math inline">\(\hat{b}_1\)</span>,…</li>
+<li class="fragment">Das Symbol <span class="math inline">\(\hat{\theta}\)</span> ist ein allgemeines Symbol für alle statistischen Kennwerte, die wir bisher kennen-gelernt haben: Mittelwert <span class="math inline">\(\bar{x}\)</span>, Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span>, Korrelation <span class="math inline">\(r\)</span>, Regressionskoeffizient <span class="math inline">\(b_1\)</span>,…</li>
 </ul>
 <div class="colorbox fragment" style="margin-top:6px">
 <p>Wir formulieren unsere Frage also etwas allgemeiner: welcher Verteilung folgt die Größe</p>
@@ -940,7 +939,7 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 <p><strong>Beispiel Varianz:</strong> Angenommen, wir wollen für einer Stichprobe aus vier Werten die Varianz bestimmen:</p>
 <div style="margin-top:-15px !important; margin-bottom:-5px !important">
 <p><span class="math display">\[
-\sigma^2 = \frac{1}{n}\sum_1^4 (x_i-\bar{x})^2
+\sigma^2 = \frac{1}{4}\sum_1^4 (x_i-\bar{x})^2
 \]</span></p>
 </div>
 <p>Aus der Formel der Varianz erkennen wir, dass wir zur Berechnung der Varianz <strong>einen Parameter</strong> aus den Daten bestimmen müssen, nämlich der Mittelwert <span class="math inline">\(\bar{x}\)</span>. Die Zahl der Freiheitsgrade ergibt sich damit plain &amp; simple nach obiger Definition als <strong>Stichprobengröße n minus 1</strong>, also in diesem Beispiel <span class="math inline">\(\text{df}=3\)</span>.</p>
@@ -975,7 +974,7 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 <ul>
 <li class="fragment">Einstichproben-t-Test: 1 Mittelwert für 1 Stichprobe ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
 <li class="fragment">Differenzen-t-Test: 1 Mittelwert für 1 Stichprobe (hier: Mittelwert <span class="math inline">\(\Delta\bar{x}\)</span> der Differenzen <span class="math inline">\(\Delta\bar{x}_i\)</span>) ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
-<li class="fragment">Zweistichproben-t-Test (ähnliche Varianzen): 2 Mittelwerte für 2 Stichproben ⟶ <span class="math inline">\(\text{df}=n-2\)</span></li>
+<li class="fragment">Zweistichproben-t-Test (ähnliche Varianzen): 2 Mittelwerte für 2 Stichproben ⟶ <span class="math inline">\(\text{df}=n_A+n_B-2\)</span></li>
 <li class="fragment">(Ausnahme: Zweistichprobentest mit unterschiedlichen Varianzen ⟶ Welch–Satterthwaite-Gleichung)</li>
 <li class="fragment">Korrelation und Regression: 2 Mittelwerte für die zwei Zusammenhangsvariablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> ⟶ <span class="math inline">\(\text{df}=n-2\)</span></li>
 </ul></li>
@@ -1353,9 +1352,8 @@ p=\int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx = \int_{1{,}96}^{\in
 <p><strong>Klassischer Zweistichproben-t-Test (ähnliche Varianzen) versus Welch’s t-Test (unterschiedliche Varianzen) — welcher der beiden Tests sollte nun verwendet werden?</strong></p>
 <div>
 <ul>
-<li>In der Psychologie sind ungleiche Varianzen die realistischere Annahme.</li>
-<li>Selbst bei randomisiert-kontrollierten Studien, bei denen Versuchspersonen den Gruppen aus einer identischen Ursprungs-Population zugewiesen werden, kann das Treatment selbst einen Einfluss auf die Varianz haben.</li>
-<li>Prinzipiell gibt es Testverfahren zur Überprüfung der Varianzgleichheit zwischen Gruppen, allerdings sind diese nicht unproblematisch
+<li>In der Psychologie sind ungleiche Varianzen die realistischere Annahme. Selbst bei randomisiert-kontrollierten Studien, bei denen Versuchspersonen den Gruppen aus einer identischen Ursprungs-Population zugewiesen werden, kann das Treatment selbst einen Einfluss auf die Varianz haben.</li>
+<li>Neben der Faustformel <span class="math inline">\(0{,}5&lt;\frac{\hat{\sigma}_A}{\hat{\sigma}_B}&lt;2\)</span> gibt es auch Testverfahren zur Überprüfung der Varianzgleichheit zwischen Gruppen, allerdings sind diese nicht unproblematisch
 <ul>
 <li>Ein Grund:auf Varianzgleichheit wird idR auf Basis eines nicht-signifikanten Ergebnis in einem solchen Test angenommen — “absence of evidence is not evidence of absence”<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a></li>
 </ul></li>
@@ -1366,7 +1364,7 @@ p=\int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx = \int_{1{,}96}^{\in
 <div class="column" style="width:66%;">
 <div>
 <ul>
-<li>Herrscht Varianzgleichheit vor und ist die Stichprobengröße nicht extrem klein in einer Gruppe, kommen der Student’sche t-Test und Welch’s t-Test zum gleichen Ergebnis.</li>
+<li>Herrscht Varianzgleichheit vor und ist die Stichprobengröße nicht extrem klein in einer Gruppe, kommen der Student’sche t-Test und Welch’s t-Test zu sehr ähnlichen Ergebnissen.</li>
 <li>Vor diesem Hintergrund wird empfohlen<a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a>, bereits ab moderaten Gruppengrößen (ca. <span class="math inline">\(n\ge 8\)</span> pro Gruppe) <em>immer</em> Welch’s t-Test anzuwenden. In den meisten Statistikprogrammen ist dieser Test implementiert.</li>
 </ul>
 </div>
@@ -1564,7 +1562,7 @@ t = r\sqrt{\frac{n-2}{1-r^2}} = 0{,}4\sqrt{\frac{12-2}{1-0{,}4^2}} \overset{(Com
 \]</span></p>
 </div>
 <ul>
-<li class="fragment">Wir sehen in der Tabelle, dass der kritische t-Wert für <span class="math inline">\(\text{df}=n-2=10\)</span> Freiheitsgrade bei einem (einseitigen!) Signifikanzniveau von <span class="math inline">\(\alpha=0{,}05\)</span> gleich <span class="math inline">\(2{,}228\)</span> beträgt.</li>
+<li class="fragment">Wir sehen in der Tabelle, dass der kritische t-Wert für <span class="math inline">\(\text{df}=n-2=10\)</span> Freiheitsgrade bei einem (einseitigen!) Signifikanzniveau von <span class="math inline">\(\alpha=0{,}05\)</span> gleich <span class="math inline">\(1{,}813\)</span> beträgt.</li>
 <li class="fragment">Die Nullhypothese wird also nicht abgelehnt, und der Effekt als nicht signifikant gewertet.</li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -1671,7 +1669,7 @@ b_1 = \frac{\hat{\sigma}_Y}{\hat{\sigma}_X}r
 </div>
 <div style="margin-top: -12px">
 <p><span class="math display">\[
-t = \frac{b_1}{SE(b_1)} = \frac{\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}r}{\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}\sqrt{\frac{1-r^2}{n-2}}} = \frac{r}{\sqrt{\frac{1-r^2}{n-2}}} = r\sqrt{\frac{n-2}{1-r^2}}
+t = \frac{b_1}{\hat{se}(b_1)} = \frac{\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}r}{\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}\sqrt{\frac{1-r^2}{n-2}}} = \frac{r}{\sqrt{\frac{1-r^2}{n-2}}} = r\sqrt{\frac{n-2}{1-r^2}}
 \]</span></p>
 </div>
 <div>
