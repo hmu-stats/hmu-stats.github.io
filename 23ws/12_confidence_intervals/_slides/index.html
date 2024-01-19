@@ -797,7 +797,7 @@ z_{(1-\frac{\alpha}{2})} = \Phi\left(1-\frac{\alpha}{2}\right)
 
 </div>
 <p><span class="math display">\[
-CI = \bar{x}\pm z_{(1-\frac{\alpha}{2})}\cdot\frac{\sigma}{\sqrt{n}}
+CI = \bar{x}\pm z_{(1-\frac{\alpha}{2})}\cdot se = \bar{x}\pm z_{(1-\frac{\alpha}{2})}\cdot\frac{\sigma}{\sqrt{n}}
 \]</span></p>
 </section>
 <section class="slide level2">
@@ -881,7 +881,7 @@ CI=\hat{\theta}\pm z_{(1-\frac{\alpha}{2})}\cdot se\qquad\text{bzw.}\qquad CI=\h
 </section>
 <section class="slide level2">
 <h2>Einflussfaktoren auf das Konfidenzintervall</h2>
-<p><strong>Einflussfaktor 1:</strong> je <em>größer</em> die Streuung <span class="math inline">\(\sigma\)</span> des Merkmals in der Population, desto <em>größer</em> ist das Konfidentintervall.</p>
+<p><strong>Einflussfaktor 1:</strong> je <em>größer</em> die Streuung <span class="math inline">\(\sigma\)</span> des Merkmals in der Population, desto <em>größer</em> ist das Konfidenzintervall.</p>
 <div class="vspace-medium">
 
 </div>
@@ -893,7 +893,7 @@ CI=\bar{x}\pm z_{(1-\frac{\alpha}{2})}\cdot\frac{\color{blue}{\sigma}}{\sqrt{n}}
 </section>
 <section class="slide level2">
 <h2>Einflussfaktoren auf das Konfidenzintervall</h2>
-<p><strong>Einflussfaktor 2:</strong> je <em>größer</em> die Stichprobe <span class="math inline">\(n\)</span>, desto <em>kleiner</em> ist das Konfidentintervall.</p>
+<p><strong>Einflussfaktor 2:</strong> je <em>größer</em> die Stichprobe <span class="math inline">\(n\)</span>, desto <em>kleiner</em> ist das Konfidenzintervall.</p>
 <div class="vspace-medium">
 
 </div>
@@ -905,17 +905,16 @@ CI=\bar{x}\pm z_{(1-\frac{\alpha}{2})}\cdot\frac{\sigma}{\sqrt{\color{blue}{n}}}
 </section>
 <section class="slide level2">
 <h2>Einflussfaktoren auf das Konfidenzintervall</h2>
-<p><strong>Einflussfaktor 3:</strong> je <em>höher</em> das Konfidenzniveau <span class="math inline">\(1-\alpha\)</span>, desto <em>größer</em> ist das Konfidentintervall.</p>
+<p><strong>Einflussfaktor 3:</strong> je <em>höher</em> das Konfidenzniveau <span class="math inline">\(1-\alpha\)</span>, desto <em>größer</em> ist das Konfidenzintervall.</p>
 <div class="vspace-medium">
 
 </div>
 
 <img data-src="images/ci_alpha.png" class="r-stretch"><p><strong>Interpretation:</strong></p>
-<p>Je größer das Konfidenzintervall <span class="math inline">\(1-\alpha\)</span>, desto kleiner das Signifikanzniveau <span class="math inline">\(\alpha\)</span>, desto größer ist das Intervall potentieller Populationsparameter <span class="math inline">\(\theta\)</span>, die nicht signifikant verschieden vom Stichprobenkennwerwert <span class="math inline">\(\hat{\theta}\)</span> sind.</p>
+<p>Je größer das Konfidenzniveau <span class="math inline">\(1-\alpha\)</span>, desto größer der kritische z-Wert <span class="math inline">\(z_{(1-\frac{\alpha}{2})}\)</span>, desto größer ist das Intervall potentieller Populationsparameter <span class="math inline">\(\theta\)</span>, die statitisch kompatibel mit dem Stichprobenkennwerwert <span class="math inline">\(\hat{\theta}\)</span> sind.</p>
 <p><span class="math display">\[
 CI=\Delta\bar{x}\pm\color{blue}{z_{(1-\frac{\alpha}{2})}}\cdot\frac{\sigma}{\sqrt{n}}
 \]</span></p>
-<p><span style="font-size: 25px; margin-top: 13px">Alternativ, für Pragmatiker: je kleiner <span class="math inline">\(\alpha\)</span>, desto größer <span class="math inline">\(z_{(1-\frac{\alpha}{2})}\)</span>, desto größer das Konfidenzintervall.</span></p>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">

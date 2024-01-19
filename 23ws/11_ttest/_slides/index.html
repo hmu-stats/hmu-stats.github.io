@@ -1500,7 +1500,7 @@ t = \frac{r}{\hat{se}(r)} = r\sqrt{\frac{n-2}{1-r^2}}
 <div class="column" style="width:60%;">
 <div>
 <ul>
-<li>Die <strong>Nullhypothesenverteilung</strong> der Korrelation entspricht also der <strong>t-Verteilung</strong>.</li>
+<li>Die <strong>Nullhypothesenverteilung</strong> der Korrelation ist also eine <strong>t-Verteilung</strong>.</li>
 <li>Die Nullhypothese entspricht der Annahme, dass der wahre Zusammenhang in der Population <span class="math inline">\(\rho = 0\)</span> ist.</li>
 </ul>
 </div>
@@ -1809,7 +1809,7 @@ t = \frac{b_1}{\hat{se}(b_1)} = \frac{\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}r}{\f
 </div>
 </div>
 <p>Stichwort Signifikanz von Zusammenhängen: die Signifikanz des unerwarteten Zusammenhangs von TikTok-Onlinezeit und Entzündungswerten haben Sie bislang nicht getestet.</p>
-<p>Basierend auf dem Korrelationskoeffizienten <span class="math inline">\(r=0{,}517\)</span> ergibt sich die Prüfgröße t direkt:</p>
+<p>Basierend auf dem Korrelationskoeffizienten <span class="math inline">\(r=0{,}517\)</span> und der Stichprobengröße <span class="math inline">\(n=50\)</span> ergibt sich die Prüfgröße <span class="math inline">\(t\)</span> direkt:</p>
 <div class="vspace-small">
 
 </div>
@@ -1963,8 +1963,8 @@ p=\int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx = 1-F_t(t|\scriptsiz
 <p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important" height="200"></p>
 </div>
 </div>
-<p>Kurios — das Pendel schlägt exakt auf der anderen Seite des Signifikanzniveaus aus! Der Entzündungseffekt ist nicht mehr signifikant. Der TikTok-Effekt bleibt stabil.</p>
-<p>Bei beiden Effekten zeigt sich die leicht konservativere Natur der t-Verteilung. Die stärkeren Flanken im Vergleich zur Normalverteilung führen zu geringfügig höheren p-Werten. Notgedrungen müssen Sie Ihre zentrale Grafik anpassen und ein Signifikanzsternchen entfernen:</p>
+<p>Kurios — das Pendel beim Entzündungseffekt schlägt exakt auf der anderen Seite des Signifikanzniveaus aus! Der Effekt ist nun nicht mehr signifikant. Der TikTok-Effekt bleibt stabil.</p>
+<p>Bei beiden Effekten zeigt sich die leicht konservativere Natur der t-Verteilung. Die stärkeren Flanken im Vergleich zur Normalverteilung führen zu geringfügig höheren p-Werten. Notgedrungen müssen Sie Ihre zentrale Grafik anpassen und das Signifikanzsternchen beim Entzündungseffekt entfernen:</p>
 <p><img data-src="images/paradoxia_histogram_inflammation_sem_nonsig.png" height="270"></p>
 <!-- ```{python}
 import numpy as np
