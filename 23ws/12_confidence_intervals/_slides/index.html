@@ -616,9 +616,11 @@ Noch etwas allgemeiner gesprochen werden Konfidenzintervalle für **unbekannte P
 <h2>Konfidenzniveau</h2>
 <div class="columns">
 <div class="column" style="width:48%;">
+<div>
 <ul>
-<li class="fragment">Konfidenzintervalle können für verschiedene <span style=" color: navy !important;"><strong>Konfidenzniveaus</strong></span> (auch “Überdeckungs-wahrscheinlichkeiten”) angegeben werden:</li>
+<li>Konfidenzintervalle können für verschiedene <span style=" color: navy !important;"><strong>Konfidenzniveaus</strong></span> (auch “Überdeckungs-wahrscheinlichkeiten”) angegeben werden:</li>
 </ul>
+</div>
 <p><span class="math display">\[
 \text{Konfidenzniveau:}\qquad 1-\alpha
 \]</span></p>
@@ -651,7 +653,9 @@ Noch etwas allgemeiner gesprochen werden Konfidenzintervalle für **unbekannte P
 <li class="fragment">Grundsätzlich gilt: <strong>je höher das zugrundegelegte Konfidenzniveau, desto größer auch das Konfidenzintervall</strong>.</li>
 </ul>
 </div><div class="column" style="width:28%;">
+<div class="fragment">
 <p><img data-src="images/ci_size.png"></p>
+</div>
 </div>
 </div>
 <!----------------->
@@ -666,7 +670,7 @@ Noch etwas allgemeiner gesprochen werden Konfidenzintervalle für **unbekannte P
 <li class="fragment">Jedes Konfidenzniveau <span class="math inline">\(1-\alpha\)</span> ist mit einem kritischen z-Wert <span class="math inline">\(z_\text{crit}\)</span> verbunden.</li>
 <li class="fragment">Da Konfidenzintervalle immer zweiseitig sind, verteilt sich die Irrtumswahrscheinlichkeit <span class="math inline">\(\alpha\)</span> auf beide Flanken der Standardnormalverteilung. Folgende Nomenklatur für kritische z-Werte hat sich deshalb eingebürgert:</li>
 </ul>
-<div style="margin-top: -20px">
+<div class="fragment" style="margin-top: -20px">
 <p><span class="math display">\[
 z_\text{crit} = z_{(1-\frac{\alpha}{2})}
 \]</span></p>
@@ -687,7 +691,7 @@ z_\text{crit} = z_{(1-\frac{\alpha}{2})}
 <ul>
 <li class="fragment">Der kritische z-Wert wird wie bisher auf Basis der Verteilungsfunktion <span class="math inline">\(\Phi\)</span> der Standardnormalverteilung berechnet (→ z-Tabelle!):</li>
 </ul>
-<div style="margin-top: -20px">
+<div class="fragment" style="margin-top: -20px">
 <p><span class="math display">\[
 z_{(1-\frac{\alpha}{2})} = \Phi\left(1-\frac{\alpha}{2}\right)
 \]</span></p>
@@ -981,11 +985,11 @@ CI=\Delta\bar{x}\pm\color{blue}{z_{(1-\frac{\alpha}{2})}}\cdot\frac{\sigma}{\sqr
 </div>
 <div>
 <ul>
-<li>Ob für die Berechnung eines Konfidenzintervalls der kritischer z-Wert <span class="math inline">\(z_{(1-\frac{\alpha}{2})}\)</span> ode der kritische t-Wert <span class="math inline">\(t_{(1-\frac{\alpha}{2},\;\text{df})}\)</span> verwendet wird, ist in der statistischen Praxis häufig nicht ganz konsistent.
+<li>Ob für die Berechnung eines Konfidenzintervalls der kritischer z-Wert <span class="math inline">\(z_{(1-\frac{\alpha}{2})}\)</span> oder der kritische t-Wert <span class="math inline">\(t_{(1-\frac{\alpha}{2},\;\text{df})}\)</span> verwendet wird, ist in der statistischen Praxis häufig nicht ganz konsistent.
 <ul>
 <li>Bei Konfidenzintervallen von Mittelwerten <span class="math inline">\(\bar{x}\)</span> und Mittelwertdifferenzen <span class="math inline">\(\Delta\bar{x}\)</span> wird <span class="math inline">\(t_{(1-\frac{\alpha}{2},\;\text{df})}\)</span> verwendet.</li>
 <li>Bei Konfidenzintervallen von Korrelationen <span class="math inline">\(r\)</span> hat es sich eingebürgert, <span class="math inline">\(z_{(1-\frac{\alpha}{2})}\)</span> zu verwenden (in Kombination mit der Fisher-z-Transformation).</li>
-<li>Bei Konfidenzintervallen von Regressionskoeffizienten <span class="math inline">\(\hat{b}_i\)</span> wird <span class="math inline">\(t_{(1-\frac{\alpha}{2},\;\text{df})}\)</span> verwendet.</li>
+<li>Bei Konfidenzintervallen von Regressionskoeffizienten <span class="math inline">\(b_i\)</span> wird <span class="math inline">\(t_{(1-\frac{\alpha}{2},\;\text{df})}\)</span> verwendet.</li>
 <li>Bei Konfidenzintervallen von Proportionen/Anteilen <span class="math inline">\(\hat{p}\)</span> wird <span class="math inline">\(z_{(1-\frac{\alpha}{2})}\)</span> verwendet — dies hängt hier aber damit zusammen, dass die t-Verteilung für Proportionen/Anteile nicht valide ist.</li>
 </ul></li>
 </ul>
@@ -1186,18 +1190,23 @@ CI_z = z_r\pm z_{(1-\frac{\alpha}{2})}\cdot\hat{se} = 0{,}424\pm 1{,}96\cdot \sc
 <p><span class="math display">\[
 CI = [\tanh{(z_r^{u})}; \tanh{(z_r^{o})}] = [\tanh{(-0{,}230)}; \tanh{(1{,}077)}] = [-0{,}226; 0{,}792]
 \]</span></p>
-<p>Das Konfidenzintervall für unsere Korrelation <span class="math inline">\(r=0{,}4\)</span> lautet also <span class="math inline">\([-0{,}226; 0{,}792]\)</span>. Das ist ein sehr großer Bereich, der sowohl negative als auch positive Werte umfasst.</p>
+<p>Das Konfidenzintervall für unsere Korrelation <span class="math inline">\(r=0{,}4\)</span> lautet also <span class="math inline">\([-0{,}226; 0{,}792]\)</span>. Das ist ein sehr großer Bereich, der sowohl negative als auch positive Werte umfasst. <strong>Und wir sehen: bei der Korrelation können Konfidenzintervalle asymmetrisch sein!</strong></p>
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="fragment">
-<p>Damit ist insbesondere auch der Wert <span class="math inline">\(0\)</span> im Konfidenzintervall enthalten und wir können direkt ablesen, dass ein Signifikanztest mit <span class="math inline">\(\alpha=0{,}05\)</span> nicht signifikant wäre.</p>
+<p>Damit sind insbesondere auch Korrelationswerte <span class="math inline">\(\le 0\)</span> im Konfidenzintervall enthalten und wir können direkt ablesen, dass ein Signifikanztest mit <span class="math inline">\(\alpha=0{,}05\)</span> für die Hypothese <span class="math inline">\(\rho &gt; 0\)</span> nicht signifikant wäre.</p>
 </div>
 <div class="fragment">
-<p><span style="font-size: 21px">Warum? Weil das Konfidenzintervall jene Korrelationsbereiche umfasst, in denen die Populationskorrelation <span class="math inline">\(\rho\)</span> nicht signifikant verschieden von unserem Stichprobenwert <span class="math inline">\(r\)</span> ist. Insbesondere ist also auch der Wert <span class="math inline">\(\rho=0\)</span> nicht signifikant verschieden von unserem Wert <span class="math inline">\(r=0{,}4\)</span> und damit die Nullhypothese <strong>nicht abgelehnt</strong>.</span></p>
+<p><span style="font-size: 21px">Warum? Weil das Konfidenzintervall jene Korrelationsbereiche umfasst, in denen mögliche Populationskorrelationen <span class="math inline">\(\rho\)</span> nicht signifikant verschieden von unserem Stichprobenwert <span class="math inline">\(r\)</span> wären. Insbesondere schließt das Konfidenzintervall Werte <span class="math inline">\(\rho\le 0\)</span> ein, d.h. ein ganzer Wertebereich der Nullhypothese ist nicht signifikant verschieden von <span class="math inline">\(r\)</span> (Hinweis: die Nullhypothese lautet: <span class="math inline">\(\rho \le 0\)</span>). Die Nullhypothese ist damit <strong>nicht abgelehnt</strong>.</span></p>
 </div>
 </div><div class="column" style="width:30%;">
 <div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="images/ci_corr.png"></p>
+<figcaption>Zu beachten ist das assymetrische Konfidenzintervall um den Stichprobenwert <span class="math inline">\(r=0{,}4\)</span>.</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -1209,49 +1218,65 @@ CI = [\tanh{(z_r^{u})}; \tanh{(z_r^{o})}] = [\tanh{(-0{,}230)}; \tanh{(1{,}077)}
 </section>
 <section class="slide level2">
 <h2>Konfidenzintervalle für Regressionskoeffizienten</h2>
+<div>
 <ul>
-<li class="fragment">Im Gegensatz zu Korrelationskoeffizienten sind Regressionskoeffizienten <span class="math inline">\(b_i\)</span> nicht auf das Intervall <span class="math inline">\([0; 1]\)</span> beschränkt.</li>
-<li class="fragment">In diesem Fall gilt die gleiche Logik wie bei Mittelwert(unterschied)en: ist der Standardfehler bekannt kann der z-Wert verwendet werden, <em>im allgemeinen Fall</em> jedoch sollte der t-Wert verwendet werden:</li>
+<li>Im Gegensatz zu Korrelationskoeffizienten sind Regressionskoeffizienten <span class="math inline">\(b_i\)</span> nicht auf das Intervall <span class="math inline">\([0; 1]\)</span> beschränkt.</li>
+<li>In diesem Fall gilt die gleiche Logik wie bei Mittelwert(unterschied)en: ist der Standardfehler bekannt kann der z-Wert verwendet werden, <em>im allgemeinen Fall</em> jedoch sollte der t-Wert verwendet werden:</li>
 </ul>
+</div>
 <p><span class="math display">\[
 CI=b_i\pm t_{(1-\frac{\alpha}{2},\,n-2)}\cdot\hat{se}
 \]</span></p>
 <p><span style="font-size: 20px">(Wir erinnern uns: für Korrelation und Steigung müssen 2 Mittelwerte berechnet werden (die von <span class="math inline">\(x\)</span> und <span class="math inline">\(y\)</span>), daher wird die t-Verteilung mit <span class="math inline">\(\text{df}=n-2\)</span> Freiheitsgraden angewandt.)</span></p>
+<div class="fragment">
 <p>Im Fall der Steigung (<span class="math inline">\(b_1\)</span>) galt:</p>
 <p><span class="math display">\[
 \hat{se}(b_1)= \frac{\hat{\sigma}_Y}{\hat{\sigma}_X}\sqrt{\frac{1-r^2}{n-2}}
 \]</span></p>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
 </section>
 <section class="slide level2">
 <h2><span style="font-size:38px">Konfidenzintervalle für Regressionssteigung: graphische Darstellung</span></h2>
+<div>
 <ul>
-<li class="fragment">Moderne Statistikprogramme können die Unsicherheit die mit der Steigung der einfachen Regression verbunden ist, auch graphisch zum Ausdruck bringen.</li>
-<li class="fragment">Um das illustrieren, verwenden wir erneut das Größe-Gewicht-Beispiel.</li>
+<li>Moderne Statistikprogramme können die Unsicherheit die mit der Steigung der einfachen Regression verbunden ist, auch graphisch zum Ausdruck bringen.</li>
+</ul>
+</div>
+<div style="margin-top: -15px">
+<ul>
+<li class="fragment">Um das illustrieren, verwenden wir erneut den Beispielzusammenhang Größe-Gewicht (<span class="math inline">\(r=0{,}4\)</span>).</li>
 <li class="fragment">Wir nehmen als Standardabweichungen an <span class="math inline">\(\hat{\sigma}_\text{Größe} = 16{,}5\)</span> und <span class="math inline">\(\hat{\sigma}_\text{Gewicht} = 6{,}8\)</span>. Damit ergibt sich die Steigung <span class="math inline">\(b_1\)</span> und der zugehörige Standardfehler:</li>
 </ul>
-<div style="margin-top: -15px">
+</div>
+<div class="fragment" style="margin-top: -15px">
 <p><span class="math display">\[
-b_1 = \frac{\hat{\sigma}_\text{Gewicht}}{\hat{\sigma}_\text{Größe}}\cdot r = \frac{6{,}8}{16{,}5}\cdot 0{,}4 \approx 0{,}16
+b_1 = \frac{\hat{\sigma}_\text{Gewicht}}{\hat{\sigma}_\text{Größe}}\cdot r = \frac{6{,}8}{16{,}5}\cdot 0{,}4 = 0{,}16\qquad\Big(\text{Reminder:}\;b_1=\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}r\Big)
 \]</span></p>
 </div>
+<div class="fragment">
 <p><span class="math display">\[
-\hat{se}(b_1)= \frac{\hat{\sigma}_Y}{\hat{\sigma}_X}\sqrt{\frac{1-r^2}{n-2}} = \frac{6{,}8}{16{,}5}\sqrt{\frac{1-0{,}4^2}{12-2}} \approx 0{,}12
+\hat{se}(b_1)= \frac{\hat{\sigma}_Y}{\hat{\sigma}_X}\sqrt{\frac{1-r^2}{n-2}} = \frac{6{,}8}{16{,}5}\sqrt{\frac{1-0{,}4^2}{12-2}} = 0{,}12
 \]</span></p>
+</div>
 <ul>
 <li class="fragment">Der kritische t-Wert lautet:</li>
 </ul>
+<div class="fragment">
 <p><span class="math display">\[
-t_{(1-\frac{\alpha}{2},\,n-2)} = t_{(0.975,\,10)} \approx 2{,}23
+t_{(1-\frac{\alpha}{2},\,n-2)} = t_{(0.975,\,10)} = 2{,}23
 \]</span></p>
+</div>
 <ul>
 <li class="fragment">Damit ergibt sich das Konfidenzintervall zu</li>
 </ul>
+<div class="fragment">
 <p><span class="math display">\[
 CI=b_1\pm t_{(1-\frac{\alpha}{2},\,n-2)}\cdot\hat{se}=0{,}16\pm 2{,}23\cdot 0{,}12=0{,}16\pm 0{,}27 = [-0{,}11;0{,}43]
 \]</span></p>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1263,10 +1288,12 @@ CI=b_1\pm t_{(1-\frac{\alpha}{2},\,n-2)}\cdot\hat{se}=0{,}16\pm 2{,}23\cdot 0{,}
 </div>
 <div class="columns">
 <div class="column" style="width:58%;">
+<div>
 <ul>
-<li class="fragment">Die maximale Steigung innerhalb des 95%-Konfidenz-intervalls beträgt also <span class="math inline">\(-0{,}11\)</span> und die minimale Steigung <span class="math inline">\(0{,}43\)</span>.</li>
-<li class="fragment">In Regressionsplots wird der Bereich <em>aller mit dem Konfidenzintervall kompatiblen Steigungen</em> häufig als farblich hinterlegte Fläche angedeutet (hellgrau in der Abbildung rechts).</li>
+<li>Die maximale Steigung innerhalb des 95%-Konfidenz-intervalls beträgt also <span class="math inline">\(-0{,}11\)</span> und die minimale Steigung <span class="math inline">\(0{,}43\)</span>.</li>
+<li>In Regressionsplots wird der Bereich <em>aller mit dem Konfidenzintervall kompatiblen Steigungen</em> häufig als farblich hinterlegte Fläche angedeutet (hellgrau in der Abbildung rechts).</li>
 </ul>
+</div>
 </div><div class="column" style="width:42%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1293,20 +1320,26 @@ CI=b_1\pm t_{(1-\frac{\alpha}{2},\,n-2)}\cdot\hat{se}=0{,}16\pm 2{,}23\cdot 0{,}
 </section>
 <section class="slide level2">
 <h2>Konfidenzintervalle für Anteile / relative Häufigkeiten</h2>
+<div>
 <ul>
-<li class="fragment"><strong>Relative Häufigkeiten</strong> (<strong>Anteile</strong>) setzen eine Teilmenge <span class="math inline">\(k\)</span>, die ein bestimmtes Kriterium erfüllt, ins Verhältnis zur Gesamtmenge <span class="math inline">\(n\)</span>:</li>
+<li><strong>Relative Häufigkeiten</strong> (<strong>Anteile</strong>) setzen eine Teilmenge <span class="math inline">\(k\)</span>, die ein bestimmtes Kriterium erfüllt, ins Verhältnis zur Gesamtmenge <span class="math inline">\(n\)</span>:</li>
 </ul>
+</div>
+<div style="margin-top: -30px; margin-bottom: 10px">
 <p><span class="math display">\[
 \hat{p} = \frac{k}{n}
 \]</span></p>
+</div>
 <ul>
 <li class="fragment">Das ^ bringt hier zum Ausdruck, dass wir in der Regel nicht die gesamte Population <span class="math inline">\(N\)</span> untersuchen, sondern eine Stichprobe der Größe <span class="math inline">\(n\)</span> und daher der gemessene Anteil <span class="math inline">\(\hat{p}\)</span> nur eine Schätzung für den wahren Anteil <span class="math inline">\(p\)</span> in der Population darstellt.</li>
 <li class="fragment">Im Vegetarier-Beispiel wäre interessant, mit welcher Unsicherheit die Prozentschätzungen behaftet sind ⟶ Konfidenzintervall!</li>
 <li class="fragment">Die Stichprobenverteilung von relativen Häufigkeiten <span class="math inline">\(p\)</span> ist eine <strong>Binomialverteilung</strong>. Ihr Standardfehler ist bekannt:</li>
 </ul>
+<div class="fragment">
 <p><span class="math display">\[
 \hat{se}(\hat{p}) = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\quad\scriptsize\text{(Achtung: p steht hier für den Anteil ("proportion") und nicht den p-Wert!)}
 \]</span></p>
+</div>
 <ul>
 <li class="fragment">Der Standardfehler wäre ein erstes mögliches Maß für die Unsicherheit unserer Schätzung<br><span style="font-size: 23px">(zur Erinnerung: der Standardfehler ist das 68%-Konfidenzintervall)</span></li>
 </ul>
@@ -1315,14 +1348,22 @@ CI=b_1\pm t_{(1-\frac{\alpha}{2},\,n-2)}\cdot\hat{se}=0{,}16\pm 2{,}23\cdot 0{,}
 <h2>Konfidenzintervalle für Anteile / relative Häufigkeiten</h2>
 <div class="columns">
 <div class="column" style="width:55%;">
+<div>
 <ul>
-<li class="fragment">Ähnlich wie der Korrelationskoeffizient sind Anteile auf einen Bereich eingeschränkt (0 bis 1 bzw. 0 bis 100%) und weisen daher eine <strong>asymmetrische Stichprobenverteilung</strong> auf.</li>
+<li>Ähnlich wie der Korrelationskoeffizient sind Anteile auf einen Bereich eingeschränkt (0 bis 1 bzw. 0 bis 100%) und weisen daher eine <strong>asymmetrische Stichprobenverteilung</strong> auf.</li>
+</ul>
+</div>
+<div style="margin-top: -15px">
+<ul>
 <li class="fragment">Sind die Stichprobengrößen <span class="math inline">\(n\)</span> nicht zu klein und die Anteile nicht zu extrem (zu nah bei 0 oder 1), kann die Binomialverteilung jedoch durch die <strong>Normalverteilung approximiert</strong> werden.</li>
 <li class="fragment">In diesem Fall können z-Werte für die Konstruktion des Konfidenzintervalls verwendet werden<a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a> <a href="#/footnotes" class="footnote-ref" id="fnref4" role="doc-noteref" data-footnote-href="#/fn4" onclick=""><sup>4</sup></a>:</li>
 </ul>
+</div>
+<div class="fragment">
 <p><span class="math display">\[
 CI(\hat{p}) = \hat{p}\pm z_{(1-\frac{\alpha}{2})}\cdot\hat{se}(\hat{p})
 \]</span></p>
+</div>
 </div><div class="column" style="width:45%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1337,7 +1378,7 @@ CI(\hat{p}) = \hat{p}\pm z_{(1-\frac{\alpha}{2})}\cdot\hat{se}(\hat{p})
 <li class="fragment">Im Computerzeitalter sollten allerdings für die Konfidenzintervalle von Anteilen präzisere Schätzungen wie das <strong>Wilson-Intervall</strong><a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a> verwendet werden.</li>
 </ul>
 </div>
-<div class="notabene">
+<div class="notabene fragment">
 <div class="columns">
 <div class="column" style="width:7%;">
 <div style="margin-top: 10px">
@@ -1351,168 +1392,35 @@ CI(\hat{p}) = \hat{p}\pm z_{(1-\frac{\alpha}{2})}\cdot\hat{se}(\hat{p})
 <aside></aside></section>
 <section class="slide level2">
 <h2>Konfidenzintervalle für Anteile / relative Häufigkeiten</h2>
+<div>
 <ul>
-<li class="fragment">In unserem Vegetarierbeispiel sind die Fallzahlen sehr groß (<span class="math inline">\(n=6933\)</span> und <span class="math inline">\(n=25.677\)</span>), so dass eine Näherung mit der Normalverteilung angemessen ist. Wir können diese daher zur Einschätzung der (Un)Sicherheit der Prozentangaben nutzen.</li>
+<li>In unserem Vegetarierbeispiel sind die Fallzahlen sehr groß (<span class="math inline">\(n=6933\)</span> und <span class="math inline">\(n=25.677\)</span>), so dass eine Näherung mit der Normalverteilung angemessen ist. Wir können diese daher zur Einschätzung der (Un)Sicherheit der Prozentangaben nutzen.</li>
+</ul>
+</div>
+<div style="margin-top: -15px">
+<ul>
 <li class="fragment">Für die Standardfehler erhalten wir:</li>
 </ul>
+</div>
+<div class="fragment">
 <p><span class="math display">\[
 \hat{se}_\text{RKI} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} = \sqrt{\frac{0{,}04(1-0{,}04)}{6933}} = 0{,}0024\\
 \hat{se}_\text{Statista} = \sqrt{\frac{0{,}075(1-0{,}075)}{25677}} = 0{,}0016
 \]</span></p>
+</div>
 <ul>
 <li class="fragment">Den kritischen z-Wert für ein 95%-Intervall kennen wir mittlerweile aus dem FF: 1,96</li>
 <li class="fragment">Damit ergibt sich für die Konfidenzintervalle:</li>
 </ul>
+<div class="fragment">
 <p><span class="math display">\[
-CI_\text{RKI} = \hat{p}\pm z_{(1-\frac{\alpha}{2})}\cdot\hat{se}(\hat{p})  = 0{,}04\pm 1{,}96\cdot0{,}0024 = [0{,}035; 0{,}045] \\
-CI_\text{Statista} = 0{,}075\pm 1{,}96\cdot0{,}0016 = [0{,}072; 0{,}078]
+CI_\text{RKI} = \hat{p}\pm z_{(1-\frac{\alpha}{2})}\cdot\hat{se}(\hat{p})  = 0{,}04\pm 1{,}96\cdot0{,}0024 = [0{,}0353; 0{,}0447] \\
+CI_\text{Statista} = 0{,}075\pm 1{,}96\cdot0{,}0016 = [0{,}0719; 0{,}0781]
 \]</span></p>
+</div>
 <ul>
-<li class="fragment">Beide Schätzungen sind also recht präzise — und widersprechen sich!</li>
+<li class="fragment">Da das Konfidenzintervall in beiden Fällen weniger als 1% umfasst (prüfe nach!), sind die Schätzung tatsächlich recht präzise. Zugleich widersprechen sich beide Schätzungen (warum?).</li>
 </ul>
-</section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1><span style=" color: darkred !important;">Weiterführendes</span></h1>
-
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Konfidenzintervalle für Streuungsmaße</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 100px; "></p>
-<div class="columns">
-<div class="column" style="width:60%;">
-<ul>
-<li class="fragment">Auch für <strong>Streuungsmaße</strong> wie die Varianz oder Standardabweichung können Konfidenzintervalle berechnet werden — allerdings tritt dieser Fall wesentlich seltener auf.</li>
-<li class="fragment">Grund: Streuungsmaße sind <strong>selten Gegenstand wissenschaftlicher Fragestellungen</strong>.</li>
-<li class="fragment">Ein wichtige Ausnahme, bei der die Streuung von Interesse ist, ist die Varianz von Mittelwerten im Rahmen einer <strong>Varianzanalyse</strong> (→ Statistik 2!).</li>
-</ul>
-</div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center" style="margin-top: 50px">
-<figure>
-<p><img data-src="images/xkcd2110.png"></p>
-<figcaption>xkcd#2110<a href="#/footnotes" class="footnote-ref" id="fnref6" role="doc-noteref" data-footnote-href="#/fn6" onclick=""><sup>6</sup></a></figcaption>
-</figure>
-</div>
-</div>
-</div>
-<aside></aside></section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Konfidenzniveau</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 90px; "></p>
-<p>Es ist verführerisch anzunehmen, dass z.B. ein 95%-Konfidenzniveau bedeutet, dass der wahre Populationsparameter zu 95% innerhalb des Konfidenzintervalls liegt. <strong>Dem ist nicht so.</strong></p>
-<p>Wäre dem so, hätten wir auf magische Weise im Framework der Nullhypothesentestung die Möglichkeit eingeführt, die Wahrscheinlichkeit einer Hypothese zu bemessen (die Wahrscheinlichkeit einer Hypothese ist immer gleich der Wahrscheinlichkeit eines Parameterwertes oder -wertebereiches). <strong>Dies bleibt im Nullhypothesenframework unmöglich.</strong></p>
-<p>Der Populationskennwert ist ein fixer Wert und keine Zufallsvariable. Entweder liegt er in einem gegebenen Konfidenzintervall (p=1) oder nicht (p=0).</p>
-<p>Die Crux liegt im Detail der Formulierung “in einem <u>gegebenen</u> Konfidenzintervall”. <strong>Nach der Erhebung der Stichprobe</strong> (also für ein gegebenes Konfidenzintervall) ist es wie erwähnt im Kontext der Nullhypthesentestung sinnlos eine Wahrscheinlichkeit anzugeben, dass der Populationskennwert in diesem Intervall liegt.</p>
-<p>Anders ist die Situation <strong>vor Erhebung einer Stichprobe</strong> (d.h. bevor das Konfidenzintervall gegeben ist) — in diesem Fall können wir folgende Feststellung treffen:</p>
-<div class="greybox fragment" style="width: 88%">
-<p>Das Konfidenzniveau gibt die Wahrscheinlichkeit an, mit der das Konfidenzintervall einer <u>zu erhebenden</u> Stichprobe den wahren Populationsparameter einschließt.</p>
-</div>
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Konfidenzniveau</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 90px; "></p>
-<p>Diese Feststellung ist zugegebenermaßen etwas sehr theoretisch — schließlich interessieren wir uns in der Praxis für die Interpretation des Konfidenzintervalls genau dann, <em>wenn</em> wir Daten erhoben haben und das Intervall berechnet haben.</p>
-<p>Alternativ können wir daher das gleiche Prinzip einfach auf <u>zukünftige</u> hyothetische Stichprobenerhebungen nach der aktuellen Stichprobe anwenden. Wir gehen dabei von der <strong>Wahrscheinlichkeit</strong> einer einzelen (noch vor uns liegenden) Stichprobenerhebung zu einer <strong>Frequenz</strong> bei zukünftigen Stichprobenerhebungen über. Dies führt zur (wenig intuitiven 😉) <strong>Textbuchdefinition des Konfidenzniveaus</strong>:</p>
-<div class="definition table-justify">
-<!---  Definition--->
-<table>
-<colgroup>
-<col style="width: 15%">
-<col style="width: 85%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
-<td>Das <span style=" color: navy !important;"><strong>Konfidenzniveau</strong></span> gibt die relative Häufigkeit an, mit der Konfidenzintervalle zukünftiger Stichproben den wahren Populationsparameter einschließen.<br>
-Bei einem 95%-Konfidenzintervall erwarten wir also, dass 95% der hypothetischen (zukünftigen) Stichproben ein Konfidenzintervall aufweisen, das den Populationsparameter einschließt.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="vspace-large">
-
-</div>
-<p>Erscheint Ihnen die Definition des Konfidenzniveaus ähnlich unintuitiv wie die des Konfidenzintervalls selbst? Agreed. Es gilt die <em>Erste Regel von Konfidenzintervallen</em>:</p>
-<div class="colorbox fragment" style="text-align: center !important; margin-left: auto; margin-right: auto; background-color: white; border-width: 0; width: 80%">
-<p>Konfidenzintervalle sind <strong>nützlich</strong> aber <strong>nicht intuitiv</strong>.</p>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-<!--![Bei einem 95%-Konfidenzintervall weisen 95% aller hypothetischen zusätzlichen Stichproben Intervall-grenzen auf, die den wahren Wert einschließen. Im Beispiel sind die 5 Ausnahmen rot markiert, in denen der wahre Populationsparameter $\mu$ nicht innerhalb der Interallgrenzen liegt.^[https://shiny.rit.albany.edu/stat/confidence/]](images/CI95_simulation.png){width=262px style="margin-top: -35px !important"} -->
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">https://shiny.rit.albany.edu/stat/confidence/e</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 100px; "> <iframe width="100%" height="100%" src="https://shiny.rit.albany.edu/stat/confidence/"></iframe></p>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Konfidenzintervall-Beispiel von Welch</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 100px; "></p>
-<ul>
-<li class="fragment">Auf den Statistiker Bernard Welch (“Welch’s t-Test”) geht ein berühmtes Beispiel zurück,<br>das eindrucksvoll zeigt, warum die Interpretation des Konfidenzniveaus als “<em>Wahrscheinlichkeit, dass der Populationsparameter im Intervall liegt</em>” nur <u>vor</u> der Beobachtung der Daten zulässig ist.</li>
-</ul>
-<div style="margin-top: -15px">
-<div class="columns">
-<div class="column" style="width:69%;">
-<ul>
-<li class="fragment">Es sei bekannt, dass eine Zufallsvariable <span class="math inline">\(X\)</span> einer uniformen Verteilung folgt, die im Intervall <span class="math inline">\([\theta-\frac{1}{2}; \theta+\frac{1}{2}]\)</span> angesiedelt ist.</li>
-<li class="fragment">Der genaue “Shift” <span class="math inline">\(\theta\)</span> der Verteilung auf der x-Achse ist unbekannt und soll durch Messen von <span class="math inline">\(X\)</span> bestimmt werden.</li>
-<li class="fragment">Tatsächlich werden nur zwei Messwerte von <span class="math inline">\(X\)</span> erhoben, <span class="math inline">\(x_1\)</span> &amp; <span class="math inline">\(x_2\)</span>.</li>
-</ul>
-</div><div class="column" style="width:31%;">
-<p><img data-src="images/ci_welch_example.png"></p>
-</div>
-</div>
-</div>
-<div style="margin-top: -45px">
-<p><u>Vor der Messung:</u></p>
-</div>
-<div style="margin-top: -13px">
-<ul>
-<li class="fragment">Bei exakt zwei durchzuführenden Messungen <span class="math inline">\(x_1\)</span> und <span class="math inline">\(x_2\)</span> wissen wir, dass das Intervall <span class="math inline">\([\text{min}(x_1, x_2); \text{max}(x_1, x_2)]\)</span> ein 50%-Konfidenzintervall für <span class="math inline">\(\theta\)</span> darstellt.</li>
-<li class="fragment">Warum? Der Populationsparameter <span class="math inline">\(\theta\)</span> befindet sich <em>genau dann</em> in diesem Intervall, wenn <span class="math inline">\(x_1\)</span> und <span class="math inline">\(x_2\)</span> auf unterschiedlichen Seiten von <span class="math inline">\(\theta\)</span> liegen. Diese Wahrscheinlichkeit ist genau 50%.
-<ul>
-<li class="fragment">Warum? Die Wahrscheinlichkeit, dass <span class="math inline">\(x_1\)</span> links von <span class="math inline">\(\theta\)</span> (also im Intervall <span class="math inline">\(L\)</span>) liegt ist <span class="math inline">\(\frac{1}{2}\)</span>, ebenso die Wahrscheinlichkeit, dass <span class="math inline">\(x_2\)</span> rechts von <span class="math inline">\(\theta\)</span> (also im Intervall <span class="math inline">\(R\)</span>) liegt. Die Gesamtwahrscheinlichkeit für diesen Fall ist also <span class="math inline">\(\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{4}\)</span>. Der umgekehrte Fall, dass <span class="math inline">\(x_1\)</span> rechts von <span class="math inline">\(\theta\)</span> und <span class="math inline">\(x_2\)</span> links von <span class="math inline">\(\theta\)</span> liegt hat ebenfalls die Wahrscheinlichkeit <span class="math inline">\(\frac{1}{4}\)</span>. Die kombinierte Wahrscheinlichkeit beider Fälle ist daher <span class="math inline">\(\frac{1}{4}+\frac{1}{4}=\frac{1}{2}\)</span> oder 50%.</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Konfidenzintervall-Beispiel von Welch</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 100px; "></p>
-<div class="columns">
-<div class="column" style="width:69%;">
-<p><u>Nach der Messung:</u></p>
-<p>Nehmen wir an, dass wir nun zwei Messwerte <span class="math inline">\(x_1\)</span> und <span class="math inline">\(x_2\)</span> erhoben haben und außerdem, dass diese weiter als <span class="math inline">\(0{,}5\)</span> auseinanderliegen (<span class="math inline">\(|x_1-x_2|&gt;0{,}5\)</span>). Um es konkret zu machen, sagen wir <span class="math inline">\(x_1=1{,}2\)</span> und <span class="math inline">\(x_2 = 1{,}8\)</span>.</p>
-<p>In dieser Situation wissen wir nun mit <strong>100% Sicherheit</strong>, dass <span class="math inline">\(\theta\)</span> in unserem Intervall</p>
-<p><span class="math display">\[
-CI = [\text{min}(x_1, x_2); \text{max}(x_1, x_2)] = [1{,}2; 1{,}8]
-\]</span></p>
-</div><div class="column" style="width:31%;">
-<p><img data-src="images/ci_welch_example2.png" style="margin-top:45px !important"></p>
-</div>
-</div>
-<div style="margin-top: -10px">
-<p>liegt. Warum? <span class="math inline">\(\theta\)</span> kann nicht kleiner als <span class="math inline">\(1{,}3\)</span> sein, denn sonst wäre es nicht möglich gewesen,einen Messwert <span class="math inline">\(1{,}8\)</span> zu erhalten (beachte, dass der Bereich rechts und links von <span class="math inline">\(\theta\)</span> nur <span class="math inline">\(0{,}5\)</span> umfasst!). Ebenso kann <span class="math inline">\(\theta\)</span> nicht größer als <span class="math inline">\(1{,}7\)</span> sein, denn sonst wäre es nicht möglich gewesen, einen Messwert von <span class="math inline">\(1{,}2\)</span> zu erhalten.</p>
-</div>
-<p><strong>⇒ die Wahrscheinlichkeit, dass <span class="math inline">\(\theta\)</span> im Konfidenzintervall <span class="math inline">\([1{,}2; 1{,}8]\)</span> liegt, ist 100%.</strong></p>
-<div class="colorbox fragment">
-<p><strong>Bottom line:</strong> das <span style=" color: navy !important;"><strong>Konfidenzniveau</strong></span> gibt nur <u>vor der Messung</u> die Wahrscheinlichkeit an, dass der Populationsparameter <span class="math inline">\(\theta\)</span> im Konfidenzintervall liegen wird. <u>Nach der Messung</u> — und damit in der Praxis — gilt dies nicht mehr.</p>
-</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1659,6 +1567,157 @@ CI_z&amp;=z_r\pm z_{(1-\frac{\alpha}{2})}\cdot \frac{1}{\sqrt{N-3}} = 0{,}572\pm
 
 </div>
 <p><img data-src="images/paradoxia_ci_reg.png" height="400"></p>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1><span style=" color: darkred !important;">Weiterführendes</span></h1>
+
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Konfidenzintervalle für Streuungsmaße</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 100px; "></p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div>
+<ul>
+<li>Auch für <strong>Streuungsmaße</strong> wie die Varianz oder Standardabweichung können Konfidenzintervalle berechnet werden — allerdings tritt dieser Fall wesentlich seltener auf.</li>
+<li>Grund: Streuungsmaße sind <strong>selten Gegenstand wissenschaftlicher Fragestellungen</strong>.</li>
+<li>Ein wichtige Ausnahme, bei der die Streuung von Interesse ist, ist die Varianz von Mittelwerten im Rahmen einer <strong>Varianzanalyse</strong> (→ Statistik 2!).</li>
+</ul>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center" style="margin-top: 50px">
+<figure>
+<p><img data-src="images/xkcd2110.png"></p>
+<figcaption>xkcd#2110<a href="#/footnotes" class="footnote-ref" id="fnref6" role="doc-noteref" data-footnote-href="#/fn6" onclick=""><sup>6</sup></a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<aside></aside></section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Konfidenzniveau</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 90px; "></p>
+<p>Es ist verführerisch anzunehmen, dass z.B. ein 95%-Konfidenzniveau bedeutet, dass der wahre Populationsparameter zu 95% innerhalb des Konfidenzintervalls liegt. <strong>Dem ist nicht so.</strong></p>
+<p>Wäre dem so, hätten wir auf magische Weise im Framework der Nullhypothesentestung die Möglichkeit eingeführt, die Wahrscheinlichkeit einer Hypothese zu bemessen (die Wahrscheinlichkeit einer Hypothese ist immer gleich der Wahrscheinlichkeit eines Parameterwertes oder -wertebereiches). <strong>Dies bleibt im Nullhypothesenframework unmöglich.</strong></p>
+<p>Der Populationskennwert ist ein fixer Wert und keine Zufallsvariable. Entweder liegt er in einem gegebenen Konfidenzintervall (p=1) oder nicht (p=0).</p>
+<p>Die Crux liegt im Detail der Formulierung “in einem <u>gegebenen</u> Konfidenzintervall”. <strong>Nach der Erhebung der Stichprobe</strong> (also für ein gegebenes Konfidenzintervall) ist es wie erwähnt im Kontext der Nullhypthesentestung sinnlos eine Wahrscheinlichkeit anzugeben, dass der Populationskennwert in diesem Intervall liegt.</p>
+<p>Anders ist die Situation <strong>vor Erhebung einer Stichprobe</strong> (d.h. bevor das Konfidenzintervall gegeben ist) — in diesem Fall können wir folgende Feststellung treffen:</p>
+<div class="greybox" style="width: 88%">
+<p>Das Konfidenzniveau gibt die Wahrscheinlichkeit an, mit der das Konfidenzintervall einer <u>zu erhebenden</u> Stichprobe den wahren Populationsparameter einschließt.</p>
+</div>
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Konfidenzniveau</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 90px; "></p>
+<p>Diese Feststellung ist zugegebenermaßen etwas sehr theoretisch — schließlich interessieren wir uns in der Praxis für die Interpretation des Konfidenzintervalls genau dann, <em>wenn</em> wir Daten erhoben haben und das Intervall berechnet haben.</p>
+<p>Alternativ können wir daher das gleiche Prinzip einfach auf <u>zukünftige</u> hyothetische Stichprobenerhebungen nach der aktuellen Stichprobe anwenden. Wir gehen dabei von der <strong>Wahrscheinlichkeit</strong> einer einzelen (noch vor uns liegenden) Stichprobenerhebung zu einer <strong>Frequenz</strong> bei zukünftigen Stichprobenerhebungen über. Dies führt zur (wenig intuitiven 😉) <strong>Textbuchdefinition des Konfidenzniveaus</strong>:</p>
+<div class="definition table-justify">
+<!---  Definition--->
+<table>
+<colgroup>
+<col style="width: 15%">
+<col style="width: 85%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
+<td>Das <span style=" color: navy !important;"><strong>Konfidenzniveau</strong></span> gibt die relative Häufigkeit an, mit der Konfidenzintervalle zukünftiger Stichproben den wahren Populationsparameter einschließen.<br>
+Bei einem 95%-Konfidenzintervall erwarten wir also, dass 95% der hypothetischen (zukünftigen) Stichproben ein Konfidenzintervall aufweisen, das den Populationsparameter einschließt.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="vspace-large">
+
+</div>
+<p>Erscheint Ihnen die Definition des Konfidenzniveaus ähnlich unintuitiv wie die des Konfidenzintervalls selbst? Agreed. Es gilt die <em>Erste Regel von Konfidenzintervallen</em>:</p>
+<div class="colorbox" style="text-align: center !important; margin-left: auto; margin-right: auto; background-color: white; border-width: 0; width: 80%">
+<p>Konfidenzintervalle sind <strong>nützlich</strong> aber <strong>nicht intuitiv</strong>.</p>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<!--![Bei einem 95%-Konfidenzintervall weisen 95% aller hypothetischen zusätzlichen Stichproben Intervall-grenzen auf, die den wahren Wert einschließen. Im Beispiel sind die 5 Ausnahmen rot markiert, in denen der wahre Populationsparameter $\mu$ nicht innerhalb der Interallgrenzen liegt.^[https://shiny.rit.albany.edu/stat/confidence/]](images/CI95_simulation.png){width=262px style="margin-top: -35px !important"} -->
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">https://shiny.rit.albany.edu/stat/confidence/e</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 100px; "> <iframe width="100%" height="100%" src="https://shiny.rit.albany.edu/stat/confidence/"></iframe></p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Konfidenzintervall-Beispiel von Welch</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 100px; "></p>
+<div>
+<ul>
+<li>Auf den Statistiker Bernard Welch (“Welch’s t-Test”) geht ein berühmtes Beispiel zurück,<br>das eindrucksvoll zeigt, warum die Interpretation des Konfidenzniveaus als “<em>Wahrscheinlichkeit, dass der Populationsparameter im Intervall liegt</em>” nur <u>vor</u> der Beobachtung der Daten zulässig ist.</li>
+</ul>
+</div>
+<div style="margin-top: -15px">
+<div class="columns">
+<div class="column" style="width:69%;">
+<div>
+<ul>
+<li>Es sei bekannt, dass eine Zufallsvariable <span class="math inline">\(X\)</span> einer uniformen Verteilung folgt, die im Intervall <span class="math inline">\([\theta-\frac{1}{2}; \theta+\frac{1}{2}]\)</span> angesiedelt ist.</li>
+<li>Der genaue “Shift” <span class="math inline">\(\theta\)</span> der Verteilung auf der x-Achse ist unbekannt und soll durch Messen von <span class="math inline">\(X\)</span> bestimmt werden.</li>
+<li>Tatsächlich werden nur zwei Messwerte von <span class="math inline">\(X\)</span> erhoben, <span class="math inline">\(x_1\)</span> &amp; <span class="math inline">\(x_2\)</span>.</li>
+</ul>
+</div>
+</div><div class="column" style="width:31%;">
+<p><img data-src="images/ci_welch_example.png"></p>
+</div>
+</div>
+</div>
+<div style="margin-top: -45px">
+<p><u>Vor der Messung:</u></p>
+</div>
+<div style="margin-top: -13px">
+<div>
+<ul>
+<li>Bei exakt zwei durchzuführenden Messungen <span class="math inline">\(x_1\)</span> und <span class="math inline">\(x_2\)</span> wissen wir, dass das Intervall <span class="math inline">\([\text{min}(x_1, x_2); \text{max}(x_1, x_2)]\)</span> ein 50%-Konfidenzintervall für <span class="math inline">\(\theta\)</span> darstellt.</li>
+<li>Warum? Der Populationsparameter <span class="math inline">\(\theta\)</span> befindet sich <em>genau dann</em> in diesem Intervall, wenn <span class="math inline">\(x_1\)</span> und <span class="math inline">\(x_2\)</span> auf unterschiedlichen Seiten von <span class="math inline">\(\theta\)</span> liegen. Diese Wahrscheinlichkeit ist genau 50%.
+<ul>
+<li>Warum? Die Wahrscheinlichkeit, dass <span class="math inline">\(x_1\)</span> links von <span class="math inline">\(\theta\)</span> (also im Intervall <span class="math inline">\(L\)</span>) liegt ist <span class="math inline">\(\frac{1}{2}\)</span>, ebenso die Wahrscheinlichkeit, dass <span class="math inline">\(x_2\)</span> rechts von <span class="math inline">\(\theta\)</span> (also im Intervall <span class="math inline">\(R\)</span>) liegt. Die Gesamtwahrscheinlichkeit für diesen Fall ist also <span class="math inline">\(\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{4}\)</span>. Der umgekehrte Fall, dass <span class="math inline">\(x_1\)</span> rechts von <span class="math inline">\(\theta\)</span> und <span class="math inline">\(x_2\)</span> links von <span class="math inline">\(\theta\)</span> liegt hat ebenfalls die Wahrscheinlichkeit <span class="math inline">\(\frac{1}{4}\)</span>. Die kombinierte Wahrscheinlichkeit beider Fälle ist daher <span class="math inline">\(\frac{1}{4}+\frac{1}{4}=\frac{1}{2}\)</span> oder 50%.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Konfidenzintervall-Beispiel von Welch</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 100px; "></p>
+<div class="columns">
+<div class="column" style="width:69%;">
+<p><u>Nach der Messung:</u></p>
+<p>Nehmen wir an, dass wir nun zwei Messwerte <span class="math inline">\(x_1\)</span> und <span class="math inline">\(x_2\)</span> erhoben haben und außerdem, dass diese weiter als <span class="math inline">\(0{,}5\)</span> auseinanderliegen (<span class="math inline">\(|x_1-x_2|&gt;0{,}5\)</span>). Um es konkret zu machen, sagen wir <span class="math inline">\(x_1=1{,}2\)</span> und <span class="math inline">\(x_2 = 1{,}8\)</span>.</p>
+<p>In dieser Situation wissen wir nun mit <strong>100% Sicherheit</strong>, dass <span class="math inline">\(\theta\)</span> in unserem Intervall</p>
+<p><span class="math display">\[
+CI = [\text{min}(x_1, x_2); \text{max}(x_1, x_2)] = [1{,}2; 1{,}8]
+\]</span></p>
+</div><div class="column" style="width:31%;">
+<p><img data-src="images/ci_welch_example2.png" style="margin-top:45px !important"></p>
+</div>
+</div>
+<div style="margin-top: -10px">
+<p>liegt. Warum? <span class="math inline">\(\theta\)</span> kann nicht kleiner als <span class="math inline">\(1{,}3\)</span> sein, denn sonst wäre es nicht möglich gewesen,einen Messwert <span class="math inline">\(1{,}8\)</span> zu erhalten (beachte, dass der Bereich rechts und links von <span class="math inline">\(\theta\)</span> nur <span class="math inline">\(0{,}5\)</span> umfasst!). Ebenso kann <span class="math inline">\(\theta\)</span> nicht größer als <span class="math inline">\(1{,}7\)</span> sein, denn sonst wäre es nicht möglich gewesen, einen Messwert von <span class="math inline">\(1{,}2\)</span> zu erhalten.</p>
+</div>
+<p><strong>⇒ die Wahrscheinlichkeit, dass <span class="math inline">\(\theta\)</span> im Konfidenzintervall <span class="math inline">\([1{,}2; 1{,}8]\)</span> liegt, ist 100%.</strong></p>
+<div class="colorbox fragment">
+<p><strong>Bottom line:</strong> das <span style=" color: navy !important;"><strong>Konfidenzniveau</strong></span> gibt nur <u>vor der Messung</u> die Wahrscheinlichkeit an, dass der Populationsparameter <span class="math inline">\(\theta\)</span> im Konfidenzintervall liegen wird. <u>Nach der Messung</u> — und damit in der Praxis — gilt dies nicht mehr.</p>
+</div>
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Vorlesung 12: Konfidenzintervalle</p>
