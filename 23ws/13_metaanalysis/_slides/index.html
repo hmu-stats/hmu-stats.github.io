@@ -398,10 +398,13 @@
 <h2>Metaanalyse – die Königsdisziplin</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/levels-of-evidence.svg" height="550"></p>
+<p><img data-src="images/levels-of-evidence.svg" height="500"></p>
 <figcaption>Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a></figcaption>
 </figure>
 </div>
+<ul>
+<li class="fragment"><strong>Aber beachte:</strong> die Qualität von Reviews und Metaanalysen hängt von der Qualität der einzelnen Studien ab! So kann etwa eine große Metaanalyse auf Basis von verzerrten Studien eine geringere Evidenzqualität haben, als ein einzelner RCT (randomized controlled trial).</li>
+</ul>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -425,7 +428,7 @@
 </tr>
 <tr class="even">
 <td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
-<td>Eine <span style=" color: navy !important;"><strong>Metaanalyse</strong></span> kombiniert die berichteten Effekstärken verschiedener Studien mit dem <strong>Ziel eine genauere Schätzung eines Effektes</strong> zu berechnen.</td>
+<td>Eine <span style=" color: navy !important;"><strong>Metaanalyse</strong></span> kombiniert die berichteten Effekte verschiedener Studien mit dem <strong>Ziel eine genauere Schätzung eines Effektes</strong> zu berechnen.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -437,13 +440,20 @@
 <div class="columns">
 <div class="column" style="width:70%;">
 <ul>
-<li class="fragment"><strong>Effekte</strong> können dabei alle Kennwerte der deskriptiven Statistik sein:
+<li class="fragment">Eine Metaanalyse kann auf unstandardisierten oder standardisierten <strong>Effekten</strong> basieren.</li>
+<li class="fragment">Unstandardisierte Effekte:
 <ul>
 <li class="fragment">Relative/absolute Häufigkeiten</li>
 <li class="fragment">Lagemaße</li>
 <li class="fragment">Streuungsmaße</li>
 <li class="fragment">Unterschiede</li>
-<li class="fragment">Zusammenhänge</li>
+<li class="fragment">Kovarianz, Regressionskoeffizient</li>
+</ul></li>
+<li class="fragment">Standardisierte Effekte (aka Effektstärke):
+<ul>
+<li class="fragment">Cohen’s d</li>
+<li class="fragment">Korrelation<br>
+</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:30%;">
@@ -589,23 +599,27 @@
 <section class="slide level2">
 <h2>Berechnung eines metaanalytischen Mittelwertes</h2>
 <ul>
-<li class="fragment">Hauptergebnis einer Metaanalyse ist ein gemittelter Kennwert, d.h., etwa der gemittelte Mittelwert oder die gemittelte Effektgröße aus einer Reihe von Studien.</li>
-<li class="fragment">In der Regel werden die Werte aus den einzelnen Studien gewichtet, damit verlässlichere Studien stärker einfließen.</li>
+<li class="fragment">Hauptergebnis einer Metaanalyse ist ein gemittelter statistischer Kennwert für das untersuchte Phänomen.</li>
+<li class="fragment">Ein häufiger Ansatz ist dabei, nicht die unstandardisierten Effekte (z.B. <span class="math inline">\(\bar{x}\)</span> oder <span class="math inline">\(b_1\)</span>) selbst zu mitteln, sondern die entsprechenden standardisierten Effektstärken (z.B. Cohen’s <span class="math inline">\(d\)</span> oder <span class="math inline">\(r\)</span>).
+<ul>
+<li class="fragment">Reminder: standardisierte Effekte sind besser vergleichbar zwischen Studien!</li>
+</ul></li>
+<li class="fragment">In der Regel wird bei der Mittelwertbildung ein <strong>gewichteter Mittelwert</strong> verwendet, damit verlässlichere Studien stärker einfließen.</li>
 <li class="fragment">Gewichtungsformel für Cohen’s <span class="math inline">\(d\)</span> für i=1..n Studien:</li>
 </ul>
 <p><span class="math display">\[
 \bar{d} = \frac{d_1w_1+d_2w_2+...}{\sum w_i} = \frac{\sum d_i w_i}{\sum w_i}
 \]</span></p>
 <ul>
-<li class="fragment">Die Gewichtungsfaktoren hängen in erster Line von der Stichprobengröße ab – je größer die Stichprobe, desto größer <span class="math inline">\(w_i\)</span>.</li>
+<li class="fragment"><span class="math inline">\(\bar{d}\)</span> ist die Schätzung der (mittleren) Effektstärke auf Basis aller Studien.</li>
+<li class="fragment">Die Gewichtungsfaktoren <span class="math inline">\(w_i\)</span> hängen in erster Line von der Stichprobengröße ab – je größer die Stichprobe, desto größer <span class="math inline">\(w_i\)</span>, desto mehr fließt die Studie in den Mittelwert ein.</li>
 </ul>
 <!----------------->
 <!--- New slide --->
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style=" color: darkred !important;">Gewichtungsfaktor bei Cohen’s d</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
+<h2>Gewichtungsfaktor bei Cohen’s d</h2>
 <ul>
 <li class="fragment">Die Gewichtungsfaktoren berechnen sich je nach Kenngröße verschieden.</li>
 <li class="fragment">Die gängigste Methode ist die Gewichtung an der <strong>inversen Samplingvarianz</strong>:</li>
@@ -806,7 +820,7 @@ v_i = \frac{\left(1-r^2\right)^2}{n-1}
 <aside></aside></section>
 <section class="slide level2">
 <h2>Forest-Plot</h2>
-<p>Die Ergebnisse der einbezogenen Studien sowie das Gesamtergebnis werden in einem <span style=" color: navy !important;"><strong>Forest-Plot</strong></span> dargestellt (es zeigt die Effekte und ihre Konfidenzintervalle).</p>
+<p>Die Ergebnisse der einbezogenen Studien sowie das Gesamtergebnis werden in einem <span style=" color: navy !important;"><strong>Forest-Plot</strong></span> dargestellt (zeigt die Effekte und ihre Konfidenzintervalle).</p>
 <div class="columns">
 <div class="column" style="width:35%;">
 <ul>
@@ -825,19 +839,19 @@ v_i = \frac{\left(1-r^2\right)^2}{n-1}
 </section>
 <section class="slide level2">
 <h2>Probleme bei einer Metaanalyse</h2>
-<p><strong>Problem 1:</strong> Qualität der einfließenden Studien ist nicht zufriedenstellend (in der Praxis ein sehr häufiges Problem) — „garbage-in-garbage-out“</p>
+<p><strong>Problem 1:</strong> Qualität der einfließenden Studien ist nicht zufriedenstellend (in der Praxis ein sehr häufiges Problem) — „garbage-in-garbage-out“.</p>
 <ul>
 <li class="fragment">Lässt sich prinzipiell durch gut gewählte Ein- und Ausschlusskriterien vermeiden — allerdings bleiben dann oft nur sehr wenige Studien übrig.</li>
-<li class="fragment">Alternative: methodische Qualität codieren und als Gewichtung einfügen</li>
+<li class="fragment">Alternative: methodische Qualität codieren und als Gewichtung einfügen.</li>
 </ul>
-<p><strong>Problem 2:</strong> die einfließenden Studien messen nicht genau dasselbe Konstrukt — „Äpfel-Birnen-Problem“</p>
+<p><strong>Problem 2:</strong> die einfließenden Studien messen nicht genau dasselbe Konstrukt — „Äpfel-Birnen-Problem“.</p>
 <ul>
-<li class="fragment">Unterschiedliche abhängige Variablen (d.h. Outcomes)</li>
-<li class="fragment">Effekte sind dann nicht oder nur begrenzt vergleichbar</li>
+<li class="fragment">Unterschiedliche abhängige Variablen (d.h. Outcomes).</li>
+<li class="fragment">Effekte sind dann nicht oder nur begrenzt vergleichbar.</li>
 <li class="fragment">Diagnose durch die <strong>psychometrische Metaanalyse</strong>:
 <ul>
-<li class="fragment">Einteilung der Studien in Subgruppen mit jeweils einheitlichen AVen</li>
-<li class="fragment">Ist die Varianz innerhalb der Subgruppen deutlich kleiner als die Varianz aller Studien kombiniert (“wenn alles in einem Topf“ liegt”): Hinweis auf unzulässige Vermischung der AVen<br>⇒ „Äpfel“ und „Birnen“ sollten dann in getrennten Analysen untersucht werden.</li>
+<li class="fragment">Einteilung der Studien in Subgruppen mit jeweils einheitlichen abhängigen Variablen.</li>
+<li class="fragment">Ist die Varianz innerhalb der Subgruppen deutlich kleiner als die Varianz aller Studien kombiniert (“wenn alles in einem Topf“ liegt”): Hinweis auf unzulässige Vermischung der abhängigen Variablen.<br>⇒ „Äpfel“ und „Birnen“ sollten dann in getrennten Analysen untersucht werden.</li>
 </ul></li>
 </ul>
 <!----------------->
@@ -848,14 +862,14 @@ v_i = \frac{\left(1-r^2\right)^2}{n-1}
 <h2>Probleme bei einer Metaanalyse</h2>
 <p><strong>Problem 3:</strong> Mehrere Studienergebnisse pro Artikel – Abhängigkeitsproblem</p>
 <ul>
-<li class="fragment">Mehrere Effekte, die in einem einzelnen Artikel berichtet werden, sind typischerweise nicht unabhängig (insbesondere Überlapp der Versuchspersonen)</li>
-<li class="fragment">Lösung: zunächst den mittleren (aggregierten) Effekt pro Artikel bestimmen und diesen in die Metaanalyse aufnehmen</li>
+<li class="fragment">Mehrere Effekte, die in einem einzelnen Artikel berichtet werden, sind typischerweise nicht unabhängig (insbesondere Überlapp der Versuchspersonen).</li>
+<li class="fragment">Lösung: zunächst den mittleren (aggregierten) Effekt pro Artikel bestimmen und diesen in die Metaanalyse aufnehmen.</li>
 </ul>
-<p><strong>Problem 4:</strong> die einfließenden Studien bilden kein repräsentatives Abbild aller Studien zur Fragestellung — Publication Bias</p>
+<p><strong>Problem 4:</strong> die einfließenden Studien bilden kein repräsentatives Abbild aller Studien zur Fragestellung — Publikationsbias</p>
 <ul>
-<li class="fragment">Der gemittelte Effekt als Hauptergebnis ist dann verzerrt und möglicherweise unbrauchbar</li>
+<li class="fragment">Der gemittelte Effekt als Hauptergebnis ist dann verzerrt und möglicherweise unbrauchbar.</li>
 <li class="fragment">Diagnose: Funnel Plot, p-curve, p-uniform</li>
-<li class="fragment">Lösung: im Prinzip keine (es gibt Vorschläge – z. B. trim-and-fill, p-curve, p-uniform – aber diese schneiden in Simulationsstudien unzureichend ab)</li>
+<li class="fragment">Lösung: im Prinzip keine (es gibt Vorschläge – z. B. trim-and-fill, p-curve, p-uniform – aber diese schneiden in Simulationsstudien unzureichend ab).</li>
 </ul>
 <!----------------->
 <!--- New slide --->
@@ -863,11 +877,11 @@ v_i = \frac{\left(1-r^2\right)^2}{n-1}
 </section>
 <section class="slide level2">
 <h2>Funnel plot</h2>
-<p><span style=" color: navy !important;"><strong>Funnel Plot</strong></span>: visuelle Methode zur Diagnose von Publication Bias</p>
+<p><span style=" color: navy !important;"><strong>Funnel Plot</strong></span>: visuelle Methode zur Diagnose eines Publikationsbias’</p>
 <ul>
-<li class="fragment">Effekte aller Studien werden gegen ihre jeweilige Präzision abgetragen (z. B. Stichprobengr. <span class="math inline">\(N\)</span>)</li>
-<li class="fragment">Fall <em>kein</em> Publication Bias vorliegt, sollte ein umgekehrter Trichter (engl. <em>funnel</em>) entstehen, da die Varianz der Schätzungen bei größeren Stichproben systematisch kleiner werden sollte (Gesetz der großen Zahl).</li>
-<li class="fragment">Wenn Publication Bias vorliegt, wird der Funnel asymmetrisch</li>
+<li class="fragment">Effekte aller Studien werden gegen ihre jeweilige Präzision abgetragen (z. B. Stichprobengröße <span class="math inline">\(n\)</span>).</li>
+<li class="fragment"><em>Wenn kein</em> Publikationsbias vorliegt, sollte ein umgekehrter Trichter (engl. <em>funnel</em>) entstehen, da die Varianz der Schätzungen bei größeren Stichproben systematisch kleiner werden sollte (Gesetz der großen Zahl).</li>
+<li class="fragment"><em>Wenn</em> ein Publikationsbias vorliegt, wird der Funnel asymmetrisch,</li>
 </ul>
 
 <!----------------->
@@ -876,7 +890,7 @@ v_i = \frac{\left(1-r^2\right)^2}{n-1}
 <img data-src="images/metaanalysis12_annot.png" class="r-stretch"></section>
 <section class="slide level2">
 <h2>Funnel plot</h2>
-<p><span style=" color: navy !important;"><strong>Funnel Plot</strong></span>: visuelle Methode zur Diagnose von Publication Bias</p>
+<p><span style=" color: navy !important;"><strong>Funnel Plot</strong></span>: visuelle Methode zur Diagnose eines Publikationsbias’</p>
 <ul>
 <li class="fragment"><strong>Beispiel:</strong> Meta-Analyse zum Zusammenhang von Habituationsfähigkeit im Kindesalter und späterem IQ<a href="#/footnotes" class="footnote-ref" id="fnref12" role="doc-noteref" data-footnote-href="#/fn12" onclick=""><sup>12</sup></a></li>
 </ul>
@@ -903,24 +917,31 @@ v_i = \frac{\left(1-r^2\right)^2}{n-1}
 <div style="margin-top:-15px">
 <p><img data-src="images/summary.png" width="60"></p>
 </div>
-</div><div class="column" style="width:61%;">
+</div><div class="column" style="width:91%;">
 <div class="summary" style="margin-top: 30px !important">
 <ul>
-<li class="fragment">Metaanalysen <strong>aggregieren Effekstärken</strong> aus verschiedenen Studien.</li>
-<li class="fragment">Sie basieren also auf <strong>empirischen Stichprobenverteilungen</strong>.</li>
-<li class="fragment">Hauptergebnis ist in der Regel eine gemittelte und an der Präzision (hängt ab von Stichprobengröße) der Studien <strong>gewichtete Gesamteffektstärke</strong>.</li>
-<li class="fragment">Metaanalysen liefern <strong>bessere Schätzungen für den wahren Populationsparameter</strong> als einzelne Studien.</li>
-<li class="fragment">Ergebnisse von Metaanalysen sind häufig <strong>durch einen Publication Bias verzerrt</strong>, da vorrangig große/signifikante Effekte publiziert wurden – der wahre Effekt wird dann überschätzt.</li>
+<li class="fragment">Eine Metaanalyse <strong>aggregiert standardisierte oder unstandardisierte Effekte</strong> aus verschiedenen Studien.
+<ul>
+<li class="fragment">Sie basiert also auf einer <strong>empirischen Stichprobenverteilung</strong>.</li>
+</ul></li>
+<li class="fragment">Die Bestimmung des mittleren Effektes erfolgt in der Regel mit einem <strong>gewichteten Mittelwert</strong>.
+<ul>
+<li class="fragment"><strong>Gewichtung anhand der Präzision</strong> der einzelnen Studien (die Präzision hängt stark von der Stichprobengröße ab).</li>
+</ul></li>
+<li class="fragment">Metaanalysen liefern <strong>bessere Schätzungen für den wahren Populationseffekt</strong> als einzelne Studien.</li>
+<li class="fragment">Ergebnisse von Metaanalysen sind häufig <strong>durch einen Publikationsbias verzerrt</strong>, da vorrangig große/signifikante Effekte publiziert wurden – der wahre Effekt wird dann überschätzt.</li>
 </ul>
 </div>
-</div><div class="column" style="width:30%;">
-<div class="quarto-figure quarto-figure-center" style="margin-top:200px !important">
+</div>
+</div>
+</section>
+<section class="slide level2 center">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/metaanalysis1447.png"></p>
+<p><img data-src="images/metaanalysis1447.png" height="450"></p>
 <figcaption><a href="https://xkcd.com/1447/">xkcd#1477</a></figcaption>
 </figure>
-</div>
-</div>
 </div>
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
