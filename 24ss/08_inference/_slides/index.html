@@ -337,7 +337,7 @@
 </style>
 
 <section data-background-color="black" class="titlesection quarto-title-block center">
-  <p class="semester">M24 Statistik 1:&nbsp;&nbsp;Sommersemester 2024</p>
+  <p class="semester">M24 Statistik 1:&nbsp;&nbsp;Wintersemester 23/24</p>
   <h1 class="title">Vorlesung 08: Inferenzstatistik</h1>
   
   <p class="subtitle">&nbsp;</p>
@@ -415,6 +415,7 @@
 </div>
 </div>
 <!-- <div class="vspace-small"></div> -->
+<div class="fragment">
 <div style="margin-top: -10px">
 <p><u>Ergebnis:</u></p>
 </div>
@@ -451,13 +452,14 @@
 </tr>
 </tbody>
 </table>
+</div>
 <div class="vspace-small">
 
 </div>
 <ul>
 <li class="fragment">Mit zunehmender Zahl der Würfe nähert sich also Ihre gemessene Wahrscheinlichkeit der erwarteten Wahrscheinlichkeit <span class="math inline">\(\frac{1}{6}=0{,}1666..\;\)</span> an — dies ist das <span style=" color: navy !important;"><strong>Gesetz der großen Zahlen</strong></span>!</li>
 </ul>
-<div style="margin-top: -15px">
+<div class="fragment" style="margin-top: -15px">
 <p>(⇒ … und offenkundig ist der Würfel nicht gezinkt!)</p>
 </div>
 <!----------------->
@@ -467,7 +469,7 @@
 <section class="slide level2">
 <h2>Das Gesetz der großen Zahlen</h2>
 <div class="vcenter">
-<div class="definition">
+<div class="definition fragment">
 <!---  Definition--->
 <table>
 <colgroup>
@@ -493,7 +495,9 @@
 <div class="vspace-medium">
 
 </div>
+<div class="fragment">
 <p>Das Gesetz der großen Zahlen ist ein mathematischer <strong>Grenzwertsatz</strong>, weil er das Verhalten einer Größe in einem Grenzfall (<span class="math inline">\(\text{Anzahl Zufallsexperimente }\rightarrow \infty\)</span>) beschreibt.</p>
+</div>
 </div>
 <!----------------->
 <!--- New slide --->
@@ -505,15 +509,17 @@
 <ul>
 <li class="fragment">Im Würfelbeispiel haben wir bislang die relative Häufigkeit einer <em>einzelnen</em> Merkmalsausprägung (Würfelzahl 1) betrachtet</li>
 <li class="fragment">Natürlich gilt das Gesetz der großen Zahlen aber für alle Merkmalsausprägungen – im Würfelbeispiel also auch für die Zahlen 2 bis 5.</li>
-<li class="fragment">Die relative Häufigkeit <em>aller</em> Merkmalsausprägungen einer Zufallsvariablen X wird auch als die <strong>Wahrscheinlichkeitsverteilung von X</strong> bezeichnet.</li>
+<li class="fragment">Die gemessene relative Häufigkeit <em>aller</em> Merkmalsausprägungen einer Zufallsvariablen <span class="math inline">\(X\)</span> wird auch als die <strong>empirische Häufigkeitsverteilung</strong> oder <strong>empirische Stichprobenverteilung</strong> von <span class="math inline">\(X\)</span> bezeichnet.</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
-<li class="fragment">Im Würfelbeispiel ist die Zufallsvariable die gewürfelte Zahl. Wir erwarten, dass alle Zahlen 1-6 gleich wahrscheinlich sind, oder mit anderen Worten: wir erwarten dass die Zufallsvariable “gewürfelte Zahl” eine <strong>uniforme Verteilung</strong> aufweist:</li>
+<li class="fragment">Im Würfelbeispiel ist die Zufallsvariable die gewürfelte Zahl. Wir erwarten, dass alle Zahlen 1-6 gleich wahrscheinlich sind, oder mit anderen Worten: wir erwarten dass sich die empirische Häufigkeitsverteilung einer <strong>uniformen Verteilung</strong> annähert:</li>
 </ul>
 </div><div class="column" style="width:40%;">
+<div class="fragment">
 <p><img data-src="images/dices_uniform.png" height="250"></p>
+</div>
 </div>
 </div>
 </section>
@@ -522,12 +528,16 @@
 <ul>
 <li class="fragment">Analog nähert sich hier mit steigender Zahl von Würfen die gemessene Häufigkeitsverteilung der erwarteten Häufigkeitsverteilung an:</li>
 </ul>
+<div class="fragment">
 <p><img data-src="images/dices_experiment.png" height="320"></p>
+</div>
 <div class="vspace-medium">
 
 </div>
+<div class="fragment">
 <p>Das Gesetz der großen Zahlen kann deshalb auch auf Verteilungen bezogen werden:</p>
-<div class="definition">
+</div>
+<div class="fragment definition">
 <!---  Definition--->
 <table>
 <colgroup>
@@ -707,6 +717,7 @@ plt.savefig('images/noselength_sample.png', bbox_inches='tight')
 <li class="fragment">Im Kontext der Psychologie begegnet uns das Gesetz der großen Zahlen, wenn wir die <strong>relative Häufigkeitsverteilung eines Merkmals in der Stichprobe</strong> betrachten.</li>
 </ul>
 <!---  Example --->
+<div class="fragment">
 <div class="example">
 <table>
 <colgroup>
@@ -751,6 +762,7 @@ Nasenlänge und tragen diese in einem Histogramm auf. <img data-src="images/nose
 <ul>
 <li class="fragment">Auch hier würden wir erwarten, dass sich die Verteilung des Merkmals in der Stichprobe an die tatsächliche Verteilung in der Population annähert, je größer die Stichprobe ist.</li>
 </ul>
+</div>
 </div>
 <!-- ```{python}
  
@@ -802,8 +814,15 @@ plt.savefig('images/noselength_limit.png', bbox_inches='tight')
 </ul></li>
 <li class="fragment">Wir können die Annäherung der Stichprobenverteilung an die Populationverteilung mit <span class="math inline">\(n\rightarrow N\)</span> simulieren (<span class="math inline">\(N\)</span> = Umfang der Population, 80 Mio. Deutsche in diesem Beispiel):</li>
 </ul>
-
-<img data-src="images/noselength_limit.png" class="r-stretch quarto-figure-center"><p class="caption">Die Stichprobenverteilungen sind in braun schattiert, die (gleichbleibende) Häufigkeitsverteilung der Population in grau, die in diesem Fall alle 80 Mio. Deutsche umfasst. Beachte, dass in diesem Fall die <em>relative</em> Häufigkeit dargestellt ist.</p><ul>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/noselength_limit.png"></p>
+<figcaption>Die Stichprobenverteilungen sind in braun schattiert, die (gleichbleibende) Häufigkeitsverteilung der Population in grau, die in diesem Fall alle 80 Mio. Deutsche umfasst. Beachte, dass in diesem Fall die <em>relative</em> Häufigkeit dargestellt ist.</figcaption>
+</figure>
+</div>
+</div>
+<ul>
 <li class="fragment">Ähnlich wie beim Würfelwurf nähert sich die Verteilung des Merkmals in der Stichprobe an die tatsächliche Verteilung in der Population an.</li>
 </ul>
 </section></section>
@@ -818,7 +837,9 @@ plt.savefig('images/noselength_limit.png', bbox_inches='tight')
 <h2>Theoretische Stichprobenverteilung</h2>
 <div class="columns">
 <div class="column" style="width:69%;">
+<div class="fragment">
 <p><strong>Empirische Stichprobenverteilung</strong></p>
+</div>
 <ul>
 <li class="fragment">Führe ich dieselbe Studie mehrmals durch und notiere jeweils den statistischen Kennwert, erhalte ich eine <span style=" color: navy !important;"><strong>empirische Stichprobenverteilung</strong></span>.</li>
 <li class="fragment">Dies ist die Idee der <strong>Metaanalyse</strong>, die eine Vielzahl empirischer Studien zusammenfasst und analysiert (⇒ Vorlesung 13).</li>
@@ -828,24 +849,32 @@ plt.savefig('images/noselength_limit.png', bbox_inches='tight')
 - Bei der **Metaanalyse** ging es um die Verlässlichkeit der Schätzung von Parametern in Bezug auf die Population
 - Das gemittelte, gewichtete Ergebnis vieler Studien liefert eine bessere Schätzung, als die Ergebnisse einzelner Studien.
 - Die Metaanalyse basiert auf der **empirischen Stichprobenverteilung**. -->
+<div class="fragment">
 <p><strong>Die Idee der Inferenzstatistik ist ähnlich:</strong></p>
+</div>
 <ul>
 <li class="fragment">Ich habe nur <em>eine</em> Studie, aber überlege, was theoretisch passieren würde, wenn ich diese Studie immer wieder wiederholen würde.</li>
 <li class="fragment">Dieser Ansatz führt zur <span style=" color: navy !important;"><strong>theoretischen Stichprobenverteilung</strong></span>.</li>
 </ul>
+<div class="fragment">
 <p><strong>Zentrale Idee:</strong> Die theoretische Stichprobenverteilung erlaubt uns eine Einschätzung darüber, wie stabil unser Ergebnis bei einer (hypothetischen) Wiederholung der Studie sein würde.</p>
+</div>
 </div><div class="column" style="width:31%;">
+<div class="fragment">
 <div class="quarto-figure quarto-figure-center" style="margin-top:-35px">
 <figure>
 <p><img data-src="images/stichprobenverteilung_empirisch.png"></p>
 <figcaption>Die empirische Stichprobenverteilung besteht aus tatsächlich erhobenen Studien. Die Verteilung empirischer Stichprobenkenn-<br>werte folgt im Idealfall (u.a. kein Publikationsbias, großes <span class="math inline">\(n\)</span> pro Stichprobe) einer Normalverteilung.</figcaption>
 </figure>
 </div>
+</div>
+<div class="fragment">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/stichprobenverteilung_theoretisch.png"></p>
 <figcaption>Die theoretische Stichprobenverteilung ist durch eine Funktion gegeben. Ist die Stichprobengröße <span class="math inline">\(n\)</span>, für die die theoretische Stichprobenverteilung angenommen wird, groß, folgt die Stichprobenverteilung einer Normalverteilung.</figcaption>
 </figure>
+</div>
 </div>
 </div>
 </div>
@@ -858,23 +887,33 @@ plt.savefig('images/noselength_limit.png', bbox_inches='tight')
 <div class="vspace-medium">
 
 </div>
+<div class="fragment">
 <p><strong>Was würde passieren, wenn ich meine Studie ganz oft wiederholen würde?</strong></p>
+</div>
 <ul>
 <li class="fragment">Gehen wir das Problem zunächst mit einem Gedankenexperiment (Simulation) an und tun so, als ob wir die wahren Verhältnisse in der Population kennen.</li>
 </ul>
+<div class="fragment">
 <p><strong>Gedankenexperiment:</strong> wir interessieren uns für die durchschnittliche Nasenlängen von Männern. Wir nehmen an, die Population besteht nur aus 9 Männern:</p>
+</div>
 <div class="vspace-small">
 
 </div>
-
-<img data-src="images/inference1_annot.png" class="r-stretch"><div class="vspace-small">
+<div class="fragment">
+<p><img data-src="images/inference1_annot.png"></p>
+</div>
+<div class="vspace-small">
 
 </div>
+<div class="fragment">
 <p>⇒ Der wahre Mittelwert (d.h. der Mittelwert der Population) ist in diesem Beispiel <span class="math inline">\(\mu = 6cm\)</span>.</p>
+</div>
 <div class="vspace-small">
 
 </div>
+<div class="fragment">
 <p>Wir nehmen weiterhin an, dass wir in unserer Studie 3 Männer untersuchen, d.h. wir ziehen eine <strong>Stichprobe <span class="math inline">\(n=3\)</span></strong> mit Zufallsauswahl aus der Population.</p>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -925,8 +964,10 @@ plt.savefig('images/noselength_example.png', bbox_inches='tight')
 <div class="vspace-small">
 
 </div>
+<div class="fragment">
 <p>Es gibt insgesamt 84 Möglichkeiten aus dieser Population von 9 Männern zufällig drei Männer auszuwählen.</p>
-<div class="columns">
+</div>
+<div class="columns fragment">
 <div class="column" style="width:70%;">
 <p>→&nbsp;Jeder Mittelwert wäre eine Schätzung für den wahren Populationswert.</p>
 <p>→&nbsp;Die Abbilung rechts zeigt die Verteilung aller möglichen 84 Mittelwerte.</p>
@@ -944,11 +985,13 @@ plt.savefig('images/noselength_example.png', bbox_inches='tight')
 
 </div>
 <p><strong>Was lernen wir aus dieser Verteilung?</strong></p>
+<div>
 <ul>
-<li class="fragment">Obwohl es nur einen <em>wahren Mittelwer</em>t gibt, weichen die <em>einzelnen Studienergebnisse</em> mehr oder weniger davon ab.</li>
-<li class="fragment">Die Studienergebnisse haben also eine <em>Bandbreite</em>, in der offensichtlich eine Aussage über die Genauigkeit der Schätzung (von einer einzelnen Stichprobe auf die Population) steckt.</li>
-<li class="fragment">Die Stichprobenergebnisse <em>schwanken zufällig</em> um den wahren Wert (siehe auch Metaanalyse).</li>
+<li>Obwohl es nur einen <em>wahren Mittelwer</em>t gibt, weichen die <em>einzelnen Studienergebnisse</em> mehr oder weniger davon ab.</li>
+<li>Die Studienergebnisse haben also eine <em>Bandbreite</em>, in der offensichtlich eine Aussage über die Genauigkeit der Schätzung (von einer einzelnen Stichprobe auf die Population) steckt.</li>
+<li>Die Stichprobenergebnisse <em>schwanken zufällig</em> um den wahren Wert (siehe auch Metaanalyse).</li>
 </ul>
+</div>
 <p><img data-src="images/noselength_example.png" height="300"></p>
 <!----------------->
 <!--- New slide --->
@@ -964,7 +1007,9 @@ plt.savefig('images/noselength_example.png', bbox_inches='tight')
 <li class="fragment">Population seien nun <strong>alle Männer in Deutschland</strong>.</li>
 <li class="fragment">Sie haben eine einzelne Studie durchgeführt (also eine Stichprobe aus der Population gezogen).</li>
 </ul>
+<div class="fragment">
 <p><img data-src="images/noselength_sample_absolute.png" height="300"></p>
+</div>
 <ul>
 <li class="fragment">Ihnen ist nun klar, dass das Ergebnis der Studie nur <em>eines von vielen möglichen Ergebnissen</em> ist.</li>
 <li class="fragment">Beim Wiederholen derselben Studie würde also – rein zufallsbedingt – ein etwas anderes Ergebnis herauskommen.</li>
@@ -979,15 +1024,17 @@ plt.savefig('images/noselength_example.png', bbox_inches='tight')
 
 </div>
 <p>Wie sieht die zu erwartende Stichprobenverteilung aus, wenn ich, anders als im Gedankenexperiment, die Population <em>nicht kenne</em>?</p>
-<p>Dies führt uns zur <span style=" color: navy !important;"><strong>theoretischen Stichprobenverteilung</strong></span>. Wie sich herausstellt, können wir tatsächlich anhand einer einzelnen Studie Aussagen darüber machen, wie die Verteilung von Stichprobenkennwerten erwartbar aussehen würde, würden wir die Studie – rein hypothetisch – <strong>unendlich oft wiederholen</strong>.</p>
+<div class="fragment">
+<p>Dies führt uns zur <span style=" color: navy !important;"><strong>theoretischen Stichprobenverteilung</strong></span>. Wie sich herausstellt, können wir anhand einer einzelnen Studie Aussagen darüber machen, wie die Verteilung von Stichprobenkennwerten erwartbar aussehen würde, würden wir die Studie – rein hypothetisch – <strong>unendlich oft wiederholen</strong>.</p>
 <div class="vspace-medium">
 
 </div>
-
+<p><img data-src="images/inference6.png"></p>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
-<img data-src="images/inference6.png" class="r-stretch"></section>
+</section>
 <section class="slide level2">
 <h2>Theoretische Stichprobenverteilung</h2>
 <div class="vspace-medium">
@@ -1022,32 +1069,42 @@ plt.savefig('images/noselength_example.png', bbox_inches='tight')
 <div class="vspace-large">
 
 </div>
+<div class="fragment">
 <p>Beispiel Mittelwert:</p>
 <p><span class="math display">\[
 \quad\bar{x} = \frac{1}{n}\sum x_i
 \]</span></p>
 </div>
 </div>
+</div>
+<div class="fragment">
 <div style="margin-top: -15px">
 <p>Mit anderen Worten: ziehen wir sehr viele Stichproben aus der Population, berechnen für jede Stichprobe einen statistischen Kennwert (in Bezug auf die betrachtete Merkmalsvariable), so sind diese Kennwerte <strong>normalverteilt</strong> — und zwar unabhängig von der Verteilung der ursprünglichen Merkmalsvariable in der Population!</p>
 </div>
 <div class="vspace-small">
 
 </div>
-
+<p><img data-src="images/central_limit_theorem_average.png" height="275"></p>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
-<img data-src="images/central_limit_theorem_average.png" class="r-stretch"></section>
+</section>
 <section class="slide level2">
 <h2><span style="font-size: 39px">Form der theoretischen Stichprobenverteilung: Würfelexperiment</span></h2>
-<p>Jeder Student bringt einen Würfel mit.</p>
-<p>Runde 1: alle würfeln, Mittelwert wird notiert</p>
-<p>Runde 2: “”</p>
-<p>…</p>
-<p>Runde n</p>
-<p>Alle Mittelwerte werden als Histogramm aufgetragen -&gt; Normalverteilung?</p>
-<p>(Beachte: die originale Verteilung ist uniform!)</p>
+<!-- Jeder Student bringt einen Würfel mit. 
+
+Runde 1: alle würfeln, Mittelwert wird notiert
+
+Runde 2: ""
+
+...
+
+Runde n
+
+Alle Mittelwerte werden als Histogramm aufgetragen -> Normalverteilung?
+
+(Beachte: die originale Verteilung ist uniform!) -->
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1071,14 +1128,14 @@ X \sim \mathcal{N}(\mu_\text{SV},\,\sigma_\text{SV})
 <div class="vspace-medium">
 
 </div>
-<div class="merke" style="font-size: 21px !important">
+<div class="merke fragment" style="font-size: 21px !important">
 <div class="columns">
 <div class="column" style="width:5%;">
 <div style="margin-top: 18px">
 <p><img data-src="images/merke.png" height="55"></p>
 </div>
 </div><div class="column" style="width:95%;">
-<p>Auch wenn wir in den Beispielen vornehmlich den Mittelwert als Stichprobenkennwert betrachten, sind alle statistischen Kennwerte, die wir bis jetzt kennengelernt haben (<span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(s\)</span>, <span class="math inline">\(r\)</span>, usw), im Grenzfall <span class="math inline">\(n\rightarrow\infty\)</span> normalverteilt. Als Faustregel wird häufig vorgeschlagen, dass ab einer Stichprobengröße von ca. <span class="math inline">\(n=30\)</span> von einer Normalverteilung ausgegangen werden kann.</p>
+<p>Auch wenn wir in den Beispielen vornehmlich den Mittelwert als Stichprobenkennwert betrachten, sind alle statistischen Kennwerte, die wir bis jetzt kennengelernt haben (<span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(s\)</span>, <span class="math inline">\(r\)</span>, usw), zumindest <em>im Grenzfall</em> <span class="math inline">\(n\rightarrow\infty\)</span> normalverteilt. <br> Für unterschiedliche Kennwerte gibt es dabei unterschiedliche Faustregeln, ab welcher Stichprobengröße von einer Normalverteilung ausgegangen werden kann. Für den Mittelwert ist eine häufig genannte Regel <span class="math inline">\(n=30\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1088,37 +1145,39 @@ X \sim \mathcal{N}(\mu_\text{SV},\,\sigma_\text{SV})
 </section>
 <section class="slide level2">
 <h2>Mittelwert der theoretischen Stichprobenverteilung</h2>
-<p>Die beste Schätzung <span class="math inline">\(\hat{\mu}_\text{SV}\)</span> für den wahren Mittelwertsparameter <span class="math inline">\(\mu_\text{SV}\)</span> der Stichprobenverteilung ist häufig der statistische Kennwert selbst (z.B. <span class="math inline">\(\bar{x}, s\)</span>)!</p>
+<p>Die beste Schätzung <span class="math inline">\(\hat{\mu}_\text{SV}\)</span> für den wahren Mittelwertsparameter <span class="math inline">\(\mu_\text{SV}\)</span> der Stichprobenverteilung (und damit den Mittelwert der Population) ist häufig der statistische Kennwert selbst (z.B. <span class="math inline">\(\bar{x}, s\)</span>)!</p>
 <div class="vspace-medium">
 
 </div>
-<div class="merke" style="font-size: 22px !important">
+<div class="merke fragment" style="font-size: 24px !important">
 <div class="columns">
 <div class="column" style="width:5%;">
 <div style="margin-top: 18px">
 <p><img data-src="images/merke.png" height="55"></p>
 </div>
 </div><div class="column" style="width:95%;">
-<p>Dies gilt aber nur, wenn die Stichprobenverteilung tatsächlich einer Normalverteilung folgt. Für den Mittelwert kann man diese Normalverteilungs-Näherung bereits bei kleinen <span class="math inline">\(n\)</span> annehmen. Bei anderen Größen, v.a. solchen, die auf einen endlichen Bereich beschränkt sind (z.B. Korrelation −1 bis +1, relative Häufigkeiten 0 bis 1), gilt die Normalverteilungs-Näherung bei typischen Stichprobengrößen nicht ohne Weiteres. In diesem Fall werden andere Funktionen für die Stichprobenverteilung angenommen, bei denen der wahrscheinlichste Wert (Modus) dann u.U. <em>nicht</em> der statistische Kennwert selbst ist. (⇒ Vorlesung 13)</p>
+<p><strong>Wichtig:</strong> diese Annahme gilt nur, wenn die Stichprobenverteilung tatsächlich einer Normalverteilung folgt!<br><br>Für den Mittelwert kann man diese Normalverteilungs-Näherung bereits bei kleinem <span class="math inline">\(n\)</span> annehmen (~30). Bei anderen Größen, v.a. solchen, die auf einen endlichen Bereich beschränkt sind (z.B. Korrelation −1 bis +1, relative Häufigkeiten 0 bis 1), gilt die Normalverteilungs-Näherung bei kleineren Stichprobengrößen nicht ohne Weiteres.<br>In diesem Fall werden andere Funktionen für die Stichprobenverteilung angenommen, bei denen der wahrscheinlichste Wert (Modus) dann u.U. <em>nicht</em> der statistische Kennwert selbst ist. (⇒ Vorlesung 12)</p>
 </div>
 </div>
 </div>
-<div class="vspace-xlarge">
+<div class="vspace-large">
 
 </div>
-<div class="example" style="font-size: 25px !important">
+<div class="fragment example" style="font-size: 23px !important">
 <div class="columns">
 <div class="column" style="width:10%;">
 <div style="margin-top: 10px">
 <p><img data-src="images/example.png" height="70"></p>
 </div>
-</div><div class="column" style="width:50%;">
-<p><strong>Beispiel Mittelwert.</strong> Ist der Mittelwert der betrachtete statistische Stichprobenkennwert, so gilt:</p>
+</div><div class="column" style="width:65%;">
+<p><strong>Beispiel Mittelwert.</strong> Ist der Mittelwert der betrachtete statistische Stichprobenkennwert so gilt:</p>
+<div style="margin-top: -10px">
 <p><span class="math display">\[
 \hat{\mu}_\text{SV} = \bar{x}
 \]</span></p>
-<p>⟶ Die theoretische Stichprobenverteilung wird also in diesem Fall um den Stichprobenmittelwert <span class="math inline">\(\bar{x}\)</span> herum konstruiert.</p>
-</div><div class="column" style="width:40%;">
+</div>
+<p>⟶ Die theoretische Stichprobenverteilung wird also in diesem Fall um den Stichprobenmittelwert <span class="math inline">\(\bar{x}\)</span> herum konstruiert. Der Mittelwert ist die beste Schätzung für den Mittelwert der Stichprobenverteilung <em>auch dann</em> wenn die Stichprobengröße sehr klein ist und nicht mehr von einer Normalverteilung ausgegangen werden kann.</p>
+</div><div class="column" style="width:25%;">
 <p><img data-src="images/inference8_annot.png" height="200"></p>
 </div>
 </div>
@@ -1130,29 +1189,37 @@ X \sim \mathcal{N}(\mu_\text{SV},\,\sigma_\text{SV})
 <section class="slide level2">
 <h2>Streuung der theoretischen Stichprobenverteilung</h2>
 <p>Bleibt die Frage nach dem Streuungsparameter <span class="math inline">\(\sigma_\text{SV}\)</span>: woher wissen wir, wie die Ergebnisse von hypothetischen Stichproben streuen würden?</p>
-<div class="columns">
+<div class="columns fragment">
 <div class="column" style="width:32%;">
 <p>Gehen wir dazu zu unserem Gedankenexperiment zurück:</p>
 </div><div class="column" style="width:68%;">
 <p><img data-src="images/inference1_annot.png"></p>
 </div>
 </div>
+<div class="fragment">
 <p><strong>Was würde die Streuung der möglichen Ergebnisse verkleinern?</strong></p>
+</div>
 <ol type="1">
-<li class="fragment">Wir ziehen nicht 3 Personen in unserer Studie, sondern 6<br>⟶ damit lägen fast alle Stichproben näher am wahren Mittelwert!</li>
-<li class="fragment">Wir hätten in der Population grundsätzlich eine geringere Streuung der Werte<br>⟶ damit würden auch die Mittelwerte einzelner Studien weniger streuen.</li>
+<li class="fragment"><p>Wir ziehen nicht 3 Personen in unserer Studie, sondern 6<br>⟶ damit lägen fast alle Stichproben näher am wahren Mittelwert!</p></li>
+<li class="fragment"><p>Wir hätten in der Population grundsätzlich eine geringere Streuung der Werte<br>⟶ damit würden auch die Mittelwerte einzelner Studien weniger streuen.</p></li>
 </ol>
+<div class="fragment">
 <p>Der Streuungsparameter <span class="math inline">\(\sigma_\text{SV}\)</span> der theoretischen Stichprobenverteilung muss also eine Funktion der Stichprobengröße <span class="math inline">\(n\)</span> und der Streuung <span class="math inline">\(\sigma\)</span> in der Population sein.</p>
+</div>
 <div class="vspace-xsmall">
 
 </div>
+<div class="fragment">
 <p><span class="math display">\[
 \hat{\sigma}_\text{SV} = \hat{se} = f(n, \sigma)
 \]</span></p>
+</div>
 <div class="vspace-xsmall">
 
 </div>
+<div class="fragment">
 <p>Als Begriff für die Streuung der Stichprobenverteilung hat sich <span style=" color: navy !important;"><strong>Standardfehler</strong></span> (engl. <em>standard error</em>) eingebürgert.</p>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1161,16 +1228,18 @@ X \sim \mathcal{N}(\mu_\text{SV},\,\sigma_\text{SV})
 <h2>Beispiel: Standardfehler des Mittelwertes</h2>
 <div class="columns">
 <div class="column" style="width:68%;">
+<div>
 <ul>
-<li class="fragment">Ein für Statistik 1 besonders wichtiger Standardfehler ist der Standardfehler des Kennwertes <em>Mittelwert</em>.</li>
-<li class="fragment">Er wird als <strong>Standardfehler des Mittelwertes</strong> oder engl. <em>standard error of the mean</em> (<em>SEM</em>) bezeichnet.</li>
-<li class="fragment">Er berechnet sich als die Standardabweichung der Population <span class="math inline">\(\sigma\)</span> geteilt durch die Wurzel aus der Stichprobengröße <span class="math inline">\(n\)</span> (“Wurzel-N-Gesetz”):</li>
+<li>Ein für Statistik 1 besonders wichtiger Standardfehler ist der Standardfehler des Kennwertes <em>Mittelwert</em>.</li>
+<li>Er wird als <strong>Standardfehler des Mittelwertes</strong> oder engl. <em>standard error of the mean</em> (<em>SEM</em>) bezeichnet.</li>
+<li>Er berechnet sich als die Standardabweichung der Population <span class="math inline">\(\sigma\)</span> geteilt durch die Wurzel aus der Stichprobengröße <span class="math inline">\(n\)</span> (“Wurzel-N-Gesetz”):</li>
 </ul>
+</div>
 </div><div class="column" style="width:32%;">
 <p><img data-src="images/stichprobenverteilung.png"></p>
 </div>
 </div>
-<div style="margin-top: -5px">
+<div class="fragment" style="margin-top: -5px">
 <p><span class="math display">\[
 \text{Standardfehler des Mittelwertes:}\qquad\hat{\sigma}_\text{SV} = \hat{se} = \frac{\hat{\sigma}}{\sqrt{n}}
 \]</span></p>
@@ -1196,7 +1265,7 @@ X \sim \mathcal{N}(\mu_\text{SV},\,\sigma_\text{SV})
 <p><img data-src="images/merke.png" height="55"></p>
 </div>
 </div><div class="column" style="width:95%;">
-<p><strong>Beachte:</strong> der Standardfehler des Mittelwertes allein sagt nichts über die Streubreite des Merkmals. Der Standardfehler kann klein sein, obwohl die Standardabweichung <span class="math inline">\(\sigma\)</span> des gemessenen Merkmals groß ist, wenn im Gegenzug die Stichprobengröße <span class="math inline">\(n\)</span> auch groß ist. Umgekehrt kann ein Standardfehler groß sein, obwohl die Standardabweichung <span class="math inline">\(\sigma\)</span> klein ist, wenn <span class="math inline">\(n\)</span> klein ist.</p>
+<p><strong>Beachte:</strong> der Standardfehler des Mittelwertes allein sagt nichts über die tatsächliche Streubreite des Merkmals. Der Standardfehler kann klein sein, obwohl die Standardabweichung <span class="math inline">\(\sigma\)</span> des gemessenen Merkmals groß ist, wenn im Gegenzug die Stichprobengröße <span class="math inline">\(n\)</span> groß ist. Umgekehrt kann ein Standardfehler groß sein, obwohl die Standardabweichung <span class="math inline">\(\sigma\)</span> klein ist, wenn <span class="math inline">\(n\)</span> klein ist.</p>
 </div>
 </div>
 </div>
@@ -1207,24 +1276,35 @@ X \sim \mathcal{N}(\mu_\text{SV},\,\sigma_\text{SV})
 <section class="slide level2">
 <h2><span style=" color: darkred !important;">Herleitung des Standardfehlers</span></h2>
 <p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 130px; "></p>
+<div>
 <ul>
-<li class="fragment">Der Standardfehler ist ein Maß für die <strong>Variabilität der Stichprobenmittelwerte</strong> <span class="math inline">\(\bar{x}\)</span> — dies können wir zunächst über die Varianz zum Ausdruck bringen:</li>
+<li>Der Standardfehler ist ein Maß für die <strong>Variabilität der Stichprobenmittelwerte</strong> <span class="math inline">\(\bar{x}\)</span> — dies können wir zunächst über die Varianz zum Ausdruck bringen:</li>
 </ul>
+</div>
 <p><span class="math display">\[
 se^2 = Var(\bar{x})
 \]</span></p>
+<div>
 <ul>
-<li class="fragment">Wir wissen, dass <span class="math inline">\(\bar{x} = \frac{1}{n}\sum X_i\)</span>, also:</li>
+<li>Wir wissen, dass <span class="math inline">\(\bar{x} = \frac{1}{n}\sum X_i\)</span>, also:</li>
 </ul>
+</div>
 <p><span class="math display">\[
 se^2 = Var(\bar{x}) = Var\left(\frac{1}{n}\sum X_i\right)
 \]</span></p>
+<div>
 <ul>
-<li class="fragment"><p>Um das <span class="math inline">\(\frac{1}{n}\)</span> aus der Varianz herausziehen zu können, versichern wir uns einer kleinen Rechenregel: <span class="math display">\[
-Var(aX) = \frac{1}{n}\left(aX_i-a\bar{x}\right)^2 = \frac{a^2}{n}\left(X_i-\bar{x}\right)^2 = a^2Var(X)
-\]</span></p></li>
-<li class="fragment"><p>Daraus folgt:</p></li>
+<li>Um das <span class="math inline">\(\frac{1}{n}\)</span> aus der Varianz herausziehen zu können, versichern wir uns einer kleinen Rechenregel:</li>
 </ul>
+</div>
+<p><span class="math display">\[
+Var(aX) = \frac{1}{n}\left(aX_i-a\bar{x}\right)^2 = \frac{a^2}{n}\left(X_i-\bar{x}\right)^2 = a^2Var(X)
+\]</span></p>
+<div>
+<ul>
+<li>Daraus folgt:</li>
+</ul>
+</div>
 <p><span class="math display">\[
 se^2 = \frac{1}{n^2}Var\left(\sum X_i\right)
 \]</span></p>
@@ -1238,21 +1318,27 @@ se^2 = \frac{1}{n^2}Var\left(\sum X_i\right)
 <p><span class="math display">\[
 \text{Zwischenergebnis}\qquad se^2 = \frac{1}{n^2}Var\left(\sum X_i\right)
 \]</span></p>
+<div>
 <ul>
-<li class="fragment">Die Summe in der Varianz stört noch. Glücklicherweise gilt, dass die Varianz der Summe von unabhängigen Zufallsvariablen <span class="math inline">\(X_i\)</span> gleich der Summe der Varianzen ist, d.h.</li>
+<li>Die Summe in der Varianz stört noch. Glücklicherweise gilt, dass die Varianz der Summe von unabhängigen Zufallsvariablen <span class="math inline">\(X_i\)</span> gleich der Summe der Varianzen ist, d.h.</li>
 </ul>
+</div>
 <p><span class="math display">\[
 Var\left(\sum X_i\right)=\sum Var(X_i)
 \]</span></p>
+<div>
 <ul>
-<li class="fragment">Daraus folgt:</li>
+<li>Daraus folgt:</li>
 </ul>
+</div>
 <p><span class="math display">\[
 se^2 = \frac{1}{n^2}\sum Var(X_i) = \frac{1}{n^2}\big(n\cdot Var(X_i)\big) = \frac{1}{n}Var(X_i)
 \]</span></p>
+<div>
 <ul>
-<li class="fragment">Nun sind wir fast am Ziel. Da die Varianz der <span class="math inline">\(X_i\)</span> nichts anderes als die quadrierte Standardabweichung <span class="math inline">\(\sigma^2\)</span> ist, gilt:</li>
+<li>Nun sind wir fast am Ziel. Da die Varianz der <span class="math inline">\(X_i\)</span> nichts anderes als die quadrierte Standardabweichung <span class="math inline">\(\sigma^2\)</span> ist, gilt:</li>
 </ul>
+</div>
 <p><span class="math display">\[
 se^2 = \frac{\sigma^2}{n} \qquad \text{bzw.} \qquad se = \frac{\sigma}{\sqrt{n}}
 \]</span></p>
@@ -1323,14 +1409,14 @@ se^2 = \frac{\sigma^2}{n} \qquad \text{bzw.} \qquad se = \frac{\sigma}{\sqrt{n}}
 <section class="slide level2">
 <h2>Zwischenfazit</h2>
 <div class="colorbox fragment" style="margin-bottom:15px">
-<p>Die theoretische Stichprobenverteilung folgt einer <strong>Normalverteilung</strong> (falls n groß genug) mit einem <strong>Mittelwert</strong>, der dem <strong>statistischen Kennwert</strong> entspricht, und einer Standardabweichung, die sich aus der Populationsstreuung <span class="math inline">\(\sigma\)</span> und der Stichprobengröße <span class="math inline">\(n\)</span> berechnet (der sog. <strong>Standardfehler</strong>).</p>
+<p>Die theoretische Stichprobenverteilung folgt einer <strong>Normalverteilung</strong> (falls n groß genug) mit einem <strong>Mittelwert, der dem statistischen Kennwert entspricht</strong>, und einer Standardabweichung, die sich aus der Populationsstreuung <span class="math inline">\(\sigma\)</span> und der Stichprobengröße <span class="math inline">\(n\)</span> berechnet (der sog. <strong>Standardfehler</strong>).</p>
 </div>
 <ul>
-<li class="fragment">Der <strong>zentrale Parameter</strong> der theoretischen Stichprobenverteilung ist der <strong>Standardfehler</strong>: er gibt Auskunft darüber wie verlässlich unsere Schätzung des statistischen Kennwertes ist.</li>
+<li class="fragment">Der Standardfehler gibt darüber Auskunft, wie verlässlich unsere Schätzung des statistischen Kennwertes ist.</li>
 <li class="fragment">Wie wir noch sehen werden umfasst <span class="math inline">\(1 \hat{se}\)</span> die mittleren 68% der möglichen Ergebnisse in der theoretischen Stichprobenverteilung.</li>
 </ul>
 <!---  Example --->
-<div class="example">
+<div class="example fragment">
 <div class="columns">
 <div class="column" style="width:10%;">
 <div style="margin-top: 10px">
@@ -1371,7 +1457,7 @@ se^2 = \frac{\sigma^2}{n} \qquad \text{bzw.} \qquad se = \frac{\sigma}{\sqrt{n}}
 
 </div>
 <!---  Example --->
-<div class="example">
+<div class="example fragment">
 <div class="columns">
 <div class="column" style="width:10%;">
 <div style="margin-top: 10px">
@@ -1392,15 +1478,17 @@ se^2 = \frac{\sigma^2}{n} \qquad \text{bzw.} \qquad se = \frac{\sigma}{\sqrt{n}}
 <ul>
 <li class="fragment">Im Text wird der Standardfehler des Mittelwertes oft in folgender Form angegeben: <span class="math inline">\(M = 3 \pm 0,6 \,\,(\text{SEM})\)</span>.
 <ul>
-<li class="fragment">Wichtig: es sollte immer angegeben werden, dass es sich beim Streuungsmaß um den Standardfehler handelt (z.b. <em>standard error of the mean</em>, SEM).</li>
+<li class="fragment">Wichtig: es sollte prinzipiell immer angegeben werden, um was für ein Streuungsmaß es sich handelt (SEM ist hier die geläufige englische Abkürzung für <em>standard error of the mean</em>).</li>
 </ul></li>
 <li class="fragment">In Abbildungen wird der Standardfehler ähnlich wie die Standardabweichung häufig in Form von Fehlerbalken dargestellt:</li>
 </ul>
 <div class="vspace-small">
 
 </div>
-
-<img data-src="images/sem_praxis.png" class="r-stretch"><ul>
+<div class="fragment">
+<p><img data-src="images/sem_praxis.png" height="270"></p>
+</div>
+<ul>
 <li class="fragment">Ist das Hauptinteresse ob sich Experimentalbedingungen <strong>in ihrem Mittelwert unterscheiden</strong>, ist der <strong>Standardfehler aussagekräftiger</strong> als die Varianz oder Standardabweichung
 <ul>
 <li class="fragment">Aus diesem Grund ist der Standardfehler des Mittelwertes das vielleicht häufigste Streuungsmaß in der Psychologie</li>
@@ -1415,9 +1503,11 @@ se^2 = \frac{\sigma^2}{n} \qquad \text{bzw.} \qquad se = \frac{\sigma}{\sqrt{n}}
 <ul>
 <li class="fragment">Beim Mittelwert gilt, dass der Mittelwert <span class="math inline">\(\bar{x}\)</span> der Stichprobe die beste Schätzung <span class="math inline">\(\hat{\mu}\)</span> für den wahren Mittelwertsparameter <span class="math inline">\(\mu\)</span> der Population ist:</li>
 </ul>
+<div class="fragment">
 <p><span class="math display">\[
 \text{Schätzung des Populationsmittelwertes:}\qquad\hat{\mu} = \bar{x}
 \]</span></p>
+</div>
 <ul>
 <li class="fragment">Bei der Varianz/Standardabweichung gilt dies nur (näherungsweise) für große Stichproben. Für kleinere Stichproben gilt leider nicht <span class="math inline">\(\hat{\sigma}^2 = s^2\)</span>.</li>
 <li class="fragment">Grund: um die Streuung in der Population zu schätzen, müsste eigentlich die Streuung der <span class="math inline">\(x_i\)</span> <strong>um den wahren Mittelwert <span class="math inline">\(\mu\)</span></strong> berechnet werden.</li>
@@ -1436,9 +1526,11 @@ se^2 = \frac{\sigma^2}{n} \qquad \text{bzw.} \qquad se = \frac{\sigma}{\sqrt{n}}
 <h2>Besselkorrektur</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
+<div>
 <ul>
-<li class="fragment">Der deutsche Naturwissenschaftler Friedrich Wilhelm Bessel zeigte, dass für eine Schätzung <span class="math inline">\(\hat{\sigma}^2\)</span> der Populationsstreuung auf Basis der Stichprobenstreuung <span class="math inline">\(s^2\)</span>, der Faktor <span class="math inline">\(\frac{1}{n}\)</span> in der Varianzformel durch <span class="math inline">\(\frac{1}{n-1}\)</span> ersetzt werden muss:</li>
+<li>Der deutsche Naturwissenschaftler Friedrich Wilhelm Bessel zeigte, dass für eine Schätzung <span class="math inline">\(\hat{\sigma}^2\)</span> der Populationsstreuung auf Basis der Stichprobenstreuung <span class="math inline">\(s^2\)</span>, der Faktor <span class="math inline">\(\frac{1}{n}\)</span> in der Varianzformel durch <span class="math inline">\(\frac{1}{n-1}\)</span> ersetzt werden muss:</li>
 </ul>
+</div>
 <p><span class="math display">\[
 \text{Schätzung der Populationsvarianz:}\\
 \hat{\sigma}^2 = \frac{n}{n-1}s = \frac{1}{n\color{darkgreen}{-1}}\sum\left(x_i-\bar{x}\right)^2
@@ -1465,27 +1557,33 @@ se^2 = \frac{\sigma^2}{n} \qquad \text{bzw.} \qquad se = \frac{\sigma}{\sqrt{n}}
 <section class="slide level2">
 <h2><span style=" color: darkred !important;">Herleitung des Faktors <span class="math inline">\(\frac{1}{n-1}\)</span></span></h2>
 <p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 60px; right: 0px; height: 110px; "></p>
+<div>
 <ul>
-<li class="fragment">Der Ausgangspunkt der Besselkorrektur die Beobachtung, dass die (unkorrigierte) Varianz <span class="math inline">\(s^2\)</span> der Stichprobe die Varianz <span class="math inline">\(\sigma^2\)</span> der Population systematisch unterschätzt.</li>
-<li class="fragment">Der Grund ist liegt im Stichprobenmittelwert <span class="math inline">\(\bar{x}\)</span>: er ist keine perfekte Schätzung für den wahren Mittelwert <span class="math inline">\(\mu\)</span> ist — er streut um das “wahre” <span class="math inline">\(\mu\)</span>.</li>
-<li class="fragment">Diese Streuung haben wir gerade kennengelernt — es ist der Standardfehler <span class="math inline">\(\hat{se}=\frac{\hat{\sigma}}{\sqrt{n}}\)</span>. Als Varianz formuliert:</li>
+<li>Der Ausgangspunkt der Besselkorrektur die Beobachtung, dass die (unkorrigierte) Varianz <span class="math inline">\(s^2\)</span> der Stichprobe die Varianz <span class="math inline">\(\sigma^2\)</span> der Population systematisch unterschätzt.</li>
+<li>Der Grund ist liegt im Stichprobenmittelwert <span class="math inline">\(\bar{x}\)</span>: er ist keine perfekte Schätzung für den wahren Mittelwert <span class="math inline">\(\mu\)</span> ist — er streut um das “wahre” <span class="math inline">\(\mu\)</span>.</li>
+<li>Diese Streuung haben wir gerade kennengelernt — es ist der Standardfehler <span class="math inline">\(\hat{se}=\frac{\hat{\sigma}}{\sqrt{n}}\)</span>. Als Varianz formuliert:</li>
 </ul>
+</div>
 <div style="margin-top:-50px !important">
 <p><span class="math display">\[
 \hat{se}^2 = \frac{\hat{\sigma}^2}{n}
 \]</span></p>
 </div>
+<div>
 <ul>
-<li class="fragment">Für die Schätzung der Populationsvarianz <span class="math inline">\(\hat{\sigma}^2\)</span> muss nun die <em>zusätzliche</em> Variabilität <span class="math inline">\(\hat{se}^2\)</span> aufgrund der Unsicherheit des Mittelwertes auf die Stichprobenvarianz <span class="math inline">\(s^2\)</span> addiert werden:</li>
+<li>Für die Schätzung der Populationsvarianz <span class="math inline">\(\hat{\sigma}^2\)</span> muss nun die <em>zusätzliche</em> Variabilität <span class="math inline">\(\hat{se}^2\)</span> aufgrund der Unsicherheit des Mittelwertes auf die Stichprobenvarianz <span class="math inline">\(s^2\)</span> addiert werden:</li>
 </ul>
+</div>
 <div style="margin-top:-20px">
 <p><span class="math display">\[
 \hat{\sigma}^2 = s^2 + \hat{se}^2 = s^2 + \frac{\hat{\sigma}^2}{n}\quad \longrightarrow\quad \hat{\sigma}^2 - \frac{\hat{\sigma}^2}{n} = s^2
 \]</span></p>
 </div>
+<div>
 <ul>
-<li class="fragment">Linke Seite umformen:</li>
+<li>Linke Seite umformen:</li>
 </ul>
+</div>
 <div style="margin-top:-20px !important">
 <p><span class="math display">\[
 \hat{\sigma}^2 - \frac{\hat{\sigma}^2}{n} = \hat{\sigma}^2\left(1 - \frac{1}{n}\right) = \hat{\sigma}^2\frac{n-1}{n} \overset{!}{=} s^2 \;\;\longrightarrow\;\; \hat{\sigma}^2 = \frac{n}{n-1}s^2
@@ -1501,32 +1599,40 @@ se^2 = \frac{\sigma^2}{n} \qquad \text{bzw.} \qquad se = \frac{\sigma}{\sqrt{n}}
 <p><span class="math display">\[
 \text{Zwischenergebnis:}\qquad \hat{\sigma}^2 = \frac{n}{n-1}s^2
 \]</span></p>
+<div>
 <ul>
-<li class="fragment">Die unkorrigierte Varianz <span class="math inline">\(s^2\)</span> lautet:</li>
+<li>Die unkorrigierte Varianz <span class="math inline">\(s^2\)</span> lautet:</li>
 </ul>
+</div>
 <div style="margin-top:-25px">
 <p><span class="math display">\[
 s^2 = \frac{1}{n}\sum\left(x_i-\bar{x}\right)^2
 \]</span></p>
 </div>
+<div>
 <ul>
-<li class="fragment">Einsetzen:</li>
+<li>Einsetzen:</li>
 </ul>
+</div>
 <div style="margin-top: -30px !important">
 <p><span class="math display">\[
 \hat{\sigma}^2 = \frac{n}{n-1}s^2 = \frac{n}{n-1}\frac{1}{n}\sum\left(x_i-\bar{x}\right)^2 = \color{navy}{\frac{1}{n-1}}\sum\left(x_i-\bar{x}\right)^2
 \]</span></p>
 </div>
+<div>
 <ul>
-<li class="fragment">Nun haben wir unseren Faktor <span class="math inline">\(\color{navy}{\frac{1}{n-1}}\)</span>.</li>
-<li class="fragment">Für die korrigierte Standardabweichung der Stichprobe wird häufig analog angenommen:</li>
+<li>Nun haben wir unseren Faktor <span class="math inline">\(\color{navy}{\frac{1}{n-1}}\)</span>.</li>
+<li>Für die korrigierte Standardabweichung der Stichprobe wird häufig analog angenommen:</li>
 </ul>
+</div>
 <p><span class="math display">\[
 \hat{\sigma} = \sqrt{\color{navy}{\frac{1}{n-1}}\sum\left(x_i-\bar{x}\right)^2}
 \]</span></p>
+<div>
 <ul>
-<li class="fragment">Diese analoge Korrektur für die Standardabweichung ist nicht 100% gültig<a href="#/footnotes" class="footnote-ref" id="fnref6" role="doc-noteref" data-footnote-href="#/fn6" onclick=""><sup>6</sup></a> — für alle<br>praktischen Zwecke reicht sie aber aus.</li>
+<li>Diese analoge Korrektur für die Standardabweichung ist nicht 100% gültig<a href="#/footnotes" class="footnote-ref" id="fnref6" role="doc-noteref" data-footnote-href="#/fn6" onclick=""><sup>6</sup></a> — für alle<br>praktischen Zwecke reicht sie aber aus.</li>
 </ul>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1619,7 +1725,7 @@ s^2 = \frac{1}{n}\sum\left(x_i-\bar{x}\right)^2
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":false},
 'animate': {"autoplay":true},
-'customcontrols': {"controls":[{"id":"home","title":"Startseite","icon":"<i class=\"fa-solid fa-house\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}`, '_blank');"},{"id":"print-pdf","title":"Als PDF","icon":"<i class=\"fa-solid fa-file-pdf\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}${location.pathname}`.replace('index.html', `Vorlesung${location.pathname.split('/')[1]}.pdf`), '_blank');"},{"id":"print","title":"Drucken","icon":"<i class=\"fa-solid fa-print\" style=\"color:#8398dd\"></i>","action":"location.href = location.href.includes('print-pdf') ? `${location.protocol}//${location.host}${location.pathname}${location.hash}` : `${location.protocol}//${location.host}${location.pathname}?print-pdf${location.hash}`;"},{"id":"toggle-notes","title":"Notizen (c)","icon":"<i class=\"fa-solid fa-pen\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleNotesCanvas(event);"},{"id":"toggle-chalkboard","title":"Tafel (b)","icon":"<i class=\"fa-solid fa-person-chalkboard\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleChalkboard(event);"},{"id":"toggle-fragments","title":"Animationen","icon":"<i class=\"fa-solid fa-bolt\" style=\"color:#8398dd\"></i>","action":"debugger; Reveal.getConfig().fragments = !Reveal.getConfig().fragments; document.querySelector('.fa-bolt').style.color = Reveal.getConfig().fragments ?  '#dfe169' : '#8398dd'; if (Reveal.getConfig().fragments) {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]');for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('was_anim')) {elements[i].innerHTML = elements[i].innerHTML_prev;}}} else {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]'); for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('class: fragment')) {elements[i].innerHTML = `<div><img src='${elements[i].getAttribute('data-src')}' class='was_anim'></div>`;}}fragments = document.querySelectorAll('.fragment');for (let i = 0; i < fragments.length; i++) {fragments[i].classList.add('visible');}}"},{"id":"intro-sound","title":"Play intro","icon":"<i class=\"fa-solid fa-music\" style=\"color:#8398dd\"></i>","action":"new Audio('images/appear.mp3').play()"}]},
+'customcontrols': {"controls":[{"id":"home","title":"Startseite","icon":"<i class=\"fa-solid fa-house\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}`, '_blank');"},{"id":"print-pdf","title":"Als PDF","icon":"<i class=\"fa-solid fa-file-pdf\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}${location.pathname}`.replace('index.html', `Vorlesung${location.pathname.split('/')[2]}.pdf`), '_blank');"},{"id":"print","title":"Drucken","icon":"<i class=\"fa-solid fa-print\" style=\"color:#8398dd\"></i>","action":"location.href = location.href.includes('print-pdf') ? `${location.protocol}//${location.host}${location.pathname}${location.hash}` : `${location.protocol}//${location.host}${location.pathname}?print-pdf${location.hash}`;"},{"id":"toggle-notes","title":"Notizen (c)","icon":"<i class=\"fa-solid fa-pen\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleNotesCanvas(event);"},{"id":"toggle-chalkboard","title":"Tafel (b)","icon":"<i class=\"fa-solid fa-person-chalkboard\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleChalkboard(event);"},{"id":"toggle-fragments","title":"Animationen","icon":"<i class=\"fa-solid fa-bolt\" style=\"color:#8398dd\"></i>","action":"Reveal.getConfig().fragments = !Reveal.getConfig().fragments; document.querySelector('.fa-bolt').style.color = Reveal.getConfig().fragments ?  '#dfe169' : '#8398dd'; if (Reveal.getConfig().fragments) {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]');for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('was_anim')) {elements[i].innerHTML = elements[i].innerHTML_prev;}}} else {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]'); for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('class: fragment')) {elements[i].innerHTML = `<div><img src='${elements[i].getAttribute('data-src')}' class='was_anim'></div>`;}}fragments = document.querySelectorAll('.fragment');for (let i = 0; i < fragments.length; i++) {fragments[i].classList.add('visible');}}"},{"id":"intro-sound","title":"Play intro","icon":"<i class=\"fa-solid fa-music\" style=\"color:#8398dd\"></i>","action":"new Audio('images/appear.mp3').play()"}]},
 'smaller': false,
  
         // Display controls in the bottom right corner

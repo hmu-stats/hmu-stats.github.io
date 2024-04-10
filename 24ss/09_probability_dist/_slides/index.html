@@ -337,7 +337,7 @@
 </style>
 
 <section data-background-color="black" class="titlesection quarto-title-block center">
-  <p class="semester">M24 Statistik 1:&nbsp;&nbsp;Sommersemester 2024</p>
+  <p class="semester">M24 Statistik 1:&nbsp;&nbsp;Wintersemester 23/24</p>
   <h1 class="title">Vorlesung 09: Wahrscheinlichkeitsverteilungen</h1>
   
   <p class="subtitle">&nbsp;</p>
@@ -391,8 +391,10 @@
 </tbody>
 </table>
 </div>
+<div class="fragment">
 <p>Um dieses Konzept zu verstehen, verlassen wir kurz die Idee der Stichprobenverteilung und gehen zurück zu einem Konzept, das wir bereits kennen: <strong>relative Häufigkeiten, dargestellt als Histogramme</strong>.</p>
-<div class="columns">
+</div>
+<div class="columns fragment">
 <div class="column" style="width:65%;">
 <p>Zur Erinnerung: Histogramme stellen die Häufigkeit der <em>ursprünglichen Merkmalsvariable</em> in einer Stichprobe oder Population dar. Wird die <strong>relative Häufigkeit</strong> aufgetragen, handelt es sich dabei um eine <strong>empirische Wahrscheinlichkeitsverteilung</strong>.</p>
 </div><div class="column" style="width:35%;">
@@ -410,8 +412,12 @@
 </div>
 <div class="columns">
 <div class="column" style="width:70%;">
+<div>
 <ul>
-<li class="fragment">Bei der <strong>relativen Häufigkeit in Histogrammdarstellung</strong> wird für jedes Intervall der untersuchten Variable abgetragen, welcher Anteil der Versuchspersonen das Merkmal im jeweiligen Wertebereich trägt.</li>
+<li>Bei der <strong>relativen Häufigkeit in Histogrammdarstellung</strong> wird für jedes Intervall der untersuchten Variable abgetragen, welcher Anteil der Versuchspersonen das Merkmal im jeweiligen Wertebereich trägt.</li>
+</ul>
+</div>
+<ul>
 <li class="fragment">Die Breite des Intervalls – auch <span style=" color: navy !important;"><strong>Kategorienbreite <em>d</em></strong></span> genannt – ist dabei im Fall von <em>empirischen</em> Daten immer ein Kompromiss zweier Faktoren:
 <ol type="1">
 <li class="fragment"><strong>Auflösung:</strong> je schmaler das Intervall, desto besser die Auflösung.</li>
@@ -443,11 +449,13 @@ f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\righ
 <div class="vspace-medium">
 
 </div>
-
+<div class="fragment">
+<p><img data-src="images/probability_density_demo.png"></p>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
-<img data-src="images/probability_density_demo.png" class="r-stretch"></section>
+</section>
 <section class="slide level2">
 <h2>Wahrscheinlichkeitsverteilung</h2>
 <div class="vspace-small">
@@ -473,7 +481,7 @@ f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\righ
 </section>
 <section class="slide level2">
 <h2>Wahrscheinlichkeitsdichte</h2>
-<div class="colorbox fragment">
+<div class="colorbox">
 <p>Geht die Kategorienbreite gegen 0, wird die Wahrscheinlichkeit(sverteilung) zur <span style=" color: navy !important;"><strong>Wahrscheinlichkeitsdichte(verteilung)</strong></span>.</p>
 </div>
 <p>Wie kann man sich “Wahrscheinlichkeitsdichte” vorstellen?</p>
@@ -481,8 +489,10 @@ f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\righ
 <li class="fragment">Wir kennen das Konzept der “Dichte” bei Stoffen: z.B. ist die Dichte von Eis ist ca. <span class="math inline">\(0{,}918\stackrel{g}{}\!\!\unicode{x2215}_{\!\unicode{x202f}cm^3}\)</span>, d.h. dass sich in einem <span class="math inline">\(1cm^3\)</span> Würfel ein knappes Gramm Eis befindet.</li>
 <li class="fragment">Eine Dichte ist also immer eine bestimmte Masse <em>pro</em> Maßeinheit.</li>
 </ul>
+<div class="fragment">
 <p>Wir können daher Wahrscheinlichkeitsdichte wie folgt definieren:</p>
-<div class="definition">
+</div>
+<div class="definition fragment">
 <!---  Definition--->
 <table>
 <colgroup>
@@ -529,10 +539,14 @@ f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\righ
 \]</span></li>
 </ul>
 </div><div class="column" style="width:35%;">
+<div class="fragment">
 <p><img data-src="images/integral_of_pdf_is_1.png" style="margin-top:-40px !important" height="222"></p>
 </div>
 </div>
+</div>
+<div class="fragment">
 <p>.. im Fall der Normalverteilung sorgt dafür der Normalisierungsfaktor <span class="math inline">\(\frac{1}{\sigma\sqrt{2\pi}}\)</span> .</p>
+</div>
 <!-- ```{python}
 
 ``` -->
@@ -591,11 +605,13 @@ Wahrscheinlichkeit=Intervallgröße \cdot Wahrscheinlichkeitsdichte = 2cm \cdot 
 <div class="vspace-small">
 
 </div>
-<div class="columns">
+<div class="columns fragment">
 <div class="column" style="width:62%;">
+<div>
 <ul>
-<li class="fragment">Mathematisch beschreiben wir diese Operation als ein Integral:</li>
+<li>Mathematisch beschreiben wir diese Operation als ein Integral:</li>
 </ul>
+</div>
 <p><span class="math display">\[
 P(x_0&lt;x&lt;x_1) = \int_{x_0}^{x_1} f(x) dx
 \]</span></p>
@@ -622,17 +638,19 @@ P(x_0&lt;x&lt;x_1) = \int_{x_0}^{x_1} f(x) dx
 <section class="slide level2">
 <h2>Wahrscheinlichkeitsdichte: Beispiel</h2>
 <div class="columns">
-<div class="column" style="width:62%;">
+<div class="column" style="width:63%;">
 <p>Lassen wir die Vereinfachung im vorherigen Beispiel fallen, dass die Wahrscheinlichkeitsdichte im Bereich <span class="math inline">\([2cm; 4cm]\)</span> konstant ist. Stattdessen nehmen wir an, dass Nasenlängen in der Population normalverteilt sind, mit Mittelwert <span class="math inline">\(\mu=5\)</span> und Standardabweichung <span class="math inline">\(\sigma=1{,}5\)</span>.</p>
 <p><strong>Frage: wie hoch ist die Wahrscheinlichkeit, dass eine zufällig gezogene Nase aus der Population eine Länge zwischen <span class="math inline">\(2cm\)</span> und <span class="math inline">\(4cm\)</span> hat?</strong></p>
-</div><div class="column" style="width:38%;">
+</div><div class="column" style="width:37%;">
 <p><img data-src="images/density_integral.png"></p>
 </div>
 </div>
+<div class="fragment">
 <p><span class="math display">\[
 P(2\le x\le 4) = \int_2^4 f(x)dx = \frac{1}{\sigma\sqrt{2\pi}}\int_2^4\text{exp}\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)dx = \\
 = \frac{1}{1{,}5\sqrt{2\pi}}\int_2^4\text{exp}\left(-\frac{(x-5)^2}{2\cdot1{,}5^2}\right)dx \overset{(Computer!)}{\approx} 0{,}23
 \]</span></p>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -666,7 +684,7 @@ F(x) = \int_{-\infty}^{x} f(x') dx'
 
 </div>
 <!---  Example --->
-<div class="example">
+<div class="example fragment">
 <div class="columns">
 <div class="column" style="width:10%;">
 <div style="margin-top: 10px">
@@ -690,7 +708,7 @@ F(4) = \int_{-\infty}^{4} f(x') dx' = \\
 <section class="slide level2">
 <h2>Verteilungsfunktion</h2>
 <div class="columns">
-<div class="column" style="width:65%;">
+<div class="column" style="width:63%;">
 <p>Mithilfe der Verteilungsfunktion, lässt sich nun das Integral</p>
 <p><span class="math display">\[
 P(x_0&lt;x&lt;x_1) = \int_{x_0}^{x_1} f(x) dx
@@ -702,7 +720,7 @@ mit dem wir die Fläche zwischen einer Untergrenz <span class="math inline">\(x_
 <p><span class="math display">\[
 P(x_0&lt;x&lt;x_1) = F(x_1) - F(x_0)
 \]</span></p>
-</div><div class="column" style="width:35%;">
+</div><div class="column" style="width:37%;">
 <p><img data-src="images/verteilungsfunktion_general.png"></p>
 </div>
 </div>
@@ -710,7 +728,7 @@ P(x_0&lt;x&lt;x_1) = F(x_1) - F(x_0)
 
 </div>
 <!---  Example --->
-<div class="example">
+<div class="example fragment">
 <div class="columns">
 <div class="column" style="width:10%;">
 <div style="margin-top: 10px">
@@ -740,11 +758,13 @@ P(2&lt;x&lt;4) = F(4) - F(2) \overset{(Computer!)}{\approx} 0{,}23
 <section class="slide level2">
 <h2>68-95-99.7-Prozentregel</h2>
 <p>Um ein Gefühl für die Flächeninhalte der Normalverteilung zu bekommen, gilt als Faustregel die <strong>68-95-99.7-Prozentregel</strong>:</p>
+<div>
 <ul>
-<li class="fragment">Der Bereich Mittelwert <span class="math inline">\(\pm\)</span> eine Standardabweichung (<span class="math inline">\(\mu\pm1\sigma\)</span>) umfasst <strong>68%</strong> der Daten</li>
-<li class="fragment">Der Bereich Mittelwert <span class="math inline">\(\pm\)</span> zwei Standardabweichungen (<span class="math inline">\(\mu\pm2\sigma\)</span>) umfasst <strong>95%</strong> der Daten</li>
-<li class="fragment">Der Bereich Mittelwert <span class="math inline">\(\pm\)</span> drei Standardabweichungen (<span class="math inline">\(\mu\pm3\sigma\)</span>) umfasst <strong>99.7%</strong> der Daten</li>
+<li>Der Bereich Mittelwert <span class="math inline">\(\pm\)</span> eine Standardabweichung (<span class="math inline">\(\mu\pm1\sigma\)</span>) umfasst <strong>68%</strong> der Daten</li>
+<li>Der Bereich Mittelwert <span class="math inline">\(\pm\)</span> zwei Standardabweichungen (<span class="math inline">\(\mu\pm2\sigma\)</span>) umfasst <strong>95%</strong> der Daten</li>
+<li>Der Bereich Mittelwert <span class="math inline">\(\pm\)</span> drei Standardabweichungen (<span class="math inline">\(\mu\pm3\sigma\)</span>) umfasst <strong>99.7%</strong> der Daten</li>
 </ul>
+</div>
 
 <!----------------->
 <!--- New slide --->
@@ -756,10 +776,12 @@ P(2&lt;x&lt;4) = F(4) - F(2) \overset{(Computer!)}{\approx} 0{,}23
 
 </div>
 <p>Im nächsten Schritt kehren wir zurück zur <strong>theoretischen Stichprobenverteilung</strong>. Alle Erkenntnisse über die Normalverteilung lassen sich auch auf die theoretische Stichprobenverteilung übertragen. Dies wird uns bis zum Ende des Semesters zwei wesentliche Methoden der Inferenzstatistik eröffnen:</p>
+<div>
 <ul>
-<li class="fragment"><strong>Hypothesentestung</strong> bzw. <strong>Signifikanztestung</strong> (u.a. auch Idee des p-Wertes)</li>
-<li class="fragment"><strong>Konfidenzintervalle</strong> (Verallgemeinerung des Standardfehlers)</li>
+<li><strong>Hypothesentestung</strong> bzw. <strong>Signifikanztestung</strong> (u.a. auch Idee des p-Wertes)</li>
+<li><strong>Konfidenzintervalle</strong> (Verallgemeinerung des Standardfehlers)</li>
 </ul>
+</div>
 <div class="vspace-medium">
 
 </div>
@@ -808,7 +830,7 @@ P(2&lt;x&lt;4) = F(4) - F(2) \overset{(Computer!)}{\approx} 0{,}23
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":false},
 'animate': {"autoplay":true},
-'customcontrols': {"controls":[{"id":"home","title":"Startseite","icon":"<i class=\"fa-solid fa-house\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}`, '_blank');"},{"id":"print-pdf","title":"Als PDF","icon":"<i class=\"fa-solid fa-file-pdf\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}${location.pathname}`.replace('index.html', `Vorlesung${location.pathname.split('/')[1]}.pdf`), '_blank');"},{"id":"print","title":"Drucken","icon":"<i class=\"fa-solid fa-print\" style=\"color:#8398dd\"></i>","action":"location.href = location.href.includes('print-pdf') ? `${location.protocol}//${location.host}${location.pathname}${location.hash}` : `${location.protocol}//${location.host}${location.pathname}?print-pdf${location.hash}`;"},{"id":"toggle-notes","title":"Notizen (c)","icon":"<i class=\"fa-solid fa-pen\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleNotesCanvas(event);"},{"id":"toggle-chalkboard","title":"Tafel (b)","icon":"<i class=\"fa-solid fa-person-chalkboard\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleChalkboard(event);"},{"id":"toggle-fragments","title":"Animationen","icon":"<i class=\"fa-solid fa-bolt\" style=\"color:#8398dd\"></i>","action":"debugger; Reveal.getConfig().fragments = !Reveal.getConfig().fragments; document.querySelector('.fa-bolt').style.color = Reveal.getConfig().fragments ?  '#dfe169' : '#8398dd'; if (Reveal.getConfig().fragments) {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]');for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('was_anim')) {elements[i].innerHTML = elements[i].innerHTML_prev;}}} else {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]'); for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('class: fragment')) {elements[i].innerHTML = `<div><img src='${elements[i].getAttribute('data-src')}' class='was_anim'></div>`;}}fragments = document.querySelectorAll('.fragment');for (let i = 0; i < fragments.length; i++) {fragments[i].classList.add('visible');}}"},{"id":"intro-sound","title":"Play intro","icon":"<i class=\"fa-solid fa-music\" style=\"color:#8398dd\"></i>","action":"new Audio('images/appear.mp3').play()"}]},
+'customcontrols': {"controls":[{"id":"home","title":"Startseite","icon":"<i class=\"fa-solid fa-house\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}`, '_blank');"},{"id":"print-pdf","title":"Als PDF","icon":"<i class=\"fa-solid fa-file-pdf\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}${location.pathname}`.replace('index.html', `Vorlesung${location.pathname.split('/')[2]}.pdf`), '_blank');"},{"id":"print","title":"Drucken","icon":"<i class=\"fa-solid fa-print\" style=\"color:#8398dd\"></i>","action":"location.href = location.href.includes('print-pdf') ? `${location.protocol}//${location.host}${location.pathname}${location.hash}` : `${location.protocol}//${location.host}${location.pathname}?print-pdf${location.hash}`;"},{"id":"toggle-notes","title":"Notizen (c)","icon":"<i class=\"fa-solid fa-pen\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleNotesCanvas(event);"},{"id":"toggle-chalkboard","title":"Tafel (b)","icon":"<i class=\"fa-solid fa-person-chalkboard\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleChalkboard(event);"},{"id":"toggle-fragments","title":"Animationen","icon":"<i class=\"fa-solid fa-bolt\" style=\"color:#8398dd\"></i>","action":"Reveal.getConfig().fragments = !Reveal.getConfig().fragments; document.querySelector('.fa-bolt').style.color = Reveal.getConfig().fragments ?  '#dfe169' : '#8398dd'; if (Reveal.getConfig().fragments) {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]');for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('was_anim')) {elements[i].innerHTML = elements[i].innerHTML_prev;}}} else {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]'); for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('class: fragment')) {elements[i].innerHTML = `<div><img src='${elements[i].getAttribute('data-src')}' class='was_anim'></div>`;}}fragments = document.querySelectorAll('.fragment');for (let i = 0; i < fragments.length; i++) {fragments[i].classList.add('visible');}}"},{"id":"intro-sound","title":"Play intro","icon":"<i class=\"fa-solid fa-music\" style=\"color:#8398dd\"></i>","action":"new Audio('images/appear.mp3').play()"}]},
 'smaller': false,
  
         // Display controls in the bottom right corner

@@ -95,49 +95,22 @@ a.formelsammlung:not(.nohover):hover {
     font-size: 2.0rem;
 }
 
-.dropbtn {
-  border: 1px solid #f8fa75;
-  border-radius: 10px 10px 0 0;
-  color: #f8fa75;
-  background-color: black;
-  padding: 16px;
-  text-align: center;
-  font-size: 2.0rem;
-}
-
 .dropdown {
   position: relative;
   display: inline-block;
   margin-bottom: 30px;
 }
 
-.dropdown-content {
-  display: none;
-  font-size: 2.0rem;
-  position: absolute;
-  background-color: black;
-  border-width: 0px 1px 1px 1px;
-  border-style: solid;
-  border-color: #f8fa75;
-  border-radius: 0 0 10px 10px;
-  color: #f8fa75;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  width: 100%;
-  box-sizing: border-box;
+.dropdown_simple {
+    font-size: 2.0rem;
+    background-color: #bbb;
+    padding: 3px 12px 3px 6px;
 }
 
-.dropdown-content a {
-  color: #f8fa75;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+.dropdown_simple option {
+    font-size: 2.0rem;
 }
 
-.dropdown-content a:hover {background-color: #f8fa75; color: black}
-
-.dropdown:hover .dropdown-content {display: block;}
 
 #semester {
     font-size: 1.3rem;
@@ -149,7 +122,11 @@ a.formelsammlung:not(.nohover):hover {
         font-size: 3.25rem;
     }
 
-    .dropbtn {
+    .dropdown_simple {
+        font-size: 2.5rem;
+    }
+
+    .dropdown_simple option {
         font-size: 2.5rem;
     }
 
@@ -183,16 +160,29 @@ a.formelsammlung:not(.nohover):hover {
 </style>
 <script>
 
+// function change_semester(semester, semester_str) {
+//
+//     const w3Button = document.querySelector('.dropbtn');
+//     const body = document.querySelector('body');
+//     const w3DropdownContent = document.querySelector('.dropdown-content');
+//     w3Button.addEventListener('mouseover', () => w3DropdownContent.style.display = 'block');
+//     // w3Button.addEventListener('mouseleave', () => w3DropdownContent.style.display = 'none');
+//     body.addEventListener('click', () => w3DropdownContent.style.display = 'none');
+//     w3DropdownContent.addEventListener('click', () => w3DropdownContent.style.display = 'none');
+//
+//
+//     document.getElementById(semester).style.display = 'table';
+//     let semesters = ['23ws', '24ss'];
+//     for (let i = 0; i < semesters.length; i++) {
+//         if (semesters[i] !== semester) {
+//             document.getElementById(semesters[i]).style.display = 'none';
+//         }
+//     }
+//     document.getElementById('semester').innerHTML = semester_str.replace(' ', '<br />');
+//     document.getElementById('dropbtn-semester').textContent = `${semester_str}`;
+// }
+
 function change_semester(semester, semester_str) {
-
-    const w3Button = document.querySelector('.dropbtn');
-    const body = document.querySelector('body');
-    const w3DropdownContent = document.querySelector('.dropdown-content');
-    w3Button.addEventListener('mouseover', () => w3DropdownContent.style.display = 'block');
-    // w3Button.addEventListener('mouseleave', () => w3DropdownContent.style.display = 'none');
-    body.addEventListener('click', () => w3DropdownContent.style.display = 'none');
-    w3DropdownContent.addEventListener('click', () => w3DropdownContent.style.display = 'none');
-
 
     document.getElementById(semester).style.display = 'table';
     let semesters = ['23ws', '24ss'];
@@ -202,8 +192,8 @@ function change_semester(semester, semester_str) {
         }
     }
     document.getElementById('semester').innerHTML = semester_str.replace(' ', '<br />');
-    document.getElementById('dropbtn-semester').textContent = `${semester_str}`;
 }
+
 
 </script>
 </head>
@@ -217,17 +207,23 @@ function change_semester(semester, semester_str) {
 <div>
 <span id="statistik">Statistik 1 im&nbsp;</span>
 <div class="dropdown">
-  <button class="dropbtn">
+<!--  <button class="dropbtn">
       <span id="dropbtn-semester">Wintersemester 2023/2024</span>&numsp;
       <img src="images/square-caret-down-regular.png" width="30px" style="position: relative; top: 4px;">
-  </button>
-  <div class="dropdown-content">
+  </button>-->
+<!--  <div class="dropdown-content">
     
-        <a href="javascript:;" onclick="change_semester('23ws', 'Wintersemester 2023/2024')">Wintersemester 2023/2024</a>
+        <a href="#" onclick="event.preventDefault(); change_semester('23ws', 'Wintersemester 2023/2024')">Wintersemester 2023/2024</a>
     
-        <a href="javascript:;" onclick="change_semester('24ss', 'Sommersemester 2024')">Sommersemester 2024</a>
+        <a href="#" onclick="event.preventDefault(); change_semester('24ss', 'Sommersemester 2024')">Sommersemester 2024</a>
     
-  </div>
+  </div>-->
+
+    <select class="dropdown_simple" onChange="event.preventDefault(); change_semester(this.value, this.options[this.selectedIndex].text)">
+        <option value='23ws'>Wintersemester 2023/2024</option>
+        <option value='24ss' selected>Sommersemester 2024</option>
+    </select>
+
 </div>
 </div>
 
@@ -238,7 +234,7 @@ function change_semester(semester, semester_str) {
 
 
     
-    <table class="lectures" id="23ws" style="display: table">
+    <table class="lectures" id="23ws" style="display: none">
     
         <tr>
             <td><a href="Formelsammlung_Tabellen_Statistik1.pdf" target="_blank" class="formelsammlung" style="color: #cdfff9"><i>Formelsammlung und Tabellen Statistik 1</i></a></td>
@@ -313,7 +309,7 @@ function change_semester(semester, semester_str) {
     </table>
 
     
-    <table class="lectures" id="24ss" style="display: none">
+    <table class="lectures" id="24ss" style="display: table">
     
         <tr>
             <td><a href="Formelsammlung_Tabellen_Statistik1.pdf" target="_blank" class="formelsammlung" style="color: #cdfff9"><i>Formelsammlung und Tabellen Statistik 1</i></a></td>
