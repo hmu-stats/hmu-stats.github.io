@@ -608,10 +608,10 @@ Kennwert</span></th>
 <td><span class="math inline">\(\hat{\sigma}^2\)</span>, <span class="math inline">\(\hat{Var}(X)\)</span></td>
 </tr>
 <tr class="even">
-<td>Koarianz</td>
-<td><span class="math inline">\(\sigma_{XY}\)</span></td>
-<td><span class="math inline">\(s_{XY}\)</span>, <span class="math inline">\(Cov(X,Y)\)</span></td>
-<td><span class="math inline">\(\hat{\sigma}_{XY}\)</span>, <span class="math inline">\(\hat{Cov}(X,Y)\)</span></td>
+<td>Kovarianz</td>
+<td><span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{XY}}\)</span></td>
+<td><span class="math inline">\(s_{\mkern-2mu\scriptscriptstyle{XY}}\)</span>, <span class="math inline">\(Cov(X,Y)\)</span></td>
+<td><span class="math inline">\(\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{XY}}\)</span>, <span class="math inline">\(\hat{Cov}(X,Y)\)</span></td>
 </tr>
 <tr class="odd">
 <td>Korrelation</td>
@@ -1229,8 +1229,8 @@ Range = x_{max} - x_{min}
 <ul>
 <li class="fragment">Streng genommen stellt die gezeigte Varianzformel nicht exakt das <em>mittlere</em> Abstandsquadrat aller Werte vom Mittelwert dar, da im Nenner durch <span class="math inline">\(n-1\)</span> und nicht durch <span class="math inline">\(n\)</span> geteilt wird.</li>
 <li class="fragment">Die Korrektur von <span class="math inline">\(n\;\longrightarrow n-1\)</span> heißt <strong>Besselkorrektur</strong> und tritt häufig auf, wenn <strong>inferentielle Kennwerte</strong> bestimmt werden sollen.</li>
-<li class="fragment">Die Korrektur wird notwendig, weil eine Schätzung der Populationsvarianz eigentlich erfordert, dass die Abstandsquadrate der <span class="math inline">\(x_i\)</span> <em>um den wahren Populationsmittelwert</em> <span class="math inline">\(\mu\)</span> berechnet werden.</li>
-<li class="fragment">Das wahre <span class="math inline">\(\mu\)</span> kennen wir jedoch nicht, sondern lediglich die Stichprobenschätzung <span class="math inline">\(\hat{\mu}=\bar{x}\)</span>.</li>
+<li class="fragment">Die Korrektur wird notwendig, weil die Schätzung der Populationsvarianz eigentlich erfordert, dass die Abstandsquadrate der <span class="math inline">\(x_i\)</span> <em>um den wahren Populationsmittelwert</em> <span class="math inline">\(\mu\)</span> berechnet werden.</li>
+<li class="fragment">Das wahre <span class="math inline">\(\mu\)</span> ist jedoch nicht bekannt, sondern lediglich die Schätzung <span class="math inline">\(\hat{\mu}=\bar{x}\)</span> auf Basis der Stichprobe.</li>
 <li class="fragment">Es stellt sich heraus, dass die Streuung der <span class="math inline">\(x_i\)</span> um den Mittelwert <span class="math inline">\(\bar{x}\)</span> der Stichprobe immer etwas kleiner ist, als es die Streuung der <span class="math inline">\(x_i\)</span> um den wahren Wert <span class="math inline">\(\mu\)</span> wäre.</li>
 <li class="fragment">Aus diesem Grund muss die Varianzformel durch einen kleineren Wert (<span class="math inline">\(n-1\)</span> statt <span class="math inline">\(n\)</span>) geteilt werden, damit der Varianzschätzer “nach oben” korrigiert wird.</li>
 </ul>
@@ -1622,7 +1622,7 @@ plt.savefig('images/paradoxia_histogram_inflammation_mean_std.png', bbox_inches=
 </div>
 </div>
 <ul>
-<li class="fragment">Wir bezeichnen <span class="math inline">\(\hat{\sigma}^2\)</span> als <strong>Schätzung der Populationsvarianz auf Basis der Stichprobe</strong> oder kurz <span style=" color: navy !important;"><strong>biaskorrigierte Stichprobenvarianz</strong></span>.</li>
+<li class="fragment">Die Größe <span class="math inline">\(\hat{\sigma}^2\)</span> ist die <strong>Schätzung der Populationsvarianz auf Basis der Stichprobe</strong> und wird in dieser Vorlesungsreihe als <span style=" color: navy !important;"><strong>inferentielle Varianz</strong></span> bezeichnet.</li>
 <li class="fragment">Intution: die Varianz wird im Fall von <span class="math inline">\(\frac{1}{n-1}\)</span> <em>durch weniger geteilt</em> als beim ursprünglichen Faktor <span class="math inline">\(\frac{1}{n}\)</span>, d.h. die resultierende Varianz wird <em>zu einem größeren Wert hin</em> korrigiert.</li>
 <li class="fragment">Die “<span class="math inline">\(n-1\)</span>”-Korrektur für Stichproben wird als <span style=" color: navy !important;"><strong>Besselkorrektur</strong></span> bezeichnet.</li>
 <li class="fragment">Ab ca. <span class="math inline">\(n=30\)</span> spielt die Besselkorrektur kaum eine Rolle mehr (<span class="math inline">\(\frac{1}{30}=0.033\)</span> vs.&nbsp;<span class="math inline">\(\frac{1}{29}=0.034\)</span>)</li>
@@ -1638,7 +1638,7 @@ plt.savefig('images/paradoxia_histogram_inflammation_mean_std.png', bbox_inches=
 <ul>
 <li>Der Ausgangspunkt der Besselkorrektur die Beobachtung, dass die (unkorrigierte) Varianz <span class="math inline">\(s^2\)</span> der Stichprobe die Varianz <span class="math inline">\(\sigma^2\)</span> der Population systematisch unterschätzt.</li>
 <li>Der Grund ist liegt im Stichprobenmittelwert <span class="math inline">\(\bar{x}\)</span>: er ist keine perfekte Schätzung für den wahren Mittelwert <span class="math inline">\(\mu\)</span> ist — er streut um das “wahre” <span class="math inline">\(\mu\)</span>.</li>
-<li>Diese Streuung haben wir gerade kennengelernt — es ist der Standardfehler <span class="math inline">\(\hat{se}=\frac{\hat{\sigma}}{\sqrt{n}}\)</span>. Als Varianz formuliert:</li>
+<li>Diese Streuung werden wir noch kennenlernen — es ist der Standardfehler <span class="math inline">\(\hat{se}=\frac{\hat{\sigma}}{\sqrt{n}}\)</span>. Als Varianz formuliert:</li>
 </ul>
 </div>
 <div style="margin-top:-50px !important">
@@ -1720,16 +1720,16 @@ s^2 = \frac{1}{n}\sum\left(x_i-\bar{x}\right)^2
 <div class="fragment">
 <p>Prinzipiell wäre auch eine Formel für die Varianz mit Absolutabständen denkbar:</p>
 <p><span class="math display">\[
-Var_{\text{absolut}}(X) = \frac{1}{n}\sum_{i=1}^n\big|x_i-\bar{x}\big|
+\hat{Var}_{\text{absolut}}(X) = \frac{1}{n-1}\sum_{i=1}^n\big|x_i-\bar{x}\big|
 \]</span></p>
 </div>
 <div class="fragment">
-<p>Über die Gründe, warum sich <span class="math inline">\(Var_{\text{absolut}}\)</span> nicht durchgesetzt hat, streitet sich die Fachwelt. Neben historischen Gründen, gibt es aber einige Eigenschaften, die die Präferenz für Abstandsquadrate zumindest nachvollziehbar machen:</p>
+<p>Über die Gründe, warum sich <span class="math inline">\(\hat{Var}_{\text{absolut}}\)</span> nicht durchgesetzt hat, streitet sich die Fachwelt. Neben historischen Gründen, gibt es aber einige Eigenschaften, die die Präferenz für Abstandsquadrate zumindest nachvollziehbar machen:</p>
 </div>
 <ul>
 <li class="fragment">Quadrierte Abstände gewichten Punkte, die weiter vom Mittelwert entfernt sind, höher. Dies entspricht einer “Bestrafung” von Ausreißern und kann ein wünschenswertes Verhalten sein.</li>
 <li class="fragment">Analogie zur euklidischen Distanz (z.B. Satz des Pythagoras: <span class="math inline">\(a=\sqrt{b^2+c^2}\)</span>)</li>
-<li class="fragment">Fortgeschritten: die Varianz mit Abstandsquadraten ist für alle <span class="math inline">\(x\)</span> differenzierbar <br> (hingegen ist <span class="math inline">\(Var_{\text{absolut}}\)</span> bei <span class="math inline">\(x=0\)</span> nicht differenzierbar)</li>
+<li class="fragment">Fortgeschritten: die Varianz mit Abstandsquadraten ist für alle <span class="math inline">\(x\)</span> differenzierbar <br> (hingegen ist <span class="math inline">\(\hat{Var}_{\text{absolut}}\)</span> bei <span class="math inline">\(x=0\)</span> nicht differenzierbar)</li>
 </ul>
 <div class="recommendation fragment">
 <p>Weitergehende Literatur <a href="#/footnotes" class="footnote-ref" id="fnref7" role="doc-noteref" data-footnote-href="#/fn7" onclick=""><sup>7</sup></a></p>
