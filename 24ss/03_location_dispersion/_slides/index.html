@@ -536,7 +536,7 @@ setup:
 <div class="columns">
 <div class="column" style="width:71%;">
 <p><span style=" color: #00a216 !important;"><u><strong>Fall 1: Populationskennwerte</strong></u></span></p>
-<p>Vollständigen Population liegt vor (z.B. alle US-Präsidenten) <br>⇒ Bestimmung exakter statistische Kennwerte für die Population<br>⇒ <em>Populationskennwert</em> (z.B. Populationsstreuung)<br><span style="font-size:20px">(Hinweis: man spricht auch manchmal von Populations<em>parametern</em>)</span></p>
+<p>Vollständige Population liegt vor (z.B. alle US-Präsidenten) <br>⇒ Bestimmung exakter statistische Kennwerte für die Population<br>⇒ <em>Populationskennwert</em> (z.B. Populationsstreuung)<br><span style="font-size:20px">(Hinweis: man spricht auch manchmal von Populations<em>parametern</em>)</span></p>
 <div class="vspace-xsmall">
 
 </div>
@@ -1202,10 +1202,11 @@ Range = x_{max} - x_{min}
 <p><span style="font-size: 21px">   (Die Varianz ist gleich der quadrierten Standardabweichung <span class="math inline">\(\sigma\)</span> – letztere lernen wir noch kennen)</span></p>
 </div>
 <ul>
-<li class="fragment">Durch die Quadrierung wird verhindert, dass sich positive und negative Abweichungen gegenseitig aufheben.</li>
-<li class="fragment"><strong>Hinweis:</strong> hierbei handelt es sich um die Formel für die <span style=" color: #c89f00 !important;">inferentielle Varianz</span>.</li>
+<li class="fragment"><strong>Hinweis:</strong> hierbei handelt es sich um die Formel für die <span style=" color: #c89f00 !important;">inferentielle Varianz</span>. Soll kein Rückschluss auf eine Population gezogen werden, ändert sich der Nenner von <span class="math inline">\(n-1\)</span> zu <span class="math inline">\(n\)</span>.</li>
 </ul>
-<!-- <div class="vspace-small"></div> -->
+<div class="vspace-small">
+
+</div>
 <div class="columns">
 <div class="column" style="width:55%;">
 <div class="fragment">
@@ -1214,7 +1215,7 @@ Range = x_{max} - x_{min}
 </div><!-- Begin second column --><div class="column" style="width:45%;">
 <div class="fragment">
 <p><span class="math display">\[
-\begin{aligned} \sigma^2 &amp;= \frac{1}{4}\left(0.25+2.25+0.25+2.25\right) \\ &amp;= \frac{1}{4-1}\cdot5=\frac{5}{3} \end{aligned}
+\begin{aligned} \sigma^2 &amp;= \frac{1}{4-1}\left(0.25+2.25+0.25+2.25\right) \\ &amp;= \frac{1}{4-1}\cdot5=\frac{5}{3} \end{aligned}
 \]</span></p>
 </div>
 </div>
@@ -1227,12 +1228,11 @@ Range = x_{max} - x_{min}
 <h2>Besselkorrektur</h2>
 <ul>
 <li class="fragment">Streng genommen stellt die gezeigte Varianzformel nicht exakt das <em>mittlere</em> Abstandsquadrat aller Werte vom Mittelwert dar, da im Nenner durch <span class="math inline">\(n-1\)</span> und nicht durch <span class="math inline">\(n\)</span> geteilt wird.</li>
-<li class="fragment">Die kleine Korrektur von <span class="math inline">\(n\;\longrightarrow n-1\)</span> heißt <strong>Besselkorrektur</strong> und tritt häufig auf, wenn <strong>inferentielle Kennwerte</strong> bestimmt werden sollen.</li>
+<li class="fragment">Die Korrektur von <span class="math inline">\(n\;\longrightarrow n-1\)</span> heißt <strong>Besselkorrektur</strong> und tritt häufig auf, wenn <strong>inferentielle Kennwerte</strong> bestimmt werden sollen.</li>
 <li class="fragment">Die Korrektur wird notwendig, weil eine Schätzung der Populationsvarianz eigentlich erfordert, dass die Abstandsquadrate der <span class="math inline">\(x_i\)</span> <em>um den wahren Populationsmittelwert</em> <span class="math inline">\(\mu\)</span> berechnet werden.</li>
 <li class="fragment">Das wahre <span class="math inline">\(\mu\)</span> kennen wir jedoch nicht, sondern lediglich die Stichprobenschätzung <span class="math inline">\(\hat{\mu}=\bar{x}\)</span>.</li>
 <li class="fragment">Es stellt sich heraus, dass die Streuung der <span class="math inline">\(x_i\)</span> um den Mittelwert <span class="math inline">\(\bar{x}\)</span> der Stichprobe immer etwas kleiner ist, als es die Streuung der <span class="math inline">\(x_i\)</span> um den wahren Wert <span class="math inline">\(\mu\)</span> wäre.</li>
-<li class="fragment">Intution: aus diesem Grund muss die Varianzformel durch einen kleineren Wert (<span class="math inline">\(n-1\)</span> statt <span class="math inline">\(n\)</span>) geteilt werden, damit der Varianzschätzer “nach oben” korrigiert wird.</li>
-<li class="fragment">Die Formel für die <strong>Stichprobenvarianz und die Populationsvarianz enthalten die Besselkorrektur nicht</strong>.</li>
+<li class="fragment">Aus diesem Grund muss die Varianzformel durch einen kleineren Wert (<span class="math inline">\(n-1\)</span> statt <span class="math inline">\(n\)</span>) geteilt werden, damit der Varianzschätzer “nach oben” korrigiert wird.</li>
 </ul>
 <!----------------->
 <!--- New slide --->
