@@ -453,21 +453,21 @@ setup:
 <section class="slide level2">
 <h2>Kovarianz</h2>
 <ul>
-<li class="fragment"><u>Ziel:</u> mathematische Größe, die zum Ausdruck bringt, wie stark die Variation zweier Variablen miteinander in Zusammenhang steht</li>
+<li class="fragment"><u>Ziel:</u> mathematische Größe, die zum Ausdruck bringt, wie stark die Variation zweier Variablen miteinander in Zusammenhang steht.</li>
 <li class="fragment">Wir haben bereits eine Größe für die Variation <em>einer</em> Variable — die Varianz:</li>
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
-\hat{\sigma}^2_X = \frac{1}{n-1}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2 = \frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})\color{darkred}{(x_i-\bar{x})}
+\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}^2 = \frac{1}{n-1}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2 = \frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})\color{darkred}{(x_i-\bar{x})}
 \]</span></p>
 </div>
 <ul>
-<li class="fragment">Die Varianz gibt an, wie stark eine Variable <span class="math inline">\(X\)</span> um ihren Mittelwert <span class="math inline">\(\bar{x}\)</span> schwankt</li>
+<li class="fragment">Die Varianz gibt an, wie stark eine Variable <span class="math inline">\(X\)</span> um ihren Mittelwert <span class="math inline">\(\bar{x}\)</span> schwankt.</li>
 <li class="fragment">Analog berechnet die <span style=" color: navy !important;"><strong>Kovarianz</strong></span>, wie stark die <em>gemeinsame Schwankung zweier Variablen um ihren jeweiligen Mittelwert</em> ist:</li>
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
-\text{Kovarianz:}\quad \hat{Cov}(X,Y) = \hat{\sigma}_{XY} = \frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})\color{darkred}{(y_i-\bar{y})}
+\text{Kovarianz:}\quad \hat{Cov}(X,Y) = \hat{\sigma}_{\mkern-2mu\scriptscriptstyle{XY}} = \frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})\color{darkred}{(y_i-\bar{y})}
 \]</span></p>
 </div>
 <ul>
@@ -502,10 +502,10 @@ setup:
 <p><span class="math display">\[
 \scriptsize{
 \begin{aligned}
-&amp;Cov(X, Y) = \frac{1}{n}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y}) = \\
-          &amp;= \frac{1}{3}\big[(160-170)(60-70)+(170-170)(70-70)+(180-170)(80-70)\big] = \\
-          &amp;= \frac{1}{3}\big[(-10)\cdot (-10)+0\cdot 0+10\cdot 10\big] = \\
-          &amp;= \frac{1}{3}\cdot 200 = 66{,}67
+&amp;\hat{Cov}(X, Y) = \frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y}) = \\
+          &amp;= \frac{1}{2}\big[(160-170)(60-70)+(170-170)(70-70)+(180-170)(80-70)\big] = \\
+          &amp;= \frac{1}{2}\big[(-10)\cdot (-10)+0\cdot 0+10\cdot 10\big] = \\
+          &amp;= \frac{1}{2}\cdot 200 = 100[\color{red}{cm\cdot kg}]
 \end{aligned}
 }
 \]</span></p>
@@ -520,8 +520,8 @@ setup:
 <p><span class="math display">\[
 \scriptsize{
 \begin{aligned}
-Cov(X, Y) &amp;= \frac{1}{3}\big[(1{,}60-1{,}70)(60-70)+(1{,}70-1{,}70)(70-70)+(1{,}80-1{,}70)(80-70)\big] = \\
-          &amp;= \frac{1}{3}\big[(-0{,}10)\cdot (-10)+0\cdot 0+0{,}10\cdot 10\big] = \frac{1}{3}\cdot 2 = 0{,}667
+\hat{Cov}(X, Y) &amp;= \frac{1}{2}\big[(1{.}60-1{.}70)(60-70)+(1{.}70-1{.}70)(70-70)+(1{,}80-1{.}70)(80-70)\big] = \\
+          &amp;= \frac{1}{2}\big[(-0{.}10)\cdot (-10)+0\cdot 0+0{.}10\cdot 10\big] = \frac{1}{2}\cdot 2 = 1[\color{red}{m\cdot kg}]
 \end{aligned}
 }
 \]</span></p>
@@ -541,19 +541,22 @@ Cov(X, Y) &amp;= \frac{1}{3}\big[(1{,}60-1{,}70)(60-70)+(1{,}70-1{,}70)(70-70)+(
 <div class="column" style="width:70%;">
 <ul>
 <li class="fragment">Die <span style=" color: navy !important;"><strong>Pearson-Korrelation</strong></span> schafft Abhilfe für das Problem der mangelnden Vergleichbarkeit.</li>
-<li class="fragment">Der Schlüssel: die Kovarianz wird mit den <span style=" color: darkgreen !important;">Standardabweichungen</span> beider Variablen normalisiert:</li>
+<li class="fragment">Der Schlüssel: die Kovarianz wird mit den <span style=" color: darkgreen !important;">Standardabweichungen</span><br><span class="math inline">\(\color{darkgreen}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}}\)</span> und <span class="math inline">\(\color{darkgreen}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}\)</span> beider Variablen normalisiert.</li>
+<li class="fragment">Formel der Pearson-Korrelation:</li>
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
 \small{
-\text{Korrelation:}\quad r = \frac{Cov(X,Y)}{\color{darkgreen}{s_X s_Y}} = \frac{1}{n \color{darkgreen}{s_X s_Y}}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})
+\hat{\rho} = \frac{\hat{Cov}(X,Y)}{\color{darkgreen}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}\,\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}} = \cdot\cdot\cdot = \frac{\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\color{darkgreen}{\sqrt{\sum_{i=1}^n(x_i-\bar{x})\sum_{i=1}^n(y_i-\bar{y})}}}
 }
 \]</span></p>
 </div>
+<div style="margin-top: -10px">
 <ul>
-<li class="fragment">Durch das Teilen durch die Standardabweichungen <span class="math inline">\(s_X\)</span> und <span class="math inline">\(s_Y\)</span> werden die Einheiten herausgekürzt — die Korrelation ist also eine <strong>einheitslose Größe</strong>.</li>
+<li class="fragment">Durch das Teilen durch die Standardabweichungen <span class="math inline">\(\color{darkgreen}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}}\)</span> und <span class="math inline">\(\color{darkgreen}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}\)</span> werden die Einheiten herausgekürzt — die Korrelation ist also eine <strong>einheitslose Größe</strong>.</li>
 <li class="fragment">Die Korrelation kann Werte zwischen <span class="math inline">\(-1\)</span> (perfekter negativer Zusammenhang) und <span class="math inline">\(+1\)</span> (perfekter positiver Zusammenhang) annehmen.</li>
 </ul>
+</div>
 </div><!-- Begin second column --><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -563,24 +566,11 @@ Cov(X, Y) &amp;= \frac{1}{3}\big[(1{,}60-1{,}70)(60-70)+(1{,}70-1{,}70)(70-70)+(
 </div>
 </div>
 </div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-<aside></aside></section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Warum ist die Korrelation auf −1 bis 1 beschränkt?</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<p>Darstellung der Korrelation nur mit (Ko)Varianzen:</p>
-<p><span class="math display">\[
-r_{XY} = \frac{Cov(X,Y)}{s_X s_Y} = \frac{Cov(X,Y)}{\sqrt{Var(X)} \sqrt{Var(Y)}}
-\]</span></p>
-<p>Die Korrelation sollte maximal (<span class="math inline">\(r=1\)</span>) sein, wenn <span class="math inline">\(X\)</span> mit sich selbst korreliert wird (<span class="math inline">\(Y=X\)</span>). Zu berücksichtigen ist, dass die Kovarianz <em>von X mit sich selbst</em> gleich der Varianz ist:</p>
-<p><span class="math display">\[
-r_{XX} = \frac{Cov(X,X)}{\sqrt{Var(X)} \sqrt{Var(X)}} = \frac{Var(X)}{\sqrt{Var(X)} \sqrt{Var(X)}} = \frac{Var(X)}{Var(X)} = 1
-\]</span></p>
-<p>Umgekehrt sollte die Korrelation maximal negativ sein (<span class="math inline">\(r=-1\)</span>), wenn <span class="math inline">\(Y\)</span> genau das Inverse von <span class="math inline">\(X\)</span> ist, also <span class="math inline">\(Y=-X\)</span>. Unter Berücksichtigung von <span class="math inline">\(Var(X) = Var(-X)\)</span> gilt: <span class="math display">\[
-r_{X(-X)} = \frac{Cov(X,-X)}{\sqrt{Var(X)} \sqrt{Var(-X)}} = \frac{-Cov(X,X)}{\sqrt{Var(X)} \sqrt{Var(X)}} = \frac{-Var(X)}{Var(X)} = -1
-\]</span></p>
+<div style="margin-top: -15px">
+<ul>
+<li class="fragment"><u>Hinweis:</u> in wissenschaftlichen Publikationen und Abbildungen wird der Korrelationskoeffizient <span class="math inline">\(\hat{\rho}\)</span> der Einfachheit halber häufig mit <span class="math inline">\(r\)</span> bezeichnet (z.B. <span class="math inline">\(r=0.32\)</span>). Grund: die Formeln von inferentieller und nicht-inferentieller Korrelation sind identisch.</li>
+</ul>
+</div>
 <!-- ```{python}
 import numpy as np
 import matplotlib.pyplot as plt
@@ -610,7 +600,7 @@ plt.savefig('images/streudiagramm.png', bbox_inches="tight")
 <!----------------->
 <!--- New slide --->
 <!----------------->
-</section>
+<aside></aside></section>
 <section class="slide level2">
 <h2>Das Streudiagramm</h2>
 <ul>
@@ -628,44 +618,44 @@ plt.savefig('images/streudiagramm.png', bbox_inches="tight")
 
 </div>
 <div class="columns">
-<div class="column" style="width:44%;">
+<div class="column" style="width:39%;">
 <p><img data-src="images/covariance_height_weight.png"></p>
-</div><div class="column" style="width:56%;">
+</div><div class="column" style="width:61%;">
 <p>Wir hatten:</p>
 <p><span class="math display">\[
 \small{
 \begin{aligned}
-&amp;Cov(X, Y) = \frac{1}{n}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y}) = \frac{200}{3}
+&amp;\hat{Cov}(X, Y) = \frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y}) = 100[\color{red}{cm\cdot kg}]
 \end{aligned}
 }
 \]</span></p>
 <div class="fragment">
-<p>Und berechnen nun die Korrelation <span class="math inline">\(\;\;r = \frac{Cov(X,Y)}{s_X s_Y}\)</span></p>
-<p><span class="math inline">\(\scriptsize{s_X=\sqrt{\frac{1}{n}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2}=\sqrt{\frac{1}{3}[(-10)^2+0^2+10^2]}=\sqrt{\frac{200}{3}}}\)</span></p>
-<p><span class="math inline">\(\scriptsize{s_Y=\sqrt{\frac{1}{n}\sum_{i=1}^n\big(y_i-\bar{y}\big)^2}=\sqrt{\frac{1}{3}[(-10)^2+0^2+10^2]}=\sqrt{\frac{200}{3}}}\)</span></p>
+<p>Und berechnen nun die Korrelation <span class="math inline">\(\;\;\hat{\rho} = \frac{Cov(X,Y)}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}} \hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}\)</span></p>
+<p><span class="math inline">\(\scriptsize{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}=\sqrt{\frac{1}{n-1}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2}=\sqrt{\frac{1}{2}[(-10)^2+0^2+10^2]}=\sqrt{100}=10[\color{red}{cm}]}\)</span></p>
+<p><span class="math inline">\(\scriptsize{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}=\sqrt{\frac{1}{n-1}\sum_{i=1}^n\big(y_i-\bar{y}\big)^2}=\sqrt{\frac{1}{2}[(-10)^2+0^2+10^2]}=\sqrt{100}=10[\color{red}{kg}]}\)</span></p>
 <p><span class="math display">\[
 \small{
-r = \frac{\frac{200}{3}}{\sqrt{\frac{200}{3}}\cdot\sqrt{\frac{200}{3}}}=1
+\hat{\rho} = \frac{100[\color{red}{cm\cdot kg}]}{10[\color{red}{cm}]\cdot10[\color{red}{kg}]}=1
 }
 \]</span></p>
 </div>
 </div>
 </div>
 <ul>
-<li class="fragment">Wäre die Körpergröße in der Einheit <em>Meter</em> angeben, so kürzt sich der Faktor 100 (1m = 100cm) nicht nur im Zähler, sondern auch im Nenner:</li>
+<li class="fragment">Wäre die Körpergröße in der Einheit <em>Meter</em> statt <em>Zentimeter</em> angeben, so bliebe der Korrelationskoeffizient <span class="math inline">\(\hat{\rho}\)</span> unverändert:</li>
 </ul>
 <div class="columns">
-<div class="column" style="width:40%;">
+<div class="column" style="width:43%;">
 <div class="fragment">
 <p><span class="math display">\[
 \small{
-r = \frac{\frac{2\color{darkred}{{,}}00}{3}}{\sqrt{\frac{2\color{darkred}{{,}}00}{3}}\cdot\sqrt{\frac{2\color{darkred}{{,}}00}{3}}}=1
+\hat{\rho} = \frac{100[\color{red}{cm\cdot kg}]}{10[\color{red}{cm}]\cdot10[\color{red}{kg}]}=\frac{1[\color{red}{m\cdot kg}]}{0.1[\color{red}{m}]\cdot10[\color{red}{kg}]}=1
 }
 \]</span></p>
 </div>
-</div><div class="column" style="width:60%;">
+</div><div class="column" style="width:57%;">
 <div class="fragment">
-<p>Die Normalisierung mit der Standardabweichung sorgt somit dafür, dass die willkürliche Einheit keine Rolle spielt.</p>
+<p><strong>Die Normalisierung mit der Standardabweichung sorgt dafür, dass die willkürliche Einheit keine Rolle spielt!</strong></p>
 </div>
 </div>
 </div>
@@ -1549,6 +1539,24 @@ plt.savefig('images/paradoxia_histogram_correlation_paradoxiker.png', bbox_inche
 </div>
 <p><img data-src="images/paradoxia_histogram_correlation_paradoxiker.png" height="400"></p>
 <p>Faszinierend. Es gibt tatsächlich einen Zusammenhang beider Variablen. Kann das Ergebnis so interpretiert werden, dass TikTok sich auf physiologische Entzündungswerte auswirkt?</p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Warum ist die Korrelation auf −1 bis 1 beschränkt?</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
+<p>Darstellung der Korrelation nur mit (Ko)Varianzen:</p>
+<p><span class="math display">\[
+r_{XY} = \frac{Cov(X,Y)}{s_X s_Y} = \frac{Cov(X,Y)}{\sqrt{Var(X)} \sqrt{Var(Y)}}
+\]</span></p>
+<p>Die Korrelation sollte maximal (<span class="math inline">\(r=1\)</span>) sein, wenn <span class="math inline">\(X\)</span> mit sich selbst korreliert wird (<span class="math inline">\(Y=X\)</span>). Zu berücksichtigen ist, dass die Kovarianz <em>von X mit sich selbst</em> gleich der Varianz ist:</p>
+<p><span class="math display">\[
+r_{XX} = \frac{Cov(X,X)}{\sqrt{Var(X)} \sqrt{Var(X)}} = \frac{Var(X)}{\sqrt{Var(X)} \sqrt{Var(X)}} = \frac{Var(X)}{Var(X)} = 1
+\]</span></p>
+<p>Umgekehrt sollte die Korrelation maximal negativ sein (<span class="math inline">\(r=-1\)</span>), wenn <span class="math inline">\(Y\)</span> genau das Inverse von <span class="math inline">\(X\)</span> ist, also <span class="math inline">\(Y=-X\)</span>. Unter Berücksichtigung von <span class="math inline">\(Var(X) = Var(-X)\)</span> gilt: <span class="math display">\[
+r_{X(-X)} = \frac{Cov(X,-X)}{\sqrt{Var(X)} \sqrt{Var(-X)}} = \frac{-Cov(X,X)}{\sqrt{Var(X)} \sqrt{Var(X)}} = \frac{-Var(X)}{Var(X)} = -1
+\]</span></p>
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Vorlesung 05: Korrelation</p>
