@@ -526,16 +526,149 @@ setup:
 </section>
 <section>
 <section class="title-slide slide level1 center">
+<h1>Notation</h1>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Drei Fälle bei der Berechnung statistischer Kennwerte</h2>
+<div class="columns">
+<div class="column" style="width:71%;">
+<p><span style=" color: #00a216 !important;"><u><strong>Fall 1: Populationskennwerte</strong></u></span></p>
+<p>Vollständigen Population liegt vor (z.B. alle US-Präsidenten) <br>⇒ Bestimmung exakter statistische Kennwerte für die Population<br>⇒ <em>Populationskennwert</em> (z.B. Populationsstreuung)<br><span style="font-size:20px">(Hinweis: man spricht auch manchmal von Populations<em>parametern</em>)</span></p>
+<div class="vspace-xsmall">
+
+</div>
+<p><span style=" color: #000db2 !important;"><u><strong>Fall 2: Stichprobenkennwerte</strong></u></span></p>
+<p>Stichprobe liegt vor<br>⇒ Ziel ist Beschreibung der Stichprobe <em>ohne Inferenz auf die Population</em><br>⇒ <em>Stichprobenkennwerte</em> (z.B. Stichprobenstreuung)</p>
+<div class="vspace-xsmall">
+
+</div>
+<p><span style=" color: #c89f00 !important;"><u><strong>Fall 3: Inferentielle Kennwerte</strong></u></span></p>
+<p>Stichprobe liegt vor<br>⇒ Ziel ist <em>Inferenz auf die Population</em>, d.h. die Populationskennwert sollen auf Basis der Stichprobe geschätzt werden.<br>⇒ <em>Inferentielle Kennwerte</em> (z.B. inferentielle Streuung)</p>
+</div><div class="column" style="width:29%;">
+<div class="vspace-medium">
+
+</div>
+<p><img data-src="images/population_stichprobe_inferenz.png"></p>
+</div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Notation / Variablenbenennung</h2>
+<ul>
+<li class="fragment">Folgendes Schema hat sich in der Literatur etabliert:
+<ul>
+<li class="fragment"><span style=" color: #00a216 !important;">Populationskennwerte</span>: griechische Buchstaben</li>
+<li class="fragment"><span style=" color: #000db2 !important;">Stichprobenkennwerte</span>: lateinische Buchstaben</li>
+<li class="fragment"><span style=" color: #c89f00 !important;">Inferentielle Kennwerte</span>: griechische Buchstaben mit Zirkumflex (^).</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<!---  Table --->
+<table style="width:77%;">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><span style=" color: #00a216 !important;">Populations-<br>
+Kennwert</span></th>
+<th><span style=" color: #000db2 !important;">Stichproben-<br>
+Kennwert</span></th>
+<th><span style=" color: #c89f00 !important;">Inferentieller<br>
+Kennwert</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mittelwert</td>
+<td><span class="math inline">\(\mu\)</span></td>
+<td><span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(m\)</span>, <span class="math inline">\(M\)</span></td>
+<td><span class="math inline">\(\hat{\mu}\)</span></td>
+</tr>
+<tr class="even">
+<td>Standardabweichung</td>
+<td><span class="math inline">\(\sigma\)</span></td>
+<td><span class="math inline">\(s\)</span></td>
+<td><span class="math inline">\(\hat{\sigma}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Varianz</td>
+<td><span class="math inline">\(\sigma^2\)</span></td>
+<td><span class="math inline">\(s^2\)</span>, <span class="math inline">\(Var(X)\)</span></td>
+<td><span class="math inline">\(\hat{\sigma}^2\)</span>, <span class="math inline">\(\hat{Var}(X)\)</span></td>
+</tr>
+<tr class="even">
+<td>Koarianz</td>
+<td><span class="math inline">\(\sigma_{XY}\)</span></td>
+<td><span class="math inline">\(s_{XY}\)</span>, <span class="math inline">\(Cov(X,Y)\)</span></td>
+<td><span class="math inline">\(\hat{\sigma}_{XY}\)</span>, <span class="math inline">\(\hat{Cov}(X,Y)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Korrelation</td>
+<td><span class="math inline">\(\rho\)</span></td>
+<td><span class="math inline">\(r\)</span></td>
+<td><span class="math inline">\(\hat{\rho}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li class="fragment">Grund für die aufwendige Unterscheidung in der Notation:
+<ul>
+<li class="fragment">Kommunikation des Analyseziels in einer Formel</li>
+<li class="fragment">Formeln für Populations- und Stichprobenkennwerte sind identisch, die Formeln für inferentielle Kennwerte können jedoch verschieden sein!</li>
+<li class="fragment">(Ausnahme: beim Mittelwert gilt <span class="math inline">\(\hat{\mu}=\bar{x}\)</span>)</li>
+</ul></li>
+</ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Hinweis</h2>
+<div class="vspace-large">
+
+</div>
+<div class="colorbox fragment">
+<p>Um die Komplexität zu reduzieren, werden wir ab jetzt <strong>nur noch Formeln für inferentielle Kennwerte</strong> behandeln. Dies ist der mit Abstand häufigste Fall in der Psychologie und de facto in allen empirischen Wissenschaften.</p>
+</div>
+<div class="vspace-large">
+
+</div>
+<div class="notabene">
+<div class="columns">
+<div class="column" style="width:7%;">
+<div style="margin-top: 10px">
+<p><img data-src="images/notabene2.png" height="65"></p>
+</div>
+</div><div class="column" style="width:93%;">
+<p>In der Literatur (Lehrbücher, Statistikportale, Wikipedia, …) herrscht ein heilloses Durcheinander bezüglich der Verwendung der Begriffe Populationskennwert (z.B. Populationsvarianz) und Stichprobenkennwert (z.B. Stichprobenvarianz). Beide Begriffe werden zum Teil dafür verwendet, was hier als inferentieller Kennwert bezeichnet wird. Eine Ursache ist, dass sich für das Konzept des “inferentiellen Kennwerts” bislang kein etablierter Begriff herausgebildet hat. Den Begriff “inferentieller Kennwert” werden Sie daher bei Google nicht finden.</p>
+<p>Die Lösung dieses Dilemmas in dieser Veranstaltung besteht eben in der Einführung des Begriffs <strong>inferentieller Kennwert</strong>. In dieser Logik beschreibt ein Populationskennwert die Population, ein Stichprobenkennwert beschreibt die Stichprobe, und ein inferentieller Kennwert schätzt die Populationskennwerte auf Basis der Stichprobe (“Inferenz auf die Population”).</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
 <h1>Lagemaße</h1>
 
 </section>
 <section class="slide level2" style="overflow:hidden">
 <h2>Lagemaße</h2>
 <ul>
-<li class="fragment">Der weithin bekannte <strong>Durchschnittswert</strong> oder <strong>Mittelwert</strong> ist ein Beispiel für ein <span style=" color: navy !important;"><strong>Lagemaß</strong></span> von Verteilungen.</li>
-<li class="fragment">Man spricht dabei auch von der <strong>zentralen Tendenz</strong> (engl. <em>central tendency</em>) einer Verteilung</li>
-<li class="fragment">Das Lagemaß ist neben dem <strong>Streumaß</strong> der wesentliche Parameter, um die Verteilung von Daten effizient (d.h. mit wenigen Parametern) zu beschreiben</li>
-<li class="fragment">Die drei wichtigsten Lagemaße sind:
+<li class="fragment"><p>Der weithin bekannte <strong>Durchschnittswert</strong> oder <strong>Mittelwert</strong> ist ein Beispiel für ein <span style=" color: navy !important;"><strong>Lagemaß</strong></span> von Verteilungen.</p></li>
+<li class="fragment"><p>Man spricht dabei auch von der <strong>zentralen Tendenz</strong> (engl. <em>central tendency</em>) einer Verteilung</p></li>
+<li class="fragment"><p>Die drei wichtigsten Lagemaße sind:</p>
 <ul>
 <li class="fragment">Mittelwert (gemeint ist das <em>arithmetische Mittel</em>)</li>
 <li class="fragment">Median</li>
@@ -563,7 +696,7 @@ setup:
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
-\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i
+\bar{x} = \hat{\mu} = \frac{1}{n}\sum_{i=1}^n x_i
 \]</span></p>
 </div>
 <ul>
@@ -573,7 +706,7 @@ setup:
 <p><span class="block-heading" style="text-align:center; margin-bottom: 3px">Beispiel</span></p>
 <p>Folgende Beobachtungen der Zufallsvariable <span class="math inline">\(X\)</span> “Punktzahl in der Abi-Matheprüfung” werden in einer Stichprobe von 7 Psychologiestudierenden gemacht:  <span class="math inline">\(\mathbf{x} = \{13, 7, 15, 8, 4, 9, 14\}\)</span></p>
 <p><span class="math display">\[
-\bar{x} = \frac{1}{7}(13+7+15+8+4+9+14) =  = \frac{1}{7}\cdot 70 = 10
+\bar{x} = \frac{1}{7}(13+7+15+8+4+9+14) = \frac{1}{7}\cdot 70 = 10
 \]</span></p>
 </div>
 <!----------------->
@@ -738,33 +871,27 @@ plt.savefig(f'images/median_bimodal.png', bbox_inches="tight")
 <div class="columns">
 <div class="column" style="width:70%;">
 <ul>
-<li class="fragment">Der <strong>Median ist außerdem sinnvoll</strong> bei:
+<li class="fragment">Der <strong>Median ist sinnvoll</strong> bei:
 <ul>
-<li class="fragment">ordinalen Daten wie etwa diskreten Ratings (Skala von 1 bis 10), bei denen die Abstände zwischen Zahlen nicht interpretierbar sind.</li>
-<li class="fragment">schiefen Verteilungen der Daten (dazu kommen wir noch)</li>
+<li class="fragment">Ausreißern in den Daten.</li>
+<li class="fragment">Schiefen Verteilungen der Daten (dazu kommen wir noch).</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:30%;">
 <div class="fragment">
-<p><img data-src="images/show_with_likert_rating.png" height="150"></p>
+<p><img data-src="images/rechtsschief_linksschief.png" height="200"></p>
 </div>
 </div>
 </div>
 <ul>
 <li class="fragment">Der <strong>Median ist nicht sinnvoll</strong>, wenn:
 <ul>
-<li class="fragment">auch der Mittelwert ein sinnvolles Lagemaß darstellt (der Mittelwert hat einige hilfreiche mathematische Eigenschaften<a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a>).</li>
-<li class="fragment">in der zugrundeliegenden Verteilung zwei oder mehr Wertebereiche deutlich häufiger vorkommen als andere Wertebereiche, und diese Bereiche nicht überlappen (z.B. hat der Median von <span class="math inline">\(\{2, 2, 2, 2, 9, 9, 9\}\)</span> den wenig aussagekräftigen Wert 2).</li>
+<li class="fragment">Auch der Mittelwert ein sinnvolles Lagemaß darstellt (der Mittelwert hat einige hilfreiche mathematische Eigenschaften<a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a>). <!-- - in der zugrundeliegenden Verteilung zwei oder mehr Wertebereiche deutlich häufiger vorkommen als andere Wertebereiche, und diese Bereiche nicht überlappen (z.B. hat der Median von $\{2, 2, 2, 2, 9, 9, 9\}$ den wenig aussagekräftigen Wert 2). --></li>
 </ul></li>
 </ul>
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/median_bimodal.png" class="hcenter-image" height="170"></p>
-<figcaption>Für diese “bimodale” Verteilung der Daten ist der Median eine schlechte Wahl. Der Wert springt mehr oder weniger zufällig zwischen den beiden dominanten Wertebereichen der Daten (1-5 und 10-14), je nachdem, welcher Bereich mehr Werte aufweist.</figcaption>
-</figure>
-</div>
-</div>
+<!-- :::{.fragment}
+![Für diese "bimodale" Verteilung der Daten ist der Median eine schlechte Wahl. Der Wert springt mehr oder weniger zufällig zwischen den beiden dominanten Wertebereichen der Daten (1-5 und 10-14), je nachdem, welcher Bereich mehr Werte aufweist.](images/median_bimodal.png){height=170px .hcenter-image}
+::: -->
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1064,27 +1191,30 @@ Range = x_{max} - x_{min}
 <section class="slide level2">
 <h2>Varianz</h2>
 <ul>
-<li class="fragment">Die Varianz ist definiert als die <strong>Summe der quadrierten Abweichungen aller Werte vom Mittelwert</strong>:</li>
+<li class="fragment">Die Varianz ist definiert als <strong>mittleres Abstandsquadrat aller Werte vom Mittelwert</strong>:</li>
 </ul>
 <div class="fragment">
+<div style="margin-top: -32px">
 <p><span class="math display">\[
-Var(X) = \sigma^2 = \frac{1}{n}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2
+\hat{Var}(X) = \hat{\sigma}^2 = \frac{1}{n-1}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2
 \]</span></p>
+</div>
 <p><span style="font-size: 21px">   (Die Varianz ist gleich der quadrierten Standardabweichung <span class="math inline">\(\sigma\)</span> – letztere lernen wir noch kennen)</span></p>
 </div>
 <ul>
 <li class="fragment">Durch die Quadrierung wird verhindert, dass sich positive und negative Abweichungen gegenseitig aufheben.</li>
+<li class="fragment"><strong>Hinweis:</strong> hierbei handelt es sich um die Formel für die <span style=" color: #c89f00 !important;">inferentielle Varianz</span>.</li>
 </ul>
 <!-- <div class="vspace-small"></div> -->
 <div class="columns">
 <div class="column" style="width:55%;">
 <div class="fragment">
-<p><img data-src="images/variance_schaefer.png" class="hcenter-image"></p>
+<p><img data-src="images/variance_schaefer.png" height="250"></p>
 </div>
 </div><!-- Begin second column --><div class="column" style="width:45%;">
 <div class="fragment">
 <p><span class="math display">\[
-\begin{aligned} \sigma^2 &amp;= \frac{1}{4}\left(0{,}25+2{,}25+0{,}25+2{,}25\right) \\ &amp;= \frac{1}{4}\cdot5=1{,}25 \end{aligned}
+\begin{aligned} \sigma^2 &amp;= \frac{1}{4}\left(0.25+2.25+0.25+2.25\right) \\ &amp;= \frac{1}{4-1}\cdot5=\frac{5}{3} \end{aligned}
 \]</span></p>
 </div>
 </div>
@@ -1094,29 +1224,20 @@ Var(X) = \sigma^2 = \frac{1}{n}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style=" color: darkred !important;">Warum werden werden nicht einfach die Absolutwerte der Differenzen genommen?</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 130px; "></p>
-<div class="fragment">
-<p>Prinzipiell wäre auch eine Formel für die Varianz mit Absolutabständen denkbar:</p>
-<p><span class="math display">\[
-Var_{\text{absolut}}(X) = \frac{1}{n}\sum_{i=1}^n\big|x_i-\bar{x}\big|
-\]</span></p>
-</div>
-<div class="fragment">
-<p>Über die Gründe, warum sich <span class="math inline">\(Var_{\text{absolut}}\)</span> nicht durchgesetzt hat, streitet sich die Fachwelt. Neben historischen Gründen, gibt es aber einige Eigenschaften, die die Präferenz für Abstandsquadrate zumindest nachvollziehbar machen:</p>
-</div>
+<h2>Besselkorrektur</h2>
 <ul>
-<li class="fragment">Quadrierte Abstände gewichten Punkte, die weiter vom Mittelwert entfernt sind, höher. Dies entspricht einer “Bestrafung” von Ausreißern und kann ein wünschenswertes Verhalten sein.</li>
-<li class="fragment">Analogie zur euklidischen Distanz (z.B. Satz des Pythagoras: <span class="math inline">\(a=\sqrt{b^2+c^2}\)</span>)</li>
-<li class="fragment">Fortgeschritten: die Varianz mit Abstandsquadraten ist für alle <span class="math inline">\(x\)</span> differenzierbar <br> (hingegen ist <span class="math inline">\(Var_{\text{absolut}}\)</span> bei <span class="math inline">\(x=0\)</span> nicht differenzierbar)</li>
+<li class="fragment">Streng genommen stellt die gezeigte Varianzformel nicht exakt das <em>mittlere</em> Abstandsquadrat aller Werte vom Mittelwert dar, da im Nenner durch <span class="math inline">\(n-1\)</span> und nicht durch <span class="math inline">\(n\)</span> geteilt wird.</li>
+<li class="fragment">Die kleine Korrektur von <span class="math inline">\(n\;\longrightarrow n-1\)</span> heißt <strong>Besselkorrektur</strong> und tritt häufig auf, wenn <strong>inferentielle Kennwerte</strong> bestimmt werden sollen.</li>
+<li class="fragment">Die Korrektur wird notwendig, weil eine Schätzung der Populationsvarianz eigentlich erfordert, dass die Abstandsquadrate der <span class="math inline">\(x_i\)</span> <em>um den wahren Populationsmittelwert</em> <span class="math inline">\(\mu\)</span> berechnet werden.</li>
+<li class="fragment">Das wahre <span class="math inline">\(\mu\)</span> kennen wir jedoch nicht, sondern lediglich die Stichprobenschätzung <span class="math inline">\(\hat{\mu}=\bar{x}\)</span>.</li>
+<li class="fragment">Es stellt sich heraus, dass die Streuung der <span class="math inline">\(x_i\)</span> um den Mittelwert <span class="math inline">\(\bar{x}\)</span> der Stichprobe immer etwas kleiner ist, als es die Streuung der <span class="math inline">\(x_i\)</span> um den wahren Wert <span class="math inline">\(\mu\)</span> wäre.</li>
+<li class="fragment">Intution: aus diesem Grund muss die Varianzformel durch einen kleineren Wert (<span class="math inline">\(n-1\)</span> statt <span class="math inline">\(n\)</span>) geteilt werden, damit der Varianzschätzer “nach oben” korrigiert wird.</li>
+<li class="fragment">Die Formel für die <strong>Stichprobenvarianz und die Populationsvarianz enthalten die Besselkorrektur nicht</strong>.</li>
 </ul>
-<div class="recommendation fragment">
-<p>Weitergehende Literatur <a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a></p>
-</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
-<aside></aside></section>
+</section>
 <section class="slide level2">
 <h2>Standardabweichung</h2>
 <ul>
@@ -1130,87 +1251,22 @@ Var_{\text{absolut}}(X) = \frac{1}{n}\sum_{i=1}^n\big|x_i-\bar{x}\big|
 <p><img data-src="images/example.png" height="70"></p>
 </div>
 </div><div class="column" style="width:90%;">
-<p><span class="math inline">\(x=\{167\,cm, 181\,cm, 154\,cm, 192\,cm, 173\,cm\}\rightarrow Var(X)=180.4\,\color{red}{cm^2}\)</span></p>
+<p><span class="math inline">\(x=\{167\,cm, 181\,cm, 154\,cm, 192\,cm, 173\,cm\}\rightarrow \hat{Var}(X)=205.3\,\color{red}{cm^2}\)</span></p>
 </div>
 </div>
 </div>
 <ul>
 <li class="fragment">Quadrierte Einheiten sind jedoch wenig intuitiv und schwer zu interpretieren.</li>
-<li class="fragment">Aus diesem Grund wird häufig die Standardabweichung <span class="math inline">\(\sigma\)</span> angegeben, welche die Wurzel der Varianz darstellt:</li>
+<li class="fragment">Aus diesem Grund wird häufig die Standardabweichung <span class="math inline">\(\hat{\sigma}\)</span> angegeben, welche die Wurzel der Varianz darstellt:</li>
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
-\sigma=\sqrt{Var(X)}=\sqrt{\frac{1}{n}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2}
+\hat{\sigma}=\sqrt{\hat{Var}(X)}=\sqrt{\frac{1}{n-1}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2}
 \]</span></p>
 </div>
 <ul>
 <li class="fragment">Die Standardabweichung drückt die Streuung in den <strong>Rohwerten der Skala</strong> aus.</li>
 <li class="fragment">Sie wird häufig auch mit <span class="math inline">\(sd\)</span> oder <span class="math inline">\(SD\)</span> (für <em>standard deviation</em>) abgekürzt.</li>
-</ul>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>Einschub: Variablenbenennung</h2>
-<ul>
-<li class="fragment">In psychologischen Studien können in den allermeisten Fällen nur <strong>Stichproben</strong> getest werden und nicht die komplette <strong>Population</strong>.</li>
-<li class="fragment">In der Statistik hat es sich eingebürgert, <strong>griechische Buchstaben für Kennwerte der Population</strong> und <strong>lateinische Buchstaben für Kennwerte der Stichprobe</strong> und zu verwenden.</li>
-<li class="fragment">Das Zirkumflex (^) wird verwendet, wenn das Ziel ist, auf Basis eines Stichprobenkennwertes den analogen Kennwert in der Population zu <strong>schätzen</strong>.</li>
-</ul>
-<div class="fragment">
-<!---  Table --->
-<table style="width:90%;">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 15%">
-<col style="width: 35%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>Stichprobe</th>
-<th>Stichprobe (Schätzung für Population)</th>
-<th>Population</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Mittelwert</td>
-<td><span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(m\)</span>, <span class="math inline">\(M\)</span></td>
-<td><span class="math inline">\(\hat{\mu}\)</span></td>
-<td><span class="math inline">\(\mu\)</span></td>
-</tr>
-<tr class="even">
-<td>Standardabweichung</td>
-<td><span class="math inline">\(s\)</span></td>
-<td><span class="math inline">\(\hat{\sigma}\)</span></td>
-<td><span class="math inline">\(\sigma\)</span></td>
-</tr>
-<tr class="odd">
-<td>Varianz</td>
-<td><span class="math inline">\(s^2\)</span></td>
-<td><span class="math inline">\(\hat{\sigma}^2\)</span></td>
-<td><span class="math inline">\(\sigma^2\)</span></td>
-</tr>
-<tr class="even">
-<td>Korrelation</td>
-<td><span class="math inline">\(r\)</span></td>
-<td><span class="math inline">\(\hat{\rho}\)</span></td>
-<td><span class="math inline">\(\rho^2\)</span></td>
-</tr>
-<tr class="odd">
-<td>Fallzahl</td>
-<td><span class="math inline">\(n\)</span></td>
-<td></td>
-<td><span class="math inline">\(N\)</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li class="fragment">Wie wir noch sehen werden, gilt <span class="math inline">\(\bar{x}=\hat{\mu}\)</span>, aber (zumindest bei kleinen Stichproben) <span class="math inline">\(s\ne\hat{\sigma}\)</span> bzw. <span class="math inline">\(s^2\ne\hat{\sigma}^2\)</span>.</li>
 </ul>
 <!----------------->
 <!--- New slide --->
@@ -1342,10 +1398,10 @@ IQR = Q_{75\%} - Q_{25\%} = Q_3 - Q_1
 <tr class="even">
 <td style="text-align: center;"><img data-src="images/example.png" height="70"></td>
 <td>Folgende 12 Werte werden beobachtet: <span class="math inline">\(x=\{1, 1, \color{darkred}{2}, \color{darkred}{3}, 3, 3, 4, 4, \color{darkblue}{6}, \color{darkblue}{7}, 7, 9\}\)</span><br>
-In diesem Fall ist der “6,5”-te Wert der Median, da  <span class="math inline">\(\,Tiefe_{\text{Median}}=\frac{n+1}{2}=\frac{12+1}{2}=6{,}5\)</span><br>
-Die Tiefe des Quartils ist damit  <span class="math inline">\(Tiefe_{\text{Quartil}}=\frac{Tiefe_{\text{Median}}+1}{2}=\frac{6{,}5+1}{3}=3{,}75\)</span><br>
-Der “<span class="math inline">\(3{,}75\)</span>”-te Wert von vorne befindet sich auf 75% der Strecke zwischen dem 3. Wert (2) und dem 4. Wert (3), also <span class="math inline">\(\color{darkred}{Q_1=2{,}75}\)</span>; der “<span class="math inline">\(3{,}75\)</span>”-te Wert von hinten befindet sich auf 75% der Strecke zwischen der 7 und der 6, also <span class="math inline">\(\color{darkblue}{Q_3=6{,}25}\)</span>.<br>
-<span class="math inline">\(IQR = \color{darkblue}{Q_3} - \color{darkred}{Q_1} = \color{darkblue}{6{,}25} - \color{darkred}{2{,}75} = 3{,}5\)</span></td>
+In diesem Fall ist der “6,5”-te Wert der Median, da  <span class="math inline">\(\,Tiefe_{\text{Median}}=\frac{n+1}{2}=\frac{12+1}{2}=6.5\)</span><br>
+Die Tiefe des Quartils ist damit  <span class="math inline">\(Tiefe_{\text{Quartil}}=\frac{Tiefe_{\text{Median}}+1}{2}=\frac{6.5+1}{3}=3.75\)</span><br>
+Der “<span class="math inline">\(3.75\)</span>”-te Wert von vorne befindet sich auf 75% der Strecke zwischen dem 3. Wert (2) und dem 4. Wert (3), also <span class="math inline">\(\color{darkred}{Q_1=2.75}\)</span>; der “<span class="math inline">\(3.75\)</span>”-te Wert von hinten befindet sich auf 75% der Strecke zwischen der 7 und der 6, also <span class="math inline">\(\color{darkblue}{Q_3=6.25}\)</span>.<br>
+<span class="math inline">\(IQR = \color{darkblue}{Q_3} - \color{darkred}{Q_1} = \color{darkblue}{6.25} - \color{darkred}{2.75} = 3.5\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -1538,11 +1594,151 @@ plt.savefig('images/paradoxia_histogram_inflammation_mean_std.png', bbox_inches=
 </div>
 <p><img data-src="images/paradoxia_histogram_inflammation_mean_std.png" height="330"></p>
 <p>Aus den Werten und der Abbildung wird ersichtlich: tatsächlich sind auch die Entzündungswerte bei Paradoxikern erhöht! Auf Basis der Mittelwerte finden Sie also Evidenz für <em>beide Hypothesen</em>!</p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Besselkorrektur</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 70px; right: 0px; height: 90px; "></p>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div>
+<ul>
+<li>Der deutsche Naturwissenschaftler Friedrich Wilhelm Bessel zeigte, dass für eine Schätzung <span class="math inline">\(\hat{\sigma}^2\)</span> der Populationsstreuung auf Basis der Stichprobenstreuung <span class="math inline">\(s^2\)</span>, der Faktor <span class="math inline">\(\frac{1}{n}\)</span> in der Varianzformel durch <span class="math inline">\(\frac{1}{n-1}\)</span> ersetzt werden muss:</li>
+</ul>
+</div>
+<p><span class="math display">\[
+\text{Schätzung der Populationsvarianz:}\\
+\hat{\sigma}^2 = \frac{n}{n-1}s = \frac{1}{n\color{darkgreen}{-1}}\sum\left(x_i-\bar{x}\right)^2
+\]</span></p>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/portrait_bessel.png"></p>
+<figcaption>Friedrich Wilhelm Bessel (1748-1846)<a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">Wir bezeichnen <span class="math inline">\(\hat{\sigma}^2\)</span> als <strong>Schätzung der Populationsvarianz auf Basis der Stichprobe</strong> oder kurz <span style=" color: navy !important;"><strong>biaskorrigierte Stichprobenvarianz</strong></span>.</li>
+<li class="fragment">Intution: die Varianz wird im Fall von <span class="math inline">\(\frac{1}{n-1}\)</span> <em>durch weniger geteilt</em> als beim ursprünglichen Faktor <span class="math inline">\(\frac{1}{n}\)</span>, d.h. die resultierende Varianz wird <em>zu einem größeren Wert hin</em> korrigiert.</li>
+<li class="fragment">Die “<span class="math inline">\(n-1\)</span>”-Korrektur für Stichproben wird als <span style=" color: navy !important;"><strong>Besselkorrektur</strong></span> bezeichnet.</li>
+<li class="fragment">Ab ca. <span class="math inline">\(n=30\)</span> spielt die Besselkorrektur kaum eine Rolle mehr (<span class="math inline">\(\frac{1}{30}=0.033\)</span> vs.&nbsp;<span class="math inline">\(\frac{1}{29}=0.034\)</span>)</li>
+</ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<aside></aside></section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Herleitung des Faktors <span class="math inline">\(\frac{1}{n-1}\)</span></span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 60px; right: 0px; height: 110px; "></p>
+<div>
+<ul>
+<li>Der Ausgangspunkt der Besselkorrektur die Beobachtung, dass die (unkorrigierte) Varianz <span class="math inline">\(s^2\)</span> der Stichprobe die Varianz <span class="math inline">\(\sigma^2\)</span> der Population systematisch unterschätzt.</li>
+<li>Der Grund ist liegt im Stichprobenmittelwert <span class="math inline">\(\bar{x}\)</span>: er ist keine perfekte Schätzung für den wahren Mittelwert <span class="math inline">\(\mu\)</span> ist — er streut um das “wahre” <span class="math inline">\(\mu\)</span>.</li>
+<li>Diese Streuung haben wir gerade kennengelernt — es ist der Standardfehler <span class="math inline">\(\hat{se}=\frac{\hat{\sigma}}{\sqrt{n}}\)</span>. Als Varianz formuliert:</li>
+</ul>
+</div>
+<div style="margin-top:-50px !important">
+<p><span class="math display">\[
+\hat{se}^2 = \frac{\hat{\sigma}^2}{n}
+\]</span></p>
+</div>
+<div>
+<ul>
+<li>Für die Schätzung der Populationsvarianz <span class="math inline">\(\hat{\sigma}^2\)</span> muss nun die <em>zusätzliche</em> Variabilität <span class="math inline">\(\hat{se}^2\)</span> aufgrund der Unsicherheit des Mittelwertes auf die Stichprobenvarianz <span class="math inline">\(s^2\)</span> addiert werden:</li>
+</ul>
+</div>
+<div style="margin-top:-20px">
+<p><span class="math display">\[
+\hat{\sigma}^2 = s^2 + \hat{se}^2 = s^2 + \frac{\hat{\sigma}^2}{n}\quad \longrightarrow\quad \hat{\sigma}^2 - \frac{\hat{\sigma}^2}{n} = s^2
+\]</span></p>
+</div>
+<div>
+<ul>
+<li>Linke Seite umformen:</li>
+</ul>
+</div>
+<div style="margin-top:-20px !important">
+<p><span class="math display">\[
+\hat{\sigma}^2 - \frac{\hat{\sigma}^2}{n} = \hat{\sigma}^2\left(1 - \frac{1}{n}\right) = \hat{\sigma}^2\frac{n-1}{n} \overset{!}{=} s^2 \;\;\longrightarrow\;\; \hat{\sigma}^2 = \frac{n}{n-1}s^2
+\]</span></p>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Herleitung des Faktors <span class="math inline">\(\frac{1}{n-1}\)</span></span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 30px; right: 0px; height: 110px; "></p>
+<p><span class="math display">\[
+\text{Zwischenergebnis:}\qquad \hat{\sigma}^2 = \frac{n}{n-1}s^2
+\]</span></p>
+<div>
+<ul>
+<li>Die unkorrigierte Varianz <span class="math inline">\(s^2\)</span> lautet:</li>
+</ul>
+</div>
+<div style="margin-top:-25px">
+<p><span class="math display">\[
+s^2 = \frac{1}{n}\sum\left(x_i-\bar{x}\right)^2
+\]</span></p>
+</div>
+<div>
+<ul>
+<li>Einsetzen:</li>
+</ul>
+</div>
+<div style="margin-top: -30px !important">
+<p><span class="math display">\[
+\hat{\sigma}^2 = \frac{n}{n-1}s^2 = \frac{n}{n-1}\frac{1}{n}\sum\left(x_i-\bar{x}\right)^2 = \color{navy}{\frac{1}{n-1}}\sum\left(x_i-\bar{x}\right)^2
+\]</span></p>
+</div>
+<div>
+<ul>
+<li>Nun haben wir unseren Faktor <span class="math inline">\(\color{navy}{\frac{1}{n-1}}\)</span>.</li>
+<li>Für die korrigierte Standardabweichung der Stichprobe wird häufig analog angenommen:</li>
+</ul>
+</div>
+<p><span class="math display">\[
+\hat{\sigma} = \sqrt{\color{navy}{\frac{1}{n-1}}\sum\left(x_i-\bar{x}\right)^2}
+\]</span></p>
+<div>
+<ul>
+<li>Diese analoge Korrektur für die Standardabweichung ist nicht 100% gültig<a href="#/footnotes" class="footnote-ref" id="fnref6" role="doc-noteref" data-footnote-href="#/fn6" onclick=""><sup>6</sup></a> — für alle<br>praktischen Zwecke reicht sie aber aus.</li>
+</ul>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<aside></aside></section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Varianz: warum werden werden nicht einfach die Absolutwerte der Differenzen genommen?</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 130px; "></p>
+<div class="fragment">
+<p>Prinzipiell wäre auch eine Formel für die Varianz mit Absolutabständen denkbar:</p>
+<p><span class="math display">\[
+Var_{\text{absolut}}(X) = \frac{1}{n}\sum_{i=1}^n\big|x_i-\bar{x}\big|
+\]</span></p>
+</div>
+<div class="fragment">
+<p>Über die Gründe, warum sich <span class="math inline">\(Var_{\text{absolut}}\)</span> nicht durchgesetzt hat, streitet sich die Fachwelt. Neben historischen Gründen, gibt es aber einige Eigenschaften, die die Präferenz für Abstandsquadrate zumindest nachvollziehbar machen:</p>
+</div>
+<ul>
+<li class="fragment">Quadrierte Abstände gewichten Punkte, die weiter vom Mittelwert entfernt sind, höher. Dies entspricht einer “Bestrafung” von Ausreißern und kann ein wünschenswertes Verhalten sein.</li>
+<li class="fragment">Analogie zur euklidischen Distanz (z.B. Satz des Pythagoras: <span class="math inline">\(a=\sqrt{b^2+c^2}\)</span>)</li>
+<li class="fragment">Fortgeschritten: die Varianz mit Abstandsquadraten ist für alle <span class="math inline">\(x\)</span> differenzierbar <br> (hingegen ist <span class="math inline">\(Var_{\text{absolut}}\)</span> bei <span class="math inline">\(x=0\)</span> nicht differenzierbar)</li>
+</ul>
+<div class="recommendation fragment">
+<p>Weitergehende Literatur <a href="#/footnotes" class="footnote-ref" id="fnref7" role="doc-noteref" data-footnote-href="#/fn7" onclick=""><sup>7</sup></a></p>
+</div>
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Vorlesung 03: Lage- und Streuungsmaße</p>
 </div>
-</section></section>
+<aside></aside></section></section>
 <section id="footnotes" class="footnotes footnotes-end-of-document smaller scrollable" role="doc-endnotes"><h2>Fußnoten</h2>
 
 <ol>
@@ -1550,7 +1746,9 @@ plt.savefig('images/paradoxia_histogram_inflammation_mean_std.png', bbox_inches=
 <li id="fn2"><p>Beispielsweise ist der Mittelwert der Mittelwerte von zwei Gruppen mit je n Datenpunkten gleich dem Mittelwert aller 2*n Datenpunkte. Beim Median ist dies nicht gegeben. Auch beziehen sich viele statistische Standardtests auf den Mittelwert und nicht den Median.</p></li>
 <li id="fn3"><p>https://youtu.be/inJ4OvU0zMA</p></li>
 <li id="fn4"><p>https://www.shiksha.com/online-courses/articles/measures-of-dispersion-range-iqr-variance-standard-deviation/</p></li>
-<li id="fn5"><p>https://web.archive.org/web/20221024193801/https://www4.hcmut.edu.vn/~ndlong/TK/mat/04_standard_deviation_vs_absolute_deviation.pdf</p></li>
+<li id="fn5"><p>http://www.digiporta.net/index.php?id=658493715</p></li>
+<li id="fn6"><p>https://en.wikipedia.org/wiki/Unbiased_estimation_of_standard_deviation</p></li>
+<li id="fn7"><p>https://web.archive.org/web/20221024193801/https://www4.hcmut.edu.vn/~ndlong/TK/mat/04_standard_deviation_vs_absolute_deviation.pdf</p></li>
 </ol>
 </section>
     </div>

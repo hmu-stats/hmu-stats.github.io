@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    xml:space="preserve"
-   inkscape:version="1.4-dev (1:1.2.0-alpha1+devel+202309191445+0218cc37c8)"
+   inkscape:version="1.4-dev (1:1.4.0-dev+202401190506+b37f861054)"
    sodipodi:docname="warum_streuung_schaefer_range_IQR.svg"
    inkscape:export-filename="warum_streuung_schaefer_range_IQR.png"
    inkscape:export-xdpi="96"
@@ -28,11 +28,11 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="1.8832632"
-     inkscape:cx="291.24978"
-     inkscape:cy="150.80208"
-     inkscape:window-width="1920"
-     inkscape:window-height="1007"
-     inkscape:window-x="0"
+     inkscape:cx="418.68816"
+     inkscape:cy="277.97495"
+     inkscape:window-width="2560"
+     inkscape:window-height="1368"
+     inkscape:window-x="2560"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" /><defs
@@ -177,7 +177,7 @@
          id="tspan9-4"
          style="fill:#1a1a1a;stroke-width:0.8"
          x="89.469147"
-         y="102.13689">SD = 1,41</tspan></text><text
+         y="102.13689">SD = 1.49</tspan></text><text
        xml:space="preserve"
        style="font-size:6.67214px;line-height:100%;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.799999;stroke-linecap:round"
        x="195.49153"
@@ -197,7 +197,7 @@
          id="tspan11-2"
          style="fill:#1a1a1a;stroke-width:0.8"
          x="90.367699"
-         y="179.77246">SD = 2,0</tspan></text><text
+         y="179.77246">SD = 2.11</tspan></text><text
        xml:space="preserve"
        style="font-size:6.67214px;line-height:100%;font-family:'Roboto Mono';-inkscape-font-specification:'Roboto Mono';text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.799999;stroke-linecap:round"
        x="196.64157"
@@ -207,4 +207,4 @@
          id="tspan12-2"
          style="fill:#1a1a1a;stroke-width:0.8"
          x="196.64157"
-         y="179.77246">SD = 1,1</tspan></text></g></svg>
+         y="179.77246">SD = 1.15</tspan></text></g></svg>

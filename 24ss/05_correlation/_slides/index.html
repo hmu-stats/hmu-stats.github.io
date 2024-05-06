@@ -363,14 +363,15 @@
 
 </div>
 <p><img data-src="images/paradoxia_zusammenhang.png" height="110"></p>
-</section>
-<section class="slide level2 hcenter-slide">
-<h2>Der Forschungsprozess</h2>
-<div data-animate="" data-src="images/scientific_process.svg"><!-- setup:
+<!-- ## Der Forschungsprozess {.hcenter-slide}
+
+```yaml { .animate src="images/scientific_process.svg"}
+setup:
     - element: "#results"
       modifier: function() { this.node.style.fill = 'green'; }
     - element: "#resultsbg"
-      modifier: function() { this.node.style.fill = '#d8ffe2';} --></div>
+      modifier: function() { this.node.style.fill = '#d8ffe2';}
+``` -->
 </section>
 <section class="slide level2">
 <h2>Was sind Zusammenhänge?</h2>
@@ -385,10 +386,14 @@
 <li class="fragment">Wirkt sich <strong>Bildschirmzeit</strong> nachteilig auf die <strong>Schlafqualität</strong> aus?</li>
 <li class="fragment">Steigt durch <strong>kindliche Frühförderung</strong> die Wahrscheinlichkeit für einen <strong>akadamischen Bildungsabschluss</strong>?</li>
 </ul></li>
-<li class="fragment">Fast jede wissenschaftliche Hypothese lässt sich als Zusammenhang formuliern – selbst Unterschiede!
+<li class="fragment">Arten von Zusammenhängen:
 <ul>
-<li class="fragment"><u>Formulierung als Unterschied</u>: unterscheiden sich Männer und Frauen in ihren verbalen Fähigkeiten?</li>
-<li class="fragment"><u>Formulierung als Zusammenhang</u>: steht die kategorische Variable <strong>Geschlecht</strong> in Zusammenhang mit der metrischen Variable <strong>verbale Fähigkeiten</strong>?</li>
+<li class="fragment">Linearer Zusammenhang (Pearson-Korrelation)</li>
+<li class="fragment">Rangkorrelation</li>
+<li class="fragment">Lineare Regression (Unterscheidung von UV und AV)</li>
+<li class="fragment">Kontingenzkoeffizient <!-- - Fast jede wissenschaftliche Hypothese lässt sich als Zusammenhang formuliern &ndash; selbst Unterschiede!
+  - [Formulierung als Unterschied]{.underline}: unterscheiden sich Männer und Frauen in ihren verbalen Fähigkeiten?
+  - [Formulierung als Zusammenhang]{.underline}: steht die kategorische Variable **Geschlecht** in Zusammenhang mit der metrischen Variable **verbale Fähigkeiten**? --></li>
 </ul></li>
 </ul>
 </div><!-- Begin second column --><div class="column" style="width:30%;">
@@ -397,42 +402,48 @@
 </div>
 </section>
 <section class="slide level2">
-<h2>Zusammenhänge im engeren Sinn</h2>
+<h2>Zusammenhänge versus Unterschiede</h2>
+<div class="columns">
+<div class="column" style="width:56%;">
 <ul>
-<li class="fragment">Um Unterschiede und Zusammenhänge voneinander abzugrenzen, verstehen wir nachfolgend Zusammenhänge in einem engeren Sinn:</li>
-</ul>
-<!---  Definition--->
-<div class="definition fragment">
-<table>
-<colgroup>
-<col style="width: 10%">
-<col style="width: 90%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
-<td>Ein <span style=" color: navy !important;"><strong>Zusammenhang</strong></span> (im engeren Sinn) beschreibt zu welchem Grad die <strong>Variation zweier metrischer Variablen</strong> miteinander in Verbindung steht.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
+<li class="fragment"><strong>Zusammenhänge:</strong>
 <ul>
-<li class="fragment">Durch die Eingrenzung auf <strong>metrische Variablen</strong> (diskret oder kontinuerlich) stellt etwa die Verbindung von Geschlecht und verbalen Fähigkeiten keinen Zusammenhang im engeren Sinn dar, da Geschlecht eine kategorische Variable ist.</li>
-<li class="fragment">In den meisten Fällen sind Zusammenhänge das “schärfere statistische Schwert” als Unterschiede und es lohnt sich oft, Forschungsfragen entsprechend anzupassen:
+<li class="fragment">Verglichen werden <u>zwei Variablen</u> <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> in <u>einer Gruppe</u>.</li>
+<li class="fragment">Verglichen werden <u>Einzelwerte</u> der Variablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>.</li>
+</ul></li>
+<li class="fragment"><strong>Unterschiede:</strong>
 <ul>
-<li class="fragment">Unterscheidet sich die akademische Leistung von Rauchern und Nichtrauchern? ⇒ Zusammenhang <strong>Zahl der Zigaretten pro Tag</strong> und <strong>akademische Leistung</strong></li>
-<li class="fragment">Unterscheidet sich der Medienkonsum von Depressiven und Kontrollen? ⇒ Zusammenhang <strong>Depressivität</strong> und <strong>Medienkonsum</strong></li>
-<li class="fragment">Unterscheidet sich das Risiko von Alkoholsucht zwischen Nord- und Süddeutschland? ⇒ Zusammenhang <strong>geographischer Breitengrad</strong> und <strong>Alkoholsuchtrisiko</strong></li>
+<li class="fragment">Verglichen wird <u>eine Variable</u> <span class="math inline">\(X\)</span> in <u>zwei Gruppen/Bedingungen</u> ⇒ <span class="math inline">\(X_A\)</span>, <span class="math inline">\(X_B\)</span>.</li>
+<li class="fragment">Verglichen werden <u>statistische Maße</u>, die für jede Gruppe/Bedingung auf Basis der Variable berechnet wurden (z.B. Mittelwerte <span class="math inline">\(\bar{x}_A \text{ vs. } \bar{x}_B\)</span>).</li>
 </ul></li>
 </ul>
+</div><div class="column" style="width:44%;">
+<p><img data-src="images/zusammenhaenge_unterschiede.png"></p>
+</div>
+</div>
+<ul>
+<li class="fragment">Aber: häufig lassen sich <strong>Unterschiedshypothesen</strong> in <strong>Zusammenhangshypothesen</strong> überführen:
+<ul>
+<li class="fragment">Unterscheidet sich die akademische Leistung von Rauchern und Nichtrauchern?<br>⇒ Zusammenhang <strong>Zahl der Zigaretten pro Tag</strong> und <strong>akademische Leistung</strong></li>
+<li class="fragment">Unterscheidet sich Medienkonsum von Depressiven und Kontrollen?<br>⇒ Zusammenhang <strong>Depressivität</strong> und <strong>Medienkonsum</strong></li>
+</ul></li>
+<li class="fragment">Zusammenhangshypothesen sind häufig das “schärfere statistische Schwert”, da eine willkürliche und verlustbehaftete Einteilung einer Variablen in Kategorien vermieden wird.</li>
+</ul>
+<!---  Definition--->
+<!-- ::: {.definition .fragment}
+|||
+|:-:|-|
+|||
+| ![](images/definition.svg){height=70px} | Ein [**Zusammenhang**]{color="navy"} beschreibt zu welchem Grad die **Variation zweier metrischer Variablen** miteinander in Verbindung steht. | 
+|||
+: {tbl-colwidths="[10, 90]"}
+:::
+
+- Durch die Eingrenzung auf **metrische Variablen** (diskret oder kontinuerlich) stellt etwa die Verbindung von Geschlecht und verbalen Fähigkeiten keinen Zusammenhang im engeren Sinn dar, da Geschlecht eine kategorische Variable ist.
+- In den meisten Fällen sind Zusammenhänge das "schärfere statistische Schwert" als Unterschiede und es lohnt sich oft, Forschungsfragen entsprechend anzupassen:
+    - Unterscheidet sich die akademische Leistung von Rauchern und Nichtrauchern? &rArr; Zusammenhang **Zahl der Zigaretten pro Tag** und **akademische Leistung**
+    - Unterscheidet sich der Medienkonsum von Depressiven und Kontrollen? &rArr; Zusammenhang **Depressivität** und **Medienkonsum**
+    - Unterscheidet sich das Risiko von Alkoholsucht zwischen Nord- und Süddeutschland? &rArr; Zusammenhang **geographischer Breitengrad** und **Alkoholsuchtrisiko** -->
 </section>
 <section>
 <section class="title-slide slide level1 center">
@@ -442,12 +453,12 @@
 <section class="slide level2">
 <h2>Kovarianz</h2>
 <ul>
-<li class="fragment">Ziel: mathematische Größe, die zum Ausdruck bringt, wie stark die Variation zweier Variablen miteinander in Zusammenhang steht</li>
+<li class="fragment"><u>Ziel:</u> mathematische Größe, die zum Ausdruck bringt, wie stark die Variation zweier Variablen miteinander in Zusammenhang steht</li>
 <li class="fragment">Wir haben bereits eine Größe für die Variation <em>einer</em> Variable — die Varianz:</li>
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
-Var(X) = \frac{1}{n}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2 = \frac{1}{n}\sum_{i=1}^n(x_i-\bar{x})\color{darkred}{(x_i-\bar{x})}
+\hat{\sigma}^2_X = \frac{1}{n-1}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2 = \frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})\color{darkred}{(x_i-\bar{x})}
 \]</span></p>
 </div>
 <ul>
@@ -456,7 +467,7 @@ Var(X) = \frac{1}{n}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2 = \frac{1}{n}\sum_{i=1}^
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
-\text{Kovarianz:}\quad Cov(X,Y) = \frac{1}{n}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2 = \frac{1}{n}\sum_{i=1}^n(x_i-\bar{x})\color{darkred}{(y_i-\bar{y})}
+\text{Kovarianz:}\quad \hat{Cov}(X,Y) = \hat{\sigma}_{XY} = \frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})\color{darkred}{(y_i-\bar{y})}
 \]</span></p>
 </div>
 <ul>
@@ -516,7 +527,7 @@ Cov(X, Y) &amp;= \frac{1}{3}\big[(1{,}60-1{,}70)(60-70)+(1{,}70-1{,}70)(70-70)+(
 \]</span></p>
 </div>
 <ul>
-<li class="fragment">Kovarianzen sind also <strong>nicht vergleichbar wenn sich Einheiten unterscheiden</strong>, und erst recht nicht, wenn sich die Variablen unterscheiden.</li>
+<li class="fragment">Kovarianzen sind also <strong>nicht vergleichbar, wenn sich Einheiten unterscheiden</strong>, und erst recht nicht, wenn sich die Variablen unterscheiden.</li>
 </ul>
 </section></section>
 <section>
@@ -529,13 +540,13 @@ Cov(X, Y) &amp;= \frac{1}{3}\big[(1{,}60-1{,}70)(60-70)+(1{,}70-1{,}70)(70-70)+(
 <div class="columns">
 <div class="column" style="width:70%;">
 <ul>
-<li class="fragment">Die <span style=" color: navy !important;"><strong>Pearson-Korrelation</strong></span> schafft Abhilfe für das Problem der mangelnden Vergleichbarkeit</li>
-<li class="fragment">Der Schlüssel: die Kovarianz wird mit der Standardabweichung beider Variablen normalisiert:</li>
+<li class="fragment">Die <span style=" color: navy !important;"><strong>Pearson-Korrelation</strong></span> schafft Abhilfe für das Problem der mangelnden Vergleichbarkeit.</li>
+<li class="fragment">Der Schlüssel: die Kovarianz wird mit den <span style=" color: darkgreen !important;">Standardabweichungen</span> beider Variablen normalisiert:</li>
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
 \small{
-\text{Korrelation:}\quad r = \frac{Cov(X,Y)}{s_X s_Y} = \frac{1}{n s_X s_Y}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})
+\text{Korrelation:}\quad r = \frac{Cov(X,Y)}{\color{darkgreen}{s_X s_Y}} = \frac{1}{n \color{darkgreen}{s_X s_Y}}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})
 }
 \]</span></p>
 </div>
@@ -1598,7 +1609,7 @@ plt.savefig('images/paradoxia_histogram_correlation_paradoxiker.png', bbox_inche
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":false},
 'animate': {"autoplay":true},
-'customcontrols': {"controls":[{"id":"home","title":"Startseite","icon":"<i class=\"fa-solid fa-house\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}`, '_blank');"},{"id":"print-pdf","title":"Als PDF","icon":"<i class=\"fa-solid fa-file-pdf\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}${location.pathname}`.replace('index.html', `Vorlesung${location.pathname.split('/')[1]}.pdf`), '_blank');"},{"id":"print","title":"Drucken","icon":"<i class=\"fa-solid fa-print\" style=\"color:#8398dd\"></i>","action":"location.href = location.href.includes('print-pdf') ? `${location.protocol}//${location.host}${location.pathname}${location.hash}` : `${location.protocol}//${location.host}${location.pathname}?print-pdf${location.hash}`;"},{"id":"toggle-notes","title":"Notizen (c)","icon":"<i class=\"fa-solid fa-pen\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleNotesCanvas(event);"},{"id":"toggle-chalkboard","title":"Tafel (b)","icon":"<i class=\"fa-solid fa-person-chalkboard\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleChalkboard(event);"},{"id":"toggle-fragments","title":"Animationen","icon":"<i class=\"fa-solid fa-bolt\" style=\"color:#8398dd\"></i>","action":"debugger; Reveal.getConfig().fragments = !Reveal.getConfig().fragments; document.querySelector('.fa-bolt').style.color = Reveal.getConfig().fragments ?  '#dfe169' : '#8398dd'; if (Reveal.getConfig().fragments) {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]');for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('was_anim')) {elements[i].innerHTML = elements[i].innerHTML_prev;}}} else {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]'); for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('class: fragment')) {elements[i].innerHTML = `<div><img src='${elements[i].getAttribute('data-src')}' class='was_anim'></div>`;}}fragments = document.querySelectorAll('.fragment');for (let i = 0; i < fragments.length; i++) {fragments[i].classList.add('visible');}}"},{"id":"intro-sound","title":"Play intro","icon":"<i class=\"fa-solid fa-music\" style=\"color:#8398dd\"></i>","action":"new Audio('images/appear.mp3').play()"}]},
+'customcontrols': {"controls":[{"id":"home","title":"Startseite","icon":"<i class=\"fa-solid fa-house\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}`, '_blank');"},{"id":"print-pdf","title":"Als PDF","icon":"<i class=\"fa-solid fa-file-pdf\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}${location.pathname}`.replace('index.html', `Vorlesung${location.pathname.split('/')[2]}.pdf`), '_blank');"},{"id":"print","title":"Drucken","icon":"<i class=\"fa-solid fa-print\" style=\"color:#8398dd\"></i>","action":"location.href = location.href.includes('print-pdf') ? `${location.protocol}//${location.host}${location.pathname}${location.hash}` : `${location.protocol}//${location.host}${location.pathname}?print-pdf${location.hash}`;"},{"id":"toggle-notes","title":"Notizen (c)","icon":"<i class=\"fa-solid fa-pen\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleNotesCanvas(event);"},{"id":"toggle-chalkboard","title":"Tafel (b)","icon":"<i class=\"fa-solid fa-person-chalkboard\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleChalkboard(event);"},{"id":"toggle-fragments","title":"Animationen","icon":"<i class=\"fa-solid fa-bolt\" style=\"color:#8398dd\"></i>","action":"Reveal.getConfig().fragments = !Reveal.getConfig().fragments; document.querySelector('.fa-bolt').style.color = Reveal.getConfig().fragments ?  '#dfe169' : '#8398dd'; if (Reveal.getConfig().fragments) {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]');for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('was_anim')) {elements[i].innerHTML = elements[i].innerHTML_prev;}}} else {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]'); for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('class: fragment')) {elements[i].innerHTML = `<div><img src='${elements[i].getAttribute('data-src')}' class='was_anim'></div>`;}}fragments = document.querySelectorAll('.fragment');for (let i = 0; i < fragments.length; i++) {fragments[i].classList.add('visible');}}"},{"id":"intro-sound","title":"Play intro","icon":"<i class=\"fa-solid fa-music\" style=\"color:#8398dd\"></i>","action":"new Audio('images/appear.mp3').play()"}]},
 'smaller': false,
  
         // Display controls in the bottom right corner

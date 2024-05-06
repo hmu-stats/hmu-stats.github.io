@@ -1499,145 +1499,6 @@ se^2 = \frac{\sigma^2}{n} \qquad \text{bzw.} \qquad se = \frac{\sigma}{\sqrt{n}}
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Schätzung der Standardabweichung in der Population</h2>
-<ul>
-<li class="fragment">Beim Mittelwert gilt, dass der Mittelwert <span class="math inline">\(\bar{x}\)</span> der Stichprobe die beste Schätzung <span class="math inline">\(\hat{\mu}\)</span> für den wahren Mittelwertsparameter <span class="math inline">\(\mu\)</span> der Population ist:</li>
-</ul>
-<div class="fragment">
-<p><span class="math display">\[
-\text{Schätzung des Populationsmittelwertes:}\qquad\hat{\mu} = \bar{x}
-\]</span></p>
-</div>
-<ul>
-<li class="fragment">Bei der Varianz/Standardabweichung gilt dies nur (näherungsweise) für große Stichproben. Für kleinere Stichproben gilt leider nicht <span class="math inline">\(\hat{\sigma}^2 = s^2\)</span>.</li>
-<li class="fragment">Grund: um die Streuung in der Population zu schätzen, müsste eigentlich die Streuung der <span class="math inline">\(x_i\)</span> <strong>um den wahren Mittelwert <span class="math inline">\(\mu\)</span></strong> berechnet werden.</li>
-<li class="fragment">Das wahre <span class="math inline">\(\mu\)</span> kennen wir aber nicht, sondern lediglich unsere Schätzung <span class="math inline">\(\bar{x}\)</span>.</li>
-<li class="fragment">Es stellt sich heraus, dass die Streuung der <span class="math inline">\(x_i\)</span> um den Mittelwert <span class="math inline">\(\bar{x}\)</span> der Stichprobe immer etwas kleiner ist, als es die Streuung der <span class="math inline">\(x_i\)</span> um den wahren Wert <span class="math inline">\(\mu\)</span> wäre.
-<ul>
-<li class="fragment">Das ist durchaus intuitiv, da der Mittelwert <span class="math inline">\(\bar{x}\)</span> <em>aus den</em> <span class="math inline">\(x_i\)</span> <em>selbst</em> bestimmt wird.</li>
-</ul></li>
-<li class="fragment">Dies führt zur <strong>Besselkorrektur</strong> ⎘</li>
-</ul>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>Besselkorrektur</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
-<div>
-<ul>
-<li>Der deutsche Naturwissenschaftler Friedrich Wilhelm Bessel zeigte, dass für eine Schätzung <span class="math inline">\(\hat{\sigma}^2\)</span> der Populationsstreuung auf Basis der Stichprobenstreuung <span class="math inline">\(s^2\)</span>, der Faktor <span class="math inline">\(\frac{1}{n}\)</span> in der Varianzformel durch <span class="math inline">\(\frac{1}{n-1}\)</span> ersetzt werden muss:</li>
-</ul>
-</div>
-<p><span class="math display">\[
-\text{Schätzung der Populationsvarianz:}\\
-\hat{\sigma}^2 = \frac{n}{n-1}s = \frac{1}{n\color{darkgreen}{-1}}\sum\left(x_i-\bar{x}\right)^2
-\]</span></p>
-</div><div class="column" style="width:30%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/portrait_bessel.png"></p>
-<figcaption>Friedrich Wilhelm Bessel (1748-1846)<a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a></figcaption>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li class="fragment">Wir bezeichnen <span class="math inline">\(\hat{\sigma}^2\)</span> als <strong>Schätzung der Populationsvarianz auf Basis der Stichprobe</strong> oder kurz <span style=" color: navy !important;"><strong>biaskorrigierte Stichprobenvarianz</strong></span>.</li>
-<li class="fragment">Intution: die Varianz wird im Fall von <span class="math inline">\(\frac{1}{n-1}\)</span> <em>durch weniger geteilt</em> als beim ursprünglichen Faktor <span class="math inline">\(\frac{1}{n}\)</span>, d.h. die resultierende Varianz wird <em>zu einem größeren Wert hin</em> korrigiert.</li>
-<li class="fragment">Die “<span class="math inline">\(n-1\)</span>”-Korrektur für Stichproben wird als <span style=" color: navy !important;"><strong>Besselkorrektur</strong></span> bezeichnet.</li>
-<li class="fragment">Ab ca. <span class="math inline">\(n=30\)</span> spielt die Besselkorrektur kaum eine Rolle mehr (<span class="math inline">\(\frac{1}{30}=0.033\)</span> vs.&nbsp;<span class="math inline">\(\frac{1}{29}=0.034\)</span>)</li>
-</ul>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-<aside></aside></section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Herleitung des Faktors <span class="math inline">\(\frac{1}{n-1}\)</span></span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 60px; right: 0px; height: 110px; "></p>
-<div>
-<ul>
-<li>Der Ausgangspunkt der Besselkorrektur die Beobachtung, dass die (unkorrigierte) Varianz <span class="math inline">\(s^2\)</span> der Stichprobe die Varianz <span class="math inline">\(\sigma^2\)</span> der Population systematisch unterschätzt.</li>
-<li>Der Grund ist liegt im Stichprobenmittelwert <span class="math inline">\(\bar{x}\)</span>: er ist keine perfekte Schätzung für den wahren Mittelwert <span class="math inline">\(\mu\)</span> ist — er streut um das “wahre” <span class="math inline">\(\mu\)</span>.</li>
-<li>Diese Streuung haben wir gerade kennengelernt — es ist der Standardfehler <span class="math inline">\(\hat{se}=\frac{\hat{\sigma}}{\sqrt{n}}\)</span>. Als Varianz formuliert:</li>
-</ul>
-</div>
-<div style="margin-top:-50px !important">
-<p><span class="math display">\[
-\hat{se}^2 = \frac{\hat{\sigma}^2}{n}
-\]</span></p>
-</div>
-<div>
-<ul>
-<li>Für die Schätzung der Populationsvarianz <span class="math inline">\(\hat{\sigma}^2\)</span> muss nun die <em>zusätzliche</em> Variabilität <span class="math inline">\(\hat{se}^2\)</span> aufgrund der Unsicherheit des Mittelwertes auf die Stichprobenvarianz <span class="math inline">\(s^2\)</span> addiert werden:</li>
-</ul>
-</div>
-<div style="margin-top:-20px">
-<p><span class="math display">\[
-\hat{\sigma}^2 = s^2 + \hat{se}^2 = s^2 + \frac{\hat{\sigma}^2}{n}\quad \longrightarrow\quad \hat{\sigma}^2 - \frac{\hat{\sigma}^2}{n} = s^2
-\]</span></p>
-</div>
-<div>
-<ul>
-<li>Linke Seite umformen:</li>
-</ul>
-</div>
-<div style="margin-top:-20px !important">
-<p><span class="math display">\[
-\hat{\sigma}^2 - \frac{\hat{\sigma}^2}{n} = \hat{\sigma}^2\left(1 - \frac{1}{n}\right) = \hat{\sigma}^2\frac{n-1}{n} \overset{!}{=} s^2 \;\;\longrightarrow\;\; \hat{\sigma}^2 = \frac{n}{n-1}s^2
-\]</span></p>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Herleitung des Faktors <span class="math inline">\(\frac{1}{n-1}\)</span></span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 30px; right: 0px; height: 110px; "></p>
-<p><span class="math display">\[
-\text{Zwischenergebnis:}\qquad \hat{\sigma}^2 = \frac{n}{n-1}s^2
-\]</span></p>
-<div>
-<ul>
-<li>Die unkorrigierte Varianz <span class="math inline">\(s^2\)</span> lautet:</li>
-</ul>
-</div>
-<div style="margin-top:-25px">
-<p><span class="math display">\[
-s^2 = \frac{1}{n}\sum\left(x_i-\bar{x}\right)^2
-\]</span></p>
-</div>
-<div>
-<ul>
-<li>Einsetzen:</li>
-</ul>
-</div>
-<div style="margin-top: -30px !important">
-<p><span class="math display">\[
-\hat{\sigma}^2 = \frac{n}{n-1}s^2 = \frac{n}{n-1}\frac{1}{n}\sum\left(x_i-\bar{x}\right)^2 = \color{navy}{\frac{1}{n-1}}\sum\left(x_i-\bar{x}\right)^2
-\]</span></p>
-</div>
-<div>
-<ul>
-<li>Nun haben wir unseren Faktor <span class="math inline">\(\color{navy}{\frac{1}{n-1}}\)</span>.</li>
-<li>Für die korrigierte Standardabweichung der Stichprobe wird häufig analog angenommen:</li>
-</ul>
-</div>
-<p><span class="math display">\[
-\hat{\sigma} = \sqrt{\color{navy}{\frac{1}{n-1}}\sum\left(x_i-\bar{x}\right)^2}
-\]</span></p>
-<div>
-<ul>
-<li>Diese analoge Korrektur für die Standardabweichung ist nicht 100% gültig<a href="#/footnotes" class="footnote-ref" id="fnref6" role="doc-noteref" data-footnote-href="#/fn6" onclick=""><sup>6</sup></a> — für alle<br>praktischen Zwecke reicht sie aber aus.</li>
-</ul>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-<aside></aside></section>
-<section class="slide level2">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:9%;">
@@ -1666,7 +1527,7 @@ s^2 = \frac{1}{n}\sum\left(x_i-\bar{x}\right)^2
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/peaya_sem.png"></p>
-<figcaption>Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref7" role="doc-noteref" data-footnote-href="#/fn7" onclick=""><sup>7</sup></a></figcaption>
+<figcaption>Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a></figcaption>
 </figure>
 </div>
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
@@ -1681,9 +1542,7 @@ s^2 = \frac{1}{n}\sum\left(x_i-\bar{x}\right)^2
 <li id="fn2"><p>Gnambs T. A Brief Note on the Standard Error of the Pearson Correlation. https://psyarxiv.com/uts98/</p></li>
 <li id="fn3"><p>n<a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a>:</p></li>
 <li id="fn4"><p>Harding B, Tremblay C, Cousineau D (2014) Standard errors: A review and evaluation of standard error estimators using Monte Carlo simulations. TQMP 10:107–123.</p></li>
-<li id="fn5"><p>http://www.digiporta.net/index.php?id=658493715</p></li>
-<li id="fn6"><p>https://en.wikipedia.org/wiki/Unbiased_estimation_of_standard_deviation</p></li>
-<li id="fn7"><p>http://www.peaya.com/peaya.php?comicsid=1005</p></li>
+<li id="fn5"><p>http://www.peaya.com/peaya.php?comicsid=1005</p></li>
 </ol>
 </section>
     </div>
