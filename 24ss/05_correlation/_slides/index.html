@@ -408,12 +408,12 @@ setup:
 <ul>
 <li class="fragment"><strong>Zusammenhänge:</strong>
 <ul>
-<li class="fragment">Verglichen werden <u>zwei Variablen</u> <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> in <u>einer Gruppe</u>.</li>
+<li class="fragment">Zugrunde liegen <u>zwei Variablen</u> <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> in <u>einer Gruppe</u>.</li>
 <li class="fragment">Verglichen werden <u>Einzelwerte</u> der Variablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>.</li>
 </ul></li>
 <li class="fragment"><strong>Unterschiede:</strong>
 <ul>
-<li class="fragment">Verglichen wird <u>eine Variable</u> <span class="math inline">\(X\)</span> in <u>zwei Gruppen/Bedingungen</u> ⇒ <span class="math inline">\(X_A\)</span>, <span class="math inline">\(X_B\)</span>.</li>
+<li class="fragment">Zugrunde liegt <u>eine Variable</u> <span class="math inline">\(X\)</span> in <u>zwei Gruppen/Bedingungen</u> ⇒ <span class="math inline">\(X_A\)</span>, <span class="math inline">\(X_B\)</span>.</li>
 <li class="fragment">Verglichen werden <u>statistische Maße</u>, die für jede Gruppe/Bedingung auf Basis der Variable berechnet wurden (z.B. Mittelwerte <span class="math inline">\(\bar{x}_A \text{ vs. } \bar{x}_B\)</span>).</li>
 </ul></li>
 </ul>
@@ -642,7 +642,7 @@ plt.savefig('images/streudiagramm.png', bbox_inches="tight")
 </div>
 </div>
 <ul>
-<li class="fragment">Wäre die Körpergröße in der Einheit <em>Meter</em> statt <em>Zentimeter</em> angeben, so bliebe der Korrelationskoeffizient <span class="math inline">\(\hat{\rho}\)</span> unverändert:</li>
+<li class="fragment">Wird nun die Körpergröße statt in der Einheit <em>Zentimeter</em> in <em>Meter</em> angeben, bleibt der Korrelationskoeffizient <span class="math inline">\(\hat{\rho}\)</span> unverändert:</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:43%;">
@@ -655,7 +655,7 @@ plt.savefig('images/streudiagramm.png', bbox_inches="tight")
 </div>
 </div><div class="column" style="width:57%;">
 <div class="fragment">
-<p><strong>Die Normalisierung mit der Standardabweichung sorgt dafür, dass die willkürliche Einheit keine Rolle spielt!</strong></p>
+<p><strong>Die Normalisierung mit der Standardabweichung sorgt dafür, dass die Korrelation unabhängig von der Einheit ist!</strong></p>
 </div>
 </div>
 </div>
@@ -666,7 +666,7 @@ plt.savefig('images/streudiagramm.png', bbox_inches="tight")
 <section class="slide level2">
 <h2>Interpretation der Pearson-Korrelation</h2>
 <ul>
-<li class="fragment">Die Pearson-Korrelation zeigt an, <strong>wie linear</strong> der Zusammenhang zweier Variablen ausgeprägt ist</li>
+<li class="fragment">Die Pearson-Korrelation zeigt an, <strong>wie linear</strong> der Zusammenhang zweier Variablen ausgeprägt ist.</li>
 <li class="fragment">Die Pearson-Korrelation ist dabei <u>nicht</u> von der Steigung einer gedachten Gerade abhängig.</li>
 </ul>
 <div class="fragment">
@@ -777,12 +777,12 @@ plt.savefig('images/streudiagramm.png', bbox_inches="tight")
 <tr class="odd">
 <td><strong>Mythos 3</strong></td>
 <td>Die beiden Variablen müssen normalverteilt sein.</td>
-<td>Der <strong>Pearson-Korrelationskoeffizient per se erfordert keine Normalverteilung</strong> der Variablen. Korrekt ist aber, dass die Daten für die <strong>Berechnung eines p-Wertes auf Basis des t-Tests annähernd normalverteilt</strong> (ganz korrekt: <em>bivariat normalverteilt</em>) sein sollten. Wenn Normalverteilung nicht gegeben ist, können andere Signifikanztests (Permutation, Bootstrap) verwendet werden.</td>
+<td>Der <strong>Pearson-Korrelationskoeffizient per se erfordert keine Normalverteilung</strong> der Variablen. <span style=" color: darkred !important;">Korrekt ist aber, dass die Daten für die <strong>Berechnung eines p-Wertes auf Basis des t-Tests annähernd normalverteilt</strong> (ganz korrekt: <em>bivariat normalverteilt</em>) sein sollten. Wenn Normalverteilung nicht gegeben ist, können andere Signifikanztests (Permutation, Bootstrap) verwendet werden.</span></td>
 </tr>
 <tr class="even">
-<td><strong>Mythos 4</strong></td>
-<td>Die Variablen müssen varianzhomogen sein</td>
-<td>Varianzhomogenität (auch Homoskedastizität) meint, dass Y-Werte ähnliche Varianz in verschiedenen Abschnitten der X-Achse haben und umgekehrt. Hier gilt das gleiche wie bei Mythos 3: <strong>Varianzhomogenität ist keine Voraussetzung für die Anwendung der Pearson-Korrelation per se, wohl aber für die Anwendung des t-Tests.</strong></td>
+<td><span style=" color: darkred !important;"><strong>Mythos 4</strong></span></td>
+<td><span style=" color: darkred !important;">Die Variablen müssen varianzhomogen sein</span></td>
+<td><span style=" color: darkred !important;">Varianzhomogenität (auch Homoskedastizität) meint, dass Y-Werte ähnliche Varianz in verschiedenen Abschnitten der X-Achse haben und umgekehrt. Hier gilt das gleiche wie bei Mythos 3: <strong>Varianzhomogenität ist keine Voraussetzung für die Anwendung der Pearson-Korrelation per se, wohl aber für die Anwendung des t-Tests.</strong></span></td>
 </tr>
 </tbody>
 </table>
@@ -846,8 +846,8 @@ plt.savefig(f'images/corrmatrix.png', bbox_inches="tight")
 <section class="slide level2">
 <h2>Korrelationsmatrix</h2>
 <ul>
-<li class="fragment">Eine <strong>Korrelation</strong> bestimmt immer den Zusammenhang zwischen <strong>zwei Variablen</strong></li>
-<li class="fragment">Gibt es mehr als zwei Variablen (z.B. die “Big Five”), bietet sich eine Darstellung aller paarweisen Korrelationen an – die <span style=" color: navy !important;"><strong>Korrelationsmatrix</strong></span></li>
+<li class="fragment">Eine <strong>Korrelation</strong> bestimmt immer den Zusammenhang zwischen <strong>zwei Variablen</strong>.</li>
+<li class="fragment">Gibt es mehr als zwei Variablen (z.B. die “Big Five”), bietet sich eine Darstellung aller paarweisen Korrelationen an – die <span style=" color: navy !important;"><strong>Korrelationsmatrix</strong></span>.</li>
 </ul>
 <div class="columns vcenter-column" style="margin-top:-15px">
 <div class="column" style="width:60%;">
@@ -871,8 +871,8 @@ plt.savefig(f'images/corrmatrix.png', bbox_inches="tight")
 </div>
 </div>
 <ul>
-<li class="fragment">Die <span style=" color: darkgreen !important;">Nebendiagonalelemente</span> sind der interessante Teil der Korrelationsmatrix, sie geben die Korrelationen verschiedener Variablen an</li>
-<li class="fragment">Die <span style=" color: darkred !important;">Diagonalelemente</span>, also die Korrelationen von Variablen mit sich selbst, sind immer 1</li>
+<li class="fragment">Die <span style=" color: darkgreen !important;">Nebendiagonalelemente</span> sind der interessante Teil der Korrelationsmatrix, sie geben die Korrelationen verschiedener Variablen an.</li>
+<li class="fragment">Die <span style=" color: darkred !important;">Diagonalelemente</span>, also die Korrelationen von Variablen mit sich selbst, sind immer 1.</li>
 </ul>
 <!----------------->
 <!--- New slide --->
@@ -885,17 +885,17 @@ plt.savefig(f'images/corrmatrix.png', bbox_inches="tight")
 <ul>
 <li class="fragment">Eine analoge Matrix-Darstellung gibt es auch für die <strong>Kovarianz</strong>.</li>
 <li class="fragment">Im Unterschied zur Korrelationsmatrix sind die Diagonalelemente der Kovarianzmatrix nicht 1, sondern geben die <strong>Varianz</strong> der Variable an.</li>
-<li class="fragment">Sei <span class="math inline">\(\mathbf{X}\)</span> (beachte Fettschrift) ein Vektor von <span class="math inline">\(n\)</span> Variablen <span class="math inline">\(X_1 .. X_n\)</span>, so ist die zugehörige Kovarianzematrix <span class="math inline">\(\operatorname{Cov}(\mathbf{X})\)</span>:</li>
+<li class="fragment">Sei <span class="math inline">\(\mathbf{X}\)</span> (beachte Fettschrift) ein Vektor von <span class="math inline">\(n\)</span> Variablen <span class="math inline">\(X_1 .. X_n\)</span>, so ist die zugehörige Kovarianzematrix <span class="math inline">\(\hat{Cov}(\mathbf{X})\)</span>:</li>
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
 \small{
 \begin{aligned}
-\operatorname{Cov}(\mathbf{X}) &amp; =
-\begin{pmatrix}\operatorname{Var}(X_1) &amp; \operatorname{Cov}(X_1,X_2) &amp; \cdots &amp; \operatorname{Cov}(X_1,X_n) \\ \\
-\operatorname{Cov}(X_2,X_1)  &amp; \operatorname{Var}(X_2) &amp; \cdots &amp; \operatorname{Cov}(X_2,X_n) \\ \\
+\hat{Cov}(\mathbf{X}) &amp; =
+\begin{pmatrix}\hat{Var}(X_1) &amp; \hat{Cov}(X_1,X_2) &amp; \cdots &amp; \hat{Cov}(X_1,X_n) \\ \\
+\hat{Cov}(X_2,X_1)  &amp; \hat{Var}(X_2) &amp; \cdots &amp; \hat{Cov}(X_2,X_n) \\ \\
 \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \\
-\operatorname{Cov}(X_n,X_1) &amp; \operatorname{Cov}(X_n,X_2) &amp; \cdots &amp; \operatorname{Var}(X_n)
+\hat{Cov}(X_n,X_1) &amp; \hat{Cov}(X_n,X_2) &amp; \cdots &amp; \hat{Var}(X_n)
 \end{pmatrix}
 \end{aligned}
 }
@@ -910,78 +910,7 @@ plt.savefig(f'images/corrmatrix.png', bbox_inches="tight")
 <ul>
 <li class="fragment">Im Gegensatz zur Korrelationsmatrix ist die Kovarianzmatrix selten das “Endprodukt” einer Analyse, sondern meist ein Zwischenschritt in fortgeschritteneren statistischen Analysen wie der <strong>Hauptkomponentenanalyse</strong>.</li>
 </ul>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Punktbiseriale und biseriale Korrelation</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 40px; right: 30px; height: 110px; "></p>
-<ul>
-<li class="fragment">Korrelationskoeffizienten können auch berechnet werden, wenn eine<br>der beiden Variablen binär ist. Zwei Fälle werden unterschieden.</li>
-</ul>
-<div class="fragment">
-<p><strong>Fall 1: die binäre Variable liegt natürlicherweise in dichotomer Form vor (z.B. männl./weibl.)</strong></p>
-</div>
-<div class="fragment">
-<p>In diesem Fall haben die beiden Werte der binären Variable <em>keine natürliche Ordnung</em> und es wird der <span style=" color: navy !important;"><strong>punktbiseriale Korrelationskoeffizient</strong></span> verwendet.</p>
-</div>
-<div class="fragment">
-<p>Sei <span class="math inline">\(X\)</span> die binäre Variable und <span class="math inline">\(Y\)</span> die kontinuierliche Variable. Wir teilen die Stichprobe in Gruppe <span class="math inline">\(A\)</span> (für die <span class="math inline">\(X\)</span> den einen Wert einnimmt) und Gruppe <span class="math inline">\(B\)</span> (für die <span class="math inline">\(X\)</span> den anderen Wert einnimmt). Es gilt:</p>
-<div style="margin-top: 0px">
-<p><span class="math display">\[
-r_\text{population} = \frac{\left(\bar{y}_A - \bar{y}_B\right)}{\sigma_Y}\sqrt{p_A p_B} \qquad\qquad r_\text{sample} = \frac{\left(\bar{y}_A - \bar{y}_B\right)}{s_Y}\sqrt{\frac{n p_A p_B}{n-1}}
-\]</span></p>
-</div>
-<p>wobei <span class="math inline">\(\bar{y}_{A/B}\)</span> der Mittelwert von <span class="math inline">\(Y\)</span> und <span class="math inline">\(p_{A/B}\)</span> der Anteil (proportion) der Versuchspersonen in Gruppe <span class="math inline">\(A\)</span>/<span class="math inline">\(B\)</span> ist. <span class="math inline">\(\sigma_Y\)</span>/<span class="math inline">\(s_Y\)</span> ist die Standardabweichung von <span class="math inline">\(Y\)</span> in der Population/Stichprobe.</p>
-</div>
-<div class="vspace-medium">
-
-</div>
-<div class="merke fragment">
-<div class="columns">
-<div class="column" style="width:5%;">
-<div style="margin-top: 18px">
-<p><img data-src="images/merke.png" height="55"></p>
-</div>
-</div><div class="column" style="width:95%;">
-<p><strong>Beachte:</strong> der punktbiserielle Korrelationskoeffizient leitet sich direkt aus dem Pearson-Korrelationskoeffizienten ab (ist äquivalent), d.h. die Pearsonkorrelation einschlägiger Statistiksoftware kann verwendet werden!</p>
-</div>
-</div>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Punktbiseriale und biseriale Korrelation</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<p><strong>Fall 2: die binäre Variable resultiert aus der Dichotomisierung einer kontinuierlichen Variable</strong></p>
-<div class="fragment">
-<p>In diesem Fall unterschätzt die punktbiseriale Korrelation den wahren Wert und es sollte der <span style=" color: navy !important;"><strong>biseriale Korrelationskoeffizient</strong></span> verwendet:</p>
-<div style="margin-left: -30px">
-<p><span class="math display">\[
-r_\text{population} = \frac{\left(\bar{y}_A - \bar{y}_B\right)}{f(z_p)\sigma_Y}p_A p_B \qquad\qquad r_\text{sample} = \frac{\left(\bar{y}_A - \bar{y}_B\right)}{f(z_p)s_Y}\frac{n p_A p_B}{n-1}
-\]</span></p>
-</div>
-<p>wobei <span class="math inline">\(f(z_p)\)</span> der Wert der Standardnormalverteilung bei <span class="math inline">\(z_p\)</span> ist und <span class="math inline">\(z_p\)</span> der Wert, bei dem die Fläche rechts unter der Standardnormalverteilung gleich <span class="math inline">\(p\)</span> ist (<span class="math inline">\(P(Z&gt;z_p)=p\)</span>).</p>
-<!-- Antwort auf 
-https://real-statistics.com/correlation/biserial-correlation/comment-page-1/?unapproved=1505005&moderation-hash=fba191d84ae6d8b2252c6b13efb49ba1#comment-1505005
-checken! -->
-<p>Quellen: <a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a> <a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a> <a href="#/footnotes" class="footnote-ref" id="fnref4" role="doc-noteref" data-footnote-href="#/fn4" onclick=""><sup>4</sup></a></p>
-</div>
-<div class="merke fragment">
-<div class="columns">
-<div class="column" style="width:5%;">
-<div style="margin-top: 18px">
-<p><img data-src="images/merke.png" height="55"></p>
-</div>
-</div><div class="column" style="width:95%;">
-<p><strong>Beachte:</strong> der biserielle Korrelationskoeffizient ist <u>nicht</u> äquivalent mit dem Pearson-Korrelationskoeffizienten und sollte manuell berechnet werden.</p>
-</div>
-</div>
-</div>
-<aside></aside></section></section>
+</section></section>
 <section>
 <section class="title-slide slide level1 center">
 <h1>Rangkorrelationen</h1>
@@ -992,21 +921,17 @@ checken! -->
 <div class="columns">
 <div class="column" style="width:72%;">
 <ul>
-<li class="fragment"><span style=" color: navy !important;"><strong>Rangkorrelationsmaße</strong></span> ermöglichen es, Zusammenhänge von ordinalskalierten und nicht-linearen Variablem zu untersuchen.
+<li class="fragment">Eine Alternative zur Pearson-Korrelation sind <span style=" color: navy !important;"><strong>Rangkorrelationsmaße</strong></span>, die nicht die Linearität eines Zusammenhangs, sondern die <strong>Monotonie des Zusammenhangs</strong> bemessen.</li>
+<li class="fragment">Rangkorrelationen werden in der Regel aus zwei Gründen angewendet:
 <ul>
-<li class="fragment">Dies ist mit der Pearson-Korrelation nicht möglich</li>
+<li class="fragment"><strong>Theoretischer Grund:</strong> Man ist tatsächlich an der Monotonie — und nicht der Linearität — eines Zusammenhangs interessiert. Dies ist häufig der Fall, wenn die Daten tatsächlich als ordinalskalierte Ränge – d.h. ohne interpretierbare Abstände – vorliegen.</li>
+<li class="fragment"><strong>Praktischer Grund:</strong> Eigentlich ist die Linearität das primäre Interesse, aber es sind entweder die Annahmen der Pearson-Korrelation verletzt (Daten nicht intervallskaliert) oder die Pearson-Korrelation ist aus anderen Gründen ungeeignet (Ausreißer). Die Rangkorrelation ist die “Notfalloption”.</li>
 </ul></li>
-<li class="fragment">“Rang” bezieht sich auf das Ordinalskalenniveau, d.h. dass die Daten nur als “Rang” oder “Reihenfolge” interpretiert werden können.</li>
-<li class="fragment">Im Gegensatz zur Pearson-Korrelation bewerten Rangkorrelationen nicht die Linearität eines Zusammenhangs, sondern die <strong>Monotonie des Zusammenhangs</strong>.</li>
-<li class="fragment">Ein weiterer Anwendungsfall sind intervallskalierte Daten, die Ausreißer aufweisen und daher die Pearson-Korrelation verzerren.
+<li class="fragment">Für Rangkorrelationsmaße spielt lediglich die Reihenfolge (“Rang”) der Daten eine Rolle und nicht die spezifischen Werte.
 <ul>
-<li class="fragment">Rangkorrelationen sind <strong>robust gegenüber Ausreißern</strong></li>
-<li class="fragment">In diesem Fall werden die Variablen künstlich in Ränge umgewandelt.</li>
-</ul></li>
-<li class="fragment">Hier behandeln wir zwei Maße für die Rangkorrelation:
-<ul>
-<li class="fragment"><span style=" color: navy !important;"><strong>Spearman-Korrelation</strong></span></li>
-<li class="fragment"><span style=" color: navy !important;"><strong>Kendall’sches Tau</strong></span></li>
+<li class="fragment">Ähnlich wie beim Median ist es genau diese Eigenschaft, die Rangkorrelationsmaße unanfällig für Ausreißer macht. <!-- - Im Folgenden werden zwei die in der Praxis häufigsten Rangkorrelationsmaße behandelt:
+  - [**Spearman-Korrelation**]{color="navy"}
+  - [**Kendall'sches Tau**]{color="navy"} --></li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:28%;">
@@ -1017,24 +942,6 @@ checken! -->
 <p><img data-src="images/rankorder_example2.png"></p>
 </div>
 </div>
-</section>
-<section class="slide level2">
-<h2>Berechnung von Rängen</h2>
-<ul>
-<li class="fragment">Liegen die Variablen nicht als Ränge vor, müssen sie zunächst in Ränge umgewandelt werden:
-<ol type="1">
-<li class="fragment">Werte der Variable sortieren</li>
-<li class="fragment">(Unnormierte) Ränge zuordnen</li>
-<li class="fragment">Normierung: Gleiche Werte erhalten den Mittelwert ihrer Ränge</li>
-<li class="fragment">(Optional) Variablen in ihre ursprüngliche Reihenfolge bringen</li>
-</ol></li>
-</ul>
-<div class="fragment">
-<p><img data-src="images/rangbildung.png" height="375"></p>
-</div>
-<ul>
-<li class="fragment">Die Tabelle gibt die Rangberechnung <em>einer</em> Variablen an (z.B. X) — für die andere Variable (Y) muss das analoge Prozedere durchgeführt werden.</li>
-</ul>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1042,12 +949,13 @@ checken! -->
 <section class="slide level2">
 <h2>Spearman-Korrelation</h2>
 <ul>
-<li class="fragment">Die Spearman-Korrelation <span class="math inline">\(r_s\)</span> ist identisch zur Pearson-Korrelation, wenn die Variablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> als Ränge <span class="math inline">\(R(X)\)</span> und <span class="math inline">\(R(Y)\)</span> vorliegen:</li>
+<li class="fragment">Das mutmaßlich häufigste Rangkorrelationsmaß ist die <span style=" color: navy !important;"><strong>Spearman-Korrelation</strong> <span class="math inline">\(\hat{\rho}_s\)</span></span>.</li>
+<li class="fragment">Die Spearman-Korrelation ist identisch zur Pearson-Korrelation, wenn die Variablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> als Ränge <span class="math inline">\(R(X)\)</span> und <span class="math inline">\(R(Y)\)</span> vorliegen:</li>
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
-r_s = \frac{cov(R(X),R(Y))}{s_{R(X)} s_{R(Y)}}
-\]</span>   wobei <span class="math inline">\(s_{R(X)}\)</span> und <span class="math inline">\(s_{R(Y)}\)</span> die Standardabweichungen der Ränge von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> sind.</p>
+\hat{\rho}_s = \frac{\hat{Cov}(R(X),R(Y))}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{R(X)}} \hat{\sigma}_{\mkern-2mu\scriptscriptstyle{R(Y)}}}
+\]</span>   wobei <span class="math inline">\(\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{R(X)}}\)</span> und <span class="math inline">\(\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{R(Y)}}\)</span> die Standardabweichungen der Ränge von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> sind.</p>
 </div>
 <div class="columns">
 <div class="column" style="width:60%;">
@@ -1065,6 +973,26 @@ r_s = \frac{cov(R(X),R(Y))}{s_{R(X)} s_{R(Y)}}
 </div>
 </div>
 </div>
+</section>
+<section class="slide level2">
+<h2>Berechnung von Rängen</h2>
+<ul>
+<li class="fragment">Liegen die Variablen <span class="math inline">\(X\)</span> oder <span class="math inline">\(Y\)</span> nicht als Ränge vor, müssen sie zunächst in Ränge <span class="math inline">\(R(X)\)</span> bzw. <span class="math inline">\(R(Y)\)</span> umgewandelt werden:</li>
+</ul>
+<div style="font-size: 23px; margin-left:40px; margin-top: -12px">
+<ol type="1">
+<li class="fragment">Werte der Variable sortieren</li>
+<li class="fragment">(Unnormierte) Ränge zuordnen</li>
+<li class="fragment">Normierung: Gleiche Werte erhalten den Mittelwert ihrer Ränge</li>
+<li class="fragment">(Optional) Variablen in ihre ursprüngliche Reihenfolge bringen</li>
+</ol>
+</div>
+<div class="fragment">
+<p><img data-src="images/rangbildung.png" height="333"></p>
+</div>
+<ul>
+<li class="fragment">Die Tabelle gibt die Rangberechnung <em>einer</em> Variablen an (z.B. X) — für die andere Variable muss das analoge Prozedere durchgeführt werden.</li>
+</ul>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1074,9 +1002,9 @@ r_s = \frac{cov(R(X),R(Y))}{s_{R(X)} s_{R(Y)}}
 <div class="columns">
 <div class="column" style="width:69%;">
 <ul>
-<li class="fragment">Eine Alternative Rangkorrelation zu Spearman ist <span style=" color: navy !important;"><strong>Kendalls Tau</strong></span></li>
-<li class="fragment">Kendalls Tau vergleicht inwieweit die Rangfolge <em>aller</em> Paare (<span class="math inline">\(x_i\)</span>, <span class="math inline">\(x_j\)</span>) mit der Rangfolge <em>aller</em> Paare (<span class="math inline">\(y_i\)</span>, <span class="math inline">\(y_j\)</span>) übereinstimmt</li>
-<li class="fragment">Dazu wird die Zahl der konkordanten (übereinstimmenden) und diskordanten (nicht übereinstimmenden) Paare gezählt</li>
+<li class="fragment">Eine Alternative Rangkorrelation zu Spearman ist <span style=" color: navy !important;"><strong>Kendalls Tau</strong></span> <span class="math inline">\(\hat{\tau}\)</span>.</li>
+<li class="fragment">Kendalls Tau vergleicht inwieweit die Rangfolge <em>aller</em> Paare (<span class="math inline">\(x_i\)</span>, <span class="math inline">\(x_j\)</span>) mit der Rangfolge <em>aller</em> Paare (<span class="math inline">\(y_i\)</span>, <span class="math inline">\(y_j\)</span>) übereinstimmt.</li>
+<li class="fragment">Dazu wird die Zahl der konkordanten (übereinstimmenden) und diskordanten (nicht übereinstimmenden) Paare gezählt.</li>
 </ul>
 </div><div class="column" style="width:31%;">
 <div class="vspace-large">
@@ -1104,8 +1032,8 @@ Y=\begin{pmatrix} 18\\ 7\\ 8\\ 21 \end{pmatrix}
 <ul>
 <li class="fragment">Die Paare von X sind: <span class="math inline">\(\small{(9, 3), (9, 7), (9, 5), (3, 7), (3, 5), (7, 5)}\)</span></li>
 <li class="fragment">Die Paare von Y sind: <span class="math inline">\(\small{(18, 7), (18, 8), (18, 21), (7, 8), (7, 21), (8, 21)}\)</span></li>
-<li class="fragment">Die Paare <span class="math inline">\((x_1=9, x_3=7)\)</span> und <span class="math inline">\((y_1=18, y_3=8)\)</span> wären <strong>konkordant</strong>, da die Rangfolge des X-Paares (<span class="math inline">\(x_1 &gt; x_3\)</span>) gleich der Rangfolge des entsprechenden Y-Paares (<span class="math inline">\(y_1 &gt; y_3\)</span>) ist</li>
-<li class="fragment">Die Paare<span class="math inline">\((x_1=9, x_4=5)\)</span> und <span class="math inline">\((y_1=18, y_4=21)\)</span> wären <strong>diskonkordant</strong>, da die Rangfolge des X-Paares (<span class="math inline">\(x_1 &gt; x_4\)</span>) ungleich der Rangfolge des entsprechenden Y-Paares (<span class="math inline">\(y_1 &lt; y_4\)</span>) ist</li>
+<li class="fragment">Die Paare <span class="math inline">\((x_1=9, x_3=7)\)</span> und <span class="math inline">\((y_1=18, y_3=8)\)</span> wären <strong>konkordant</strong>, da die Rangfolge des X-Paares (<span class="math inline">\(x_1 &gt; x_3\)</span>) gleich der Rangfolge des entsprechenden Y-Paares (<span class="math inline">\(y_1 &gt; y_3\)</span>) ist.</li>
+<li class="fragment">Die Paare<span class="math inline">\((x_1=9, x_4=5)\)</span> und <span class="math inline">\((y_1=18, y_4=21)\)</span> wären <strong>diskonkordant</strong>, da die Rangfolge des X-Paares (<span class="math inline">\(x_1 &gt; x_4\)</span>) ungleich der Rangfolge des entsprechenden Y-Paares (<span class="math inline">\(y_1 &lt; y_4\)</span>) ist.</li>
 </ul>
 </div>
 </div>
@@ -1114,7 +1042,7 @@ Y=\begin{pmatrix} 18\\ 7\\ 8\\ 21 \end{pmatrix}
 </div>
 <div class="fragment">
 <p><span class="math display">\[
-\tau = \frac{K-D}{K+D} = \frac{4-2}{4+2} = \frac{2}{6} = 0.333..
+\hat{\tau} = \frac{K-D}{K+D} = \frac{4-2}{4+2} = \frac{2}{6} = 0.333..
 \]</span></p>
 </div>
 <!-- ```{python}
@@ -1144,8 +1072,8 @@ plt.xticks(fontsize=fontsize-2)
 plt.yticks(fontsize=fontsize-2)
 plt.xlabel('X', fontsize=fontsize)
 plt.ylabel('Y', fontsize=fontsize)
-plt.text(1, 10.25, f'Pearson (mit Ausreißer): $r = {r:.3f}$', fontsize=fontsize-2, color='#d80000')
-plt.text(1, 11.4, f'Pearson (ohne Ausreißer): $r = {r2:.3f}$', fontsize=fontsize-2, color='#888')
+plt.text(1, 10.25, r'Pearson (mit Ausreißer): $\hat{\rho} =' + f' {r:.3f}$', fontsize=fontsize-2, color='#d80000')
+plt.text(1, 11.4, r'Pearson (ohne Ausreißer): $\hat{\rho} =' + f' {r2:.3f}$', fontsize=fontsize-2, color='#888')
 plt.text(4.53, 11, 'Ausreißer', fontsize=fontsize-2, color='#d80000')
 
 xr, yr = data[:, 0].argsort().argsort()+1, data[:, 1].argsort().argsort()+1
@@ -1166,8 +1094,8 @@ plt.xticks(range(0, 21, 5), fontsize=fontsize-2)
 plt.yticks(fontsize=fontsize-2)
 plt.xlabel('Rang(X)', fontsize=fontsize)
 plt.ylabel('Rang(Y)', fontsize=fontsize)
-plt.text(0.5, 23.5, fr'Spearman (mit Ausreißer): $r_s = {rr:.3f}$', fontsize=fontsize-2, color='#d80000')
-plt.text(0.5, 26, fr'Spearman (ohne Ausreißer): $r_s = {rr2:.3f}$', fontsize=fontsize-2, color='#888')
+plt.text(0.5, 23.5, r'Spearman (mit Ausreißer): $\hat{\rho}_s =' + f'{rr:.3f}$', fontsize=fontsize-2, color='#d80000')
+plt.text(0.5, 26, r'Spearman (ohne Ausreißer): $\hat{\rho}_s =' + f'{rr2:.3f}$', fontsize=fontsize-2, color='#888')
 plt.ylim(0, 29)
 
 plt.tight_layout()
@@ -1182,14 +1110,15 @@ plt.savefig('images/pearson_outlier.png', bbox_inches="tight")
 <h2>Ausreißer: Der Storch bringt die Babys zur Welt(p = 0.008)</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="images/geburtenrate_stoerche.png"></p>
+<p><img data-src="images/geburtenrate_stoerche.png" height="300"></p>
 </div><div class="column" style="width:50%;">
-<p><img data-src="images/geburtenrate_stoerche_tabelle.png"></p>
+<p><img data-src="images/geburtenrate_stoerche_tabelle.png" height="400"></p>
 </div>
 </div>
-<p>http://www3.math.uni-paderborn.de/~agbiehler/sis/sisonline/struktur/jahrgang21-2001/heft2/Langfassungen/2001-2_Matth.pdf</p>
+<p><span style="font-size:18px">http://www3.math.uni-paderborn.de/~agbiehler/sis/sisonline/struktur/jahrgang21-2001/heft2/Langfassungen/2001-2_Matth.pdf</span></p>
 <ul>
-<li class="fragment">Im gezeigten Beispiel wird die Korrelation fast ausschließlich durch zwei Ausreißer (Türkei und Polen) bestimmt. Der Zusammenhang wird dadurch überschätzt.</li>
+<li class="fragment">Im gezeigten Beispiel wird der Wert der <strong>Pearson-Korrelation</strong> fast ausschließlich durch zwei Ausreißer (Türkei und Polen) dominiert. Der Zusammenhang wird dadurch überschätzt.</li>
+<li class="fragment">Ein Rangkorrelationsmaß wie die <strong>Spearman-Korrelation</strong> wäre hier eine sinnvolle Alternative — obwohl eigentlich die Linearität des Zusammenhangs von primärem Interesse ist.</li>
 </ul>
 <!----------------->
 <!--- New slide --->
@@ -1201,38 +1130,14 @@ plt.savefig('images/pearson_outlier.png', bbox_inches="tight")
 <li class="fragment">Beispiel Pearson vs.&nbsp;Spearman:</li>
 </ul>
 <div class="fragment">
-<p><img data-src="images/pearson_outlier.png"></p>
+<p><img data-src="images/pearson_outlier.png" height="350"></p>
 </div>
 <ul>
-<li class="fragment">Ein einziger Ausreißer verändert die Pearson-Korrelation im Beispiel von <span class="math inline">\(r=-0{,}046\)</span> nach <span class="math inline">\(r=0{,}410\)</span></li>
-<li class="fragment">Demgegnüber ist die Spearman-Korrelation “robuster” gegenüber dem Ausreißer — sie verändert sich “lediglich” von <span class="math inline">\(\rho=-0{,}030\)</span> nach <span class="math inline">\(r_s=0{,}110\)</span>.</li>
+<li class="fragment">Ein einziger Ausreißer verändert die Pearson-Korrelation im Beispiel von <span class="math inline">\(\hat{\rho}=-0{,}046\)</span> nach <span class="math inline">\(\hat{\rho}=0{,}410\)</span>.</li>
+<li class="fragment">Demgegnüber ist die Spearman-Korrelation “robuster” gegenüber dem Ausreißer — sie verändert sich “lediglich” von <span class="math inline">\(\hat{\rho}=-0{,}030\)</span> nach <span class="math inline">\(\hat{\rho}_s=0{,}110\)</span>.</li>
 <li class="fragment">Intution: während der <em>Wert</em> es Ausreißers deutlich über dem zweithöchsten Y-Wert liegt, ist der <em>Rang</em> nur um 1 höher.</li>
 </ul>
-<!----------------->
-<!--- New slide --->
-<!----------------->
 </section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Wann Spearman und wann Kendall?</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 130px; "></p>
-<ul>
-<li class="fragment">Beide Rangkorrelationskoeffizienten bestimmen die Monotonie eines Zusammenhangs.</li>
-<li class="fragment"><strong>Kendall ist robuster bei kleinen Stichproben</strong> und ist in diesen Fällen bevorzugt.</li>
-<li class="fragment"><strong>Spearman ist etwas weniger sensitiv gegenüber Rangbindungen</strong> (also wenn zwei Werte den gleichen Rang haben) und ist daher bevorzugt, wenn es viele Rangbindungen gibt<a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a>.
-<ul>
-<li class="fragment">Beachte: auch bei den Kendall’schen Paaren gibt es Rangbindungen, und zwar dann, wenn die verglichenen <em>Paare</em> zwischen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> genau identisch sind.</li>
-<li class="fragment">Diese Paare sind weder konkordant noch diskordant und es gibt verschiedene Algorithmen diese Fälle zu berücksichtigen (hier nicht behandelt).</li>
-</ul></li>
-<li class="fragment"><strong>In Abwesenheit von Rangbindungen liefert Kendall präzisere Schätzungen</strong> und ist in diesem Fall zu bevorzugen.<a href="#/footnotes" class="footnote-ref" id="fnref6" role="doc-noteref" data-footnote-href="#/fn6" onclick=""><sup>6</sup></a>.</li>
-<li class="fragment">In der Statistik wird Kendall häufig als “Default”-Rangkorrelation empfohlen<a href="#/footnotes" class="footnote-ref" id="fnref7" role="doc-noteref" data-footnote-href="#/fn7" onclick=""><sup>7</sup></a>:
-<ul>
-<li class="fragment">idR präzisere Schätzung des Populationsparameters</li>
-<li class="fragment">Standardfehler ist bekannt (für Spearman gibt es lediglich Approximationen<a href="#/footnotes" class="footnote-ref" id="fnref8" role="doc-noteref" data-footnote-href="#/fn8" onclick=""><sup>8</sup></a>)</li>
-</ul></li>
-<li class="fragment">In der Praxis ist aber Spearman der weitaus verbreitetere Korrelationskoeffizient —<br> womöglich weil er idR größer als der Kendall-Koeffizient ist 😉.</li>
-</ul>
-<!-- https://www.researchgate.net/post/Does-Spearmans-rho-have-any-advantage-over-Kendalls-tau     -->
-<aside></aside></section>
 <section class="slide level2">
 <h2>Der Phi-Koeffizient</h2>
 <ul>
@@ -1258,7 +1163,7 @@ plt.savefig('images/pearson_outlier.png', bbox_inches="tight")
 <div class="fragment">
 <p><span class="math display">\[
 \small{
-\text{Phi-Koeffizient:}\quad \phi = \frac{ad-bc}{\sqrt{(a+b)(c+d)(a+c)(b+d)}}
+\text{Phi-Koeffizient:}\quad \hat{\phi} = \frac{ad-bc}{\sqrt{(a+b)(c+d)(a+c)(b+d)}}
 }
 \]</span></p>
 </div>
@@ -1277,7 +1182,7 @@ plt.savefig('images/pearson_outlier.png', bbox_inches="tight")
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
-\phi = \frac{Cov(X,Y)}{s_X s_Y}\qquad\text{mit}\quad X=\{0, 1\}, Y=\{0, 1\}
+\hat{\phi} = \frac{\hat{Cov}(X,Y)}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}} \hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}\qquad\text{mit}\quad X=\{0, 1\}, Y=\{0, 1\}
 \]</span></p>
 </div>
 <ul>
@@ -1300,25 +1205,31 @@ plt.savefig('images/pearson_outlier.png', bbox_inches="tight")
 
 </div>
 <p><img data-src="images/vierfeldertafel_beispiel.png" height="220"></p>
-<p><span class="math display">\[\begin{aligned}
-\phi &amp;= \frac{ad-bc}{\sqrt{(a+b)(c+d)(a+c)(b+d)}} = \\
-    &amp;= \frac{2\cdot11-8\cdot12}{\sqrt{(2+8)(12+11)(2+12)(8+11)}} = \\
+<div class="vspace-large">
+
+</div>
+<p><span class="math display">\[
+\begin{align}
+\hat{\phi} &amp;= \frac{ad-bc}{\sqrt{(a+b)(c+d)(a+c)(b+d)}} = \frac{2\cdot11-8\cdot12}{\sqrt{(2+8)(12+11)(2+12)(8+11)}} = \\
     &amp;= \frac{22-96}{\sqrt{10\cdot23\cdot14\cdot19}} = \frac{-74}{\sqrt{61180}} = -0.299
-\end{aligned}\]</span></p>
+\end{align}
+\]</span></p>
 <div class="vspace-medium">
 
 </div>
-<div class="notabene">
-<div class="columns">
-<div class="column" style="width:7%;">
-<div style="margin-top: 10px">
-<p><img data-src="images/notabene2.png" height="65"></p>
-</div>
-</div><div class="column" style="width:93%;">
-<p><strong>Achtung:</strong> Der Phi-Koeffizient beschreibt einen <em>Zusammenhang im weiteren Sinne</em> und kann somit auch als Unterschied konzeptionalisiert werden (Beispiel: <em>unterscheidet</em> sich die relative Häufigkeit des Haustierbesitzes zwischen Männern und Frauen?).</p>
-</div>
-</div>
-</div>
+<!-- 
+::: {.notabene}
+:::: {.columns}
+::: {.column width="7%"}
+::: {style="margin-top: 10px"}
+![](images/notabene2.png){height="65px"}
+:::
+:::
+::: {.column width="93%"}
+**Achtung:** Der Phi-Koeffizient beschreibt einen *Zusammenhang im weiteren Sinne* und kann somit auch als Unterschied konzeptionalisiert werden (Beispiel: *unterscheidet* sich die relative Häufigkeit des Haustierbesitzes zwischen Männern und Frauen?).
+:::
+::::
+::: -->
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
@@ -1329,7 +1240,7 @@ plt.savefig('images/pearson_outlier.png', bbox_inches="tight")
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/Inferring-Causation-from-Correlation.jpg" height="300"></p>
-<figcaption>Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref9" role="doc-noteref" data-footnote-href="#/fn9" onclick=""><sup>9</sup></a></figcaption>
+<figcaption>Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a></figcaption>
 </figure>
 </div>
 <!----------------->
@@ -1341,10 +1252,13 @@ plt.savefig('images/pearson_outlier.png', bbox_inches="tight")
 <ul>
 <li class="fragment">Eine positive oder negative Korrelation zeigt an, dass zwei Variablen zusammenhängen — und auch, dass man <em>eine Variable aus der anderen (zu einem gewissen Grad) vorhersagen kann</em>.</li>
 <li class="fragment">Dies <strong>bedeutet jedoch nicht, dass sich die Variablen auch kausal bedingen</strong></li>
-<li class="fragment">Einerseits <strong>können Korrelationen zufällig zustande kommen</strong> (die Wahrscheinlichkeit von solchen irrtümlichen Befunden untersuchen wir noch genauer beim Thema Signifikanztestung).</li>
+<li class="fragment">Einerseits <strong>können Korrelationen zufällig zustande kommen</strong> — die Wahrscheinlichkeit von solchen irrtümlichen Befunden untersuchen wir noch genauer beim Thema Signifikanztestung.</li>
 <li class="fragment">.. andererseits können Korrelationen durch dritte Variablen (<strong>Störvariablen</strong>) verursacht sein.</li>
 <li class="fragment">Umgekehrt können Störvariablen auch tatsächlich vorhandene Zusammenhänge unterdrücken — man spricht dann von <strong>Suppression</strong>; der Korrelationskoeffizient unterschätzt in diesem Fall die tatsächliche Stärke des Zusammenhangs.</li>
-<li class="fragment">Trotz aller Fallstricke bei der Interpretation gilt: eine Korrelation KANN ein <strong>Indiz für Kausalität</strong> sein (wo Kausalität da auch Korrelation, sofern diese nicht durch Störvariablen unterdrückt ist). <!-- <div class="vspace-medium"></div> --></li>
+<li class="fragment">Trotz aller Fallstricke bei der Interpretation gilt: eine Korrelation KANN ein <strong>Indiz für Kausalität</strong> sein.
+<ul>
+<li class="fragment">Wo Kausalität da auch Korrelation, sofern diese nicht durch Störvariablen unterdrückt ist. <!-- <div class="vspace-medium"></div> --></li>
+</ul></li>
 </ul>
 <div class="fragment">
 <p><img data-src="images/correlation_confounder.png" height="210"></p>
@@ -1378,7 +1292,7 @@ plt.savefig('images/pearson_outlier.png', bbox_inches="tight")
 <h2>Wann ist ein Korrelationskoeffizient groß oder klein?</h2>
 <ul>
 <li class="fragment">Pauschal schwer zu beantworten</li>
-<li class="fragment">In der psychologischen Literatur hat sich folgende Konvention/Nomenklatur nach Jacob Cohen<a href="#/footnotes" class="footnote-ref" id="fnref10" role="doc-noteref" data-footnote-href="#/fn10" onclick=""><sup>10</sup></a> eingebürgert:</li>
+<li class="fragment">In der psychologischen Literatur hat sich folgende Konvention/Nomenklatur nach Jacob Cohen<a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a> eingebürgert:</li>
 </ul>
 <div class="fragment">
 <!---  Table --->
@@ -1425,22 +1339,6 @@ plt.savefig('images/pearson_outlier.png', bbox_inches="tight")
 <!----------------->
 <aside></aside></section>
 <section class="slide level2">
-<h2><span style=" color: darkred !important;">Wann ist ein Korrelationskoeffizient groß oder klein?</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 120px; "></p>
-<ul>
-<li class="fragment">In einer kürzlichen Metaanalyse von Lovakov Agadullina (2021)<a href="#/footnotes" class="footnote-ref" id="fnref11" role="doc-noteref" data-footnote-href="#/fn11" onclick=""><sup>11</sup></a> wurden typische Effektstärken in der Sozialpsychologie untersucht:</li>
-</ul>
-<div class="fragment">
-<p><img data-src="images/lovakov_2021.png" height="400"></p>
-</div>
-<ul>
-<li class="fragment">Erkenntnis: “mittlere” und “starke” Korrelationen (definiert als das 50%- und 75%- Quantil)<br> sind in der Realität kleiner als von Cohen angenommen</li>
-</ul>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-<aside></aside></section>
-<section class="slide level2">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:9%;">
@@ -1451,7 +1349,7 @@ plt.savefig('images/pearson_outlier.png', bbox_inches="tight")
 <div class="summary">
 <ul>
 <li class="fragment">Zusammenhänge werden mit <strong>Kovarianz</strong> und <strong>Korrelation</strong> untersucht.</li>
-<li class="fragment">Die <strong>Kovarianz</strong> ist die Basis der Pearson-Korrelation — aber sie ist abhängig von den gewählten Einheiten.</li>
+<li class="fragment">Im Gegensatz zur Kovarianz sind <strong>Korrelationen unabhängig von den gewählten Einheiten</strong>.</li>
 <li class="fragment">Die <strong>Pearson-Korrelation</strong> misst die Linearität eines Zusammenhangs und gilt für intervallskalierte Daten.</li>
 <li class="fragment">Für ordinalskalierte Variablen eignen sich <strong>Rangkorrelationen</strong> wie <strong>Spearmans Rho</strong> oder <strong>Kendalls Tau</strong>: sie messen die Monotonie eines Zusammenhangs.</li>
 <li class="fragment">Sind beide Variablen binär, greift der <strong>Phi-Koeffizient</strong>.</li>
@@ -1548,33 +1446,75 @@ plt.savefig('images/paradoxia_histogram_correlation_paradoxiker.png', bbox_inche
 <p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
 <p>Darstellung der Korrelation nur mit (Ko)Varianzen:</p>
 <p><span class="math display">\[
-r_{XY} = \frac{Cov(X,Y)}{s_X s_Y} = \frac{Cov(X,Y)}{\sqrt{Var(X)} \sqrt{Var(Y)}}
+\hat{\rho}_{\mkern-2mu\scriptscriptstyle{XY}} = \frac{\hat{Cov}(X,Y)}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}} \hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}} = \frac{\hat{Cov}(X,Y)}{\sqrt{\hat{Var}(X)} \sqrt{\hat{Var}(Y)}}
 \]</span></p>
-<p>Die Korrelation sollte maximal (<span class="math inline">\(r=1\)</span>) sein, wenn <span class="math inline">\(X\)</span> mit sich selbst korreliert wird (<span class="math inline">\(Y=X\)</span>). Zu berücksichtigen ist, dass die Kovarianz <em>von X mit sich selbst</em> gleich der Varianz ist:</p>
+<p>Die Korrelation sollte maximal (<span class="math inline">\(\hat{\rho}=1\)</span>) sein, wenn <span class="math inline">\(X\)</span> mit sich selbst korreliert wird (<span class="math inline">\(Y=X\)</span>). Zu berücksichtigen ist, dass die Kovarianz <em>von X mit sich selbst</em> gleich der Varianz ist:</p>
 <p><span class="math display">\[
-r_{XX} = \frac{Cov(X,X)}{\sqrt{Var(X)} \sqrt{Var(X)}} = \frac{Var(X)}{\sqrt{Var(X)} \sqrt{Var(X)}} = \frac{Var(X)}{Var(X)} = 1
+\hat{\rho}_{\mkern-2mu\scriptscriptstyle{XX}} = \frac{\hat{Cov}(X,X)}{\sqrt{\hat{Var}(X)} \sqrt{\hat{Var}(X)}} = \frac{\hat{Var}(X)}{\sqrt{\hat{Var}(X)} \sqrt{\hat{Var}(X)}} = \frac{\hat{Var}(X)}{\hat{Var}(X)} = 1
 \]</span></p>
-<p>Umgekehrt sollte die Korrelation maximal negativ sein (<span class="math inline">\(r=-1\)</span>), wenn <span class="math inline">\(Y\)</span> genau das Inverse von <span class="math inline">\(X\)</span> ist, also <span class="math inline">\(Y=-X\)</span>. Unter Berücksichtigung von <span class="math inline">\(Var(X) = Var(-X)\)</span> gilt: <span class="math display">\[
-r_{X(-X)} = \frac{Cov(X,-X)}{\sqrt{Var(X)} \sqrt{Var(-X)}} = \frac{-Cov(X,X)}{\sqrt{Var(X)} \sqrt{Var(X)}} = \frac{-Var(X)}{Var(X)} = -1
+<p>Umgekehrt sollte die Korrelation maximal negativ sein (<span class="math inline">\(\hat{\rho}=-1\)</span>), wenn <span class="math inline">\(Y\)</span> genau das Inverse von <span class="math inline">\(X\)</span> ist, also <span class="math inline">\(Y=-X\)</span>. Unter Berücksichtigung von <span class="math inline">\(\hat{Var}(X) = \hat{Var}(-X)\)</span> gilt: <span class="math display">\[
+\hat{\rho}_{\mkern-2mu\scriptscriptstyle{X(-X)}} = \frac{\hat{Cov}(X,-X)}{\sqrt{\hat{Var}(X)} \sqrt{\hat{Var}(-X)}} = \frac{-\hat{Cov}(X,X)}{\sqrt{\hat{Var}(X)} \sqrt{\hat{Var}(X)}} = \frac{-\hat{Var}(X)}{\hat{Var}(X)} = -1
 \]</span></p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+
+
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Wann Spearman und wann Kendall?</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 130px; "></p>
+<ul>
+<li class="fragment">Beide Rangkorrelationskoeffizienten bestimmen die Monotonie eines Zusammenhangs.</li>
+<li class="fragment"><strong>Kendall ist robuster bei kleinen Stichproben</strong> und ist in diesen Fällen bevorzugt.</li>
+<li class="fragment"><strong>Spearman ist etwas weniger sensitiv gegenüber Rangbindungen</strong> (also wenn zwei Werte den gleichen Rang haben) und ist daher bevorzugt, wenn es viele Rangbindungen gibt<a href="#/footnotes" class="footnote-ref" id="fnref7" role="doc-noteref" data-footnote-href="#/fn7" onclick=""><sup>7</sup></a>.
+<ul>
+<li class="fragment">Beachte: auch bei den Kendall’schen Paaren gibt es Rangbindungen, und zwar dann, wenn die verglichenen <em>Paare</em> zwischen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> genau identisch sind.</li>
+<li class="fragment">Diese Paare sind weder konkordant noch diskordant und es gibt verschiedene Algorithmen diese Fälle zu berücksichtigen (hier nicht behandelt).</li>
+</ul></li>
+<li class="fragment"><strong>In Abwesenheit von Rangbindungen liefert Kendall präzisere Schätzungen</strong> und ist in diesem Fall zu bevorzugen.<a href="#/footnotes" class="footnote-ref" id="fnref8" role="doc-noteref" data-footnote-href="#/fn8" onclick=""><sup>8</sup></a>.</li>
+<li class="fragment">In der Statistik wird Kendall häufig als “Default”-Rangkorrelation empfohlen<a href="#/footnotes" class="footnote-ref" id="fnref9" role="doc-noteref" data-footnote-href="#/fn9" onclick=""><sup>9</sup></a>:
+<ul>
+<li class="fragment">idR präzisere Schätzung des Populationsparameters</li>
+<li class="fragment">Standardfehler ist bekannt (für Spearman gibt es lediglich Approximationen<a href="#/footnotes" class="footnote-ref" id="fnref10" role="doc-noteref" data-footnote-href="#/fn10" onclick=""><sup>10</sup></a>)</li>
+</ul></li>
+<li class="fragment">In der Praxis ist aber Spearman der weitaus verbreitetere Korrelationskoeffizient —<br> womöglich weil er idR größer als der Kendall-Koeffizient ist 😉.</li>
+</ul>
+<!-- https://www.researchgate.net/post/Does-Spearmans-rho-have-any-advantage-over-Kendalls-tau     -->
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<aside></aside></section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Wann ist ein Korrelationskoeffizient groß oder klein?</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 120px; "></p>
+<ul>
+<li class="fragment">In einer kürzlichen Metaanalyse von Lovakov Agadullina (2021)<a href="#/footnotes" class="footnote-ref" id="fnref11" role="doc-noteref" data-footnote-href="#/fn11" onclick=""><sup>11</sup></a> wurden typische Effektstärken in der Sozialpsychologie untersucht:</li>
+</ul>
+<div class="fragment">
+<p><img data-src="images/lovakov_2021.png" height="400"></p>
+</div>
+<ul>
+<li class="fragment">Erkenntnis: “mittlere” und “starke” Korrelationen (definiert als das 50%- und 75%- Quantil)<br> sind in der Realität kleiner als von Cohen angenommen</li>
+</ul>
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Vorlesung 05: Korrelation</p>
 </div>
-</section></section>
+<aside></aside></section></section>
 <section id="footnotes" class="footnotes footnotes-end-of-document smaller scrollable" role="doc-endnotes"><h2>Fußnoten</h2>
 
 <ol>
 <li id="fn1"><p>http://www.learn-stat.com/life-of-karl-pearson/</p></li>
-<li id="fn2"><p>https://real-statistics.com/correlation/biserial-correlation/</p></li>
-<li id="fn3"><p>https://www.ncss.com/wp-content/themes/ncss/pdf/Procedures/NCSS/Point-Biserial_and_Biserial_Correlations.pdf</p></li>
-<li id="fn4"><p>Jacobs P, Viechtbauer W (2017) Estimation of the biserial correlation and its sampling variance for use in meta-analysis: Biserial Correlation. Res Syn Meth 8:161–180.</p></li>
-<li id="fn5"><p>Puth M-T, Neuhäuser M, Ruxton GD (2015) Effective use of Spearman’s and Kendall’s correlation coefficients for association between two measured traits. Animal Behaviour 102:77–84.</p></li>
-<li id="fn6"><p>Puth M-T, Neuhäuser M, Ruxton GD (2015) Effective use of Spearman’s and Kendall’s correlation coefficients for association between two measured traits. Animal Behaviour 102:77–84.</p></li>
-<li id="fn7"><p>DC Howell (2012). Statistical Methods for Psychology. Wadsworth.</p></li>
-<li id="fn8"><p>https://stats.stackexchange.com/questions/18887/how-to-calculate-a-confidence-interval-for-spearmans-rank-correlation</p></li>
-<li id="fn9"><p>https://www.patheos.com/blogs/tippling/2017/10/31/spooky-punkins-and-statistical-correlation/</p></li>
-<li id="fn10"><p>Cohen J. (1988). Statistical Power Analysis for the Behavioral Sciences. New York, NY: Routledge Academic</p></li>
+<li id="fn2"><p>https://www.patheos.com/blogs/tippling/2017/10/31/spooky-punkins-and-statistical-correlation/</p></li>
+<li id="fn3"><p>Cohen J. (1988). Statistical Power Analysis for the Behavioral Sciences. New York, NY: Routledge Academic</p></li>
+<li id="fn4"><p>https://real-statistics.com/correlation/biserial-correlation/</p></li>
+<li id="fn5"><p>https://www.ncss.com/wp-content/themes/ncss/pdf/Procedures/NCSS/Point-Biserial_and_Biserial_Correlations.pdf</p></li>
+<li id="fn6"><p>Jacobs P, Viechtbauer W (2017) Estimation of the biserial correlation and its sampling variance for use in meta-analysis: Biserial Correlation. Res Syn Meth 8:161–180.</p></li>
+<li id="fn7"><p>Puth M-T, Neuhäuser M, Ruxton GD (2015) Effective use of Spearman’s and Kendall’s correlation coefficients for association between two measured traits. Animal Behaviour 102:77–84.</p></li>
+<li id="fn8"><p>Puth M-T, Neuhäuser M, Ruxton GD (2015) Effective use of Spearman’s and Kendall’s correlation coefficients for association between two measured traits. Animal Behaviour 102:77–84.</p></li>
+<li id="fn9"><p>DC Howell (2012). Statistical Methods for Psychology. Wadsworth.</p></li>
+<li id="fn10"><p>https://stats.stackexchange.com/questions/18887/how-to-calculate-a-confidence-interval-for-spearmans-rank-correlation</p></li>
 <li id="fn11"><p>Lovakov A, Agadullina ER (2021) Empirically derived guidelines for effect size interpretation in social psychology. Eur J Soc Psychol 51:485–504.</p></li>
 </ol>
 </section>

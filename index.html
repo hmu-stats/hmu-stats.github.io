@@ -185,7 +185,7 @@ a.formelsammlung:not(.nohover):hover {
 function change_semester(semester, semester_str) {
 
     document.getElementById(semester).style.display = 'table';
-    let semesters = ['23ws', '24ss'];
+    let semesters = ['23ws', '24ss', '24ws'];
     for (let i = 0; i < semesters.length; i++) {
         if (semesters[i] !== semester) {
             document.getElementById(semesters[i]).style.display = 'none';
@@ -222,6 +222,7 @@ function change_semester(semester, semester_str) {
     <select class="dropdown_simple" onChange="event.preventDefault(); change_semester(this.value, this.options[this.selectedIndex].text)">
         <option value='23ws'>Wintersemester 2023/2024</option>
         <option value='24ss' selected>Sommersemester 2024</option>
+        <option value='24ws'>Wintersemester 2024</option>
     </select>
 
 </div>
@@ -381,6 +382,81 @@ function change_semester(semester, semester_str) {
             <td><a href="24ss/13_metaanalysis/_slides/Vorlesung13_metaanalysis.pdf" target="_blank" class="nohover"><img src="images/pdf_black_small.png" class="img-pdf"></a></td>
         </tr>
         
+    </table>
+
+
+    <table class="lectures" id="24ws" style="display: none">
+
+        <tr>
+            <td><a href="Formelsammlung_Tabellen_Statistik1.pdf" target="_blank" class="formelsammlung" style="color: #cdfff9"><i>Formelsammlung und Tabellen Statistik 1</i></a></td>
+            <td><a href="Formelsammlung_Tabellen_Statistik1.pdf" target="_blank" class="nohover" style="color: #cdfff9"><img src="images/pdf_black_small_cyan.png" class="img-pdf"></a></td>
+        </tr>
+
+        <tr>
+            <td><a href="24ws/01_intro/_slides/index.html" target="_blank"><b>Vorlesung 01:</b> Intro</a></td>
+            <td><a href="24ws/01_intro/_slides/Vorlesung01_intro.pdf" target="_blank" class="nohover"><img src="images/pdf_black_small.png" class="img-pdf"></a></td>
+        </tr>
+
+        <tr>
+            <td><a href="24ws/02_measurement/_slides/index.html" target="_blank"><b>Vorlesung 02:</b> Messen in der Psychologie</a></td>
+            <td><a href="24ws/02_measurement/_slides/Vorlesung02_measurement.pdf" target="_blank" class="nohover"><img src="images/pdf_black_small.png" class="img-pdf"></a></td>
+        </tr>
+
+        <tr>
+            <td><a href="24ws/03_location_dispersion/_slides/index.html" target="_blank"><b>Vorlesung 03:</b> Lage- und Streuungsma&szlig;e</a></td>
+            <td><a href="24ws/03_location_dispersion/_slides/Vorlesung03_location_dispersion.pdf" target="_blank" class="nohover"><img src="images/pdf_black_small.png" class="img-pdf"></a></td>
+        </tr>
+
+        <tr>
+            <td><a href="24ws/04_presentation/_slides/index.html" target="_blank"><b>Vorlesung 04:</b> Darstellung von Daten</a></td>
+            <td><a href="24ws/04_presentation/_slides/Vorlesung04_presentation.pdf" target="_blank" class="nohover"><img src="images/pdf_black_small.png" class="img-pdf"></a></td>
+        </tr>
+
+        <tr>
+            <td><a href="24ws/05_correlation/_slides/index.html" target="_blank"><b>Vorlesung 05:</b> Korrelation</a></td>
+            <td><a href="24ws/05_correlation/_slides/Vorlesung05_correlation.pdf" target="_blank" class="nohover"><img src="images/pdf_black_small.png" class="img-pdf"></a></td>
+        </tr>
+
+        <tr>
+            <td><a href="24ws/06_regression/_slides/index.html" target="_blank"><b>Vorlesung 06:</b> Regression</a></td>
+            <td><a href="24ws/06_regression/_slides/Vorlesung06_regression.pdf" target="_blank" class="nohover"><img src="images/pdf_black_small.png" class="img-pdf"></a></td>
+        </tr>
+
+        <tr>
+            <td><a href="24ws/07_effectsize/_slides/index.html" target="_blank"><b>Vorlesung 07:</b> Effektst&auml;rke</a></td>
+            <td><a href="24ws/07_effectsize/_slides/Vorlesung07_effectsize.pdf" target="_blank" class="nohover"><img src="images/pdf_black_small.png" class="img-pdf"></a></td>
+        </tr>
+
+        <tr>
+            <td><a href="24ws/08_inference/_slides/index.html" target="_blank"><b>Vorlesung 08:</b> Inferenzstatistik</a></td>
+            <td><a href="24ws/08_inference/_slides/Vorlesung08_inference.pdf" target="_blank" class="nohover"><img src="images/pdf_black_small.png" class="img-pdf"></a></td>
+        </tr>
+
+        <tr>
+            <td><a href="24ws/09_probability_dist/_slides/index.html" target="_blank"><b>Vorlesung 09:</b> Wahrscheinlichkeitsverteilungen</a></td>
+            <td><a href="24ws/09_probability_dist/_slides/Vorlesung09_probability_dist.pdf" target="_blank" class="nohover"><img src="images/pdf_black_small.png" class="img-pdf"></a></td>
+        </tr>
+
+        <tr>
+            <td><a href="24ws/10_significance_testing/_slides/index.html" target="_blank"><b>Vorlesung 10:</b> Signifikanztestung</a></td>
+            <td><a href="24ws/10_significance_testing/_slides/Vorlesung10_significance_testing.pdf" target="_blank" class="nohover"><img src="images/pdf_black_small.png" class="img-pdf"></a></td>
+        </tr>
+
+        <tr>
+            <td><a href="24ws/11_ttest/_slides/index.html" target="_blank"><b>Vorlesung 11:</b> t-Test</a></td>
+            <td><a href="24ws/11_ttest/_slides/Vorlesung11_ttest.pdf" target="_blank" class="nohover"><img src="images/pdf_black_small.png" class="img-pdf"></a></td>
+        </tr>
+
+        <tr>
+            <td><a href="24ws/12_confidence_intervals/_slides/index.html" target="_blank"><b>Vorlesung 12:</b> Konfidenzintervalle</a></td>
+            <td><a href="24ws/12_confidence_intervals/_slides/Vorlesung12_confidence_intervals.pdf" target="_blank" class="nohover"><img src="images/pdf_black_small.png" class="img-pdf"></a></td>
+        </tr>
+
+        <tr>
+            <td><a href="24ws/13_metaanalysis/_slides/index.html" target="_blank"><b>Vorlesung 13:</b> Metaanalyse</a></td>
+            <td><a href="24ws/13_metaanalysis/_slides/Vorlesung13_metaanalysis.pdf" target="_blank" class="nohover"><img src="images/pdf_black_small.png" class="img-pdf"></a></td>
+        </tr>
+
     </table>
 
 
