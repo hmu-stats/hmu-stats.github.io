@@ -434,15 +434,16 @@ Die erste Frage an Sie als Task Force lautet: welche Möglichkeiten von Ursache 
 <figcaption>Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a></figcaption>
 </figure>
 </div>
-<aside></aside></section>
-<section class="slide level2 hcenter-slide">
-<h2>Der Forschungsprozess</h2>
-<div data-animate="" data-src="images/scientific_process.svg"><!-- setup:
+<!-- ## Der Forschungsprozess {.hcenter-slide}
+
+```yaml { .animate src="images/scientific_process.svg"}
+setup:
     - element: "#results"
       modifier: function() { this.node.style.fill = 'green'; }
     - element: "#resultsbg"
-      modifier: function() { this.node.style.fill = '#d8ffe2';} --></div>
-</section>
+      modifier: function() { this.node.style.fill = '#d8ffe2';}
+``` -->
+<aside></aside></section>
 <section class="slide level2">
 <h2>Woher kommt der Ausdruck “Regression”?</h2>
 <ul>
@@ -472,22 +473,22 @@ Die erste Frage an Sie als Task Force lautet: welche Möglichkeiten von Ursache 
 <section class="slide level2">
 <h2>Regression</h2>
 <ul>
-<li class="fragment">Dem Wortsinn nach ist Ziel der <span style=" color: navy !important;"><strong>Regression</strong></span> eine abhängige Variable auf eine oder mehrere unabhängige Variablen zurückzuführen (auf diese zu <em>regredieren</em>)</li>
-<li class="fragment">Eingängiger ist aber die umgekehrte Formulierung: Ziel der Regression ist es, auf Basis der unabhängigen Variablen die eine abhängige Variable <strong>vorherzusagen</strong> oder <strong>zu erklären</strong>
+<li class="fragment">Dem Wortsinn nach ist Ziel der <span style=" color: navy !important;"><strong>Regression</strong></span> eine abhängige Variable auf eine oder mehrere unabhängige Variablen zurückzuführen (auf diese zu <em>regredieren</em>).</li>
+<li class="fragment">Eingängiger ist aber die umgekehrte Formulierung: Ziel der Regression ist es, auf Basis der unabhängigen Variablen die eine abhängige Variable <strong>vorherzusagen</strong> oder <strong>zu erklären</strong>:
 <ul>
-<li class="fragment"><strong>Unabhängige Variable(n) = vorher<em>sagende</em> oder erklär<em>ende</em> Variable(n)</strong> (“<strong>U</strong>rsache”)</li>
-<li class="fragment"><strong>Abhängige Variable = vorher<em>gesagte</em> oder erklär<em>ete</em> Variable</strong> (“<strong>A</strong>uswirkung”)</li>
+<li class="fragment"><strong>Unabhängige Variable(n) = vorher<em>sagende</em> oder erklär<em>ende</em> Variable(n)</strong> (“<strong>U</strong>rsache”).</li>
+<li class="fragment"><strong>Abhängige Variable = vorher<em>gesagte</em> oder erklär<em>te</em> Variable</strong> (“<strong>A</strong>uswirkung”).</li>
 </ul></li>
 </ul>
 <div class="fragment">
-<p><img data-src="images/regression_basics.png" height="300"></p>
+<p><img data-src="images/regression_basics_dach.png" height="300"></p>
 </div>
 <div style="margin-top: -5px">
 <ul>
-<li class="fragment">Beispiel: Studie untersucht Zusammenhang von Lebenszufriedenheit und sportlicher Aktivität
+<li class="fragment">Beispiel: Studie untersucht Zusammenhang von Lebenszufriedenheit und sportlicher Aktivität.
 <ul>
-<li class="fragment"><strong>Lebenszufriedenheit:</strong> unabhängige/vorhersagende/erklärende Variable</li>
-<li class="fragment"><strong>Sportliche Aktivität:</strong> abhängige/vorhergesagte/erklärte Variable</li>
+<li class="fragment"><strong>Lebenszufriedenheit:</strong> unabhängige/vorhersagende/erklärende Variable.</li>
+<li class="fragment"><strong>Sportliche Aktivität:</strong> abhängige/vorhergesagte/erklärte Variable.</li>
 </ul></li>
 </ul>
 </div>
@@ -497,20 +498,20 @@ Die erste Frage an Sie als Task Force lautet: welche Möglichkeiten von Ursache 
 <div class="columns">
 <div class="column" style="width:70%;">
 <ul>
-<li class="fragment">Im Gegensatz zur Korrelation bestimmt die Regression nicht die Linearität des Zusammenhangs (vielmehr wird dies vorausgesetzt), sondern die <strong>Steigung</strong> des Zusammenhangs</li>
+<li class="fragment">Im Gegensatz zur Korrelation bestimmt die Regression nicht die Linearität des Zusammenhangs (vielmehr wird dies vorausgesetzt), sondern die <strong>Steigung</strong> des Zusammenhangs.</li>
 <li class="fragment">Aus diesem Grund ist die Regression (wieder im Gegensatz zur Korrelation) nicht symmetrisch – die Steigung ist abhängig davon welche Variable als abhängig und unabhängig deklariert wird.
 <ul>
-<li class="fragment">Wie wir noch sehen werden, ist es auch nicht gestattet, die Regressionsgleichung zu invertieren ( <span class="math inline">\(x_i = \frac{1}{b_1}\hat{y}_i-\frac{b_0}{b_1}\)</span>) — im Allgemeinen ist <span class="math inline">\(\frac{1}{b_1}\)</span> <em>nicht</em> die Steigung, wenn die Rollen von X und Y vertauscht werden.</li>
+<li class="fragment">Wie wir noch sehen werden, ist es auch nicht gestattet, die Regressionsgleichung zu invertieren ( <span class="math inline">\(x_i = \frac{1}{\hat{b}_1}\hat{y}_i-\frac{\hat{b}_0}{\hat{b}_1}\)</span>) — im Allgemeinen ist <span class="math inline">\(\frac{1}{\hat{b}_1}\)</span> <em>nicht</em> die Steigung, wenn die Rollen von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> vertauscht werden.</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:30%;">
-<p><img data-src="images/regression_basics_plot.png"></p>
+<p><img data-src="images/regression_basics_plot_dach.png"></p>
 </div>
 </div>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
-<li class="fragment">Die Vorhersage/Erklärung von X durch Y geschieht durch eine Gleichung – die <strong>Regressionsgleichung</strong> – die im Streudiagramm als Gerade eingezeichnet werden kann.</li>
+<li class="fragment">Die Vorhersage/Erklärung von <span class="math inline">\(X\)</span> durch <span class="math inline">\(Y\)</span> geschieht durch eine Gleichung – die <strong>Regressionsgleichung</strong> – die im Streudiagramm als Gerade eingezeichnet werden kann.</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <div style="margin-top: -25px">
@@ -526,21 +527,21 @@ Die erste Frage an Sie als Task Force lautet: welche Möglichkeiten von Ursache 
 <div class="columns">
 <div class="column" style="width:58%;">
 <ul>
-<li class="fragment">Ziel der Regression ist es, die Gerade zu finden, die die Datenpunkte möglichst gut abbildet — es gibt jedoch verschiedene Definitionen dessen, was “möglichst gut” heißt</li>
-<li class="fragment">Die häufigste Variante ist die <span style=" color: navy !important;"><strong>Methode der kleinsten Quadrate</strong></span>, bei der die Gerade so gewählt wird, dass die Summe der quadrierten <span style=" color: darkmagenta !important;"><strong>senkrechten Abstände</strong></span> jedes Datenpunktes zur Geraden minimal ist
+<li class="fragment">Ziel der Regression ist es, die Gerade zu finden, die die Datenpunkte möglichst gut abbildet — es gibt jedoch verschiedene Definitionen dessen, was “möglichst gut” heißt.</li>
+<li class="fragment">Die häufigste Variante ist die <span style=" color: navy !important;"><strong>Methode der kleinsten Quadrate</strong></span>, bei der die Gerade so gewählt wird, dass die Summe der quadrierten <span style=" color: darkmagenta !important;"><strong>senkrechten Abstände</strong></span> jedes Datenpunktes zur Geraden minimal ist.
 <ul>
 <li class="fragment">Engl. <em>ordinary least square</em></li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:42%;">
-<p><img data-src="images/regression_sports_distances.png"></p>
+<p><img data-src="images/regression_sports_distances_dach.png"></p>
 </div>
 </div>
 <ul>
 <li class="fragment">Die <strong>einfache Regression</strong> mit nur einer unabhängigen Variablen hat zwei freie Parameter, um die Gerade an die Datenpunkte anzupassen (zu “fitten”):
 <ul>
-<li class="fragment"><strong>y-Achsenabschnitt</strong> <span class="math inline">\(b_0\)</span> (engl. <em>intercept</em>)</li>
-<li class="fragment"><strong>Steigung</strong> <span class="math inline">\(b_1\)</span> (engl. <em>slope</em>)</li>
+<li class="fragment"><strong>y-Achsenabschnitt</strong> <span class="math inline">\(\hat{b}_0\)</span> (engl. <em>intercept</em>)</li>
+<li class="fragment"><strong>Steigung</strong> <span class="math inline">\(\hat{b}_1\)</span> (engl. <em>slope</em>)</li>
 </ul></li>
 <li class="fragment">Die senkrechten Abstände der Datenpunkte von der gefitteten Geraden werden <span style=" color: navy !important;"><strong>Residuen</strong></span> genannt.</li>
 <li class="fragment">Exakt 0 wären die senkrechten Abstände nur, wenn alle Punkte auf einer perfekten Gerade liegen.</li>
@@ -552,7 +553,8 @@ Die erste Frage an Sie als Task Force lautet: welche Möglichkeiten von Ursache 
 <div class="column" style="width:60%;">
 <p>Verschiedene Gründe:</p>
 <ul>
-<li class="fragment">Variablen korrelieren überhaupt nicht <!-- - Zusammenhang ist nichtlinear --></li>
+<li class="fragment">Variablen hängen gar nicht zusammen</li>
+<li class="fragment">Zusammenhang ist nichtlinear</li>
 <li class="fragment">Einfluss von Störvariablen</li>
 <li class="fragment">Messungenauigkeit</li>
 </ul>
@@ -627,55 +629,127 @@ Die erste Frage an Sie als Task Force lautet: welche Möglichkeiten von Ursache 
 <!----------------->
 <!--- New slide --->
 <!----------------->
+<!-- ## Totale, erklärte und Residuenquadratsumme
+
+:::: {.columns}
+::: {.column width="49%"}
+- Die Methode der kleinsten Quadrate minimiert die **Residuenquadratsumme (SQR)**:
+
+:::{.fragment}
+$$
+SQR = \sum\left(\hat{y}_i-y_i\right)^2 = \sum\hat{\epsilon}_i^2
+$$
+:::
+
+- Diese wiederum lässt sich in Bezug setzen zur **totalen Quadratsumme (SQT)** und zur **erklärten Quadratsumme (SQE)**:
+
+:::{.fragment}
+$$
+SQR = SQT - SQE\qquad\text{bzw.}
+$$
+:::
+
+:::{.fragment}
+$$
+SQT = SQE + SQR
+$$
+:::
+
+- Mit
+
+:::{.fragment}
+$$
+SQE = \sum\left(\hat{y}_i-\bar{y}\right)^2
+$$
+:::
+
+
+:::{.fragment}
+$$
+SQT = \sum\left(y_i-\bar{y}\right)^2
+$$
+:::
+
+:::
+::: {.column width="51%"}
+<div class="vspace-medium"></div>
+![](images/quadratsummen2.png)
+:::
+::::
+
+- Falls alle Punkte exakt auf der Regressionsgeraden liegen ($\hat{y}_i = y_i$) ist die erklärte Quadratsumme identisch der totalen Quadratsumme ($SQE = SQT$) und die Residuenquadratsumme ist 0
+ -->
 </section>
 <section class="slide level2">
 <h2>Totale, erklärte und Residuenquadratsumme</h2>
 <div class="columns">
-<div class="column" style="width:49%;">
+<div class="column" style="width:61%;">
 <ul>
 <li class="fragment">Die Methode der kleinsten Quadrate minimiert die <strong>Residuenquadratsumme (SQR)</strong>:</li>
 </ul>
-<div class="fragment">
+<div class="fragment" style="margin-top:-10px">
 <p><span class="math display">\[
 SQR = \sum\left(\hat{y}_i-y_i\right)^2 = \sum\hat{\epsilon}_i^2
 \]</span></p>
 </div>
 <ul>
-<li class="fragment">Diese wiederum lässt sich in Bezug setzen zur <strong>totalen Quadratsumme (SQT)</strong> und zur <strong>erklärten Quadratsumme (SQE)</strong>:</li>
+<li class="fragment">Diese lässt sich in Bezug setzen zur <strong>totalen Quadratsumme (SQT)</strong> und zur <strong>erklärten Quadratsumme (SQE)</strong>.</li>
 </ul>
-<div class="fragment">
-<p><span class="math display">\[
-SQR = SQT - SQE\qquad\text{bzw.}
-\]</span></p>
-</div>
-<div class="fragment">
-<p><span class="math display">\[
-SQT = SQT + SQR
-\]</span></p>
-</div>
-<ul>
-<li class="fragment">Mit</li>
-</ul>
-<div class="fragment">
-<p><span class="math display">\[
-SQE = \sum\left(\hat{y}_i-\bar{y}\right)^2
-\]</span></p>
-</div>
-<div class="fragment">
-<p><span class="math display">\[
-SQT = \sum\left(y_i-\bar{y}\right)^2
-\]</span></p>
-</div>
-</div><div class="column" style="width:51%;">
-<div class="vspace-medium">
-
-</div>
-<p><img data-src="images/quadratsummen2.png"></p>
+</div><div class="column" style="width:39%;">
+<!-- <div class="vspace-medium"></div> -->
+<p><img data-src="images/quadratsummen3.png"></p>
 </div>
 </div>
-<ul>
-<li class="fragment">Falls alle Punkte exakt auf der Regressionsgeraden liegen (<span class="math inline">\(\hat{y}_i = y_i\)</span>) ist die erklärte Quadratsumme identisch der totalen Quadratsumme (<span class="math inline">\(SQE = SQT\)</span>) und die Residuenquadratsumme ist 0</li>
-</ul>
+<!-- <div class="vspace-large"></div> -->
+<!---  Table --->
+<table>
+<colgroup>
+<col style="width: 13%">
+<col style="width: 19%">
+<col style="width: 31%">
+<col style="width: 37%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Totale Quadratsumme</strong></td>
+<td><span class="math inline">\(SQT = \sum\left(y_i-\bar{y}\right)^2\)</span></td>
+<td>Abstandsquadrate der Datenpunkte <span class="math inline">\(y_i\)</span> vom Mittelwert <span class="math inline">\(\bar{y}\)</span></td>
+<td>Gesamte Variabilität der Daten <span class="math inline">\(y_i\)</span>.</td>
+</tr>
+<tr class="even">
+<td><strong>Erklärte Quadratsumme</strong></td>
+<td><span class="math inline">\(SQE = \sum\left(\hat{y}_i-\bar{y}\right)^2\)</span></td>
+<td>Abstandsquadrate der Vorhersa- gen <span class="math inline">\(\hat{y}_i\)</span> vom Mittelwert <span class="math inline">\(\bar{y}\)</span></td>
+<td>Variabilität, die durch das Regressions- modell (<span class="math inline">\(\hat{y}_i\)</span>) erklärt wird.</td>
+</tr>
+<tr class="odd">
+<td><strong>Residuen- quadratsumme</strong></td>
+<td><span class="math inline">\(SQR = \sum\left(\hat{y}_i-y_i\right)^2\)</span></td>
+<td>Abstandsquadrate der Vorhersa- gen <span class="math inline">\(\hat{y}_i\)</span> von den Datenpunkten <span class="math inline">\(y_i\)</span></td>
+<td>Variabilität, die durch das Regressions- modell (<span class="math inline">\(\hat{y}_i\)</span>) <u>nicht</u> erklärt wird.</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment" style="margin-top:30px">
+<!---  Table --->
+<table>
+<caption>Es gilt</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 80%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(SQT = SQE + SQR\)</span></td>
+<td>Die totale Quadratsumme (SQT) ist die Summe aus der erklärten Quadratsumme (SQE) und der Residuenquadratsumme (SQR).</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(SQR = SQT - SQE\)</span></td>
+<td>Der Teil der Datenvarianz (SQT), der nicht durch das Modell erklärt wird (SQE), entspricht der Residuenquadratsumme (SQR).</td>
+</tr>
+</tbody>
+</table>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -684,7 +758,7 @@ SQT = \sum\left(y_i-\bar{y}\right)^2
 <h2>Bestimmtheitsmaß</h2>
 <div>
 <ul>
-<li>Das <span style=" color: navy !important;"><strong>Bestimmtheitsmaß</strong></span> <span class="math inline">\(R^2\)</span> gibt an, wie gut die Datenpunkte durch die Regressionsgerade gefittet werden (“Anpassungsgüte”)</li>
+<li>Das <span style=" color: navy !important;"><strong>Bestimmtheitsmaß</strong></span> <span class="math inline">\(R^2\)</span> gibt an, wie gut die Datenpunkte durch die Regressionsgerade gefittet werden (“Anpassungsgüte”).</li>
 <li>Es gibt an, welcher Anteil der Datenvarianz <span class="math inline">\(Var(Y)\)</span> durch die Varianz der Vorhersage <span class="math inline">\(Var(\hat{Y})\)</span> erklärt wird..</li>
 </ul>
 </div>
@@ -705,7 +779,7 @@ R^2 = \frac{Var(\hat{Y})}{Var(Y)} = \frac{\sum\left(\hat{y_i}-\bar{y}\right)^2}{
 <p><img data-src="images/merke.png" height="55"></p>
 </div>
 </div><div class="column" style="width:95%;">
-<p>Bei einer einfachen Regression gilt: <span class="math inline">\(R^2 = r^2\)</span><br> Das Bestimmtheitsmaß ist bei einer einfachen Regression also identisch dem quadrierten Korrelationskoeffizienten zwischen den Variablen X und Y!</p>
+<p>Bei einer einfachen Regression gilt: <span class="math inline">\(R^2 = \rho^2\)</span><br> Das Bestimmtheitsmaß ist bei einer einfachen Regression also identisch dem quadrierten Korrelationskoeffizienten zwischen den Variablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>!</p>
 </div>
 </div>
 </div>
@@ -720,7 +794,7 @@ R^2 = \frac{Var(\hat{Y})}{Var(Y)} = \frac{\sum\left(\hat{y_i}-\bar{y}\right)^2}{
 <p><img data-src="images/example.png" height="70"></p>
 </div>
 </div><div class="column" style="width:90%;">
-<p>Lebenszufriedenheit und sportliche Aktivität haben eine Korrelation von <span class="math inline">\(r=0{,}8\)</span>.<br>⇒ Sportliche Aktivität erklärt <span class="math inline">\(\;r^2=0{,}64\;\widehat{=}\;64\%\)</span> der Varianz von Lebenszufriedenheit (und umgekehrt).</p>
+<p>Lebenszufriedenheit und sportliche Aktivität haben eine Korrelation von <span class="math inline">\(\rho=0.8\)</span>.<br>⇒ Sportliche Aktivität erklärt <span class="math inline">\(\;\rho^2=0.64\;\widehat{=}\;64\%\)</span> der Varianz von Lebenszufriedenheit (und umgekehrt).</p>
 </div>
 </div>
 </div>
@@ -749,12 +823,12 @@ R^2 = \frac{Var(\hat{Y})}{Var(Y)} = \frac{\sum\left(\hat{y_i}-\bar{y}\right)^2}{
 <aside></aside></section>
 <section class="slide level2">
 <h2><span style="font-size:38px">Analytische Form der Regressionskoeffizienten (einfache Regression)</span></h2>
-<p>Die optimalen <span style=" color: navy !important;"><strong>Regressionskoeffizienten</strong></span> <span class="math inline">\(b_0\)</span> (Achsenabschnitt) und <span class="math inline">\(b_1\)</span> (Steigung) lassen sich analytisch herleiten:</p>
-<p><img data-src="images/regression_derivation3.png" height="150"></p>
+<p>Die <span style=" color: navy !important;"><strong>Regressionskoeffizienten</strong></span> <span class="math inline">\(b_0\)</span> (Achsenabschnitt) und <span class="math inline">\(b_1\)</span> (Steigung) lassen sich analytisch herleiten:</p>
+<p><img data-src="images/regression_derivation3_dach.png" height="150"></p>
 <ul>
 <li class="fragment">Aus den Mittelwerten und der Kovarianz von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>, sowie der Varianz von <span class="math inline">\(X\)</span>, lassen sich also die Regressionskoeffizienten vollständig bestimmen.</li>
-<li class="fragment">Auch hier zeigt sich wieder die Assymmetrie der Regression: während bei der Formel für die Pearson-Korrelation <span class="math inline">\(Var(X)Var(Y)\)</span> im Nenner steht, ist es beim Regressionskoeffizienten lediglich die Varianz der unabhäbgigen Variable <span class="math inline">\(Var(X)\)</span></li>
-<li class="fragment">Wäre stattdessen <span class="math inline">\(Y\)</span> die unabhängige Variable, stünde <span class="math inline">\(Var(Y)\)</span> im Nenner, und der Regressionskoeffizient hätte i.d.R. einen anderen Wert.
+<li class="fragment">Auch hier zeigt sich wieder die Assymmetrie der Regression: während bei der Formel für die Pearson-Korrelation <span class="math inline">\(\hat{\rho}\)</span> der symmetrische Ausdruck <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sigma_{\mkern-2mu\scriptscriptstyle{Y}}\)</span> im Nenner steht, ist es beim Steigungskoeffizienten <span class="math inline">\(\hat{b}_1\)</span> lediglich die Varianz der unabhängigen Variable <span class="math inline">\(Var(X)\)</span>.</li>
+<li class="fragment">Wäre stattdessen <span class="math inline">\(Y\)</span> die unabhängige Variable, stünde <span class="math inline">\(Var(Y)\)</span> im Nenner, und <span class="math inline">\(\hat{b}_1\)</span> hätte i.d.R. einen anderen Wert.
 <ul>
 <li class="fragment">Dies ist auch der Grund, weshalb die Regressionsgleichung nicht einfach invertiert werden darf:</li>
 </ul></li>
@@ -764,9 +838,9 @@ R^2 = \frac{Var(\hat{Y})}{Var(Y)} = \frac{\sum\left(\hat{y_i}-\bar{y}\right)^2}{
 \require{cancel}
 \scriptsize{
 \cancel{
-x_i = \frac{1}{b_1}\hat{y}_i-\frac{b_0}{b_1}
+x_i = \frac{1}{\hat{b}_1}\hat{y}_i-\frac{\hat{b}_0}{\hat{b}_1}
 }\\
-\left(\text{.. und }\frac{1}{b_1}\text{ im Allgemeinen }\textbf{nicht}\text{ der Regressionskoeffizient für $Y$ als unabhängige Variable ist.}\right)
+\left(\text{.. und }\frac{1}{\hat{b}_1}\text{ im Allgemeinen }\textbf{nicht}\text{ der Steigungskoeffizient für $Y$ als unabhängige Variable ist.}\right)
 }
 \]</span></p>
 </div>
@@ -778,15 +852,15 @@ x_i = \frac{1}{b_1}\hat{y}_i-\frac{b_0}{b_1}
 <h2>Zusammenhang Regression ↔︎ Korrelation</h2>
 <ul>
 <li class="fragment"><p>Folgendener Zusammenhang gilt zwischen der Steigung <span class="math inline">\(b_1\)</span> und dem Korrelationskoeffizienten <span class="math inline">\(r\)</span>: <span class="math display">\[
-\scriptsize{
-b_1 = \frac{Cov(X,Y)}{Var(X)} = \frac{Cov(X,Y)}{s_X^2} = \frac{s_Y}{s_Y}\frac{Cov(X,Y)}{s_Xs_X} = \frac{s_Y}{s_X}\underbrace{\frac{Cov(X,Y)}{s_Xs_Y}}_{r} = \frac{s_Y}{s_X}r
+\displaystyle{
+\hat{b}_1 = \frac{Cov(X,Y)}{Var(X)} = \frac{Cov(X,Y)}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}^2} = \underbrace{\frac{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}}_{1}\frac{Cov(X,Y)}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sigma_{\mkern-2mu\scriptscriptstyle{X}}} = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}\underbrace{\frac{Cov(X,Y)}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}}_{\hat{\rho}} = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}\hat{\rho}
 }
 \]</span></p></li>
 <li class="fragment"><p>Es gilt also</p></li>
 </ul>
 <div class="fragment" style="margin-top: -15px">
 <p><span class="math display">\[
-b_1 = \frac{s_Y}{s_X}r\qquad\quad\text{bzw.}\qquad r = \frac{s_X}{s_Y}b_1
+\hat{b}_1 = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}\hat{\rho}\qquad\quad\text{bzw.}\qquad \hat{\rho} = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1
 \]</span></p>
 </div>
 <div class="merke fragment">
@@ -796,7 +870,7 @@ b_1 = \frac{s_Y}{s_X}r\qquad\quad\text{bzw.}\qquad r = \frac{s_X}{s_Y}b_1
 <p><img data-src="images/merke.png" height="55"></p>
 </div>
 </div><div class="column" style="width:95%;">
-<p>Sind die Standardabweichungen <span class="math inline">\(s_X\)</span> und <span class="math inline">\(s_Y\)</span> bekannt, kann aus der Steigung <span class="math inline">\(b_1\)</span> der Regression immer auch der Korrelationskoeffizient <span class="math inline">\(r\)</span> bestimmt werden (und umgekehrt).</p>
+<p>Sind die Standardabweichungen <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}\)</span> und <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{Y}}\)</span> bekannt, kann aus der Steigung <span class="math inline">\(\hat{b}_1\)</span> der Regression immer auch der Korrelationskoeffizient <span class="math inline">\(\hat{\rho}\)</span> bestimmt werden (und umgekehrt).</p>
 </div>
 </div>
 </div>
@@ -804,15 +878,15 @@ b_1 = \frac{s_Y}{s_X}r\qquad\quad\text{bzw.}\qquad r = \frac{s_X}{s_Y}b_1
 
 </div>
 <ul>
-<li class="fragment">Der Ausruck <span class="math inline">\(\frac{s_X}{s_Y}b_1\)</span> wird auch <span style=" color: navy !important;"><strong>standardisierter Regressionskoeffizient</strong></span> <span class="math inline">\(\beta_1\)</span> genannt:</li>
+<li class="fragment">Der Ausruck <span class="math inline">\(\frac{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1\)</span> wird auch <span style=" color: navy !important;"><strong>standardisierter Regressionskoeffizient</strong></span> <span class="math inline">\(\hat{\beta}_1\)</span> genannt:</li>
 </ul>
 <div class="fragment" style="margin-top:-15px">
 <p><span class="math display">\[
-    \beta_1 = \frac{s_X}{s_Y}b_1
+    \hat{\beta}_1 = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1
 \]</span></p>
 </div>
 <ul>
-<li class="fragment">Bei der einfachen Regression ist der standardisierte Regressionskoeffizient identisch mit dem Korrelationskoeffizienten: <span class="math inline">\(\quad\beta_1 = r\)</span></li>
+<li class="fragment">Bei der einfachen Regression ist der standardisierte Regressionskoeffizient identisch mit dem Korrelationskoeffizienten: <span class="math inline">\(\quad\hat{\beta}_1 = \hat{\rho}\)</span></li>
 </ul>
 <!-- https://stats.stackexchange.com/questions/435699/how-to-derive-the-formula-for-coefficient-slope-of-a-simple-linear-regression -->
 <!----------------->
@@ -822,9 +896,37 @@ b_1 = \frac{s_Y}{s_X}r\qquad\quad\text{bzw.}\qquad r = \frac{s_X}{s_Y}b_1
 <section class="slide level2">
 <h2>Standardisierter Regressionskoeffizient</h2>
 <ul>
-<li class="fragment">Wie gesehen erhält man den <strong>standardisierten Regressionskoeffizienten</strong> <span class="math inline">\(\beta\)</span> durch die Transformation <span class="math inline">\(\beta_1 = \frac{s_X}{s_Y}b_1\)</span></li>
-<li class="fragment">Im Gegensatz zu <span class="math inline">\(b_1\)</span> ist <span class="math inline">\(\beta_1\)</span> unabhängig von der Skalierung von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> (also z.B. ob die Einheit als <span class="math inline">\(cm\)</span> oder <span class="math inline">\(m\)</span> gewählt wurde) ⇒ <span class="math inline">\(\beta\)</span>-Koeffizienten lassen sich besser zwischen verschiedenen Regressionen vergleichen</li>
+<li class="fragment">Wie gesehen erhält man den <strong>standardisierten Regressionskoeffizienten</strong> <span class="math inline">\(\hat{\beta}\)</span> durch die Transformation <span class="math inline">\(\hat{\beta}_1 = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1\)</span>.</li>
+<li class="fragment">Im Gegensatz zu <span class="math inline">\(\hat{b}_1\)</span> ist <span class="math inline">\(\hat{\beta}_1\)</span> unabhängig von der Skalierung von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> (also z.B. ob die Einheit als <span class="math inline">\(cm\)</span> oder <span class="math inline">\(m\)</span> gewählt wurde) ⇒ <span class="math inline">\(\hat{\beta}\)</span>-Koeffizienten lassen sich besser zwischen verschiedenen Regressionen vergleichen.</li>
 </ul>
+<!---  Table --->
+<div class="fragment">
+<table>
+<caption>Interpretation im Kontext der Regressionsgleichungen <span class="math inline">\(\quad\hat{Y}=\hat{b}_0+\hat{b}_1X\quad\)</span> bzw. <span class="math inline">\(\quad\hat{Y}=\hat{\beta}_0+\hat{\beta}_1X\)</span></caption>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\hat{b}_1\)</span></td>
+<td>Um welchen Wert ändert sich <span class="math inline">\(Y\)</span> bei einer Änderung von <span class="math inline">\(X\)</span> um den Wert <span class="math inline">\(1\)</span>?</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\hat{\beta}_1\)</span></td>
+<td>Um welchen Wert ändert sich <span class="math inline">\(Y\)</span> bei einer Änderung von <span class="math inline">\(X\)</span> um <em>eine</em> Standardabweichung <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}\)</span>?</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li class="fragment">Wurden sowohl <span class="math inline">\(X\)</span> als auch <span class="math inline">\(Y\)</span> vor der Regression standardisiert, also <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}=\sigma_{\mkern-2mu\scriptscriptstyle{Y}}=1\)</span>, so sind die Regressionskoeffizienten automatisch standardisiert:</li>
+</ul>
+<div class="fragment" style="margin-top: -10px">
+<p><span class="math display">\[
+\hat{\beta}_1 = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1 = \frac{1}{1}\hat{b}_1 = \hat{b}_1
+\]</span></p>
+</div>
 <div class="definition fragment">
 <!---  Definition--->
 <table>
@@ -839,7 +941,7 @@ b_1 = \frac{s_Y}{s_X}r\qquad\quad\text{bzw.}\qquad r = \frac{s_X}{s_Y}b_1
 </tr>
 <tr class="even">
 <td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
-<td><strong>Standardisierung einer Variable <span class="math inline">\(X\)</span></strong>≔ Variable <span class="math inline">\(X\)</span> durch ihre Standardabweichung <span class="math inline">\(s_X\)</span> teilen<br>Die Variable <span class="math inline">\(X\)</span> hat nach der Standardisierung die Standardabweichung <span class="math inline">\(s_X=1\)</span>.</td>
+<td><strong>Standardisierung einer Variable <span class="math inline">\(X\)</span></strong> = Variable <span class="math inline">\(X\)</span> durch Stichprobenstandardabweichung <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}\)</span> teilen. Für die Variable <span class="math inline">\(X\)</span> gilt nach der Standardisierung <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}=1\)</span>.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -847,170 +949,6 @@ b_1 = \frac{s_Y}{s_X}r\qquad\quad\text{bzw.}\qquad r = \frac{s_X}{s_Y}b_1
 </tr>
 </tbody>
 </table>
-</div>
-<ul>
-<li class="fragment">Wurden sowohl <span class="math inline">\(X\)</span> als auch <span class="math inline">\(Y\)</span> vor der Regression standardisiert, also <span class="math inline">\(s_X=s_Y=1\)</span>, so sind die Regressionskoeffizienten automatisch standardisiert:</li>
-</ul>
-<div class="fragment" style="margin-top: -10px">
-<p><span class="math display">\[
-\beta_1 = \frac{s_X}{s_Y}b_1 = \frac{1}{1}b_1 = b_1
-\]</span></p>
-</div>
-<!---  Table --->
-<div class="fragment">
-<table>
-<caption>Interpretation im Kontext der Regressionsgleichungen <span class="math inline">\(\quad\hat{Y}=b_0+b_1X\quad\)</span> bzw. <span class="math inline">\(\quad\hat{Y}=\beta_0+\beta_1X\)</span></caption>
-<colgroup>
-<col style="width: 10%">
-<col style="width: 90%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(b_1\)</span></td>
-<td>Um welchen Wert ändert sich <span class="math inline">\(Y\)</span> bei einer Änderung von <span class="math inline">\(X\)</span> um den Wert <span class="math inline">\(1\)</span>?</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\beta_1\)</span></td>
-<td>Um welchen Wert ändert sich <span class="math inline">\(Y\)</span> bei einer Änderung von <span class="math inline">\(X\)</span> um <em>eine</em> Standardabweichung <span class="math inline">\(s_X\)</span>?</td>
-</tr>
-</tbody>
-</table>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Herleitung der Regressionskoeffizienten</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<ul>
-<li class="fragment">Die Methode der kleinsten Quadrate entspricht der Minimierung der quadratischen Residuen: <span class="math display">\[
-SQR = \sum\left(\hat{y}_i-y_i\right)^2 = \sum\left(b_0+b_1 x_i-y_i\right)^2 \overset{!}{=}\text{min}
-\]</span></li>
-<li class="fragment">Um das Minimum von SQR in Abhängigkeit von <span class="math inline">\(b_0\)</span> und <span class="math inline">\(b_1\)</span> zu finden, setzen wir die Ableitungen von SQR nach den Parametern gleich Null (Infinitesimalrechnung@Schule 😉)</li>
-<li class="fragment">Zunächst leiten wir SQR nach <span class="math inline">\(b_0\)</span> ab (Kettenregel): <span class="math display">\[
-\frac{dSQR}{db_0} = \sum2\left(b_0+b_1 x_i-y_i\right)=2nb_0+2\sum\left(b_1 x_i-y_i\right)=0
-\]</span></li>
-</ul>
-<div class="fragment" style="border: 1px solid darkblue">
-<p><span class="math display">\[
-\color{darkblue}{\longrightarrow b_0} = \frac{1}{n}\sum\left(y_i-b_1x_i\right) = \frac{1}{n}\sum y_i-\frac{b_1}{n}\sum x_i = \color{darkblue}{\bar{y}-b_1\bar{x}}
-\]</span></p>
-</div>
-<div class="vspace-xlarge">
-
-</div>
-<ul>
-<li class="fragment">… jetzt benötigen wir noch <span class="math inline">\(b_1\)</span></li>
-</ul>
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Herleitung der Regressionskoeffizienten</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<div style="margin-top: -10px !important">
-<ul>
-<li class="fragment">SQR nach <span class="math inline">\(b_1\)</span> ableiten und gleich Null setzen:</li>
-</ul>
-</div>
-<div class="fragment">
-<p><span class="math display">\[
-\small{
-\frac{dSQR}{db_1} = \sum2(b_0+b_1 x_i-y_i)x_i=2b_0\sum x_i + 2b_1\sum x_i^2-2\sum x_i y_i = 0
-}
-\]</span></p>
-</div>
-<div class="fragment" style="margin-top: -10px !important">
-<p><span class="math display">\[\small{
-\longrightarrow b_1 = \frac{\sum x_i y_i}{{\sum x_i^2}} - \frac{b_0\sum x_i}{\sum x_i^2} \overset{\color{darkgreen}{(b_0\,einsetzen)}}{=} \frac{\sum x_i y_i}{{\sum x_i^2}} - \frac{\bar{y}\sum x_i}{\sum x_i^2}+b_1\frac{\bar{x}\sum x_i}{\sum x_i^2}
-}
-\]</span></p>
-</div>
-<ul>
-<li class="fragment">Alle <span class="math inline">\(b_1\)</span>-Terme auf die linke Seite bringen und einige Umformungen vornehmen:</li>
-</ul>
-<div class="fragment" style="margin-top: -12px">
-<p><span class="math display">\[
-\small{
-b_1 - b_1\frac{\bar{x}\sum x_i}{\sum x_i^2} = \frac{\sum x_i y_i}{{\sum x_i^2}} - \frac{\bar{y}\sum x_i}{\sum x_i^2}
-}
-\]</span></p>
-</div>
-<div class="fragment">
-<p><span class="math display">\[
-\scriptsize{
-b_1 \left(1 - \frac{\bar{x}\sum x_i}{\sum x_i^2}\right) = \frac{\sum x_i y_i - \bar{y}\sum x_i}{\sum x_i^2}
-}
-\]</span></p>
-</div>
-<div class="fragment">
-<p><span class="math display">\[
-\scriptsize{
-b_1 \left(\frac{\sum x_i^2}{\sum x_i^2} - \frac{\bar{x}\sum x_i}{\sum x_i^2}\right) = \frac{\sum x_i y_i - \bar{y}\sum x_i}{\sum x_i^2}
-}
-\]</span></p>
-</div>
-<div class="fragment">
-<p><span class="math display">\[
-\scriptsize{
-b_1 \frac{\sum x_i^2 - \bar{x}\sum x_i}{\sum x_i^2} = \frac{\sum x_i y_i - \bar{y}\sum x_i}{\sum x_i^2}
-}
-\]</span></p>
-</div>
-<div class="fragment" style="margin-left: -100px">
-<p><span class="math display">\[
-\scriptsize{
-\longrightarrow    
-b_1 = \frac{\color{darkred}{\sum x_i^2}}{\sum x_i^2-\bar{x}\sum x_i}\frac{\sum x_i y_i - \bar{y}\sum x_i}{\color{darkred}{\sum x_i^2}} = \frac{\sum x_i y_i - \bar{y}\sum x_i}{\sum x_i^2-\bar{x}\sum x_i}
-\overset{\color{darkgreen}{\left(\sum x_i=n\bar{x}\right)}}{=} \frac{\sum x_i y_i - n\bar{x}\bar{y}}{\sum x_i^2-n\bar{x}^2} \overset{\color{darkgreen}{:n}}{=} \frac{\frac{1}{n}\sum x_i y_i - \bar{x}\bar{y}}{\frac{1}{n}\sum x_i^2-\bar{x}^2}
-}
-\]</span></p>
-</div>
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Herleitung der Regressionskoeffizienten</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<ul>
-<li class="fragment">Zwischenergebnis:</li>
-</ul>
-<div class="fragment" style="margin-top:-35px">
-<p><span class="math display">\[
-b_1 = \frac{\frac{1}{n}\sum x_i y_i - \bar{x}\bar{y}}{\frac{1}{n}\sum x_i^2-\bar{x}^2}
-\]</span></p>
-</div>
-<ul>
-<li class="fragment">Um zu erkennen, dass der Zähler der Kovarianz und der Nenner der Varianz entspricht, betrachten wir nochmal die Formeln der (Ko)Varianz:</li>
-</ul>
-<div class="fragment">
-<p><span class="math display">\[
-\scriptsize{
-\begin{aligned}
-Cov(X,Y) &amp;= \frac{1}{n}\sum(x_i-\bar{x})(y_i-\bar{y}) = \frac{1}{n}\sum\left(x_iy_i-x_i\bar{y}-y_i\bar{x}+\bar{x}\bar{y}\right) =
-\frac{1}{n}\sum x_iy_i-
-\bar{y}\frac{1}{n}\sum x_i-
-\bar{x}\frac{1}{n}\sum y_i+
-\bar{x}\bar{y} = \\
-&amp;\underset{\color{darkgreen}{\left(\frac{1}{n}\sum y_i=\bar{y}\right)}}{\overset{\color{darkgreen}{\left(\frac{1}{n}\sum x_i=\bar{x}\right)}}{=}} \frac{1}{n}\sum x_iy_i - \bar{y}\bar{x}-\bar{x}\bar{y}+\bar{x}\bar{y} = \frac{1}{n}\sum x_iy_i - \bar{x}\bar{y}
-\end{aligned}
-}
-\]</span></p>
-</div>
-<div class="fragment">
-<p><span class="math display">\[
-\scriptsize{
-\begin{aligned}
-Var(X) &amp;= \frac{1}{n}\sum\left(x_i-\bar{x}\right)^2 = \frac{1}{n}\sum\left(x_i^2-2x_i\bar{x}+\bar{x}^2\right) = \frac{1}{n}\sum x_i^2-2\bar{x}\frac{1}{n}\sum x_i+\bar{x}^2 = \\
-&amp;\overset{\color{darkgreen}{\left(\frac{1}{n}\sum x_i=\bar{x}\right)}}{=} \frac{1}{n}\sum x_i^2-2\bar{x}^2+\bar{x}^2 = \frac{1}{n}\sum x_i^2-\bar{x}^2
-\end{aligned}
-}
-\]</span></p>
-</div>
-<ul>
-<li class="fragment">Es gilt also tatsächlich:</li>
-</ul>
-<div class="fragment" style="margin-top:-20px">
-<p><span class="math display">\[
-\color{darkblue}{b_1 = \frac{Cov(X,Y)}{Var(X)}}
-\]</span></p>
 </div>
 <!----------------->
 <!--- New slide --->
@@ -1023,11 +961,11 @@ Var(X) &amp;= \frac{1}{n}\sum\left(x_i-\bar{x}\right)^2 = \frac{1}{n}\sum\left(x
 </ul>
 <div class="fragment" style="margin-top:-20px">
 <p><span class="math display">\[
-b_1 = \frac{Cov(X,Y)}{Var(X)}
+\hat{b}_1 = \frac{Cov(X,Y)}{Var(X)}
 \]</span></p>
 </div>
 <div class="fragment">
-<p>.. erinnert an die Formel der Korrelation, bei der die Kovarianz ebenfalls standardisiert wird (mit <span class="math inline">\(\frac{1}{s_Xs_Y}\)</span>)</p>
+<p>.. erinnert an die Formel der Korrelation, bei der die Kovarianz ebenfalls standardisiert wird (mit <span class="math inline">\(\frac{1}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\)</span>)</p>
 </div>
 <ul>
 <li class="fragment">Der entscheidende Unterschied ist, dass bei der Korrelation eine Standardisierung bezüglich <em>beider</em> Variablen vorgenommen wird, bei der Regression aber nur bezüglich der <em>unabhängigen</em> Variable.</li>
@@ -1038,49 +976,8 @@ b_1 = \frac{Cov(X,Y)}{Var(X)}
 </blockquote>
 <ul>
 <li class="fragment">Auch hier wird wieder deutlich, dass bei der Regression eine feste Rollenverteilung vorgenommen wird: nur die unabhängige Variable wird standardisiert.</li>
-<li class="fragment">Da die Steigung also von der Varianz der als unabhängig deklarierten Variable abhängt, ist es nicht zulässig anzunehmen, dass <span class="math inline">\(\frac{1}{b_1}\)</span> einfach die Steigung wäre, wenn <span class="math inline">\(Y\)</span> die unabhängige und <span class="math inline">\(X\)</span> die abhängige Variable ist. Für die umgekehrte Steigung müssten wir schließlich auch die Varianz von <span class="math inline">\(Y\)</span> berücksichtigen!</li>
+<li class="fragment">Da die Steigung also von der Varianz der unabhängigen Variable abhängt, ist es nicht zulässig anzunehmen, dass <span class="math inline">\(\frac{1}{\hat{b}_1}\)</span> einfach die Steigung wäre, wenn <span class="math inline">\(Y\)</span> die unabhängige und <span class="math inline">\(X\)</span> die abhängige Variable ist. Für die umgekehrte Steigung müssten wir schließlich die Varianz von <span class="math inline">\(Y\)</span> berücksichtigen!</li>
 </ul>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Beweis, dass <span class="math inline">\(R^2=r^2\)</span> bei einfacher Regression</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<ul>
-<li class="fragment">Ausgestattet mit der Formel für den Regressionskoeffizienten, lässt sich nun auch beweisen, dass bei der einfachen Regression gilt: <span class="math inline">\(\quad \color{darkblue}{R^2=r^2}\)</span></li>
-</ul>
-<div class="fragment">
-<p><span class="math display">\[
-\small{
-\begin{aligned}
-R^2 = \frac{Var(\hat{Y})}{Var(Y)} &amp;= \frac{\frac{1}{n}\sum\left(\hat{y}_i-\bar{y}\right)^2}{Var(Y)}
-\underset{\color{darkgreen}{\left(\bar{y} = b_0+b_1\bar{x}\right)}}{\overset{\color{darkgreen}{\left(\hat{y}_i = b_0+b_1x_i\right)}}{=}} \frac{\frac{1}{n}\sum\left[(b_0+b_1x_i)-(b_0+b_1\bar{x})\right]^2}{Var(Y)} = \frac{\frac{1}{n}\sum\left(b_1x_i-b_1\bar{x}\right)^2}{Var(Y)} = \\
-&amp;= b_1^2\frac{\frac{1}{n}\sum\left(x_i-\bar{x}\right)^2}{Var(Y)}= b_1^2\frac{Var(X)}{Var(Y)}\qquad\qquad \scriptsize{\left(\text{NB sieht man, dass gilt:}\quad Var(\hat{Y}) = b_1^2Var(X)\right)}
-\end{aligned}
-}
-\]</span></p>
-</div>
-<ul>
-<li class="fragment">Nun <span class="math inline">\(b_1 = \frac{Cov(X,Y)}{Var(X)}\)</span> einsetzen:</li>
-</ul>
-<div class="fragment">
-<p><span class="math display">\[
-\small{
-\color{darkblue}{R^2} = \frac{Cov^2(X,Y)}{\color{darkred}{Var^2(X)}}\frac{\color{darkred}{Var(X)}}{Var(Y)} = \color{darkblue}{\frac{Cov^2(X,Y)}{Var(X)Var(Y)}}
-}
-\]</span></p>
-</div>
-<ul>
-<li class="fragment">Vergleiche mit <span class="math inline">\(r^2\)</span>:</li>
-</ul>
-<div class="fragment">
-<p><span class="math display">\[
-\small{
-\color{darkblue}{r^2} = \left[\frac{Cov(X,Y)}{s_Xs_Y}\right]^2 = \frac{Cov^2(X,Y)}{s_X^2s_Y^2} = \frac{Cov^2(X,Y)}{Var(X)Var(Y)}
-}
-\]</span></p>
-</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1094,13 +991,13 @@ R^2 = \frac{Var(\hat{Y})}{Var(Y)} &amp;= \frac{\frac{1}{n}\sum\left(\hat{y}_i-\b
 
 </div>
 <div class="fragment">
-<p><img data-src="images/ausblick_multiple_regression.png" height="300"></p>
+<p><img data-src="images/ausblick_multiple_regression_dach.png" height="300"></p>
 </div>
 <div class="vspace-medium">
 
 </div>
 <ul>
-<li class="fragment">Jeder Prädiktor <span class="math inline">\(X_1, X_2, ... X_n\)</span> hat einen eigenen Regressionskoeffizienten <span class="math inline">\(b_1, b_2, ... b_n\)</span></li>
+<li class="fragment">Jeder Prädiktor <span class="math inline">\(X_1, X_2, ... X_n\)</span> hat einen eigenen Regressionskoeffizienten <span class="math inline">\(\hat{b}_1, \hat{b}_2, ... \hat{b}_n\)</span></li>
 <li class="fragment">Multiple Regression wird ausführlich in Statistik 2 behandelt.</li>
 </ul>
 <!----------------->
@@ -1116,7 +1013,7 @@ R^2 = \frac{Var(\hat{Y})}{Var(Y)} &amp;= \frac{\frac{1}{n}\sum\left(\hat{y}_i-\b
 
 </div>
 <div class="fragment">
-<p><img data-src="images/patsy_simple.png"></p>
+<p><img data-src="images/patsy_simple_dach.png"></p>
 </div>
 <div class="vspace-medium">
 
@@ -1166,7 +1063,7 @@ R^2 = \frac{Var(\hat{Y})}{Var(Y)} &amp;= \frac{\frac{1}{n}\sum\left(\hat{y}_i-\b
 </tr>
 <tr class="even">
 <td><strong>Interessante Größe</strong></td>
-<td style="text-align: center;">Steigung <span class="math inline">\(b_1\)</span></td>
+<td style="text-align: center;">Steigung <span class="math inline">\(\hat{b}_1\)</span></td>
 <td style="text-align: center;">Bestimmtheitsmaß <span class="math inline">\(R^2\)</span></td>
 </tr>
 <tr class="odd">
@@ -1176,10 +1073,10 @@ R^2 = \frac{Var(\hat{Y})}{Var(Y)} &amp;= \frac{\frac{1}{n}\sum\left(\hat{y}_i-\b
 </tr>
 <tr class="even">
 <td><strong>Beispiel</strong></td>
-<td style="text-align: center;">Regression von Lebenszufriedenheit auf sportliche Aktivität. Der Regressionskoeffizient sei <span class="math inline">\(b_1=0{,}5\)</span>.<br>
+<td style="text-align: center;">Regression von Lebenszufriedenheit auf sportliche Aktivität. Der Regressionskoeffizient sei <span class="math inline">\(\hat{b}_1=0.5\)</span>.<br>
 - Der Zusammenhang ist positiv.<br>
-- Eine Erhöhung von sportlicher Aktivität um den Wert 1 führt im Schnitt zu einer Erhöhung der Lebenszufriedenheit um den Wert <span class="math inline">\(0{,}5\)</span>.</td>
-<td style="text-align: center;">Regression von Lebenszufriedenheit auf sportliche Aktivität. Das Bestimmtheitsmaß sei <span class="math inline">\(R^2=0{,}4\)</span>.<br>
+- Eine Erhöhung von sportlicher Aktivität um den Wert 1 führt im Schnitt zu einer Erhöhung der Lebenszufriedenheit um den Wert <span class="math inline">\(0.5\)</span>.</td>
+<td style="text-align: center;">Regression von Lebenszufriedenheit auf sportliche Aktivität. Das Bestimmtheitsmaß sei <span class="math inline">\(R^2=0.4\)</span>.<br>
 - Sportliche Aktivität hat eine gute Vorhersagekraft für Lebenszufriedenheit.<br>
 - Sportliche Aktivität erklärt 40% der Varianz von interindividueller Lebenszufriedenheit.</td>
 </tr>
@@ -1201,7 +1098,7 @@ R^2 = \frac{Var(\hat{Y})}{Var(Y)} &amp;= \frac{\frac{1}{n}\sum\left(\hat{y}_i-\b
 <ul>
 <li class="fragment">Die lineare Regression erweitert die Korrelation zu einer <span style=" color: navy !important;"><strong>Vorhersageanalyse</strong></span>: wenn Variablen korrelieren, lässt sich eine Variable aus der anderen vorhersagen.</li>
 <li class="fragment">Die Vorhersage basiert auf einer <span style=" color: navy !important;"><strong>Regressionsgerade</strong></span>, die alle Datenpunkte so gut wie möglich repräsentiert.</li>
-<li class="fragment">Die Regressionsgerade wird durch den <span style=" color: navy !important;"><strong>Achsenabschnitt</strong></span> <span class="math inline">\(b_0\)</span> und die <span style=" color: navy !important;"><strong>Steigung</strong></span> <span class="math inline">\(b_1\)</span> beschrieben.</li>
+<li class="fragment">Die Regressionsgerade wird durch den <span style=" color: navy !important;"><strong>Achsenabschnitt</strong></span> <span class="math inline">\(\hat{b}_0\)</span> und die <span style=" color: navy !important;"><strong>Steigung</strong></span> <span class="math inline">\(\hat{b}_1\)</span> beschrieben.</li>
 <li class="fragment">Die standardisierte Form des Steigungs-Koeffizienten wird <span style=" color: navy !important;"><strong>Beta</strong></span> oder <span style=" color: navy !important;"><strong>Beta-Gewicht</strong></span> genannt und ist identisch dem Korrelationskoeffizienzen (bei einfacher Regression).</li>
 <li class="fragment">Das <span style=" color: navy !important;"><strong>Bestimmtheitsmaß</strong></span> <span class="math inline">\(R^2\)</span> bemisst die Vorhersagegenauigkeit der Regression.</li>
 <li class="fragment">Die Regression kann sowohl der <span style=" color: navy !important;"><strong>Vorhersage</strong></span> einer Variable <span class="math inline">\(Y\)</span> auf Basis einer Variable <span class="math inline">\(X\)</span> dienen, als auch der <span style=" color: navy !important;"><strong>Erklärung</strong></span> bzw. Beschreibung eines Zusammehangs von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>.</li>
@@ -1278,6 +1175,183 @@ plt.savefig('images/paradoxia_slope_paradoxiker.png', bbox_inches='tight')
 <p><img data-src="images/paradoxia_slope_paradoxiker.png" height="280"></p>
 <p>Es zeigt sich, dass 1 Stunde zusätzlicher TikTok-Konsum mit einer Erhöhung des Entzündungsparameters um 0,043 verbunden ist. Umgekehrt ist eine Erhöhung des Entzündungswertes um 1 mit 4,04 Stunden — bzw. etwas praktikabeler, eine Erhöhung des Entzündungswertes um 0,1 mit 0,404 Stunden (24 Minuten) — verbunden.</p>
 <p>Diese “rohen” Effektstärken zeigen: es handelt sich um ein substantiellen Zusammenhang!</p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Herleitung der Regressionskoeffizienten</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
+<ul>
+<li class="fragment">Die Methode der kleinsten Quadrate entspricht der Minimierung der quadratischen Residuen: <span class="math display">\[
+SQR = \sum\left(\hat{y}_i-y_i\right)^2 = \sum\left(\hat{b}_0+\hat{b}_1 x_i-y_i\right)^2 \overset{!}{=}\text{min}
+\]</span></li>
+<li class="fragment">Um das Minimum von SQR in Abhängigkeit von <span class="math inline">\(\hat{b}_0\)</span> und <span class="math inline">\(\hat{b}_1\)</span> zu finden, setzen wir die Ableitungen von SQR nach den Parametern gleich Null (Infinitesimalrechnung@Schule 😉)</li>
+<li class="fragment">Zunächst leiten wir SQR nach <span class="math inline">\(\hat{b}_0\)</span> ab (Kettenregel): <span class="math display">\[
+\frac{dSQR}{d\hat{b}_0} = \sum2\left(\hat{b}_0+\hat{b}_1 x_i-y_i\right)=2n\hat{b}_0+2\sum\left(\hat{b}_1 x_i-y_i\right)=0
+\]</span></li>
+</ul>
+<div class="fragment" style="border: 1px solid darkblue">
+<p><span class="math display">\[
+\color{darkblue}{\longrightarrow \hat{b}_0} = \frac{1}{n}\sum\left(y_i-\hat{b}_1x_i\right) = \frac{1}{n}\sum y_i-\frac{\hat{b}_1}{n}\sum x_i = \color{darkblue}{\bar{y}-\hat{b}_1\bar{x}}
+\]</span></p>
+</div>
+<div class="vspace-xlarge">
+
+</div>
+<ul>
+<li class="fragment">… jetzt benötigen wir noch <span class="math inline">\(\hat{b}_1\)</span></li>
+</ul>
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Herleitung der Regressionskoeffizienten</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
+<div style="margin-top: -10px !important">
+<ul>
+<li class="fragment">SQR nach <span class="math inline">\(\hat{b}_1\)</span> ableiten und gleich Null setzen:</li>
+</ul>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+\small{
+\frac{dSQR}{d\hat{b}_1} = \sum2(\hat{b}_0+\hat{b}_1 x_i-y_i)x_i=2\hat{b}_0\sum x_i + 2\hat{b}_1\sum x_i^2-2\sum x_i y_i = 0
+}
+\]</span></p>
+</div>
+<div class="fragment" style="margin-top: -10px !important">
+<p><span class="math display">\[\small{
+\longrightarrow \hat{b}_1 = \frac{\sum x_i y_i}{{\sum x_i^2}} - \frac{\hat{b}_0\sum x_i}{\sum x_i^2} \overset{\color{darkgreen}{(\hat{b}_0\,einsetzen)}}{=} \frac{\sum x_i y_i}{{\sum x_i^2}} - \frac{\bar{y}\sum x_i}{\sum x_i^2}+\hat{b}_1\frac{\bar{x}\sum x_i}{\sum x_i^2}
+}
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">Alle <span class="math inline">\(\hat{b}_1\)</span>-Terme auf die linke Seite bringen und einige Umformungen vornehmen:</li>
+</ul>
+<div class="fragment" style="margin-top: -12px">
+<p><span class="math display">\[
+\small{
+\hat{b}_1 - \hat{b}_1\frac{\bar{x}\sum x_i}{\sum x_i^2} = \frac{\sum x_i y_i}{{\sum x_i^2}} - \frac{\bar{y}\sum x_i}{\sum x_i^2}
+}
+\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+\scriptsize{
+b_1 \left(1 - \frac{\bar{x}\sum x_i}{\sum x_i^2}\right) = \frac{\sum x_i y_i - \bar{y}\sum x_i}{\sum x_i^2}
+}
+\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+\scriptsize{
+b_1 \left(\frac{\sum x_i^2}{\sum x_i^2} - \frac{\bar{x}\sum x_i}{\sum x_i^2}\right) = \frac{\sum x_i y_i - \bar{y}\sum x_i}{\sum x_i^2}
+}
+\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+\scriptsize{
+\hat{b}_1 \frac{\sum x_i^2 - \bar{x}\sum x_i}{\sum x_i^2} = \frac{\sum x_i y_i - \bar{y}\sum x_i}{\sum x_i^2}
+}
+\]</span></p>
+</div>
+<div class="fragment" style="margin-left: -100px">
+<p><span class="math display">\[
+\scriptsize{
+\longrightarrow    
+\hat{b}_1 = \frac{\color{darkred}{\sum x_i^2}}{\sum x_i^2-\bar{x}\sum x_i}\frac{\sum x_i y_i - \bar{y}\sum x_i}{\color{darkred}{\sum x_i^2}} = \frac{\sum x_i y_i - \bar{y}\sum x_i}{\sum x_i^2-\bar{x}\sum x_i}
+\overset{\color{darkgreen}{\left(\sum x_i=n\bar{x}\right)}}{=} \frac{\sum x_i y_i - n\bar{x}\bar{y}}{\sum x_i^2-n\bar{x}^2} \overset{\color{darkgreen}{:n}}{=} \frac{\frac{1}{n}\sum x_i y_i - \bar{x}\bar{y}}{\frac{1}{n}\sum x_i^2-\bar{x}^2}
+}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Herleitung der Regressionskoeffizienten</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
+<ul>
+<li class="fragment">Zwischenergebnis:</li>
+</ul>
+<div class="fragment" style="margin-top:-35px">
+<p><span class="math display">\[
+\hat{b}_1 = \frac{\frac{1}{n}\sum x_i y_i - \bar{x}\bar{y}}{\frac{1}{n}\sum x_i^2-\bar{x}^2}
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">Um zu erkennen, dass der Zähler der Kovarianz und der Nenner der Varianz entspricht, betrachten wir nochmal die Formeln der (Ko)Varianz:</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+\scriptsize{
+\begin{aligned}
+Cov(X,Y) &amp;= \frac{1}{n}\sum(x_i-\bar{x})(y_i-\bar{y}) = \frac{1}{n}\sum\left(x_iy_i-x_i\bar{y}-y_i\bar{x}+\bar{x}\bar{y}\right) =
+\frac{1}{n}\sum x_iy_i-
+\bar{y}\frac{1}{n}\sum x_i-
+\bar{x}\frac{1}{n}\sum y_i+
+\bar{x}\bar{y} = \\
+&amp;\underset{\color{darkgreen}{\left(\frac{1}{n}\sum y_i=\bar{y}\right)}}{\overset{\color{darkgreen}{\left(\frac{1}{n}\sum x_i=\bar{x}\right)}}{=}} \frac{1}{n}\sum x_iy_i - \bar{y}\bar{x}-\bar{x}\bar{y}+\bar{x}\bar{y} = \frac{1}{n}\sum x_iy_i - \bar{x}\bar{y}
+\end{aligned}
+}
+\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+\scriptsize{
+\begin{aligned}
+Var(X) &amp;= \frac{1}{n}\sum\left(x_i-\bar{x}\right)^2 = \frac{1}{n}\sum\left(x_i^2-2x_i\bar{x}+\bar{x}^2\right) = \frac{1}{n}\sum x_i^2-2\bar{x}\frac{1}{n}\sum x_i+\bar{x}^2 = \\
+&amp;\overset{\color{darkgreen}{\left(\frac{1}{n}\sum x_i=\bar{x}\right)}}{=} \frac{1}{n}\sum x_i^2-2\bar{x}^2+\bar{x}^2 = \frac{1}{n}\sum x_i^2-\bar{x}^2
+\end{aligned}
+}
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">Es gilt also tatsächlich:</li>
+</ul>
+<div class="fragment" style="margin-top:-20px">
+<p><span class="math display">\[
+\color{darkblue}{b_1 = \frac{Cov(X,Y)}{Var(X)}}
+\]</span></p>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Beweis, dass <span class="math inline">\(R^2=\hat{\rho}^2\)</span> bei einfacher Regression</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
+<ul>
+<li class="fragment">Ausgestattet mit der Formel für den Regressionskoeffizienten, lässt sich nun auch beweisen, dass bei der einfachen Regression gilt: <span class="math inline">\(\quad \color{darkblue}{R^2=\hat{\rho}^2}\)</span></li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+\small{
+\begin{aligned}
+R^2 = \frac{Var(\hat{Y})}{Var(Y)} &amp;= \frac{\frac{1}{n}\sum\left(\hat{y}_i-\bar{y}\right)^2}{Var(Y)}
+\underset{\color{darkgreen}{\left(\bar{y} = \hat{b}_0+\hat{b}_1\bar{x}\right)}}{\overset{\color{darkgreen}{\left(\hat{y}_i = \hat{b}_0+\hat{b}_1x_i\right)}}{=}} \frac{\frac{1}{n}\sum\left[(\hat{b}_0+\hat{b}_1x_i)-(\hat{b}_0+\hat{b}_1\bar{x})\right]^2}{Var(Y)} = \frac{\frac{1}{n}\sum\left(\hat{b}_1x_i-\hat{b}_1\bar{x}\right)^2}{Var(Y)} = \\
+&amp;= \hat{b}_1^2\frac{\frac{1}{n}\sum\left(x_i-\bar{x}\right)^2}{Var(Y)}= \hat{b}_1^2\frac{Var(X)}{Var(Y)}\qquad\qquad \scriptsize{\left(\text{NB sieht man, dass gilt:}\quad Var(\hat{Y}) = \hat{b}_1^2Var(X)\right)}
+\end{aligned}
+}
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">Nun <span class="math inline">\(\hat{b}_1 = \frac{Cov(X,Y)}{Var(X)}\)</span> einsetzen:</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+\small{
+\color{darkblue}{R^2} = \frac{Cov^2(X,Y)}{\color{darkred}{Var^2(X)}}\frac{\color{darkred}{Var(X)}}{Var(Y)} = \color{darkblue}{\frac{Cov^2(X,Y)}{Var(X)Var(Y)}}
+}
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">Vergleiche mit <span class="math inline">\(\hat{\rho}^2\)</span>:</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+\small{
+\color{darkblue}{\hat{\rho}^2} = \left[\frac{Cov(X,Y)}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\right]^2 = \frac{Cov^2(X,Y)}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}^2\sigma_{\mkern-2mu\scriptscriptstyle{Y}}^2} = \frac{Cov^2(X,Y)}{Var(X)Var(Y)}
+}
+\]</span></p>
+</div>
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Vorlesung 06: Regression</p>
@@ -1321,7 +1395,7 @@ plt.savefig('images/paradoxia_slope_paradoxiker.png', bbox_inches='tight')
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
+'controlsAuto': false,
 'previewLinksAuto': true,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
@@ -1330,11 +1404,11 @@ plt.savefig('images/paradoxia_slope_paradoxiker.png', bbox_inches='tight')
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":false},
 'animate': {"autoplay":true},
-'customcontrols': {"controls":[{"id":"home","title":"Startseite","icon":"<i class=\"fa-solid fa-house\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}`, '_blank');"},{"id":"print-pdf","title":"Als PDF","icon":"<i class=\"fa-solid fa-file-pdf\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}${location.pathname}`.replace('index.html', `Vorlesung${location.pathname.split('/')[1]}.pdf`), '_blank');"},{"id":"print","title":"Drucken","icon":"<i class=\"fa-solid fa-print\" style=\"color:#8398dd\"></i>","action":"location.href = location.href.includes('print-pdf') ? `${location.protocol}//${location.host}${location.pathname}${location.hash}` : `${location.protocol}//${location.host}${location.pathname}?print-pdf${location.hash}`;"},{"id":"toggle-notes","title":"Notizen (c)","icon":"<i class=\"fa-solid fa-pen\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleNotesCanvas(event);"},{"id":"toggle-chalkboard","title":"Tafel (b)","icon":"<i class=\"fa-solid fa-person-chalkboard\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleChalkboard(event);"},{"id":"toggle-fragments","title":"Animationen","icon":"<i class=\"fa-solid fa-bolt\" style=\"color:#8398dd\"></i>","action":"debugger; Reveal.getConfig().fragments = !Reveal.getConfig().fragments; document.querySelector('.fa-bolt').style.color = Reveal.getConfig().fragments ?  '#dfe169' : '#8398dd'; if (Reveal.getConfig().fragments) {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]');for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('was_anim')) {elements[i].innerHTML = elements[i].innerHTML_prev;}}} else {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]'); for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('class: fragment')) {elements[i].innerHTML = `<div><img src='${elements[i].getAttribute('data-src')}' class='was_anim'></div>`;}}fragments = document.querySelectorAll('.fragment');for (let i = 0; i < fragments.length; i++) {fragments[i].classList.add('visible');}}"},{"id":"intro-sound","title":"Play intro","icon":"<i class=\"fa-solid fa-music\" style=\"color:#8398dd\"></i>","action":"new Audio('images/appear.mp3').play()"}]},
+'customcontrols': {"controls":[{"id":"home","title":"Startseite","icon":"<i class=\"fa-solid fa-house\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}`, '_blank');"},{"id":"print-pdf","title":"Als PDF","icon":"<i class=\"fa-solid fa-file-pdf\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}${location.pathname}`.replace('index.html', `Vorlesung${location.pathname.split('/')[2]}.pdf`), '_blank');"},{"id":"print","title":"Drucken","icon":"<i class=\"fa-solid fa-print\" style=\"color:#8398dd\"></i>","action":"location.href = location.href.includes('print-pdf') ? `${location.protocol}//${location.host}${location.pathname}${location.hash}` : `${location.protocol}//${location.host}${location.pathname}?print-pdf${location.hash}`;"},{"id":"toggle-notes","title":"Notizen (c)","icon":"<i class=\"fa-solid fa-pen\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleNotesCanvas(event);"},{"id":"toggle-chalkboard","title":"Tafel (b)","icon":"<i class=\"fa-solid fa-person-chalkboard\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleChalkboard(event);"},{"id":"toggle-fragments","title":"Animationen","icon":"<i class=\"fa-solid fa-bolt\" style=\"color:#8398dd\"></i>","action":"Reveal.getConfig().fragments = !Reveal.getConfig().fragments; document.querySelector('.fa-bolt').style.color = Reveal.getConfig().fragments ?  '#dfe169' : '#8398dd'; if (Reveal.getConfig().fragments) {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]');for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('was_anim')) {elements[i].innerHTML = elements[i].innerHTML_prev;}}} else {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]'); for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('class: fragment')) {elements[i].innerHTML = `<div><img src='${elements[i].getAttribute('data-src')}' class='was_anim'></div>`;}}fragments = document.querySelectorAll('.fragment');for (let i = 0; i < fragments.length; i++) {fragments[i].classList.add('visible');}}"},{"id":"intro-sound","title":"Play intro","icon":"<i class=\"fa-solid fa-music\" style=\"color:#8398dd\"></i>","action":"new Audio('images/appear.mp3').play()"},{"id":"zoom","title":"Zoom","icon":"<i class=\"fa-solid fa-magnifying-glass\" style=\"color:#8398dd\"></i>","action":"disable_slide_nav = typeof disable_slide_nav === 'undefined' || !disable_slide_nav; Reveal.configure({touch: !disable_slide_nav}); document.querySelector('.fa-magnifying-glass').style.color = disable_slide_nav ?  '#dfe169' : '#8398dd';"}]},
 'smaller': false,
  
         // Display controls in the bottom right corner
-        controls: false,
+        controls: true,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
@@ -1524,6 +1598,16 @@ plt.savefig('images/paradoxia_slope_paradoxiker.png', bbox_inches='tight')
             document.querySelector('div.reveal').style.backgroundColor = 'white'
           }
         });
+
+        // We smuglle this one here in to disable controls on non-mobile devises
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (!isMobile) {
+          Reveal.configure({controls: false});
+          document.getElementById('zoom').style.display = 'none';
+        } else {
+          document.getElementById('print').style.display = 'none';
+          document.getElementById('print-pdf').style.display = 'none';
+        }
       }
       // identifystring
 

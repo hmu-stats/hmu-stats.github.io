@@ -7,7 +7,7 @@
    viewBox="0 0 327.79214 65.016877"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4-dev (1:1.2.0-alpha1+devel+202308081135+c38551a022)"
+   inkscape:version="1.4-dev (1:1.4.0-dev+202401190506+b37f861054)"
    sodipodi:docname="patsy_simple.svg"
    inkscape:export-filename="patsy_simple.png"
    inkscape:export-xdpi="200"
@@ -16,7 +16,7 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:ns5="http://www.iki.fi/pav/software/textext/">
+   xmlns:ns2="http://www.iki.fi/pav/software/textext/">
   <sodipodi:namedview
      id="namedview1"
      pagecolor="#ffffff"
@@ -28,14 +28,14 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="2.072124"
-     inkscape:cx="311.27481"
+     inkscape:cx="852.0243"
      inkscape:cy="134.88575"
      inkscape:window-width="2560"
-     inkscape:window-height="1367"
+     inkscape:window-height="1368"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="svg1" />
   <defs
      id="defs1">
     <marker
@@ -85,15 +85,15 @@
          id="tspan22">y-Achsenabschnitt</tspan></text>
     <g
        transform="matrix(1.2128,0,0,1.21307,206.30144,73.175915)"
-       ns5:version="1.9.0"
-       ns5:texconverter="xelatex"
-       ns5:pdfconverter="inkscape"
-       ns5:text="$\\longleftrightarrow$"
-       ns5:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
-       ns5:scale="3.43824579297851"
-       ns5:alignment="middle center"
-       ns5:stroke-to-path="0"
-       ns5:jacobian_sqrt="1.2129349924872315"
+       ns2:version="1.9.0"
+       ns2:texconverter="xelatex"
+       ns2:pdfconverter="inkscape"
+       ns2:text="$\\longleftrightarrow$"
+       ns2:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
+       ns2:scale="3.43824579297851"
+       ns2:alignment="middle center"
+       ns2:stroke-to-path="0"
+       ns2:jacobian_sqrt="1.2129349924872315"
        style="stroke-width:0"
        id="g43">
       <defs
@@ -241,16 +241,16 @@
        id="path74" />
     <g
        transform="matrix(1.2128,0,0,1.21307,52.8821,71.7455)"
-       ns5:version="1.9.0"
-       ns5:texconverter="xelatex"
-       ns5:pdfconverter="inkscape"
-       ns5:text="$DV \\sim 1 + IV1 + IV2 + ...$"
-       ns5:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
-       ns5:scale="3.43824579297851"
-       ns5:alignment="middle center"
-       ns5:stroke-to-path="0"
-       ns5:inkscapeversion="1.4-dev"
-       ns5:jacobian_sqrt="1.2129349924872315"
+       ns2:version="1.9.0"
+       ns2:texconverter="xelatex"
+       ns2:pdfconverter="inkscape"
+       ns2:text="$DV \\sim 1 + IV1 + IV2 + ...$"
+       ns2:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
+       ns2:scale="3.43824579297851"
+       ns2:alignment="middle center"
+       ns2:stroke-to-path="0"
+       ns2:inkscapeversion="1.4-dev"
+       ns2:jacobian_sqrt="1.2129349924872315"
        style="stroke-width:0"
        id="g21">
       <defs
@@ -568,16 +568,16 @@
     </g>
     <g
        transform="matrix(1.2128,0,0,1.21307,237.48356,69.663)"
-       ns5:version="1.9.0"
-       ns5:texconverter="xelatex"
-       ns5:pdfconverter="inkscape"
-       ns5:text="$\\hat{Y} = b_0 + b_1X_1 + b_2X_2 + ...$"
-       ns5:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
-       ns5:scale="3.43824579297851"
-       ns5:alignment="middle center"
-       ns5:stroke-to-path="0"
-       ns5:inkscapeversion="1.4-dev"
-       ns5:jacobian_sqrt="1.2129349924872315"
+       ns2:version="1.9.0"
+       ns2:texconverter="xelatex"
+       ns2:pdfconverter="inkscape"
+       ns2:text="$\\hat{Y} = b_0 + b_1X_1 + b_2X_2 + ...$"
+       ns2:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
+       ns2:scale="3.43824579297851"
+       ns2:alignment="middle center"
+       ns2:stroke-to-path="0"
+       ns2:inkscapeversion="1.4-dev"
+       ns2:jacobian_sqrt="1.2129349924872315"
        style="stroke-width:0"
        id="g71">
       <defs
