@@ -1129,8 +1129,8 @@ plt.savefig('images/pearson_outlier.png', bbox_inches="tight")
 <p><img data-src="images/pearson_outlier.png" height="350"></p>
 </div>
 <ul>
-<li class="fragment">Ein einziger Ausreißer verändert die Pearson-Korrelation im Beispiel von <span class="math inline">\(\hat{\rho}=-0{,}046\)</span> nach <span class="math inline">\(\hat{\rho}=0{,}410\)</span>.</li>
-<li class="fragment">Demgegnüber ist die Spearman-Korrelation “robuster” gegenüber dem Ausreißer — sie verändert sich “lediglich” von <span class="math inline">\(\hat{\rho}=-0{,}030\)</span> nach <span class="math inline">\(\hat{\rho}_s=0{,}110\)</span>.</li>
+<li class="fragment">Ein einziger Ausreißer verändert die Pearson-Korrelation im Beispiel von <span class="math inline">\(\hat{\rho}=-0.046\)</span> nach <span class="math inline">\(\hat{\rho}=0.410\)</span>.</li>
+<li class="fragment">Demgegnüber ist die Spearman-Korrelation “robuster” gegenüber dem Ausreißer — sie verändert sich “lediglich” von <span class="math inline">\(\hat{\rho}_s=-0.030\)</span> nach <span class="math inline">\(\hat{\rho}_s=0.110\)</span>.</li>
 <li class="fragment">Intution: während der <em>Wert</em> es Ausreißers deutlich über dem zweithöchsten Y-Wert liegt, ist der <em>Rang</em> nur um 1 höher.</li>
 </ul>
 </section>
@@ -1145,17 +1145,21 @@ plt.savefig('images/pearson_outlier.png', bbox_inches="tight")
 <div class="fragment">
 <p><img data-src="images/vierfeldertafel.png"></p>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:55%;">
+<div style="margin-top: -25px">
 <ul>
-<li class="fragment">In die vier Felder werden die Häufigkeiten der jeweiligen Variablen-Kombination eingetragen.</li>
+<li class="fragment">In die vier Felder werden die absoluten Häufigkeiten (idR Anzahl Versuchspersonen) der jeweiligen Variablen-Kombination eingetragen.</li>
 <li class="fragment">Optional: In der letzten Zeile/Spalte die Summe.</li>
 <li class="fragment"><span class="math inline">\(a+b+c+d\)</span> muss sich zur Stichprobengröße <span class="math inline">\(n\)</span> addieren.</li>
 </ul>
 </div>
 </div>
+</div>
+<div style="margin-top: -15px">
 <ul>
 <li class="fragment">Frage: hängen Raucherstatus und Geschlecht zusammen? Die Antwort liefert der <span style=" color: navy !important;"><strong>Phi-Koeffizient</strong></span>:</li>
 </ul>
+</div>
 <div class="fragment">
 <p><span class="math display">\[
 \small{
@@ -1174,7 +1178,7 @@ plt.savefig('images/pearson_outlier.png', bbox_inches="tight")
 <section class="slide level2">
 <h2>Der Phi-Koeffizient</h2>
 <ul>
-<li class="fragment">Der Phi-Koeffizient ist identisch mit der Pearson-Korrelation und der Spearman-Korrelation, wenn beide dichotomen Variablen mit 0 und 1 kodiert werden.</li>
+<li class="fragment">Der Phi-Koeffizient ist identisch mit der Pearson-Korrelation und der Spearman-Korrelation, wenn jeweils beide dichotomen Variablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> mit den Werten 0/1 kodiert werden.</li>
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
