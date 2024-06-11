@@ -1222,7 +1222,7 @@ plt.savefig('images/paradoxia_cohensd.png', bbox_inches='tight')
 <section id="pooled_variance" class="slide level2">
 <h2><span style=" color: darkred !important;">Gepoolte Varianz</span></h2>
 <ul>
-<li class="fragment">Bei unabhängigen Messungen ist es nicht (wie in Fall 3) möglich, die Einzelmesswerte <span class="math inline">\(x_{A,i}\)</span> und <span class="math inline">\(x_{B,i}\)</span> direkt voneinander abzuziehen. Nicht zuletzt wäre es völlig unklar, welche Versuchsperson aus A jeweils von welcher Versuchsperson aus B subtrahiert wird.</li>
+<li class="fragment">Bei unabhängigen Messungen ist es nicht (wie in Fall 2) möglich, die Einzelmesswerte <span class="math inline">\(x_{A,i}\)</span> und <span class="math inline">\(x_{B,i}\)</span> direkt voneinander abzuziehen. Nicht zuletzt wäre es völlig unklar, welche Versuchsperson aus A jeweils von welcher Versuchsperson aus B subtrahiert wird.</li>
 <li class="fragment">Damit kann auch nicht die Varianz der individuellen Effekte der Versuchspersonen berechnet werden (“Differenzenvarianz”), sondern lediglich eine <strong>gepoolte Varianz</strong> <span class="math inline">\(\hat{\sigma}^2_\text{pooled}\)</span>.</li>
 <li class="fragment">Die Annahme ist dabei, dass beide Gruppen eine ähnliche Streuung haben, z.B. weil sie randomisiert aus derselben Population gezogen wurden und man nicht erwartet, dass die Gruppenzugehörigkeit die Varianz beeinflusst.</li>
 <li class="fragment">Der Name leitet sich von der Vorstellung ab, die Datenpunkte beider Gruppen in einen gemeinsamen “Pool” zu werfen, und dann die Varianz auf allen Daten zu berechnen.</li>
@@ -1314,7 +1314,7 @@ X_\text{pooled} = [X'_A; X'_B]
 <!----------------->
 <aside></aside></section>
 <section class="slide level2">
-<h2><span style="font-size: 37px; color: darkred">Effektstärkenvergleich zwischen abhängigen und unabhängigen Designs</span></h2>
+<h2><span style="font-size: 36px; color: darkred">Effektstärkenvergleich zwischen abhängigen und unabhängigen Designs</span></h2>
 <p><strong>Problem:</strong> häufig sollen Effektstärken zwischen Designs mit <em>abhängigen</em> und <em>unabhängigen</em> Messungen verglichen werden — jedoch lässt sich in Fall 2 (unabhängige Messungen) keine Differenzenvarianz berechnen.</p>
 <ul>
 <li class="fragment">In diesem Fall wird manchmal folgende Variante von Cohen’s d bei abhängigen Messungen verwendet, die auf der <strong>gepoolten Varianz</strong> basiert:</li>
@@ -1330,7 +1330,7 @@ d = \frac{\bar{x}_A - \bar{x}_B}{\hat{\sigma}_\text{pooled}}\quad\text{mit}\quad
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style="font-size: 37px; color: darkred">Effektstärkenvergleich zwischen abhängigen und unabhängigen Designs</span></h2>
+<h2><span style="font-size: 36px; color: darkred">Effektstärkenvergleich zwischen abhängigen und unabhängigen Designs</span></h2>
 <ul>
 <li class="fragment">Laut einer aktuellen Forschungsarbeit<a href="#/footnotes" class="footnote-ref" id="fnref11" role="doc-noteref" data-footnote-href="#/fn11" onclick=""><sup>11</sup></a> sind die Werte von Cohen’s d auf Basis der gepoolten Varianz nicht exakt vergleichbar zwischen abhängigen und unabhängigen Messungen (auch dann, wenn die Varianzen ähnlich sind).</li>
 <li class="fragment">Die Arbeit bietet dafür folgende Modifikation von Cohen’s d für abhängige Messungen an:</li>
@@ -1354,7 +1354,7 @@ d = \sqrt{\frac{2(1-r)}{n}}\cdot t'_\nu(\lambda)\quad\text{mit}\quad \lambda = \
 <h2><span style="color: darkred; font-size: 37px">Umrechnung von Cohen’s <span class="math inline">\(d\)</span> zu <span class="math inline">\(\hat{\rho}\)</span>: ein Nachtrag</span></h2>
 <ul>
 <li class="fragment">Wie erwähnt, impliziert die Formel <span class="math inline">\(d=\frac{2\hat{\rho}}{\sqrt{1-\hat{\rho}^2}}\)</span> eigentlich, dass eine der beiden Variablen als <em>unabhängige Variable</em> festgelegt wurde. Cohen’s <span class="math inline">\(d\)</span> bemisst dabei die Effektstärke in der Variablen <span class="math inline">\(Y\)</span>, die mit einer Erhöhung der unabhängigen Variablen <span class="math inline">\(X\)</span> um zwei Standardabweichungen <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}\)</span> verbunden ist.</li>
-<li class="fragment">Wenig bekannt ist, dass die angebene Formel lediglich ein Spezialfall einer allgemeineren Formel ist<a href="#/footnotes" class="footnote-ref" id="fnref13" role="doc-noteref" data-footnote-href="#/fn13" onclick=""><sup>13</sup></a>:</li>
+<li class="fragment">Tatsächlich ist die angebene Formel lediglich ein Spezialfall folgender allgemeiner Formel<a href="#/footnotes" class="footnote-ref" id="fnref13" role="doc-noteref" data-footnote-href="#/fn13" onclick=""><sup>13</sup></a>:</li>
 </ul>
 <div style="margin-top: -35px">
 <p><span class="math display">\[
