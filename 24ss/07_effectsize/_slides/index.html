@@ -386,15 +386,21 @@ setup:
 <h2>Effektstärke</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
+<div>
 <ul>
-<li class="fragment">In psycholgischer Forschung untersuchen wir in den meisten Fällen die Auswirkung von Variablen <span class="math inline">\(X_i\)</span> auf Variablen <span class="math inline">\(Y_i\)</span>.</li>
-<li class="fragment">Diese Auswirkung ist entweder als <strong>Unterschied</strong> (z.B. wenn <span class="math inline">\(X\)</span> die Gruppenzugehörigkeit angibt) oder als <strong>Zusammenhang</strong> (wenn <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> metrische Variablen mit einer vermuteten kausalen Wechselwirkung sind) messbar — man spricht auch von <span style=" color: navy !important;"><strong>Effekten</strong></span>.</li>
+<li>In psycholgischer Forschung untersuchen wir in den meisten Fällen die Auswirkung von Variablen <span class="math inline">\(X_i\)</span> auf Variablen <span class="math inline">\(Y_i\)</span>.</li>
+<li>Diese Auswirkung ist entweder als <strong>Unterschied</strong> (z.B. wenn <span class="math inline">\(X\)</span> die Gruppenzugehörigkeit angibt) oder als <strong>Zusammenhang</strong> (wenn <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> metrische Variablen mit einer vermuteten kausalen Wechselwirkung sind) messbar — man spricht auch von <span style=" color: navy !important;"><strong>Effekten</strong></span>.</li>
+</ul>
+</div>
+<div style="margin-top: -12px">
+<ul>
 <li class="fragment">Wie kann die Aussagekraft bzw. Bedeutsamkeit von Effekten bestimmt und kommuniziert werden?
 <ul>
 <li class="fragment">⇒ <strong>statistische Signifikanz</strong> (ab Vorlesung 10): kann ein Effekt <em>allein durch Zufall erklärt werden</em>?</li>
 <li class="fragment">⇒ <strong>praktische Signifikanz</strong> (Effektstärken): ist die Stärke des Effektes <em>in der Praxis bedeutsam</em>?</li>
 </ul></li>
 </ul>
+</div>
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -411,11 +417,13 @@ setup:
 </section>
 <section class="slide level2">
 <h2>Unstandardisierte Effektstärken</h2>
+<div>
 <ul>
-<li class="fragment">Mittelwertsdifferenzen, Kovarianzen und Regressionskoeffizienten sind <span style=" color: navy !important;"><strong>unstandardisierte Effektstärken</strong></span>, weil sie in den Rohwerten der Messung vorliegen.</li>
+<li>Mittelwertsdifferenzen, Kovarianzen und Regressionskoeffizienten sind <span style=" color: navy !important;"><strong>unstandardisierte Effektstärken</strong></span>, weil sie in den Rohwerten der Messung vorliegen.</li>
 </ul>
+</div>
 <!---  Example --->
-<div class="example">
+<div class="example fragment">
 <table>
 <colgroup>
 <col style="width: 10%">
@@ -433,7 +441,7 @@ setup:
 
 </div>
 <!---  Example --->
-<div class="example">
+<div class="example fragment">
 <table>
 <colgroup>
 <col style="width: 10%">
@@ -459,8 +467,13 @@ setup:
 <aside></aside></section>
 <section class="slide level2">
 <h2>Standardisierte Effektstärken</h2>
+<div>
 <ul>
-<li class="fragment">Um Effektstärken unabhängig von der verwendeten Skala zu vergleichen, werden Effektstärken <strong>standardisiert</strong>.</li>
+<li>Um Effektstärken unabhängig von der verwendeten Skala zu vergleichen, werden Effektstärken <strong>standardisiert</strong>.</li>
+</ul>
+</div>
+<div style="margin-top: -12px">
+<ul>
 <li class="fragment">Die Transformation der <strong>Standardisierung</strong> haben wir bereits bei Zufallsvariablen kennengelernt: <em>Teilen durch die Standardabweichung</em>.
 <ul>
 <li class="fragment">Dieser Ansatz lässt sich analog auch auf Effekte beziehen</li>
@@ -475,6 +488,7 @@ setup:
 <li class="fragment">Vergleichbarmachung von Effekten zwischen <em>verschiedenen Studien</em></li>
 </ul></li>
 </ul>
+</div>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
@@ -483,18 +497,26 @@ setup:
 </section>
 <section class="slide level2">
 <h2>Cohen’s d</h2>
+<div>
 <ul>
-<li class="fragment">Es werden drei Fälle von Mittelwertunterschieden unterschieden:
+<li>Es werden drei Fälle von Mittelwertunterschieden unterschieden:
 <ul>
-<li class="fragment">Fall 1: eine Stichprobe + Einzelmessung: Differenz zwischen dem Mittelwert einer Messung und einem Referenzwert (z.B. IQ=100).</li>
-<li class="fragment">Fall 2: eine Stichprobe + abhängige Messungen: Differenz der Mittelwerte zweier Messungen in derselben Gruppe (z.B. IQ morgens und IQ abends).</li>
-<li class="fragment">Fall 3: zwei Stichproben + unabhängige Messungen: Differenz der Gruppenmittelwerte<br>(z.B. IQ in einer blonden versus brünetten Gruppe).</li>
+<li>Fall 1: eine Stichprobe + Einzelmessung: Differenz zwischen dem Mittelwert einer Messung und einem Referenzwert (z.B. IQ=100).</li>
+<li>Fall 2: eine Stichprobe + abhängige Messungen: Differenz der Mittelwerte zweier Messungen in derselben Gruppe (z.B. IQ morgens und IQ abends).</li>
+<li>Fall 3: zwei Stichproben + unabhängige Messungen: Differenz der Gruppenmittelwerte<br>(z.B. IQ in einer blonden versus brünetten Gruppe).</li>
 </ul></li>
+</ul>
+</div>
+<div style="margin-top: -12px">
+<ul>
 <li class="fragment">Die standardisierte Effektstärke für alle drei Fälle eines Mittelwertunterschieds berechnet sich als</li>
 </ul>
+</div>
+<div class="fragment">
 <p><span class="math display">\[
 d = \frac{\text{Mittelwertdifferenz}}{\text{Standardabweichung}}
 \]</span></p>
+</div>
 <ul>
 <li class="fragment">Die Bezeichnung <span class="math inline">\(d\)</span> für standardisierte Mittelwertunterschiede stammt von dem Statistiker Jacob Cohen — häufig wird daher auch von <span style=" color: navy !important;"><strong>Cohen’s d</strong></span> gesprochen.</li>
 <li class="fragment">Während die Mittelwertdifferenz eindeutig ist, ist die weniger triviale Frage: Standardabweichung <em>von was</em>?</li>
@@ -534,7 +556,7 @@ d = \frac{\text{Mittelwertdifferenz}}{\text{Standardabweichung}}
 <li class="fragment">Die Formel für die Standardabweichung ist die bekannte Formel mit Besselkorrketur:</li>
 </ul>
 </div>
-<div style="margin-top:-25px">
+<div class="fragment" style="margin-top:-25px">
 <p><span class="math display">\[
 \hat{\sigma} = \sqrt{\frac{\sum\left(x_i-\bar{x}\right)^2}{n\color{darkgreen}{-1}}}
 \]</span></p>
@@ -572,7 +594,7 @@ d = \frac{\bar{x}_A - \bar{x}_B}{\hat{\sigma}_\Delta}
 <ul>
 <li class="fragment"><span class="math inline">\(\hat{\sigma}_{\Delta}\)</span> ist die Standardabweichung der Differenzenvariable <span class="math inline">\(\Delta X=X_A-X_B\)</span>:</li>
 </ul>
-<div style="margin-top: -25px">
+<div class="fragment" style="margin-top: -25px">
 <p><span class="math display">\[
 \hat{\sigma}_{\Delta} = \sqrt{\frac{\sum\left(\Delta x_i-\Delta\bar{x}\right)^2}{n-1}} \qquad\text{und}\quad \Delta x_i = x^{(A)}_i - x^{(B)}_i
 \]</span></p>
@@ -583,9 +605,11 @@ d = \frac{\bar{x}_A - \bar{x}_B}{\hat{\sigma}_\Delta}
 </section>
 <section class="slide level2">
 <h2>Fall 2: andere Darstellung der Differenzenvarianz</h2>
+<div>
 <ul>
-<li class="fragment">Mit einigen mathematischen Tricks lässt sich zeigen, dass die Standardabweichung der Differenzwerte auch wie folgt dargestellt werden kann:</li>
+<li>Mit einigen mathematischen Tricks lässt sich zeigen, dass die Standardabweichung der Differenzwerte auch wie folgt dargestellt werden kann:</li>
 </ul>
+</div>
 <div style="margin-top: -5px">
 <p><span class="math display">\[
 \hat{\sigma}_\Delta = \sqrt{\hat{\sigma}^2_A + \hat{\sigma}^2_B - 2\,\hat{Cov}(X_A,X_B)} = \sqrt{\hat{\sigma}^2_A + \hat{\sigma}^2_B - 2\,\hat{\rho}\hat{\sigma}_A\hat{\sigma}_B}
@@ -688,22 +712,26 @@ plt.savefig('images/pooled_variance_dependent.png', bbox_inches='tight')
 </div>
 </div>
 </div>
+<div class="fragment">
 <p><span class="math display">\[
 \hat{\sigma}_\text{pooled} = \sqrt{\frac{(n_A-1)\hat{\sigma}_A^2 + (n_B-1)\hat{\sigma}_B^2}{n_A+n_B-2}}\qquad\quad\text{Falls }n_A=n_B=n:\;\; \hat{\sigma}_\text{pooled} = \sqrt{\frac{\hat{\sigma}_A^2 + \hat{\sigma}_B^2}{2}}
 \]</span></p>
+</div>
 </section>
 <section class="slide level2">
 <h2>Fall 3: zwei Stichproben + unabhängige Messungen</h2>
+<div>
 <ul>
-<li class="fragment">Streng genommen gilt die angebene Formel für Cohen’s bei unabhängigen Stichproben nur, wenn die Gruppenvarianzen <span class="math inline">\(\hat{\sigma}_A\)</span> und <span class="math inline">\(\hat{\sigma}_B\)</span> ähnlich sind.
+<li>Streng genommen gilt die angebene Formel für Cohen’s bei unabhängigen Stichproben nur, wenn die Gruppenvarianzen <span class="math inline">\(\hat{\sigma}_A\)</span> und <span class="math inline">\(\hat{\sigma}_B\)</span> ähnlich sind.
 <ul>
-<li class="fragment">Gängige Faustregel: Varianzen sollen sich höchstens um Faktor 2 unterscheiden: <span class="math inline">\(0.5&lt;\frac{\sigma^2_A}{\sigma^2_B}&lt;2\)</span></li>
+<li>Gängige Faustregel: Varianzen sollen sich höchstens um Faktor 2 unterscheiden: <span class="math inline">\(0.5&lt;\frac{\sigma^2_A}{\sigma^2_B}&lt;2\)</span></li>
 </ul></li>
-<li class="fragment">Da sich jedoch bislang kein Verfahren für den den Gruppenvergleich mit unähnlichen Varianzen etabliert hat, behandeln wir diesen Fall im Rahmen von Statistik 1 nicht.
+<li>Da sich jedoch bislang kein Verfahren für den den Gruppenvergleich mit unähnlichen Varianzen etabliert hat, behandeln wir diesen Fall im Rahmen von Statistik 1 nicht.
 <ul>
-<li class="fragment">Bei Interesse finden Sie eine mögliche Formel für diesen Fall im Bonuscontent <a href="#/d_unequal_variance" style="color: darkred">Cohen’s d bei unterschiedlichen Gruppenvarianzen</a>.</li>
+<li>Bei Interesse finden Sie eine mögliche Formel für diesen Fall im Bonuscontent <a href="#/d_unequal_variance" style="color: darkred">Cohen’s d bei unterschiedlichen Gruppenvarianzen</a>.</li>
 </ul></li>
 </ul>
+</div>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
@@ -713,17 +741,49 @@ plt.savefig('images/pooled_variance_dependent.png', bbox_inches='tight')
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Interpretation von Cohen’s d</h2>
+<h2>Interpretation von Cohen’s d: Vorzeichen</h2>
+<div>
 <ul>
-<li class="fragment">Die Werte von Cohen’s <span class="math inline">\(d\)</span> reichen von <span class="math inline">\(-\infty\)</span> bis <span class="math inline">\(+\infty\)</span>. Negative Werte sind möglich, da das Vorzeichen davon abhängt, welcher Mittelwert von welchem abgezogen wird.
+<li>Die Werte von Cohen’s <span class="math inline">\(d\)</span> reichen von <span class="math inline">\(-\infty\)</span> bis <span class="math inline">\(+\infty\)</span>. Negative Werte sind möglich, da das Vorzeichen davon abhängt, ob bei der Mittewertdifferenz im Zähler Mittelwert A von Mittelwert B abgezogen wird, oder umgekehrt.
 <ul>
-<li class="fragment">Es ist Konvention, <span class="math inline">\(d\)</span> so zu berechnen, dass <span class="math inline">\(d\)</span> positiv ausfällt, falls der Effekt in die hypothesierte Richtung geht.</li>
-<li class="fragment">Die Interpretation der Effektstärke macht sich aber am absoluten Wert <span class="math inline">\(|d|\)</span> fest: wenn <span class="math inline">\(d=-0.2\)</span>, dann hat der Effekt eine Stärke von <span class="math inline">\(d=0.2\)</span>.</li>
+<li>Für die Interpretation der Effektstärke ist ausschlaggebend, was mit “Effekt” gemeint ist “wie rum” die Mittelwertdifferenz gebildet wurde.</li>
+<li>Es ist prinzipiell eine sinnvolle Konvention, <span class="math inline">\(d\)</span> so zu berechnen, dass <span class="math inline">\(d\)</span> positiv ausfällt, falls der Effekt in die hypothesierte Richtung geht.</li>
 </ul></li>
-<li class="fragment">Durch die Standardisierung mit der Standardabweichung gilt umgekehrt, dass Cohen’s d ausdrückt, <strong>um wie viel Standardabweichungen ein Effekt von einem Nulleffekt abweicht</strong>. Diese Interpretation ist am intuitivsten für den Fall einer <em>Einzelmessung mit Referenzwert</em>:</li>
 </ul>
+</div>
 <!---  Example --->
-<div class="example">
+<div class="example fragment">
+<div class="columns">
+<div class="column" style="width:10%;">
+<div style="margin-top: 10px">
+<p><img data-src="images/example.png" height="70"></p>
+</div>
+</div><div class="column" style="width:90%;">
+<p>Eine Studie untersucht den “Albtraum-Effekt”, also die Hypothese, dass Albträume die Konzentrationsfähigkeit <span class="math inline">\(X\)</span> am nächsten Tag in Mitleidenschaft ziehen. Es zeigt sich, dass</p>
+<p><span class="math display">\[
+d = \frac{\bar{x}_\text{Albtraum} - \bar{x}_\text{Keine Albtraum}}{\hat{\sigma}_\Delta} = -0.8
+\]</span></p>
+<p>Das Ergebnis zeigt, dass die Konzentrationsfähikeit tatsächlich geringer nach Albtraum-Nächten ist. Cohen’s d ist hier negativ, allerdings entspricht das Vorzeichen der Richtung der Hypothese und der “Albtraum-Effekt” würde als ein starker Effekt entsprechend <span class="math inline">\(d=0.8\)</span> gewertet werden (siehe übernächste Folie).</p>
+<p>Hier wäre es ggf. sinnvoll, die Mittelwertdifferenz direkt so zu bilden, dass <span class="math inline">\(d\)</span> positiv ist, wenn die Hypothese zutrifft.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Interpretation von Cohen’s d: Magnitude / Stärke</h2>
+<div>
+<ul>
+<li>Cohen’s d drückt aus, <strong>um wie viel Standardabweichungen ein Effekt von einem Nulleffekt abweicht</strong>.</li>
+<li>Auch hier ist die Frage “Standardabweichungen von <em>Was</em>?”</li>
+</ul>
+</div>
+<div style="margin-top: -12px">
+<ul>
+<li class="fragment">Die Interpretation ist am intuitivsten für den Fall einer <em>Einzelmessung mit Referenzwert</em>:</li>
+</ul>
+</div>
+<!---  Example --->
+<div class="fragment example">
 <div class="columns">
 <div class="column" style="width:10%;">
 <div style="margin-top: 10px">
@@ -735,17 +795,20 @@ plt.savefig('images/pooled_variance_dependent.png', bbox_inches='tight')
 </div>
 </div>
 </div>
+<div style="margin-top: 25px">
 <ul>
-<li class="fragment">Die Interpretation bei mehreren Bedingungen/Gruppen ist ähnlich, jedoch ist eine präzises In-Worte-Fassen aufgrund der komplexeren Standardabweichungen (<span class="math inline">\(\hat{\sigma}_{\Delta}\)</span>, <span class="math inline">\(\hat{\sigma}_\text{pooled}\)</span>) nicht so einfach möglich.</li>
+<li class="fragment">Die Interpretation der Effektstärke bei Mittelwertdifferenzen <em>zweier</em> abhängiger oder unabhängiger Messungen ist im Prinzip identisch, jedoch ist die Frage “Standardabweichungen von <em>Was</em>?” weniger intuitiv zu beantworten (→ <span class="math inline">\(\hat{\sigma}_{\Delta}\)</span>, <span class="math inline">\(\hat{\sigma}_\text{pooled}\)</span>).</li>
 </ul>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
 </section>
 <section class="slide level2">
 <h2>Interpretation von Effektstärken</h2>
+<div>
 <ul>
-<li class="fragment">Um Effektstärken besser einordnen und kommunizieren zu können, hat Jacob Cohen folgende Unterteilung vorgeschlagen:</li>
+<li>Um Effektstärken besser einordnen und kommunizieren zu können, hat Jacob Cohen folgende Unterteilung vorgeschlagen:</li>
 </ul>
 <div style="margin-top: -25px">
 <!---  Table --->
@@ -786,10 +849,13 @@ plt.savefig('images/pooled_variance_dependent.png', bbox_inches='tight')
 </tbody>
 </table>
 </div>
+</div>
 <ul>
 <li class="fragment">Zugleich fügt aber Cohen selbst folgende Qualifizierung an:</li>
 </ul>
+<div class="fragment">
 <p><img data-src="images/cohen_effectsizes.png" height="140"></p>
+</div>
 <ul>
 <li class="fragment">Effektstärken sollten also idealerweise in ihrem jeweiligen Kontext interpretiert werden.</li>
 <li class="fragment"><strong>Beispiel:</strong> Effektstärken bezüglich der Veränderung des Körpergewichts durch Diäten sind erwartbar größer, als Veränderungen bei eher stabilen Merkmalen wie Persönlichkeitsfacetten. ⇒ Ein d-Wert der einer vergleichsweise geringen Veränderung des Körpergewichts entspricht, würde vielleicht in der Persönlichkeitsforschung als starker Effekt gelten.</li>
@@ -800,21 +866,25 @@ plt.savefig('images/pooled_variance_dependent.png', bbox_inches='tight')
 </section>
 <section class="slide level2">
 <h2>Interpretation von Cohen’s d</h2>
+<div>
 <ul>
-<li class="fragment">Um zu beurteilen, was als kleine / mittlere / starke Effekte in einem spezifischen Kontext gilt, konsultiert man prinzipiell die entsprechende Fachliteratur nach typischen Referenzeffektstärken.</li>
-<li class="fragment">Problem: es gibt gute Evidenz, dass <em>publizierte Effekte</em> die <em>wahren Effekte</em><br>überschätzen (<strong>Publikationsbias</strong>) ⇒ führt zu falschen Maßstäben</li>
+<li>Um zu beurteilen, was als kleine / mittlere / starke Effekte in einem spezifischen Kontext gilt, konsultiert man prinzipiell die entsprechende Fachliteratur nach typischen Referenzeffektstärken.</li>
+<li>Problem: es gibt gute Evidenz, dass <em>publizierte Effekte</em> die <em>wahren Effekte</em><br>überschätzen (<strong>Publikationsbias</strong>) ⇒ führt zu falschen Maßstäben</li>
 </ul>
+</div>
 <div class="columns">
 <div class="column" style="width:70%;">
 <p><img data-src="images/effectsizes_prereg_schaefer.png" height="330"></p>
 </div><div class="column caption-style" style="width:30%;">
-<p>Die Abbildung zeigt, dass Effekte, bei denen Hypothesen und Analysen vorab registriert wurden (“with pre-registration”) deutlich geringere Effektstärken aufweisen, als Effekte “without pre-registration”. In der Abbildung ist zu beachten, dass die absolute und nicht die relative Häufigkeit aufgetragen ist, wodurch Studien ohne Preregistrierung — von denen es deutlich mehr gibt — visuell dominieren.<a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a></p>
+<p>Die Abbildung zeigt, dass die Verteilung von Effekten bei präregistrierten Studien (grün) deutlich zu geringeren Effektstärken hin verschoben ist, verglichen mit Studien ohne Präregistrierung (lila).<a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a></p>
 </div>
 </div>
 <p>⇒ Die Interpretation und Einordnung von Effektstärken ist ein nicht-triviales Problem, das viel “domain knowledge” erfordert. Dies gilt für standardisierte wie unstandardisierte Effektstärken.</p>
+<div>
 <ul>
-<li class="fragment">Faustregeln finden sich hier: <a href="https://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize" target="_blank">https://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize</a></li>
+<li>Faustregeln finden sich hier: <a href="https://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize" target="_blank">https://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize</a></li>
 </ul>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -858,12 +928,14 @@ plt.savefig('images/pooled_variance_dependent.png', bbox_inches='tight')
 </section>
 <section class="slide level2">
 <h2>Standardisierte oder unstandardisierte Effektstärken?</h2>
+<div>
 <ul>
-<li class="fragment">Die Frage ob Effektstärken in standardisierter oder unstandardisierter Form berichtet werden sollten wird durchaus kontrovers diskutiert<a href="#/footnotes" class="footnote-ref" id="fnref6" role="doc-noteref" data-footnote-href="#/fn6" onclick=""><sup>6</sup></a> <a href="#/footnotes" class="footnote-ref" id="fnref7" role="doc-noteref" data-footnote-href="#/fn7" onclick=""><sup>7</sup></a>.</li>
-<li class="fragment">Standardisierte Effektstärken ermöglichen eine bessere Vergleichbarkeit zwischen unterschied-lichen Skalen, gleichzeitig wird die intuitive Bedeutung von <em>Effektstärke</em> aber verwässert.</li>
+<li>Ob Effektstärken in standardisierter oder unstandardisierter Form berichtet werden sollten wird kontrovers diskutiert<a href="#/footnotes" class="footnote-ref" id="fnref6" role="doc-noteref" data-footnote-href="#/fn6" onclick=""><sup>6</sup></a> <a href="#/footnotes" class="footnote-ref" id="fnref7" role="doc-noteref" data-footnote-href="#/fn7" onclick=""><sup>7</sup></a>.</li>
+<li>Standardisierte Effektstärken ermöglichen eine bessere Vergleichbarkeit zwischen unterschied-lichen Skalen, gleichzeitig wird die intuitive Bedeutung von <em>Effektstärke</em> aber verwässert.</li>
 </ul>
+</div>
 <!---  Example --->
-<div class="example">
+<div class="fragment example">
 <div class="columns">
 <div class="column" style="width:10%;">
 <div style="margin-top: 10px">
@@ -875,7 +947,7 @@ plt.savefig('images/pooled_variance_dependent.png', bbox_inches='tight')
 </div>
 </div>
 <ul>
-<li class="fragment">Aus diesem Beispiel wird klar, dass die Effektstärke zum einen wenig intuitiv ist (in jedem Fall für Nicht-Wissenschaftler:innen), zum anderen ist nicht ersichtlich, ob die Viruslast nennenswert reduziert wurde oder ob der Rückgang eher klein war, aber die Standardabweichung in der Gruppe so gering, dass dennoch ein hoher <span class="math inline">\(d\)</span>-Wert erreicht wurde.</li>
+<li class="fragment">Auf Basis der standardisierten Effektstärke <span class="math inline">\(d=0.4\)</span> ist nicht ersichtlich, ob die Viruslast nennenswert reduziert wurde oder, ob der Rückgang tatsächlich eher klein war, aber die Standardabweichung in der Gruppe so gering, dass dennoch ein hoher <span class="math inline">\(d\)</span>-Wert erreicht wurde.</li>
 <li class="fragment">Darüber hinaus hängt die Standardabweichung einer Variable häufig mit eher nebensächlichen Details eines experimentellen Designs (within-subject vs.&nbsp;between-subject) oder einer Stichprobe (nur Psychologiestudierende oder heterogeneres Sample der Allgemeinbevölkerung?) zusammenhängt, die für die Effektstärke wenig relevant sind.</li>
 <li class="fragment">Aus diesen Gründen sollte für <strong>Effekte, die in interpretierbaren Einheiten vorliegen, immer (auch) die unstandardisierte Effektstärke</strong> angegeben werden (z.B. Notenstufen, Einkommen, IQ-Punkte, Größe- Gewichtsangaben, Zeitangaben).</li>
 </ul>
@@ -887,24 +959,29 @@ plt.savefig('images/pooled_variance_dependent.png', bbox_inches='tight')
 </section>
 <section class="slide level2">
 <h2>Korrelationskoeffizient</h2>
+<div>
 <ul>
-<li class="fragment">Im Fall von Zusammenhangsanalysen haben wir die standardisierte Effektstärke bereits kennengelernt: der <strong>Korrelationskoeffizient</strong> (<span class="math inline">\(\hat{\rho}\)</span>, <span class="math inline">\(\hat{\rho_s}\)</span>, <span class="math inline">\(\hat{\tau}\)</span>, <span class="math inline">\(\hat{\phi}\)</span>). Beispiel Pearson-Korrelation:</li>
+<li>Im Fall von Zusammenhangsanalysen haben wir bereits standardisierte Effektstärke kennengelernt — die <strong>Korrelationskoeffizienten</strong> (<span class="math inline">\(\hat{\rho}\)</span>, <span class="math inline">\(\hat{\rho_s}\)</span>, <span class="math inline">\(\hat{\tau}\)</span>, <span class="math inline">\(\hat{\phi}\)</span>).</li>
+<li>Beispiel Pearson-Korrelation:</li>
 </ul>
+</div>
 <p><span class="math display">\[
 \hat{\rho} = \frac{\hat{Cov}(X,Y)}{\sigma_{\mkern-2mu\scriptscriptstyle{X}} \sigma_{\mkern-2mu\scriptscriptstyle{Y}}}
 \]</span></p>
 <ul>
 <li class="fragment">Der Nenner <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}} \sigma_{\mkern-2mu\scriptscriptstyle{Y}}\)</span> stellt hier die Standardisierung dar.</li>
-<li class="fragment">Wir können sehen, dass <span class="math inline">\(\hat{\rho}\)</span> standardisiert ist, da es keine Einheit hat und eine vergleichbar ist zwischen verschiedenen Skalen und verschiedenen Variablen.</li>
 </ul>
-<div class="merke">
+<div class="vspace-large">
+
+</div>
+<div class="merke fragment">
 <div class="columns">
 <div class="column" style="width:5%;">
 <div style="margin-top: 18px">
 <p><img data-src="images/merke.png" height="55"></p>
 </div>
 </div><div class="column" style="width:95%;">
-<p>Alle Korrelationskoeffizienten (<span class="math inline">\(\hat{\rho}\)</span>, <span class="math inline">\(\hat{\rho_s}\)</span>, <span class="math inline">\(\hat{\tau}\)</span>, <span class="math inline">\(\hat{\phi}\)</span>) sind bereits Effektstärken.</p>
+<p>Alle Korrelationskoeffizienten (<span class="math inline">\(\hat{\rho}\)</span>, <span class="math inline">\(\hat{\rho_s}\)</span>, <span class="math inline">\(\hat{\tau}\)</span>, <span class="math inline">\(\hat{\phi}\)</span>) sind bereits standardisierte Effektstärken.</p>
 </div>
 </div>
 </div>
@@ -914,18 +991,22 @@ plt.savefig('images/pooled_variance_dependent.png', bbox_inches='tight')
 </section>
 <section class="slide level2">
 <h2>Zusammenhang von Cohen’s <span class="math inline">\(d\)</span> und Korrelationskoeffizient <span class="math inline">\(\hat{\rho}\)</span></h2>
+<div>
 <ul>
-<li class="fragment">Fassen Metaanalysen sowohl Studien zusammen, die Effekte als Korrelation berichten (Effektmaß <span class="math inline">\(\hat{\rho}\)</span>), als auch Studien, die Effekte als Mittelwertsunterschiede zwischen Bedingungen/Gruppen berichten (Effektmaß <span class="math inline">\(d\)</span>), entsteht die Notwendigkeit <span class="math inline">\(\hat{\rho}\)</span> und <span class="math inline">\(d\)</span> ineinander umzurechnen.</li>
-<li class="fragment">Folgende Formel findet häufig Anwendung:</li>
+<li>Fassen Metaanalysen sowohl Studien zusammen, die Effekte als Korrelation berichten (Effektmaß <span class="math inline">\(\hat{\rho}\)</span>), als auch Studien, die Effekte als Mittelwertsunterschiede zwischen Bedingungen/Gruppen berichten (Effektmaß <span class="math inline">\(d\)</span>), entsteht die Notwendigkeit <span class="math inline">\(\hat{\rho}\)</span> und <span class="math inline">\(d\)</span> ineinander umzurechnen.</li>
+<li>Folgende Formel findet häufig Anwendung:</li>
 </ul>
+</div>
 <div style="margin-top: -10px">
 <p><span class="math display">\[
 d=\frac{2\hat{\rho}}{\sqrt{1-\hat{\rho}^2}}
 \]</span></p>
 </div>
+<div>
 <ul>
-<li class="fragment">Nach dem Korrelationskoeffizient <span class="math inline">\(\hat{\rho}\)</span> aufgelöst:</li>
+<li>Nach dem Korrelationskoeffizient <span class="math inline">\(\hat{\rho}\)</span> aufgelöst:</li>
 </ul>
+</div>
 <div style="margin-top: -10px">
 <p><span class="math display">\[
 \hat{\rho} = \frac{d}{\sqrt{d^2+4}}
@@ -941,7 +1022,7 @@ d=\frac{2\hat{\rho}}{\sqrt{1-\hat{\rho}^2}}
 <p><img data-src="images/notabene2.png" height="65"></p>
 </div>
 </div><div class="column" style="width:94%;">
-<p>Aufgrund ihrer Einfachheit finden die obigen Formeln vielfach Anwendung in der Praxis. Wenig bekannt ist dabei, dass die Formeln implizit annehmen, dass einer der beiden Variablen der Korrelation als <em>unabhängige Variable</em> <span class="math inline">\(X\)</span> definiert wird, und dass die Umrechnungsformel für Cohen’s <span class="math inline">\(d\)</span> de facto die Effektstärke in der Variablen <span class="math inline">\(Y\)</span> schätzt, die mit einer Erhöhung der unabhängigen Variablen <span class="math inline">\(X\)</span> um zwei Standardabweichungen <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}\)</span> verbunden ist. Eine allgemeinere Formel findet sich im Bonuscontent <a href="#/d_corr" style="color: darkred">Umrechnung von Cohen’s <span class="math inline">\(d\)</span> zu <span class="math inline">\(\hat{\rho}\)</span>: ein Nachtrag</a> am Ende der Folien.</p>
+<p>Aufgrund ihrer Einfachheit finden die obigen Formeln vielfach Anwendung in der Praxis. Weniger bekannt ist, dass die Formeln implizit annehmen, dass einer der beiden Variablen der Korrelation als <em>unabhängige Variable</em> <span class="math inline">\(X\)</span> definiert wird, und dass die Umrechnungsformel für Cohen’s <span class="math inline">\(d\)</span> de facto die Effektstärke in der Variablen <span class="math inline">\(Y\)</span> schätzt, die mit einer Erhöhung der unabhängigen Variablen <span class="math inline">\(X\)</span> um zwei Standardabweichungen <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}\)</span> verbunden ist. Es lässt sich zeigen, dass die Formeln lediglich Spezialfall einer allgemeineren Formel sind (siehe Bonuscontent <a href="#/d_corr" style="color: darkred">Umrechnung von Cohen’s <span class="math inline">\(d\)</span> zu <span class="math inline">\(\hat{\rho}\)</span>: ein Nachtrag</a>).</p>
 </div>
 </div>
 </div>
@@ -955,15 +1036,17 @@ d=\frac{2\hat{\rho}}{\sqrt{1-\hat{\rho}^2}}
 </section>
 <section class="slide level2">
 <h2>Weitere Effektmaße</h2>
+<div>
 <ul>
-<li class="fragment">Im Bereich klinischer Studien finden sich weitere Effektmaße, die in der Regel zum Ziel haben, die Wirksamkeit einer Intervention (Behandlung) zu quantifizieren.</li>
-<li class="fragment">Folgende drei Effektmaße aus diesem Kontext betrachten wir:
+<li>Im Bereich klinischer Studien finden sich weitere Effektmaße, die in der Regel zum Ziel haben, die Wirksamkeit einer Intervention (Behandlung) zu quantifizieren.</li>
+<li>Folgende drei Effektmaße aus diesem Kontext betrachten wir:
 <ul>
-<li class="fragment">Absolute Risikoreduktion (ARR)</li>
-<li class="fragment">Numbers Needed to Treat (NNT)</li>
-<li class="fragment">Odds ratio (OR)</li>
+<li>Absolute Risikoreduktion (ARR)</li>
+<li>Numbers Needed to Treat (NNT)</li>
+<li>Odds ratio (OR)</li>
 </ul></li>
 </ul>
+</div>
 <div class="vspace-large">
 
 </div>
@@ -998,18 +1081,22 @@ d=\frac{2\hat{\rho}}{\sqrt{1-\hat{\rho}^2}}
 <p><img data-src="images/arr.png"></p>
 </div>
 </div>
+<div>
 <ul>
-<li class="fragment"><span class="math inline">\(ARR\)</span> ist die <span style=" color: navy !important;"><strong>Absolute Risikoreduktion</strong></span>.</li>
+<li><span class="math inline">\(ARR\)</span> ist die <span style=" color: navy !important;"><strong>Absolute Risikoreduktion</strong></span>.</li>
 </ul>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
 </section>
 <section class="slide level2">
 <h2>Numbers Needed to Treat (NNT)</h2>
+<div>
 <ul>
-<li class="fragment">Noch gängiger als die Absolute Risikoreduktion ist die inverse Größe, die als <span style=" color: navy !important;"><strong>Numbers Needed to Treat (NNT)</strong></span> bezeichnet wird.</li>
+<li>Noch gängiger als die Absolute Risikoreduktion ist die inverse Größe, die als <span style=" color: navy !important;"><strong>Numbers Needed to Treat (NNT)</strong></span> bezeichnet wird.</li>
 </ul>
+</div>
 <div class="definition">
 <!---  Definition--->
 <table>
@@ -1037,9 +1124,11 @@ d=\frac{2\hat{\rho}}{\sqrt{1-\hat{\rho}^2}}
 <p><span class="math display">\[
 NNT = \frac{1}{ARR}
 \]</span></p>
+<div>
 <ul>
-<li class="fragment">Da es um Personen geht, wird die NNT immer aufgerundet.</li>
+<li>Da es um Personen geht, wird die NNT immer aufgerundet.</li>
 </ul>
+</div>
 <!---  Example --->
 <div class="example" style="border-width: 0 !important">
 <table>
@@ -1074,9 +1163,11 @@ NNT = \frac{1}{ARR}
 </section>
 <section class="slide level2">
 <h2>Odds Ratio (OR)</h2>
+<div>
 <ul>
-<li class="fragment">Das <span style=" color: navy !important;"><strong>Odds Ratio</strong></span> (<span class="math inline">\(OR\)</span>) vergleicht das <em>Heilerfolgsverhältnis in der Treatmentgruppe</em> zum <em>Heilerfolgsverhältnis in der Kontrollgruppe</em>:</li>
+<li>Das <span style=" color: navy !important;"><strong>Odds Ratio</strong></span> (<span class="math inline">\(OR\)</span>) vergleicht das <em>Heilerfolgsverhältnis in der Treatmentgruppe</em> zum <em>Heilerfolgsverhältnis in der Kontrollgruppe</em>:</li>
 </ul>
+</div>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="images/vierfeldertafel.png"></p>
@@ -1098,15 +1189,19 @@ NNT = \frac{1}{ARR}
 </section>
 <section class="slide level2">
 <h2>ARR, NNT, OR: Caveat</h2>
+<div>
 <ul>
-<li class="fragment">Auch wenn das Ziel der Effektmaße <span class="math inline">\(ARR\)</span>, <span class="math inline">\(NNT\)</span>, <span class="math inline">\(OR\)</span> eine einfache laienverständliche Kommunikation der Treatmenteffizienz ist, darf angezweifelt werden, ob dies immer der Fall ist, wie durch folgendes Beispiel demonstriert<a href="#/footnotes" class="footnote-ref" id="fnref8" role="doc-noteref" data-footnote-href="#/fn8" onclick=""><sup>8</sup></a>:</li>
+<li>Auch wenn das Ziel der Effektmaße <span class="math inline">\(ARR\)</span>, <span class="math inline">\(NNT\)</span>, <span class="math inline">\(OR\)</span> eine einfache laienverständliche Kommunikation der Treatmenteffizienz ist, darf angezweifelt werden, ob dies immer der Fall ist, wie durch folgendes Beispiel demonstriert<a href="#/footnotes" class="footnote-ref" id="fnref8" role="doc-noteref" data-footnote-href="#/fn8" onclick=""><sup>8</sup></a>:</li>
 </ul>
+</div>
 <p><img data-src="images/quote_NNT.png"></p>
+<div>
 <ul>
-<li class="fragment">Hinweis: <span class="math inline">\(ARR\)</span> und <span class="math inline">\(OR\)</span> haben das gleiche Problem.</li>
+<li>Hinweis: <span class="math inline">\(ARR\)</span> und <span class="math inline">\(OR\)</span> haben das gleiche Problem.</li>
 </ul>
+</div>
 <aside></aside></section>
-<section class="slide level2">
+<section class="slide level2 nonincremental">
 <h2>Zusammenfassung: Übersicht Effektmaße</h2>
 <div class="vspace-medium">
 
@@ -1221,12 +1316,13 @@ plt.savefig('images/paradoxia_cohensd.png', bbox_inches='tight')
 </section>
 <section id="pooled_variance" class="slide level2">
 <h2><span style=" color: darkred !important;">Gepoolte Varianz</span></h2>
+<div>
 <ul>
-<li class="fragment">Bei unabhängigen Messungen ist es nicht (wie in Fall 2) möglich, die Einzelmesswerte <span class="math inline">\(x_{A,i}\)</span> und <span class="math inline">\(x_{B,i}\)</span> direkt voneinander abzuziehen. Nicht zuletzt wäre es völlig unklar, welche Versuchsperson aus A jeweils von welcher Versuchsperson aus B subtrahiert wird.</li>
-<li class="fragment">Damit kann auch nicht die Varianz der individuellen Effekte der Versuchspersonen berechnet werden (“Differenzenvarianz”), sondern lediglich eine <strong>gepoolte Varianz</strong> <span class="math inline">\(\hat{\sigma}^2_\text{pooled}\)</span>.</li>
-<li class="fragment">Die Annahme ist dabei, dass beide Gruppen eine ähnliche Streuung haben, z.B. weil sie randomisiert aus derselben Population gezogen wurden und man nicht erwartet, dass die Gruppenzugehörigkeit die Varianz beeinflusst.</li>
-<li class="fragment">Der Name leitet sich von der Vorstellung ab, die Datenpunkte beider Gruppen in einen gemeinsamen “Pool” zu werfen, und dann die Varianz auf allen Daten zu berechnen.</li>
-<li class="fragment">Vor dem “Wurf in den Pool” müssen die Mittelwerte der Datenpunkte aus den jeweiligen Gruppen gleichgesetzt werden — im einfachsten Fall so, dass jeweils der Gruppenmittelwert von den Datenpunkten abgezogen wird (die Daten werden <strong>zentriert</strong> — beide Gruppen haben danach den Mittelwert 0):</li>
+<li>Bei unabhängigen Messungen ist es nicht (wie in Fall 2) möglich, die Einzelmesswerte <span class="math inline">\(x_{A,i}\)</span> und <span class="math inline">\(x_{B,i}\)</span> direkt voneinander abzuziehen. Nicht zuletzt wäre es völlig unklar, welche Versuchsperson aus A jeweils von welcher Versuchsperson aus B subtrahiert wird.</li>
+<li>Damit kann auch nicht die Varianz der individuellen Effekte der Versuchspersonen berechnet werden (“Differenzenvarianz”), sondern lediglich eine <strong>gepoolte Varianz</strong> <span class="math inline">\(\hat{\sigma}^2_\text{pooled}\)</span>.</li>
+<li>Die Annahme ist dabei, dass beide Gruppen eine ähnliche Streuung haben, z.B. weil sie randomisiert aus derselben Population gezogen wurden und man nicht erwartet, dass die Gruppenzugehörigkeit die Varianz beeinflusst.</li>
+<li>Der Name leitet sich von der Vorstellung ab, die Datenpunkte beider Gruppen in einen gemeinsamen “Pool” zu werfen, und dann die Varianz auf allen Daten zu berechnen.</li>
+<li>Vor dem “Wurf in den Pool” müssen die Mittelwerte der Datenpunkte aus den jeweiligen Gruppen gleichgesetzt werden — im einfachsten Fall so, dass jeweils der Gruppenmittelwert von den Datenpunkten abgezogen wird (die Daten werden <strong>zentriert</strong> — beide Gruppen haben danach den Mittelwert 0):</li>
 </ul>
 <div style="margin-top:-43px">
 <p><span class="math display">\[
@@ -1239,6 +1335,7 @@ X_\text{pooled} = [X'_A; X'_B]
 <p><span class="math display">\[
 \hat{\sigma}^2_\text{pooled} = \hat{Var}(X_\text{pooled})
 \]</span></p>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1249,15 +1346,14 @@ X_\text{pooled} = [X'_A; X'_B]
 <ul>
 <li>Es lässt sich mathematisch recht einfach zeigen, dass die gepoolte Varianz identisch dem an den Stichprobengrößen <span class="math inline">\(n_A\)</span> und <span class="math inline">\(n_B\)</span> gewichteten Varianzmittelwert ist:</li>
 </ul>
-</div>
 <p><span class="math display">\[
 \hat{\sigma}^2_\text{pooled} = \frac{(n_A-1)\hat{\sigma}^2_A + (n_B-1)\hat{\sigma}^2_B}{n_A+n_B-2}\quad\text{bzw.}\quad\hat{\sigma}_\text{pooled} = \sqrt{\frac{(n_A-1)\hat{\sigma}^2_A + (n_B-1)\hat{\sigma}^2_B}{n_A+n_B-2}}
 \]</span></p>
-<div class="fragment smaller">
+<div class="smaller">
 <p>  Die Subtraktion von 1 von den Stichprobengrößen <span class="math inline">\(n_A\)</span> und <span class="math inline">\(n_B\)</span> ist Ausdruck der Besselkorrektur.</p>
 </div>
 <ul>
-<li class="fragment">Die Gewichtung mit den Stichprobengrößen grenzt die gepoolte Varianz von der einfach gemittelten Varianz <span class="math inline">\(\hat{\sigma}_\text{av}^2\)</span> ab:</li>
+<li>Die Gewichtung mit den Stichprobengrößen grenzt die gepoolte Varianz von der einfach gemittelten Varianz <span class="math inline">\(\hat{\sigma}_\text{av}^2\)</span> ab:</li>
 </ul>
 <div style="margin-top: -20px">
 <p><span class="math display">\[
@@ -1265,22 +1361,25 @@ X_\text{pooled} = [X'_A; X'_B]
 \]</span></p>
 </div>
 <ul>
-<li class="fragment"><span class="math inline">\(\hat{\sigma}_\text{av}^2\)</span> wird auch als <strong>ungepoolte Varianz</strong> bezeichnet, weil hier nicht alle Datenpunkte in einen Pool geworfen werden, sondern die Varianzen <span class="math inline">\(\hat{\sigma}_A^2\)</span> und <span class="math inline">\(\hat{\sigma}_B^2\)</span> einzeln berechnet und anschließend ohne Berücksichtigung unterschiedlicher Stichprobengrößen gemittelt werden.</li>
+<li><span class="math inline">\(\hat{\sigma}_\text{av}^2\)</span> wird auch als <strong>ungepoolte Varianz</strong> bezeichnet, weil hier nicht alle Datenpunkte in einen Pool geworfen werden, sondern die Varianzen <span class="math inline">\(\hat{\sigma}_A^2\)</span> und <span class="math inline">\(\hat{\sigma}_B^2\)</span> einzeln berechnet und anschließend ohne Berücksichtigung unterschiedlicher Stichprobengrößen gemittelt werden.</li>
 </ul>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
 </section>
 <section class="slide level2">
 <h2><span style=" color: darkred !important;">Gepoolte Varianz</span></h2>
+<div>
 <ul>
-<li class="fragment">Der Nachteil der gepoolten Varianz ist, dass sie nicht mehr der interindividuellen Variabilität des Effektes (hier Mittelwertdifferenz) entspricht, sondern der Variabilität des gemessenen Merkmals <span class="math inline">\(X\)</span>.
+<li>Der Nachteil der gepoolten Varianz ist, dass sie nicht mehr der interindividuellen Variabilität des Effektes (hier Mittelwertdifferenz) entspricht, sondern der Variabilität des gemessenen Merkmals <span class="math inline">\(X\)</span>.
 <ul>
-<li class="fragment">Die Mittelwertdifferenz im Zähler wird also streng genommen nicht mehr ins Verhältnis zu ihrer eigenen Variabilität gesetzt.</li>
+<li>Die Mittelwertdifferenz im Zähler wird also streng genommen nicht mehr ins Verhältnis zu ihrer eigenen Variabilität gesetzt.</li>
 </ul></li>
-<li class="fragment">Die gepoolte Varianz hat jedoch auch einen Vorteil: es wird de facto nur eine Varianz geschätzt (die Popuationsvarianz des Merkmals <span class="math inline">\(X\)</span>) und diese Schätzung basiert auf <span class="math inline">\(n_A+n_B\)</span> Versuchspersonen. Sie kann also recht präzise geschätzt werden. Die Präzision der Varianz bestimmt wiederum direkt und wesentlich die Präzision des Effektstärkenmaßes selbst.</li>
-<li class="fragment">Wenn Effektstärken in erster Linie zur Vergleichbarmachung mit anderen Studien dienen (Stichwort <strong>Metaanalyse</strong>), ist eine a) <em>präzise</em> und b) <em>zwischen Studien vergleichbare</em> Schätzung der Varianz ein wichtiger Aspekt — ggf. wichtiger als die Interpretierbarkeit des resultierenden Effektmaßes.</li>
+<li>Die gepoolte Varianz hat jedoch auch einen Vorteil: es wird de facto nur eine Varianz geschätzt (die Popuationsvarianz des Merkmals <span class="math inline">\(X\)</span>) und diese Schätzung basiert auf <span class="math inline">\(n_A+n_B\)</span> Versuchspersonen. Sie kann also recht präzise geschätzt werden. Die Präzision der Varianz bestimmt wiederum direkt und wesentlich die Präzision des Effektstärkenmaßes selbst.</li>
+<li>Wenn Effektstärken in erster Linie zur Vergleichbarmachung mit anderen Studien dienen (Stichwort <strong>Metaanalyse</strong>), ist eine a) <em>präzise</em> und b) <em>zwischen Studien vergleichbare</em> Schätzung der Varianz ein wichtiger Aspekt — ggf. wichtiger als die Interpretierbarkeit des resultierenden Effektmaßes.</li>
 </ul>
+</div>
 <!---  Example --->
 <div class="example">
 <div class="columns">
@@ -1299,13 +1398,15 @@ X_\text{pooled} = [X'_A; X'_B]
 <aside></aside></section>
 <section id="d_unequal_variance" class="slide level2">
 <h2><span style=" color: darkred !important;">Cohen’s d bei unterschiedlichen Gruppenvarianzen</span></h2>
+<div>
 <ul>
-<li class="fragment">Eine wichtige Voraussetzung für die Verwendung der gepoolten Varianz bei Cohen’s d mit unabhängigen Messungen ist, dass die Einzelvarianzen <span class="math inline">\(\hat{\sigma}^2_A\)</span> und <span class="math inline">\(\hat{\sigma}^2_A\)</span> ähnlich sind.</li>
-<li class="fragment">Warum? Die Idee ist, die Varianzschätzung des Merkmals durch Nutzung der Datenpunkte <em>beider</em> Gruppen zu verbessern. Sind die Varianzen in beiden Gruppen jedoch unterschiedlich, so ist der Fall gegeben, dass es gar nicht <em>die eine</em> Varianz des Merkmals gibt, sondern die Varianz stark von der Gruppenzugehörigkeit abhängt.</li>
-<li class="fragment">Eine gängige Faustregel besagt, dass die Varianzen sich höchstens um den Faktor 2 unterscheiden sollten, d.h. <span class="math inline">\(0.5&lt;\frac{\hat{\sigma}^2_A}{\hat{\sigma}^2_B}&lt;2\)</span>.</li>
-<li class="fragment">Diese Einschränkung bei der Verwendung der gepoolten Varianz wird jedoch häufg missachtet, mutmaßlich auch, weil sich keine alternative Lösung für den Fall unabhängiger Messungen in großer Breite etabliert hat.</li>
-<li class="fragment">Eine häufig empfohlene Variante im Fall unabhängiger Messungen und unterschiedlicher Varianzen ist die Effektstärkengröße <em>Hedges</em>’ g* auf Basis der <strong>ungepoolten Varianz</strong> <span class="math inline">\(\hat{\sigma}_\text{av}\)</span> <a href="#/footnotes" class="footnote-ref" id="fnref10" role="doc-noteref" data-footnote-href="#/fn10" onclick=""><sup>10</sup></a>:</li>
+<li>Eine wichtige Voraussetzung für die Verwendung der gepoolten Varianz bei Cohen’s d mit unabhängigen Messungen ist, dass die Einzelvarianzen <span class="math inline">\(\hat{\sigma}^2_A\)</span> und <span class="math inline">\(\hat{\sigma}^2_A\)</span> ähnlich sind.</li>
+<li>Warum? Die Idee ist, die Varianzschätzung des Merkmals durch Nutzung der Datenpunkte <em>beider</em> Gruppen zu verbessern. Sind die Varianzen in beiden Gruppen jedoch unterschiedlich, so ist der Fall gegeben, dass es gar nicht <em>die eine</em> Varianz des Merkmals gibt, sondern die Varianz stark von der Gruppenzugehörigkeit abhängt.</li>
+<li>Eine gängige Faustregel besagt, dass die Varianzen sich höchstens um den Faktor 2 unterscheiden sollten, d.h. <span class="math inline">\(0.5&lt;\frac{\hat{\sigma}^2_A}{\hat{\sigma}^2_B}&lt;2\)</span>.</li>
+<li>Diese Einschränkung bei der Verwendung der gepoolten Varianz wird jedoch häufg missachtet, mutmaßlich auch, weil sich keine alternative Lösung für den Fall unabhängiger Messungen in großer Breite etabliert hat.</li>
+<li>Eine häufig empfohlene Variante im Fall unabhängiger Messungen und unterschiedlicher Varianzen ist die Effektstärkengröße <em>Hedges</em>’ g* auf Basis der <strong>ungepoolten Varianz</strong> <span class="math inline">\(\hat{\sigma}_\text{av}\)</span> <a href="#/footnotes" class="footnote-ref" id="fnref10" role="doc-noteref" data-footnote-href="#/fn10" onclick=""><sup>10</sup></a>:</li>
 </ul>
+</div>
 <p><span class="math display">\[
 \text{Hedges'}\,g^* \approx \left(1-\frac{3}{4(n_A+n_B)-9}\right)\cdot \frac{\bar{x}_A - \bar{x}_B}{\hat{\sigma}_\text{av}}\quad\text{mit}\quad \hat{\sigma}_\text{av}=\sqrt{\frac{\hat{\sigma}^2_A+\hat{\sigma}^2_B}{2}}
 \]</span></p>
@@ -1316,35 +1417,43 @@ X_\text{pooled} = [X'_A; X'_B]
 <section class="slide level2">
 <h2><span style="font-size: 36px; color: darkred">Effektstärkenvergleich zwischen abhängigen und unabhängigen Designs</span></h2>
 <p><strong>Problem:</strong> häufig sollen Effektstärken zwischen Designs mit <em>abhängigen</em> und <em>unabhängigen</em> Messungen verglichen werden — jedoch lässt sich in Fall 2 (unabhängige Messungen) keine Differenzenvarianz berechnen.</p>
+<div>
 <ul>
-<li class="fragment">In diesem Fall wird manchmal folgende Variante von Cohen’s d bei abhängigen Messungen verwendet, die auf der <strong>gepoolten Varianz</strong> basiert:</li>
+<li>In diesem Fall wird manchmal folgende Variante von Cohen’s d bei abhängigen Messungen verwendet, die auf der <strong>gepoolten Varianz</strong> basiert:</li>
 </ul>
+</div>
 <p><span class="math display">\[
 d = \frac{\bar{x}_A - \bar{x}_B}{\hat{\sigma}_\text{pooled}}\quad\text{mit}\quad\hat{\sigma}_\text{pooled} = \sqrt{\frac{\hat{\sigma}^2_A + \hat{\sigma}^2_B}{2}}
 \]</span></p>
+<div>
 <ul>
-<li class="fragment">Beachte, dass hier die gepoolte Varianz <span class="math inline">\(\hat{\sigma}^2_\text{pooled}\)</span> identisch mit der ungepoolten (einfach gemittelten) Varianz <span class="math inline">\(\hat{\sigma}^2_\text{av}\)</span> ist, da bei abhängigen Messungen immer gilt: <span class="math inline">\(n=n_A=n_B\)</span>.</li>
+<li>Beachte, dass hier die gepoolte Varianz <span class="math inline">\(\hat{\sigma}^2_\text{pooled}\)</span> identisch mit der ungepoolten (einfach gemittelten) Varianz <span class="math inline">\(\hat{\sigma}^2_\text{av}\)</span> ist, da bei abhängigen Messungen immer gilt: <span class="math inline">\(n=n_A=n_B\)</span>.</li>
 </ul>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
 </section>
 <section class="slide level2">
 <h2><span style="font-size: 36px; color: darkred">Effektstärkenvergleich zwischen abhängigen und unabhängigen Designs</span></h2>
+<div>
 <ul>
-<li class="fragment">Laut einer aktuellen Forschungsarbeit<a href="#/footnotes" class="footnote-ref" id="fnref11" role="doc-noteref" data-footnote-href="#/fn11" onclick=""><sup>11</sup></a> sind die Werte von Cohen’s d auf Basis der gepoolten Varianz nicht exakt vergleichbar zwischen abhängigen und unabhängigen Messungen (auch dann, wenn die Varianzen ähnlich sind).</li>
-<li class="fragment">Die Arbeit bietet dafür folgende Modifikation von Cohen’s d für abhängige Messungen an:</li>
+<li>Laut einer aktuellen Forschungsarbeit<a href="#/footnotes" class="footnote-ref" id="fnref11" role="doc-noteref" data-footnote-href="#/fn11" onclick=""><sup>11</sup></a> sind die Werte von Cohen’s d auf Basis der gepoolten Varianz nicht exakt vergleichbar zwischen abhängigen und unabhängigen Messungen (auch dann, wenn die Varianzen ähnlich sind).</li>
+<li>Die Arbeit bietet dafür folgende Modifikation von Cohen’s d für abhängige Messungen an:</li>
 </ul>
+</div>
 <p><span class="math display">\[
 d = \sqrt{\frac{2(1-r)}{n}}\cdot t'_\nu(\lambda)\quad\text{mit}\quad \lambda = \sqrt{\frac{n}{2(1-r)}}\cdot\frac{\bar{x}_A - \bar{x}_B}{\hat{\sigma}_\text{pooled}}
 \]</span></p>
 <div class="smaller">
 <p>wobei <span class="math inline">\(r\)</span> die Pearson-Korrelation zwischen den beiden abhängigen Messungen ist und <span class="math inline">\(t'\)</span> die nichtzentrale <em>t</em>-Verteilung mit <span class="math inline">\(\nu = 2(n − 1)/(1 + r^2)\)</span> Freiheitsgraden. Beachte, dass die Formel nur gilt, falls ähnliche Varianzen in den beiden Bedingungen A und B angenommen werden können.</p>
 </div>
+<div>
 <ul>
-<li class="fragment">Laut dem Autor Denis Cousineau der Forschungsarbeit ist damit Cohen’s d exakt vergleichbar zwischen abhängigen und unabhängigen Messungen.</li>
-<li class="fragment">Weiterer nützlicher Link zu Effektstärken bei abhängigen Messungen: <a href="#/footnotes" class="footnote-ref" id="fnref12" role="doc-noteref" data-footnote-href="#/fn12" onclick=""><sup>12</sup></a></li>
+<li>Laut dem Autor Denis Cousineau der Forschungsarbeit ist damit Cohen’s d exakt vergleichbar zwischen abhängigen und unabhängigen Messungen.</li>
+<li>Weiterer nützlicher Link zu Effektstärken bei abhängigen Messungen: <a href="#/footnotes" class="footnote-ref" id="fnref12" role="doc-noteref" data-footnote-href="#/fn12" onclick=""><sup>12</sup></a></li>
 </ul>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1352,38 +1461,44 @@ d = \sqrt{\frac{2(1-r)}{n}}\cdot t'_\nu(\lambda)\quad\text{mit}\quad \lambda = \
 <aside></aside></section>
 <section id="d_corr" class="slide level2">
 <h2><span style="color: darkred; font-size: 37px">Umrechnung von Cohen’s <span class="math inline">\(d\)</span> zu <span class="math inline">\(\hat{\rho}\)</span>: ein Nachtrag</span></h2>
+<div>
 <ul>
-<li class="fragment">Wie erwähnt, impliziert die Formel <span class="math inline">\(d=\frac{2\hat{\rho}}{\sqrt{1-\hat{\rho}^2}}\)</span> eigentlich, dass eine der beiden Variablen als <em>unabhängige Variable</em> festgelegt wurde. Cohen’s <span class="math inline">\(d\)</span> bemisst dabei die Effektstärke in der Variablen <span class="math inline">\(Y\)</span>, die mit einer Erhöhung der unabhängigen Variablen <span class="math inline">\(X\)</span> um zwei Standardabweichungen <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}\)</span> verbunden ist.</li>
-<li class="fragment">Tatsächlich ist die angebene Formel lediglich ein Spezialfall folgender allgemeiner Formel<a href="#/footnotes" class="footnote-ref" id="fnref13" role="doc-noteref" data-footnote-href="#/fn13" onclick=""><sup>13</sup></a>:</li>
+<li>Wie erwähnt, impliziert die Formel <span class="math inline">\(d=\frac{2\hat{\rho}}{\sqrt{1-\hat{\rho}^2}}\)</span> eigentlich, dass eine der beiden Variablen als <em>unabhängige Variable</em> festgelegt wurde. Cohen’s <span class="math inline">\(d\)</span> bemisst dabei die Effektstärke in der Variablen <span class="math inline">\(Y\)</span>, die mit einer Erhöhung der unabhängigen Variablen <span class="math inline">\(X\)</span> um zwei Standardabweichungen <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}\)</span> verbunden ist.</li>
+<li>Tatsächlich ist die angebene Formel lediglich ein Spezialfall folgender allgemeiner Formel<a href="#/footnotes" class="footnote-ref" id="fnref13" role="doc-noteref" data-footnote-href="#/fn13" onclick=""><sup>13</sup></a>:</li>
 </ul>
+</div>
 <div style="margin-top: -35px">
 <p><span class="math display">\[
 d=\frac{k\hat{\rho}}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sqrt{1-\hat{\rho}^2}}\qquad\text{bzw.}\qquad\hat{\rho} = \frac{d \sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\sqrt{d^2\sigma_{\mkern-2mu\scriptscriptstyle{X}}^2+k^2}}
 \]</span></p>
 </div>
+<div>
 <ul>
-<li class="fragment">Hier gilt allgemein: <span class="math inline">\(d\)</span> entspricht der durchschnittlichen Zunahme der standarsierten <span class="math inline">\(Y\)</span>-Variable mit jeder Zunahme von <span class="math inline">\(X\)</span> um <span class="math inline">\(k\)</span> (Rohwert)Einheiten; <span class="math inline">\(k\)</span> muss vom Forschenden gewählt werden.</li>
-<li class="fragment">Wählt man <span class="math inline">\(k=2\sigma_{\mkern-2mu\scriptscriptstyle{X}}\)</span>, so ergibt sich tatsächlich die vereinfachte Formel.</li>
-<li class="fragment">Allerdings ist <span class="math inline">\(k=2\sigma_{\mkern-2mu\scriptscriptstyle{X}}\)</span> zum einen ein ziemlich extremer Kontrast und zum anderen von der Studien- oder Populations-spezifischen Standardabweichung <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}\)</span> abhängig. Daher scheint in Metaanalysen eigentlich die Festlegung auf einen kleineren und konstanten Wert von <span class="math inline">\(k\)</span> sinnvoll.</li>
+<li>Hier gilt allgemein: <span class="math inline">\(d\)</span> entspricht der durchschnittlichen Zunahme der standarsierten <span class="math inline">\(Y\)</span>-Variable mit jeder Zunahme von <span class="math inline">\(X\)</span> um <span class="math inline">\(k\)</span> (Rohwert)Einheiten; <span class="math inline">\(k\)</span> muss vom Forschenden gewählt werden.</li>
+<li>Wählt man <span class="math inline">\(k=2\sigma_{\mkern-2mu\scriptscriptstyle{X}}\)</span>, so ergibt sich tatsächlich die vereinfachte Formel.</li>
+<li>Allerdings ist <span class="math inline">\(k=2\sigma_{\mkern-2mu\scriptscriptstyle{X}}\)</span> zum einen ein ziemlich extremer Kontrast und zum anderen von der Studien- oder Populations-spezifischen Standardabweichung <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}\)</span> abhängig. Daher scheint in Metaanalysen eigentlich die Festlegung auf einen kleineren und konstanten Wert von <span class="math inline">\(k\)</span> sinnvoll.</li>
 </ul>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
 <aside></aside></section>
 <section class="slide level2">
 <h2><span style="font-size: 36px; color: darkred">Effektstärken für Mittelwertunterschiede bei mehr als zwei Messungen</span></h2>
+<div>
 <ul>
-<li class="fragment">Gibt es mehr als zwei Experimentalbedingungen oder Gruppen (A, B, C, …), gibt es zwei Möglichkeiten:
+<li>Gibt es mehr als zwei Experimentalbedingungen oder Gruppen (A, B, C, …), gibt es zwei Möglichkeiten:
 <ol type="1">
-<li class="fragment">Von Interesse sind die <strong>paarweisen</strong> Mittelwertunterschiede (z.B: <span class="math inline">\(A-B\)</span>, <span class="math inline">\(A-C\)</span>, <span class="math inline">\(B-C\)</span>) ⟶ in diesem Fall kann wie bisher Cohen’s d für für jedes Paar angewendet werden.</li>
-<li class="fragment">Von Interesse ist, ob sich die Mittelwerte in den Gruppen A, B, C <strong>in ihrer Gesamtheit betrachtet</strong> unterscheiden, d.h. ob die Aufteilung in diese spezifischen Gruppen sinnvoll ist.</li>
+<li>Von Interesse sind die <strong>paarweisen</strong> Mittelwertunterschiede (z.B: <span class="math inline">\(A-B\)</span>, <span class="math inline">\(A-C\)</span>, <span class="math inline">\(B-C\)</span>) ⟶ in diesem Fall kann wie bisher Cohen’s d für für jedes Paar angewendet werden.</li>
+<li>Von Interesse ist, ob sich die Mittelwerte in den Gruppen A, B, C <strong>in ihrer Gesamtheit betrachtet</strong> unterscheiden, d.h. ob die Aufteilung in diese spezifischen Gruppen sinnvoll ist.</li>
 </ol></li>
 </ul>
 <p>Fall 2 ist unser erster Kontakt mit der <strong>Varianzanalyse</strong>, die in Statistik 2 ausführlich behandelt wird. Man kann die Fragestellung in Fall 2 auch folgendermaßen formulieren:</p>
 <pre><code>Zu welchem Grad wird die Varianz der gepoolten Daten aller Gruppen bereits erklärt durch die Mittelwerte der Gruppen?</code></pre>
 <ul>
-<li class="fragment">Auf Basis dieser Formulierung ist nicht mehr überraschend, dass die Effektstärke für Mittlwertunterschiede von mehreren Messungen als <em>Verhältnis zweier Streuungen</em> ausgedrückt werden kann:</li>
+<li>Auf Basis dieser Formulierung ist nicht mehr überraschend, dass die Effektstärke für Mittlwertunterschiede von mehreren Messungen als <em>Verhältnis zweier Streuungen</em> ausgedrückt werden kann:</li>
 </ul>
+</div>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><span class="math display">\[
@@ -1410,11 +1525,13 @@ d=\frac{k\hat{\rho}}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sqrt{1-\hat{\rho}^
 <figcaption>Courtesy of Prof.&nbsp;Thomas Schäfer, Medical School Berlin</figcaption>
 </figure>
 </div>
+<div>
 <ul>
-<li class="fragment"><span class="math inline">\(\eta^2\)</span> (“Eta Quadrat”) gibt an, wie viel der Gesamtvarianz durch die Varianz der Mittelwerte aufgeklärt wird.</li>
-<li class="fragment">Es kann zwischen 0 (Mittelwerte erklären keine Varianz) und 1 (Mittelwerte erklären die komplette Varianz) liegen.</li>
-<li class="fragment">Die Berechnung von <span class="math inline">\(QS_\text{Gesamt}\)</span> umfasst 1) die Varianz zwischen den Bedingungen, 2) die Varianz zwischen zwischen Personen (über Bedingungen hinweg), und 3) wie sehr sich die Varianz der Bedingungen zwischen Personen unterscheidet:</li>
+<li><span class="math inline">\(\eta^2\)</span> (“Eta Quadrat”) gibt an, wie viel der Gesamtvarianz durch die Varianz der Mittelwerte aufgeklärt wird.</li>
+<li>Es kann zwischen 0 (Mittelwerte erklären keine Varianz) und 1 (Mittelwerte erklären die komplette Varianz) liegen.</li>
+<li>Die Berechnung von <span class="math inline">\(QS_\text{Gesamt}\)</span> umfasst 1) die Varianz zwischen den Bedingungen, 2) die Varianz zwischen zwischen Personen (über Bedingungen hinweg), und 3) wie sehr sich die Varianz der Bedingungen zwischen Personen unterscheidet:</li>
 </ul>
+</div>
 <div style="margin-top: -15px">
 <p><span class="math display">\[
 QS_\text{Gesamt} = QS_\text{Bedingungen} + QS_\text{Personen} + QS_\text{Personen x Bedingungen}
@@ -1426,13 +1543,19 @@ QS_\text{Gesamt} = QS_\text{Bedingungen} + QS_\text{Personen} + QS_\text{Persone
 </section>
 <section class="slide level2">
 <h2><span style="font-size: 36px; color: darkred">Effektstärken für Mittelwertunterschiede bei mehr als zwei Messungen</span></h2>
+<div>
 <ul>
-<li class="fragment"><p>Es kann argumentiert werden, dass die Varianz, die lediglich die interindividuellen Unterschiede der Versuchspersonen (Varianzanteil 2 bzw. <span class="math inline">\(QS_\text{Personen}\)</span>) charakterisiert, für die Effektstärke irrelevant ist und nicht zu <span class="math inline">\(QS_\text{Gesamt}\)</span> gezählt werden sollte, d.h.: <span class="math display">\[
-QS_\text{Gesamt} = QS_\text{Bedingungen} + QS_\text{Personen x Bedingungen}
-\]</span></p></li>
-<li class="fragment"><p>Wird die Varianz <span class="math inline">\(QS_\text{Personen}\)</span> nicht berücksichtigt, spricht man vom <span style=" color: navy !important;"><strong>partiellen</strong></span> <span class="math inline">\(\color{navy}{\eta_p^2}\)</span>.</p></li>
-<li class="fragment"><p>Eine ausführliche Diskussion zum Pro und Kontra von <span class="math inline">\(\eta^2\)</span> vs.&nbsp;<span class="math inline">\(\eta_p^2\)</span> findet sich z.B. im Buch von Eid, Gollwitzer und Schmitt im Kapitel zur Varianzanalyse.</p></li>
+<li>Es kann argumentiert werden, dass die Varianz, die lediglich die interindividuellen Unterschiede der Versuchspersonen (Varianzanteil 2 bzw. <span class="math inline">\(QS_\text{Personen}\)</span>) charakterisiert, für die Effektstärke irrelevant ist und nicht zu <span class="math inline">\(QS_\text{Gesamt}\)</span> gezählt werden sollte, d.h.:</li>
 </ul>
+</div>
+<p><span class="math display">\[
+QS_\text{Gesamt} = QS_\text{Bedingungen} + QS_\text{Personen x Bedingungen}
+\]</span> - Wird die Varianz <span class="math inline">\(QS_\text{Personen}\)</span> nicht berücksichtigt, spricht man vom <span style=" color: navy !important;"><strong>partiellen</strong></span> <span class="math inline">\(\color{navy}{\eta_p^2}\)</span>.</p>
+<div>
+<ul>
+<li>Eine ausführliche Diskussion zum Pro und Kontra von <span class="math inline">\(\eta^2\)</span> vs.&nbsp;<span class="math inline">\(\eta_p^2\)</span> findet sich z.B. im Buch von Eid, Gollwitzer und Schmitt im Kapitel zur Varianzanalyse.</li>
+</ul>
+</div>
 <div class="notabene">
 <div class="columns">
 <div class="column" style="width:7%;">
