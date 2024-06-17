@@ -351,14 +351,6 @@
 <div><button onclick="new Audio('images/appear.mp3').play()" class="intro-sound"><img src="images/paradoxia_group_of_scientists.png" height="240px"></button></div>
 </div>
 </section>
-<section class="slide level2 hcenter-slide">
-<h2>Der Forschungsprozess</h2>
-<div data-animate="" data-src="images/scientific_process.svg"><!-- setup:
-    - element: "#inference"
-      modifier: function() { this.node.style.fill = 'green'; }
-    - element: "#inferencebg"
-      modifier: function() { this.node.style.fill = '#d8ffe2';} --></div>
-</section>
 <section class="slide level2">
 <h2>Was ist Inferenzstatistik?</h2>
 <div class="columns">
@@ -380,6 +372,15 @@
 </ul>
 </div>
 </div>
+<!-- ## Der Forschungsprozess {.hcenter-slide}
+
+```yaml { .animate src="images/scientific_process.svg"}
+setup:
+    - element: "#inference"
+      modifier: function() { this.node.style.fill = 'green'; }
+    - element: "#inferencebg"
+      modifier: function() { this.node.style.fill = '#d8ffe2';}
+``` -->
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -390,7 +391,7 @@
 
 </div>
 
-<img data-src="images/population_sample_schaefer.png" class="r-stretch"><p><strong>Zentrale Frage:</strong> Ist das Ergebnis meiner Studie eine gute Schätzung für die wahren Verhältnisse in der Population?</p>
+<img data-src="images/population_sample_schaefer_rev.png" class="r-stretch"><p><strong>Zentrale Frage:</strong> Ist das Ergebnis meiner Studie eine gute Schätzung für die wahren Verhältnisse in der Population?</p>
 </section>
 <section>
 <section class="title-slide slide level1 center">
@@ -832,6 +833,12 @@ plt.savefig('images/noselength_limit.png', bbox_inches='tight')
 <!----------------->
 <!--- New slide --->
 <!----------------->
+<!-- ## Verteilung
+
+**Verteilungen** kennen wir bereits  -->
+<!----------------->
+<!--- New slide --->
+<!----------------->
 </section>
 <section class="slide level2">
 <h2>Theoretische Stichprobenverteilung</h2>
@@ -841,7 +848,7 @@ plt.savefig('images/noselength_limit.png', bbox_inches='tight')
 <p><strong>Empirische Stichprobenverteilung</strong></p>
 </div>
 <ul>
-<li class="fragment">Führe ich dieselbe Studie mehrmals durch und notiere jeweils den statistischen Kennwert, erhalte ich eine <span style=" color: navy !important;"><strong>empirische Stichprobenverteilung</strong></span>.</li>
+<li class="fragment">Führe ich dieselbe Studie mehrmals durch und notiere jeweils den statistischen Kennwert (z.B. Mittelwert), erhalte ich eine <span style=" color: navy !important;"><strong>empirische Stichprobenverteilung</strong></span>.</li>
 <li class="fragment">Dies ist die Idee der <strong>Metaanalyse</strong>, die eine Vielzahl empirischer Studien zusammenfasst und analysiert (⇒ Vorlesung 13).</li>
 </ul>
 <!-- **Zur Erinnerung:**
@@ -1575,7 +1582,7 @@ se^2 = \frac{\sigma^2}{n} \qquad \text{bzw.} \qquad se = \frac{\sigma}{\sqrt{n}}
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
+'controlsAuto': false,
 'previewLinksAuto': true,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
@@ -1584,11 +1591,11 @@ se^2 = \frac{\sigma^2}{n} \qquad \text{bzw.} \qquad se = \frac{\sigma}{\sqrt{n}}
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":false},
 'animate': {"autoplay":true},
-'customcontrols': {"controls":[{"id":"home","title":"Startseite","icon":"<i class=\"fa-solid fa-house\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}`, '_blank');"},{"id":"print-pdf","title":"Als PDF","icon":"<i class=\"fa-solid fa-file-pdf\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}${location.pathname}`.replace('index.html', `Vorlesung${location.pathname.split('/')[2]}.pdf`), '_blank');"},{"id":"print","title":"Drucken","icon":"<i class=\"fa-solid fa-print\" style=\"color:#8398dd\"></i>","action":"location.href = location.href.includes('print-pdf') ? `${location.protocol}//${location.host}${location.pathname}${location.hash}` : `${location.protocol}//${location.host}${location.pathname}?print-pdf${location.hash}`;"},{"id":"toggle-notes","title":"Notizen (c)","icon":"<i class=\"fa-solid fa-pen\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleNotesCanvas(event);"},{"id":"toggle-chalkboard","title":"Tafel (b)","icon":"<i class=\"fa-solid fa-person-chalkboard\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleChalkboard(event);"},{"id":"toggle-fragments","title":"Animationen","icon":"<i class=\"fa-solid fa-bolt\" style=\"color:#8398dd\"></i>","action":"Reveal.getConfig().fragments = !Reveal.getConfig().fragments; document.querySelector('.fa-bolt').style.color = Reveal.getConfig().fragments ?  '#dfe169' : '#8398dd'; if (Reveal.getConfig().fragments) {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]');for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('was_anim')) {elements[i].innerHTML = elements[i].innerHTML_prev;}}} else {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]'); for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('class: fragment')) {elements[i].innerHTML = `<div><img src='${elements[i].getAttribute('data-src')}' class='was_anim'></div>`;}}fragments = document.querySelectorAll('.fragment');for (let i = 0; i < fragments.length; i++) {fragments[i].classList.add('visible');}}"},{"id":"intro-sound","title":"Play intro","icon":"<i class=\"fa-solid fa-music\" style=\"color:#8398dd\"></i>","action":"new Audio('images/appear.mp3').play()"}]},
+'customcontrols': {"controls":[{"id":"home","title":"Startseite","icon":"<i class=\"fa-solid fa-house\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}`, '_blank');"},{"id":"print-pdf","title":"Als PDF","icon":"<i class=\"fa-solid fa-file-pdf\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}${location.pathname}`.replace('index.html', `Vorlesung${location.pathname.split('/')[2]}.pdf`), '_blank');"},{"id":"print","title":"Drucken","icon":"<i class=\"fa-solid fa-print\" style=\"color:#8398dd\"></i>","action":"location.href = location.href.includes('print-pdf') ? `${location.protocol}//${location.host}${location.pathname}${location.hash}` : `${location.protocol}//${location.host}${location.pathname}?print-pdf${location.hash}`;"},{"id":"toggle-notes","title":"Notizen (c)","icon":"<i class=\"fa-solid fa-pen\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleNotesCanvas(event);"},{"id":"toggle-chalkboard","title":"Tafel (b)","icon":"<i class=\"fa-solid fa-person-chalkboard\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleChalkboard(event);"},{"id":"toggle-fragments","title":"Animationen","icon":"<i class=\"fa-solid fa-bolt\" style=\"color:#8398dd\"></i>","action":"Reveal.getConfig().fragments = !Reveal.getConfig().fragments; document.querySelector('.fa-bolt').style.color = Reveal.getConfig().fragments ?  '#dfe169' : '#8398dd'; if (Reveal.getConfig().fragments) {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]');for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('was_anim')) {elements[i].innerHTML = elements[i].innerHTML_prev;}}} else {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]'); for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('class: fragment')) {elements[i].innerHTML = `<div><img src='${elements[i].getAttribute('data-src')}' class='was_anim'></div>`;}}fragments = document.querySelectorAll('.fragment');for (let i = 0; i < fragments.length; i++) {fragments[i].classList.add('visible');}}"},{"id":"intro-sound","title":"Play intro","icon":"<i class=\"fa-solid fa-music\" style=\"color:#8398dd\"></i>","action":"new Audio('images/appear.mp3').play()"},{"id":"zoom","title":"Zoom","icon":"<i class=\"fa-solid fa-magnifying-glass\" style=\"color:#8398dd\"></i>","action":"disable_slide_nav = typeof disable_slide_nav === 'undefined' || !disable_slide_nav; Reveal.configure({touch: !disable_slide_nav}); document.querySelector('.fa-magnifying-glass').style.color = disable_slide_nav ?  '#dfe169' : '#8398dd';"}]},
 'smaller': false,
  
         // Display controls in the bottom right corner
-        controls: false,
+        controls: true,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
@@ -1778,6 +1785,16 @@ se^2 = \frac{\sigma^2}{n} \qquad \text{bzw.} \qquad se = \frac{\sigma}{\sqrt{n}}
             document.querySelector('div.reveal').style.backgroundColor = 'white'
           }
         });
+
+        // We smuglle this one here in to disable controls on non-mobile devises
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (!isMobile) {
+          Reveal.configure({controls: false});
+          document.getElementById('zoom').style.display = 'none';
+        } else {
+          document.getElementById('print').style.display = 'none';
+          document.getElementById('print-pdf').style.display = 'none';
+        }
       }
       // identifystring
 
