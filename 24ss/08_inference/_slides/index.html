@@ -753,7 +753,7 @@ X \sim \mathcal{N}(\mu_\text{SV},\,\sigma_\text{SV})
 <section class="slide level2">
 <h2>Mittelwert der theoretischen Stichprobenverteilung</h2>
 <ul>
-<li class="fragment">Kann von einer Normalverteilung für die Form der Stichprobenverteilung ausgegangen werden, ist die beste Schätzung <span class="math inline">\(\hat{\mu}_\text{SV}\)</span> für den Mittelwertsparameter <span class="math inline">\(\mu_\text{SV}\)</span> der Stichprobenverteilung der statistische Kennwert selbst (z.B. <span class="math inline">\(\bar{x}, s\)</span>).</li>
+<li class="fragment">Kann von einer Normalverteilung für die Form der Stichprobenverteilung ausgegangen werden, ist die beste Schätzung <span class="math inline">\(\hat{\mu}_\text{SV}\)</span> für den Mittelwertsparameter <span class="math inline">\(\mu_\text{SV}\)</span> der Stichprobenverteilung der statistische Kennwert selbst (z.B. <span class="math inline">\(\bar{x}, \hat{\sigma}\)</span>).</li>
 </ul>
 <div class="colorbox2 fragment">
 <div class="columns">
@@ -824,7 +824,7 @@ Alle Mittelwerte werden als Histogramm aufgetragen -> Normalverteilung?
 </div>
 <div class="fragment">
 <p><span class="math display">\[
-\hat{\sigma}_\text{SV} = f(n, \sigma)
+\sigma_\text{SV} = f(n, \sigma)
 \]</span></p>
 </div>
 <!----------------->
@@ -837,15 +837,26 @@ Alle Mittelwerte werden als Histogramm aufgetragen -> Normalverteilung?
 
 </div>
 <ul>
-<li class="fragment">Kann für die Stichprobenverteilung eine Normalverteilung angenommen werden, so wird die Streuung <span class="math inline">\(\hat{\sigma}_\text{SV}\)</span> als <span style=" color: navy !important;"><strong>Standardfehler</strong></span> (engl. <em>standard error</em>) oder <span class="math inline">\(\hat{se}\)</span> bezeichnet.</li>
+<li class="fragment">Kann für die Stichprobenverteilung eine Normalverteilung angenommen werden, so wird die Streuung <span class="math inline">\(\sigma_\text{SV}\)</span> als <span style=" color: navy !important;"><strong>Standardfehler</strong></span> (engl. <em>standard error</em>) oder <span class="math inline">\(se\)</span> bezeichnet.</li>
+</ul>
+<p><span class="math display">\[
+\sigma_\text{SV} = se
+\]</span></p>
+<ul>
+<li class="fragment">Da wir in der Regel <span class="math inline">\(\sigma_\text{SV}\)</span> bzw. <span class="math inline">\(se\)</span> nicht kennen und als <span class="math inline">\(\hat{se}\)</span> schätzen müssen heißt es in der Praxis:</li>
 </ul>
 <p><span class="math display">\[
 \hat{\sigma}_\text{SV} = \hat{se}
 \]</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
 <li class="fragment">Der Standard<em>fehler</em> ist die Standard<em>abweichung</em> der normalverteilten Stichprobenverteilung um den Mittelwert <span class="math inline">\(\hat{\theta}\)</span>.</li>
 </ul>
+</div><div class="column" style="width:50%;">
 <p><img data-src="images/inference8_annot_se.png" height="300"></p>
+</div>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1004,7 +1015,7 @@ Alle Mittelwerte werden als Histogramm aufgetragen -> Normalverteilung?
 <li class="fragment">Generelle Idee: Was würde passieren, wenn die Studie hypothetisch unendlich oft durchgeführt und jeweils der Kennwert bestimmt würde?</li>
 <li class="fragment">Diese Idee wird durch die <strong>theoretische Stichprobenverteilung</strong> repräsentiert.</li>
 <li class="fragment">Die Stichprobenverteilung von Kennwerten <span class="math inline">\(\hat{\theta}\)</span> kann aufgrund des Zentralen Grenzwertsatzes häufig als <strong>normalverteilt</strong> angenommen werden.</li>
-<li class="fragment">Der Mittelwert <span class="math inline">\(\hat{\mu}_\text{SV}\)</span> der normalverteilten Stichprobenverteilung ist der Kennwert <span class="math inline">\(\hat{\theta}\)</span> selbst und ihre Standardabweichung <span class="math inline">\(\hat{\sigma}_\text{SV}\)</span> wird als <strong>Standardfehler</strong> <span class="math inline">\(\hat{se}\)</span> bezeichnet.</li>
+<li class="fragment">Der Mittelwert <span class="math inline">\(\mu_\text{SV}\)</span> der normalverteilten Stichprobenverteilung ist der Kennwert <span class="math inline">\(\hat{\theta}\)</span> selbst und ihre Standardabweichung <span class="math inline">\(\sigma_\text{SV}\)</span> wird als <strong>Standardfehler</strong> <span class="math inline">\(se\)</span> bezeichnet.</li>
 <li class="fragment">Beispiel Kennwert <span class="math inline">\(\hat{\theta}\)</span> = Mittelwert <span class="math inline">\(\bar{x}\)</span>: <span class="math inline">\(\quad\hat{\mu}_\text{SV}=\bar{x}\)</span>, <span class="math inline">\(\quad\hat{\sigma}_\text{SV}=\frac{\hat{\sigma}}{\sqrt{n}}\)</span>.</li>
 </ul>
 </div>
