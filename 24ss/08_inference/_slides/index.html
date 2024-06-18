@@ -788,7 +788,7 @@ plt.savefig('images/noselength_example.png', bbox_inches='tight')
 </div><div class="column" style="width:35%;">
 <div style="margin-top: -20px">
 <p><span class="math display">\[
-f(\theta) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{\theta-\mu}{\sigma}\right)^2}
+f(\hat{\theta}) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{\hat{\theta}-\mu}{\sigma}\right)^2}
 \]</span></p>
 </div>
 </div>
@@ -798,11 +798,11 @@ f(\theta) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{\theta-\mu}{\s
 </div>
 <div class="columns">
 <div class="column" style="width:65%;">
-<p>Dass eine Zufallsvariable wie hier <span class="math inline">\(\theta\)</span> normalverteilt ist, wird häufig auch mit folgender Notation zum Ausdruck gebracht:</p>
+<p>Dass eine Zufallsvariable wie hier <span class="math inline">\(\hat{\theta}\)</span> normalverteilt ist, wird häufig auch mit folgender Notation zum Ausdruck gebracht:</p>
 <p><span class="math display">\[
-\theta \sim \mathcal{N}(\mu_\text{SV},\,\sigma_\text{SV})
+\hat{\theta} \sim \mathcal{N}(\mu_\text{SV},\,\sigma_\text{SV})
 \]</span></p>
-<p><span style="font-size: 20px">(in Worten: <em>wir nehmen an, dass potentielle Stichprobenkennwerte <span class="math inline">\(\theta\)</span> einer Normalverteilung <span class="math inline">\(\mathcal{N}\)</span> mit Mittelwert <span class="math inline">\(\mu_\text{SV}\)</span> und Standardabweichung <span class="math inline">\(\sigma_\text{SV}\)</span> folgen</em>)</span></p>
+<p><span style="font-size: 20px">(in Worten: <em>wir nehmen an, dass potentielle Stichprobenkennwerte <span class="math inline">\(\hat{\theta}\)</span> einer Normalverteilung <span class="math inline">\(\mathcal{N}\)</span> mit Mittelwert <span class="math inline">\(\mu_\text{SV}\)</span> und Standardabweichung <span class="math inline">\(\sigma_\text{SV}\)</span> folgen</em>)</span></p>
 </div><div class="column" style="width:35%;">
 <p><img data-src="images/stichprobenverteilung_theoretisch_labeled.png"></p>
 </div>
@@ -840,7 +840,7 @@ f(\theta) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{\theta-\mu}{\s
 </div>
 </div>
 <ul>
-<li class="fragment">Der Mittelwert <span class="math inline">\(\hat{\mu}_\text{SV}\)</span> der Stichprobenverteilung ist identisch mit der besten Schätzung des statistischen Kennwertes <span class="math inline">\(\hat{\theta}\)</span> für die Population.</li>
+<li class="fragment">Der Mittelwert <span class="math inline">\(\hat{\mu}_\text{SV}\)</span> der Stichprobenverteilung ist identisch mit der besten Kennwertschätzung <span class="math inline">\(\hat{\theta}\)</span> des wahren Populationsparameters <span class="math inline">\(\theta\)</span>.</li>
 </ul>
 <!----------------->
 <!--- New slide --->
