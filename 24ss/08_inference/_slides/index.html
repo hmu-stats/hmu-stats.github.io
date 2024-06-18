@@ -476,11 +476,11 @@ f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\righ
 <div class="vspace-xlarge">
 
 </div>
-<p>Empirische und theoretische Verteilungen gibt es <strong>nicht nur für Merkmale <span class="math inline">\(X\)</span>, sondern auch für statistische Kennwerte <span class="math inline">\(\hat{\theta}\)</span></strong>, die für das Merkmal <span class="math inline">\(X\)</span> bestimmt wurden — zum Beispiel Mittelwert <span class="math inline">\(\bar{x}\)</span>.</p>
+<p>Empirische und theoretische Verteilungen gibt es <strong>nicht nur für Merkmale <span class="math inline">\(X\)</span>, sondern auch für statistische Kennwerte <span class="math inline">\(\hat{\theta}\)</span></strong>, die für das Merkmal <span class="math inline">\(X\)</span> auf Basis einer Stichprobe bestimmt wurden — zum Beispiel Mittelwert <span class="math inline">\(\bar{x}\)</span>.</p>
 <div class="vspace-large">
 
 </div>
-<p>Prinzip: wir nehmen nicht nur eine einzelne Studie an, sondern viele Studien <span class="math inline">\(i=1...k\)</span>, die jeweils Mittelwerte <span class="math inline">\(\bar{x}_i\)</span> bestimmt haben. Die Mittelwerte <span class="math inline">\(\bar{x}_i\)</span> folgen ebenfalls einer Verteilung — der <span style=" color: navy !important;"><strong>Stichprobenverteilung</strong></span>. Dieses Prinzip gilt nicht nur für den Mittelwert, sondern für alle statistischen Kennwerte <span class="math inline">\(\hat{\theta}\)</span> (Median, Varianz, Kovarianz, Korrelation, usw.).</p>
+<p>Prinzip: wir nehmen nicht nur eine einzelne Studie an, sondern viele Studien <span class="math inline">\(j=1, 2...\)</span>, die jeweils einen statistischen Kennwert <span class="math inline">\(\hat{\theta}^{(j)}\)</span> bestimmt haben. Die Kennwerte <span class="math inline">\(\hat{\theta}^{(j)}\)</span> folgen ebenfalls einer Verteilung — der <span style=" color: navy !important;"><strong>Stichprobenverteilung</strong></span>.</p>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -492,10 +492,13 @@ f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\righ
 <div class="fragment">
 <p><span style=" color: navy !important;"><strong>Empirische Stichprobenverteilung</strong></span></p>
 </div>
+<div style="font-size: 24px; margin-top: -10px">
 <ul>
-<li class="fragment">Führe ich dieselbe Studie mehrmals durch und notiere jeweils den statistischen Kennwert (z.B. Mittelwert), erhalte ich eine empirische Stichprobenverteilung.</li>
+<li class="fragment">Dieselbe Studie wurde <em>tatsächlich mehrmals</em> durchgeführt und es wurde jeweils der statistische Kennwert <span class="math inline">\(\hat{\theta}^{(j)}\)</span> bestimmt (z.B. <span class="math inline">\(\bar{x}^{(j)}\)</span>).</li>
+<li class="fragment">Die resultierende Verteilung der Kennwerte <span class="math inline">\(\hat{\theta}^{(j)}\)</span> ist die empirische Stichprobenverteilung.</li>
 <li class="fragment">Dies ist die Idee der <strong>Metaanalyse</strong>, die eine Vielzahl empirischer Studien zusammenfasst und analysiert (⇒ Vorlesung 13).</li>
 </ul>
+</div>
 <!-- **Zur Erinnerung:**
 
 - Bei der **Metaanalyse** ging es um die Verlässlichkeit der Schätzung von Parametern in Bezug auf die Population
@@ -504,26 +507,28 @@ f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\righ
 <div class="fragment">
 <p><span style=" color: navy !important;"><strong>Theoretische Stichprobenverteilung</strong></span></p>
 </div>
+<div style="font-size: 24px; margin-top: -10px">
 <ul>
-<li class="fragment">Ich habe nur <em>eine</em> Studie, aber überlege, was theoretisch passieren würde, wenn ich diese Studie immer wieder wiederholen würde.</li>
-<li class="fragment">Die resultierende Verteilung ist die theoretische Stichprobenverteilung.</li>
-<li class="fragment">Die theoretische Stichprobenverteilung erlaubt uns eine Einschätzung darüber, wie stabil unser Ergebnis bei einer (hypothetischen) Wiederholung der Studie sein würde.</li>
-<li class="fragment">Dies ist der Ansatz der <strong>Inferenzstatistik</strong>.</li>
+<li class="fragment">Es gibt nur <em>eine</em> Studie mit Kennwert <span class="math inline">\(\hat{\theta}\)</span> und die Überlegung ist, wie sich die Kennwerte bei einer hypothetischen wiederholten Durchführung der Studie verteilen würden.</li>
+<li class="fragment">Die erwartete Verteilung lässt sich mathematisch ableiten und wird als theoretische Stichprobenverteilung <span class="math inline">\(f(\hat{\theta})\)</span> bezeichnet.</li>
+<li class="fragment"><span class="math inline">\(f(\hat{\theta})\)</span> erlaubt eine Einschätzung darüber, wie stabil die Kennwertschätzung bei (hypothetischen) Wiederholungen der Studie sein würde.</li>
+<li class="fragment">Die theoretische Stichprobenverteilung ist der zentrale Ansatz der <strong>Inferenzstatistik</strong>.</li>
 </ul>
+</div>
 </div><div class="column" style="width:31%;">
 <div class="fragment">
 <div class="quarto-figure quarto-figure-center" style="margin-top:-35px">
 <figure>
 <p><img data-src="images/stichprobenverteilung_empirisch.png"></p>
-<figcaption>Die empirische Stichprobenverteilung besteht aus tatsächlich erhobenen Studien. Die Verteilung empirischer Stichprobenkenn-<br>werte folgt im Idealfall (u.a. kein Publikationsbias, großes <span class="math inline">\(n\)</span> pro Stichprobe) einer Normalverteilung.</figcaption>
+<figcaption>Die empirische Stichprobenverteilung besteht aus tatsächlich erhobenen Studien. Die Verteilung empirischer Stichprobenkenn-<br>werte <span class="math inline">\(\hat{\theta}^{(j)}\)</span> folgt im Idealfall (u.a. kein Publikationsbias, großes <span class="math inline">\(n\)</span> pro Stichprobe) einer Normalverteilung.</figcaption>
 </figure>
 </div>
 </div>
 <div class="fragment">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/stichprobenverteilung_theoretisch.png"></p>
-<figcaption>Die theoretische Stichprobenverteilung ist durch eine Funktion gegeben. Ist die Stichprobengröße <span class="math inline">\(n\)</span>, für die die theoretische Stichprobenverteilung angenommen wird, groß, folgt die Stichprobenverteilung einer Normalverteilung.</figcaption>
+<p><img data-src="images/stichprobenverteilung_theoretisch_labeled.png"></p>
+<figcaption>Die theoretische Stichprobenverteilung ist durch eine Funktion <span class="math inline">\(f(\hat{\theta})\)</span> gegeben. Ist die Stichprobengröße <span class="math inline">\(n\)</span> groß, kann für die theoretische Stichprobenverteilung eine Normalverteilung angenommen werden.</figcaption>
 </figure>
 </div>
 </div>
