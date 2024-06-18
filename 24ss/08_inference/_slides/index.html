@@ -351,6 +351,11 @@
 <div><button onclick="new Audio('images/appear.mp3').play()" class="intro-sound"><img src="images/paradoxia_group_of_scientists.png" height="240px"></button></div>
 </div>
 </section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Inferenzstatistik</h1>
+
+</section>
 <section class="slide level2">
 <h2>Statistischer Kennwert <span class="math inline">\(\hat{\theta}\)</span></h2>
 <div>
@@ -388,6 +393,48 @@
 <li class="fragment">Zu statischen Kennwerten zählen nicht nur Lage- und Streuungsmaße, die <em>eine</em> Variable beschreiben (z.B. Mittelwert <span class="math inline">\(\bar{x}\)</span>, Varianz <span class="math inline">\(\hat{\sigma}^2\)</span>), sondern auch <em>zwei</em> Variablen (z.B. Korrelation <span class="math inline">\(\hat{\rho}\)</span>, Regressionskoeffizient <span class="math inline">\(\hat{b}_1\)</span>) oder noch mehr Variablen (⇒ Statistik 2).</li>
 </ul>
 </section>
+<section class="slide level2">
+<h2>Was ist Inferenzstatistik?</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="vspace-small">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/grand_picture_of_statistics_update.png"></p>
+<figcaption>Die statistische Prozess in der Psychologie auf einen Blick: eine Teilmenge von Versuchspersonen wird aus der Population gezogen — die Stichprobe. In der Stichprobe werden Daten <span class="math inline">\((x_1, x_2, ..., x_n)\)</span> eines Merkmals gemessen. Mit Methoden der deskriptiven Statistik werden <strong>Kennwerte</strong> in der Stichprobe beschrieben <span class="math inline">\((\bar{X}, s^2, s)\)</span>. Letztendlich ist das Ziel ein Rückschluss auf die wahren <strong>Parameter</strong> der Population <span class="math inline">\((\mu, \sigma^2, \sigma)\)</span> und das Testen von Hypothesen über die Population. Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:55%;">
+<ul>
+<li class="fragment">In den vergangenen Vorlesungen haben wir kennengelernt, wie Merkmale in Stichproben quantitativ beschrieben werden können — wir haben <strong>deskriptive Statistik</strong> betrieben.</li>
+<li class="fragment">In den meisten Fällen ist das Ziel in der Psychologie allerdings nicht die Beschreibung der spezifischen Stichprobe, sondern ein Rückschluss – eine Inferenz, eine Verallgemeinerung – auf die Population.</li>
+<li class="fragment">Die Mathematik hinter diesem Inferenzprozess ist Gegenstand der <span style=" color: navy !important;"><strong>Inferenzstatistik</strong></span>.</li>
+</ul>
+</div>
+</div>
+<!-- ## Der Forschungsprozess {.hcenter-slide}
+
+```yaml { .animate src="images/scientific_process.svg"}
+setup:
+    - element: "#inference"
+      modifier: function() { this.node.style.fill = 'green'; }
+    - element: "#inferencebg"
+      modifier: function() { this.node.style.fill = '#d8ffe2';}
+``` -->
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<aside></aside></section>
+<section class="slide level2">
+<h2>Was ist Inferenzstatistik?</h2>
+<div class="vspace-medium">
+
+</div>
+
+<img data-src="images/population_sample_schaefer_rev.png" class="r-stretch"><p><strong>Zentrale Frage:</strong> Ist das Ergebnis meiner Studie eine gute Schätzung für die wahren Verhältnisse in der Population?</p>
+</section></section>
 <section>
 <section class="title-slide slide level1 center">
 <h1>Stichprobenverteilung</h1>
@@ -1030,7 +1077,7 @@ Alle Mittelwerte werden als Histogramm aufgetragen -> Normalverteilung?
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/peaya_sem.png"></p>
-<figcaption>Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a></figcaption>
+<figcaption>Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a></figcaption>
 </figure>
 </div>
 <!----------------->
@@ -1151,7 +1198,7 @@ se^2 = \frac{\sigma^2}{n} \qquad \text{bzw.} \qquad se = \frac{\sigma}{\sqrt{n}}
 <tr class="odd">
 <td>Korrelation</td>
 <td><span class="math inline">\(\hat{se}(r) = \sqrt{\frac{1-r^2}{n-2}}\)</span></td>
-<td>Näherung; Hinweis: laut neuerer Forschung ist <span class="math inline">\(\hat{se}(r) = \sqrt{\frac{1-r^2}{n-3}}\)</span> sogar ein noch besserer Schätzer<a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a></td>
+<td>Näherung; Hinweis: laut neuerer Forschung ist <span class="math inline">\(\hat{se}(r) = \sqrt{\frac{1-r^2}{n-3}}\)</span> sogar ein noch besserer Schätzer<a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a></td>
 </tr>
 <tr class="even">
 <td>Cohen’s d (abhängige Messungen)</td>
@@ -1161,11 +1208,11 @@ se^2 = \frac{\sigma^2}{n} \qquad \text{bzw.} \qquad se = \frac{\sigma}{\sqrt{n}}
 <tr class="odd">
 <td>Cohen’s d (unabhängige Messungen)</td>
 <td><span class="math inline">\(\hat{se}(d) = \sqrt{\frac{n_1+n_2}{n_1n_2}+\frac{d^2}{2(n_1+n_2)}}\)</span></td>
-<td>Näherung; Quelle<a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a></td>
+<td>Näherung; Quelle<a href="#/footnotes" class="footnote-ref" id="fnref4" role="doc-noteref" data-footnote-href="#/fn4" onclick=""><sup>4</sup></a></td>
 </tr>
 </tbody>
 </table>
-<p>Nützliches Paper<a href="#/footnotes" class="footnote-ref" id="fnref4" role="doc-noteref" data-footnote-href="#/fn4" onclick=""><sup>4</sup></a></p>
+<p>Nützliches Paper<a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a></p>
 <!--  -->
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
@@ -1175,10 +1222,11 @@ se^2 = \frac{\sigma^2}{n} \qquad \text{bzw.} \qquad se = \frac{\sigma}{\sqrt{n}}
 <section id="footnotes" class="footnotes footnotes-end-of-document smaller scrollable" role="doc-endnotes"><h2>Fußnoten</h2>
 
 <ol>
-<li id="fn1"><p>http://www.peaya.com/peaya.php?comicsid=1005</p></li>
-<li id="fn2"><p>Gnambs T. A Brief Note on the Standard Error of the Pearson Correlation. https://psyarxiv.com/uts98/</p></li>
-<li id="fn3"><p>n<a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a>:</p></li>
-<li id="fn4"><p>Harding B, Tremblay C, Cousineau D (2014) Standard errors: A review and evaluation of standard error estimators using Monte Carlo simulations. TQMP 10:107–123.</p></li>
+<li id="fn1"><p>https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Introductory_Statistics_(Shafer_and_Zhang)/01%3A_Introduction_to_Statistics/1.01%3A_Basic_Definitions_and_Concepts</p></li>
+<li id="fn2"><p>http://www.peaya.com/peaya.php?comicsid=1005</p></li>
+<li id="fn3"><p>Gnambs T. A Brief Note on the Standard Error of the Pearson Correlation. https://psyarxiv.com/uts98/</p></li>
+<li id="fn4"><p>n<a href="#/footnotes" class="footnote-ref" id="fnref4" role="doc-noteref" data-footnote-href="#/fn4" onclick=""><sup>4</sup></a>:</p></li>
+<li id="fn5"><p>Harding B, Tremblay C, Cousineau D (2014) Standard errors: A review and evaluation of standard error estimators using Monte Carlo simulations. TQMP 10:107–123.</p></li>
 </ol>
 </section>
     </div>
