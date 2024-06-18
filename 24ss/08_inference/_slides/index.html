@@ -403,7 +403,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/grand_picture_of_statistics_update.png"></p>
-<figcaption>Die statistische Prozess in der Psychologie auf einen Blick: eine Teilmenge von Versuchspersonen wird aus der Population gezogen — die Stichprobe. In der Stichprobe werden Daten <span class="math inline">\((x_1, x_2, ..., x_n)\)</span> eines Merkmals gemessen. Mit Methoden der deskriptiven Statistik werden <strong>Kennwerte</strong> in der Stichprobe beschrieben <span class="math inline">\((\bar{X}, s^2, s)\)</span>. Letztendlich ist das Ziel ein Rückschluss auf die wahren <strong>Parameter</strong> der Population <span class="math inline">\((\mu, \sigma^2, \sigma)\)</span> und das Testen von Hypothesen über die Population. Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a></figcaption>
+<figcaption>Die statistische Prozess in der Psychologie auf einen Blick: eine Teilmenge von Versuchspersonen wird aus der Population gezogen — die Stichprobe. In der Stichprobe werden Daten <span class="math inline">\((x_1, x_2, ..., x_n)\)</span> eines Merkmals <span class="math inline">\(X\)</span> gemessen. Mit Methoden der deskriptiven Statistik werden <strong>Kennwerte</strong> in der Stichprobe beschrieben <span class="math inline">\((\bar{x}, s^2, r)\)</span>. Letztendlich ist das Ziel ein Rückschluss auf die wahren <strong>Parameter</strong> <span class="math inline">\(\theta\)</span> der Population <span class="math inline">\((\mu, \sigma^2, \rho)\)</span> und das Testen von Hypothesen über die Population. Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a></figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:55%;">
@@ -534,7 +534,26 @@ f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\righ
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Theoretische Stichprobenverteilung: Beispiel</h2>
+<h2>Experiment zur Stichprobenverteilung: Würfeln</h2>
+<!-- Jeder Student bringt einen Würfel mit. 
+
+Runde 1: alle würfeln, Mittelwert wird notiert
+
+Runde 2: ""
+
+...
+
+Runde n
+
+Alle Mittelwerte werden als Histogramm aufgetragen -> Normalverteilung?
+
+(Beachte: die originale Verteilung ist uniform!) -->
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Stichprobenverteilung: Beispiel</h2>
 <div class="vspace-medium">
 
 </div>
@@ -564,7 +583,7 @@ f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\righ
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Theoretische Stichprobenverteilung: Beispiel</h2>
+<h2>Stichprobenverteilung: Beispiel</h2>
 <div class="vspace-medium">
 
 </div>
@@ -608,7 +627,7 @@ plt.savefig('images/noselength_example.png', bbox_inches='tight')
 <!----------------->
 <img data-src="images/inference2_annot.png" class="r-stretch"></section>
 <section class="slide level2">
-<h2>Theoretische Stichprobenverteilung: Beispiel</h2>
+<h2>Stichprobenverteilung: Beispiel</h2>
 <div class="vspace-medium">
 
 </div>
@@ -622,7 +641,7 @@ plt.savefig('images/noselength_example.png', bbox_inches='tight')
 <ul>
 <li class="fragment">Jeder Mittelwert wäre eine Schätzung für den wahren Populationswert.</li>
 <li class="fragment">Die gesammelten Mittelwerte all dieser hypothetischen Studien können nun ebenfalls in ein Histogramm eingetragen werden (in braun).</li>
-<li class="fragment">Wie wir noch sehen werden, lässt sich diese <strong>Stichprobenverteilung</strong> auch mathematisch beschreiben — im Bild rechts schon einmal durch die schwarze Kurve angedeutet.</li>
+<li class="fragment">Wie wir noch sehen werden, lässt sich die Verteilung des Histogramms auch auch mathematisch beschreiben und führt zur theoretischen Stichprobenverteilung (im Bild rechts schon einmal durch die schwarze Kurve angedeutet).</li>
 </ul>
 </div><div class="column" style="width:35%;">
 <p><img data-src="images/noselength_example.png"></p>
@@ -633,7 +652,7 @@ plt.savefig('images/noselength_example.png', bbox_inches='tight')
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Theoretische Stichprobenverteilung: Beispiel</h2>
+<h2>Stichprobenverteilung: Beispiel</h2>
 <div class="vspace-medium">
 
 </div>
@@ -656,7 +675,7 @@ plt.savefig('images/noselength_example.png', bbox_inches='tight')
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Theoretische Stichprobenverteilung</h2>
+<h2>Stichprobenverteilung</h2>
 <div class="vspace-medium">
 
 </div>
@@ -701,8 +720,9 @@ plt.savefig('images/noselength_example.png', bbox_inches='tight')
 <h2>Theoretische Stichprobenverteilung</h2>
 <ul>
 <li class="fragment">Als erste Frage stellt sich: durch welche grundlegende <strong>mathematische Funktion</strong> lässt sich die theoretische Stichprobenverteilung beschreiben?</li>
-<li class="fragment">Die Antwort auf diese Frage lässt sich aus dem <strong>zentralen Grenzwertsatz</strong> ableiten, demzufolge viele natürliche Merkmale <strong>normalverteilt</strong> sind, weil sie sich aus einer <strong>Summe von Zufallseffekten</strong> (Genetik, Umwelt, Erziehung, usw.) zusammensetzen.</li>
+<li class="fragment">Die Antwort auf diese Frage lässt sich aus dem <strong>zentralen Grenzwertsatz</strong> ableiten, demzufolge viele natürliche Merkmale normalverteilt sind, weil sie sich aus einer <strong>Summe von Zufallseffekten</strong> (Genetik, Umwelt, Erziehung, usw.) zusammensetzen.</li>
 <li class="fragment">Die zentrale Erkenntnis ist nun, dass sich die gleiche Logik — <strong>Summe von Zufallseffekten</strong> — auf statistische Kennwerte <span class="math inline">\(\hat{\theta}\)</span> wie den Mittelwert übertragen lässt!</li>
+<li class="fragment"><strong>Häufig kann als Stichprobenverteilung daher die Normalverteilung angenommen werden</strong>.</li>
 </ul>
 <div class="colorbox2 fragment">
 <div class="columns">
@@ -726,14 +746,13 @@ plt.savefig('images/noselength_example.png', bbox_inches='tight')
 <section class="slide level2">
 <h2>Theoretische Stichprobenverteilung</h2>
 <ul>
-<li class="fragment">Die theoretische Stichprobenverteilung eines statistischen Kennwertes <span class="math inline">\(\hat{\theta}\)</span> ist aus diesem Grund häufig die <strong>Normalverteilung</strong>.</li>
 <li class="fragment">Nochmals in anderen Worten: ziehen wir sehr viele Stichproben aus der Population, berechnen für jede Stichprobe einen statistischen Kennwert (in Bezug auf die betrachtete Merkmalsvariable), so sind diese Kennwerte häufig normalverteilt — und zwar <strong>unabhängig von der Verteilung der Merkmalsvariable <span class="math inline">\(X\)</span> in der Population</strong>!</li>
 </ul>
-<div class="vspace-small">
+<div class="vspace-large">
 
 </div>
-<p><img data-src="images/central_limit_theorem_average.png" height="265"></p>
-</section>
+
+<img data-src="images/central_limit_theorem_average.png" class="r-stretch"></section>
 <section class="slide level2">
 <h2>Theoretische Stichprobenverteilung</h2>
 <div class="vspace-xlarge">
@@ -765,11 +784,11 @@ plt.savefig('images/noselength_example.png', bbox_inches='tight')
 </div>
 <div class="columns">
 <div class="column" style="width:65%;">
-<p>Die Form der theoretischen Stichprobenverteilung (SV) ist also geklärt (zumindest im Grenzfall <span class="math inline">\(n\rightarrow\infty\)</span>): <strong>Normalverteilung</strong>.</p>
+<p>Die Form der theoretischen Stichprobenverteilung (SV) ist also geklärt (zumindest im Grenzfall <span class="math inline">\(n\rightarrow\infty\)</span>): &nbsp;&nbsp;<strong>Normalverteilung</strong>.</p>
 </div><div class="column" style="width:35%;">
 <div style="margin-top: -20px">
 <p><span class="math display">\[
-f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+f(\theta) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{\theta-\mu}{\sigma}\right)^2}
 \]</span></p>
 </div>
 </div>
@@ -779,13 +798,13 @@ f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\righ
 </div>
 <div class="columns">
 <div class="column" style="width:65%;">
-<p>Dass eine Zufallsvariable <span class="math inline">\(X\)</span> normalverteilt ist, wird häufig auch mit folgender Notation zum Ausdruck gebracht</p>
+<p>Dass eine Zufallsvariable wie hier <span class="math inline">\(\theta\)</span> normalverteilt ist, wird häufig auch mit folgender Notation zum Ausdruck gebracht:</p>
 <p><span class="math display">\[
-X \sim \mathcal{N}(\mu_\text{SV},\,\sigma_\text{SV})
+\theta \sim \mathcal{N}(\mu_\text{SV},\,\sigma_\text{SV})
 \]</span></p>
-<p><span style="font-size: 20px">(in Worten: <em>wir nehmen an, dass unser Merkmal <span class="math inline">\(X\)</span> aus einer Normalverteilung <span class="math inline">\(\mathcal{N}\)</span> mit Mittelwert <span class="math inline">\(\mu_\text{SV}\)</span> und Standardabweichung <span class="math inline">\(\sigma_\text{SV}\)</span> gezogen ist</em>)</span></p>
+<p><span style="font-size: 20px">(in Worten: <em>wir nehmen an, dass potentielle Stichprobenkennwerte <span class="math inline">\(\theta\)</span> einer Normalverteilung <span class="math inline">\(\mathcal{N}\)</span> mit Mittelwert <span class="math inline">\(\mu_\text{SV}\)</span> und Standardabweichung <span class="math inline">\(\sigma_\text{SV}\)</span> folgen</em>)</span></p>
 </div><div class="column" style="width:35%;">
-<p><img data-src="images/stichprobenverteilung_theoretisch.png"></p>
+<p><img data-src="images/stichprobenverteilung_theoretisch_labeled.png"></p>
 </div>
 </div>
 <p>Zwei Informationen fehlen nun noch:</p>
@@ -828,26 +847,10 @@ X \sim \mathcal{N}(\mu_\text{SV},\,\sigma_\text{SV})
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style="font-size: 39px">Experiment zur theoretischen Stichprobenverteilung: Würfeln</span></h2>
-<!-- Jeder Student bringt einen Würfel mit. 
-
-Runde 1: alle würfeln, Mittelwert wird notiert
-
-Runde 2: ""
-
-...
-
-Runde n
-
-Alle Mittelwerte werden als Histogramm aufgetragen -> Normalverteilung?
-
-(Beachte: die originale Verteilung ist uniform!) -->
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
 <h2>Streuung der theoretischen Stichprobenverteilung</h2>
+<div class="vspace-large">
+
+</div>
 <p>Bleibt die Frage nach dem Streuungsparameter <span class="math inline">\(\sigma_\text{SV}\)</span> der theoretischen Stichprobenverteilung: woher wissen wir, wie die Ergebnisse von hypothetischen Stichproben streuen würden?</p>
 <div class="columns fragment">
 <div class="column" style="width:32%;">
@@ -860,7 +863,7 @@ Alle Mittelwerte werden als Histogramm aufgetragen -> Normalverteilung?
 <p><strong>Was würde die Streuung der hypothetischen Einzelstichproben verkleinern?</strong></p>
 </div>
 <ol type="1">
-<li class="fragment"><p>Wenn die Stichprobengröße höher ist als lediglich <span class="math inline">\(n=3\)</span> Personen (z.B. <span class="math inline">\(n=6\)</span>)<br>⟶ damit lägen die Mittelwerte der Einzelstichproben idR näher am wahren Mittelwert!</p></li>
+<li class="fragment"><p>Wenn die Stichproben größer ist als lediglich <span class="math inline">\(n=3\)</span> Personen (z.B. <span class="math inline">\(n=6\)</span>)<br>⟶ damit lägen die Mittelwerte der Einzelstichproben idR näher am wahren Mittelwert!</p></li>
 <li class="fragment"><p>Wenn die Population grundsätzlich eine geringere Streuung <span class="math inline">\(\sigma\)</span> aufweist<br>⟶ damit würden auch die Mittelwerte der Einzelstichproben weniger streuen.</p></li>
 </ol>
 <div class="fragment">
@@ -996,7 +999,7 @@ Alle Mittelwerte werden als Histogramm aufgetragen -> Normalverteilung?
 <p><strong>Wie kann man den Wert eines Standardfehlers interpretieren?</strong></p>
 <ul>
 <li class="fragment">Prinzipiell gilt: <strong>je kleiner, desto präziser ist die Kennwertschätzung</strong> auf Basis der Stichprobe.</li>
-<li class="fragment">Allerdings ist der Standardfehler keine standardisierte Größe wie z.B. Cohen’s d und hängt von den gewählten Einheiten der Variable <span class="math inline">\(X\)</span> ab.
+<li class="fragment">Allerdings ist der Standardfehler keine standardisierte Größe wie z.B. Cohen’s <span class="math inline">\(d\)</span>, sondern hängt von den gewählten Einheiten der Variable <span class="math inline">\(X\)</span> ab.
 <ul>
 <li class="fragment">Interpretation ohne Kenntnis der Einheit/Messskala nicht möglich.</li>
 </ul></li>
@@ -1013,7 +1016,7 @@ Alle Mittelwerte werden als Histogramm aufgetragen -> Normalverteilung?
 <p><img data-src="images/example.png" height="70"></p>
 </div>
 </div><div class="column" style="width:90%;">
-<p>Nehmen wir wieder unser Nasenlängen-Beispiel mit <span class="math inline">\(\bar{x}=6cm\)</span> und <span class="math inline">\(\hat{se}=0{,}5cm\)</span>, und nehmen wir an, die Standard<em>abweichung</em> von Nasenlängen in der Stichprobe betrug <span class="math inline">\(5cm\)</span>. In diesem Fall hätten wir den Mittelwert mit einer Präzision von 10% der Streubreite in der Stichprobe geschätzt, was einer recht guten/präzisen Schätzung entspricht.</p>
+<p>Im Nasenlängen-Beispiel galt <span class="math inline">\(\bar{x}=6cm\)</span> und <span class="math inline">\(\hat{se}=0{,}5cm\)</span>. Nehmen wir an, die Standard<em>abweichung</em> von Nasenlängen in der Stichprobe wurde zu <span class="math inline">\(5cm\)</span> gemessen, also <span class="math inline">\(\hat{\sigma}=5cm\)</span>. In diesem Fall beträgt der Standardfehler — unser Maß für die Präzision der Mittelwertmessung — 10% der Streubreite des Merkmals in der Stichprobe. Dies entspricht einer recht guten/präzisen Schätzung des Mittelwertes.</p>
 <p>(Als kleine Übung: wie hoch müsste in diesem Beispiel die Stichprobenzahl gewesen sein? (Antwort: <span class="math inline">\(n=100\)</span>)</p>
 </div>
 </div>
@@ -1063,7 +1066,7 @@ Alle Mittelwerte werden als Histogramm aufgetragen -> Normalverteilung?
 <li class="fragment">Diese Idee wird durch die <strong>theoretische Stichprobenverteilung</strong> repräsentiert.</li>
 <li class="fragment">Die Stichprobenverteilung von Kennwerten <span class="math inline">\(\hat{\theta}\)</span> kann aufgrund des Zentralen Grenzwertsatzes häufig als <strong>normalverteilt</strong> angenommen werden.</li>
 <li class="fragment">Der Mittelwert <span class="math inline">\(\mu_\text{SV}\)</span> der normalverteilten Stichprobenverteilung ist der Kennwert <span class="math inline">\(\hat{\theta}\)</span> selbst und ihre Standardabweichung <span class="math inline">\(\sigma_\text{SV}\)</span> wird als <strong>Standardfehler</strong> <span class="math inline">\(se\)</span> bezeichnet.</li>
-<li class="fragment">Beispiel Kennwert <span class="math inline">\(\hat{\theta}\)</span> = Mittelwert <span class="math inline">\(\bar{x}\)</span>: <span class="math inline">\(\quad\hat{\mu}_\text{SV}=\bar{x}\)</span>, <span class="math inline">\(\quad\hat{\sigma}_\text{SV}=\frac{\hat{\sigma}}{\sqrt{n}}\)</span>.</li>
+<li class="fragment">Beispiel Kennwert <span class="math inline">\(\hat{\theta}\)</span> = Mittelwert <span class="math inline">\(\bar{x}\)</span>: <span class="math inline">\(\quad\hat{\mu}_\text{SV}=\bar{x}\)</span>, <span class="math inline">\(\quad\hat{\sigma}_\text{SV}=\hat{se}=\frac{\hat{\sigma}}{\sqrt{n}}\)</span>.</li>
 </ul>
 </div>
 </div>
