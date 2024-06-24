@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.4.251">
 
   <meta name="author" content="Prof.&nbsp;Matthias Guggenmos">
-  <title>Vorlesung 09: Wahrscheinlichkeitsverteilungen</title>
+  <title>Vorlesung 09: Wahrscheinlichkeitsdichte</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">-->
@@ -337,8 +337,8 @@
 </style>
 
 <section data-background-color="black" class="titlesection quarto-title-block center">
-  <p class="semester">M24 Statistik 1:&nbsp;&nbsp;Wintersemester 23/24</p>
-  <h1 class="title">Vorlesung 09: Wahrscheinlichkeitsverteilungen</h1>
+  <p class="semester">M24 Statistik 1:&nbsp;&nbsp;Sommersemester 2024</p>
+  <h1 class="title">Vorlesung 09: Wahrscheinlichkeitsdichte</h1>
   
   <p class="subtitle">&nbsp;</p>
 
@@ -351,22 +351,114 @@
 <div><button onclick="new Audio('images/appear.mp3').play()" class="intro-sound"><img src="images/paradoxia_group_of_scientists.png" height="240px"></button></div>
 </div>
 </section>
-<section class="slide level2 hcenter-slide">
-<h2>Der Forschungsprozess</h2>
-<div data-animate="" data-src="images/scientific_process.svg"><!-- setup:
+<section class="slide level2">
+<h2>Theoretische Häufigkeitsverteilungen</h2>
+<!-- ## Der Forschungsprozess {.hcenter-slide}
+
+```yaml { .animate src="images/scientific_process.svg"}
+setup:
     - element: "#inference"
       modifier: function() { this.node.style.fill = 'green'; }
     - element: "#inferencebg"
-      modifier: function() { this.node.style.fill = '#d8ffe2';} --></div>
-</section>
-<section class="slide level2">
-<h2>Wahrscheinlichkeitsverteilung</h2>
+      modifier: function() { this.node.style.fill = '#d8ffe2';}
+``` -->
 <div class="columns">
 <div class="column" style="width:70%;">
-<p>Wir kennen nun die Form und die Formparameter (Mittelwert, Standardfehler) der theoretischen Stichprobenverteilung. Mathematisch handelt es sich bei der Funktion, die diese Verteilung beschreibt, um eine <strong>Wahrscheinlichkeitsverteilung</strong>.</p>
+<p>In der letzten Vorlesung haben wir erarbeitet, dass sich die Stichprobenverteilung durch eine Normalverteilung der Form</p>
+<p><span class="math display">\[
+f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+\]</span></p>
+<p>beschreiben lässt (wobei die Variable <span class="math inline">\(x\)</span> im Fall der Stichprobenverteilung der Stichprobenkennwert <span class="math inline">\(\hat{\theta}\)</span> ist).</p>
 </div><div class="column" style="width:30%;">
-<p><img data-src="images/noselength_probability_density_f.png" style="margin-top:-60px !important"></p>
+<p><img data-src="images/noselength_probability_density_f_x.png" style="margin-top:-60px !important"></p>
 </div>
+</div>
+<ul>
+<li class="fragment">Eine theoretische Häufigkeitsverteilung wie die Normalverteilung gibt für <em>jeden beliebigen Wert</em> <span class="math inline">\(x\)</span> des Merkmals <span class="math inline">\(X\)</span> eine Häufigkeit <span class="math inline">\(f(x)\)</span> an.</li>
+<li class="fragment">Eine wichtige Frage haben wir bislang jedoch nicht beantwortet: was für eine Art von Häufigkeit ist <span class="math inline">\(f(x)\)</span> an? Wie ist also die y-Achse im Diagramm rechts oben zu interpretieren?</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>Rückblick: das Histogramm</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div>
+<ul>
+<li>Um die Bedeutung von <span class="math inline">\(f(x)\)</span> zu verstehen, gehen wir zunächst zurück zum <strong>Histogramm</strong>.</li>
+<li>Histogramme stellen die Häufigkeit der Merkmalsvariable <span class="math inline">\(X\)</span> in einer Stichprobe oder Population dar. Wird die <strong>relative Häufigkeit</strong> aufgetragen, so ordnet das Histogramm jedem Intervall auf der x-Achse eine relative Häufigkeit dar, die z.B. in Prozent angegeben werden kann.</li>
+</ul>
+</div>
+</div><div class="column" style="width:30%;">
+<p><img data-src="images/noselength_normal_relative.png"></p>
+</div>
+</div>
+<ul>
+<li class="fragment">Die Breite des Intervalls – die <span style=" color: navy !important;"><strong>Kategorienbreite <em>d</em></strong></span> – ist dabei ein Kompromiss zweier Faktoren:
+<ol type="1">
+<li class="fragment"><strong>Auflösung:</strong> je schmaler das Intervall, desto feiner wird das Merkmal X unterteilt.</li>
+<li class="fragment"><strong>Fallzahl:</strong> je breiter das Intervall, desto höher die Zahl der Fälle im Intervall, desto präziser die Schätzung des Häufigkeitswertes im Intervall.</li>
+</ol></li>
+<li class="fragment">Die Gesamtsumme aller Säulen im Histogramm mit relativer Häufigkeit ist immer 1 (oder 100%).</li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>Rückblick: das Histogramm</h2>
+<div>
+<ul>
+<li>Umgekehrt gilt: je kleiner die Kategorienbreite, desto mehr Säulen gibt es, desto kleiner die relativen Häufigkeitswerte jeder einzelnen Säule.</li>
+</ul>
+</div>
+
+<img data-src="images/probability_density_demo.png" style="margin-bottom:-3px" class="r-stretch"><ul>
+<li class="fragment">Beispiel:
+<ul>
+<li class="fragment">Im ersten Plot gilt <span class="math inline">\(d=2cm\)</span>. Die relative Häufigkeit, dass ein Merkmal etwa im Intervall <span class="math inline">\([6cm; 8cm]\)</span> liegt ist ca. <span class="math inline">\(0.22\)</span> (oder 22%).</li>
+<li class="fragment">Im zweiten Plot gilt <span class="math inline">\(d=1cm\)</span>. Nun wird etwa das Intervall <span class="math inline">\([6cm; 8cm]\)</span> aufgeteilt in zwei relative Häufigkeiten für die Bereiche <span class="math inline">\([6cm; 7cm]\)</span> und <span class="math inline">\([7cm; 8cm]\)</span>, die jeweils beide geringer sind (ca. <span class="math inline">\(0.16\)</span> und <span class="math inline">\(0.06\)</span>).</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+<h2>Rückblick: das Histogramm</h2>
+<ul>
+<li class="fragment">Nun scheint ein Brückenschlag naheliegend: ist die theoretische Häufigkeitsverteilung <span class="math inline">\(f(x)\)</span>, die Funktionswerte für beliebige <span class="math inline">\(x\)</span>-Werte ausgibt, gleich einem Histogramm, bei dem die Kategorienbreite gegen Null geht?</li>
+</ul>
+
+<img data-src="images/probability_density_demo.png" style="margin-bottom:-3px" class="r-stretch"><ul>
+<li class="fragment">Im Prinzip ja, allerdings gibt es noch ein Problem: geht die Kategorienbreite <span class="math inline">\(d\)</span> gegen <span class="math inline">\(0\)</span>, gehen die relativen Häufigkeitswerte des Histogramms ebenfalls gegen Null!</li>
+<li class="fragment">Würde die theoretische Häufigkeitsverteilung <span class="math inline">\(f(x)\)</span> also relative Häufigkeiten angeben, so wäre <span class="math inline">\(f(x)\)</span> für jedes <span class="math inline">\(x\)</span> Null. Das ist natürlich sinnlos.</li>
+<li class="fragment"><strong>Theoretische Häufigkeitsverteilungen <span class="math inline">\(f(x)\)</span> geben aus diesem Grund keine relative Häufigkeit an</strong>.</li>
+<li class="fragment">Bleibt die Frage: was stattdessen?</li>
+</ul>
+<!-- - Beispiel: die Wahrscheinlichkeit ist **Null**, dass Nasen eine bestimmte, bis auf die "unendlichste" Nachkommastelle angegebene, Länge haben (z.B. $4{,}318264812357218735....cm$). -->
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Von der Wahrscheinlichkeit zur Wahrscheinlichkeitsdichte</h2>
+<p>Zunächst ein Hinweis zur Nomenklatur:</p>
+<div class="definition">
+<!---  Definition--->
+<table>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
+<td>Wir verwenden den Begriff <strong>relative Häufigkeiten</strong> bei empirischen Daten und meinen damit den Anteil einer Merkmalsausprägung relativ zu allen Datenpunkten. Beispiel: in einer Stichprobe von 100 Würfelversuchen lag die relative Häufigkeit von Zahlen größer 3 bei <span class="math inline">\(0.48\)</span> oder <span class="math inline">\(48 \%\)</span>.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="definition">
 <!---  Definition--->
@@ -382,7 +474,7 @@
 </tr>
 <tr class="even">
 <td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
-<td>Eine <span style=" color: navy !important;"><strong>Wahrscheinlichkeitsverteilung</strong></span> ist eine <strong>mathematische Funktion</strong>, die jeder Merkmalsausprägung auf der <span class="math inline">\(x\)</span>-Achse einen Häufigkeitswert <span class="math inline">\(f(x)\)</span> auf der y-Achse zuweist.</td>
+<td>Wir verwenden den Begriff <strong>Wahrscheinlichkeit</strong>, wenn die theoretische Häufigkeitsverteilung eines Merkmals bekannt ist, und meinen damit den Anteil einer Merkmalsausprägung laut Theorie. Beispiel: bei einem perfekten Würfel ist die Wahrscheinlichkeit einer Zahl größer 3 exakt <span class="math inline">\(0.5\)</span>.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -391,98 +483,16 @@
 </tbody>
 </table>
 </div>
-<div class="fragment">
-<p>Um dieses Konzept zu verstehen, verlassen wir kurz die Idee der Stichprobenverteilung und gehen zurück zu einem Konzept, das wir bereits kennen: <strong>relative Häufigkeiten, dargestellt als Histogramme</strong>.</p>
-</div>
-<div class="columns fragment">
-<div class="column" style="width:65%;">
-<p>Zur Erinnerung: Histogramme stellen die Häufigkeit der <em>ursprünglichen Merkmalsvariable</em> in einer Stichprobe oder Population dar. Wird die <strong>relative Häufigkeit</strong> aufgetragen, handelt es sich dabei um eine <strong>empirische Wahrscheinlichkeitsverteilung</strong>.</p>
-</div><div class="column" style="width:35%;">
-<p><img data-src="images/noselength_normal_relative_noannot.png" style="margin-top:-30px !important"></p>
-</div>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
+<ul>
+<li class="fragment">Im Kontext von theoretischen Häufigkeitsverteilungen können wir daher von <strong>Wahrscheinlichkeiten</strong> sprechen.</li>
+<li class="fragment">Klar ist auch: durch die Nomenklaturänderung <em>relative Häufigkeit</em> → <em>Wahrscheinlichkeit</em> ist noch nichts gewonnen.</li>
+</ul>
 </section>
 <section class="slide level2">
-<h2>Wahrscheinlichkeitsverteilung</h2>
-<div class="vspace-medium">
-
-</div>
-<div class="columns">
-<div class="column" style="width:70%;">
-<div>
-<ul>
-<li>Bei der <strong>relativen Häufigkeit in Histogrammdarstellung</strong> wird für jedes Intervall der untersuchten Variable abgetragen, welcher Anteil der Versuchspersonen das Merkmal im jeweiligen Wertebereich trägt.</li>
-</ul>
-</div>
-<ul>
-<li class="fragment">Die Breite des Intervalls – auch <span style=" color: navy !important;"><strong>Kategorienbreite <em>d</em></strong></span> genannt – ist dabei im Fall von <em>empirischen</em> Daten immer ein Kompromiss zweier Faktoren:
-<ol type="1">
-<li class="fragment"><strong>Auflösung:</strong> je schmaler das Intervall, desto besser die Auflösung.</li>
-<li class="fragment"><strong>Fallzahl:</strong> je breiter das Intervall, desto höher die Zahl der Fälle in diesem Intervall, desto besser die Schätzung für die Häufigkeit.</li>
-</ol></li>
-</ul>
-</div><div class="column" style="width:30%;">
-<p><img data-src="images/noselength_normal_relative.png"></p>
-</div>
-</div>
-<!-- - Sie definiert die theoretisch zu erwartende Verteilung eines Merkmals.
-- Sie "generiert" Zufallsereignisse (Würfelwurfe, Nasenlängen, IQ-Werte, usw.) bzw. Zufallsereignisse werden aus der theoretischen Verteilung "gezogen".
-- Selbst die Population wurde aus der theoretischen Verteilung gezogen! -->
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>Wahrscheinlichkeitsverteilung</h2>
-<p>Wie ist es nun, wenn wir die <strong>mathematische Funktion</strong> kennen, die eine Wahrscheinlichkeitsverteilung beschreibt?</p>
-<p><strong>Beispiel Normalverteilung:</strong></p>
-<p><span class="math display">\[
-f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2} = \frac{1}{\sigma\sqrt{2\pi}}\text{exp}\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
-\]</span></p>
-<ul>
-<li class="fragment">In diesem Fall ist uns für <em>jedes Intervall</em> und für <em>jede noch so kleine Kategorienbreite</em> der<br><em>wahre y-Wert</em> bekannt ist (wir kennen ja die Funktion).</li>
-<li class="fragment">Wir können also die Kategorienbreite beliebig klein wählen, und wüssten immer noch den präzisen Wahrscheinlichkeitswert.</li>
-</ul>
-<div class="vspace-medium">
-
-</div>
-<div class="fragment">
-<p><img data-src="images/probability_density_demo.png"></p>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>Wahrscheinlichkeitsverteilung</h2>
-<div class="vspace-small">
-
-</div>
-
-<img data-src="images/probability_density_demo.png" style="margin-bottom:-3px" class="r-stretch"><ul>
-<li class="fragment">Je kleiner die Kategorienbreite, desto geringer werden die relativen Häufigkeiten
-<ul>
-<li class="fragment">Beispiel: die relative Häufigkeit, dass ein Merkmal im Intervall <span class="math inline">\([6; 8]\)</span> liegt ist größer, als die relative Häufigkeit, dass das Merkmal im Intervall <span class="math inline">\([6; 7]\)</span> liegt.</li>
-<li class="fragment">Für jede gewählte Kategorienbreite ist die Summe aller Balken allerdings weiterhin 1, denn die Wahrscheinlichkeit, dass das Merkmal <em>irgendeinen</em> der Werte annimmt, muss 1 sein.<br>
-</li>
-</ul></li>
-<li class="fragment">Für <span class="math inline">\(d\rightarrow 0\)</span> gehen die y-Werte gegen Null
-<ul>
-<li class="fragment">Beispiel: die Wahrscheinlichkeit, dass Nasen eine bis auf die unendlichste Nachkommastelle präzise Länge haben (z.B. <span class="math inline">\(4{,}318264812357218735....cm\)</span>) ist <strong>Null</strong>.</li>
-</ul></li>
-<li class="fragment">Diese Überlegung führt uns zur <strong>Dichte<em>funktion</em></strong> ⎘</li>
-</ul>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>Wahrscheinlichkeitsdichte</h2>
-<div class="colorbox">
-<p>Geht die Kategorienbreite gegen 0, wird die Wahrscheinlichkeit(sverteilung) zur <span style=" color: navy !important;"><strong>Wahrscheinlichkeitsdichte(verteilung)</strong></span>.</p>
+<h2>Von der Wahrscheinlichkeit zur Wahrscheinlichkeitsdichte</h2>
+<p>Der entscheidende Trick theoretischer Häufigkeitsverteilungen ist der <strong>Übergang von Wahrscheinlichkeiten zu Wahrscheinlichkeitsdichten</strong>.</p>
+<div class="colorbox fragment">
+<p>Ist das Merkmal <span class="math inline">\(x\)</span> ein kontinuierlicher Wert (z.B. Nasenlänge), so geben theoretische Häufigkeitsverteilungen <span class="math inline">\(f(x)\)</span> eine <span style=" color: navy !important;"><strong>Wahrscheinlichkeitsdichte</strong></span> an.</p>
 </div>
 <p>Wie kann man sich “Wahrscheinlichkeitsdichte” vorstellen?</p>
 <ul>
@@ -515,37 +525,33 @@ f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\righ
 </tbody>
 </table>
 </div>
-<ul>
-<li class="fragment">Die Maßeinheit ist durch die Skala unseres Merkmals gegeben:<br>Wahrscheinlichkeit <em>pro</em> Zentimeter Nasenlänge, Wahrscheinlichkeit <em>pro</em> IQ-Punkt, Wahrscheinlichkeit <em>pro</em> Fragebogenpunkt</li>
-</ul>
+<p>Die Maßeinheit ist somit durch die Skala unseres Merkmals gegeben: Wahrscheinlichkeit <em>pro</em> Zentimeter Nasenlänge, Wahrscheinlichkeit <em>pro</em> IQ-Punkt, Wahrscheinlichkeit <em>pro</em> Fragebogenpunkt.</p>
 <!----------------->
 <!--- New slide --->
 <!----------------->
 </section>
 <section class="slide level2">
 <h2>Wahrscheinlichkeitsdichte</h2>
-<p>Da die Funktion der Normalverteilung <span class="math display">\[
+<ul>
+<li class="fragment">Theoretische Häufigkeitsverteilungen <span class="math inline">\(f(x)\)</span> für kontinulierliche Merkmale <span class="math inline">\(X\)</span> werden auch als <span style=" color: navy !important;"><strong>Wahrscheinlichkeitsdichtefunktion</strong></span> bezeichnet (engl. <em>probability density function</em>).</li>
+<li class="fragment">Wie bei Histogrammen mit relativen Häufigkeiten ist die gesamte Wahrscheinlichkeits<em>masse</em> von Wahrscheinlichkeitsdichtefunktionen <span class="math inline">\(f(x)\)</span> immer 1. Sie sind <strong>normalisiert</strong>.</li>
+</ul>
+<p>Beispiel Normalverteilung: <span class="math display">\[
 f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
 \]</span></p>
-<p>für beliebig “feine” <span class="math inline">\(x\)</span> definiert ist, handelt es sich bei ihr in der Tat um eine <strong>Wahrscheinlichkeitsdichtefunktion</strong>.</p>
 <div class="vspace-medium">
 
 </div>
 <div class="columns">
 <div class="column" style="width:65%;">
-<ul>
-<li class="fragment">Wichtig: Die Fläche unter Dichtefunktionen ist gleich 1: <span class="math display">\[
+<p>Der Normalisierungsfaktor <span class="math inline">\(\frac{1}{\sigma\sqrt{2\pi}}\)</span> sorgt in diesem Fall dafür, dass die Fläche unter der Normalverteilung gleich 1 ist: <span class="math display">\[
 \int_{-\infty}^{\infty} f(x) dx = 1
-\]</span></li>
-</ul>
+\]</span></p>
 </div><div class="column" style="width:35%;">
 <div class="fragment">
 <p><img data-src="images/integral_of_pdf_is_1.png" style="margin-top:-40px !important" height="222"></p>
 </div>
 </div>
-</div>
-<div class="fragment">
-<p>.. im Fall der Normalverteilung sorgt dafür der Normalisierungsfaktor <span class="math inline">\(\frac{1}{\sigma\sqrt{2\pi}}\)</span> .</p>
 </div>
 <!-- ```{python}
 
@@ -581,26 +587,7 @@ plt.savefig('images/density_integral.png', bbox_inches='tight')
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Wahrscheinlichkeitsdichte</h2>
-<p>Um aus einer Wahrscheinlichkeits<em>dichte</em> eine Wahrscheinlichkeit zu erhalten, muss die Dichte über einen bestimmten Wertebereich des Merkmals summiert (integriert) werden.</p>
-<div class="vspace-small">
-
-</div>
-<!---  Example --->
-<div class="example">
-<div class="columns">
-<div class="column" style="width:10%;">
-<div style="margin-top: 10px">
-<p><img data-src="images/example.png" height="70"></p>
-</div>
-</div><div class="column" style="width:90%;">
-<p>Wäre die Wahrscheinlichkeitsdichte für Nasenlängen im Intervall <span class="math inline">\([2cm; 4cm]\)</span> konstant gleich <span class="math inline">\(0{,}1\)</span>, so wäre die Wahrscheinlichkeit einer Nasenlänge in diesem Intervall gleich:</p>
-<p><span class="math display">\[
-Wahrscheinlichkeit=Intervallgröße \cdot Wahrscheinlichkeitsdichte = 2cm \cdot 0{,}1cm^{-1} = 0{,}2
-\]</span></p>
-</div>
-</div>
-</div>
+<h2><span style="font-size: 39px">Von der Wahrscheinlichkeitsdichte zurück zur Wahrscheinlichkeit</span></h2>
 <!-- Analogie Dichte von Eis: bei eine Dichte von Eis $0{,}918\frac{g}{cm^3}$ können wir ausrechnen, dass sich in einem 10x10x10cm Eiswürfel $918g$ Eis befinden: $Gewicht = Volumen \cdot Dichte = 1000cm^3 \cdot 0{,}918\frac{g}{cm^3}=918g$ -->
 <div class="vspace-small">
 
@@ -609,6 +596,7 @@ Wahrscheinlichkeit=Intervallgröße \cdot Wahrscheinlichkeitsdichte = 2cm \cdot 
 <div class="column" style="width:62%;">
 <div>
 <ul>
+<li>Um aus einer Wahrscheinlichkeits<em>dichte</em> eine Wahrscheinlichkeit zu erhalten, muss die Dichte über einen bestimmten <strong>Wertebereich <span class="math inline">\([x_0; x_1]\)</span></strong> des Merkmals summiert (integriert) werden.</li>
 <li>Mathematisch beschreiben wir diese Operation als ein Integral:</li>
 </ul>
 </div>
@@ -617,7 +605,7 @@ P(x_0&lt;x&lt;x_1) = \int_{x_0}^{x_1} f(x) dx
 \]</span></p>
 <ul>
 <li class="fragment"><span class="math inline">\(P\)</span> ist die Wahrscheinlichkeit, dass das Merkmal einen Wert zwischen <span class="math inline">\(x_0\)</span> (Untergrenze) und <span class="math inline">\(x_1\)</span> (Obergrenze) aufweist.</li>
-<li class="fragment">Das Integral setzt die <em>Wahrscheinlichkeit</em> <span class="math inline">\(P(x_0&lt;x&lt;x_1)\)</span> mit der <em>Wahrscheinlichkeitsdichte</em> <span class="math inline">\(f(x)\)</span> in Verbindung.</li>
+<li class="fragment">Das Integral setzt die <em>Wahrscheinlichkeitsdichte</em> <span class="math inline">\(f(x)\)</span> mit der <em>Wahrscheinlichkeit</em> <span class="math inline">\(P(x_0&lt;x&lt;x_1)\)</span> in Verbindung.</li>
 </ul>
 </div><div class="column" style="width:38%;">
 <div class="vspace-large">
@@ -626,7 +614,7 @@ P(x_0&lt;x&lt;x_1) = \int_{x_0}^{x_1} f(x) dx
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/density_integral.png"></p>
-<figcaption>Beachte, dass im Bild die Wahrscheinlichkeitsdichte (anders als im Beispiel oben) nicht konstant zwischen 2cm und 4cm ist.</figcaption>
+<figcaption>Berechnung einer Wahrscheinlichkeit <span class="math inline">\(P\)</span> auf Basis einer Wahrscheinlichkeitsdichtefunktion <span class="math inline">\(f(x)\)</span> (hier der Normalverteilung).</figcaption>
 </figure>
 </div>
 </div>
@@ -636,11 +624,11 @@ P(x_0&lt;x&lt;x_1) = \int_{x_0}^{x_1} f(x) dx
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Wahrscheinlichkeitsdichte: Beispiel</h2>
+<h2>Wahrscheinlichkeitsdichte: Beispiel 1</h2>
 <div class="columns">
 <div class="column" style="width:63%;">
-<p>Lassen wir die Vereinfachung im vorherigen Beispiel fallen, dass die Wahrscheinlichkeitsdichte im Bereich <span class="math inline">\([2cm; 4cm]\)</span> konstant ist. Stattdessen nehmen wir an, dass Nasenlängen in der Population normalverteilt sind, mit Mittelwert <span class="math inline">\(\mu=5\)</span> und Standardabweichung <span class="math inline">\(\sigma=1{,}5\)</span>.</p>
-<p><strong>Frage: wie hoch ist die Wahrscheinlichkeit, dass eine zufällig gezogene Nase aus der Population eine Länge zwischen <span class="math inline">\(2cm\)</span> und <span class="math inline">\(4cm\)</span> hat?</strong></p>
+<p>Nehmen wir an, dass Nasenlängen in der Population <em>normalverteilt</em> sind, mit Mittelwert <span class="math inline">\(\mu=5\)</span> und Standardabweichung <span class="math inline">\(\sigma=1{,}5\)</span>.</p>
+<p><strong>Frage:</strong> wie hoch ist die Wahrscheinlichkeit, dass eine zufällig gezogene Nase aus der Population eine Länge zwischen <span class="math inline">\(2cm\)</span> und <span class="math inline">\(4cm\)</span> hat?</p>
 </div><div class="column" style="width:37%;">
 <p><img data-src="images/density_integral.png"></p>
 </div>
@@ -663,6 +651,59 @@ P(2\le x\le 4) = \int_2^4 f(x)dx = \frac{1}{\sigma\sqrt{2\pi}}\int_2^4\text{exp}
     - Stattdessen wollen wir mechanistisch und quantitativ verstehen, wie naturwissenschaftliche Prozesse (biologisch, psychisch, sozial) bestimmte psychologische Phänomene "generieren".
 - In der Psychologie ist das primäre Interesse häufig der Mechanismus und damit die theoretische Wahrscheinlichkeitsverteilung eines Merkmals; in der Politologie, Soziologie, Ökonomie ist dagegen häufig die Verteilung in der Population relevant (z.B. "Sonntagsfrage").
 - Auch wenn diese Unterscheidung konzeptionell wichtig ist, ist sie in der Praxis häufig nicht relevant, da Populationen i.d.R. so groß sind, dass sie nahezu perfekt mit der theoretischen Wahrscheinlichkeitsverteilung übereinstimmen. -->
+<!-- ```{python}
+
+``` -->
+<!-- ```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.stats import norm
+
+np.random.seed(0)
+
+fontsize = 12
+
+mu = 5
+std = 1.5
+x = np.linspace(0, 10, 100)
+y = 0.1*np.ones(100)
+
+plt.figure(figsize=(4, 2.5))
+plt.plot(x, y, color='#783c00', lw=2)
+plt.plot([0, 0], [0, 0.1], color='#783c00', lw=2)
+plt.plot([10, 10], [0, 0.1], color='#783c00', lw=2)
+plt.fill_between(x,y, where= (2 < x)&(x < 4), color="b", alpha=0.2)
+plt.annotate('Wahrscheinlichkeit,\n dass sich das\n Merkmal im Bereich\n [2cm;4cm] befindet', xy=(3, 0.05), xytext=(7.5,0.16), arrowprops=dict(arrowstyle='->'))
+plt.xlabel('Nasenlänge (cm)', fontsize=fontsize)
+plt.ylabel('Wahrscheinlichkeitsdichte', fontsize=fontsize)
+plt.xticks(range(0, 11,), fontsize=fontsize-2)
+plt.yticks(fontsize=fontsize-2)
+plt.ylim(0, 0.28)
+plt.xlim(0, 15)
+plt.savefig('images/density_integral_uniform.png', bbox_inches='tight')
+``` -->
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Wahrscheinlichkeitsdichte: Beispiel 2</h2>
+<div class="columns">
+<div class="column" style="width:63%;">
+<p>Nehmen wir nun an, dass Nasenlängen in der Population <em>uniform zwischen 0 und 10 cm verteilt</em> sind.</p>
+<p><strong>Gleiche Frage:</strong> wie hoch ist die Wahrscheinlichkeit, dass eine zufällig gezogene Nase aus der Population eine Länge zwischen <span class="math inline">\(2cm\)</span> und <span class="math inline">\(4cm\)</span> hat?</p>
+</div><div class="column" style="width:37%;">
+<p><img data-src="images/density_integral_uniform.png"></p>
+</div>
+</div>
+<p>Wir wissen: die Fläche unter der Verteilung muss 1 sein. Daher muss die Wahrscheinlichkeitsdichte für jeden Wert zwischen <span class="math inline">\(0cm\)</span> und <span class="math inline">\(10cm\)</span> gleich <span class="math inline">\(0.1cm^{-1}\)</span> betragen (<span class="math inline">\(10cm\cdot 0.1cm^{-1} = 1\)</span>).</p>
+<p>Die Berechnung des Flächeninhalts im Intervall <span class="math inline">\([2cm; 4cm]\)</span> geht in diesem Fall ohne Integration, denn er entspricht der Fläche eines Rechteckes mit Breite <span class="math inline">\(2cm\)</span> und Höhe <span class="math inline">\(0.1cm^{-1}\)</span>. Es gilt:</p>
+<p><span class="math display">\[
+\begin{aligned}
+Wahrscheinlichkeit&amp;=Intervallbreite \cdot Wahrscheinlichkeitsdichte =\\
+&amp;= 2cm \cdot 0.1cm^{-1} = 0.2
+\end{aligned}
+\]</span></p>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -691,7 +732,7 @@ F(x) = \int_{-\infty}^{x} f(x') dx'
 <p><img data-src="images/example.png" height="70"></p>
 </div>
 </div><div class="column" style="width:60%;">
-<p>Nehmen wir wieder die normalverteilte Nasenlängen-Population an mit Mittelwert <span class="math inline">\(\mu=5\)</span> und Standardabweichung <span class="math inline">\(\sigma=1{,}5\)</span>. Die Wahrscheinlichkeit, dass eine zufällig gezogene Nase eine Länge von höchstens <span class="math inline">\(4cm\)</span> hat, ist gegeben durch den Wert <span class="math inline">\(F(4)\)</span> der Verteilungsfunktion dieser Normalverteilung:</p>
+<p>Nehmen wir wieder die normalverteilte Nasenlängen-Population an mit Mittelwert <span class="math inline">\(\mu=5\)</span> und Standardabweichung <span class="math inline">\(\sigma=1{,}5\)</span>. Die Wahrscheinlichkeit, dass eine zufällig gezogene Nase eine Länge kleiner <span class="math inline">\(4cm\)</span> hat, ist gegeben durch den Wert <span class="math inline">\(F(4)\)</span> der Verteilungsfunktion dieser Normalverteilung:</p>
 <p><span class="math display">\[
 F(4) = \int_{-\infty}^{4} f(x') dx' = \\
 =\frac{1}{1{,}5\sqrt{2\pi}}\int_{-\infty}^4\text{exp}\left(-\frac{(x'-5)^2}{2\cdot1{,}5^2}\right)dx' \overset{(Computer!)}{\approx} 0{,}25
@@ -749,12 +790,16 @@ P(2&lt;x&lt;4) = F(4) - F(2) \overset{(Computer!)}{\approx} 0{,}23
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Verteilungsfunktion</h2>
+<h2>Verteilungsfunktion und Stammfunktion</h2>
 
+<img data-src="images/verteilungsfunktion_f_F.png" class="r-stretch"><ul>
+<li class="fragment"><span class="math inline">\(F(x)\)</span> ist eine Stammfunktion von <span class="math inline">\(f(x)\)</span> wenn gilt: <span class="math inline">\(\frac{dF}{dx}=f(x)\)</span> bzw. <span class="math inline">\(F(x) = \int_a^x f(x')dx'\)</span>.</li>
+<li class="fragment">Die Verteilungsfunktion <span class="math inline">\(F(x)\)</span> entspricht der Stammfunktion <span class="math inline">\(\int_a^x f(x')dx'\)</span> mit <span class="math inline">\(a=-\infty\)</span>.</li>
+</ul>
 <!----------------->
 <!--- New slide --->
 <!----------------->
-<img data-src="images/verteilungsfunktion_f_F.png" class="r-stretch"></section>
+</section>
 <section class="slide level2">
 <h2>68-95-99.7-Prozentregel</h2>
 <p>Um ein Gefühl für die Flächeninhalte der Normalverteilung zu bekommen, gilt als Faustregel die <strong>68-95-99.7-Prozentregel</strong>:</p>
@@ -788,7 +833,7 @@ P(2&lt;x&lt;4) = F(4) - F(2) \overset{(Computer!)}{\approx} 0{,}23
 <p><img data-src="images/stichprobenverteilung.png" height="370"></p>
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Vorlesung 09: Wahrscheinlichkeitsverteilungen</p>
+<p>Vorlesung 09: Wahrscheinlichkeitsdichte</p>
 </div>
 </section>
     </div>
@@ -821,7 +866,7 @@ P(2&lt;x&lt;4) = F(4) - F(2) \overset{(Computer!)}{\approx} 0{,}23
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
+'controlsAuto': false,
 'previewLinksAuto': true,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
@@ -830,11 +875,11 @@ P(2&lt;x&lt;4) = F(4) - F(2) \overset{(Computer!)}{\approx} 0{,}23
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":false},
 'animate': {"autoplay":true},
-'customcontrols': {"controls":[{"id":"home","title":"Startseite","icon":"<i class=\"fa-solid fa-house\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}`, '_blank');"},{"id":"print-pdf","title":"Als PDF","icon":"<i class=\"fa-solid fa-file-pdf\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}${location.pathname}`.replace('index.html', `Vorlesung${location.pathname.split('/')[2]}.pdf`), '_blank');"},{"id":"print","title":"Drucken","icon":"<i class=\"fa-solid fa-print\" style=\"color:#8398dd\"></i>","action":"location.href = location.href.includes('print-pdf') ? `${location.protocol}//${location.host}${location.pathname}${location.hash}` : `${location.protocol}//${location.host}${location.pathname}?print-pdf${location.hash}`;"},{"id":"toggle-notes","title":"Notizen (c)","icon":"<i class=\"fa-solid fa-pen\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleNotesCanvas(event);"},{"id":"toggle-chalkboard","title":"Tafel (b)","icon":"<i class=\"fa-solid fa-person-chalkboard\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleChalkboard(event);"},{"id":"toggle-fragments","title":"Animationen","icon":"<i class=\"fa-solid fa-bolt\" style=\"color:#8398dd\"></i>","action":"Reveal.getConfig().fragments = !Reveal.getConfig().fragments; document.querySelector('.fa-bolt').style.color = Reveal.getConfig().fragments ?  '#dfe169' : '#8398dd'; if (Reveal.getConfig().fragments) {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]');for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('was_anim')) {elements[i].innerHTML = elements[i].innerHTML_prev;}}} else {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]'); for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('class: fragment')) {elements[i].innerHTML = `<div><img src='${elements[i].getAttribute('data-src')}' class='was_anim'></div>`;}}fragments = document.querySelectorAll('.fragment');for (let i = 0; i < fragments.length; i++) {fragments[i].classList.add('visible');}}"},{"id":"intro-sound","title":"Play intro","icon":"<i class=\"fa-solid fa-music\" style=\"color:#8398dd\"></i>","action":"new Audio('images/appear.mp3').play()"}]},
+'customcontrols': {"controls":[{"id":"home","title":"Startseite","icon":"<i class=\"fa-solid fa-house\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}`, '_blank');"},{"id":"print-pdf","title":"Als PDF","icon":"<i class=\"fa-solid fa-file-pdf\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}${location.pathname}`.replace('index.html', `Vorlesung${location.pathname.split('/')[2]}.pdf`), '_blank');"},{"id":"print","title":"Drucken","icon":"<i class=\"fa-solid fa-print\" style=\"color:#8398dd\"></i>","action":"location.href = location.href.includes('print-pdf') ? `${location.protocol}//${location.host}${location.pathname}${location.hash}` : `${location.protocol}//${location.host}${location.pathname}?print-pdf${location.hash}`;"},{"id":"toggle-notes","title":"Notizen (c)","icon":"<i class=\"fa-solid fa-pen\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleNotesCanvas(event);"},{"id":"toggle-chalkboard","title":"Tafel (b)","icon":"<i class=\"fa-solid fa-person-chalkboard\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleChalkboard(event);"},{"id":"toggle-fragments","title":"Animationen","icon":"<i class=\"fa-solid fa-bolt\" style=\"color:#8398dd\"></i>","action":"Reveal.getConfig().fragments = !Reveal.getConfig().fragments; document.querySelector('.fa-bolt').style.color = Reveal.getConfig().fragments ?  '#dfe169' : '#8398dd'; if (Reveal.getConfig().fragments) {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]');for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('was_anim')) {elements[i].innerHTML = elements[i].innerHTML_prev;}}} else {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]'); for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('class: fragment')) {elements[i].innerHTML = `<div><img src='${elements[i].getAttribute('data-src')}' class='was_anim'></div>`;}}fragments = document.querySelectorAll('.fragment');for (let i = 0; i < fragments.length; i++) {fragments[i].classList.add('visible');}}"},{"id":"intro-sound","title":"Play intro","icon":"<i class=\"fa-solid fa-music\" style=\"color:#8398dd\"></i>","action":"new Audio('images/appear.mp3').play()"},{"id":"zoom","title":"Zoom","icon":"<i class=\"fa-solid fa-magnifying-glass\" style=\"color:#8398dd\"></i>","action":"disable_slide_nav = typeof disable_slide_nav === 'undefined' || !disable_slide_nav; Reveal.configure({touch: !disable_slide_nav}); document.querySelector('.fa-magnifying-glass').style.color = disable_slide_nav ?  '#dfe169' : '#8398dd';"}]},
 'smaller': false,
  
         // Display controls in the bottom right corner
-        controls: false,
+        controls: true,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
@@ -1024,6 +1069,16 @@ P(2&lt;x&lt;4) = F(4) - F(2) \overset{(Computer!)}{\approx} 0{,}23
             document.querySelector('div.reveal').style.backgroundColor = 'white'
           }
         });
+
+        // We smuglle this one here in to disable controls on non-mobile devises
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (!isMobile) {
+          Reveal.configure({controls: false});
+          document.getElementById('zoom').style.display = 'none';
+        } else {
+          document.getElementById('print').style.display = 'none';
+          document.getElementById('print-pdf').style.display = 'none';
+        }
       }
       // identifystring
 
