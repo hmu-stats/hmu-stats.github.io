@@ -984,6 +984,287 @@ p(\bar{x}_\text{med} \neq \bar{x}_\text{psych}) = 2 \times \text{min}\left(p(\ba
 <li class="fragment">Kleinere Populationsstreuungen haben keine Auswirkung auf den p-Wert.</li>
 <li class="fragment">Alle p-Werte sind gleich wahrscheinlich (d.h. p-Werte haben eine uniforme Verteilung auf dem Intervall [0; 1])</li>
 </ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:9%;">
+<div style="margin-top:-15px">
+<p><img data-src="images/summary.png" width="60"></p>
+</div>
+</div><div class="column" style="width:91%;">
+<div class="summary" style="font-size: 28px; margin-top: 35px">
+<ul>
+<li class="fragment">Bei der <strong>Nullhypothesentestung</strong> nach Fisher wird die Wahrscheinlichkeit geprüft, mit der ein beobachteter Effekt (oder ein noch extremerer Effekt) durch Zufall entstanden sein könnte — d.h. für die Annahme dass die <em>Nullhypothese tatsächlich zutreffend</em> ist.</li>
+<li class="fragment">Diese Wahrscheinlichkeit wird als <strong>p-Wert</strong> bezeichnet — je kleiner der p-Wert, desto weniger haltbar ist die Nullhypothese, desto stärker die <strong>statistische Signifikanz</strong>.</li>
+<li class="fragment">Ein Effekt wird als statistisch signifikant gewertet, wenn der p-Wert unterhalb eines festgelegten <strong>Signifikanzniveaus α</strong> liegt (in diesem Fall wird die “Nullhypothese abgelehnt”).</li>
+<li class="fragment">Sind die Populationsstreuungen bekannt, so erfolgt die statistische Testung anhand der <strong>Prüfgröße <span class="math inline">\(z\)</span></strong> (<strong>z-Wert</strong>) in Verbindung mit der <strong>Standardnormalverteilung</strong>.</li>
+<li class="fragment">Abhängig davon ob die untesuchte Hypothese <strong>gerichtet</strong> oder <strong>ungerichtet</strong> ist, erfolgt die statistische Testung entweder als <strong>einseitiger Test</strong> oder als <strong>zweiseitiger Test</strong>.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 blackslide center">
+<h2></h2>
+<p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" height="300"></p>
+<!-- Source: Midjourney -->
+<div class="vspace-small">
+
+</div>
+<p>Nach kurzer Beratung in der Task Force sind Sie sich einig, dass die Voraussetzungen für einen z-Test nicht optimal sind. Die Populationsstreuung lässt sich nicht aus vorhergehenden Studien ableiten, da die untersuchten Phänomene brandneu sind. Da die Fallzahl von <span class="math inline">\(n=50\)</span> gemäß der Faustregel “<span class="math inline">\(n\ge 30\)</span>” aber ausreichend wäre, rechnen Sie aus reiner Neugier dennoch z-Tests für die Gruppenvergleiche.</p>
+</section>
+<section class="slide level2 blackslide center">
+<h2></h2>
+<div class="vspace-small">
+
+</div>
+<div class="columns">
+<div class="column" style="width:68%;">
+<p>Sie erstellen sich eine Tabelle mit den relevanten Parametern für den z-Test:</p>
+<!---  Table --->
+<table style="width:93%;">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><u>TikTok</u></th>
+<th>Fallzahl <span class="math inline">\(n\)</span></th>
+<th>Mittelwert <span class="math inline">\(\bar{x}\)</span></th>
+<th>Standardabweichung <span class="math inline">\(\sigma\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Kontroll</td>
+<td>50</td>
+<td><span class="math inline">\(1{,}022\)</span></td>
+<td><span class="math inline">\({0{,}545}\)</span></td>
+</tr>
+<tr class="even">
+<td>Paradoxia</td>
+<td>50</td>
+<td><span class="math inline">\(1{,}599\)</span></td>
+<td><span class="math inline">\({0{,}677}\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="vspace-medium">
+
+</div>
+<!---  Table --->
+<table style="width:93%;">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><u>Entzündung</u></th>
+<th>Fallzahl <span class="math inline">\(n\)</span></th>
+<th>Mittelwert <span class="math inline">\(\bar{x}\)</span></th>
+<th>Standardabweichung <span class="math inline">\(\sigma\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Kontroll</td>
+<td>50</td>
+<td><span class="math inline">\(0{,}1233\)</span></td>
+<td><span class="math inline">\(0{,}0682\)</span></td>
+</tr>
+<tr class="even">
+<td>Paradoxia</td>
+<td>50</td>
+<td><span class="math inline">\(0{,}1477\)</span></td>
+<td><span class="math inline">\(0{,}0783\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:32%;">
+<p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important" height="200"></p>
+</div>
+</div>
+<div class="vspace-medium">
+
+</div>
+<p><img data-src="images/paradoxia_histogram_inflammation_mean_std.png" height="260"></p>
+</section>
+<section class="slide level2 blackslide center">
+<h2></h2>
+<div class="vspace-small">
+
+</div>
+<div class="columns">
+<div class="column" style="width:68%;">
+<p>Um den z-Wert zu bestimmen, benötigen Sie den Standardfehler. Da es sich um unabhängige Messungen in zwei Gruppen handelt, verwenden Sie die Formel, die auf der mittleren Varianz beider Gruppen basiert:</p>
+<p><span class="math display">\[
+se=\sqrt{\frac{\sigma_\text{control}^2}{n_\text{control}}+\frac{\sigma_\text{paradox}^2}{n_\text{paradox}}}
+\]</span></p>
+</div><div class="column" style="width:32%;">
+<p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important" height="200"></p>
+</div>
+</div>
+<p>Sie erhalten:</p>
+<p><span class="math display">\[
+\scriptsize{
+\text{TikTok:}\quad\; se=\sqrt{\frac{0{,545}^2}{50}+\frac{0{,}677^2}{50}}=0{,}123\qquad \Delta\bar{x} = \bar{x}_\text{paradox} - \bar{x}_\text{control} = 1{,}599-1{,}022 = 0{,}577 \\
+\text{Entzündung:}\quad\; se=\sqrt{\frac{0{,}0682^2}{50}+\frac{0{,}0783^2}{50}}=0{,}0147\qquad \Delta\bar{x} = \bar{x}_\text{paradox} - \bar{x}_\text{control} = 0{,}1477-0{,}1233 = 0{,}0243
+}
+\]</span></p>
+</section>
+<section class="slide level2 blackslide center">
+<h2></h2>
+<div class="vspace-small">
+
+</div>
+<div class="columns">
+<div class="column" style="width:68%;">
+<p>Der z-Wert ergibt sich als das Verhältnis aus dem “Effekt” (hier <span class="math inline">\(\Delta\bar{x}\)</span>) und dem Standardfehler:</p>
+<p><span class="math display">\[
+\text{TikTok:}\qquad z=\frac{\Delta\bar{x}}{se} = \frac{0{,}577}{0{,}123} = 4{,}69\\
+\text{Entzündung:}\qquad z=\frac{\Delta\bar{x}}{se} = \frac{0{,}0243}{0{,}0147} = 1{,}65
+\]</span></p>
+</div><div class="column" style="width:32%;">
+<p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important" height="200"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>In beiden Fällen haben Sie eine <strong>gerichtete</strong> Hypothese, nämlich dass Pardoxiker höhere Werte als Kontrollen aufweisen. Der p-Wert entspricht also der Fläche unter der Standardnormalverteilung <em>rechts</em> vom z-Wert und damit dem Integral:</p>
+<p><span class="math display">\[
+p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(z)
+\]</span></p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/paradoxia_nulldist.png"></p>
+</div>
+</div>
+</section>
+<section class="slide level2 blackslide center">
+<h2></h2>
+<div class="vspace-small">
+
+</div>
+<div class="columns">
+<div class="column" style="width:68%;">
+<p>Die Spannung steigt, als Sie nun zum ersten Mal die Signifikanz Ihrer Ergebnisse beurteilen können. Sie erhalten folgende p-Werte:</p>
+<div class="vspace-small">
+
+</div>
+<p><span class="math display">\[
+\text{TikTok:}\qquad p= 1 - \Phi(4{,}69) \overset{\text{(Computer)}}{=} 0{,}000001
+\]</span></p>
+<div class="vspace-small">
+
+</div>
+<p><span class="math display">\[
+\text{Entzündung:}\qquad p= 1 - \Phi(1{,}67) \overset{\text{(Computer)}}{=} 0{,}049
+\]</span></p>
+</div><div class="column" style="width:32%;">
+<p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important" height="200"></p>
+</div>
+</div>
+<p>Dieser erste Signifikanztest ergibt also, dass die TikTok-Hypothese mit überwältigender Signifikanz bestätigt wird. Aber auch die Entzündungs-Hypothese wird mit einem p-Wert von <span class="math inline">\(0{,}049\)</span> — und einem Signifikanzniveau von <span class="math inline">\(\alpha=0{,}05\)</span> — um Haaresbreite bestätigt.</p>
+<p>Noch genießen Sie die Ergebnisse aber mit Vorsicht, da Ihnen bewusst ist, dass der z-Test nicht der ideale Test für Ihre Studie ist.</p>
+</section>
+<section class="slide level2 blackslide center">
+<h2></h2>
+<div class="vspace-small">
+
+</div>
+<div class="columns">
+<div class="column" style="width:68%;">
+<p>Sie aktualisieren vorläufig Ihre vorherige Abbildung in zweierlei Hinsicht:</p>
+<div>
+<ul>
+<li>Sie ersetzen die Standardabweichung durch den Standardfehler. Dieser legt die Betonung auf den Effekt der Sie interessiert: den Unterschied der <u>Mittelwerte</u>.</li>
+<li>Sie fügen Signifikanzsternchen ein. Eine gängige Notation ist ein Sternchen (*) für p-Werte kleiner 0,05, zwei Sternchen (**) für p-Werte kleiner 0,01 und drei Sternchen (***) für p-Werte kleiner 0,001.</li>
+</ul>
+</div>
+</div><div class="column" style="width:32%;">
+<p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important" height="200"></p>
+</div>
+</div>
+<p><img data-src="images/paradoxia_histogram_inflammation_sem_sig.png" style="margin-top: 30px !important;" height="290"></p>
+<!-- ```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+import os
+from scipy.stats import sem
+import seaborn as sns
+
+np.random.seed(0)
+root = '/home/matteo/OneDrive/lehre/Statistik/stats1_lecture/book/'
+
+fontsize = 15
+
+df = pd.read_csv(os.path.join(root, 'data', 'paradoxia.csv'))
+# print(df.head())
+
+data_tiktok_control = df[df.group == 1]['hours_tiktok_per_day'].values
+data_tiktok_paradoxia = df[df.group == 2]['hours_tiktok_per_day'].values
+data_inflam_control = df[df.group == 1]['inflammation'].values
+data_inflam_paradoxia = df[df.group == 2]['inflammation'].values
+
+print(f'Mean TikTok Control: {np.mean(data_tiktok_control):.2f}')
+print(f'Mean TikTok Paradoxia: {np.mean(data_tiktok_paradoxia):.2f}')
+print(f'Mean Inflam Control: {np.mean(data_inflam_control):.2f}')
+print(f'Mean Inflam Paradoxia: {np.mean(data_inflam_paradoxia):.2f}')
+
+plt.style.use('dark_background')
+plt.figure(figsize=(6, 2.5))
+ax = plt.subplot(121)
+plt.gca().set_facecolor('#eee')
+sns.stripplot(data=df, x='group', y='hours_tiktok_per_day', color='#bbb', jitter=0.25)
+color = 'k'
+plt.errorbar([0], [np.mean(data_tiktok_control)], yerr=[sem(data_tiktok_control)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.errorbar([1], [np.mean(data_tiktok_paradoxia)], yerr=[sem(data_tiktok_paradoxia)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.text(0.25, 0.85, r'$\bar{x}=' + f'{np.mean(data_tiktok_control):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.text(0.75, 0.85, r'$\bar{x}=' + f'{np.mean(data_tiktok_paradoxia):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.plot([0, 1], [2.4, 2.4], 'k-', lw=2, zorder=4)
+plt.text(0.5, 2.32, '***', ha='center', va='center', fontsize=15, color='k', backgroundcolor='#eee', zorder=5)
+
+plt.xticks([0, 1], ['Kontroll', 'Paradoxia'], fontsize=fontsize)
+plt.yticks(fontsize=fontsize-2)
+plt.ylabel('Stunden TikTok / 24h', fontsize=fontsize)
+plt.xlabel('')
+# plt.xlim(-0.5, 1.5)
+plt.ylim(0, 1.1*max(data_tiktok_control.max(), data_tiktok_paradoxia.max()))
+
+
+ax = plt.subplot(122)
+plt.gca().set_facecolor('#eee')
+sns.stripplot(data=df, x='group', y='inflammation', color='#bbb', jitter=0.25)
+color = 'k'
+plt.errorbar([0], [np.mean(data_inflam_control)], yerr=[sem(data_inflam_control)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.errorbar([1], [np.mean(data_inflam_paradoxia)], yerr=[sem(data_inflam_paradoxia)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.text(0.25, 0.85, r'$\bar{x}=' + f'{np.mean(data_inflam_control):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.text(0.75, 0.85, r'$\bar{x}=' + f'{np.mean(data_inflam_paradoxia):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.plot([0, 1], [0.25, 0.25], 'k-', lw=2, zorder=4)
+plt.text(0.5, 0.24, '*', ha='center', va='center', fontsize=15, color='k', backgroundcolor='#eee', zorder=5)
+
+plt.xticks([0, 1], ['Kontroll', 'Paradoxia'], fontsize=fontsize)
+plt.yticks(fontsize=fontsize-2)
+plt.ylabel('Entzündungswert', fontsize=fontsize)
+plt.xlabel('')
+plt.xlim(-0.5, 1.5)
+plt.ylim(0, 1.1*max(data_inflam_control.max(), data_inflam_paradoxia.max()))
+
+
+plt.tight_layout()
+
+plt.savefig('images/paradoxia_histogram_inflammation_sem_sig.png', bbox_inches='tight')
+``` -->
 </section>
 <section>
 <section class="title-slide slide level1 center">
