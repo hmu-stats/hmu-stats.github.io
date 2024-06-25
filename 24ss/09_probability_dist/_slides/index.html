@@ -400,22 +400,64 @@ f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\righ
 </ol></li>
 <li class="fragment">Die Gesamtsumme aller Säulen im Histogramm mit relativer Häufigkeit ist immer 1 (oder 100%).</li>
 </ul>
+<!-- ```{python}
+
+``` -->
+<!-- ```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.stats import norm
+
+np.random.seed(0)
+
+fontsize = 14
+
+mu = 5
+std = 1.5
+fig = plt.figure(figsize=(10, 2.3))
+
+w = 0.01
+xf = np.arange(w/2, 10, w)
+yf = norm.pdf(xf, mu, std)
+
+for i, w in enumerate([2, 1, 0.5, 0.2]): 
+    x = np.arange(w/2, 10, w)
+    y = norm.pdf(x, mu, std)
+    ysum = np.sum(y)
+    y /= ysum
+    plt.subplot(1, 4, i+1)
+    plt.bar(x, y, width=w, ec='w', fc='#783c00')
+    plt.plot(xf, yf/ysum, 'k-')
+    # plt.plot(x, y, 'ko', markersize=4)
+    if i == 0:
+        plt.ylabel('Relative Häufigkeit', fontsize=fontsize)
+    plt.xticks(np.arange(0,10.1,2), fontsize=fontsize-2)
+    plt.yticks(fontsize=fontsize-2)
+    plt.title(f'Kategorienbreite $d={w}cm$', fontsize=fontsize-2)
+
+fig.text(0.5, -0.03, 'Nasenlänge (cm)', fontsize=fontsize, ha='center')
+
+plt.tight_layout()
+plt.savefig('images/probability_density_demo2.png', bbox_inches='tight')
+
+``` -->
 </section>
 <section class="slide level2">
 <h2>Rückblick: das Histogramm</h2>
 <div>
 <ul>
-<li>Umgekehrt gilt: je kleiner die Kategorienbreite, desto mehr Säulen gibt es, desto kleiner die relativen Häufigkeitswerte jeder einzelnen Säule.</li>
+<li>Wir nehmen nun an, dass wir das Histogramm auf Basis einer <strong>unendlich großen</strong> Population bilden, in der die theoretische Häufigkeitsverteilung von Nasenlängen durch eine <strong>Normalverteilung</strong> beschrieben wird (im Beispiel: <span class="math inline">\(\mu=5cm, \sigma=1.5cm\)</span>).</li>
+<li>Egal, wie fein wir die Kategorienbreite wählen, gibt es aufgrund der unendlich großen Population genug Datenpunkte für eine präzise Schätzung der relativen Häufigkeit in einer Säule.</li>
+<li>Es gilt: je kleiner die Kategorienbreite, desto mehr Säulen gibt es, desto kleiner die relativen Häufigkeitswerte jeder einzelnen Säule.</li>
 </ul>
 </div>
 
-<img data-src="images/probability_density_demo.png" style="margin-bottom:-3px" class="r-stretch"><ul>
-<li class="fragment">Beispiel:
-<ul>
-<li class="fragment">Im ersten Plot gilt <span class="math inline">\(d=2cm\)</span>. Die relative Häufigkeit, dass ein Merkmal etwa im Intervall <span class="math inline">\([6cm; 8cm]\)</span> liegt ist ca. <span class="math inline">\(0.22\)</span> (oder 22%).</li>
-<li class="fragment">Im zweiten Plot gilt <span class="math inline">\(d=1cm\)</span>. Nun wird etwa das Intervall <span class="math inline">\([6cm; 8cm]\)</span> aufgeteilt in zwei relative Häufigkeiten für die Bereiche <span class="math inline">\([6cm; 7cm]\)</span> und <span class="math inline">\([7cm; 8cm]\)</span>, die jeweils beide geringer sind (ca. <span class="math inline">\(0.16\)</span> und <span class="math inline">\(0.06\)</span>).</li>
-</ul></li>
+<img data-src="images/probability_density_demo2.png" style="margin-bottom:-3px" class="r-stretch"><ul>
+<li class="fragment">Es zeigt sich: mit feiner werdender Kategorienbreite nähert sich das Histogramm einer Normalverteilung — und damit der theoretische Häufigkeitsverteilung — an!<br>(→ Gesetz der großen Zahlen)</li>
 </ul>
+<!-- - Beispiel: 
+    - Im ersten Plot gilt $d=2cm$. Die relative Häufigkeit, dass ein Merkmal etwa im Intervall $[6cm; 8cm]$ liegt ist ca. $0.22$ (oder 22%).
+    - Im zweiten Plot gilt $d=1cm$. Nun wird etwa das Intervall $[6cm; 8cm]$ aufgeteilt in zwei relative Häufigkeiten für die Bereiche $[6cm; 7cm]$ und $[7cm; 8cm]$, die jeweils beide geringer sind (ca. $0.16$ und $0.06$). -->
 </section>
 <section class="slide level2">
 <h2>Rückblick: das Histogramm</h2>
@@ -423,13 +465,13 @@ f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\righ
 <li class="fragment">Nun scheint ein Brückenschlag naheliegend: ist die theoretische Häufigkeitsverteilung <span class="math inline">\(f(x)\)</span>, die Funktionswerte für beliebige <span class="math inline">\(x\)</span>-Werte ausgibt, gleich einem Histogramm, bei dem die Kategorienbreite gegen Null geht?</li>
 </ul>
 
-<img data-src="images/probability_density_demo.png" style="margin-bottom:-3px" class="r-stretch"><ul>
+<img data-src="images/probability_density_demo2.png" style="margin-bottom:-3px" class="r-stretch"><ul>
 <li class="fragment">Im Prinzip ja, allerdings gibt es noch ein Problem: geht die Kategorienbreite <span class="math inline">\(d\)</span> gegen <span class="math inline">\(0\)</span>, gehen die relativen Häufigkeitswerte des Histogramms ebenfalls gegen Null!</li>
 <li class="fragment">Würde die theoretische Häufigkeitsverteilung <span class="math inline">\(f(x)\)</span> also relative Häufigkeiten angeben, so wäre <span class="math inline">\(f(x)\)</span> für jedes <span class="math inline">\(x\)</span> Null. Das ist natürlich sinnlos.</li>
 <li class="fragment"><strong>Theoretische Häufigkeitsverteilungen <span class="math inline">\(f(x)\)</span> geben aus diesem Grund keine relative Häufigkeit an</strong>.</li>
 <li class="fragment">Bleibt die Frage: was stattdessen?</li>
 </ul>
-<!-- - Beispiel: die Wahrscheinlichkeit ist **Null**, dass Nasen eine bestimmte, bis auf die "unendlichste" Nachkommastelle angegebene, Länge haben (z.B. $4{,}318264812357218735....cm$). -->
+<!-- - Beispiel: die Wahrscheinlichkeit ist **Null**, dass Nasen eine bestimmte, bis auf die "unendlichste" Nachkommastelle angegebene, Länge haben (z.B. $4.318264812357218735....cm$). -->
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -608,7 +650,7 @@ plt.savefig('images/density_integral.png', bbox_inches='tight')
 </section>
 <section class="slide level2">
 <h2><span style="font-size: 41px">Von der Wahrscheinlichkeitsdichte zurück zur Wahrscheinlichkeit</span></h2>
-<!-- Analogie Dichte von Eis: bei eine Dichte von Eis $0{,}918\frac{g}{cm^3}$ können wir ausrechnen, dass sich in einem 10x10x10cm Eiswürfel $918g$ Eis befinden: $Gewicht = Volumen \cdot Dichte = 1000cm^3 \cdot 0{,}918\frac{g}{cm^3}=918g$ -->
+<!-- Analogie Dichte von Eis: bei eine Dichte von Eis $0.918\frac{g}{cm^3}$ können wir ausrechnen, dass sich in einem 10x10x10cm Eiswürfel $918g$ Eis befinden: $Gewicht = Volumen \cdot Dichte = 1000cm^3 \cdot 0.918\frac{g}{cm^3}=918g$ -->
 <div class="vspace-small">
 
 </div>
@@ -647,7 +689,7 @@ P(x_0&lt;x&lt;x_1) = \int_{x_0}^{x_1} f(x) dx
 <h2>Wahrscheinlichkeitsdichte: Beispiel 1</h2>
 <div class="columns">
 <div class="column" style="width:63%;">
-<p>Nehmen wir an, dass Nasenlängen in der Population <em>normalverteilt</em> sind, mit Mittelwert <span class="math inline">\(\mu=5\)</span> und Standardabweichung <span class="math inline">\(\sigma=1{,}5\)</span>.</p>
+<p>Nehmen wir an, dass Nasenlängen in der Population <em>normalverteilt</em> sind, mit Mittelwert <span class="math inline">\(\mu=5\)</span> und Standardabweichung <span class="math inline">\(\sigma=1.5\)</span>.</p>
 <p><strong>Frage:</strong> wie hoch ist die Wahrscheinlichkeit, dass eine zufällig gezogene Nase aus der Population eine Länge zwischen <span class="math inline">\(2cm\)</span> und <span class="math inline">\(4cm\)</span> hat?</p>
 </div><div class="column" style="width:37%;">
 <p><img data-src="images/density_integral.png"></p>
@@ -656,7 +698,7 @@ P(x_0&lt;x&lt;x_1) = \int_{x_0}^{x_1} f(x) dx
 <div class="fragment">
 <p><span class="math display">\[
 P(2\le x\le 4) = \int_2^4 f(x)dx = \frac{1}{\sigma\sqrt{2\pi}}\int_2^4\text{exp}\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)dx = \\
-= \frac{1}{1{,}5\sqrt{2\pi}}\int_2^4\text{exp}\left(-\frac{(x-5)^2}{2\cdot1{,}5^2}\right)dx \overset{(Computer!)}{\approx} 0{,}23
+= \frac{1}{1.5\sqrt{2\pi}}\int_2^4\text{exp}\left(-\frac{(x-5)^2}{2\cdot1.5^2}\right)dx \overset{(Computer!)}{\approx} 0.23
 \]</span></p>
 </div>
 <!----------------->
@@ -717,7 +759,7 @@ plt.savefig('images/density_integral_uniform.png', bbox_inches='tight')
 </div>
 </div>
 <p>Wir wissen: die Fläche unter der Verteilung muss 1 sein. Daher muss die Wahrscheinlichkeitsdichte für jeden Wert zwischen <span class="math inline">\(0cm\)</span> und <span class="math inline">\(10cm\)</span> gleich <span class="math inline">\(0.1cm^{-1}\)</span> betragen (<span class="math inline">\(10cm\cdot 0.1cm^{-1} = 1\)</span>).</p>
-<p>Die Berechnung des Flächeninhalts im Intervall <span class="math inline">\([2cm; 4cm]\)</span> geht in diesem Fall ohne Integration, denn er entspricht der Fläche eines Rechteckes mit Breite <span class="math inline">\(2cm\)</span> und Höhe <span class="math inline">\(0.1cm^{-1}\)</span>. Es gilt:</p>
+<p>Die Berechnung des Flächeninhalts im Intervall <span class="math inline">\([2cm; 4cm]\)</span> geht in diesem Fall ohne Integration, denn er entspricht einfach der Fläche eines Rechteckes mit Breite <span class="math inline">\(2cm\)</span> und Höhe <span class="math inline">\(0.1cm^{-1}\)</span>. Es gilt:</p>
 <p><span class="math display">\[
 \begin{aligned}
 Wahrscheinlichkeit&amp;=Intervallbreite \cdot Wahrscheinlichkeitsdichte =\\
@@ -835,6 +877,84 @@ P(2&lt;x&lt;4) = F(4) - F(2) \overset{(Computer!)}{\approx} 0{,}23
 <!--- New slide --->
 <!----------------->
 <img data-src="images/normal_68_95_99.png" class="r-stretch"></section>
+<section class="slide level2">
+<h2>Standardnormalverteilung</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<div>
+<ul>
+<li>Die Normalverteilung ist durch zwei Parameter charakterisiert, die Mittelwert und Standardabweichung der Verteilung definieren (idR <span class="math inline">\(\mu\)</span> und <span class="math inline">\(\sigma\)</span>):</li>
+</ul>
+</div>
+<div style="margin-top: -15px">
+<p><span class="math display">\[
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">Im weiteren Verlauf von Statistik 1 werden wir häufig die standardisierte Form der Normalverteilung verwenden — die <span style=" color: navy !important;"><strong>Standardnormalverteilung</strong></span>.</li>
+<li class="fragment">Die Standardnormalverteilung hat Mittelwert <span class="math inline">\(0\)</span> und Standardabweichung <span class="math inline">\(1\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}\quad\underset{\sigma=1}{\overset{\mu=0}{=}}\quad\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}
+\]</span></p>
+</div><div class="column" style="width:35%;">
+<p><img data-src="images/normal_dist.png" height="250"></p>
+<div class="vspace-xlarge">
+
+</div>
+<p><img data-src="images/normal_dist_standard.png" height="250"></p>
+</div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Das ABC der Normalverteilung</h2>
+<p>Aufgrund ihrer Bedeutung in der Statistik, haben sich für die (Standard)Normalverteilung bestimmte Bezeichnung eingebürgert, auf die wir ab jetzt zugreifen werden.</p>
+<div class="vspace-large">
+
+</div>
+<!---  Table --->
+<table style="width:97%;">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Normalverteilung mit Angabe des Mittelwertes <span class="math inline">\(\mu\)</span> und der Varianz <span class="math inline">\(\sigma^2\)</span></strong></td>
+<td><span class="math inline">\(\mathcal{N}(\mu, \sigma^2)\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Standardnormalverteilung (Mittelwert 0, Varianz 1)</strong></td>
+<td><span class="math inline">\(\mathcal{N}(0, 1)\)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Dichtefunktion der Normalverteilung</strong></td>
+<td><span class="math inline">\(f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Dichtefunktion der Standardnormalverteilung</strong></td>
+<td><span class="math inline">\(\varphi(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2}\)</span> (sprich “Klein Phi”)<br>
+Es gilt: <span class="math inline">\(\quad f(x) = \frac{1}{\sigma}\varphi\left(\frac{x-\mu}{\sigma}\right)\)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Verteilungsfunktion der Normalverteilung</strong></td>
+<td><span class="math inline">\(F(x)=\frac{1}{\sigma\sqrt{2\pi}}\int_{-\infty}^x e^{-\frac{1}{2}\left(\frac{x'-\mu}{\sigma}\right)^2}dx\qquad\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Verteilungsfunktion der Standardnormalverteilung</strong></td>
+<td><span class="math inline">\(\Phi(x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^x e^{-\frac{1}{2}x'^2}dx\qquad\)</span> (sprich “Groß Phi”)<br>
+Es gilt: <span class="math inline">\(\quad F(x) = \Phi\left(\frac{x-\mu}{\sigma}\right)\)</span></td>
+</tr>
+</tbody>
+</table>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
 <section class="slide level2">
 <h2>Vorschau</h2>
 <div class="vspace-small">
