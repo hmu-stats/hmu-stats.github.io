@@ -191,14 +191,35 @@ function change_semester(semester, semester_str) {
             document.getElementById(semesters[i]).style.display = 'none';
         }
     }
+
+    if (!semester_str) {
+        if (semester.includes('ws')) {
+            semester_str = `Wintersemester 20${semester.slice(0, 2)}/20${+semester.slice(0, 2)+1}`;
+        } else {
+            semester_str = `Sommersemester 20${semester.slice(0, 2)}`;
+        }
+    }
+
     document.getElementById('semester').innerHTML = semester_str.replace(' ', '<br />');
+}
+
+
+function change_semester_onload() {
+    if (window.location.href.includes('?')) {
+        argstr = window.location.href.split('?')[1];
+        if (argstr.includes('ss') || argstr.includes('ws')) {
+            let semester = argstr.split('#')[0];
+            change_semester(semester);
+            document.querySelector('.dropdown_simple').value = semester;
+        }
+    }
 }
 
 
 </script>
 </head>
 
-<body>
+<body onload="change_semester_onload()">
 
 
 
