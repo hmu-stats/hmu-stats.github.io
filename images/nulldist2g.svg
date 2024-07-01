@@ -7,7 +7,7 @@
    viewBox="0 0 78.188726 56.453564"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4-dev (1:1.2.0-alpha1+devel+202309191445+0218cc37c8)"
+   inkscape:version="1.4-dev (1:1.4.0-dev+202401190506+b37f861054)"
    sodipodi:docname="nulldist2g.svg"
    inkscape:export-filename="nulldist2g.png"
    inkscape:export-xdpi="300"
@@ -16,7 +16,7 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:ns2="http://www.iki.fi/pav/software/textext/">
+   xmlns:ns13="http://www.iki.fi/pav/software/textext/">
   <sodipodi:namedview
      id="namedview1"
      pagecolor="#ffffff"
@@ -28,10 +28,10 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="3.1216931"
-     inkscape:cx="109.7161"
-     inkscape:cy="113.72034"
-     inkscape:window-width="2560"
-     inkscape:window-height="1367"
+     inkscape:cx="219.91271"
+     inkscape:cy="113.88051"
+     inkscape:window-width="1920"
+     inkscape:window-height="1008"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -385,16 +385,16 @@
        inkscape:transform-center-y="-2.3981594" />
     <g
        transform="matrix(0.30231467,0,0,0.30231467,34.396829,161.25059)"
-       ns2:version="1.9.0"
-       ns2:texconverter="pdflatex"
-       ns2:pdfconverter="inkscape"
-       ns2:text="\\definecolor{myred}{RGB}{165, 4, 4}\r\n$\\color{myred}{\\sigma}$"
-       ns2:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
-       ns2:scale="0.5237991008038732"
-       ns2:alignment="middle center"
-       ns2:stroke-to-path="0"
-       ns2:inkscapeversion="1.4-dev"
-       ns2:jacobian_sqrt="0.184785"
+       ns13:version="1.9.0"
+       ns13:texconverter="pdflatex"
+       ns13:pdfconverter="inkscape"
+       ns13:text="\\definecolor{myred}{RGB}{165, 4, 4}\r\n$\\color{myred}{\\sigma}$"
+       ns13:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
+       ns13:scale="0.5237991008038732"
+       ns13:alignment="middle center"
+       ns13:stroke-to-path="0"
+       ns13:inkscapeversion="1.4-dev"
+       ns13:jacobian_sqrt="0.184785"
        id="g81"
        style="stroke-width:0.611234">
       <defs
@@ -440,16 +440,16 @@
     </g>
     <g
        transform="matrix(0.26194251,0.15093137,-0.15093137,0.26194251,36.482251,160.94275)"
-       ns2:version="1.9.0"
-       ns2:texconverter="pdflatex"
-       ns2:pdfconverter="inkscape"
-       ns2:text="\\definecolor{myred}{RGB}{165, 4, 4}\r\n$\\color{myred}{/}$"
-       ns2:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
-       ns2:scale="0.5237991008038732"
-       ns2:alignment="middle center"
-       ns2:stroke-to-path="0"
-       ns2:inkscapeversion="1.4-dev"
-       ns2:jacobian_sqrt="0.184785"
+       ns13:version="1.9.0"
+       ns13:texconverter="pdflatex"
+       ns13:pdfconverter="inkscape"
+       ns13:text="\\definecolor{myred}{RGB}{165, 4, 4}\r\n$\\color{myred}{/}$"
+       ns13:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
+       ns13:scale="0.5237991008038732"
+       ns13:alignment="middle center"
+       ns13:stroke-to-path="0"
+       ns13:inkscapeversion="1.4-dev"
+       ns13:jacobian_sqrt="0.184785"
        id="g90"
        style="stroke-width:0.611234">
       <defs
@@ -503,7 +503,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.86681px;font-family:Calibri;-inkscape-font-specification:Calibri;text-align:end;text-anchor:end;stroke-width:0.264583"
          x="69.958344"
          y="160.1763"
-         id="tspan90">Prüfgröße Z</tspan></text>
+         id="tspan90">Prüfgröße z</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.300733;marker-start:url(#marker55)"
        id="path91"
@@ -546,16 +546,16 @@
          id="tspan108">Der z-Test</tspan></text>
     <g
        transform="matrix(0.48360922,0,0,0.48360922,43.733379,159.56805)"
-       ns2:version="1.9.0"
-       ns2:texconverter="pdflatex"
-       ns2:pdfconverter="inkscape"
-       ns2:text="\\definecolor{myred}{RGB}{165, 4, 4}\r\n$\\color{myred}{z}$"
-       ns2:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
-       ns2:scale="0.5898795245037981"
-       ns2:alignment="middle center"
-       ns2:stroke-to-path="0"
-       ns2:inkscapeversion="1.4-dev"
-       ns2:jacobian_sqrt="0.208097"
+       ns13:version="1.9.0"
+       ns13:texconverter="pdflatex"
+       ns13:pdfconverter="inkscape"
+       ns13:text="\\definecolor{myred}{RGB}{165, 4, 4}\r\n$\\color{myred}{z}$"
+       ns13:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
+       ns13:scale="0.5898795245037981"
+       ns13:alignment="middle center"
+       ns13:stroke-to-path="0"
+       ns13:inkscapeversion="1.4-dev"
+       ns13:jacobian_sqrt="0.208097"
        id="g14"
        style="stroke-width:0.4303">
       <defs
@@ -601,16 +601,16 @@
     </g>
     <g
        transform="matrix(0.45867795,0,0,0.45867795,24.148011,133.27652)"
-       ns2:version="1.9.0"
-       ns2:texconverter="pdflatex"
-       ns2:pdfconverter="inkscape"
-       ns2:text="\\definecolor{mycyan}{RGB}{0, 137, 138}\r\n$\\color{mycyan}{1}$"
-       ns2:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
-       ns2:scale="1.1394142259389786"
-       ns2:alignment="middle center"
-       ns2:stroke-to-path="0"
-       ns2:inkscapeversion="1.4-dev"
-       ns2:jacobian_sqrt="0.401962"
+       ns13:version="1.9.0"
+       ns13:texconverter="pdflatex"
+       ns13:pdfconverter="inkscape"
+       ns13:text="\\definecolor{mycyan}{RGB}{0, 137, 138}\r\n$\\color{mycyan}{1}$"
+       ns13:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
+       ns13:scale="1.1394142259389786"
+       ns13:alignment="middle center"
+       ns13:stroke-to-path="0"
+       ns13:inkscapeversion="1.4-dev"
+       ns13:jacobian_sqrt="0.401962"
        id="g81-8"
        style="stroke-width:0.876349">
       <defs
@@ -656,16 +656,16 @@
     </g>
     <g
        transform="matrix(0.362573 0 0 0.362573 34.7594 158.105)"
-       ns2:version="1.9.0"
-       ns2:texconverter="pdflatex"
-       ns2:pdfconverter="inkscape"
-       ns2:text="\\definecolor{myred}{RGB}{165, 4, 4}\r\n$\\color{myred}{\\frac{\\Delta\\bar{x}}{}}$"
-       ns2:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
-       ns2:scale="1.0277644423862347"
-       ns2:alignment="middle center"
-       ns2:stroke-to-path="0"
-       ns2:inkscapeversion="1.4-dev"
-       ns2:jacobian_sqrt="0.362573"
+       ns13:version="1.9.0"
+       ns13:texconverter="pdflatex"
+       ns13:pdfconverter="inkscape"
+       ns13:text="\\definecolor{myred}{RGB}{165, 4, 4}\r\n$\\color{myred}{\\frac{\\Delta\\bar{x}}{}}$"
+       ns13:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
+       ns13:scale="1.0277644423862347"
+       ns13:alignment="middle center"
+       ns13:stroke-to-path="0"
+       ns13:inkscapeversion="1.4-dev"
+       ns13:jacobian_sqrt="0.362573"
        id="g92-3">
       <defs
          id="id-94886d24-a6dc-4806-8d6e-19a3eefd04c7">
@@ -761,16 +761,16 @@
     </g>
     <g
        transform="matrix(0.208097 0 0 0.208097 36.2558 162.329)"
-       ns2:version="1.9.0"
-       ns2:texconverter="pdflatex"
-       ns2:pdfconverter="inkscape"
-       ns2:text="\\definecolor{myred}{RGB}{165, 4, 4}\r\n$\\color{myred}{\\sqrt{n}}$"
-       ns2:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
-       ns2:scale="0.5898795245037981"
-       ns2:alignment="middle center"
-       ns2:stroke-to-path="0"
-       ns2:inkscapeversion="1.4-dev"
-       ns2:jacobian_sqrt="0.208097"
+       ns13:version="1.9.0"
+       ns13:texconverter="pdflatex"
+       ns13:pdfconverter="inkscape"
+       ns13:text="\\definecolor{myred}{RGB}{165, 4, 4}\r\n$\\color{myred}{\\sqrt{n}}$"
+       ns13:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
+       ns13:scale="0.5898795245037981"
+       ns13:alignment="middle center"
+       ns13:stroke-to-path="0"
+       ns13:inkscapeversion="1.4-dev"
+       ns13:jacobian_sqrt="0.208097"
        id="g62">
       <defs
          id="id-97689367-9a9a-4f40-81e8-59a6ce4b03e4">

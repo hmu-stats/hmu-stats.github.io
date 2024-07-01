@@ -7,7 +7,7 @@
    viewBox="0 0 76.010618 57.478538"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4-dev (1:1.2.0-alpha1+devel+202309191445+0218cc37c8)"
+   inkscape:version="1.4-dev (1:1.4.0-dev+202401190506+b37f861054)"
    sodipodi:docname="nulldist2f.svg"
    inkscape:export-filename="nulldist2f.png"
    inkscape:export-xdpi="300"
@@ -28,9 +28,9 @@
      inkscape:document-units="mm"
      inkscape:zoom="4.1406847"
      inkscape:cx="174.24654"
-     inkscape:cy="106.74563"
-     inkscape:window-width="2560"
-     inkscape:window-height="1367"
+     inkscape:cy="152.75251"
+     inkscape:window-width="1920"
+     inkscape:window-height="1008"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -383,6 +383,6 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.05561px;font-family:Calibri;-inkscape-font-specification:Calibri;text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="57.47422"
          y="159.41045"
-         id="tspan3">Prüfgröße Z</tspan></text>
+         id="tspan3">Prüfgröße z</tspan></text>
   </g>
 </svg>

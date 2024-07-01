@@ -624,13 +624,21 @@ f(x)=\frac{1}{\hat{se}\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-0}{\hat{se}}\righ
 <h2>Vereinfachung: Populationsstreuungen bekannt</h2>
 <div class="columns">
 <div class="column" style="width:65%;">
+<div>
 <ul>
-<li class="fragment">In einem ersten Schritt betrachten wir daher den <strong>vereinfachten Fall, dass die Streuung <span class="math inline">\(se\)</span> bekannt ist</strong>. D.h. entweder ist <span class="math inline">\(se\)</span> selbst bekannt, oder aber die Streuungen <span class="math inline">\(\sigma\)</span> der Merkmale, die dem Effekt zugrunde liegen, denn aus diesen lässt sich <span class="math inline">\(se\)</span> ableiten.</li>
-<li class="fragment">Im Nasenlängenbeispiel etwa können wir annehmen, dass die Populationsstreuungen <span class="math inline">\(\sigma_\text{med}\)</span> und <span class="math inline">\(\sigma_\text{psych}\)</span> des Merkmals Nasenlänge bekannt sind. Der Standardfehler <span class="math inline">\(se\)</span> der Mittelwertdifferenz lässt sich aus diesen Populationsstreuungen wie folgt ableiten (Herleitung in Kürze):</li>
+<li>In einem ersten Schritt betrachten wir daher den <strong>vereinfachten Fall, dass die Streuung <span class="math inline">\(se\)</span> bekannt ist</strong>. D.h. entweder ist <span class="math inline">\(se\)</span> selbst bekannt, oder aber die Streuungen <span class="math inline">\(\sigma\)</span> der Merkmale, die dem Effekt zugrunde liegen, denn aus diesen lässt sich <span class="math inline">\(se\)</span> ableiten.</li>
 </ul>
+</div>
+<div class="fragment" style="margin-top: -12px">
+<div>
+<ul>
+<li>Im Nasenlängenbeispiel etwa können wir annehmen, dass die Populationsstreuungen <span class="math inline">\(\sigma_\text{med}\)</span> und <span class="math inline">\(\sigma_\text{psych}\)</span> des Merkmals Nasenlänge bekannt sind. Der Standardfehler <span class="math inline">\(se\)</span> der Mittelwertdifferenz lässt sich aus diesen Populationsstreuungen wie folgt ableiten (Herleitung in Kürze):</li>
+</ul>
+</div>
 <p><span class="math display">\[
 se=\sqrt{\frac{\sigma_\text{med}^2}{n_\text{med}} + \frac{\sigma_\text{psych}^2}{n_\text{psych}}}
 \]</span></p>
+</div>
 </div><div class="column" style="width:34%;">
 <div class="vspace-medium">
 
@@ -646,12 +654,14 @@ se=\sqrt{\frac{\sigma_\text{med}^2}{n_\text{med}} + \frac{\sigma_\text{psych}^2}
 <h2>Vereinfachung: Populationsstreuungen bekannt</h2>
 <div class="columns">
 <div class="column" style="width:65%;">
+<div>
 <ul>
-<li class="fragment">Nehmen wir an, der Standardfehler der Mittelwertdifferenz von Psychologen- und Medizinernasenlängen ist als <span class="math inline">\(se=0.1\)</span> bekannt.</li>
-<li class="fragment">Mit dieser Information können wir können unseren ersten p-Wert berechnen!</li>
-<li class="fragment">Der p-Wert ist im Beispiel die Wahrscheinlichkeit, dass dass der Stichprobeneffekt (Nasenlängendifferenz) unseren gemessenen Wert <span class="math inline">\(\Delta\bar{x}\)</span> annimmt <em>oder einen noch größeren Effekt</em>.</li>
-<li class="fragment">Dazu muss die Fläche unter der Nullhypothesenverteilung <u>rechts</u> von <span class="math inline">\(\Delta\bar{x}=\bar{x}_\text{med}-\bar{x}_\text{psych}\)</span> berechnet werden.</li>
+<li>Nehmen wir an, der Standardfehler der Mittelwertdifferenz von Psychologen- und Medizinernasenlängen ist als <span class="math inline">\(se=0.1\)</span> bekannt.</li>
+<li>Mit dieser Information können wir können unseren ersten p-Wert berechnen!</li>
+<li>Der p-Wert ist im Beispiel die Wahrscheinlichkeit, dass dass der Stichprobeneffekt (Nasenlängendifferenz) unseren gemessenen Wert <span class="math inline">\(\Delta\bar{x}\)</span> annimmt <em>oder einen noch größeren Effekt</em>.</li>
+<li>Dazu muss die Fläche unter der Nullhypothesenverteilung <u>rechts</u> von <span class="math inline">\(\Delta\bar{x}=\bar{x}_\text{med}-\bar{x}_\text{psych}\)</span> berechnet werden.</li>
 </ul>
+</div>
 </div><div class="column" style="width:34%;">
 <p><img data-src="images/nulldist2d.png"></p>
 </div>
@@ -684,25 +694,29 @@ p &amp;= \int_{\Delta\bar{x}}^{\infty}f(x)dx = 1 - F(\Delta\bar{x}) = \\
 </section>
 <section class="slide level2">
 <h2>z-Test</h2>
-<p>In der Praxis wird die Berechnung von p-Werten um das Konzept der <span style=" color: navy !important;"><strong>standardisierten Prüfgröße</strong></span> erweitert.</p>
+<div>
 <ul>
-<li class="fragment">Um das Konzept zu verstehen, erinnern wir uns, dass wir im Beispiel eine Fläche unter der Normalverteilung <span class="math inline">\(\mathcal{N}(0, 0.1)\)</span> berechnet haben. Für die nächste statistische Analyse müssten wir sehr wahrscheinlich die Fläche unter einer Normalverteilung mit einer anderen Streuung als <span class="math inline">\(0.1\)</span> berechnen.</li>
-<li class="fragment">Gerade im Vorcomputerzeitalter war die Berechnung von Flächen unter beliebigen Normalverteilungen eine Herausforderung.</li>
-<li class="fragment">Abhilfe schafft die <strong>Standardisierung des Effektes</strong>:</li>
+<li>In der Praxis wird die Berechnung von p-Werten um das Konzept der <span style=" color: navy !important;"><strong>standardisierten Prüfgröße</strong></span> erweitert.
+<ul>
+<li>Um das Konzept zu verstehen, erinnern wir uns, dass wir im Beispiel eine Fläche unter der Normalverteilung <span class="math inline">\(\mathcal{N}(0, 0.1)\)</span> berechnet haben. Für die nächste statistische Analyse müssten wir sehr wahrscheinlich die Fläche unter einer Normalverteilung mit einer anderen Streuung als <span class="math inline">\(0.1\)</span> berechnen.</li>
+<li>Gerade im Vorcomputerzeitalter war die Berechnung von Flächen unter beliebigen Normalverteilungen eine Herausforderung.</li>
+</ul></li>
 </ul>
+</div>
+<div class="fragment">
 <div class="columns">
 <div class="column" style="width:65%;">
-<div style="margin-top: -20px">
+<p>Abhilfe schafft die <strong>Standardisierung des Effektes</strong>:</p>
 <p><span class="math display">\[
 z = \frac{\Delta\bar{x}}{se}
 \]</span></p>
-</div>
 <p>Nach Teilen von <span class="math inline">\(\Delta\bar{x}\)</span> durch die Streuung <span class="math inline">\(se\)</span>, hat die Nullverteilung nicht mehr die Streuung <span class="math inline">\(se\)</span>, sondern <em>immer</em> die Streuung <span class="math inline">\(\frac{se}{se}=1\)</span>!</p>
 </div><div class="column" style="width:34%;">
-<p><img data-src="images/nulldist2e.png" style="margin-top:-80px !important"></p>
+<p><img data-src="images/nulldist2e.png" style="margin-top:-10px !important"></p>
 </div>
 </div>
 <p><span class="math inline">\(z\)</span> wird als <strong>standardisierte Prüfgröße</strong> bezeichnet, während der einfache Effekt <span class="math inline">\(\Delta\bar{x}\)</span> eine <strong>unstandardisierte Prüfgröße</strong> darstellte.</p>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -710,10 +724,13 @@ z = \frac{\Delta\bar{x}}{se}
 <section class="slide level2">
 <h2>z-Test</h2>
 <p>Es gibt auch im Computerzeitalter noch Vorteile für diese Art der Standardisierung:</p>
+<div>
 <ul>
-<li class="fragment">Der resultierende z-Wert ist vergleichbar zwischen Studien, im Gegensatz zum Mittelwertsunterschied <span class="math inline">\(\Delta \bar{x}\)</span>, der von der spezifischen Skala abhängt.</li>
-<li class="fragment">Der z-Wert hat eine intuitive Interpretation: er gibt an, <em>wie viele Standardabweichungen der Effekt von einem Nulleffekt entfernt ist</em>.</li>
+<li>Der resultierende z-Wert ist vergleichbar zwischen Studien, im Gegensatz zum Mittelwertsunterschied <span class="math inline">\(\Delta \bar{x}\)</span>, der von der spezifischen Skala abhängt.</li>
+<li>Der z-Wert hat eine intuitive Interpretation: er gibt an, <em>wie viele Standardabweichungen der Effekt von einem Nulleffekt entfernt ist</em>.</li>
 </ul>
+</div>
+<div class="fragment">
 <div class="columns">
 <div class="column" style="width:65%;">
 <p>Mit dem z-Wert als Prüfgröße benötigten wir also für alle Tests dieser Art nur noch eine einzige Verteilung — die Normalverteilung mit Mittelwert <span class="math inline">\(0\)</span> und Streuung <span class="math inline">\(1\)</span>, also die <strong>Standardnormalverteilung</strong>:</p>
@@ -731,6 +748,7 @@ $$ -->
 </div>
 </div>
 <p>Die Art der Berechnung des p-Wertes ändert sich nicht — wir berechnen in unserem Beispiel weiterhin die Fläche rechts von unserem Effekt, nur dass der “Effekt” jetzt standardisiert und als <span class="math inline">\(z = \frac{\Delta\bar{x}}{se} = \frac{\bar{x}_\text{med}-\bar{x}_\text{psych}}{se}\)</span> definiert ist. Der resultierende p-Wert ist derselbe.</p>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -746,7 +764,7 @@ z = \frac{\Delta\bar{x}}{se} = \frac{0.2}{0.1} = 2
 \]</span></p>
 <p>Und berechnen die Fläche rechts von <span class="math inline">\(z\)</span>:</p>
 <p><span class="math display">\[
-p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(Z) = 1 - \Phi(2) \overset{(Computer)}{=} 0.023
+p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(z) = 1 - \Phi(2) \overset{(Computer)}{=} 0.023
 \]</span></p>
 </div><div class="column" style="width:34%;">
 <p><img data-src="images/nulldist2f.png"></p>
@@ -772,7 +790,7 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(Z) = 1 - \Phi(2) \overset{(Computer)}
 <thead>
 <tr class="header">
 <th>Fall</th>
-<th>Z-Wert</th>
+<th>z-Wert</th>
 <th style="text-align: center;">Bekannt</th>
 <th>Berechnung von <span class="math inline">\(se\)</span></th>
 </tr>
@@ -801,6 +819,7 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(Z) = 1 - \Phi(2) \overset{(Computer)}
 <div class="vspace-xlarge">
 
 </div>
+<div class="fragment">
 <div class="merke" style="font-size: 24px">
 <div class="columns">
 <div class="column" style="width:5%;">
@@ -810,6 +829,7 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(Z) = 1 - \Phi(2) \overset{(Computer)}
 </div><div class="column" style="width:95%;">
 <p>Die Standardfehler gelten für den Fall, dass die <strong>Varianzen <span class="math inline">\(\sigma_A^2\)</span> bzw. <span class="math inline">\(\sigma_B^2\)</span> in den Populationen bekannt sind</strong> (wie beim z-Test). Siehe Bonuscontent für eine Herleitung der <a href="#/sem" style="color: darkred">Standardfehler bei Mittelwertdifferenzen</a>.</p>
 <p>Sind die Populationsstreuungen nicht bekannt, sehen die Standardfehlerformeln aufgrund der Besselkorrektur etwas anders aus (→ siehe t-Test in Vorlesung 11).</p>
+</div>
 </div>
 </div>
 </div>
@@ -829,33 +849,41 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(Z) = 1 - \Phi(2) \overset{(Computer)}
 <img data-src="images/stichprobenverteilung_diff_z.png" class="r-stretch"></section>
 <section class="slide level2">
 <h2>Einstichprobentest versus Zweistichprobentest</h2>
+<div style="border: 3px solid #aaa; padding: 10px; margin-bottom: 20px;">
 <p>Statistische Tests, die sich auf eine Stichprobe beziehen (Einzelmessung oder Vergleich zweier abhängiger Messungen) werden auch als <span style=" color: navy !important;"><strong>Einstichprobentest</strong></span> bezeichnet.</p>
-<div class="fragment">
-<p>Beispielhypothesen für den Einstichprobentest:</p>
-</div>
+<div style="font-size: 21px">
+<p><u>Beispielhypothesen für den Einstichprobentest:</u></p>
+<div>
 <ul>
-<li class="fragment">Einzelmessung: Psychologiestudierende sind überdurchschnittlich intelligent  (<span class="math inline">\(\overline{IQ} &gt; 100\)</span>)
+<li>Einzelmessung: Psychologiestudierende sind überdurchschnittlich intelligent  (<span class="math inline">\(\small\overline{IQ} &gt; 100\)</span>)
 <ul>
-<li class="fragment">Nullhypothese: <span class="math inline">\(\overline{IQ} = 100\)</span></li>
-<li class="fragment">Beachte: <span class="math inline">\(\mu_0\)</span> ist in diesem Fall 100 und nicht 0!</li>
+<li><span style="font-size:21px">Nullhypothese:</span> <span class="math inline">\(\small\overline{IQ} = 100\)</span></li>
+<li><span style="font-size:21px">Beachte: <span class="math inline">\(\small\mu_0\)</span> ist in diesem Fall 100 und nicht 0!</span></li>
 </ul></li>
-<li class="fragment">Vergleich zweier abhängiger Messungen: Psychologiestudierende sind morgens intelligenter als abends  (<span class="math inline">\(\overline{IQ}_\text{Morgen} &gt; \overline{IQ}_\text{Abend}\)</span>)
+<li>Vergleich zweier abhängiger Messungen: Psychologiestudierende sind morgens intelligenter als abends  (<span class="math inline">\(\small\overline{IQ}_\text{Morgen} &gt; \overline{IQ}_\text{Abend}\)</span>)
 <ul>
-<li class="fragment">Nullhypothese: <span class="math inline">\(\overline{IQ}_\text{Morgen} - \overline{IQ}_\text{Abend} = \Delta \overline{IQ} = 0\)</span></li>
+<li><span style="font-size:21px">Nullhypothese:</span>   <span class="math inline">\(\small\overline{IQ}_\text{Morgen} - \overline{IQ}_\text{Abend} = \Delta \overline{IQ} = 0\)</span></li>
 </ul></li>
 </ul>
+</div>
+</div>
+</div>
 <div class="fragment">
+<div style="border: 3px solid #aaa; padding: 10px">
 <p>Demgegenüber werden statistische Tests, die sich auf zwei unabhängige Stichproben beziehen, als <span style=" color: navy !important;"><strong>Zweistichprobentest</strong></span> bezeichnet.</p>
-</div>
-<div class="fragment">
-<p>Beispielhypothese für den Zweistichprobentest:</p>
-</div>
+<div style="font-size: 21px">
+<p><u>Beispielhypothese für den Zweistichprobentest:</u></p>
+<div>
 <ul>
-<li class="fragment">Studierende der HMU sind intelligenter als Studierende der MSB  (<span class="math inline">\(\overline{IQ}_\text{HMU} &gt; \overline{IQ}_\text{MSB}\)</span>)
+<li>Studierende der HMU sind intelligenter als Studierende der MSB  (<span class="math inline">\(\small\overline{IQ}_\text{HMU} &gt; \overline{IQ}_\text{MSB}\)</span>)
 <ul>
-<li class="fragment">Nullhypothese: <span class="math inline">\(\overline{IQ}_\text{HMU} - \overline{IQ}_\text{MSB} = \Delta \overline{IQ} = 0\)</span></li>
+<li><span style="font-size:21px">Nullhypothese:</span>   <span class="math inline">\(\small\overline{IQ}_\text{HMU} - \overline{IQ}_\text{MSB} = \Delta \overline{IQ} = 0\)</span></li>
 </ul></li>
 </ul>
+</div>
+</div>
+</div>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -867,11 +895,11 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(Z) = 1 - \Phi(2) \overset{(Computer)}
 <p>Um diese Entscheidung zu treffen, legen wir ein <span style=" color: navy !important;"><strong>Signifikanzniveau</strong></span> <span class="math inline">\(\alpha\)</span> fest. <strong>Unterschreitet der p-Wert das Signifikanzniveau <span class="math inline">\(\alpha\)</span></strong>, <strong>lehnen wir die Nullhypothese ab</strong> und werten den <strong>Effekt als statistisch signifikant</strong>.</p>
 </div>
 <div class="fragment">
-<p>Der Wert <span class="math inline">\(\alpha\)</span> wird auch als <span style=" color: navy !important;"><strong>Irrtumswahrscheinlichkeit</strong></span> bezeichnet. Ist beispielsweise <span class="math inline">\(\alpha=0{,}1\)</span> so wären wir bereit einen p-Wert von <span class="math inline">\(p&lt;0.1\)</span> als signifikant zu werten, gehen dabei aber ein 10%-iges Risiko ein, dass die Nullhypothese in Wahrheit doch korrekt ist. D.h. wir nehmen in Kauf, dass wir uns mit 10% Wahrscheinlichkeit irren und fälschlicherweise die Nullhypothese ablehnen.</p>
+<p>Der Wert <span class="math inline">\(\alpha\)</span> wird auch als <span style=" color: navy !important;"><strong>Irrtumswahrscheinlichkeit</strong></span> bezeichnet. Ist beispielsweise <span class="math inline">\(\alpha=0.1\)</span> so wären wir bereit einen p-Wert von <span class="math inline">\(p&lt;0.1\)</span> als signifikant zu werten, gehen dabei aber ein 10%-iges Risiko ein, dass die Nullhypothese in Wahrheit doch korrekt ist. D.h. wir nehmen in Kauf, dass wir uns mit 10% Wahrscheinlichkeit irren und fälschlicherweise die Nullhypothese ablehnen.</p>
 </div>
 <div class="columns fragment">
 <div class="column" style="width:50%;">
-<p>Auf welchen Wert das Signifikanzniveau festgelegt werden sollte ist seit langer Zeit Gegenstand von kontroversen Debatten in der Psychologie. Als de facto Standard-Signifikanzniveau hat sich jedoch der <span style=" color: navy !important;"><strong>Wert <span class="math inline">\(\color{navy}{\alpha=0{,}05}\)</span></strong></span> eingebürgert.</p>
+<p>Auf welchen Wert das Signifikanzniveau festgelegt werden sollte ist seit langer Zeit Gegenstand von kontroversen Debatten in der Psychologie. Als de facto Standard-Signifikanzniveau hat sich jedoch der <span style=" color: navy !important;"><strong>Wert <span class="math inline">\(\color{navy}{\alpha=0.05}\)</span></strong></span> eingebürgert.</p>
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/significance_level.png" style="margin-top:0px !important"></p>
 </div>
@@ -882,18 +910,46 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(Z) = 1 - \Phi(2) \overset{(Computer)}
 </section>
 <section class="slide level2">
 <h2>Ein- und zweiseitiges Testen</h2>
-<ul>
-<li class="fragment">Im Nasenlängenbeispiel haben wir bislang eine <span style=" color: navy !important;"><strong>gerichtete Hypothese betrachtet</strong></span>, indem wir bei der Hypothese festgelegt haben, welche der beiden Gruppen durchschnittlich eine längere Nase hat (Med-Nasenlänge &gt; Psych-Nasenlänge oder <span class="math inline">\(\Delta\bar{x}&gt;0\)</span>).</li>
-<li class="fragment">Wir hätten auch die <strong>umgekehrte gerichtete Hypothese</strong> betrachten können:<br>Med-Nasenlänge &lt; Psych-Nasenlänge oder <span class="math inline">\(\Delta\bar{x}&lt;0\)</span></li>
-<li class="fragment">Eine <span style=" color: navy !important;"><strong>ungerichtete Hypothese</strong></span> gibt dagegen keine Richtung vor, d.h. die Hypothese würde schlicht lauten: Med-Nasenlängen und Psych-Nasenlängen sind <strong>unterschiedlich</strong> (<span class="math inline">\(\Delta\bar{x}\ne 0\)</span>)</li>
-</ul>
-<div class="columns fragment">
-<div class="column" style="width:55%;">
-<p>Dies wirkt sich auf die Flächen unter der Nullverteilung aus, die wir betrachten.</p>
-</div><div class="column" style="width:45%;">
-<p><img data-src="images/nulldist2g.png"></p>
+<div style="font-size: 26px">
+<p>Bislang haben wir eine konkrete <strong>gerichtete Hypothese</strong> betrachtet, indem bei der Hypothese festgelegt wurde, welche der beiden Gruppen im MIttel eine längere Nase hat. Es gibt jedoch insgesamt <strong>drei Fälle</strong>.</p>
 </div>
+<div style="margin-top: 10px">
+<!---  Table --->
+<table style="width:96%;">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 35%">
+<col style="width: 26%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Rechtsseitige gerichtete Hypothese</strong>: gibt Richung vor</td>
+<td><u>Hypothese:</u> <em>Medizinernasen sind länger als Psychologennasen</em> (<span class="math inline">\(\Delta\bar{x}&gt;0\)</span>)</td>
+<td><img data-src="images/einseitig_rechts.png" style="margin-bottom: 12px !important"></td>
+</tr>
+<tr class="even">
+<td><strong>Linksseitige gerichtete Hypothese</strong>: gibt Richung vor</td>
+<td><u>Hypothese:</u> <em>Medizinernasen sind kürzer als Psychologennasen</em> (<span class="math inline">\(\Delta\bar{x}&lt;0\)</span>)</td>
+<td><img data-src="images/einseitig_links.png" style="margin-bottom: 12px !important"></td>
+</tr>
+<tr class="odd">
+<td><strong>Ungerichtete Hypothese</strong>: gibt keine Richtung vor</td>
+<td><u>Hypothese:</u> <em>Medizinernasen sind kürzer als Psychologennasen</em> (<span class="math inline">\(\Delta\bar{x}\neq 0\)</span> oder äquivalent <span class="math inline">\(\bar{x}_\text{med}\neq \bar{x}_\text{psych}\)</span>)</td>
+<td><img data-src="images/zweiseitig.png"></td>
+</tr>
+</tbody>
+</table>
 </div>
+<!-- :::: {.columns .fragment}
+::: {.column width="55%"}
+Dies wirkt sich auf die Flächen unter der Nullverteilung aus, die wir betrachten.
+:::
+::: {.column width="45%"}
+
+![](images/nulldist2g.png)
+
+:::
+:::: -->
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -903,7 +959,15 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(Z) = 1 - \Phi(2) \overset{(Computer)}
 <div class="vspace-small">
 
 </div>
-<p><img data-src="images/nulldist2g.png" height="330"></p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img data-src="images/einseitig_rechts.png"></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="images/einseitig_links.png"></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="images/zweiseitig.png"></p>
+</div>
+</div>
 <p>Wie sehen folgende Zusammenhänge:</p>
 <div>
 <ul>
@@ -934,7 +998,15 @@ p(\bar{x}_\text{med} \neq \bar{x}_\text{psych}) = 2 \times \text{min}\left(p(\ba
 <div class="vspace-small">
 
 </div>
-<p><img data-src="images/nulldist2g.png" height="310"></p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img data-src="images/einseitig_rechts.png"></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="images/einseitig_links.png"></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="images/zweiseitig.png"></p>
+</div>
+</div>
 <p>Der p-Wert der ungerichteten Hypothese ist damit immer größer (doppelt so groß) wie der kleinere p-Wert der gerichteten Hypothesen.</p>
 <p><strong>Intuition:</strong> bei der ungericheteten Hypothese legen wir uns weniger fest, denn unsere Hypothese wäre sowohl erfüllt wenn <span class="math inline">\(\bar{x}_\text{med}\)</span> signifikant <strong>größer</strong> ist als <span class="math inline">\(\bar{x}_\text{psych}\)</span>, als auch wenn <span class="math inline">\(\bar{x}_\text{med}\)</span> signifikant <strong>kleiner</strong> ist als <span class="math inline">\(\bar{x}_\text{psych}\)</span>. Wir machen uns das Leben (bzw. unsere Vorhesagen) also “einfacher”.</p>
 <p>Genauer gesagt verdoppeln wir unsere Chance, mit der Hypothese richtig zu liegen, da a priori beide ungerichtete Hypothesen gleich wahrscheinlich sind. Die Verdopplung des p-Wertes kompensiert dies (man könnte auch sagen “bestraft unsere schwammige Vorhersage”) — nun wird es schwieriger für p das Signifikanzniveau zu unterschreiten.</p>
@@ -959,7 +1031,7 @@ p(\bar{x}_\text{med} \neq \bar{x}_\text{psych}) = 2 \times \text{min}\left(p(\ba
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/pwert_fallzahl_annot.png" height="500"></p>
-<figcaption>Getestet wird, ob der IQ der betrachteten Population (hier <span class="math inline">\(102{,}5\)</span>) größer ist, als der Referenzwert <span class="math inline">\(\mu_0=100\)</span>, der idealerweise den durchschnittlichen IQ aller Menschen darstellt. Im Bild ist zu sehen, dass die betrachtete Population (z.B. alle Brandenburger:innen) tatsächlich einen etwas höheren Mittelwert als 100 aufweisen, was sich auch im Stichprobenmittelwert niederschlägt. <strong>Wie verändert sich der p-Wert abhängig davon, ob die Stichprobe <span class="math inline">\(n=10\)</span> oder <span class="math inline">\(n=100\)</span> umfasst?</strong> <strong>Schritt 1:</strong> der Standardfehler <span class="math inline">\(se\)</span> ist bei der höheren Stichprobenzahl wesentlich kleiner (aufgrund von <span class="math inline">\(\hat{\sigma}/\sqrt{n}\)</span>) und damit die Stichprobenverteilung bei <span class="math inline">\(n=100\)</span> wesentlich schmaler. <strong>Schritt 2:</strong> der kleinere Standardfehler wirkt sich auf den z-Wert <span class="math inline">\(z=\frac{102{,}5}{se}\)</span> aus: kleinerer Standardfehler bedeutet größerer z-Wert. <strong>Schritt 3:</strong> größerer z-Wert bedeutet kleinerer p-Wert, da kleinere Fläche rechts von z.</figcaption>
+<figcaption>Getestet wird, ob der IQ der betrachteten Population (hier 102.5) größer ist, als der Referenzwert <span class="math inline">\(\mu_0=100\)</span>, der idealerweise den durchschnittlichen IQ aller Menschen darstellt. Im Bild ist zu sehen, dass die betrachtete Population (z.B. alle Brandenburger:innen) tatsächlich einen etwas höheren Mittelwert als 100 aufweisen, was sich auch im Stichprobenmittelwert niederschlägt. <strong>Wie verändert sich der p-Wert abhängig davon, ob die Stichprobe <span class="math inline">\(n=10\)</span> oder <span class="math inline">\(n=100\)</span> umfasst?</strong> <strong>Schritt 1:</strong> der Standardfehler <span class="math inline">\(se\)</span> ist bei der höheren Stichprobenzahl wesentlich kleiner (aufgrund von <span class="math inline">\(\hat{\sigma}/\sqrt{n}\)</span>) und damit die Stichprobenverteilung bei <span class="math inline">\(n=100\)</span> wesentlich schmaler. <strong>Schritt 2:</strong> der kleinere Standardfehler wirkt sich auf den z-Wert <span class="math inline">\(z=\frac{102.5}{se}\)</span> aus: kleinerer Standardfehler bedeutet größerer z-Wert. <strong>Schritt 3:</strong> größerer z-Wert bedeutet kleinerer p-Wert, da kleinere Fläche rechts von z.</figcaption>
 </figure>
 </div>
 <!----------------->
@@ -1278,18 +1350,21 @@ plt.savefig('images/paradoxia_histogram_inflammation_sem_sig.png', bbox_inches='
 <p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 175px; right: 0px; height: 110px; "></p>
 <p>Zentrale Frage: wie lässt sich auf Basis der (hier als bekannt vorausgesetzten) Populationsstreuungen <span class="math inline">\(\sigma_A\)</span> und <span class="math inline">\(\sigma_B\)</span> der Standardfehler der Mittelwertdifferenz berechnen?</p>
 <p><u><strong>Unabhängige Messungen in zwei Stichproben</strong></u></p>
+<div>
 <ul>
-<li class="fragment">Bei unabhängigen Gruppen sind die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> der beiden Stichproben unabhängige Zufallsvariablen.</li>
-<li class="fragment">Für die Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}=\bar{x}_A - \bar{x}_B\)</span> gilt daher die allgemeine Varianzsummenformel, der zufolge sich bei der Differenzbildung zweier unabhängiger Zufallsvariablen die Varianzen addieren.</li>
-<li class="fragment">Die Varianz von Mittelwerten ist nichts anderes als der quadrierte Standardfehler, hier <span class="math inline">\(se_A^2\)</span> und <span class="math inline">\(se_B^2\)</span>.</li>
-<li class="fragment">Für die Varianz <span class="math inline">\(se^2\)</span> der Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span> gilt also: <span class="math display">\[
-se^2 = se_A^2 + se_B^2 = \frac{\sigma_A^2}{n_A} + \frac{\sigma_B^2}{n_B}
-\]</span></li>
+<li>Bei unabhängigen Gruppen sind die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> der beiden Stichproben unabhängige Zufallsvariablen.</li>
+<li>Für die Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}=\bar{x}_A - \bar{x}_B\)</span> gilt daher die allgemeine Varianzsummenformel, der zufolge sich bei der Differenzbildung zweier unabhängiger Zufallsvariablen die Varianzen addieren.</li>
+<li>Die Varianz von Mittelwerten ist nichts anderes als der quadrierte Standardfehler, hier <span class="math inline">\(se_A^2\)</span> und <span class="math inline">\(se_B^2\)</span>.</li>
+<li>Für die Varianz <span class="math inline">\(se^2\)</span> der Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span> gilt also:</li>
 </ul>
+</div>
+<p><span class="math display">\[
+se^2 = se_A^2 + se_B^2 = \frac{\sigma_A^2}{n_A} + \frac{\sigma_B^2}{n_B}
+\]</span></p>
 <div style="margin-top: -20px">
 <p>Wurzel ziehen:</p>
 </div>
-<div class="colorbox fragment">
+<div class="colorbox">
 <p><span class="math display">\[
 se=\sqrt{\frac{\sigma_A^2}{n_A} + \frac{\sigma_B^2}{n_B}}
 \]</span></p>
@@ -1308,7 +1383,7 @@ se=\sqrt{\frac{\sigma_A^2}{n_A} + \frac{\sigma_B^2}{n_B}}
 \]</span></p>
 <p>.. und mit der Standardformel die Standardabweichung <span class="math inline">\(\sigma_\Delta\)</span> dieser Differenz berechnen.</p>
 <p>Der Standardfehler der Mittelwertsdifferenz abhängiger Bedingungen A und B ergibt sich daher als:</p>
-<div class="colorbox fragment">
+<div class="colorbox">
 <p><span class="math display">\[
 se = \frac{\sigma_\Delta}{\sqrt{n}}\qquad\text{mit}\qquad \sigma_\Delta=\sqrt{\frac{1}{n}\sum\left(\Delta x_i-\Delta\bar{x}\right)^2}
 \]</span></p>
@@ -1432,7 +1507,7 @@ se = \frac{\sigma_\Delta}{\sqrt{n}}\qquad\text{mit}\qquad \sigma_\Delta=\sqrt{\f
         shuffle: false,
 
         // Turns fragments on and off globally
-        fragments: false,
+        fragments: true,
 
         // Flags whether to include the current fragment in the URL,
         // so that reloading brings you to the same fragment position
