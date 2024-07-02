@@ -406,7 +406,7 @@ Zurück zur **theoretischen Stichprobenverteilung**. Alle Erkenntnisse über die
 <div class="vspace-medium">
 
 </div>
-<p>Ziel der <span style=" color: navy !important;"><strong>Signifikanztestung</strong></span> ist zu klären, inwieweit ein empirischer Effekt <span class="math inline">\(\hat{\theta}\)</span> <strong>statistisch bedeutsam</strong> ist — oder aber durch Zufall erklärt werden kann. Signifikanztests bieten damit ein <strong>Kriterium, um wissenschaftliche Hypothesen</strong> zu überprüfen**.</p>
+<p>Ziel der <span style=" color: navy !important;"><strong>Signifikanztestung</strong></span> ist zu klären, inwieweit ein empirischer Effekt <span class="math inline">\(\hat{\theta}\)</span> <strong>statistisch bedeutsam</strong> ist — oder aber durch Zufall erklärt werden kann. Signifikanztests bieten damit ein <strong>Kriterium, um wissenschaftliche Hypothesen zu überprüfen</strong>.</p>
 <p>Die Signifikanztestung <strong>grenzt sich zur praktischen Signifikanz im Rahmen der Effektstärke ab</strong>, da Effekte stark sein können, ihre Beobachtung aber unter Umständen dennoch durch Zufall erklärt werden kann.</p>
 <p>Zwei etablierte Frameworks zur Signifikanztestung haben sich im Lauf der Zeit entwickelt: die <span style=" color: navy !important;"><strong>Bayesianische Testung</strong></span> und die <span style=" color: navy !important;"><strong>Nullhypothesentestung</strong></span>. In Statistik 1 betrachten wir ausschließlich das Framework der Nullhypothesentestung.</p>
 <!----------------->
@@ -680,7 +680,7 @@ f(x)=\frac{1}{se\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\theta_0}{se}\right)^2}
 </div>
 <p><strong>Frage:</strong> warum eigentlich gerade <span class="math inline">\(\theta_0=0\)</span> und nicht irgendein Wert <span class="math inline">\(\color{green}{\theta_0 &lt; 0}\)</span>? Schließlich besagt die Nullhypothese im Beispiel ja gerade <span class="math inline">\(\theta \le 0\)</span>, also die Annahme, dass der Effekt <span class="math inline">\(\theta\)</span> in der Population <span style=" color: green !important;">kleiner</span> oder gleich Null ist?</p>
 <p><strong>Antwort:</strong> <span class="math inline">\(\theta_0=0\)</span> ist der “unvorteilhafteste” Mittelwert für die Ablehnung der Nullhypothese, da <span class="math inline">\(\theta_0=0\)</span> dem Stichprobeneffekt <span class="math inline">\(\hat{\theta}\)</span> näher ist als alle anderen potentiellen <span class="math inline">\(H_0\)</span>-Mittelwerte <span class="math inline">\(\theta_0&lt;0\)</span>. Wir bewerten also einen empirischen Effekt <span class="math inline">\(\hat{\theta}\)</span> als signifikant, wenn er so stark ist, dass wir die Nullhypothese sogar unter Annahme des Mittelwertes <span class="math inline">\(\theta_0=0\)</span> ablehnen können. Für <span class="math inline">\(\theta_0&lt;0\)</span>, kann in diesem Fall die Nullhypothese erst recht abgelehnt werden.</p>
-<p>Kurzum: es genügt für <span class="math inline">\(\theta_0=0\)</span> zu testen, alle anderen Fälle <span class="math inline">\(\theta_0&lt;0\)</span> sind damit ohnehin abgedeckt.</p>
+<p>Kurzum: es genügt für <span class="math inline">\(\theta_0=0\)</span> zu testen, alle anderen Fälle <span class="math inline">\(\theta_0&lt;0\)</span> sind damit abgedeckt.</p>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
@@ -732,7 +732,7 @@ se=\sqrt{\frac{\sigma_\text{med}^2}{n_\text{med}} + \frac{\sigma_\text{psych}^2}
 <ul>
 <li>Nehmen wir an, der Standardfehler der Mittelwertdifferenz von Psychologen- und Medizinernasenlängen ist als <span class="math inline">\(se=0.1\)</span> bekannt.</li>
 <li>Mit dieser Information können wir können unseren ersten p-Wert berechnen!</li>
-<li>Der p-Wert ist im Beispiel die Wahrscheinlichkeit, dass dass der Stichprobeneffekt (Nasenlängendifferenz) unseren gemessenen Wert <span class="math inline">\(\Delta\bar{x}\)</span> annimmt <em>oder einen noch größeren Effekt</em>.</li>
+<li>Der p-Wert ist im Beispiel die Wahrscheinlichkeit der gemessenen Nasenlängendifferenz <span class="math inline">\(\Delta\bar{x}\)</span> <em>oder eines noch größeren Effektes</em> unter der Nullhypothesenverteilung.</li>
 <li>Dazu muss die Fläche unter der Nullhypothesenverteilung <u>rechts</u> von <span class="math inline">\(\hat{\theta}=\Delta\bar{x}=\bar{x}_\text{med}-\bar{x}_\text{psych}\)</span> berechnet werden.</li>
 </ul>
 </div>
@@ -923,7 +923,7 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(z) = 1 - \Phi(2) \overset{(Computer)}
 <p><img data-src="images/merke.png" height="55"></p>
 </div>
 </div><div class="column" style="width:95%;">
-<p>Die Formeln für die Standardfehler gelten für den Fall, dass die <strong>Varianzen <span class="math inline">\(\sigma_A^2\)</span> bzw. <span class="math inline">\(\sigma_B^2\)</span> in den Populationen bekannt sind</strong> (wie beim z-Test). Siehe Bonuscontent für eine Herleitung der <a href="#/sem" style="color: darkred">Standardfehler bei Mittelwertdifferenzen</a>.</p>
+<p>Die Formeln für die Standardfehler gelten für den Fall, dass die <strong>Varianzen <span class="math inline">\(\sigma_A^2\)</span> bzw. <span class="math inline">\(\sigma_B^2\)</span> in den Populationen bekannt sind</strong> (wie beim z-Test). Siehe Bonuscontent für eine <a href="#/sem" style="color: darkred">Herleitung der Standardfehler von Mittelwertdifferenzen</a>.</p>
 <p>Sind die Populationsstreuungen nicht bekannt, sehen die Standardfehlerformeln aufgrund der Besselkorrektur etwas anders aus (→ siehe t-Test in Vorlesung 11).</p>
 </div>
 </div>
@@ -1476,17 +1476,23 @@ plt.savefig('images/paradoxia_histogram_inflammation_sem_sig.png', bbox_inches='
 <!----------------->
 </section>
 <section id="sem" class="slide level2">
-<h2><span style=" color: darkred !important;">Standardfehler bei Mittelwertdifferenzen (z-Test)</span></h2>
+<h2><span style="font-size: 41px; color: darkred">z-Test: Herleitung der Standardfehler von Mittelwertdifferenzen</span></h2>
 <p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<div class="vspace-large">
+<div class="vspace-small">
 
 </div>
-<p>Frage: wie lässt sich auf Basis der — beim z-Test als bekannt vorausgesetzten — Populationsstreuungen <span class="math inline">\(\sigma_A\)</span> und <span class="math inline">\(\sigma_B\)</span> der Standardfehler der Mittelwertdifferenz berechnen?</p>
-<div class="vspace-large">
+<p>Sind die Populationsstreuungen <span class="math inline">\(\sigma_A\)</span> und <span class="math inline">\(\sigma_B\)</span> bekannt (wie beim z-Test vorausgesetzt), lässt sich der Standardfehler <span class="math inline">\(se\)</span> mit den Formeln aus dem <a href="#/cheatsheet" style="color: navy">Cheatsheet</a> berechnen. Hier betrachten wir die Herleitung dieser Formeln.</p>
+<div class="vspace-small">
 
 </div>
 <p><u><strong>Abhängige Messungen in einer Stichprobe</strong></u></p>
-<p>Werden die Messungen <span class="math inline">\(X_A\)</span> und <span class="math inline">\(X_B\)</span> in denselben Versuchspersonen durchgeführt, greift die bereits bekannte Formel für die Differenzenstandardabweichung <span class="math inline">\(\sigma_\Delta\)</span>:</p>
+<p>Werden die Messungen <span class="math inline">\(X_A\)</span> und <span class="math inline">\(X_B\)</span> in denselben Versuchspersonen durchgeführt, können wir — wie schon bei der Effektstärke — die Standardabweichung <span class="math inline">\(\sigma_\Delta\)</span> der Differenzenvariable <span class="math inline">\(\Delta X = X_A - X_B\)</span> bestimmen:</p>
+<div style="margin-top: -20px">
+<p><span class="math display">\[
+\sigma_\Delta=\sqrt{\sigma_A^2+\sigma_B^2-2\,\rho\sigma_A\sigma_B}
+\]</span></p>
+</div>
+<p>Da <span class="math inline">\(\sigma_\Delta\)</span> in diesem Fall bereits die Standardabweichung des Effektes ist, folgt direkt der Standardfehler:</p>
 <div class="colorbox">
 <p><span class="math display">\[
 se = \frac{\sigma_\Delta}{\sqrt{n}}\qquad\text{mit}\qquad \sigma_\Delta=\sqrt{\sigma_A^2+\sigma_B^2-2\,\rho\sigma_A\sigma_B}
@@ -1498,12 +1504,15 @@ se = \frac{\sigma_\Delta}{\sqrt{n}}\qquad\text{mit}\qquad \sigma_\Delta=\sqrt{\s
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style=" color: darkred !important;">Standardfehler bei Mittelwertdifferenzen (z-Test)</span></h2>
+<h2><span style="font-size: 41px; color: darkred">z-Test: Herleitung der Standardfehler von Mittelwertdifferenzen</span></h2>
+<div class="vspace-large">
+
+</div>
 <p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 240px; right: 0px; height: 110px; "></p>
 <p><u><strong>Unabhängige Messungen in zwei Stichproben</strong></u></p>
 <div>
 <ul>
-<li>Bei unabhängigen Gruppen sind die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> der beiden Stichproben unabhängige Zufallsvariablen.</li>
+<li>Bei unabhängigen Gruppen sind die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> der beiden Stichproben <u>unabhängige</u> Zufallsvariablen.</li>
 <li>Für die Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}=\bar{x}_A - \bar{x}_B\)</span> gilt daher die allgemeine Varianzsummenformel, der zufolge sich bei der Differenzbildung zweier unabhängiger Zufallsvariablen die Varianzen addieren.</li>
 <li>Die Varianz von Mittelwerten ist nichts anderes als der quadrierte Standardfehler, hier <span class="math inline">\(se_A^2\)</span> und <span class="math inline">\(se_B^2\)</span>.</li>
 <li>Für die Varianz <span class="math inline">\(se^2\)</span> der Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span> gilt also:</li>
@@ -1525,7 +1534,7 @@ se=\sqrt{\frac{\sigma_A^2}{n_A} + \frac{\sigma_B^2}{n_B}}
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style=" color: darkred !important;">Standardfehler bei Mittelwertdifferenzen (z-Test)</span></h2>
+<h2><span style="font-size: 37px; color: darkred">z-Test: Veranschaulichung der Standardfehler von Mittelwertdifferenzen</span></h2>
 <div class="vspace-small">
 
 </div>
