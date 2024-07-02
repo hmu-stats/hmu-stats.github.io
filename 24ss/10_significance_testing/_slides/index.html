@@ -796,7 +796,7 @@ z = \frac{\hat{\theta}}{se}
 </section>
 <section class="slide level2">
 <h2>z-Wert — eine standardisierte Prüfgröße</h2>
-<div class="vspace-xlarge">
+<div class="vspace-large">
 
 </div>
 <p>Es gibt auch im Computerzeitalter noch Vorteile für diese Art der Standardisierung:</p>
@@ -806,6 +806,10 @@ z = \frac{\hat{\theta}}{se}
 <li>Der z-Wert hat eine (halbwegs) intuitive Interpretation: er gibt an, <em>wie viele Standardfehler der Effekt von einem Nulleffekt entfernt ist</em>.</li>
 </ul>
 </div>
+<div class="vspace-large">
+
+</div>
+<p><img data-src="images/z_interpretation.png" height="325"></p>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1006,30 +1010,30 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(z) = 1 - \Phi(2) \overset{(Computer)}
 <section class="slide level2">
 <h2>Ein- und zweiseitiges Testen</h2>
 <div style="font-size: 26px">
-<p>Bislang haben wir eine konkrete <strong>gerichtete Hypothese</strong> betrachtet, indem bei der Hypothese festgelegt wurde, welche der beiden Gruppen im MIttel eine längere Nase hat. Es gibt jedoch insgesamt <strong>drei Fälle</strong>.</p>
+<p>Bislang haben wir konkrete <strong>gerichtete Hypothese</strong> betrachtet, etwa indem bei der Nasenlängenhypothese festgelegt wurde, welche der beiden Gruppen im Mittel eine längere Nase hat. Es gibt jedoch insgesamt <strong>drei Fälle</strong>.</p>
 </div>
-<div style="margin-top: 10px">
+<div style="margin-top: -30px">
 <!---  Table --->
 <table style="width:96%;">
 <colgroup>
-<col style="width: 35%">
-<col style="width: 35%">
+<col style="width: 25%">
+<col style="width: 45%">
 <col style="width: 26%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Rechtsseitige gerichtete Hypothese</strong>: gibt Richung vor</td>
-<td><u>Hypothese:</u> <em>Medizinernasen sind länger als Psychologennasen</em> (<span class="math inline">\(\Delta\bar{x}&gt;0\)</span>)</td>
-<td><img data-src="images/einseitig_rechts.png" style="margin-bottom: 12px !important"></td>
+<td><strong>Rechtsseitige<br>gerichtete Hypothese</strong>:<br>gibt Richung vor</td>
+<td><u>Hypothese:</u> <span class="math inline">\(\theta&gt;0\)</span><br><u>Beispiel:</u> <em>Medizinernasen sind länger als Psychologennasen</em><br><span class="math inline">\(\qquad\small\Delta\mu&gt;0\quad\text{mit}\quad\theta=\Delta\mu=\mu_\text{med}-\mu_\text{psych}\)</span></td>
+<td><img data-src="images/einseitig_rechts.png" style="margin-bottom: 8px !important"></td>
 </tr>
 <tr class="even">
-<td><strong>Linksseitige gerichtete Hypothese</strong>: gibt Richung vor</td>
-<td><u>Hypothese:</u> <em>Medizinernasen sind kürzer als Psychologennasen</em> (<span class="math inline">\(\Delta\bar{x}&lt;0\)</span>)</td>
-<td><img data-src="images/einseitig_links.png" style="margin-bottom: 12px !important"></td>
+<td><strong>Linksseitige<br>gerichtete Hypothese</strong>:<br>gibt Richung vor</td>
+<td><u>Hypothese:</u> <span class="math inline">\(\theta&lt;0\)</span><br><u>Beispiel:</u> <em>Medizinernasen sind kürzer als Psychologennasen</em><br><span class="math inline">\(\qquad\small\Delta\mu&lt;0\quad\text{mit}\quad\theta=\Delta\mu=\mu_\text{med}-\mu_\text{psych}\)</span></td>
+<td><img data-src="images/einseitig_links.png" style="margin-bottom: 8px !important"></td>
 </tr>
 <tr class="odd">
-<td><strong>Ungerichtete Hypothese</strong>: gibt keine Richtung vor</td>
-<td><u>Hypothese:</u> <em>Medizinernasen sind kürzer als Psychologennasen</em> (<span class="math inline">\(\Delta\bar{x}\neq 0\)</span> oder äquivalent <span class="math inline">\(\bar{x}_\text{med}\neq \bar{x}_\text{psych}\)</span>)</td>
+<td><strong>Ungerichtete Hypothese</strong>:<br>gibt keine Richtung vor</td>
+<td><u>Hypothese:</u> <span class="math inline">\(\theta\neq 0\)</span><br><u>Beispiel:</u> <em>Medizinernasen und Psychologennasen sind unterschiedlich lang</em><br><span class="math inline">\(\qquad\small\Delta\mu\neq 0\quad\text{mit}\quad\theta=\Delta\mu=\mu_\text{med}-\mu_\text{psych}\)</span></td>
 <td><img data-src="images/zweiseitig.png"></td>
 </tr>
 </tbody>
@@ -1069,20 +1073,28 @@ Dies wirkt sich auf die Flächen unter der Nullverteilung aus, die wir betrachte
 <li>Die <strong>p-Werte der beiden gerichteten Hypothesen</strong> (“größer als” oder “kleiner als”) sind genau <strong>invers</strong>:</li>
 </ul>
 </div>
-<div style="margin-top: -40px">
-<p><span class="math display">\[
-p(\bar{x}_\text{med} &gt; \bar{x}_\text{psych}) = 1 - p(\bar{x}_\text{med} &lt; \bar{x}_\text{psych})
-\]</span></p>
+<div class="columns" style="display: flex; margin-top: -20px">
+<div class="column" style="width:35%;">
+<div class="colorbox fragment" style="margin-left: 20px; margin-top: 20px; text-align: center">
+<p><span class="math inline">\(\small p(\theta &gt; 0) = 1 - p(\theta &lt; 0)\)</span></p>
+</div>
+</div><div class="column" style="margin-top: 20px">
+<p><u>Beispiel:</u> <span class="math inline">\(\small\quad p(\mu_\text{med} &gt; \mu_\text{psych}) = 1 - p(\mu_\text{med} &lt; \mu_\text{psych})\)</span></p>
+</div>
 </div>
 <div>
 <ul>
 <li>Der <strong>p-Wert der ungerichteten Hypothese</strong> (“unterschiedlich”) ist gleich <strong>2 x der kleinere p-Wert der beiden gerichteten Hypothesen</strong>:</li>
 </ul>
 </div>
-<div style="margin-top: -20px">
-<p><span class="math display">\[
-p(\bar{x}_\text{med} \neq \bar{x}_\text{psych}) = 2 \times \text{min}\left(p(\bar{x}_\text{med} &gt; \bar{x}_\text{psych}), p(\bar{x}_\text{med} &lt; \bar{x}_\text{psych})\right)
-\]</span></p>
+<div class="columns" style="display: flex; margin-top: -20px">
+<div class="column" style="width:35%;">
+<div class="colorbox fragment" style="margin-left: 20px; margin-top: 20px; text-align: center">
+<p><span class="math inline">\(\small p(\theta\neq 0) = 2 \times \text{min}\big(p(\theta &gt; 0), p(\theta &lt; 0)\big)\)</span></p>
+</div>
+</div><div class="column" style="margin-top: 20px">
+<p><u>Beispiel:</u> <span class="math inline">\(\;\;\scriptstyle p(\mu_\text{med} \neq \mu_\text{psych}) = 2 \times \text{min}\big(p(\mu_\text{med} &gt; \mu_\text{psych}), p(\mu_\text{med} &lt; \mu_\text{psych})\big)\)</span></p>
+</div>
 </div>
 <!----------------->
 <!--- New slide --->
@@ -1103,8 +1115,8 @@ p(\bar{x}_\text{med} \neq \bar{x}_\text{psych}) = 2 \times \text{min}\left(p(\ba
 </div>
 </div>
 <p>Der p-Wert der ungerichteten Hypothese ist damit immer größer (doppelt so groß) wie der kleinere p-Wert der gerichteten Hypothesen.</p>
-<p><strong>Intuition:</strong> bei der ungericheteten Hypothese legen wir uns weniger fest, denn unsere Hypothese wäre sowohl erfüllt wenn <span class="math inline">\(\bar{x}_\text{med}\)</span> signifikant <strong>größer</strong> ist als <span class="math inline">\(\bar{x}_\text{psych}\)</span>, als auch wenn <span class="math inline">\(\bar{x}_\text{med}\)</span> signifikant <strong>kleiner</strong> ist als <span class="math inline">\(\bar{x}_\text{psych}\)</span>. Wir machen uns das Leben (bzw. unsere Vorhesagen) also “einfacher”.</p>
-<p>Genauer gesagt verdoppeln wir unsere Chance, mit der Hypothese richtig zu liegen, da a priori beide ungerichtete Hypothesen gleich wahrscheinlich sind. Die Verdopplung des p-Wertes kompensiert dies (man könnte auch sagen “bestraft unsere schwammige Vorhersage”) — nun wird es schwieriger für p das Signifikanzniveau zu unterschreiten.</p>
+<p><strong>Intuition:</strong> bei der ungericheteten Hypothese legen wir uns weniger fest, denn unsere Hypothese wäre sowohl erfüllt wenn <span class="math inline">\(\bar{x}_\text{med}\)</span> signifikant größer ist als <span class="math inline">\(\bar{x}_\text{psych}\)</span>, als auch wenn <span class="math inline">\(\bar{x}_\text{med}\)</span> signifikant kleiner ist als <span class="math inline">\(\bar{x}_\text{psych}\)</span>. Wir machen uns das Leben (bzw. unsere Vorhersagen) also “einfacher”.</p>
+<p>Genauer gesagt verdoppeln wir unsere Chance, die Nullhypothese abzulehnen, da unter der Annahme der Nullhypothese jeglicher beobachteter z-Wert mit gleichen Flächen links von <span class="math inline">\(-|z|\)</span> und rechts von <span class="math inline">\(+|z|\)</span> verbunden ist. Dies wird durch die Verdopplung des p-Wertes der gerichteten Hypothese kompensiert — man könnte auch sagen “die Verdopplung des p-Wertes bestraft unsere schwammige ungerichtete Vorhersage”.</p>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1134,7 +1146,7 @@ p(\bar{x}_\text{med} \neq \bar{x}_\text{psych}) = 2 \times \text{min}\left(p(\ba
 <p>Es gilt: je kleiner der p-Wert, desto…</p>
 <p>… weniger kompatibel ist unser Stichprobeneffekt <span class="math inline">\(\hat{\theta}\)</span> mit der Nullhypothese.</p>
 <p>… schärfer lehnen wir also die Nullhypothese <span class="math inline">\(H_0\)</span> ab.</p>
-<p>… stärker ist die Evidenz für unsere Hypothese <span class="math inline">\(H_1\)</span>.</p>
+<p>… stärker ist die Evidenz für unsere Alternativhypothese <span class="math inline">\(H_1\)</span>.</p>
 <p>… statistisch bedeutsamter ist unser Stichprobeneffekt <span class="math inline">\(\hat{\theta}\)</span>.</p>
 <!----------------->
 <!--- New slide --->
@@ -1145,18 +1157,18 @@ p(\bar{x}_\text{med} \neq \bar{x}_\text{psych}) = 2 \times \text{min}\left(p(\ba
 <div class="vspace-medium">
 
 </div>
-<p><strong>Gibt es den untersuchten Effekt in der Population tatsächlich (Alternativhypothese wahr), gilt:</strong></p>
+<p><strong>Gibt es den hypothesierten Effekt in der Population tatsächlich (Alternativhypothese wahr), gilt:</strong></p>
 <ul>
 <li class="fragment">Größere Stichprobengrößen führen im Schnitt zu kleineren p-Werten.</li>
 <li class="fragment">Kleinere Populationsstreuungen führen zu kleineren p-Werten.</li>
 </ul>
 <div class="fragment">
-<p><strong>Gibt es den untersuchten Effekt in der Population nicht (Nullhypothese wahr), gilt:</strong></p>
+<p><strong>Gibt es den hypothesierten Effekt in der Population nicht (Nullhypothese wahr), gilt:</strong></p>
 </div>
 <ul>
 <li class="fragment">Größere Stichprobengrößen haben keine Auswirkung auf den p-Wert.</li>
 <li class="fragment">Kleinere Populationsstreuungen haben keine Auswirkung auf den p-Wert.</li>
-<li class="fragment">Alle p-Werte sind gleich wahrscheinlich (d.h. p-Werte haben eine uniforme Verteilung auf dem Intervall [0; 1])</li>
+<li class="fragment">Alle p-Werte sind gleich wahrscheinlich (d.h. p-Werte haben eine uniforme Verteilung auf dem Intervall [0; 1]).</li>
 </ul>
 <!----------------->
 <!--- New slide --->
@@ -1463,9 +1475,12 @@ plt.savefig('images/paradoxia_histogram_inflammation_sem_sig.png', bbox_inches='
 <!----------------->
 </section>
 <section id="sem" class="slide level2">
-<h2><span style=" color: darkred !important;">Standardfehler bei Mittelwertdifferenzen (<span class="math inline">\(\sigma_A\)</span>/<span class="math inline">\(\sigma_B\)</span> bekannt)</span></h2>
+<h2><span style=" color: darkred !important;">Standardfehler bei Mittelwertdifferenzen (z-Test)</span></h2>
 <p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<p>Zentrale Frage: wie lässt sich auf Basis der (hier als bekannt vorausgesetzten) Populationsstreuungen <span class="math inline">\(\sigma_A\)</span> und <span class="math inline">\(\sigma_B\)</span> der Standardfehler der Mittelwertdifferenz berechnen?</p>
+<div class="vspace-large">
+
+</div>
+<p>Frage: wie lässt sich auf Basis der — beim z-Test als bekannt vorausgesetzten — Populationsstreuungen <span class="math inline">\(\sigma_A\)</span> und <span class="math inline">\(\sigma_B\)</span> der Standardfehler der Mittelwertdifferenz berechnen?</p>
 <div class="vspace-large">
 
 </div>
@@ -1482,7 +1497,7 @@ se = \frac{\sigma_\Delta}{\sqrt{n}}\qquad\text{mit}\qquad \sigma_\Delta=\sqrt{\s
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style=" color: darkred !important;">Standardfehler bei Mittelwertdifferenzen (<span class="math inline">\(\sigma_A\)</span>/<span class="math inline">\(\sigma_B\)</span> bekannt)</span></h2>
+<h2><span style=" color: darkred !important;">Standardfehler bei Mittelwertdifferenzen (z-Test)</span></h2>
 <p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 240px; right: 0px; height: 110px; "></p>
 <p><u><strong>Unabhängige Messungen in zwei Stichproben</strong></u></p>
 <div>
@@ -1509,7 +1524,7 @@ se=\sqrt{\frac{\sigma_A^2}{n_A} + \frac{\sigma_B^2}{n_B}}
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style=" color: darkred !important;">Standardfehler bei Mittelwertdifferenzen (<span class="math inline">\(\sigma_A\)</span>/<span class="math inline">\(\sigma_B\)</span> bekannt)</span></h2>
+<h2><span style=" color: darkred !important;">Standardfehler bei Mittelwertdifferenzen (z-Test)</span></h2>
 <div class="vspace-small">
 
 </div>
