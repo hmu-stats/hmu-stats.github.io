@@ -664,13 +664,13 @@ f(x)=\frac{1}{se\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\theta_0}{se}\right)^2}
 <div class="columns">
 <div class="column" style="width:66%;">
 <p>In unserem Beispiel hatten wir als Nullhypothese:</p>
-<div class="vspace-medium">
+<div class="vspace-small">
 
 </div>
 <p><span class="math display">\[
 \theta = \mu_\text{psych}- \mu_\text{med} \le 0
 \]</span></p>
-<div class="vspace-medium">
+<div class="vspace-small">
 
 </div>
 <p>… also die Null-Annahme, dass die Nasenlängen der Psychologen <em>nicht größer</em> bzw. <em>kleiner gleich</em> sind als die Nasenlängen der Mediziner. Die zugehörige Nullhypothesenverteilung ist eine Normalverteilung mit Mittelwert <span class="math inline">\(\theta_0=0\)</span>.</p>
@@ -679,7 +679,8 @@ f(x)=\frac{1}{se\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\theta_0}{se}\right)^2}
 </div>
 </div>
 <p><strong>Frage:</strong> warum eigentlich gerade <span class="math inline">\(\theta_0=0\)</span> und nicht irgendein Wert <span class="math inline">\(\color{green}{\theta_0 &lt; 0}\)</span>? Schließlich besagt die Nullhypothese im Beispiel ja gerade <span class="math inline">\(\theta \le 0\)</span>, also die Annahme, dass der Effekt <span class="math inline">\(\theta\)</span> in der Population <span style=" color: green !important;">kleiner</span> oder gleich Null ist?</p>
-<p><strong>Antwort:</strong> <span class="math inline">\(\theta_0=0\)</span> ist der für Ablehnung der Nullhypothese “unvorteilhafteste” Mittelwert. Wir bewerten einen empirischen Effekt <span class="math inline">\(\hat{\theta}\)</span> als signifikant, wenn er so stark ist, dass wir die Nullhypothese nicht einmal unter Annahme des (unvorteilhaften) Mittelwertes <span class="math inline">\(\theta_0=0\)</span> ablehnen können. Für <span class="math inline">\(\theta_0&lt;0\)</span>, kann in diesem Fall die Nullhypothese erst recht nicht abgelehnt werden.</p>
+<p><strong>Antwort:</strong> <span class="math inline">\(\theta_0=0\)</span> ist der “unvorteilhafteste” Mittelwert für die Ablehnung der Nullhypothese, da <span class="math inline">\(\theta_0=0\)</span> dem Stichprobeneffekt <span class="math inline">\(\hat{\theta}\)</span> näher ist als alle anderen potentiellen <span class="math inline">\(H_0\)</span>-Mittelwerte <span class="math inline">\(\theta_0&lt;0\)</span>. Wir bewerten also einen empirischen Effekt <span class="math inline">\(\hat{\theta}\)</span> als signifikant, wenn er so stark ist, dass wir die Nullhypothese sogar unter Annahme des Mittelwertes <span class="math inline">\(\theta_0=0\)</span> ablehnen können. Für <span class="math inline">\(\theta_0&lt;0\)</span>, kann in diesem Fall die Nullhypothese erst recht abgelehnt werden.</p>
+<p>Kurzum: es genügt für <span class="math inline">\(\theta_0=0\)</span> zu testen, alle anderen Fälle <span class="math inline">\(\theta_0&lt;0\)</span> sind damit ohnehin abgedeckt.</p>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
