@@ -28,10 +28,10 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="3.6207902"
-     inkscape:cx="140.43896"
+     inkscape:cx="140.57705"
      inkscape:cy="161.98122"
-     inkscape:window-width="1920"
-     inkscape:window-height="1008"
+     inkscape:window-width="2560"
+     inkscape:window-height="1368"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -308,7 +308,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.76944px;font-family:Calibri;-inkscape-font-specification:Calibri;text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="29.402615"
          y="111.41498"
-         id="tspan107">falls σ bekannt</tspan></text>
+         id="tspan107">falls Streuung bekannt</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.07351px;line-height:90%;font-family:sans-serif;text-decoration-color:#000000;fill:#000000;stroke-width:0.264583;-inkscape-stroke:none;stop-color:#000000"

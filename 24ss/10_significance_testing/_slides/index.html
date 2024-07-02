@@ -406,30 +406,39 @@ Zurück zur **theoretischen Stichprobenverteilung**. Alle Erkenntnisse über die
 <div class="vspace-medium">
 
 </div>
-<p>Ziel der <strong>Signifikanztestung</strong> ist zu klären, ob ein Effekt wahrscheinlich durch Zufall erklärt werden kann (und daher statistisch unbedeutsam ist) <em>oder</em> Zufall als alleinige Ursache unwahrscheinlich ist (und der Effekt daher statistisch bedeutsam — signifikant — ist).</p>
-<p>Signifikanztests bieten ein Kriterium, um wissenschaftliche <strong>Hypothesen</strong> zu überprüfen. Dabei unterscheidet man zwischen zwei Arten von Hypothesen ⎘</p>
+<p>Ziel der <span style=" color: navy !important;"><strong>Signifikanztestung</strong></span> ist zu klären, inwieweit ein empirischer Effekt <span class="math inline">\(\hat{\theta}\)</span> <strong>statistisch bedeutsam</strong> ist — oder aber durch Zufall erklärt werden kann. Signifikanztests bieten damit ein <strong>Kriterium, um wissenschaftliche Hypothesen</strong> zu überprüfen**.</p>
+<p>Die Signifikanztestung <strong>grenzt sich zur praktischen Signifikanz im Rahmen der Effektstärke ab</strong>, da Effekte stark sein können, ihre Beobachtung aber unter Umständen dennoch durch Zufall erklärt werden kann.</p>
+<p>Zwei etablierte Frameworks zur Signifikanztestung haben sich im Lauf der Zeit entwickelt: die <span style=" color: navy !important;"><strong>Bayesianische Testung</strong></span> und die <span style=" color: navy !important;"><strong>Nullhypothesentestung</strong></span>. In Statistik 1 betrachten wir ausschließlich das Framework der Nullhypothesentestung.</p>
 <!----------------->
 <!--- New slide --->
 <!----------------->
 </section>
 <section class="slide level2">
 <h2>Nullhypothese und Alternativhypothese</h2>
+<div class="vspace-large">
+
+</div>
+<div class="columns">
+<div class="column" style="width:70%;">
 <p><strong>Nullhypothese (<span class="math inline">\(H_0\)</span>)</strong></p>
-<p>Besagt, dass ein bestimmter Effekt <em>nicht vorliegt</em>.</p>
+<p>Annahme, dass ein Effekt <span class="math inline">\(\theta\)</span> in der Population <em>nicht vorliegt</em>.</p>
 <ul>
 <li class="fragment">Die Häufigkeit des Haarschneidens und Haardichte <strong>hängen nicht</strong> zusammen.</li>
-<li class="fragment">Männer und Frauen <strong>unterscheiden sich nicht</strong> in ihrer emotionalen Intelligenz.</li>
+<li class="fragment">Frauen haben <strong>keine höhere</strong> emotionale Intelligenz als Männer.</li>
 </ul>
 <div class="fragment">
 <p><strong>Alternativhypothese (<span class="math inline">\(H_1\)</span>)</strong></p>
-<p>Besagt, dass ein bestimmter Effekt <em>vorliegt</em>.</p>
+<p>Annahme, dass ein Effekt <span class="math inline">\(\theta\)</span> in der Population <em>vorliegt</em>.</p>
 <ul>
 <li class="fragment">Die Häufigkeit des Haarschneidens und Haardichte <strong>hängen</strong> zusammen.</li>
-<li class="fragment">Männer und Frauen <strong>unterscheiden sich</strong> in ihrer emotionalen Intelligenz.</li>
+<li class="fragment">Frauen haben <strong>eine höhere</strong> emotionale Intelligenz als Männer.</li>
 </ul>
 </div>
+</div><div class="column" style="width:30%;">
 <div class="fragment">
-<p><img data-src="images/null-and-alternate-hypothesis.jpg" height="280"></p>
+<p><img data-src="images/null-and-alternate-hypothesis.jpg"></p>
+</div>
+</div>
 </div>
 <!----------------->
 <!--- New slide --->
@@ -446,10 +455,14 @@ Zurück zur **theoretischen Stichprobenverteilung**. Alle Erkenntnisse über die
 <figcaption>Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a></figcaption>
 </figure>
 </div>
+<aside></aside></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>p-Wert</h1>
 <!----------------->
 <!--- New slide --->
 <!----------------->
-<aside></aside></section>
+</section>
 <section class="slide level2">
 <h2>Nullhypothesentestung nach Fisher</h2>
 <div class="columns">
@@ -457,18 +470,22 @@ Zurück zur **theoretischen Stichprobenverteilung**. Alle Erkenntnisse über die
 <div>
 <ul>
 <li>Betrachtet wird <u>ausschließlich</u> die Nullhypothese.</li>
-<li>Ziel ist es zu zeigen, dass das <strong>Stichproben-Ergebnis unter der Annahme dieser Nullhypothese so unwahrscheinlich ist, dass man die Nullhypothese „verwerfen“ kann</strong>.</li>
+<li>Ziel ist es zu zeigen, dass der <strong>Stichprobeneffekt <span class="math inline">\(\hat{\theta}\)</span> unter der Annahme dieser Nullhypothese so unwahrscheinlich ist, dass man die Nullhypothese „verwerfen“ oder “ablehnen” kann</strong>.</li>
+<li>In diesem Fall wird der Stichprobeneffekt <span class="math inline">\(\hat{\theta}\)</span> als <span style=" color: navy !important;"><strong>signifikant</strong></span> gewertet.</li>
 <li>Bei der Nullhypothesentestung wird kein Schluss in Bezug auf eine Alternativhypothese gezogen (sie der muss hier nicht einmal formuliert werden!).</li>
 </ul>
 </div>
 </div><div class="column" style="width:27%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/portrait_fisher.png"></p>
+<p><img data-src="images/portrait_fisher.png" height="250"></p>
 <figcaption>Ronald Aylmer Fisher (1890-1962)</figcaption>
 </figure>
 </div>
 </div>
+</div>
+<div class="vspace-medium">
+
 </div>
 <div class="merke fragment">
 <div class="columns">
@@ -477,8 +494,8 @@ Zurück zur **theoretischen Stichprobenverteilung**. Alle Erkenntnisse über die
 <p><img data-src="images/merke.png" height="55"></p>
 </div>
 </div><div class="column" style="width:95%;">
-<p>Bei der Nullhypothesentestung nach Fisher werden <u>keine</u> <em>Wahrscheinlichkeiten von Hypothesen</em> berechnet — weder P(<span class="math inline">\(H_0\)</span>) noch P(<span class="math inline">\(H_1\)</span>) — sondern die <em>Wahrscheinlichkeit von Daten unter Annahme der Nullhypothese</em>.</p>
-<p>Die Wahrscheinlichkeit von Daten, gegeben eine Hypothese, heißt auch <strong>Likelihood</strong>.</p>
+<p>Bei der Nullhypothesentestung nach Fisher werden <u>keine</u> <em>Wahrscheinlichkeiten von Hypothesen</em> berechnet — weder <span class="math inline">\(P(H_0)\)</span> noch <span class="math inline">\(P(H_1)\)</span> — sondern die <em>Wahrscheinlichkeit von Stichprobendaten unter Annahme der Nullhypothese</em>.</p>
+<p>Die Wahrscheinlichkeit von Daten gegeben eine Hypothese, <span class="math inline">\(P(D|H)\)</span>, heißt auch <strong>Likelihood</strong>.</p>
 </div>
 </div>
 </div>
@@ -494,38 +511,35 @@ Zurück zur **theoretischen Stichprobenverteilung**. Alle Erkenntnisse über die
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Nullhypothesentestung nach Fisher: p-Wert</h2>
+<h2>p-Wert</h2>
 <div class="columns">
 <div class="column" style="width:80%;">
-<p>Sie überprüfen die Hypothese, dass Medizinstudierende längere Nasen haben als Psychologiestudierende.</p>
-<p>Die zugehörige Nullhypothese <span class="math inline">\(H_0\)</span> lautet also: <em>kein Unterschied in der durchschnittlichen Nasenlänge von Medizin- und Psychologiestudierenden.</em></p>
+<p>Sie überprüfen die Hypothese, dass die mittlere Nasenlänge von Medizinstudierenden (<span class="math inline">\(\mu_\text{med}\)</span>) größer ist als die mittlere Nasenlänge von Psychologiestudierenden (<span class="math inline">\(\mu_\text{psych}\)</span>).</p>
+<p>Die zugehörige Nullhypothese <span class="math inline">\(H_0\)</span> lautet: <em>Psychologiestudierende haben <u>gleich lange oder kürzere</u> Nasen als Medizinstudierende.</em></p>
+<p>Oder mathematisch:</p>
+<div style="margin-top: -5px; margin-bottom: 25px">
+<p><span class="math display">\[
+\mu_\text{psych} \le \mu_\text{med}\qquad\text{bzw.}\qquad \theta = \mu_\text{psych}- \mu_\text{med} \le 0
+\]</span></p>
+</div>
 <div class="fragment">
 <p>Sie führen eine Studie durch (<span class="math inline">\(n_\text{med}=n_\text{psych}=n=30\)</span>) und messen folgenden Gruppenunterschied:</p>
 <p><span class="math display">\[
-\Delta \bar{x} = \bar{x}_\text{med} - \bar{x}_\text{psych} = 0.2cm
+\hat{\theta} = \Delta \bar{x} = \bar{x}_\text{med} - \bar{x}_\text{psych} = 0.2cm
 \]</span></p>
 </div>
-<div class="vspace-small">
+<div class="vspace-large">
 
 </div>
 <div class="fragment" style="margin-top: -20px">
 <p><strong>Nach Fisher stellen wir nun folgende präzise Frage: </strong></p>
 </div>
-<div class="fragment" style="font-family: monospace; margin-left: 30px; margin-right: 10px !important;font-size: 25px; margin-top: -5px">
-<p>Angenommen, die Nasenlänge unterscheidet sich nicht zwischen den Gruppen (<span class="math inline">\(H_0\)</span>). Wie wahrscheinlich ist unter diese Annahme das Ergebnis unserer Daten <em>oder ein noch extremeres Ergebnis</em>?</p>
-</div>
-<div class="fragment">
-<p><strong>In kurz: </strong></p>
-<div style="font-family: monospace; margin-left: 30px; margin-right: 0px;;font-size: 25px; margin-top: -5px">
-<p>Angenommen <span class="math inline">\(H_0\)</span> trifft zu und es gilt <span class="math inline">\(\mu_\text{med}=\mu_\text{psych}\)</span>, wie wahrscheinlich ist es dennoch <span class="math inline">\(\Delta \bar{x} \ge 0.2cm\)</span> zu messen?</p>
-</div>
+<div class="fragment" style="font-family: monospace; margin-left: 30px; margin-right: 10px !important;font-size: 23px; margin-top: -5px; line-height: 1.2">
+<p>Was ist die Wahrscheinlichkeit dieses Effektes (<span class="math inline">\(\Delta \bar{x}=0.2cm\)</span>) oder eines noch extremeren Effektes (<span class="math inline">\(\Delta \bar{x}&gt;0.2cm\)</span>), obwohl die Nullhypothese <span class="math inline">\(H_0\)</span> in Wahrheit zutrifft?</p>
 </div>
 </div><div class="column" style="width:20%;">
 <p><img data-src="images/psych_med.png"></p>
 </div>
-</div>
-<div class="vspace-xsmall">
-
 </div>
 <div class="fragment">
 <p>Diese Wahrscheinlichkeit wird als <span style=" color: navy !important;"><strong>p-Wert</strong></span> bezeichnet (<em>p</em> für <em>probability</em>).</p>
@@ -535,7 +549,7 @@ Zurück zur **theoretischen Stichprobenverteilung**. Alle Erkenntnisse über die
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>p-Wert und Konstruktion der Nullhypothese</h2>
+<h2>p-Wert</h2>
 <p>Wir definieren:</p>
 <div class="definition">
 <!---  Definition--->
@@ -551,7 +565,7 @@ Zurück zur **theoretischen Stichprobenverteilung**. Alle Erkenntnisse über die
 </tr>
 <tr class="even">
 <td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
-<td>Der <strong>p-Wert</strong> ist die Wahrscheinlichkeit den Stichprobeneffekt <em>oder einen noch extremeren Effekt zu erhalten</em>, obwohl für die Population die Nullhypothese angenommen wird.</td>
+<td>Der <strong>p-Wert</strong> ist die Wahrscheinlichkeit den Stichprobeneffekt <span class="math inline">\(\hat{\theta}\)</span> <em>oder einen noch extremeren Effekt zu erhalten</em>, obwohl für die Population die Nullhypothese angenommen wird.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -560,13 +574,20 @@ Zurück zur **theoretischen Stichprobenverteilung**. Alle Erkenntnisse über die
 </tbody>
 </table>
 </div>
-<div class="fragment">
-<p>Um diese Wahrscheinlichkeit zu berechnen, benötigen wir die Wahrscheinlichkeits(dichte)verteilung aller theoretisch möglicher Stichprobeneffekte <em>unter Annahme der Nullhypothese</em>. Wir bezeichnen sie als <strong>Theoretische Nullhypothesenverteilung</strong> oder kurz <strong>Nullhypothesenverteilung</strong>.</p>
-<div class="vspace-small">
+<ul>
+<li class="fragment">Um die Wahrscheinlichkeit zu berechnen, dass eine Stichprobe einen Effekt mit dem Wert <span class="math inline">\(\hat{\theta}\)</span> <em>oder einem extremeren Wert</em> erzielt, müssen wir die Fläche unter einer Art Stichprobenverteilung berechnen — allerdings unter Annahme der Nullhypothese!</li>
+<li class="fragment">Wir bezeichnen diese Verteilung als <strong>Theoretische Nullhypothesenverteilung</strong> oder kurz <strong>Nullhypothesenverteilung</strong> oder noch kürzer <strong>Nullverteilung</strong>.</li>
+</ul>
+<div class="vspace-xsmall">
 
 </div>
-<p><img data-src="images/nulldist2b.png" height="350"></p>
+<div class="fragment">
+<p><img data-src="images/nulldist2b0.png" height="300"></p>
 </div>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Konstruktion der Nullhypothese</h1>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -574,15 +595,23 @@ Zurück zur **theoretischen Stichprobenverteilung**. Alle Erkenntnisse über die
 <section class="slide level2">
 <h2>Konstruktion der Nullhypothese</h2>
 <ul>
-<li class="fragment">Das Ziel “<em>die Wahrscheinlichkeitsdichteverteilung aller verschiedenen möglichen Stichprobeneffekten unter der Annahme der Nullhypothese</em>” zu finden, impliziert, dass wir auch hier eine Art von <strong>Stichprobenverteilung</strong> suchen.</li>
-<li class="fragment">Da wir mithilfe der Inferenzstatistik <strong>Effekte</strong> testen wollen, sind hier im Besonderen Stichprobenverteilung von Effekten gemeint.</li>
-<li class="fragment">Zu Beginn konzentrieren wir uns hier auf den Effekt des <strong>Mittelwertsunterschiedes</strong>.</li>
-<li class="fragment">Beachte: nicht nur die Stichprobenverteilung von Mittelwerten ist normalverteilt ist, sondern auch die Stichprobenverteilung von Mittelwertsunterschieden (→ die Differenz zweier normalverteilter Variablen ist ebenfalls normalverteilt).</li>
+<li class="fragment">Das Ziel “<em>die Wahrscheinlichkeitsdichteverteilung aller verschiedenen möglichen Stichprobeneffekten unter der Annahme der Nullhypothese</em>” zu finden, impliziert, dass wir auch hier eine Art von <strong>Stichprobenverteilung</strong> suchen.
+<ul>
+<li class="fragment">Da wir mithilfe der Inferenzstatistik Effekte testen, sind hier Stichprobenverteilung von Effekten <span class="math inline">\(\hat{\theta}\)</span> gemeint.</li>
+</ul></li>
+<li class="fragment">Es gilt: aufgrund des <strong>zentralen Grenzwertsatzes</strong> sind auch <strong>Stichprobenverteilungen von Effekten normalverteilt</strong> (bei hinreichend großer Stichprobe).
+<ul>
+<li class="fragment">Beispiel Mittelwertdifferenz: nicht nur die Stichprobenverteilung von Mittelwerten ist normalverteilt, sondern auch die Stichprobenverteilung von Mittelwertdifferenzen, da Differenzen zweier normalverteilter Variablen ebenfalls normalverteilt sind.</li>
+<li class="fragment">Der Fokus in Statistik 1 liegt in der Tat auf dem Effekt der <strong>Mittelwertdifferenz</strong> (<span class="math inline">\(\hat{\theta}=\Delta\bar{x}\)</span>).</li>
+</ul></li>
 </ul>
+<div class="vspace-medium">
+
+</div>
 <div class="fragment">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/null-hyp-cartoon_orig.jpg" height="250"></p>
+<p><img data-src="images/null-hyp-cartoon_orig.jpg" height="230"></p>
 <figcaption>Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a></figcaption>
 </figure>
 </div>
@@ -597,25 +626,64 @@ Zurück zur **theoretischen Stichprobenverteilung**. Alle Erkenntnisse über die
 <div class="column" style="width:66%;">
 <p>Da die Nullhypothesenverteilung ihrer Natur nach eine normalverteilte Stichprobenverteilung ist (unter der Annahme der Nullhypothese), benötigen wir wie schon bei der Konstruktion der Sitchprobenverteilung zwei Informationen: Mittelwert und Streuung der Normalverteilung.</p>
 <ul>
-<li class="fragment">Der <strong>Mittelwert</strong> der Nullhypothesenverteilung entspricht einem Nulleffekt (i.d.R. der Wert 0).</li>
-<li class="fragment">Die <strong>Streuung</strong> entspricht wie bei der Sitchprobenverteilung einem Standardfehler <span class="math inline">\(se\)</span> — hier dem Standardfehler des Effektes.
-<ul>
-<li class="fragment">Problem: <span class="math inline">\(se\)</span> ist in der Regel unbekannt und muss als <span class="math inline">\(\hat{se}\)</span> auf Basis der Stichprobe <em>geschätzt</em> werden.</li>
-</ul></li>
+<li class="fragment">Der <strong>Mittelwert</strong> der Nullhypothesenverteilung entspricht einem Nulleffekt <span class="math inline">\(\theta_0\)</span> (i.d.R. der Wert <span class="math inline">\(\theta_0=0\)</span>).</li>
+<li class="fragment">Die <strong>Streuung</strong> entspricht wie bei der Sitchprobenverteilung einem Standardfehler <span class="math inline">\(se\)</span> — hier dem Standardfehler des Effektes.</li>
 </ul>
 </div><div class="column" style="width:34%;">
+<div style="margin-top: -40px">
 <p><img data-src="images/nulldist2a.png"></p>
+</div>
+<div class="vspace-small">
+
+</div>
+<p><span class="math display">\[
+f(x)=\frac{1}{se\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\theta_0}{se}\right)^2}
+\]</span></p>
+<div class="caption-style">
+<p>Formel für die Dichtefunktion der Normalverteilung mit Mittelwert <span class="math inline">\(0\)</span> und geschätzter Streuung <span class="math inline">\(se\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="merke" style="font-size: 22px; margin-top: 20px">
+<div class="columns">
+<div class="column" style="width:5%;">
+<div style="margin-top: 18px">
+<p><img data-src="images/merke.png" height="55"></p>
+</div>
+</div><div class="column" style="width:95%;">
+<p>In der Praxis ist die Streuung <span class="math inline">\(se\)</span> idR nicht bekannt und muss als <span class="math inline">\(\hat{se}\)</span> geschätzt werden. Wir betrachten diesen (komplexeren) Fall hier noch nicht. Jedoch ist diese Problematik größer, als auf den ersten Blick angenommen, und führt uns in der Vorlesung zum t-Test zur Erkenntnis, dass die Annahme einer Normalverteilung für die Nullhypothesenverteilung nicht mehr gerechtfertigt ist. Behalten Sie dies im Hinterkopf!</p>
+</div>
+</div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Konstruktion der Nullhypothese: Hinweis zum Mittelwert <span class="math inline">\(\theta_0\)</span></h2>
+<div class="columns">
+<div class="column" style="width:66%;">
+<p>In unserem Beispiel hatten wir als Nullhypothese:</p>
 <div class="vspace-medium">
 
 </div>
 <p><span class="math display">\[
-f(x)=\frac{1}{\hat{se}\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-0}{\hat{se}}\right)^2}
+\theta = \mu_\text{psych}- \mu_\text{med} \le 0
 \]</span></p>
-<div class="caption-style">
-<p>Formel für die Dichtefunktion der Normalverteilung mit Mittelwert <span class="math inline">\(0\)</span> und geschätzter Streuung <span class="math inline">\(\hat{se}\)</span>.</p>
+<div class="vspace-medium">
+
+</div>
+<p>… also die Null-Annahme, dass die Nasenlängen der Psychologen <em>nicht größer</em> bzw. <em>kleiner gleich</em> sind als die Nasenlängen der Mediziner. Die zugehörige Nullhypothesenverteilung ist eine Normalverteilung mit Mittelwert <span class="math inline">\(\theta_0=0\)</span>.</p>
+</div><div class="column" style="width:34%;">
+<p><img data-src="images/nulldist2a1.png"></p>
 </div>
 </div>
-</div>
+<p><strong>Frage:</strong> warum eigentlich gerade <span class="math inline">\(\theta_0=0\)</span> und nicht irgendein Wert <span class="math inline">\(\color{green}{\theta_0 &lt; 0}\)</span>? Schließlich besagt die Nullhypothese im Beispiel ja gerade <span class="math inline">\(\theta \le 0\)</span>, also die Annahme, dass der Effekt <span class="math inline">\(\theta\)</span> in der Population <span style=" color: green !important;">kleiner</span> oder gleich Null ist?</p>
+<p><strong>Antwort:</strong> <span class="math inline">\(\theta_0=0\)</span> ist der für Ablehnung der Nullhypothese “unvorteilhafteste” Mittelwert. Wir bewerten einen empirischen Effekt <span class="math inline">\(\hat{\theta}\)</span> als signifikant, wenn er so stark ist, dass wir die Nullhypothese nicht einmal unter Annahme des (unvorteilhaften) Mittelwertes <span class="math inline">\(\theta_0=0\)</span> ablehnen können. Für <span class="math inline">\(\theta_0&lt;0\)</span>, kann in diesem Fall die Nullhypothese erst recht nicht abgelehnt werden.</p>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>z-Test</h1>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -626,13 +694,18 @@ f(x)=\frac{1}{\hat{se}\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-0}{\hat{se}}\righ
 <div class="column" style="width:65%;">
 <div>
 <ul>
-<li>In einem ersten Schritt betrachten wir daher den <strong>vereinfachten Fall, dass die Streuung <span class="math inline">\(se\)</span> bekannt ist</strong>. D.h. entweder ist <span class="math inline">\(se\)</span> selbst bekannt, oder aber die Streuungen <span class="math inline">\(\sigma\)</span> der Merkmale, die dem Effekt zugrunde liegen, denn aus diesen lässt sich <span class="math inline">\(se\)</span> ableiten.</li>
+<li>In einem ersten Schritt betrachten wir den <strong>vereinfachten Fall, dass die Streuung <span class="math inline">\(se\)</span> bekannt ist</strong>.</li>
+</ul>
+</div>
+<div class="fragment" style="margin-top: -12px">
+<ul>
+<li class="fragment">Entweder ist <span class="math inline">\(se\)</span> selbst bekannt, oder aber die Streuungen <span class="math inline">\(\sigma\)</span> der Merkmale, die dem Effekt zugrunde liegen, denn aus diesen lässt sich <span class="math inline">\(se\)</span> ableiten.</li>
 </ul>
 </div>
 <div class="fragment" style="margin-top: -12px">
 <div>
 <ul>
-<li>Im Nasenlängenbeispiel etwa können wir annehmen, dass die Populationsstreuungen <span class="math inline">\(\sigma_\text{med}\)</span> und <span class="math inline">\(\sigma_\text{psych}\)</span> des Merkmals Nasenlänge bekannt sind. Der Standardfehler <span class="math inline">\(se\)</span> der Mittelwertdifferenz lässt sich aus diesen Populationsstreuungen wie folgt ableiten (Herleitung in Kürze):</li>
+<li>Im Nasenlängenbeispiel etwa können wir annehmen, dass die Populationsstreuungen <span class="math inline">\(\sigma_\text{med}\)</span> und <span class="math inline">\(\sigma_\text{psych}\)</span> des Merkmals Nasenlänge bekannt sind. Der Standardfehler <span class="math inline">\(se\)</span> der Mittelwertdifferenz lässt sich aus diesen Populationsstreuungen wie folgt ableiten (siehe <a href="#/cheatsheet" style="color: navy">Cheatsheet</a>):</li>
 </ul>
 </div>
 <p><span class="math display">\[
@@ -659,7 +732,7 @@ se=\sqrt{\frac{\sigma_\text{med}^2}{n_\text{med}} + \frac{\sigma_\text{psych}^2}
 <li>Nehmen wir an, der Standardfehler der Mittelwertdifferenz von Psychologen- und Medizinernasenlängen ist als <span class="math inline">\(se=0.1\)</span> bekannt.</li>
 <li>Mit dieser Information können wir können unseren ersten p-Wert berechnen!</li>
 <li>Der p-Wert ist im Beispiel die Wahrscheinlichkeit, dass dass der Stichprobeneffekt (Nasenlängendifferenz) unseren gemessenen Wert <span class="math inline">\(\Delta\bar{x}\)</span> annimmt <em>oder einen noch größeren Effekt</em>.</li>
-<li>Dazu muss die Fläche unter der Nullhypothesenverteilung <u>rechts</u> von <span class="math inline">\(\Delta\bar{x}=\bar{x}_\text{med}-\bar{x}_\text{psych}\)</span> berechnet werden.</li>
+<li>Dazu muss die Fläche unter der Nullhypothesenverteilung <u>rechts</u> von <span class="math inline">\(\hat{\theta}=\Delta\bar{x}=\bar{x}_\text{med}-\bar{x}_\text{psych}\)</span> berechnet werden.</li>
 </ul>
 </div>
 </div><div class="column" style="width:34%;">
@@ -676,24 +749,24 @@ se=\sqrt{\frac{\sigma_\text{med}^2}{n_\text{med}} + \frac{\sigma_\text{psych}^2}
 <div class="column" style="width:65%;">
 <p>Die Fläche bzw. der p-Wert berechnet sich wie folgt: <span class="math display">\[
 \begin{aligned}
-p &amp;= \int_{\Delta\bar{x}}^{\infty}f(x)dx = 1 - F(\Delta\bar{x}) = \\
+p &amp;= \int_{\hat\theta}^{\infty}f(x)dx = 1 - F(\hat\theta) = \\
 &amp;= 1 - F(0.2) \overset{(Computer)}{\approx} 0.023
 \end{aligned}
 \]</span></p>
 <p>wobei <span class="math inline">\(f(x)\)</span> bzw. <span class="math inline">\(F(x)\)</span> hier die Dichte bzw. Verteilungsfunktion der gebenen Normalverteilung <span class="math inline">\(\mathcal{N}(0, 0.1)\)</span> ist.</p>
-<p><span class="math inline">\(F(x)\)</span> berechnet die Fläche bis zum Punkt <span class="math inline">\(x\)</span>, “1 minus diese Fläche” gibt uns also die Fläche rechts vom angebenen Punkt <span class="math inline">\(x\)</span> — im vorliegenden Fall die Fläche rechts von <span class="math inline">\(\Delta\bar{x}=\bar{x}_\text{med}-\bar{x}_\text{psych}=0.2\)</span>.</p>
+<p><span class="math inline">\(F(x)\)</span> berechnet die Fläche bis zum Punkt <span class="math inline">\(x\)</span>, “1 minus diese Fläche” gibt uns also die Fläche rechts vom angebenen Punkt <span class="math inline">\(x\)</span> — im vorliegenden Fall die Fläche rechts von <span class="math inline">\(\hat{\theta}=\Delta\bar{x}=\bar{x}_\text{med}-\bar{x}_\text{psych}=0.2\)</span>.</p>
 <p>Der p-Wert ist <span class="math inline">\(0.023\)</span>.</p>
 </div><div class="column" style="width:34%;">
 <p><img data-src="images/nulldist2d.png"></p>
 </div>
 </div>
-<p>In Worten können wir feststellen: die Wahrscheinlichkeit, dass unser Effekt <span class="math inline">\(\Delta\bar{x}\)</span> durch Zufall entstanden ist — also unter der Annahme, dass die Nullhypothese gilt — beträgt (nur) <span class="math inline">\(2.3\%\)</span>.</p>
+<p>In Worten können wir feststellen: die Wahrscheinlichkeit, dass unser Effekt <span class="math inline">\(\hat{\theta}=\Delta\bar{x}\)</span> durch Zufall entstanden ist — also unter der Annahme, dass die Nullhypothese gilt — beträgt (nur) <span class="math inline">\(2.3\%\)</span>.</p>
 <!----------------->
 <!--- New slide --->
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>z-Test</h2>
+<h2>z-Wert — eine standardisierte Prüfgröße</h2>
 <div>
 <ul>
 <li>In der Praxis wird die Berechnung von p-Werten um das Konzept der <span style=" color: navy !important;"><strong>standardisierten Prüfgröße</strong></span> erweitert.
@@ -708,14 +781,30 @@ p &amp;= \int_{\Delta\bar{x}}^{\infty}f(x)dx = 1 - F(\Delta\bar{x}) = \\
 <div class="column" style="width:65%;">
 <p>Abhilfe schafft die <strong>Standardisierung des Effektes</strong>:</p>
 <p><span class="math display">\[
-z = \frac{\Delta\bar{x}}{se}
+z = \frac{\hat{\theta}}{se}
 \]</span></p>
-<p>Nach Teilen von <span class="math inline">\(\Delta\bar{x}\)</span> durch die Streuung <span class="math inline">\(se\)</span>, hat die Nullverteilung nicht mehr die Streuung <span class="math inline">\(se\)</span>, sondern <em>immer</em> die Streuung <span class="math inline">\(\frac{se}{se}=1\)</span>!</p>
+<p>Nach Teilen von <span class="math inline">\(\hat{\theta}\)</span> durch die Streuung <span class="math inline">\(se\)</span>, hat die Nullverteilung nicht mehr die Streuung <span class="math inline">\(se\)</span>, sondern <em>immer</em> die Streuung <span class="math inline">\(\frac{se}{se}=1\)</span>!</p>
 </div><div class="column" style="width:34%;">
 <p><img data-src="images/nulldist2e.png" style="margin-top:-10px !important"></p>
 </div>
 </div>
-<p><span class="math inline">\(z\)</span> wird als <strong>standardisierte Prüfgröße</strong> bezeichnet, während der einfache Effekt <span class="math inline">\(\Delta\bar{x}\)</span> eine <strong>unstandardisierte Prüfgröße</strong> darstellte.</p>
+<p><span class="math inline">\(z\)</span> wird als <strong>standardisierte Prüfgröße</strong> bezeichnet, während der einfache Effekt <span class="math inline">\(\hat{\theta}\)</span> (z.B. <span class="math inline">\(\Delta\bar{x}\)</span>) eine <strong>unstandardisierte Prüfgröße</strong> darstellte.</p>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>z-Wert — eine standardisierte Prüfgröße</h2>
+<div class="vspace-xlarge">
+
+</div>
+<p>Es gibt auch im Computerzeitalter noch Vorteile für diese Art der Standardisierung:</p>
+<div>
+<ul>
+<li>Der resultierende z-Wert ist vergleichbar zwischen Studien, im Gegensatz zu unstandardisierten Effekten <span class="math inline">\(\hat{\theta}\)</span> wie dem Mittelwertsunterschied <span class="math inline">\(\Delta \bar{x}\)</span>, die von der spezifischen Skala abhängen.</li>
+<li>Der z-Wert hat eine (halbwegs) intuitive Interpretation: er gibt an, <em>wie viele Standardfehler der Effekt von einem Nulleffekt entfernt ist</em>.</li>
+</ul>
 </div>
 <!----------------->
 <!--- New slide --->
@@ -723,17 +812,9 @@ z = \frac{\Delta\bar{x}}{se}
 </section>
 <section class="slide level2">
 <h2>z-Test</h2>
-<p>Es gibt auch im Computerzeitalter noch Vorteile für diese Art der Standardisierung:</p>
-<div>
-<ul>
-<li>Der resultierende z-Wert ist vergleichbar zwischen Studien, im Gegensatz zum Mittelwertsunterschied <span class="math inline">\(\Delta \bar{x}\)</span>, der von der spezifischen Skala abhängt.</li>
-<li>Der z-Wert hat eine intuitive Interpretation: er gibt an, <em>wie viele Standardabweichungen der Effekt von einem Nulleffekt entfernt ist</em>.</li>
-</ul>
-</div>
-<div class="fragment">
 <div class="columns">
 <div class="column" style="width:65%;">
-<p>Mit dem z-Wert als Prüfgröße benötigten wir also für alle Tests dieser Art nur noch eine einzige Verteilung — die Normalverteilung mit Mittelwert <span class="math inline">\(0\)</span> und Streuung <span class="math inline">\(1\)</span>, also die <strong>Standardnormalverteilung</strong>:</p>
+<p>Mit dem z-Wert als Prüfgröße benötigten wir für alle Tests dieser Art nur noch eine einzige Verteilung — die Normalverteilung mit Mittelwert <span class="math inline">\(0\)</span> und Streuung <span class="math inline">\(1\)</span>, also die <strong>Standardnormalverteilung</strong>:</p>
 <div class="vspace-small">
 
 </div>
@@ -747,7 +828,12 @@ $$ -->
 <p><img data-src="images/nulldist2e.png"></p>
 </div>
 </div>
-<p>Die Art der Berechnung des p-Wertes ändert sich nicht — wir berechnen in unserem Beispiel weiterhin die Fläche rechts von unserem Effekt, nur dass der “Effekt” jetzt standardisiert und als <span class="math inline">\(z = \frac{\Delta\bar{x}}{se} = \frac{\bar{x}_\text{med}-\bar{x}_\text{psych}}{se}\)</span> definiert ist. Der resultierende p-Wert ist derselbe.</p>
+<p>Die Art der Berechnung des p-Wertes ändert sich nicht — wir berechnen in unserem Beispiel weiterhin die Fläche rechts von unserem Effekt, nur dass der “Effekt” jetzt standardisiert und als <span class="math inline">\(z = \frac{\hat{\theta}}{se} = \frac{\Delta\bar{x}}{se} = \frac{\bar{x}_\text{med}-\bar{x}_\text{psych}}{se}\)</span> definiert ist. Der resultierende p-Wert ist derselbe.</p>
+<div class="vspace-large">
+
+</div>
+<div class="colorbox fragment">
+<p>Der <span style=" color: navy !important;"><strong>z-Test</strong></span> ist ein statistischer Nullhypothesentest, der auf Basis der standardisierten Prüfgröße <span class="math inline">\(z=\frac{\hat{\theta}}{se}\)</span> durchgeführt wird.</p>
 </div>
 <!----------------->
 <!--- New slide --->
@@ -760,7 +846,7 @@ $$ -->
 <p>Berechnen wir nun den p-Wert im Nasenlängenbeispiel mithilfe des z-Tests.</p>
 <p>Wir bestimmen die standardisierte Prüfgröße <span class="math inline">\(z\)</span>:</p>
 <p><span class="math display">\[
-z = \frac{\Delta\bar{x}}{se} = \frac{0.2}{0.1} = 2
+z = \frac{\hat{\theta}}{se} = \frac{\Delta\bar{x}}{se} = \frac{0.2}{0.1} = 2
 \]</span></p>
 <p>Und berechnen die Fläche rechts von <span class="math inline">\(z\)</span>:</p>
 <p><span class="math display">\[
@@ -775,10 +861,15 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(z) = 1 - \Phi(2) \overset{(Computer)}
 <!--- New slide --->
 <!----------------->
 </section>
-<section class="slide level2">
-<h2>z-Test</h2>
-<p>Der Signifikanztest auf Basis der Standardnormalverteilung — und bei bekannten Streuungen in den relevanten Populationen — wird als <span style=" color: navy !important;"><strong>z-Test</strong></span> bezeichnet.</p>
+<section id="cheatsheet" class="slide level2">
+<h2>z-Test: Cheat Sheet für Mittelwertdifferenzen</h2>
+<div class="vspace-small">
+
+</div>
 <p>Der z-Test kann auf alle Arten von Mittelwertsvergleichen angewendet werden:</p>
+<div class="vspace-small">
+
+</div>
 <!---  Table --->
 <table>
 <colgroup>
@@ -792,7 +883,7 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(z) = 1 - \Phi(2) \overset{(Computer)}
 <th>Fall</th>
 <th>z-Wert</th>
 <th style="text-align: center;">Bekannt</th>
-<th>Berechnung von <span class="math inline">\(se\)</span></th>
+<th>Standardfehler</th>
 </tr>
 </thead>
 <tbody>
@@ -800,13 +891,13 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(z) = 1 - \Phi(2) \overset{(Computer)}
 <td><strong>Einzelmessung:</strong> Vergleich von <span class="math inline">\(\bar{x}\)</span> mit einem Referenzwert <span class="math inline">\(\mu_0\)</span></td>
 <td><span class="math inline">\(z=\frac{\bar{x}-\mu_0}{se}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\sigma\)</span></td>
-<td><span class="math inline">\(se=\sigma_{\bar{x}}=\frac{\sigma}{\sqrt{n}}\)</span></td>
+<td><span class="math inline">\(se=\frac{\sigma}{\sqrt{n}}\)</span></td>
 </tr>
 <tr class="even">
 <td><strong>Abhängige Messungen:</strong> Vergleich der Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> von <em>zwei Bedingungen A und B in einer Gruppe</em></td>
 <td><span class="math inline">\(z=\frac{\bar{x}_A-\bar{x}_B}{se}=\frac{\Delta \bar{x}}{se}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\sigma_A, \sigma_B(, \rho)\)</span></td>
-<td><span class="math inline">\(se=\frac{\sigma_\Delta}{\sqrt{n}}\;\;\)</span> mit <span class="math inline">\(\;\;\scriptsize{\sigma_\Delta=\sqrt{\frac{1}{n}\sum\left(\Delta x_i-\Delta\bar{x}\right)^2}}\)</span><br><span class="math inline">\(\qquad\qquad\)</span>oder<span class="math inline">\(\;\;\scriptsize{\sigma_\Delta=\sqrt{\sigma_A^2+\sigma_B^2-2\,\rho\sigma_A\sigma_B}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sigma_A, \sigma_B, \rho\)</span></td>
+<td><span class="math inline">\(se=\frac{\sigma_\Delta}{\sqrt{n}}\;\;\)</span> mit <span class="math inline">\(\;\;\scriptsize{\sigma_\Delta=\sqrt{\sigma_A^2+\sigma_B^2-2\,\rho\sigma_A\sigma_B}}\)</span></td>
 </tr>
 <tr class="odd">
 <td><strong>Unabhängige Messungen:</strong> Vergleich der Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> von <em>zwei unabhängigen Gruppen A und B</em></td>
@@ -827,26 +918,30 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(z) = 1 - \Phi(2) \overset{(Computer)}
 <p><img data-src="images/merke.png" height="55"></p>
 </div>
 </div><div class="column" style="width:95%;">
-<p>Die Standardfehler gelten für den Fall, dass die <strong>Varianzen <span class="math inline">\(\sigma_A^2\)</span> bzw. <span class="math inline">\(\sigma_B^2\)</span> in den Populationen bekannt sind</strong> (wie beim z-Test). Siehe Bonuscontent für eine Herleitung der <a href="#/sem" style="color: darkred">Standardfehler bei Mittelwertdifferenzen</a>.</p>
+<p>Die Formeln für die Standardfehler gelten für den Fall, dass die <strong>Varianzen <span class="math inline">\(\sigma_A^2\)</span> bzw. <span class="math inline">\(\sigma_B^2\)</span> in den Populationen bekannt sind</strong> (wie beim z-Test). Siehe Bonuscontent für eine Herleitung der <a href="#/sem" style="color: darkred">Standardfehler bei Mittelwertdifferenzen</a>.</p>
 <p>Sind die Populationsstreuungen nicht bekannt, sehen die Standardfehlerformeln aufgrund der Besselkorrektur etwas anders aus (→ siehe t-Test in Vorlesung 11).</p>
 </div>
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Das ABC der Hypothesentestung</h1>
+<div class="vspace-xlarge">
+
+</div>
+<div>
+<ul>
+<li>Einstichprobentest und Zweistichprobentest</li>
+<li>Signifikanzniveau</li>
+<li>Ein- und zweiseitiges Testen</li>
+</ul>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
 </section>
-<section class="slide level2">
-<h2><span style="font-size:40px">Stichprobenverteilungen von Mittelwertdifferenzen (<span class="math inline">\(se\)</span> bekannt)</span></h2>
-<div class="vspace-small">
-
-</div>
-
-<!----------------->
-<!--- New slide --->
-<!----------------->
-<img data-src="images/stichprobenverteilung_diff_z.png" class="r-stretch"></section>
 <section class="slide level2">
 <h2>Einstichprobentest versus Zweistichprobentest</h2>
 <div style="border: 3px solid #aaa; padding: 10px; margin-bottom: 20px;">
@@ -855,14 +950,14 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(z) = 1 - \Phi(2) \overset{(Computer)}
 <p><u>Beispielhypothesen für den Einstichprobentest:</u></p>
 <div>
 <ul>
-<li>Einzelmessung: Psychologiestudierende sind überdurchschnittlich intelligent  (<span class="math inline">\(\small\overline{IQ} &gt; 100\)</span>)
+<li>Einzelmessung: Psychologiestudierende sind überdurchschnittlich intelligent  (<span class="math inline">\(\mu_\text{IQ}\)</span> = mittler IQ in der Population)
 <ul>
-<li><span style="font-size:21px">Nullhypothese:</span> <span class="math inline">\(\small\overline{IQ} = 100\)</span></li>
-<li><span style="font-size:21px">Beachte: <span class="math inline">\(\small\mu_0\)</span> ist in diesem Fall 100 und nicht 0!</span></li>
+<li><span style="font-size:21px">Nullhypothese:</span> <span class="math inline">\(\small\mu_\text{IQ} \le 100\qquad\qquad\)</span> <span style="font-size:21px">Alternativhypothese:</span> <span class="math inline">\(\small\mu_\text{IQ} &gt; 100\)</span></li>
+<li><span style="font-size:21px">Beachte: der “Nullwert” <span class="math inline">\(\small\mu_0\)</span> ist in diesem Fall 100 und nicht 0!</span></li>
 </ul></li>
-<li>Vergleich zweier abhängiger Messungen: Psychologiestudierende sind morgens intelligenter als abends  (<span class="math inline">\(\small\overline{IQ}_\text{Morgen} &gt; \overline{IQ}_\text{Abend}\)</span>)
+<li>Abhängige Messungen: Psychologiestudierende sind morgens intelligenter als abends  (<span class="math inline">\(\small\Delta\mu_\text{IQ} = \mu_{\text{IQ,}\,\text{Morgen}} - \mu_{\text{IQ,}\,\text{Abend}}\)</span>)
 <ul>
-<li><span style="font-size:21px">Nullhypothese:</span>   <span class="math inline">\(\small\overline{IQ}_\text{Morgen} - \overline{IQ}_\text{Abend} = \Delta \overline{IQ} = 0\)</span></li>
+<li><span style="font-size:21px">Nullhypothese:</span>   <span class="math inline">\(\small\Delta\mu_\text{IQ} \le 0\qquad\qquad\)</span> <span style="font-size:21px">Alternativhypothese:</span> <span class="math inline">\(\small\Delta\mu_\text{IQ} &gt; 100\)</span></li>
 </ul></li>
 </ul>
 </div>
@@ -875,9 +970,9 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(z) = 1 - \Phi(2) \overset{(Computer)}
 <p><u>Beispielhypothese für den Zweistichprobentest:</u></p>
 <div>
 <ul>
-<li>Studierende der HMU sind intelligenter als Studierende der MSB  (<span class="math inline">\(\small\overline{IQ}_\text{HMU} &gt; \overline{IQ}_\text{MSB}\)</span>)
+<li>Studierende der HMU sind intelligenter als Studierende der MSB  (<span class="math inline">\(\small\Delta\mu_\text{IQ} = \mu_{\text{IQ,}\,\text{HMU}} - \mu_{\text{IQ,}\,\text{MSB}}\)</span>)
 <ul>
-<li><span style="font-size:21px">Nullhypothese:</span>   <span class="math inline">\(\small\overline{IQ}_\text{HMU} - \overline{IQ}_\text{MSB} = \Delta \overline{IQ} = 0\)</span></li>
+<li><span style="font-size:21px">Nullhypothese:</span>   <span class="math inline">\(\small\Delta\mu_\text{IQ} \le 0\qquad\qquad\)</span> <span style="font-size:21px">Alternativhypothese:</span> <span class="math inline">\(\small\Delta\mu_\text{IQ} &gt; 100\)</span></li>
 </ul></li>
 </ul>
 </div>
@@ -1019,27 +1114,34 @@ p(\bar{x}_\text{med} \neq \bar{x}_\text{psych}) = 2 \times \text{min}\left(p(\ba
 <p>Es ist zusätzlich gewinnbringend, sich den Vergleich von gerichteten und ungerichteten Hypothesen aus der Perspektive des Signifikanzniveaus <span class="math inline">\(\alpha\)</span> zu betrachten:</p>
 <p><img data-src="images/significance_level2.png" height="420"></p>
 <p>Beim zweiseitigen Test verteilt sich die Irrtumswahrscheinlichkeit (im Bild 5%) <em>auf beide Flanken</em> der Nullverteilung. Es wird damit auf beiden Seiten schwieriger für unseren Effekt einen noch extremeren Wert aufzuweisen, als durch die Irrtumswahrscheinlichkeit vorgegeben.</p>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Eigenschaften und Verhalten<br>des p-Wertes</h1>
 <!----------------->
 <!--- New slide --->
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>p-Wert versus Stichprobengröße</h2>
-<div class="vspace-small">
+<h2>p-Wert versus Stichprobengröße &amp; Populationsstreuung</h2>
+<div class="vspace-xlarge">
 
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/pwert_fallzahl_annot.png" height="500"></p>
-<figcaption>Getestet wird, ob der IQ der betrachteten Population (hier 102.5) größer ist, als der Referenzwert <span class="math inline">\(\mu_0=100\)</span>, der idealerweise den durchschnittlichen IQ aller Menschen darstellt. Im Bild ist zu sehen, dass die betrachtete Population (z.B. alle Brandenburger:innen) tatsächlich einen etwas höheren Mittelwert als 100 aufweisen, was sich auch im Stichprobenmittelwert niederschlägt. <strong>Wie verändert sich der p-Wert abhängig davon, ob die Stichprobe <span class="math inline">\(n=10\)</span> oder <span class="math inline">\(n=100\)</span> umfasst?</strong> <strong>Schritt 1:</strong> der Standardfehler <span class="math inline">\(se\)</span> ist bei der höheren Stichprobenzahl wesentlich kleiner (aufgrund von <span class="math inline">\(\hat{\sigma}/\sqrt{n}\)</span>) und damit die Stichprobenverteilung bei <span class="math inline">\(n=100\)</span> wesentlich schmaler. <strong>Schritt 2:</strong> der kleinere Standardfehler wirkt sich auf den z-Wert <span class="math inline">\(z=\frac{102.5}{se}\)</span> aus: kleinerer Standardfehler bedeutet größerer z-Wert. <strong>Schritt 3:</strong> größerer z-Wert bedeutet kleinerer p-Wert, da kleinere Fläche rechts von z.</figcaption>
-</figure>
+<p>Wir werten einen Effekt als <strong>signifikant</strong>, wenn der p-Wert kleiner dem Signifkanzniveau <span class="math inline">\(\alpha\)</span> ist.</p>
+<div class="vspace-xlarge">
+
 </div>
+<p>Es gilt: je kleiner der p-Wert, desto…</p>
+<p>… weniger kompatibel ist unser Stichprobeneffekt <span class="math inline">\(\hat{\theta}\)</span> mit der Nullhypothese.</p>
+<p>… schärfer lehnen wir also die Nullhypothese <span class="math inline">\(H_0\)</span> ab.</p>
+<p>… stärker ist die Evidenz für unsere Hypothese <span class="math inline">\(H_1\)</span>.</p>
+<p>… statistisch bedeutsamter ist unser Stichprobeneffekt <span class="math inline">\(\hat{\theta}\)</span>.</p>
 <!----------------->
 <!--- New slide --->
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>p-Wert versus Stichprobengröße/Populationsstreuung</h2>
+<h2>p-Wert versus Stichprobengröße &amp; Populationsstreuung</h2>
 <div class="vspace-medium">
 
 </div>
@@ -1061,6 +1163,21 @@ p(\bar{x}_\text{med} \neq \bar{x}_\text{psych}) = 2 \times \text{min}\left(p(\ba
 <!----------------->
 </section>
 <section class="slide level2">
+<h2>p-Wert versus Stichprobengröße: Beispiel</h2>
+<div class="vspace-small">
+
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/pwert_fallzahl_annot.png" height="500"></p>
+<figcaption>Getestet wird, ob der IQ der betrachteten Population (hier 102.5) größer ist, als der Referenzwert <span class="math inline">\(\mu_0=100\)</span>, der idealerweise den durchschnittlichen IQ aller Menschen darstellt. Im Bild ist zu sehen, dass die betrachtete Population (z.B. alle Brandenburger:innen) tatsächlich einen etwas höheren Mittelwert als 100 aufweisen, was sich auch im Stichprobenmittelwert niederschlägt. <strong>Wie verändert sich der p-Wert abhängig davon, ob die Stichprobe <span class="math inline">\(n=10\)</span> oder <span class="math inline">\(n=100\)</span> umfasst?</strong> <strong>Schritt 1:</strong> der Standardfehler <span class="math inline">\(se\)</span> ist bei der höheren Stichprobenzahl wesentlich kleiner (aufgrund von <span class="math inline">\(\hat{\sigma}/\sqrt{n}\)</span>) und damit die Stichprobenverteilung bei <span class="math inline">\(n=100\)</span> wesentlich schmaler. <strong>Schritt 2:</strong> der kleinere Standardfehler wirkt sich auf den z-Wert <span class="math inline">\(z=\frac{102.5}{se}\)</span> aus: kleinerer Standardfehler bedeutet größerer z-Wert. <strong>Schritt 3:</strong> größerer z-Wert bedeutet kleinerer p-Wert, da kleinere Fläche rechts von z.</figcaption>
+</figure>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:9%;">
@@ -1070,7 +1187,7 @@ p(\bar{x}_\text{med} \neq \bar{x}_\text{psych}) = 2 \times \text{min}\left(p(\ba
 </div><div class="column" style="width:91%;">
 <div class="summary" style="font-size: 28px; margin-top: 35px">
 <ul>
-<li class="fragment">Bei der <strong>Nullhypothesentestung</strong> nach Fisher wird die Wahrscheinlichkeit geprüft, mit der ein beobachteter Effekt (oder ein noch extremerer Effekt) durch Zufall entstanden sein könnte — d.h. für die Annahme dass die <em>Nullhypothese tatsächlich zutreffend</em> ist.</li>
+<li class="fragment">Bei der <strong>Nullhypothesentestung</strong> nach Fisher wird die Wahrscheinlichkeit geprüft, mit der ein beobachteter Effekt <span class="math inline">\(\hat{\theta}\)</span> (oder ein noch extremerer Effekt) durch Zufall entstanden sein könnte — d.h. für die Annahme dass die <em>Nullhypothese tatsächlich zutreffend</em> ist.</li>
 <li class="fragment">Diese Wahrscheinlichkeit wird als <strong>p-Wert</strong> bezeichnet — je kleiner der p-Wert, desto weniger haltbar ist die Nullhypothese, desto stärker die <strong>statistische Signifikanz</strong>.</li>
 <li class="fragment">Ein Effekt wird als statistisch signifikant gewertet, wenn der p-Wert unterhalb eines festgelegten <strong>Signifikanzniveaus α</strong> liegt (in diesem Fall wird die “Nullhypothese abgelehnt”).</li>
 <li class="fragment">Sind die Populationsstreuungen bekannt, so erfolgt die statistische Testung anhand der <strong>Prüfgröße <span class="math inline">\(z\)</span></strong> (<strong>z-Wert</strong>) in Verbindung mit der <strong>Standardnormalverteilung</strong>.</li>
@@ -1087,7 +1204,7 @@ p(\bar{x}_\text{med} \neq \bar{x}_\text{psych}) = 2 \times \text{min}\left(p(\ba
 <div class="vspace-small">
 
 </div>
-<p>Nach kurzer Beratung in der Task Force sind Sie sich einig, dass die Voraussetzungen für einen z-Test nicht optimal sind. Die Populationsstreuung lässt sich nicht aus vorhergehenden Studien ableiten, da die untersuchten Phänomene brandneu sind. Da die Fallzahl von <span class="math inline">\(n=50\)</span> gemäß der Faustregel “<span class="math inline">\(n\ge 30\)</span>” aber ausreichend wäre, rechnen Sie aus reiner Neugier dennoch z-Tests für die Gruppenvergleiche.</p>
+<p>Nach kurzer Beratung in der Task Force ist Ihnen klar, dass die Voraussetzungen für einen z-Test nicht gegeben sind, da die Populationsstreuungen <span class="math inline">\(\sigma\)</span> nicht bekannt sind, sondern als <span class="math inline">\(\hat{\sigma}\)</span> geschätzt wurden. Aus Neugier rechnen Sie dennoch z-Tests für die Gruppenvergleiche und nehmen dafür an: <span class="math inline">\(\sigma=\hat{\sigma}\)</span>.</p>
 </section>
 <section class="slide level2 blackslide center">
 <h2></h2>
@@ -1203,8 +1320,8 @@ se=\sqrt{\frac{\sigma_\text{control}^2}{n_\text{control}}+\frac{\sigma_\text{par
 <div class="column" style="width:68%;">
 <p>Der z-Wert ergibt sich als das Verhältnis aus dem “Effekt” (hier <span class="math inline">\(\Delta\bar{x}\)</span>) und dem Standardfehler:</p>
 <p><span class="math display">\[
-\text{TikTok:}\qquad z=\frac{\Delta\bar{x}}{se} = \frac{0{,}577}{0{,}123} = 4{,}69\\
-\text{Entzündung:}\qquad z=\frac{\Delta\bar{x}}{se} = \frac{0{,}0243}{0{,}0147} = 1{,}65
+\text{TikTok:}\qquad z=\frac{\hat{\theta}}{se}=\frac{\Delta\bar{x}}{se} = \frac{0{,}577}{0{,}123} = 4{,}69\\
+\text{Entzündung:}\qquad z=\frac{\hat{\theta}}{se}=\frac{\Delta\bar{x}}{se} = \frac{0{,}0243}{0{,}0147} = 1{,}65
 \]</span></p>
 </div><div class="column" style="width:32%;">
 <p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important" height="200"></p>
@@ -1337,7 +1454,7 @@ plt.tight_layout()
 
 plt.savefig('images/paradoxia_histogram_inflammation_sem_sig.png', bbox_inches='tight')
 ``` -->
-</section>
+</section></section>
 <section>
 <section class="title-slide slide level1 center">
 <h1><span style=" color: darkred !important;">Bonuscontent</span></h1>
@@ -1346,9 +1463,27 @@ plt.savefig('images/paradoxia_histogram_inflammation_sem_sig.png', bbox_inches='
 <!----------------->
 </section>
 <section id="sem" class="slide level2">
-<h2><span style=" color: darkred !important;">Standardfehler bei Mittelwertdifferenzen</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 175px; right: 0px; height: 110px; "></p>
+<h2><span style=" color: darkred !important;">Standardfehler bei Mittelwertdifferenzen (<span class="math inline">\(\sigma_A\)</span>/<span class="math inline">\(\sigma_B\)</span> bekannt)</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
 <p>Zentrale Frage: wie lässt sich auf Basis der (hier als bekannt vorausgesetzten) Populationsstreuungen <span class="math inline">\(\sigma_A\)</span> und <span class="math inline">\(\sigma_B\)</span> der Standardfehler der Mittelwertdifferenz berechnen?</p>
+<div class="vspace-large">
+
+</div>
+<p><u><strong>Abhängige Messungen in einer Stichprobe</strong></u></p>
+<p>Werden die Messungen <span class="math inline">\(X_A\)</span> und <span class="math inline">\(X_B\)</span> in denselben Versuchspersonen durchgeführt, greift die bereits bekannte Formel für die Differenzenstandardabweichung <span class="math inline">\(\sigma_\Delta\)</span>:</p>
+<div class="colorbox">
+<p><span class="math display">\[
+se = \frac{\sigma_\Delta}{\sqrt{n}}\qquad\text{mit}\qquad \sigma_\Delta=\sqrt{\sigma_A^2+\sigma_B^2-2\,\rho\sigma_A\sigma_B}
+\]</span></p>
+</div>
+<p>Wichtig: bei abhängigen Messungen ist, zusätzlich zu den Populationsstreuungen <span class="math inline">\(\sigma_A\)</span>/<span class="math inline">\(\sigma_B\)</span>, auch <strong>Kenntnis über die Populationskorrelation <span class="math inline">\(\rho\)</span></strong> der beiden Variablen <span class="math inline">\(X_A\)</span> und <span class="math inline">\(X_B\)</span> notwendig.</p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Standardfehler bei Mittelwertdifferenzen (<span class="math inline">\(\sigma_A\)</span>/<span class="math inline">\(\sigma_B\)</span> bekannt)</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 240px; right: 0px; height: 110px; "></p>
 <p><u><strong>Unabhängige Messungen in zwei Stichproben</strong></u></p>
 <div>
 <ul>
@@ -1374,20 +1509,11 @@ se=\sqrt{\frac{\sigma_A^2}{n_A} + \frac{\sigma_B^2}{n_B}}
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style=" color: darkred !important;">Standardfehler bei Mittelwertdifferenzen</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<p><u><strong>Abhängige Messungen in einer Stichprobe</strong></u></p>
-<p>Ähnlich wie bei der Standardisierung der Effektstärke abhängiger Messungen, können die Variablen <span class="math inline">\(X_A\)</span> und <span class="math inline">\(X_B\)</span> im ersten Schritt direkt voneinander abgezogen werden:</p>
-<p><span class="math display">\[
-\Delta X = X_A - X_B
-\]</span></p>
-<p>.. und mit der Standardformel die Standardabweichung <span class="math inline">\(\sigma_\Delta\)</span> dieser Differenz berechnen.</p>
-<p>Der Standardfehler der Mittelwertsdifferenz abhängiger Bedingungen A und B ergibt sich daher als:</p>
-<div class="colorbox">
-<p><span class="math display">\[
-se = \frac{\sigma_\Delta}{\sqrt{n}}\qquad\text{mit}\qquad \sigma_\Delta=\sqrt{\frac{1}{n}\sum\left(\Delta x_i-\Delta\bar{x}\right)^2}
-\]</span></p>
+<h2><span style=" color: darkred !important;">Standardfehler bei Mittelwertdifferenzen (<span class="math inline">\(\sigma_A\)</span>/<span class="math inline">\(\sigma_B\)</span> bekannt)</span></h2>
+<div class="vspace-small">
+
 </div>
+<p><img data-src="images/stichprobenverteilung_diff_z.png"></p>
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Vorlesung 10: Signifikanztestung</p>
