@@ -587,71 +587,87 @@ Zurück zur **theoretischen Stichprobenverteilung**. Alle Erkenntnisse über die
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
-<h1>Konstruktion der Nullhypothese</h1>
+<h1>Konstruktion der Nullverteilung</h1>
 <!----------------->
 <!--- New slide --->
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Konstruktion der Nullhypothese</h2>
-<ul>
-<li class="fragment">Das Ziel “<em>die Wahrscheinlichkeitsdichteverteilung aller verschiedenen möglichen Stichprobeneffekten unter der Annahme der Nullhypothese</em>” zu finden, impliziert, dass wir auch hier eine Art von <strong>Stichprobenverteilung</strong> suchen.
-<ul>
-<li class="fragment">Da wir mithilfe der Inferenzstatistik Effekte testen, sind hier Stichprobenverteilung von Effekten <span class="math inline">\(\hat{\theta}\)</span> gemeint.</li>
-</ul></li>
-<li class="fragment">Es gilt: aufgrund des <strong>zentralen Grenzwertsatzes</strong> sind auch <strong>Stichprobenverteilungen von Effekten normalverteilt</strong> (bei hinreichend großer Stichprobe).
-<ul>
-<li class="fragment">Beispiel Mittelwertdifferenz: nicht nur die Stichprobenverteilung von Mittelwerten ist normalverteilt, sondern auch die Stichprobenverteilung von Mittelwertdifferenzen, da Differenzen zweier normalverteilter Variablen ebenfalls normalverteilt sind.</li>
-<li class="fragment">Der Fokus in Statistik 1 liegt in der Tat auf dem Effekt der <strong>Mittelwertdifferenz</strong> (<span class="math inline">\(\hat{\theta}=\Delta\bar{x}\)</span>).</li>
-</ul></li>
-</ul>
-<div class="vspace-medium">
-
+<h2>Konstruktion der Nullverteilung</h2>
+<div class="columns">
+<div class="column" style="width:67%;">
+<p>Die Nullhypothese besagt, dass es den vermuteten Effekt in der Population <strong>nicht gibt</strong>. In unserem Nasenlängenbeispiel wäre dies beispielsweise der Fall, wenn sich die wahren Nasenlängenpopulationsmittelwerte zwischen Psychologen und Medizinern <strong>nicht unterscheiden</strong>, also in Wahrheit gilt:</p>
+<p><span class="math display">\[
+\mu_\text{med} = \mu_\text{psych}
+\]</span></p>
+</div><div class="column" style="width:33%;">
+<p><img data-src="images/nullconstruction1.png"></p>
 </div>
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/null-hyp-cartoon_orig.jpg" height="230"></p>
-<figcaption>Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a></figcaption>
-</figure>
+</div>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><img data-src="images/nullconstruction2.png"></p>
+</div><div class="column" style="width:67%;">
+<p><em>Wenn diese Annahme zuträfe</em>, wüssen wir, dass für die Differenz der Nasenlängenmittelwerte gilt: <span class="math inline">\(\mu_\text{med} - \mu_\text{psych} = 0\)</span>. Damit wäre auch klar, wie die theoretische Erwartung für die Stichprobenverteilung aussähe, nämlich eine <strong>Normalverteilung mit Mittelwert 0</strong>. Das ist die Nullverteilung!</p>
+<p>Die Streuung der Nullverteilung kennen wir auch. Da es sich um eine Stichprobenverteilung handelt, entspricht die Standardabweichung der Verteilung dem <strong>Standardfehler</strong> <span class="math inline">\(se\)</span>.</p>
 </div>
 </div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
-<aside></aside></section>
-<section class="slide level2">
-<h2>Konstruktion der Nullhypothese</h2>
-<div class="columns">
-<div class="column" style="width:66%;">
-<p>Da die Nullhypothesenverteilung ihrer Natur nach eine normalverteilte Stichprobenverteilung ist (unter der Annahme der Nullhypothese), benötigen wir wie schon bei der Konstruktion der Sitchprobenverteilung zwei Informationen: Mittelwert und Streuung der Normalverteilung.</p>
-<ul>
-<li class="fragment">Der <strong>Mittelwert</strong> der Nullhypothesenverteilung entspricht einem Nulleffekt <span class="math inline">\(\theta_0\)</span> (i.d.R. der Wert <span class="math inline">\(\theta_0=0\)</span>).</li>
-<li class="fragment">Die <strong>Streuung</strong> entspricht wie bei der Sitchprobenverteilung einem Standardfehler <span class="math inline">\(se\)</span> — hier dem Standardfehler des Effektes.</li>
-</ul>
-</div><div class="column" style="width:34%;">
-<div style="margin-top: -40px">
-<p><img data-src="images/nulldist2a.png"></p>
-</div>
-<div class="vspace-small">
+<!-- ## Konstruktion der Nullhypothese
 
-</div>
-<p><span class="math display">\[
+- Das Ziel "*die Wahrscheinlichkeitsdichteverteilung aller verschiedenen möglichen Stichprobeneffekten unter der Annahme der Nullhypothese*" zu finden, impliziert, dass wir auch hier eine Art von **Stichprobenverteilung** suchen.
+  - Da wir mithilfe der Inferenzstatistik Effekte testen, sind hier Stichprobenverteilung von Effekten $\hat{\theta}$ gemeint.
+- Es gilt: aufgrund des **zentralen Grenzwertsatzes** sind auch **Stichprobenverteilungen von Effekten normalverteilt** (bei hinreichend großer Stichprobe).
+  - Beispiel Mittelwertdifferenz: nicht nur die Stichprobenverteilung von Mittelwerten ist normalverteilt, sondern auch die Stichprobenverteilung von Mittelwertdifferenzen, da Differenzen zweier normalverteilter Variablen ebenfalls normalverteilt sind.
+  - Der Fokus in Statistik 1 liegt in der Tat auf dem Effekt der **Mittelwertdifferenz** ($\hat{\theta}=\Delta\bar{x}$).
+
+<div class="vspace-medium"></div>
+
+
+:::{.fragment}
+![Bildnachweis^[https://www.statisticsfromatoz.com/blog/new-video-null-hypothesis]](images/null-hyp-cartoon_orig.jpg){height=230px}
+::: -->
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Konstruktion der Nullverteilung</h2>
+<!-- :::: {.columns}
+::: {.column width="66%"}
+
+Da die Nullhypothesenverteilung ihrer Natur nach eine normalverteilte Stichprobenverteilung ist (unter der Annahme der Nullhypothese), benötigen wir wie schon bei der Konstruktion der Sitchprobenverteilung zwei Informationen: Mittelwert und Streuung der Normalverteilung. 
+
+- Der **Mittelwert** der Nullhypothesenverteilung entspricht einem Nulleffekt $\theta_0$ (i.d.R. der Wert $\theta_0=0$).
+- Die **Streuung** entspricht wie bei der Sitchprobenverteilung einem Standardfehler $se$ &mdash; hier dem Standardfehler des Effektes. 
+:::
+::: {.column width="34%"}
+:::{style="margin-top: -40px"}
+![](images/nulldist2a.png)
+:::
+
+<div class="vspace-small"></div>
+
+$$
 f(x)=\frac{1}{se\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\theta_0}{se}\right)^2}
-\]</span></p>
-<div class="caption-style">
-<p>Formel für die Dichtefunktion der Normalverteilung mit Mittelwert <span class="math inline">\(0\)</span> und geschätzter Streuung <span class="math inline">\(se\)</span>.</p>
-</div>
-</div>
-</div>
-<div class="merke" style="font-size: 22px; margin-top: 20px">
+$$
+
+::: {.caption-style}
+Formel für die Dichtefunktion der Normalverteilung mit Mittelwert $0$ und geschätzter Streuung $se$.
+:::
+
+:::
+:::: -->
+<div class="merke" style="font-size: 22px; margin-top: 50px">
 <div class="columns">
 <div class="column" style="width:5%;">
 <div style="margin-top: 18px">
 <p><img data-src="images/merke.png" height="55"></p>
 </div>
 </div><div class="column" style="width:95%;">
-<p>In der Praxis ist die Streuung <span class="math inline">\(se\)</span> idR nicht bekannt und muss als <span class="math inline">\(\hat{se}\)</span> geschätzt werden. Wir betrachten diesen (komplexeren) Fall hier noch nicht. Jedoch ist diese Problematik größer, als auf den ersten Blick angenommen, und führt uns in der Vorlesung zum t-Test zur Erkenntnis, dass die Annahme einer Normalverteilung für die Nullhypothesenverteilung nicht mehr gerechtfertigt ist. Behalten Sie dies im Hinterkopf!</p>
+<p>In der Praxis ist die Streuung <span class="math inline">\(se\)</span> idR nicht bekannt und muss als <span class="math inline">\(\hat{se}\)</span> geschätzt werden. Wir betrachten diesen etwas komplexeren Fall hier noch nicht. Jedoch ist diese Problematik größer, als auf den ersten Blick angenommen, und führt uns in der Vorlesung zum t-Test zur Erkenntnis, dass die Annahme einer Normalverteilung für die Nullhypothesenverteilung nicht mehr gerechtfertigt ist (stattdessen benötigen wir dann die t-Verteilung). Behalten Sie dies im Hinterkopf!</p>
 </div>
 </div>
 </div>
@@ -660,7 +676,7 @@ f(x)=\frac{1}{se\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\theta_0}{se}\right)^2}
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Konstruktion der Nullhypothese: Hinweis zum Mittelwert <span class="math inline">\(\theta_0\)</span></h2>
+<h2>Konstruktion der Nullverteilung: Hinweis zum Mittelwert <span class="math inline">\(\theta_0\)</span></h2>
 <div class="columns">
 <div class="column" style="width:66%;">
 <p>In unserem Beispiel hatten wir als Nullhypothese:</p>
@@ -1548,7 +1564,6 @@ se=\sqrt{\frac{\sigma_A^2}{n_A} + \frac{\sigma_B^2}{n_B}}
 
 <ol>
 <li id="fn1"><p>https://www.majordifferences.com/2016/10/5-differences-between-null-and.html</p></li>
-<li id="fn2"><p>https://www.statisticsfromatoz.com/blog/new-video-null-hypothesis</p></li>
 </ol>
 </section>
     </div>
