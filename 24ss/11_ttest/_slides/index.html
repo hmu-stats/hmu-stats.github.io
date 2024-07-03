@@ -374,102 +374,84 @@
 <p><img data-src="images/paradoxia_nulldist2g.png" style="margin-top: -70px !important" height="260"></p>
 </div>
 </div>
-</section>
-<section class="slide level2 hcenter-slide">
-<h2>Der Forschungsprozess</h2>
-<div data-animate="" data-src="images/scientific_process.svg"><!-- setup:
+<!-- ## Der Forschungsprozess {.hcenter-slide}
+
+```yaml { .animate src="images/scientific_process.svg"}
+setup:
     - element: "#inference"
       modifier: function() { this.node.style.fill = 'green'; }
     - element: "#inferencebg"
-      modifier: function() { this.node.style.fill = '#d8ffe2';} --></div>
-</section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>Einschub: Anmerkungen zur Klausur</h1>
+      modifier: function() { this.node.style.fill = '#d8ffe2';}
+```
+
+# Einschub: Anmerkungen zur Klausur -->
 <!----------------->
 <!--- New slide --->
 <!----------------->
-</section>
-<section class="slide level2">
-<h2>Infos zur Klausur: Allgemeines</h2>
-<ul>
-<li class="fragment"><strong>Struktur:</strong> 50% Verständnisfragen (Großteil <em>multiple choice</em>), 50% Rechnen</li>
-<li class="fragment"><strong>Hilfsmittel:</strong> Formelsammlung, einfacher Taschenrechner (<span class="math inline">\(+\)</span>/<span class="math inline">\(-\)</span>/<span class="math inline">\(\cdot\)</span>/<span class="math inline">\(:\)</span>), ein Lineal oder Geodreieck wird nicht benötigt (ist aber erlaubt)</li>
-<li class="fragment"><strong>Wichtig:</strong> die Formelsammlung druckt das Prüfungsbüro für Sie aus. Sie dürfen keinen eigenen Ausdruck in die Klausur mitnehmen.</li>
-<li class="fragment"><strong>Klausurinhalt:</strong> Stoff der Vorlesungsfolien (Ausnahme: rot markiert)</li>
-<li class="fragment"><strong>Rechnen:</strong> welche Formeln muss ich beherrschen?
-<ul>
-<li class="fragment">Die Formelsammlung bietet einen sehr guten Überblick über mögliche Formeln in der Klausur.</li>
-<li class="fragment">Bis auf rot gefärbte Formeln sind alle Formeln klausurrelevant.</li>
-<li class="fragment">Sie können und sollen die Formelsammlung in der Klausur anwenden.</li>
-<li class="fragment">Das Ziel von Statistik 1 ist explizit nicht, dass Sie Formeln auswendig lernen; Ziel ist die Kompetenz, passende Formeln nachzuschlagen und konzeptuell zu verstehen.</li>
-<li class="fragment">Achten Sie darauf, dass Sie die aktuelle Version der Formelsammlung von der Website <a href="https://hmu-stats.github.io">hmu-stats.github.io</a> verwenden:
-<ul>
-<li class="fragment">Version vom 19.1.2024 — siehe Datum in der Formelsammlung</li>
-<li class="fragment">Im Fall einer Aktualisierung der Formelsammlung vor der Klausur gebe ich Ihnen in jedem Fall Bescheid.</li>
-</ul></li>
-</ul></li>
-</ul>
+<!-- ## Infos zur Klausur: Allgemeines
+
+- **Struktur:** 50% Verständnisfragen (Großteil *multiple choice*), 50% Rechnen
+- **Hilfsmittel:** Formelsammlung, einfacher Taschenrechner ($+$/$-$/$\cdot$/$:$), ein Lineal oder Geodreieck wird nicht benötigt (ist aber erlaubt)
+- **Wichtig:** die Formelsammlung druckt das Prüfungsbüro für Sie aus. Sie dürfen keinen eigenen Ausdruck in die Klausur mitnehmen.
+- **Klausurinhalt:** Stoff der Vorlesungsfolien (Ausnahme: rot markiert)
+- **Rechnen:** welche Formeln muss ich beherrschen? 
+  - Die Formelsammlung bietet einen sehr guten Überblick über mögliche Formeln in der Klausur. 
+  - Bis auf rot gefärbte Formeln sind alle Formeln klausurrelevant.
+  - Sie können und sollen die Formelsammlung in der Klausur anwenden.
+  - Das Ziel von Statistik 1 ist explizit nicht, dass Sie Formeln auswendig lernen; Ziel ist die Kompetenz, passende Formeln nachzuschlagen und konzeptuell zu verstehen.
+  - Achten Sie darauf, dass Sie die aktuelle Version der Formelsammlung von der Website [hmu-stats.github.io](https://hmu-stats.github.io) verwenden: 
+    - Version vom 19.1.2024 &mdash; siehe Datum in der Formelsammlung
+    - Im Fall einer Aktualisierung der Formelsammlung vor der Klausur gebe ich Ihnen in jedem Fall Bescheid. -->
 <!----------------->
 <!--- New slide --->
 <!----------------->
-</section>
-<section class="slide level2">
-<h2>Infos zur Klausur: spezifische Bemerkungen</h2>
-<ul>
-<li class="fragment"><strong>z-Test:</strong> es werden keine <em>Rechen</em>aufgaben zum z-Test in der Klausur gestellt, da dieser eine geringe Praxisrelevanz hat und hauptsächlich aus pädagogischen Gründen gelehrt wird.
-<ul>
-<li class="fragment"><u>Aber:</u> Sie sollten konzeptuell verstehen, was der prinzipielle Einsatzzweck des z-Testes ist (verglichen mit dem t-Test).</li>
-</ul></li>
-<li class="fragment"><strong>Bessel-Korrektur:</strong>
-<ul>
-<li class="fragment">Es soll verstanden werden, warum es sie gibt und wann sie prinzipiell angewendet (Stichprobe -&gt; Population) oder nicht angewendet (deskriptive Beschreibung der Stichprobe) wird.</li>
-<li class="fragment">Bei Rechenaufgaben wird die Besselkorrektur keine Rolle spielen, d.h. es wird nicht als Fehler gewertet, wenn Sie die Besselkorrektur irrtümlich anwenden oder nicht anwenden.</li>
-<li class="fragment">Das impliziert auch, dass Sie bei Rechenaufgaben wahlweise die Stichprobenvarianz <span class="math inline">\(s^2\)</span> oder die Populationsschätzung <span class="math inline">\(\hat{\sigma}^2\)</span> angeben bzw. verwenden können.</li>
-<li class="fragment">Der Grund ist, dass die Anwendung der Besselkorrektur selbst in akademischen Veröffentlichungen und Lehrbüchern sehr inkonsistent ist. Auf den folgenden beiden Folien finden Sie zwei Beispiele.</li>
-</ul></li>
-</ul>
+<!-- ## Infos zur Klausur: spezifische Bemerkungen
+
+- **z-Test:** es werden keine *Rechen*aufgaben zum z-Test in der Klausur gestellt, da dieser eine geringe Praxisrelevanz hat und hauptsächlich aus pädagogischen Gründen gelehrt wird.
+  - [Aber:]{.underline} Sie sollten konzeptuell verstehen, was der prinzipielle Einsatzzweck des z-Testes ist (verglichen mit dem t-Test).
+- **Bessel-Korrektur:**
+  - Es soll verstanden werden, warum es sie gibt und wann sie prinzipiell angewendet (Stichprobe -> Population) oder nicht angewendet (deskriptive Beschreibung der Stichprobe) wird.
+  - Bei Rechenaufgaben wird die Besselkorrektur keine Rolle spielen, d.h. es wird nicht als Fehler gewertet, wenn Sie die Besselkorrektur irrtümlich anwenden oder nicht anwenden.
+  - Das impliziert auch, dass Sie bei Rechenaufgaben wahlweise die Stichprobenvarianz $s^2$ oder die Populationsschätzung $\hat{\sigma}^2$ angeben bzw. verwenden können.
+  - Der Grund ist, dass die Anwendung der Besselkorrektur selbst in akademischen Veröffentlichungen und Lehrbüchern sehr inkonsistent ist. Auf den folgenden beiden Folien finden Sie zwei Beispiele. -->
 <!--- New slide --->
 <!----------------->
-</section>
-<section class="slide level2">
-<h2>Besselkorrektur meets practise: z-Transformation</h2>
-<ul>
-<li class="fragment">Die <strong>z-Standardisierung</strong> oder <strong>z-Transformation</strong> ist eine häufig genutzte Methode, um Variablen zwischen verschiedenen Studien vergleichbar zu machen.</li>
-<li class="fragment"><em>Streng genommen</em> nimmt die z-Transformation an, dass Populationsmittelwert <span class="math inline">\(\mu\)</span> und die Populationsstreuung <span class="math inline">\(\sigma\)</span> bekannt sind. Die Formel lautet daher:</li>
-</ul>
-<div class="fragment">
-<p><span class="math display">\[
+<!-- ## Besselkorrektur meets practise: z-Transformation
+
+- Die **z-Standardisierung** oder **z-Transformation** ist eine häufig genutzte Methode, um Variablen zwischen verschiedenen Studien vergleichbar zu machen.
+- *Streng genommen* nimmt die z-Transformation an, dass Populationsmittelwert $\mu$ und die Populationsstreuung $\sigma$ bekannt sind. Die Formel lautet daher:
+
+:::{.fragment}
+$$
 \text{z-Transformation:}\qquad Z = \frac{X-\mu}{\sigma}
-\]</span></p>
-</div>
-<ul>
-<li class="fragment">In der Praxis sind <span class="math inline">\(\sigma\)</span> und <span class="math inline">\(\mu\)</span> aber nahezu nie bekannt und daher werden häufig der empirische Mittelwert <span class="math inline">\(\Delta\bar{x}\)</span> und die Populationsschätzung <span class="math inline">\(\hat{\sigma}\)</span> mit Besselkorrektur verwendet.</li>
-<li class="fragment">Seien Sie sich aber bewusst, dass dies aus theoretischer Sicht eine Ungenauigkeit darstellt, denn bei unbekannter Populationsstreuung handelt es sich bei <span class="math inline">\(Z\)</span> nicht um einen normalverteilten Wert, sondern um einen t-verteilten Wert (und damit eigentlich um eine <em>t-Transformation</em>).</li>
-<li class="fragment">Erst ab ca. <span class="math inline">\(N\ge 30\)</span> sind die Stichprobenschätzungen so gut, dass die z-Transformation guten Gewissens auch bei unbekannten Populationsparametern angwendet werden sollte.</li>
-</ul>
+$$
+:::
+
+- In der Praxis sind $\sigma$ und $\mu$ aber nahezu nie bekannt und daher werden häufig der empirische Mittelwert $\Delta\bar{x}$ und die Populationsschätzung $\hat{\sigma}$ mit Besselkorrektur verwendet.
+- Seien Sie sich aber bewusst, dass dies aus theoretischer Sicht eine Ungenauigkeit darstellt, denn bei unbekannter Populationsstreuung handelt es sich bei $Z$ nicht um einen normalverteilten Wert, sondern um einen t-verteilten Wert (und damit eigentlich um eine *t-Transformation*).
+- Erst ab ca. $N\ge 30$ sind die Stichprobenschätzungen so gut, dass die z-Transformation guten Gewissens auch bei unbekannten Populationsparametern angwendet werden sollte. -->
 <!--- New slide --->
 <!----------------->
-</section>
-<section class="slide level2">
-<h2>Besselkorrektur meets practise: Korrelation</h2>
-<p>Für die Formel der Pearson-Korrelation hatten wir kennengelernt:</p>
-<p><span class="math display">\[
+<!-- ## Besselkorrektur meets practise: Korrelation
+
+Für die Formel der Pearson-Korrelation hatten wir kennengelernt:
+
+$$
 r = \frac{1}{s_X s_Y}\frac{1}{n}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})
-\]</span></p>
-<ul>
-<li class="fragment">Dies ist <strong>Stichprobenkorrelationskoeffizient</strong>.</li>
-<li class="fragment">In der Regel sind wir aber an einer Schätzung der Korrelation in der Population interessiert ⟶ dies führt zum <strong>empirischen Korrelationskoeffizienten</strong>:</li>
-</ul>
-<div class="fragment">
-<p><span class="math display">\[
+$$
+
+- Dies ist **Stichprobenkorrelationskoeffizient**.
+- In der Regel sind wir aber an einer Schätzung der Korrelation in der Population interessiert &xrarr; dies führt zum **empirischen Korrelationskoeffizienten**:
+
+:::{.fragment}
+$$
 \hat{\rho} = \frac{1}{\hat{\sigma}_X \hat{\sigma}_Y}\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})
-\]</span> (beachten Sie den Übergang <span class="math inline">\(s\rightarrow\hat{\sigma}\)</span> und <span class="math inline">\(n\rightarrow n-1\)</span>, d.h. die Besselkorrektur)</p>
-</div>
-<ul>
-<li class="fragment">In der Praxis herrscht hier leider keine Einheitlichkeit. De facto wird in der Literatur standardmäßig die Bezeichnung <span class="math inline">\(r\)</span> für den Korrelationskoeffizienten verwendet, aber mit der Formel des empirischen Korrelationskoeffizienten.</li>
-</ul>
-</section></section>
+$$
+(beachten Sie den Übergang $s\rightarrow\hat{\sigma}$ und $n\rightarrow n-1$, d.h. die Besselkorrektur)
+:::
+
+- In der Praxis herrscht hier leider keine Einheitlichkeit. De facto wird in der Literatur standardmäßig die Bezeichnung $r$ für den Korrelationskoeffizienten verwendet, aber mit der Formel des empirischen Korrelationskoeffizienten. -->
+</section>
 <section>
 <section class="title-slide slide level1 center">
 <h1>Der t-Test</h1>
@@ -477,46 +459,29 @@ r = \frac{1}{s_X s_Y}\frac{1}{n}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})
 </section>
 <section class="slide level2">
 <h2>Problemstellung</h2>
+<div style="margin-top: -15px">
 <ul>
-<li class="fragment">Beim <strong>z-Test</strong> für Mittelwertunterschiede haben wir für die Verteilung der Prüfgröße <span class="math inline">\(z=\frac{\Delta\bar{x}}{se}\)</span> eine Normalverteilung annehmen können. Grund:
+<li class="fragment">Beim <strong>z-Test</strong> haben wir für die Verteilung der Prüfgröße <span class="math inline">\(z=\frac{\hat{\theta}}{se}\)</span> eine Normalverteilung annehmen können. Grund:
 <ul>
-<li class="fragment">Aufgrund des zentralen Grenzwertsatzes können viele statistische Kennwerte, darunter auch die Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span>, bei ausreichender Stichprobengröße als normalverteilt angenommen werden.</li>
+<li class="fragment">Aufgrund des zentralen Grenzwertsatzes können statistische Kennwerte bei ausreichender Stichprobengröße als normalverteilt angenommen werden.</li>
 <li class="fragment">Beim z-Test wird die Standardabweichung <span class="math inline">\(\sigma\)</span> der Population, und damit auch der Standardfehler <span class="math inline">\(se=\frac{\sigma}{\sqrt{n}}\)</span>, als bekannt angenommen.</li>
-<li class="fragment">De facto wird also bei der Berechnung der Prüfgröße <span class="math inline">\(z=\frac{\Delta\bar{x}}{se}\)</span> eine normalverteilte Variable (<span class="math inline">\(\Delta\bar{x}\)</span>) durch eine Konstante (<span class="math inline">\(se=\sigma/\sqrt{n}\)</span>) geteilt, so dass auch die Prüfgröße normalverteilt ist.</li>
+<li class="fragment">De facto wird also bei der Berechnung der Prüfgröße <span class="math inline">\(z=\frac{\hat{\theta}}{se}\)</span> eine normalverteilte Variable (<span class="math inline">\(\hat{\theta}\)</span>) durch eine Konstante (<span class="math inline">\(se=\sigma/\sqrt{n}\)</span>) geteilt, so dass auch die Prüfgröße normalverteilt ist.</li>
 </ul></li>
 <li class="fragment">Ist <span class="math inline">\(\sigma\)</span> <em>nicht bekannt</em>, muss die Streuung auf Basis der Stichprobe als <span class="math inline">\(\hat{\sigma}\)</span> geschätzt werden.</li>
 <li class="fragment">Die Schätzung von <span class="math inline">\(\hat{\sigma}\)</span> ist mit Unsicherheit behaftet und daher selbst eine <strong>Zufallsvariable</strong>.</li>
-<li class="fragment">Wir teilen also eine normalverteilte Zufallsvariable <span class="math inline">\(\Delta\bar{x}\)</span> durch eine wie-auch-immer-verteilte (*) zweite Zufallsvariable <span class="math inline">\(\hat{\sigma}\)</span>. <span style="font-size: 22px !important">(* die wie-auch-immer-Verteilung ist bekannt: <span class="math inline">\(\hat{\sigma}\)</span> folgt der Chi-Verteilung bzw. χ-Verteilung)</span></li>
+<li class="fragment">Wir teilen also eine normalverteilte Zufallsvariable <span class="math inline">\(\hat{\theta}\)</span> durch eine wie-auch-immer-verteilte (*) zweite Zufallsvariable <span class="math inline">\(\hat{\sigma}\)</span>. <span style="font-size: 22px !important">(* die wie-auch-immer-Verteilung ist bekannt: <span class="math inline">\(\hat{\sigma}\)</span> folgt der Chi-Verteilung bzw. χ-Verteilung)</span></li>
 <li class="fragment"><strong>In diesem Fall können wir nicht mehr davon ausgehen, dass die Prüfgröße normalverteilt ist!</strong></li>
 </ul>
+</div>
 <div class="colorbox fragment" style="margin-top:-3px">
 <p>Die Gretchen-Frage ist daher: welcher Verteilung folgt die Prüfstatistik <span class="math display">\[
-\frac{\Delta\bar{x}}{\hat{se}}=\frac{\Delta\bar{x}}{\hat{\sigma}/\sqrt{n}}\qquad\text{?}\qquad\text{(mit Betonung auf dem ^ über der Streuung)}
+\frac{\hat{\theta}}{\hat{se}}=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}\qquad\text{?}\qquad\text{(mit Betonung auf dem ^ über der Streuung $se$ bzw. $\sigma$)}
 \]</span></p>
 </div>
 </section>
 <section class="slide level2">
-<h2>Statistischer Kennwert <span class="math inline">\(\hat{\theta}\)</span></h2>
-<div>
-<ul>
-<li>Bevor wir uns der eigentlichen Frage widmen, führen wir ein neues Symbol ein, das als Platzhalter für einen statistischen Kennwert steht, der auf Basis einer Stichprobe berechnet wurde:</li>
-</ul>
-</div>
-<p><span class="math display">\[
-\text{Statistischer Kennwert:}\qquad\hat{\theta}
-\]</span></p>
-<ul>
-<li class="fragment">Das Symbol <span class="math inline">\(\hat{\theta}\)</span> ist ein allgemeines Symbol für alle statistischen Kennwerte, die wir bisher kennen-gelernt haben: Mittelwert <span class="math inline">\(\bar{x}\)</span>, Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span>, Korrelation <span class="math inline">\(r\)</span>, Regressionskoeffizient <span class="math inline">\(b_1\)</span>,…</li>
-</ul>
-<div class="colorbox fragment" style="margin-top:6px">
-<p>Wir formulieren unsere Frage also etwas allgemeiner: welcher Verteilung folgt die Größe</p>
-<div style="margin-top: -10px">
-<p><span class="math display">\[
-\frac{\hat{\theta}}{\hat{se}}\qquad\text{?}
-\]</span></p>
-</div>
-</div>
-<div class="notabene fragment" style="margin-top: 45px">
+<h2>Hinweis</h2>
+<div class="notabene fragment" style="margin-top: 85px">
 <div class="columns">
 <div class="column" style="width:7%;">
 <div style="margin-top: 10px">
