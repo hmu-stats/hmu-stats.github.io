@@ -459,29 +459,34 @@ $$
 </section>
 <section class="slide level2">
 <h2>Problemstellung</h2>
-<div style="margin-top: -15px">
-<ul>
-<li class="fragment">Beim <strong>z-Test</strong> haben wir für die Verteilung der Prüfgröße <span class="math inline">\(z=\frac{\hat{\theta}}{se}\)</span> eine Normalverteilung annehmen können. Grund:
+<div style="margin-top: 75px">
+<p>Zur Erinnerung: beim <strong>z-Test</strong> haben wir für die Verteilung der Prüfgröße <span class="math inline">\(z=\frac{\hat{\theta}}{se}\)</span> eine Normalverteilung annehmen können. Grund:</p>
 <ul>
 <li class="fragment">Aufgrund des zentralen Grenzwertsatzes können statistische Kennwerte bei ausreichender Stichprobengröße als normalverteilt angenommen werden.</li>
 <li class="fragment">Beim z-Test wird die Standardabweichung <span class="math inline">\(\sigma\)</span> der Population, und damit auch der Standardfehler <span class="math inline">\(se=\frac{\sigma}{\sqrt{n}}\)</span>, als bekannt angenommen.</li>
 <li class="fragment">De facto wird also bei der Berechnung der Prüfgröße <span class="math inline">\(z=\frac{\hat{\theta}}{se}\)</span> eine normalverteilte Variable (<span class="math inline">\(\hat{\theta}\)</span>) durch eine Konstante (<span class="math inline">\(se=\sigma/\sqrt{n}\)</span>) geteilt, so dass auch die Prüfgröße normalverteilt ist.</li>
-</ul></li>
-<li class="fragment">Ist <span class="math inline">\(\sigma\)</span> <em>nicht bekannt</em>, muss die Streuung auf Basis der Stichprobe als <span class="math inline">\(\hat{\sigma}\)</span> geschätzt werden.</li>
+</ul>
+<div class="vspace-large">
+
+</div>
+<p><u>Frage:</u> wie verhält es sich, wenn <span class="math inline">\(\sigma\)</span> <em>nicht bekannt</em> ist?</p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Problemstellung</h2>
+<!-- <div class="vspace-xlarge"></div> -->
+<ul>
+<li class="fragment">Ist <span class="math inline">\(\sigma\)</span> <em>nicht bekannt</em> — und das ist der Regelfall — <strong>muss die Streuung auf Basis der Stichprobe als <span class="math inline">\(\hat{\sigma}\)</span> geschätzt werden</strong>.</li>
 <li class="fragment">Die Schätzung von <span class="math inline">\(\hat{\sigma}\)</span> ist mit Unsicherheit behaftet und daher selbst eine <strong>Zufallsvariable</strong>.</li>
-<li class="fragment">Wir teilen also eine normalverteilte Zufallsvariable <span class="math inline">\(\hat{\theta}\)</span> durch eine wie-auch-immer-verteilte (*) zweite Zufallsvariable <span class="math inline">\(\hat{\sigma}\)</span>. <span style="font-size: 22px !important">(* die wie-auch-immer-Verteilung ist bekannt: <span class="math inline">\(\hat{\sigma}\)</span> folgt der Chi-Verteilung bzw. χ-Verteilung)</span></li>
+<li class="fragment">Wir teilen also eine normalverteilte Zufallsvariable <span class="math inline">\(\hat{\theta}\)</span> durch eine wie-auch-immer-verteilte (*) zweite Zufallsvariable <span class="math inline">\(\hat{\sigma}\)</span>.<br><span style="font-size: 22px !important">(* die wie-auch-immer-Verteilung ist bekannt: <span class="math inline">\(\hat{\sigma}\)</span> folgt der Chi-Verteilung bzw. χ-Verteilung)</span></li>
 <li class="fragment"><strong>In diesem Fall können wir nicht mehr davon ausgehen, dass die Prüfgröße normalverteilt ist!</strong></li>
 </ul>
-</div>
-<div class="colorbox fragment" style="margin-top:-3px">
+<div class="colorbox fragment" style="margin-top:13px">
 <p>Die Gretchen-Frage ist daher: welcher Verteilung folgt die Prüfstatistik <span class="math display">\[
 \frac{\hat{\theta}}{\hat{se}}=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}\qquad\text{?}\qquad\text{(mit Betonung auf dem ^ über der Streuung $se$ bzw. $\sigma$)}
 \]</span></p>
 </div>
-</section>
-<section class="slide level2">
-<h2>Hinweis</h2>
-<div class="notabene fragment" style="margin-top: 85px">
+<div class="notabene fragment" style="margin-top: 25px">
 <div class="columns">
 <div class="column" style="width:7%;">
 <div style="margin-top: 10px">
@@ -489,7 +494,7 @@ $$
 </div>
 </div><div class="column" style="width:93%;">
 <p>Streng genommen lautet die fragliche Prüfgröße <span class="math inline">\(\frac{\hat{\theta}-\theta_0}{\hat{se}}\)</span>. Von einigen Ausnahmen abgesehen gilt jedoch zumeist <span class="math inline">\(\theta_0=0\)</span> und wir lassen <span class="math inline">\(\theta_0\)</span> aus diesem Grund auch im Folgenden weg.</p>
-<p>Ein Bespiel für eine Ausnahme ist, wenn <span class="math inline">\(\hat{\theta}\)</span> ein einfacher Mittelwert ist und gegen einen Referenzwert wie den Durchschnitts-IQ <span class="math inline">\(\theta_0=100\)</span> getestetet wird; in diesem Fall muss also <span class="math inline">\(\theta_0=100\)</span> zunächst vom Mittelwert <span class="math inline">\(\hat{\theta}\)</span> abgezogen werden.</p>
+<p>Ein Bespiel für eine Ausnahme ist, wenn <span class="math inline">\(\hat{\theta}\)</span> eine Einzelmessung ist und gegen einen Referenzwert wie den Durchschnitts-IQ <span class="math inline">\(\theta_0=100\)</span> getestetet wird; in diesem Fall muss also <span class="math inline">\(\theta_0=100\)</span> zunächst vom Mittelwert <span class="math inline">\(\hat{\theta}\)</span> abgezogen werden.</p>
 </div>
 </div>
 </div>
@@ -531,7 +536,7 @@ t\text{-Verteilung:}\qquad f_t(x|\scriptsize\text{df}\normalsize)
 <div class="column" style="width:45%;">
 <ul>
 <li class="fragment">Der Parameter <span class="math inline">\(\text{df}\)</span> steht für die <span style=" color: navy !important;"><strong>Zahl der Freiheitsgrade</strong></span> (<em>degrees of freedom</em>) und hängt eng mit der Stichprobengröße <span class="math inline">\(n\)</span> zusammen.</li>
-<li class="fragment">Im Bild rechts ist eine t-Verteilung mit 4 Freiheitsgraden im Vergleich zur Normalverteilung aufgetragen.</li>
+<li class="fragment">Im Bild rechts ist eine t-Verteilung mit 4 Freiheitsgraden im Vergleich zur Standardnormalverteilung aufgetragen.</li>
 <li class="fragment">Erste Erkenntnis: die t-Verteilung hat etwas dickere Flanken (<em>fat tails</em>)!</li>
 </ul>
 </div><div class="column" style="width:55%;">
@@ -539,7 +544,7 @@ t\text{-Verteilung:}\qquad f_t(x|\scriptsize\text{df}\normalsize)
 
 </div>
 <div class="fragment">
-<p><img data-src="images/tdist.png"></p>
+<p><img data-src="images/tdist.png" height="300"></p>
 </div>
 </div>
 </div>
@@ -607,88 +612,22 @@ t = \frac{\hat{\theta}}{\hat{se}} = \frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style=" color: darkred !important;">Die t-Verteilung ist bereits standardisiert</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 295px; right: 0px; height: 100px; "></p>
-<p>Vor der Einführung des z-Tests hatten wir zunächst die <strong>unstandardisierte Normalverteilung</strong> kennengelernt, die durch zwei Parameter definiert ist: Mittelwert <span class="math inline">\(\mu\)</span> und Standardabweichung <span class="math inline">\(\sigma\)</span>:</p>
-<p><span class="math display">\[
-f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
-\]</span></p>
-<p>Verwenden wir statt <span class="math inline">\(x\)</span> die standardisierte Variable <span class="math inline">\(\frac{x-\mu}{\sigma}\)</span>, vereinfacht sich die Nullhypothesen-Verteilung zur <strong>Standardnormalverteilung</strong>:</p>
-<div style="margin-top: -10px">
-<p><span class="math display">\[
-f(x)=\varphi(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}
-\]</span></p>
-</div>
-<p>Die Standardnormalverteilung hat keinen Parameter mehr (nur noch die <em>Variable</em> <span class="math inline">\(x\)</span>). Da es sich beim z-Wert auch um eine standardisierte Variable handelte, konnten wir auch für <span class="math inline">\(z\)</span> eine Standardnormalverteilung annehmen:</p>
-<div style="margin-top: -10px">
-<p><span class="math display">\[
-f(z)=\varphi(z)=\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}
-\]</span></p>
-</div>
-<p>Die <strong>t-Verteilung</strong> hatten wir dagegen direkt auf Basis der standardisierten Prüfgröße <span class="math inline">\(\frac{\hat{\theta}}{\hat{se}}\)</span> eingeführt. <span style=" color: navy !important;"><strong>Die klassische t-Verteilung ist aus diesem Grund bereits eine <em>standardisierte Verteilung</em>, die nicht mehr vom Mittelwert oder Streuung abhängt.</strong></span> Im Gegensatz zur Standardnormalverteilung hat sie aber noch einen Parameter: die Zahl der Freiheitsgrade <span class="math inline">\(\text{df}\)</span>.</p>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Unstandardisierte t-Verteilung</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 110px; "></p>
-<p>Die Formel für die klassische (standardisierte) t-Verteilung lautet:</p>
-<div style="margin-top: -7px">
-<p><span class="math display">\[
-f_t(x|\scriptsize\text{df}\normalsize) = \frac{\Gamma\left(\frac{\scriptsize\text{df}\normalsize+1}{2}\right)} {\sqrt{\scriptsize\text{df}\normalsize\,\pi}~\Gamma\left(\frac{\scriptsize\text{df}\normalsize}{2}\right)}\left(1+\frac{1}{\scriptsize\text{df}\normalsize}x^{2}\right)^{-\frac{\text{df}+1}{2}}\qquad \left(\Gamma\text{ ist die Gamma-Funktion}\right)
-\]</span></p>
-</div>
-<p>Wie die Standardnormalverteilung hat die t-Verteilung Mittelwert 0 (daher kann sie als Nullhypothesenverteilung fungieren). Ihre Streuung ist jedoch nicht exakt 1, sondern hängt von der Zahl der Freiheitsgrade ab: <span class="math inline">\(\sigma^2=\frac{\scriptsize\text{df}\normalsize}{\scriptsize\text{df}\normalsize-2}\)</span>.</p>
-<div style="margin-top: -3px">
-<p>Tatsächlich gibt es auch zur t-Verteilung ein unstandardisiertes Pendant, die <strong>nicht-standardisierte t-Verteilung</strong>, die von Mittelwert <span class="math inline">\(\color{green}{\mu}\)</span> und Streuung <span class="math inline">\(\color{blue}{\sigma}\)</span> abhängt:</p>
-</div>
-<p><span class="math display">\[
-f_t(x|\color{green}{\mu},\color{blue}{\sigma},\scriptsize\text{df}\normalsize) = \frac{\Gamma\left(\frac{\scriptsize\text{df}\normalsize+1}{2}\right)} {\color{blue}{\sigma}\sqrt{\scriptsize\text{df}\normalsize\,\pi}~\Gamma\left(\frac{\scriptsize\text{df}\normalsize}{2}\right)}\left(1+\frac{1}{\scriptsize\text{df}\normalsize}\left(\frac{x-\color{green}{\mu}}{\color{blue}{\sigma}}\right)^2\right)^{-\frac{\text{df}+1}{2}}
-\]</span></p>
-<p>Ähnlich wie beim z-Test hat es sich in der Praxis aber durchgesetzt immer mit standardisierten Prüfgrößen (wie <span class="math inline">\(z\)</span> oder <span class="math inline">\(t\)</span>) zu arbeiten. Daher finden die unstandardisierte t- und Normalverteilung im Kontext der Hypothesentestung selten eine Anwendung.</p>
-<div style="margin-top: -5px">
-<p>Der <strong>Vorteil standardisierter Prüfgrößen</strong> ist, dass diese vergleichbar zwischen Studien sind. Ein bestimmter z- oder t-Wert hat eine Aussagekraft, ohne den Standardfehler einer Studie zu kennen.</p>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>t-Verteilung versus Normalverteilung</h2>
-<div class="vspace-medium">
-
-</div>
+<h2>t-Verteilung versus Standardormalverteilung</h2>
 <div>
 <ul>
 <li>Der einzige Parameter der t-Verteilung, die Zahl der Freiheitsgrade <span class="math inline">\(\text{df}\)</span>, bestimmt die Form der Verteilung.</li>
-<li>Die Zahl der Freiheitsgrade df hängt eng mit der Stichprobengröße <span class="math inline">\(n\)</span> zusammen<br>(z.B. <span class="math inline">\(\text{df}=n-1\)</span> bei einer Mittelwertdifferenz abhängiger Messungen).</li>
-<li>Je größer df/Stichprobengröße, desto ähnlicher wird die t-Verteilung der Normalverteilung!</li>
+<li>Die Zahl der Freiheitsgrade <span class="math inline">\(df\)</span> hängt eng mit der Stichprobengröße <span class="math inline">\(n\)</span> zusammen<br>(z.B. <span class="math inline">\(\text{df}=n-1\)</span> bei einer Mittelwertdifferenz abhängiger Messungen).</li>
+<li>Je größer <span class="math inline">\(df\)</span> bzw. <span class="math inline">\(n\)</span>, desto ähnlicher wird die t-Verteilung der Standardnormalverteilung!</li>
 </ul>
 </div>
 <div class="vspace-small">
 
 </div>
 
-<!----------------->
-<!--- New slide --->
-<!----------------->
-<img data-src="images/tdist2.png" class="r-stretch"></section>
-<section class="slide level2">
-<h2><span style="color: darkred">Intuition: verdickte Flanken der t-Verteilung</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<div>
-<ul>
-<li>Warum sind die Flanken der Verteilung der Testgröße <span class="math inline">\(t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}\)</span> stärker ausgeprägt, wenn <span class="math inline">\(\hat{\sigma}\)</span> auf Basis der Stichprobe geschätzt werden muss?</li>
-<li>Der Grund liegt in der (Chi-)Verteilung der Zufallsvariable <span class="math inline">\(\hat{\sigma}\)</span> im Nenner:
-<ul>
-<li>Bei kleinen Stichprobengrößen (kleines df), gibt es eine Assymmetrie der Verteilung hin zu Werten kleiner dem Mittelwert (welcher die korrekte Schätzung von <span class="math inline">\(\sigma\)</span> repräsentiert — in der Abbildung gestrichelte Linien)</li>
-<li>D.h. wir <em>teilen</em> <span class="math inline">\(\hat{\theta}\)</span> <em>überproportional häufig durch zu kleine Werte</em>, wodurch die <em>Teststatistik</em> <span class="math inline">\(t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}\)</span> <em>überproportional häufig zu extreme (negative oder positive) Werte</em> liefert.</li>
-<li>Dies führt zu den stärkeren Flanken der t-Verteilung!</li>
-</ul></li>
-</ul>
+<img data-src="images/tdist2.png" class="r-stretch"><div class="vspace-small">
+
 </div>
-<p><img data-src="images/chi.png" style="margin-top: -20px !important"></p>
+<p>Die Standardabweichung der t-Verteilung ist im Gegensatz zur Standardnormalverteilung nicht exakt 1 sondern <span class="math inline">\(\sqrt{\frac{df}{df-2}}\)</span>. Für <span class="math inline">\(n\rightarrow\infty\)</span> und damit <span class="math inline">\(df\rightarrow\infty\)</span> nähert sich die Standardabweichung aber 1 an.</p>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -778,15 +717,6 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 </div>
 </div>
 <p><strong><span class="math inline">\(t_\text{crit}\)</span> gibt den Wert an, den die Prüfgröße <span class="math inline">\(t\)</span> mindestens erreichen muss, damit der zugehörige p-Wert kleiner als das Signifikanzniveau <span class="math inline">\(\alpha\)</span> ist.</strong></p>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Funktionen der t-Verteilung</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 110px; "></p>
-<p><img data-src="images/tdist_cdf.png" style="margin-left:40px !important" height="300"></p>
-<p><img data-src="images/tdist_cdfinv.png" height="400"></p>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
@@ -797,7 +727,7 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 </section>
 <section class="slide level2">
 <h2>t-Test</h2>
-<p>Zur Durchführung des t-Tests müssen wir uns über folgende Faktoren Gedanken machen:</p>
+<p>Zur Durchführung des t-Tests müssen wir uns über folgende Punkte Gedanken machen:</p>
 <div class="fragment">
 <p><strong>0. Sind die Voraussetzungen für einen t-Test gegeben?</strong></p>
 <p>Jeder statistische Test basiert auf bestimmten Annahmen. Der Test sollte daher nur dann angewendet werden, wenn diese Annahmen erfüllt sind (oder sich eine Verletzung der Annahme in der Praxis als wenig problematisch herausgestellt hat).</p>
@@ -856,22 +786,14 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 <p><img data-src="images/central_limit_theorem_average.png" style="margin-top: 15px !important" height="230"></p>
 </div>
 </div>
-<div class="fragment" style="font-size: 24px">
 <p><strong>Warum wird also plötzlich eine Normalverteilung des Merkmals <span class="math inline">\(X\)</span> in der Population vorausgesetzt?</strong></p>
-</div>
-<div style="font-size:24px !important">
+<div style="margin-top: 8px">
 <div class="fragment">
-<p>Zwei Gründe:</p>
-</div>
-<div style="margin-top: -13px">
-<ul>
-<li class="fragment">Damit <span class="math inline">\(t=\hat{\theta}/\hat{se}\)</span> einer t-Verteilung folgt, müssen der Stichprobenkennwert <span class="math inline">\(\hat{\theta}\)</span> und sein Standardfehler <span class="math inline">\(\hat{se}\)</span> unabhängig sein (dürfen nicht korrelieren). Dies ist theoretisch nur erfüllt, wenn das gemessene Merkmal <span class="math inline">\(X\)</span> einer Normalverteilung folgt — tatsächlich lässt sich genau mit dieser Bedingung die Normalverteilung ableiten.</li>
-<li class="fragment">Der zentrale Grenzwertsatz für die Stichprobenverteilung von <span class="math inline">\(\hat{\theta}\)</span> gilt streng genommen nur für <span class="math inline">\(n\rightarrow\infty\)</span>, was in empirischen Studien nie gegeben ist. Ist die Stichprobengröße <span class="math inline">\(n\)</span> begrenzt, kann die Stichprobenverteilung von <span class="math inline">\(\hat{\theta}\)</span> nur dann als normalverteilt angenommen werden, wenn auch das gemessene Merkmal <span class="math inline">\(X\)</span> in der Population normalverteilt ist (<a href="https://de.wikipedia.org/wiki/Satz_von_Cram%C3%A9r_(Normalverteilung)">Satz von Cramer</a>).</li>
-</ul>
+<p><u>Ein Grund:</u> damit <span class="math inline">\(t=\hat{\theta}/\hat{se}\)</span> einer t-Verteilung folgt, müssen der Stichprobenkennwert <span class="math inline">\(\hat{\theta}\)</span> und sein Standardfehler <span class="math inline">\(\hat{se}\)</span> unabhängig sein (dürfen nicht korrelieren). Dies ist genau dann erfüllt, wenn das gemessene Merkmal <span class="math inline">\(X\)</span> einer Normalverteilung folgt — tatsächlich lässt sich genau mit dieser Bedingung die Normalverteilung ableiten. <!-- - Der zentrale Grenzwertsatz für die Stichprobenverteilung von $\hat{\theta}$ gilt streng genommen nur für $n\rightarrow\infty$, was in empirischen Studien nie gegeben ist. Ist die Stichprobengröße $n$ begrenzt, kann die Stichprobenverteilung von $\hat{\theta}$ nur dann als normalverteilt angenommen werden, wenn auch das gemessene Merkmal $X$ in der Population normalverteilt ist ([Satz von Cramer](https://de.wikipedia.org/wiki/Satz_von_Cram%C3%A9r_(Normalverteilung))). --></p>
 </div>
 </div>
-<div class="fragment" style="margin-top: -15px">
-<p><strong>Aber wie erwähnt: trotz dieser theoretischen Fallstricke ist der t-Test in der Praxis<br>auch bei nicht-normalverteilten Populationsvariablen <span class="math inline">\(X\)</span> recht robust.</strong></p>
+<div class="fragment" style="margin-top: 35px">
+<p><strong>Aber wie erwähnt: trotz dieses theoretischen Fallstricks ist der t-Test in der Praxis<br>auch bei nicht-normalverteilten Populationsvariablen <span class="math inline">\(X\)</span> recht robust.</strong></p>
 </div>
 <!----------------->
 <!--- New slide --->
@@ -2025,6 +1947,86 @@ plt.savefig('images/paradoxia_histogram_inflammation_sem_nonsig.png', bbox_inche
 
 - Siehe auch [https://www.explainxkcd.com/wiki/index.php/1347](https://www.explainxkcd.com/wiki/index.php/1347)
  -->
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Bonuscontent</h1>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Die t-Verteilung ist bereits standardisiert</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 295px; right: 0px; height: 100px; "></p>
+<p>Vor der Einführung des z-Tests hatten wir zunächst die <strong>unstandardisierte Normalverteilung</strong> kennengelernt, die durch zwei Parameter definiert ist: Mittelwert <span class="math inline">\(\mu\)</span> und Standardabweichung <span class="math inline">\(\sigma\)</span>:</p>
+<p><span class="math display">\[
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+\]</span></p>
+<p>Verwenden wir statt <span class="math inline">\(x\)</span> die standardisierte Variable <span class="math inline">\(\frac{x-\mu}{\sigma}\)</span>, vereinfacht sich die Nullhypothesen-Verteilung zur <strong>Standardnormalverteilung</strong>:</p>
+<div style="margin-top: -10px">
+<p><span class="math display">\[
+f(x)=\varphi(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}
+\]</span></p>
+</div>
+<p>Die Standardnormalverteilung hat keinen Parameter mehr (nur noch die <em>Variable</em> <span class="math inline">\(x\)</span>). Da es sich beim z-Wert auch um eine standardisierte Variable handelte, konnten wir auch für <span class="math inline">\(z\)</span> eine Standardnormalverteilung annehmen:</p>
+<div style="margin-top: -10px">
+<p><span class="math display">\[
+f(z)=\varphi(z)=\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}
+\]</span></p>
+</div>
+<p>Die <strong>t-Verteilung</strong> hatten wir dagegen direkt auf Basis der standardisierten Prüfgröße <span class="math inline">\(\frac{\hat{\theta}}{\hat{se}}\)</span> eingeführt. <span style=" color: navy !important;"><strong>Die klassische t-Verteilung ist aus diesem Grund bereits eine <em>standardisierte Verteilung</em>, die nicht mehr vom Mittelwert oder Streuung abhängt.</strong></span> Im Gegensatz zur Standardnormalverteilung hat sie aber noch einen Parameter: die Zahl der Freiheitsgrade <span class="math inline">\(\text{df}\)</span>.</p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Unstandardisierte t-Verteilung</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 110px; "></p>
+<p>Die Formel für die klassische (standardisierte) t-Verteilung lautet:</p>
+<div style="margin-top: -7px">
+<p><span class="math display">\[
+f_t(x|\scriptsize\text{df}\normalsize) = \frac{\Gamma\left(\frac{\scriptsize\text{df}\normalsize+1}{2}\right)} {\sqrt{\scriptsize\text{df}\normalsize\,\pi}~\Gamma\left(\frac{\scriptsize\text{df}\normalsize}{2}\right)}\left(1+\frac{1}{\scriptsize\text{df}\normalsize}x^{2}\right)^{-\frac{\text{df}+1}{2}}\qquad \left(\Gamma\text{ ist die Gamma-Funktion}\right)
+\]</span></p>
+</div>
+<p>Wie die Standardnormalverteilung hat die t-Verteilung Mittelwert 0 (daher kann sie als Nullhypothesenverteilung fungieren). Ihre Streuung ist jedoch nicht exakt 1, sondern hängt von der Zahl der Freiheitsgrade ab: <span class="math inline">\(\sigma^2=\frac{\scriptsize\text{df}\normalsize}{\scriptsize\text{df}\normalsize-2}\)</span>.</p>
+<div style="margin-top: -3px">
+<p>Tatsächlich gibt es auch zur t-Verteilung ein unstandardisiertes Pendant, die <strong>nicht-standardisierte t-Verteilung</strong>, die von Mittelwert <span class="math inline">\(\color{green}{\mu}\)</span> und Streuung <span class="math inline">\(\color{blue}{\sigma}\)</span> abhängt:</p>
+</div>
+<p><span class="math display">\[
+f_t(x|\color{green}{\mu},\color{blue}{\sigma},\scriptsize\text{df}\normalsize) = \frac{\Gamma\left(\frac{\scriptsize\text{df}\normalsize+1}{2}\right)} {\color{blue}{\sigma}\sqrt{\scriptsize\text{df}\normalsize\,\pi}~\Gamma\left(\frac{\scriptsize\text{df}\normalsize}{2}\right)}\left(1+\frac{1}{\scriptsize\text{df}\normalsize}\left(\frac{x-\color{green}{\mu}}{\color{blue}{\sigma}}\right)^2\right)^{-\frac{\text{df}+1}{2}}
+\]</span></p>
+<p>Ähnlich wie beim z-Test hat es sich in der Praxis aber durchgesetzt immer mit standardisierten Prüfgrößen (wie <span class="math inline">\(z\)</span> oder <span class="math inline">\(t\)</span>) zu arbeiten. Daher finden die unstandardisierte t- und Normalverteilung im Kontext der Hypothesentestung selten eine Anwendung.</p>
+<div style="margin-top: -5px">
+<p>Der <strong>Vorteil standardisierter Prüfgrößen</strong> ist, dass diese vergleichbar zwischen Studien sind. Ein bestimmter z- oder t-Wert hat eine Aussagekraft, ohne den Standardfehler einer Studie zu kennen.</p>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style="color: darkred">Intuition: verdickte Flanken der t-Verteilung</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
+<div>
+<ul>
+<li>Warum sind die Flanken der Verteilung der Testgröße <span class="math inline">\(t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}\)</span> stärker ausgeprägt, wenn <span class="math inline">\(\hat{\sigma}\)</span> auf Basis der Stichprobe geschätzt werden muss?</li>
+<li>Der Grund liegt in der (Chi-)Verteilung der Zufallsvariable <span class="math inline">\(\hat{\sigma}\)</span> im Nenner:
+<ul>
+<li>Bei kleinen Stichprobengrößen (kleines df), gibt es eine Assymmetrie der Verteilung hin zu Werten kleiner dem Mittelwert (welcher die korrekte Schätzung von <span class="math inline">\(\sigma\)</span> repräsentiert — in der Abbildung gestrichelte Linien)</li>
+<li>D.h. wir <em>teilen</em> <span class="math inline">\(\hat{\theta}\)</span> <em>überproportional häufig durch zu kleine Werte</em>, wodurch die <em>Teststatistik</em> <span class="math inline">\(t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}\)</span> <em>überproportional häufig zu extreme (negative oder positive) Werte</em> liefert.</li>
+<li>Dies führt zu den stärkeren Flanken der t-Verteilung!</li>
+</ul></li>
+</ul>
+</div>
+<p><img data-src="images/chi.png" style="margin-top: -20px !important"></p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Funktionen der t-Verteilung</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 110px; "></p>
+<p><img data-src="images/tdist_cdf.png" style="margin-left:40px !important" height="300"></p>
+<p><img data-src="images/tdist_cdfinv.png" height="400"></p>
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Vorlesung 11: t-Test</p>
