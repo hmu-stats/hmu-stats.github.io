@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -358,7 +423,7 @@
 </div>
 <div class="columns">
 <div class="column" style="width:68%;">
-<p><strong>Erinnerung:</strong> den z-Test haben Sie unter der Voraussetzung durchgeführt, dass die Streuung <span class="math inline">\(\sigma\)</span> in der Population bekannt ist (bzw. die Streuung<em>en</em> bei zwei Populationen).</p>
+<p><strong>Erinnerung:</strong> den z-Test haben Sie unter der Voraussetzung durchgeführt, dass die Merkmalsstreuungen <span class="math inline">\(\sigma\)</span> bzw. der Standardfehler <span class="math inline">\(se\)</span> in der Population bekannt sind.</p>
 <p><img data-src="images/paradoxia_histogram_inflammation_sem_sig.png" style="margin-top: 30px !important;margin-bottom: 50px !important;" height="270"></p>
 </div><div class="column" style="width:32%;">
 <p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important" height="200"></p>
@@ -385,6 +450,7 @@ setup:
 ```
 
 # Einschub: Anmerkungen zur Klausur -->
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {tex} number-lines code-with-copy"><code class="sourceCode"></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -463,27 +529,27 @@ $$
 <p>Zur Erinnerung: beim <strong>z-Test</strong> haben wir für die Verteilung der Prüfgröße <span class="math inline">\(z=\frac{\hat{\theta}}{se}\)</span> eine Normalverteilung annehmen können. Grund:</p>
 <ul>
 <li class="fragment">Aufgrund des zentralen Grenzwertsatzes können statistische Kennwerte bei ausreichender Stichprobengröße als normalverteilt angenommen werden.</li>
-<li class="fragment">Beim z-Test wird die Standardabweichung <span class="math inline">\(\sigma\)</span> der Population, und damit auch der Standardfehler <span class="math inline">\(se=\frac{\sigma}{\sqrt{n}}\)</span>, als bekannt angenommen.</li>
-<li class="fragment">De facto wird also bei der Berechnung der Prüfgröße <span class="math inline">\(z=\frac{\hat{\theta}}{se}\)</span> eine normalverteilte Variable (<span class="math inline">\(\hat{\theta}\)</span>) durch eine Konstante (<span class="math inline">\(se=\sigma/\sqrt{n}\)</span>) geteilt, so dass auch die Prüfgröße normalverteilt ist.</li>
+<li class="fragment">Beim z-Test werden die Standardabweichung <span class="math inline">\(\sigma\)</span> der Population(en), und damit auch der Standardfehler <span class="math inline">\(se\)</span> (z.B. <span class="math inline">\(se=\frac{\sigma}{\sqrt{n}}\)</span> bei der Einzelmessung), als bekannt angenommen.</li>
+<li class="fragment">De facto wird also bei der Berechnung der Prüfgröße <span class="math inline">\(z=\frac{\hat{\theta}}{se}\)</span> eine normalverteilte Variable (<span class="math inline">\(\hat{\theta}\)</span>) durch eine bekannte Konstante <span class="math inline">\(se\)</span> geteilt, so dass auch die Prüfgröße <span class="math inline">\(z\)</span> normalverteilt ist.</li>
 </ul>
 <div class="vspace-large">
 
 </div>
-<p><u>Frage:</u> wie verhält es sich, wenn <span class="math inline">\(\sigma\)</span> <em>nicht bekannt</em> ist?</p>
+<p><u>Frage:</u> wie verhält es sich, wenn <span class="math inline">\(se\)</span> <em>nicht bekannt</em> ist?</p>
 </div>
 </section>
 <section class="slide level2">
 <h2>Problemstellung</h2>
 <!-- <div class="vspace-xlarge"></div> -->
 <ul>
-<li class="fragment">Ist <span class="math inline">\(\sigma\)</span> <em>nicht bekannt</em> — und das ist der Regelfall — <strong>muss die Streuung auf Basis der Stichprobe als <span class="math inline">\(\hat{\sigma}\)</span> geschätzt werden</strong>.</li>
-<li class="fragment">Die Schätzung von <span class="math inline">\(\hat{\sigma}\)</span> ist mit Unsicherheit behaftet und daher selbst eine <strong>Zufallsvariable</strong>.</li>
-<li class="fragment">Wir teilen also eine normalverteilte Zufallsvariable <span class="math inline">\(\hat{\theta}\)</span> durch eine wie-auch-immer-verteilte (*) zweite Zufallsvariable <span class="math inline">\(\hat{\sigma}\)</span>.<br><span style="font-size: 22px !important">(* die wie-auch-immer-Verteilung ist bekannt: <span class="math inline">\(\hat{\sigma}\)</span> folgt der Chi-Verteilung bzw. χ-Verteilung)</span></li>
+<li class="fragment">Ist der Populationsstandardfehler <span class="math inline">\(se\)</span> <em>nicht bekannt</em> — und das ist der Regelfall — <strong>muss der Standardfehler auf Basis der Stichprobe als <span class="math inline">\(\hat{se}\)</span> geschätzt werden</strong>.</li>
+<li class="fragment">Die Schätzung von <span class="math inline">\(\hat{se}\)</span> ist mit Unsicherheit behaftet und daher selbst eine <strong>Zufallsvariable</strong>.</li>
+<li class="fragment">Wir teilen also eine normalverteilte Zufallsvariable <span class="math inline">\(\hat{\theta}\)</span> durch eine wie-auch-immer-verteilte (*) zweite Zufallsvariable <span class="math inline">\(\hat{se}\)</span>.<br><span style="font-size: 22px !important">(* die wie-auch-immer-Verteilung ist bekannt: <span class="math inline">\(\hat{se}\)</span> folgt der Chi-Verteilung bzw. χ-Verteilung)</span></li>
 <li class="fragment"><strong>In diesem Fall können wir nicht mehr davon ausgehen, dass die Prüfgröße normalverteilt ist!</strong></li>
 </ul>
 <div class="colorbox fragment" style="margin-top:13px">
 <p>Die Gretchen-Frage ist daher: welcher Verteilung folgt die Prüfstatistik <span class="math display">\[
-\frac{\hat{\theta}}{\hat{se}}=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}\qquad\text{?}\qquad\text{(mit Betonung auf dem ^ über der Streuung $se$ bzw. $\sigma$)}
+\frac{\hat{\theta}}{\hat{se}}\qquad\text{?}\qquad\text{(mit Betonung auf dem ^ über dem Standardfehler $se$)}
 \]</span></p>
 </div>
 <div class="notabene fragment" style="margin-top: 25px">
@@ -559,12 +625,12 @@ t\text{-Verteilung:}\qquad f_t(x|\scriptsize\text{df}\normalsize)
 <div class="column" style="width:60%;">
 <div>
 <ul>
-<li>Wir kennen nun also die Form der Nullverteilung, wenn die Streuung als <span class="math inline">\(\hat{\sigma}\)</span> auf Basis der Stichprobe geschätzt werden muss: <strong>t-Verteilung</strong></li>
-<li>In Korrespondenz mit dem Namen der Verteilung wird die Prüfgröße auf Basis von <span class="math inline">\(\hat{\sigma}\)</span> als <span style=" color: navy !important;"><strong>t-Wert</strong></span> bezeichnet:</li>
+<li>Wir kennen nun also die Form der Nullverteilung, wenn der Standardfehler als <span class="math inline">\(\hat{se}\)</span> auf Basis der Stichprobe geschätzt werden muss: <strong>t-Verteilung</strong></li>
+<li>In Korrespondenz mit dem Namen der Verteilung wird die Prüfgröße auf Basis von <span class="math inline">\(\hat{se}\)</span> als <span style=" color: navy !important;"><strong>t-Wert</strong></span> bezeichnet:</li>
 </ul>
 </div>
 <p><span class="math display">\[
-t = \frac{\hat{\theta}}{\hat{se}} = \frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
+t = \frac{\hat{\theta}}{\hat{se}}
 \]</span></p>
 </div><div class="column" style="width:40%;">
 <p><img data-src="images/ttest1.png" style="margin-top: -40px !important"></p>
@@ -616,8 +682,8 @@ t = \frac{\hat{\theta}}{\hat{se}} = \frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 <div>
 <ul>
 <li>Der einzige Parameter der t-Verteilung, die Zahl der Freiheitsgrade <span class="math inline">\(\text{df}\)</span>, bestimmt die Form der Verteilung.</li>
-<li>Die Zahl der Freiheitsgrade <span class="math inline">\(df\)</span> hängt eng mit der Stichprobengröße <span class="math inline">\(n\)</span> zusammen<br>(z.B. <span class="math inline">\(\text{df}=n-1\)</span> bei einer Mittelwertdifferenz abhängiger Messungen).</li>
-<li>Je größer <span class="math inline">\(df\)</span> bzw. <span class="math inline">\(n\)</span>, desto ähnlicher wird die t-Verteilung der Standardnormalverteilung!</li>
+<li>Die Zahl der Freiheitsgrade <span class="math inline">\(\text{df}\)</span> hängt eng mit der Stichprobengröße <span class="math inline">\(n\)</span> zusammen<br>(z.B. <span class="math inline">\(\text{df}=n-1\)</span> bei einer Mittelwertdifferenz abhängiger Messungen).</li>
+<li>Je größer <span class="math inline">\(\text{df}\)</span> bzw. <span class="math inline">\(n\)</span>, desto ähnlicher wird die t-Verteilung der Standardnormalverteilung!</li>
 </ul>
 </div>
 <div class="vspace-small">
@@ -627,7 +693,7 @@ t = \frac{\hat{\theta}}{\hat{se}} = \frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 <img data-src="images/tdist2.png" class="r-stretch"><div class="vspace-small">
 
 </div>
-<p>Die Standardabweichung der t-Verteilung ist im Gegensatz zur Standardnormalverteilung nicht exakt 1 sondern <span class="math inline">\(\sqrt{\frac{df}{df-2}}\)</span>. Für <span class="math inline">\(n\rightarrow\infty\)</span> und damit <span class="math inline">\(df\rightarrow\infty\)</span> nähert sich die Standardabweichung aber 1 an.</p>
+<p>Die Standardabweichung der t-Verteilung ist im Gegensatz zur Standardnormalverteilung nicht exakt 1 sondern <span class="math inline">\(\sqrt{\frac{\text{df}}{\text{df}-2}}\)</span>. Für <span class="math inline">\(n\rightarrow\infty\)</span> und damit <span class="math inline">\(\text{df}\rightarrow\infty\)</span> nähert sich die Standardabweichung aber 1 an.</p>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -682,12 +748,12 @@ F_t(x|\scriptsize\text{df}\normalsize) = \int_{-\infty}^{x}f_t(x'|\scriptsize\te
 t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 \]</span></p>
 </div><div class="column" style="width:55%;">
-<p><img data-src="images/tdist_cdfinv0.png" style="margin-top:-50px !important"></p>
+<p><img data-src="images/tdist_cdfinv0_simple.png" style="margin-top:-50px !important"></p>
 </div>
 </div>
 <p>wobei <span class="math inline">\(a\)</span> die Fläche (<u>a</u>rea) bezeichnet. Da die t-Verteilung eine Wahrscheinlichkeitsverteilung ist, kann die Fläche <span class="math inline">\(a\)</span> nur Werte zwischen 0 und 1 annehmen.</p>
 <div class="fragment">
-<p>Die Funktion wird auch <strong>Quantilfunktion</strong> genannt, da sie z.B. für <span class="math inline">\(a=0{,}8\)</span> den Wert <span class="math inline">\(t\)</span> zurück gibt, der 80% der t-Verteilung (von <span class="math inline">\(-\infty\)</span> gerechnet) umfasst.</p>
+<p>Die Funktion wird auch <strong>Quantilfunktion</strong> genannt, da sie z.B. für <span class="math inline">\(a=0.8\)</span> den Wert <span class="math inline">\(t\)</span> zurück gibt, der 80% der t-Verteilung umfasst (von <span class="math inline">\(-\infty\)</span> gerechnet; im Beispiel <span class="math inline">\(t=0.85\)</span>).</p>
 </div>
 <div class="notabene fragment">
 <div class="columns">
@@ -738,7 +804,7 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 </div>
 <div class="fragment">
 <p><strong>2. Zahl der Freiheitsgrade</strong></p>
-<p>Die Zahl der Freiheitsgrade <span class="math inline">\(\text{df}\)</span> ist als Parameter für die t-Verteilung notwendig, und damit auch notwendig um Flächen (wie p-Werte) unter der Verteilung zu berechnen. De facto übernehmen das heute Computerprogramme, jedoch ist es nach wie vor Usus die Zahl der Freiheitsgrade eine statistischen Testes in wissenschaftlichen Veröffentlichungen anzugeben.</p>
+<p>Die Zahl der Freiheitsgrade <span class="math inline">\(\text{df}\)</span> ist als Parameter für die t-Verteilung notwendig, und damit auch notwendig um Flächen (wie p-Werte) unter der Verteilung zu berechnen. De facto übernehmen das heute Computerprogramme, jedoch ist es nach wie vor Usus die Zahl der Freiheitsgrade eines statistischen Testes in wissenschaftlichen Veröffentlichungen anzugeben.</p>
 </div>
 <div class="fragment">
 <p><strong>3. Signifikanzniveau &amp; ein/zweiseitige Testung</strong></p>
@@ -761,6 +827,7 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 <li>Problematisch sind stark schiefe Verteilungen (rechts- oder linksschief) bei kleinen Stichprobengrößen.</li>
 <li>Kann von keiner Normalverteilung ausgegangen werden: nicht-parametrische Testverfahren (z.B. Mann-Whitney-U-Test).</li>
 </ul></li>
+<li>Siehe Bonuscontent für eine <a href="#/tnormal" style="color: darkred">Begründung der Normalverteilungsvoraussetzung beim t-Test</a>.</li>
 </ul>
 </div>
 </div><div class="column" style="width:30%;">
@@ -777,32 +844,9 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style=" color: darkred !important;">But wait..</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<div class="columns">
-<div class="column" style="width:38%;">
-<p><span style="font-size: 24px">.. hatten wir nicht festgestellt, dass die Stichprobenverteilung von Kennwerten <span class="math inline">\(\hat{\theta}\)</span> gemäß dem zentralen Grenzwertsatz bei <em>beliebigen</em> Populationsverteilungen des gemessenen Merkmals <span class="math inline">\(X\)</span> normalverteilt ist? (vgl. Vorlesung 08)</span></p>
-</div><div class="column" style="width:62%;">
-<p><img data-src="images/central_limit_theorem_average.png" style="margin-top: 15px !important" height="230"></p>
-</div>
-</div>
-<p><strong>Warum wird also plötzlich eine Normalverteilung des Merkmals <span class="math inline">\(X\)</span> in der Population vorausgesetzt?</strong></p>
-<div style="margin-top: 8px">
-<div class="fragment">
-<p><u>Ein Grund:</u> damit <span class="math inline">\(t=\hat{\theta}/\hat{se}\)</span> einer t-Verteilung folgt, müssen der Stichprobenkennwert <span class="math inline">\(\hat{\theta}\)</span> und sein Standardfehler <span class="math inline">\(\hat{se}\)</span> unabhängig sein (dürfen nicht korrelieren). Dies ist genau dann erfüllt, wenn das gemessene Merkmal <span class="math inline">\(X\)</span> einer Normalverteilung folgt — tatsächlich lässt sich genau mit dieser Bedingung die Normalverteilung ableiten. <!-- - Der zentrale Grenzwertsatz für die Stichprobenverteilung von $\hat{\theta}$ gilt streng genommen nur für $n\rightarrow\infty$, was in empirischen Studien nie gegeben ist. Ist die Stichprobengröße $n$ begrenzt, kann die Stichprobenverteilung von $\hat{\theta}$ nur dann als normalverteilt angenommen werden, wenn auch das gemessene Merkmal $X$ in der Population normalverteilt ist ([Satz von Cramer](https://de.wikipedia.org/wiki/Satz_von_Cram%C3%A9r_(Normalverteilung))). --></p>
-</div>
-</div>
-<div class="fragment" style="margin-top: 35px">
-<p><strong>Aber wie erwähnt: trotz dieses theoretischen Fallstricks ist der t-Test in der Praxis<br>auch bei nicht-normalverteilten Populationsvariablen <span class="math inline">\(X\)</span> recht robust.</strong></p>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
 <h2>1. Welche Art von t-Test benötige ich?</h2>
 <div class="vcenter">
-<p><img data-src="images/ttest_decisiontree.png" height="640"></p>
+<p><img data-src="images/ttest_decisiontree_v2.png" height="640"></p>
 </div>
 <!----------------->
 <!--- New slide --->
@@ -827,7 +871,7 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 <p><strong>Beispiel Varianz:</strong> Angenommen, wir wollen für einer Stichprobe aus vier Werten die Varianz bestimmen:</p>
 <div style="margin-top:-15px !important; margin-bottom:-5px !important">
 <p><span class="math display">\[
-\sigma^2 = \frac{1}{4}\sum_1^4 (x_i-\bar{x})^2
+\hat{\sigma}^2 = \frac{1}{4-1}\sum_{i=1}^4 (x_i-\bar{x})^2
 \]</span></p>
 </div>
 <p>Aus der Formel der Varianz erkennen wir, dass wir zur Berechnung der Varianz <strong>einen Parameter</strong> aus den Daten bestimmen müssen, nämlich der Mittelwert <span class="math inline">\(\bar{x}\)</span>. Die Zahl der Freiheitsgrade ergibt sich damit plain &amp; simple nach obiger Definition als <strong>Stichprobengröße n minus 1</strong>, also in diesem Beispiel <span class="math inline">\(\text{df}=3\)</span>.</p>
@@ -845,11 +889,11 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 <div class="column" style="width:70%;">
 <div>
 <ul>
-<li>Für die Zahl der Freiheitsgrade beim t-Test gilt, dass die Zahl der Freiheitsgrade ausschließlich auf Basis der Streuung <span class="math inline">\(\hat{\sigma}\)</span> im Nenner bestimmt wird.</li>
+<li>Für die Zahl der Freiheitsgrade beim t-Test gilt, dass die Zahl der Freiheitsgrade ausschließlich auf Basis der Streuung <span class="math inline">\(\hat{se}\)</span> im Nenner bestimmt wird.</li>
 </ul>
 </div>
 <p><span class="math display">\[
-t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
+t=\frac{\hat{\theta}}{\hat{se}}
 \]</span></p>
 </div><div class="column" style="width:30%;">
 <div style="margin-top: -70px">
@@ -858,7 +902,7 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 </div>
 </div>
 <ul>
-<li class="fragment">Häufig reicht es, zu zählen, wie viele Mittelwerte für die Berechnung von <span class="math inline">\(\hat{\sigma}\)</span> im Nenner des t-Wertes für die verschiedenen Tests verwendet werden:
+<li class="fragment">Häufig reicht es, zu zählen, wie viele Mittelwerte für die Berechnung von <span class="math inline">\(\hat{se}\)</span> im Nenner des t-Wertes für die verschiedenen Tests verwendet werden:
 <ul>
 <li class="fragment">Einstichproben-t-Test: 1 Mittelwert für 1 Stichprobe ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
 <li class="fragment">Differenzen-t-Test: 1 Mittelwert für 1 Stichprobe (hier: Mittelwert <span class="math inline">\(\Delta\bar{x}\)</span> der Differenzen <span class="math inline">\(\Delta\bar{x}_i\)</span>) ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
@@ -913,7 +957,7 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 <ul>
 <li>Der Wert <span class="math inline">\(\alpha\)</span> wird auch Irrtumswahrscheinlichkeit genannt — sie gibt das Risiko an, mit dem wir bereit sind, die Nullhypothese fälschlicherweise abzulehnen.
 <ul>
-<li>Beispiel: ist <span class="math inline">\(\alpha=0{,}05\)</span>, so gibt es eine 5%-ige Wahrscheinlichkeit, einen signifikanten Effekt zu erhalten <em>obwohl die Nullhypothese zutrifft</em>.</li>
+<li>Beispiel: ist <span class="math inline">\(\alpha=0.05\)</span>, so gibt es eine 5%-ige Wahrscheinlichkeit, die Nullhypothese abzulehnen, <em>obwohl sie in Wahrheit zutrifft</em>.</li>
 <li>Je kleiner <span class="math inline">\(\alpha\)</span>, desto “konservativer” der Test, d.h. desto eher will ich vermeiden, einen Effekt fälschlicherweise als signifikant zu werten (erhöhe aber dabei mein Risko, einen wahren Effekt zu “verpassen”).</li>
 </ul></li>
 </ul>
@@ -922,6 +966,43 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 <p><img data-src="images/significance_level.png" style="margin-top:0px !important"></p>
 </div>
 </div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>3. Signifikanzniveau &amp; ein/zweiseitige Testung</h2>
+<ul>
+<li class="fragment">Abhänging davon, ob die Hypothese gerichtet bzw. ungerichtet wird ein einseitiger bzw. zweiseitiger t-Test durchgeführt.</li>
+</ul>
+<!-- <div class="vspace-medium"></div> -->
+<!---  Table --->
+<table style="width:99%;">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">Einseitiger Test<br>(gerichtete Hypothese)</th>
+<th style="text-align: center;">Zweiseitiger Test<br>(ungerichtete Hypothese)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Berechnung des kritischen t-Wertes</strong></td>
+<td style="text-align: center;"><img data-src="images/ttest1_alpha2.png"></td>
+<td style="text-align: center;"><img data-src="images/ttest1_alpha_ungerichtet2.png"></td>
+</tr>
+<tr class="even">
+<td><strong>Berechnung des p-Wertes</strong></td>
+<td style="text-align: center;"><img data-src="images/ttest1_pvalue.png" style="margin-top:15px !important"></td>
+<td style="text-align: center;"><img data-src="images/ttest1_pvalue_ungerichtet.png" style="margin-top:15px !important"></td>
+</tr>
+</tbody>
+</table>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
@@ -935,11 +1016,12 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 <ul>
 <li class="fragment">Zur Erinnerung, bei einem statistischen Test zu Mittelwertdifferenzen stellen wir folgende Fragen:
 <ul>
-<li class="fragment">Unterscheiden sich die Mittelwerte von zwei unabhängigen Stichproben signifikant voneinander? (Zweistichproben-Test)</li>
-<li class="fragment">Unterscheiden sich die Mittelwerte von zwei abhängigen Bedingungen signifikant voneinander? (Einstichproben-Test mit zwei abhängigen Messungen)</li>
-<li class="fragment">Unterscheidet sich ein Mittelwert signifikant von einem fixen Referenzwert? (Einstichproben-Test mit Einzelmessung)</li>
+<li class="fragment">Unterscheidet sich ein Mittelwert signifikant von einem Referenzwert? (Einstichprobentest mit Einzelmessung)<br>
+</li>
+<li class="fragment">Unterscheiden sich die Mittelwerte von zwei abhängigen Bedingungen signifikant voneinander? (Einstichprobentest mit zwei abhängigen Messungen)</li>
+<li class="fragment">Unterscheiden sich die Mittelwerte von zwei unabhängigen Stichproben signifikant voneinander? (Zweistichprobentest)</li>
 </ul></li>
-<li class="fragment">Beispiel Paradoxia:</li>
+<li class="fragment">Beispiel Paradoxia (Zweistichprobentest):</li>
 </ul>
 <div class="fragment" style="margin-top: 15px">
 <p><img data-src="images/mittelwertdifferenz_paradoxia.png" height="300"></p>
@@ -960,15 +1042,24 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 \]</span></p>
 <ul>
 <li class="fragment">Die Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span> ist einfach zu bestimmen, die zentrale Frage lautet daher: <strong>wie berechnet sich der Standardfehler <span class="math inline">\(\hat{se}\)</span> einer Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span>?</strong></li>
-<li class="fragment"><strong>Merke:</strong> der Standardfehler im Nenner des t-Wertes bezieht sich immer auf die Prüfgröße <span class="math inline">\(\hat{\theta}\)</span>. Die Frage lautet also bei jedem t-Test: was ist der Standardfehler von <span class="math inline">\(\hat{\theta}\)</span> bzw. was ist die Standardabweichung der Stichprobenverteilung von <span class="math inline">\(\hat{\theta}\)</span>?</li>
-<li class="fragment">Wie beim z-Test hängt die Berechnung des Standardfehlers von Mittelwertdifferenzen von verschiedenen Faktoren ab.</li>
 </ul>
+<div class="merke" style="margin-top: 130px; font-size: 26px">
+<div class="columns">
+<div class="column" style="width:5%;">
+<div style="margin-top: 18px">
+<p><img data-src="images/merke.png" height="55"></p>
+</div>
+</div><div class="column" style="width:95%;">
+<p>Der Standardfehler im Nenner des t-Wertes bezieht sich immer auf die Prüfgröße <span class="math inline">\(\hat{\theta}\)</span>. Die Frage lautet also bei jedem t-Test: was ist der Standardfehler von <span class="math inline">\(\hat{\theta}\)</span> bzw. was ist die Standardabweichung der Stichprobenverteilung von <span class="math inline">\(\hat{\theta}\)</span>?</p>
+</div>
+</div>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style="font-size:40px">Standardfehler bei Mittelwertdifferenzen (<span class="math inline">\(\sigma\)</span> unbekannt)</span></h2>
+<h2><span style="font-size:37px">t-Test: Veranschaulichung der Standardfehler von Mittelwertdifferenzen</span></h2>
 <div class="vspace-small">
 
 </div>
@@ -976,7 +1067,7 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 <!----------------->
 <!--- New slide --->
 <!----------------->
-<img data-src="images/stichprobenverteilung_diff.png" class="r-stretch"></section>
+<img data-src="images/stichprobenverteilung_diff_v2.png" class="r-stretch"></section>
 <section class="slide level2">
 <h2><span style="font-size:38px">Standardfehler bei Mittelwertdifferenzen (<span class="math inline">\(\sigma\)</span> unbekannt): Cheat sheet</span></h2>
 <p>Das folgende Cheat sheet gibt Ihnen eine Übersicht über die Berechnung des Standardfehlers <span class="math inline">\(\hat{se}\)</span> von Mittelwertdifferenzen im Nenner der Prüfgröße <span class="math inline">\(t=\frac{\Delta\bar{x}}{\hat{se}}\)</span>:</p>
@@ -998,19 +1089,19 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 <td><span class="math inline">\(\hat{se}=\frac{\hat{\sigma}}{\sqrt{n}}\)</span></td>
 </tr>
 <tr class="even">
-<td><strong>Mittelwertdifferenz unabhängiger Messungen in <u>zwei Stichproben A und B</u> (ähnliche Varianzen)</strong><br>(→ Klassischer Zweistichproben-t-Test)</td>
-<td><span class="math inline">\(\hat{se} = \hat{\sigma}_\text{pooled}\sqrt{\frac{1}{n_A}+\frac{1}{n_B}}\)</span><br>
-<span class="math inline">\(\text{mit}\quad \hat{\sigma}_\text{pooled}=\sqrt{\frac{(n_A-1)\hat{\sigma}^2_A + (n_B-1)\hat{\sigma}^2_B}{n_A+n_B-2}}\)</span></td>
-</tr>
-<tr class="odd">
-<td><strong>Mittelwertdifferenz unabhängiger Messungen in <u>zwei Stichproben A und B</u> (unterschiedliche Varianzen)</strong><br>(→ Welch’s Zweistichproben-t-Test)</td>
-<td><span class="math inline">\(\hat{se}= \sqrt{\frac{\hat{\sigma}_A^2}{n_A} + \frac{\hat{\sigma}_B^2}{n_B}}\)</span></td>
-</tr>
-<tr class="even">
 <td><strong>Mittelwertdifferenz abhängiger Messungen A und B in <u>einer Stichprobe</u></strong><br>(→ Differenzen-t-Test)</td>
 <td><span class="math inline">\(\hat{se} = \frac{\hat{\sigma}_\Delta}{\sqrt{n}}\qquad\text{mit}\)</span><br>
-<span class="math inline">\(\hat{\sigma}_\Delta=\sqrt{\hat{\sigma}_A^2+\hat{\sigma}_B^2-2\,\hat{Cov}(X_A,X_B)}\)</span><br>
+<span class="math inline">\(\hat{\sigma}_\Delta=\sqrt{\hat{\sigma}_A^2+\hat{\sigma}_B^2-2\,\hat{\rho}\hat{\sigma}_A\hat{\sigma}_B}\)</span><br>
 <span class="math inline">\(\text{oder}\qquad\hat{\sigma}_\Delta=\sqrt{\frac{1}{n-1}\left(\Delta x_i-\Delta\bar{x}\right)^2}\)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Mittelwertdifferenz unabhängiger Messungen in <u>zwei Stichproben A und B</u> (ähnliche Varianzen)</strong><br>(→ Klassischer Zweistichproben-t-Test)</td>
+<td><span class="math inline">\(\hat{se} = \hat{\sigma}_\text{pooled}\sqrt{\frac{1}{n_A}+\frac{1}{n_B}}\quad\)</span><a href="#/pooledvariance" style="color: darkred">(siehe Herleitung)</a><br>
+<span class="math inline">\(\text{mit}\quad \hat{\sigma}_\text{pooled}=\sqrt{\frac{(n_A-1)\hat{\sigma}^2_A + (n_B-1)\hat{\sigma}^2_B}{n_A+n_B-2}}\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Mittelwertdifferenz unabhängiger Messungen in <u>zwei Stichproben A und B</u> (unähnliche Varianzen)</strong><br>(→ Welch’s Zweistichproben-t-Test)</td>
+<td><span class="math inline">\(\hat{se}= \sqrt{\frac{\hat{\sigma}_A^2}{n_A} + \frac{\hat{\sigma}_B^2}{n_B}}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1033,57 +1124,8 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style=" color: darkred !important;">Einschub: gepoolter Standardfehler</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<div style="margin-top: -10px">
-<ul>
-<li class="fragment">Im Cheat sheet auf der vorherigen Folie ist folgender Standardfehler für den Fall unabhängiger Messungen und ähnlicher Varianzen angegeben:</li>
-</ul>
-</div>
-<div style="margin-top: -30px">
-<div class="fragment">
-<p><span class="math display">\[
-\hat{se} = \hat{\sigma}_\text{pooled}\sqrt{\frac{1}{n_A}+\frac{1}{n_B}}
-\]</span></p>
-</div>
-</div>
-<div style="margin-top: -15px">
-<ul>
-<li class="fragment">Zur Herleitung starten wir wieder mit der allgemeinen Varianzsummenformel: wir wissen, dass sich die Varianzen der beiden Stichprobenmittelwerte (=quadrierte Standardfehler <span class="math inline">\(\hat{se}_A^2\)</span> und <span class="math inline">\(\hat{se}_B^2\)</span>) aufaddieren:</li>
-</ul>
-</div>
-<div style="margin-top: -54px">
-<div class="fragment">
-<p><span class="math display">\[
-\hat{se}^2 = \hat{se}_A^2 + \hat{se}_B^2\quad\rightarrow\quad \hat{se} = \sqrt{\hat{se}_A^2 + \hat{se}_B^2} = \sqrt{\frac{\hat{\sigma}_A^2}{n_A} + \frac{\hat{\sigma}_B^2}{n_B}}
-\]</span></p>
-</div>
-</div>
-<div style="margin-top: -15px">
-<ul>
-<li class="fragment">Können die Varianzen <span class="math inline">\(\hat{\sigma}_A^2\)</span> und <span class="math inline">\(\hat{\sigma}_B^2\)</span> als ähnlich angenommen werden, gilt folgende Überlegung: statt beide Varianzen einzeln zu schätzen, wird eine einheitliche <strong>gepoolte Varianz</strong> <span class="math inline">\(\hat{\sigma}_\text{pooled}\)</span> auf Basis beider Stichproben geschätzt (vgl. Vorlesung 07).
-<ul>
-<li class="fragment">Vorteil: diese Varianz kann präziser geschätzt werden als die Einzelvarianzen, da die kombinierte Stichprobenzahl <span class="math inline">\(n_A+n_B\)</span> zugrundegelegt wird.</li>
-</ul></li>
-<li class="fragment">Wir ersetzen also <span class="math inline">\(\hat{\sigma}_A^2\)</span> und <span class="math inline">\(\hat{\sigma}_B^2\)</span> jeweils durch <span class="math inline">\(\hat{\sigma}_\text{pooled}^2\)</span>:</li>
-</ul>
-</div>
-<div style="margin-top: -20px">
-<div class="fragment">
-<p><span class="math display">\[
-\hat{se} = \sqrt{\frac{\hat{\sigma}_\text{pooled}^2}{n_A} + \frac{\hat{\sigma}_\text{pooled}^2}{n_B}} = \hat{\sigma}_\text{pooled}\sqrt{\frac{1}{n_A}+\frac{1}{n_B}}\qquad\text{q.e.d.}
-\]</span></p>
-</div>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
 <h2>Zahl der Freiheitsgrade für t-Tests von Mittelwertdifferenzen</h2>
-<div class="vspace-medium">
-
-</div>
+<!-- <div class="vspace-medium"></div> -->
 <!---  Table --->
 <table>
 <colgroup>
@@ -1115,11 +1157,11 @@ t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
 <td><span class="math inline">\(\text{df} = n_A + n_B - 2\)</span>, da für die Berechnung von <span class="math inline">\(t\)</span> genau zwei Zwischenparameter bestimmt werden müssen (die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span>)</td>
 </tr>
 <tr class="even">
-<td><strong>Zweistichprobentest (unterschiedliche Varianzen, aka Welch’s t-Test)</strong></td>
+<td><strong>Zweistichprobentest (unähnliche Varianzen, aka Welch’s t-Test)</strong></td>
 <td>Unterscheiden sich die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> zwischen zwei Gruppen A und B? (<span class="math inline">\(\Delta\bar{x}=\bar{x}_A-\bar{x}_B\)</span>)</td>
 <td><strong>Welch–Satterthwaite-Gleichung:</strong><br>
 <span class="math inline">\(\text{df} = \frac{\left(\frac{\hat{\sigma}_A^2}{n_A}+\frac{\hat{\sigma}_B^2}{n_B}\right)^2}{\frac{\left(\hat{\sigma}_A^2/n_A\right)^2}{n_A-1}+\frac{\left(\hat{\sigma}_B^2/n_B\right)^2}{n_B-1}}\)</span><br>
-Falls <span class="math inline">\(n_A=n_B=n\)</span>: <span class="math inline">\(\text{df}=(n-1)\Big(1+\frac{2}{\left(\frac{\hat{\sigma}_A}{\hat{\sigma}_B}\right)^2+\left(\frac{\hat{\sigma}_B}{\hat{\sigma}_A}\right)^2}\Big)\)</span></td>
+Falls <span class="math inline">\(n_A=n_B=n:\quad\)</span><a href="#/welchsatterthwaiteintuition" style="color: darkred">(siehe Intuition)</a> <span class="math inline">\(\text{df}=(n-1)\Big(1+\frac{2}{\left(\frac{\hat{\sigma}_A}{\hat{\sigma}_B}\right)^2+\left(\frac{\hat{\sigma}_B}{\hat{\sigma}_A}\right)^2}\Big)\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1128,62 +1170,26 @@ Falls <span class="math inline">\(n_A=n_B=n\)</span>: <span class="math inline">
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style=" color: darkred !important;">Intuition zur Welch–Satterthwaite-Gleichung</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<p>Auch wenn die Welch–Satterthwaite-Gleichung für die Freiheitsgrade beim Zweistichproben-t-Test mit unterschiedlicher Varianz recht kompliziert aussieht, ist eine nähere Betrachtung aufschlussreich.</p>
-<p>Für <span class="math inline">\(n_A=n_B=n\)</span> gilt:</p>
-<p><span class="math display">\[
-\text{df}=(n-1)\Big(1+\frac{2}{\left(\frac{\hat{\sigma}_A}{\hat{\sigma}_B}\right)^2+\left(\frac{\hat{\sigma}_B}{\hat{\sigma}_A}\right)^2}\Big)
-\]</span></p>
-<p>Zwei Fälle sind interessant:</p>
-<div class="vspace-small">
-
-</div>
-<p><u>Fall 1: Sind die Varianzen gleich</u> (entgegen der Annahme), d.h. <span class="math inline">\(\hat{\sigma}_A=\hat{\sigma}_B\)</span>, so vereinfacht sich die Formel zu</p>
-<p><span class="math display">\[
-\text{df} = (n-1)(1+\frac{2}{2}) = 2n -2,
-\]</span></p>
-<p><strong>also exakt die Formel des klassichen Zweistichprobentests.</strong></p>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Intuition zur Welch–Satterthwaite-Gleichung</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<p><u>Fall 2: Sind die Varianzen extrem unterschiedlich</u>, so wird entweder <span class="math inline">\(\left(\frac{\hat{\sigma}_A}{\hat{\sigma}_B}\right)^2\)</span> oder <span class="math inline">\(\left(\frac{\hat{\sigma}_B}{\hat{\sigma}_A}\right)^2\)</span> extrem groß und die Formel vereinfacht sich zu</p>
-<p><span class="math display">\[
-\text{df} = (n-1)(1+\frac{2}{\infty}) = (n-1)(1+0) = n-1
-\]</span></p>
-<p><strong>also exakt die Formel des Einstichprobentests.</strong></p>
-<p>Für extrem ungleiche Varianzen reduzieren sich also die Freiheitsgrade — und damit die <em>effektive Stichprobengröße</em> — auf die Größe einer der beiden verglichenen Gruppen.</p>
-<p>Das ist durchaus intuitiv: ist z.B. <span class="math inline">\(\hat{\sigma}_A\)</span> extrem viel kleiner als <span class="math inline">\(\hat{\sigma}_B\)</span>, so spielt die Varianz der Gruppe A nahezu keine Rolle mehr. Die Versuchspersonen dieser Gruppe gehen also für die Berechnung des Standardfehlers “verloren”, was sich entsprechend auf die Freiheitsgrade auswirkt.</p>
-<p><em>Im Grenzfall</em> spielt die Varianz dieser Gruppe überhaupt keine Rolle mehr, sondern nur noch ihr Mittelwert. Die Gruppe hat damit die gleiche Funktion wie der Referenzwert <span class="math inline">\(\mu_0\)</span> beim Einstichproben-t-Test.</p>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
 <h2>Beispiel: t-Test für unabhängige Gruppen</h2>
 <div class="columns">
 <div class="column" style="width:80%;">
-<p>Betrachten wir das Beispiel Med- versus Psych-Nasen für den Fall, dass wir die Standardabweichungen <span class="math inline">\(\sigma_\text{med}\)</span> und <span class="math inline">\(\sigma_\text{psych}\)</span> von Nasenlängen in der Med- und Psych-Population nicht kennen.</p>
+<p>Betrachten wir das Beispiel Med- versus Psych-Nasen für den Fall, dass wir die Standardabweichungen <span class="math inline">\(\sigma_\text{med}\)</span> und <span class="math inline">\(\sigma_\text{psych}\)</span> von Nasenlängen in der Med- und Psych-Population <u>nicht</u> kennen.</p>
 <p>Es gilt immer noch:</p>
 <p><span class="math display">\[
-\Delta \bar{x} = \bar{x}_\text{med} - \bar{x}_\text{psych} = 0{,}2cm
+\Delta \bar{x} = \bar{x}_\text{med} - \bar{x}_\text{psych} = 0.2cm
 \]</span></p>
 <div class="fragment">
 <p>.. aber <span class="math inline">\(\sigma_\text{med}\)</span> und <span class="math inline">\(\sigma_\text{psych}\)</span> müssen jetzt aus unseren Messwerten geschätzt werden. Für das Beispiel nehmen wir an:</p>
 <p><span class="math display">\[
-\hat{\sigma}_\text{med} = 0{,}5\qquad\qquad\hat{\sigma}_\text{psych} = 0{,}25
+\hat{\sigma}_\text{med} = 0.5\qquad\qquad\hat{\sigma}_\text{psych} = 0.2
 \]</span></p>
 </div>
 <div class="fragment">
-<p>Wir schlagen die Formel für den Standardfehler bei unabhängigen Messungen und ungleichen Varianzen nach und setzen ein:</p>
+<p>Wir schlagen die Formel für den Standardfehler bei unabhängigen Messungen und unähnlichen Varianzen (<span class="math inline">\(\frac{\hat{\sigma}_\text{med}}{\hat{\sigma}_\text{psych}} &gt; 2\;\)</span>!) nach und setzen ein:</p>
 <p><span class="math display">\[
-\hat{se}= \sqrt{\frac{\hat{\sigma}_\text{med}^2}{n_\text{med}} + \frac{\hat{\sigma}_\text{psych}^2}{n_\text{psych}}} \overset{(Computer)}{=}  0{,}102
+\hat{se}= \sqrt{\frac{\hat{\sigma}_\text{med}^2}{n_\text{med}} + \frac{\hat{\sigma}_\text{psych}^2}{n_\text{psych}}} \overset{(Computer)}{\approx}  0.098
 \]</span></p>
-<p>Erinnerung: es galt <span class="math inline">\(n_\text{med}=n_\text{psych}=30\)</span>.</p>
+<p><span style="font-size:20px">(Erinnerung: es galt <span class="math inline">\(n_\text{med}=n_\text{psych}=30\)</span>)</span></p>
 </div>
 </div><div class="column" style="width:20%;">
 <p><img data-src="images/psych_med.png"></p>
@@ -1200,7 +1206,7 @@ Falls <span class="math inline">\(n_A=n_B=n\)</span>: <span class="math inline">
 <p>Mit dem Standardfehler bewaffnet, können wir nun den t-Wert berechnen:</p>
 <div style="margin-top: -37px; margin-left: 30px">
 <p><span class="math display">\[
-t = \frac{\Delta \bar{x}}{\hat{se}} = 1{,}96
+t = \frac{\Delta \bar{x}}{\hat{se}} = \frac{0.2}{0.098} \approx 2.03
 \]</span></p>
 </div>
 <div class="fragment">
@@ -1209,13 +1215,13 @@ t = \frac{\Delta \bar{x}}{\hat{se}} = 1{,}96
 <p><span class="math display">\[
 \begin{aligned}
 \text{df}&amp;=(n-1)\Big(1+\frac{2}{\left(\frac{\hat{\sigma}_\text{med}}{\hat{\sigma}_\text{psych}}\right)^2+\left(\frac{\hat{\sigma}_\text{psych}}{\hat{\sigma}_\text{med}}\right)^2}\Big) = \\
-&amp;=(30-1)\Big(1+\frac{2}{\left(\frac{0{,}5}{0{,}25}\right)^2+\left(\frac{0{,}25}{0{,}5}\right)^2}\Big) = 42{,}6
+&amp;=(30-1)\Big(1+\frac{2}{\left(\frac{0.5}{0.2}\right)^2+\left(\frac{0.2}{0.5}\right)^2}\Big) \approx 38.05
 \end{aligned}
 \]</span></p>
 </div>
 </div>
 </div><div class="column" style="width:40%;">
-<p><img data-src="images/ttest1_example.png"></p>
+<p><img data-src="images/ttest1_example_v2.png"></p>
 </div>
 </div>
 <div class="fragment">
@@ -1224,12 +1230,12 @@ t = \frac{\Delta \bar{x}}{\hat{se}} = 1{,}96
 </div>
 <div style="margin-top: -35px; margin-left: 120px">
 <p><span class="math display">\[
-p=\int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx = \int_{1{,}96}^{\infty}f_t(x|42{,}6)dx = 1-F_t(1{,}96|42{,}6) \overset{(Computer)}{=} 0{,}028
+p=\int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx = \int_{2.03}^{\infty}f_t(x|38.05)dx = 1-F_t(2.03|38.05) \overset{(Computer)}{\approx} 0.025
 \]</span></p>
 </div>
 </div>
 <div class="fragment">
-<p>Der p-Wert ist dem p-Wert des z-Tests (<span class="math inline">\(0{,}023\)</span>) sehr ähnlich. Dies ist wenig überraschend, da a) der Standardfehler einen ähnlichen Wert aufwies (<span class="math inline">\(se=2\)</span> beim z-Test) und b) die Zahl er Freiheitsgrade so hoch ist, dass der Unterschied Normalverteilung vs.&nbsp;t-Verteilung marginal ist.</p>
+<p>Der p-Wert ist dem p-Wert des z-Tests (<span class="math inline">\(0.023\)</span>) sehr ähnlich. Dies ist wenig überraschend, da a) der Standardfehler einen ähnlichen Wert aufwies (<span class="math inline">\(se=0.1\)</span> beim z-Test) und b) die Zahl er Freiheitsgrade so hoch ist, dass der Unterschied Normalverteilung vs.&nbsp;t-Verteilung marginal ist.</p>
 </div>
 <!----------------->
 <!--- New slide --->
@@ -1241,7 +1247,7 @@ p=\int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx = \int_{1{,}96}^{\in
 <div>
 <ul>
 <li>In der Psychologie sind ungleiche Varianzen die realistischere Annahme. Selbst bei randomisiert-kontrollierten Studien, bei denen Versuchspersonen den Gruppen aus einer identischen Ursprungs-Population zugewiesen werden, kann das Treatment selbst einen Einfluss auf die Varianz haben.</li>
-<li>Neben der Faustformel <span class="math inline">\(0{,}5&lt;\frac{\hat{\sigma}_A}{\hat{\sigma}_B}&lt;2\)</span> gibt es auch Testverfahren zur Überprüfung der Varianzgleichheit zwischen Gruppen, allerdings sind diese nicht unproblematisch
+<li>Neben der Faustformel <span class="math inline">\(0.5\le\frac{\hat{\sigma}_A}{\hat{\sigma}_B}\le2\)</span> gibt es auch Testverfahren zur Überprüfung der Varianzgleichheit zwischen Gruppen, allerdings sind diese nicht unproblematisch
 <ul>
 <li>Ein Grund:auf Varianzgleichheit wird idR auf Basis eines nicht-signifikanten Ergebnis in einem solchen Test angenommen — “absence of evidence is not evidence of absence”<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a></li>
 </ul></li>
@@ -1278,23 +1284,23 @@ p=\int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx = \int_{1{,}96}^{\in
 <blockquote>
 <p>Studieren Sie Medizin, weil es der Wunsch Ihrer Eltern ist?</p>
 </blockquote>
-<p>Sie messen die Nasenlängen dabei sowohl vor (“pre”), als auch nach (“post”) der Intervention. Ihre <u>ungerichtete</u> Hypothese ist, dass sich die Nasenlängen vor und nach der Intervention auf einem Signifikanzniveau <span class="math inline">\(\alpha=0{,}05\)</span> unterscheiden.</p>
+<p>Sie messen die Nasenlängen dabei sowohl vor (“pre”), als auch nach (“post”) der Intervention. Ihre <u>ungerichtete</u> Hypothese ist, dass sich die Nasenlängen vor und nach der Intervention auf einem Signifikanzniveau <span class="math inline">\(\alpha=0.05\)</span> unterscheiden.</p>
 </div><div class="column" style="width:20%;">
 <p><img data-src="images/med.png"></p>
 </div>
 </div>
 <div class="fragment">
-<p>Die Mittelwertdifferenz betrage <span class="math inline">\(\Delta\bar{x} = \bar{x}_\text{post} - \bar{x}_\text{pre} = 0{,}1cm\)</span>.</p>
+<p>Die Mittelwertdifferenz betrage <span class="math inline">\(\Delta\bar{x} = \bar{x}_\text{post} - \bar{x}_\text{pre} = 0.1cm\)</span>.</p>
 </div>
 <div class="vspace-small">
 
 </div>
 <div class="fragment">
-<p>Wir nehmen der Einfachheit halber an, dass die beiden Messungen <span class="math inline">\(X_\text{pre}\)</span> und <span class="math inline">\(X_\text{post}\)</span> unkorreliert sind, d.h. <span class="math inline">\(\hat{Cov}(X_\text{pre}, X_\text{post})=0\)</span>. Die Standardabweichungen seien <span class="math inline">\(\hat{\sigma}_\text{pre}=\hat{\sigma}_\text{post}=0{,}5\)</span>. Die Standardabweichung <span class="math inline">\(\hat{\sigma}_\Delta\)</span> der Differenzvariable <span class="math inline">\(\Delta X\)</span> ist damit:</p>
+<p>Wir nehmen der Einfachheit halber an, dass die beiden Messungen <span class="math inline">\(X_\text{pre}\)</span> und <span class="math inline">\(X_\text{post}\)</span> unkorreliert sind, d.h. <span class="math inline">\(\hat{\rho}=0\)</span>. Die Standardabweichungen seien <span class="math inline">\(\hat{\sigma}_\text{pre}=\hat{\sigma}_\text{post}=0.5\)</span>. Die Standardabweichung <span class="math inline">\(\hat{\sigma}_\Delta\)</span> der Differenzvariable <span class="math inline">\(\Delta X\)</span> ist damit:</p>
 </div>
 <div class="fragment">
 <p><span class="math display">\[
-\hat{\sigma}_\Delta=\sqrt{\hat{\sigma}_\text{pre}^2+\hat{\sigma}_\text{post}^2-2\,\hat{Cov}(X_\text{pre}, X_\text{post})} = \sqrt{(0{,5})^2+(0{,5})^2-2\cdot 0} = \frac{1}{\sqrt{2}}
+\hat{\sigma}_\Delta=\sqrt{\hat{\sigma}_\text{pre}^2+\hat{\sigma}_\text{post}^2-2\,\hat{\rho}\hat{\sigma}_\text{pre}\hat{\sigma}_\text{post}} = \sqrt{(0.5)^2+(0.5)^2-0} = \frac{1}{\sqrt{2}}
 \]</span></p>
 </div>
 <div class="fragment">
@@ -1312,41 +1318,42 @@ p=\int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx = \int_{1{,}96}^{\in
 <div class="column" style="width:60%;">
 <p>Nun können wir den t-Wert berechnen:</p>
 <p><span class="math display">\[
-t = \frac{\Delta\bar{x}}{\hat{se}} = \frac{0{,}1}{1/8} = 0{,}8
+t = \frac{\Delta\bar{x}}{\hat{se}} = \frac{0.1}{1/8} = 0.8
 \]</span></p>
 <div class="fragment">
-<p>Aufgrund der ungerichteten Hypothese ist der p-Wert die Summe der Flächen unter der t-Verteilung links von <span class="math inline">\(t=-0{,}8\)</span> <u>und</u> rechts von <span class="math inline">\(t=+0{,}8\)</span>. Bei <span class="math inline">\(\text{df}=n-1=31\)</span> Freiheitsgraden gilt:</p>
+<p>Aufgrund der ungerichteten Hypothese ist der p-Wert die Summe der Flächen unter der t-Verteilung links von <span class="math inline">\(-|t|=-0.8\)</span> <u>und</u> rechts von <span class="math inline">\(+|t|=0.8\)</span>.</p>
+<p>Bei <span class="math inline">\(\text{df}=n-1=31\)</span> Freiheitsgraden gilt:</p>
 </div>
 </div><div class="column" style="width:40%;">
-<p><img data-src="images/ttest1_example2.png"></p>
+<p><img data-src="images/ttest1_example2_v2.png"></p>
 </div>
 </div>
 <div class="fragment">
 <p><span class="math display">\[
 \begin{aligned}
 p&amp;=\int_{-\infty}^{-t}f_t(x|\scriptsize\text{df}\normalsize)dx + \int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx \overset{(Symmetrie)}{=} 2\cdot\int_{-\infty}^{-t}f_t(x|\scriptsize\text{df}\normalsize)dx  = \\
-&amp;= 2\cdot F_t(-t|\scriptsize\text{df}\normalsize) \overset{(einsetzen)}{=} 2\cdot F_t(-0{,}8|31) \overset{(Computer)}{=} 0{,}43
+&amp;= 2\cdot F_t(-t|\scriptsize\text{df}\normalsize) \overset{(einsetzen)}{=} 2\cdot F_t(-0.8|31) \overset{(Computer)}{=} 0.43
 \end{aligned}
 \]</span></p>
 </div>
-<div class="fragment">
-<p>Der p-Wert ist also deutlich größer als unser Signifikanzniveau <span class="math inline">\(\alpha=0{,}05\)</span> und wir können die Nullhypothese <span class="math inline">\(\Delta\bar{x}=0\)</span> nicht ablehnen. More research is needed!</p>
+<div class="fragment" style="margin-top:60px">
+<p>Der p-Wert ist also deutlich größer als unser Signifikanzniveau <span class="math inline">\(\alpha=0.05\)</span> und wir können die Nullhypothese <span class="math inline">\(\Delta\bar{x}=0\)</span> nicht ablehnen. More research is needed!</p>
 </div>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
-<h1>t-Tests für Zusammenhänge</h1>
+<h1>t-Test für die Korrelation</h1>
 <!----------------->
 <!--- New slide --->
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Stichprobenverteilung der Korrelation</h2>
+<h2>Stichprobenverteilung der Korrelation <span class="math inline">\(\hat{\rho}\)</span></h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <div>
 <ul>
-<li>Analog zu Mittelwertsunterschieden kann auch die <strong>Stichprobenverteilung der Korrelation</strong> aufgestellt werden: als <strong>Normalverteilung</strong> mit dem <strong>Mittelwert unserer Kennwertschätzung (hier <span class="math inline">\(r\)</span>)</strong> und einer Streuung, die dem <strong>Standardfehler</strong> (<span class="math inline">\(\hat{se}\)</span>) des Kennwertes entspricht.</li>
+<li>Analog zu Mittelwertsunterschieden kann auch die <strong>Stichprobenverteilung der Korrelation</strong> aufgestellt werden: als <strong>Normalverteilung</strong> mit dem <strong>Mittelwert unserer Kennwertschätzung (hier <span class="math inline">\(\hat{\rho}\)</span>)</strong> und einer Streuung, die dem <strong>Standardfehler</strong> (<span class="math inline">\(\hat{se}\)</span>) des Kennwertes entspricht.</li>
 </ul>
 </div>
 <div style="margin-top: -15px">
@@ -1356,11 +1363,11 @@ p&amp;=\int_{-\infty}^{-t}f_t(x|\scriptsize\text{df}\normalsize)dx + \int_{t}^{\
 </div>
 <div class="fragment" style="margin-top: -15px">
 <p><span class="math display">\[
-\hat{se}(r) = \sqrt{\frac{1-r^2}{n-2}}
+\hat{se}(\hat{\rho}) = \sqrt{\frac{1-\hat{\rho}^2}{n-2}}
 \]</span></p>
 </div>
 </div><div class="column" style="width:40%;">
-<p><img data-src="images/nulldist_r.png"></p>
+<p><img data-src="images/nulldist_rho.png"></p>
 </div>
 </div>
 <div class="fragment">
@@ -1371,12 +1378,12 @@ p&amp;=\int_{-\infty}^{-t}f_t(x|\scriptsize\text{df}\normalsize)dx + \int_{t}^{\
 </div>
 <div style="margin-top: -15px">
 <p><span class="math display">\[
-t = \frac{r}{\hat{se}(r)} = r\sqrt{\frac{n-2}{1-r^2}}
+t = \frac{\hat{\rho}}{\hat{se}(\hat{\rho})} = \hat{\rho}\sqrt{\frac{n-2}{1-\hat{\rho}^2}}
 \]</span></p>
 </div>
 </div>
 <div class="fragment">
-<p><span style="font-size: 23px">(Präziser gesagt handelt es sich auch hier wieder um das Verhältnis einer normalverteilten Variable (<span class="math inline">\(r\)</span>) und einer chi-verteilten Variable (<span class="math inline">\(\hat{se}(r)\)</span>) — ein solches Verhältnis führt zu einer t-verteilten Prüfgröße)</span></p>
+<p><span style="font-size: 23px">(Präziser gesagt handelt es sich auch hier wieder um das Verhältnis einer normalverteilten Variable (<span class="math inline">\(\hat{\rho}\)</span>) und einer chi-verteilten Variable (<span class="math inline">\(\hat{se}(\hat{\rho})\)</span>) — ein solches Verhältnis führt zu einer t-verteilten Prüfgröße)</span></p>
 </div>
 <!----------------->
 <!--- New slide --->
@@ -1406,7 +1413,7 @@ t = \frac{r}{\hat{se}(r)} = r\sqrt{\frac{n-2}{1-r^2}}
 </ul>
 </div>
 </div><div class="column" style="width:40%;">
-<p><img data-src="images/ttest1_r.png"></p>
+<p><img data-src="images/ttest1_rho.png"></p>
 </div>
 </div>
 <ul>
@@ -1419,7 +1426,7 @@ t = \frac{r}{\hat{se}(r)} = r\sqrt{\frac{n-2}{1-r^2}}
 <p><img data-src="images/merke.png" height="55"></p>
 </div>
 </div><div class="column" style="width:95%;">
-<p>Die Zahl der Freiheitsgrade der Korrelation ist <span class="math inline">\(\text{df}=n-2\)</span>. Grund: die Streuung <span class="math inline">\(\hat{se}\)</span> im Nenner des t-Wertes enthält den Korrelationskoeffizient <span class="math inline">\(r\)</span> und dieser involviert die Berechnung von <strong>zwei</strong> Mittelwerten (Mittelwert <span class="math inline">\(\bar{x}\)</span> der Variable <span class="math inline">\(X\)</span> und Mittelwert <span class="math inline">\(\bar{y}\)</span> der Variable <span class="math inline">\(Y\)</span>).</p>
+<p>Die Zahl der Freiheitsgrade der Korrelation ist <span class="math inline">\(\text{df}=n-2\)</span>. Grund: die Streuung <span class="math inline">\(\hat{se}\)</span> im Nenner des t-Wertes enthält den Korrelationskoeffizient <span class="math inline">\(\hat{\rho}\)</span> und dieser involviert die Berechnung von <strong>zwei</strong> Mittelwerten (Mittelwert <span class="math inline">\(\bar{x}\)</span> der Variable <span class="math inline">\(X\)</span> und Mittelwert <span class="math inline">\(\bar{y}\)</span> der Variable <span class="math inline">\(Y\)</span>).</p>
 </div>
 </div>
 </div>
@@ -1431,12 +1438,12 @@ t = \frac{r}{\hat{se}(r)} = r\sqrt{\frac{n-2}{1-r^2}}
 <h2>Beispiel: Bestimmung des p-Wertes bei der Korrelation</h2>
 <div>
 <ul>
-<li>Nehmen wir an, die Korrelation von Größe und Gewicht in einer Stichprobe von <span class="math inline">\(n=12\)</span> betrage <span class="math inline">\(r=0{,}4\)</span>.</li>
+<li>Nehmen wir an, die Korrelation von Größe und Gewicht in einer Stichprobe von <span class="math inline">\(n=12\)</span> betrage <span class="math inline">\(\hat{\rho}=0.4\)</span>.</li>
 </ul>
 </div>
 <div style="margin-top: -15px">
 <ul>
-<li class="fragment">Wir wollen testen, ob die Korrelation auf einem Signifikanzniveau <span class="math inline">\(\alpha=0{,}05\)</span> signifikant größer als 0 ist.</li>
+<li class="fragment">Wir wollen testen, ob die Korrelation auf einem Signifikanzniveau <span class="math inline">\(\alpha=0.05\)</span> signifikant größer als 0 ist.</li>
 </ul>
 </div>
 <div class="columns">
@@ -1446,11 +1453,11 @@ t = \frac{r}{\hat{se}(r)} = r\sqrt{\frac{n-2}{1-r^2}}
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
-t = r\sqrt{\frac{n-2}{1-r^2}} = 0{,}4\sqrt{\frac{12-2}{1-0{,}4^2}} \overset{(Computer)}{=} 1{,}38
+t = \hat{\rho}\sqrt{\frac{n-2}{1-\hat{\rho}^2}} = 0.4\sqrt{\frac{12-2}{1-0.4^2}} \overset{(Computer)}{=} 1.38
 \]</span></p>
 </div>
 <ul>
-<li class="fragment">Wir sehen in der Tabelle, dass der kritische t-Wert für <span class="math inline">\(\text{df}=n-2=10\)</span> Freiheitsgrade bei einem (einseitigen!) Signifikanzniveau von <span class="math inline">\(\alpha=0{,}05\)</span> gleich <span class="math inline">\(1{,}813\)</span> beträgt.</li>
+<li class="fragment">Wir sehen in der Tabelle, dass der kritische t-Wert für <span class="math inline">\(\text{df}=n-2=10\)</span> Freiheitsgrade bei einem (einseitigen!) Signifikanzniveau von <span class="math inline">\(\alpha=0.05\)</span> gleich <span class="math inline">\(1.813\)</span> beträgt.</li>
 <li class="fragment">Die Nullhypothese wird also nicht abgelehnt, und der Effekt als nicht signifikant gewertet.</li>
 </ul>
 </div><div class="column" style="width:45%;">
@@ -1477,9 +1484,9 @@ t = r\sqrt{\frac{n-2}{1-r^2}} = 0{,}4\sqrt{\frac{12-2}{1-0{,}4^2}} \overset{(Com
 <li class="fragment"><strong>Standardmäßig</strong> handelt es sich dabei immer um einen <strong>Test für eine ungerichtete Hypothese</strong>.</li>
 <li class="fragment">War die Hypothese dagegen gerichtet, gilt:
 <ul>
-<li class="fragment">Halbiere den p-Wert der ungerichteten Hypothese, falls das Vorzeichen von <span class="math inline">\(r\)</span> in Richtung der Hypothese ist.</li>
-<li class="fragment">Verdoppele den p-Wert der ungerichteten Hypothese, falls das Vorzeichen von <span class="math inline">\(r\)</span> in gegensätzlicher Richtung der Hypothese ist.</li>
-<li class="fragment">Im Beispiel wäre also der Korrelationskoeffizient <span class="math inline">\(2\times 0{,}198=0{,}396\)</span>, falls wir einen negativen Zusammenhang vorhergesagt hätten, und <span class="math inline">\(0{,}198/2=0{,}099\)</span>, falls wir einen positiven Zusammenhang vorhergesagt hätten.</li>
+<li class="fragment">Halbiere den p-Wert der ungerichteten Hypothese, falls das Vorzeichen von <span class="math inline">\(\hat{\rho}\)</span> in Richtung der Hypothese ist.</li>
+<li class="fragment">Verdoppele den p-Wert der ungerichteten Hypothese, falls das Vorzeichen von <span class="math inline">\(\hat{\rho}\)</span> in gegensätzlicher Richtung der Hypothese ist.</li>
+<li class="fragment">Im Beispiel wäre also der Korrelationskoeffizient <span class="math inline">\(2\times 0.198=0.396\)</span>, falls wir einen negativen Zusammenhang vorhergesagt hätten, und <span class="math inline">\(0.198/2=0.099\)</span>, falls wir einen positiven Zusammenhang vorhergesagt hätten.</li>
 </ul></li>
 </ul>
 </div>
@@ -1500,7 +1507,494 @@ t = r\sqrt{\frac{n-2}{1-r^2}} = 0{,}4\sqrt{\frac{12-2}{1-0{,}4^2}} \overset{(Com
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Inferenzstatistik für Regressionskoeffizienten</h2>
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:9%;">
+<div style="margin-top:-15px">
+<p><img data-src="images/summary.png" width="60"></p>
+</div>
+</div><div class="column" style="width:91%;">
+<div class="summary" style="margin-top: 10px; margin-bottom: -15px; padding-top: 0px; padding-bottom: 0px;">
+<div style="margin-bottom: -15px;">
+<ul>
+<li class="fragment">Wird der Standardfehler auf Basis der Stichprobe als <span class="math inline">\(\hat{se}\)</span> geschätzt, folgt die Prüfgröße <span class="math inline">\(\frac{\hat{\theta}}{\hat{se}}(=t)\)</span> einer <strong>t-Verteilung</strong>.</li>
+<li class="fragment">Die t-Verteilung <strong>nähert sich für <span class="math inline">\(n\rightarrow\infty\)</span> der Standardnormalverteilung an</strong>. Bei <strong>kleineren Fallzahlen <span class="math inline">\(n\)</span></strong> hat die t-Verteilung etwas <strong>dickere Flanken</strong>.</li>
+<li class="fragment">Der <strong>prinzipielle Ansatz ist beim t-Test identisch zum z-Test</strong>: Bestimmung der Fläche für Wertebereiche extremer als die Prüfgröße (hier <span class="math inline">\(t\)</span>).</li>
+<li class="fragment"><strong>t-Test von Mittelwertdifferenzen</strong> (<span class="math inline">\(t=\frac{\Delta\bar{x}}{\hat{se}}\)</span>): je nach Szenario werden unter- schiedliche t-Test-Varianten angwendet. Sie unterscheiden sich hinsichtlich:
+<ul>
+<li class="fragment">Zahl der Freiheitsgrade <span class="math inline">\(\text{df}\)</span></li>
+<li class="fragment">Standardfehler <span class="math inline">\(\hat{se}\)</span></li>
+</ul></li>
+<li class="fragment"><strong>Korrelation</strong>: Berechnung des t-Wertes erfolgt analog mittels <span class="math inline">\(t = \frac{\hat{\rho}}{\hat{se}(\hat{\rho})}\)</span>.
+<ul>
+<li class="fragment">Der Standardfehler der Korrelation hängt von der Korrelation <span class="math inline">\(\hat{\rho}\)</span> und der Stichprobengröße <span class="math inline">\(n\)</span> ab: <span class="math inline">\(\hat{se}(\hat{\rho}) = \sqrt{\frac{1-\hat{\rho}^2}{n-2}}\)</span></li>
+</ul></li>
+<li class="fragment">Auch für Regressionskoeffizienten lassen sich t-Tests durchführen →&nbsp;<a href="#/treg" style="color: darkred;">Bonuscontent</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2 blackslide center">
+<h2></h2>
+<div class="vspace-small">
+
+</div>
+<div class="columns">
+<div class="column" style="width:68%;">
+<p><img data-src="images/paradoxia_histogram_correlation_paradoxiker.png" height="300"></p>
+</div><div class="column" style="width:32%;">
+<p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important; margin-left:-20px !important" height="250"></p>
+</div>
+</div>
+<p>Stichwort Signifikanz von Zusammenhängen: die Signifikanz des unerwarteten Zusammenhangs von TikTok-Onlinezeit und Entzündungswerten haben Sie bislang nicht getestet.</p>
+<p>Basierend auf dem Korrelationskoeffizienten <span class="math inline">\(\hat{\rho}=0.517\)</span> und der Stichprobengröße <span class="math inline">\(n=50\)</span> ergibt sich die Prüfgröße <span class="math inline">\(t\)</span> direkt:</p>
+<div class="vspace-small">
+
+</div>
+<p><span class="math display">\[
+t = \frac{\hat{\rho}}{\hat{se}(\hat{\rho})} = \hat{\rho}\sqrt{\frac{n-2}{1-\hat{\rho}^2}} = 0.517\sqrt{\frac{50-2}{1-0.517^2}} = 4.18
+\]</span></p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2 blackslide center">
+<h2></h2>
+<div class="vspace-small">
+
+</div>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Der Zusammenhang war unerwartet und es gab dementsprechend keine gerichtete Hypothese. Der p-Wert ist in diesem Fall also der doppelte Wert der Fläche rechts des (positiven) t-Werts von <span class="math inline">\(4.18\)</span>, oder analog, der doppelte Wert links des negierten t-Werts <span class="math inline">\(-4.18\)</span>.</p>
+<p><span class="math display">\[
+p=2\int_{-\infty}^{-4.18}f_t(x|\scriptsize\text{df}\normalsize)dx = 2F_t(-4.18|48)=0.0001
+\]</span></p>
+<p><span style="font-size:24px">(Die Zahl der Freiheitsgrade beim t-Test der Korrelation ist <span class="math inline">\(n-2\)</span>)</span></p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/paradoxia_nulldist_t_r.png"></p>
+</div>
+</div>
+<p>Der Zusammenhang von TikTok-Onlinezeit und Entzündungswerten ist also deutlich signifikant.</p>
+<p>Trotz des hochsignifikanten Effektes bleiben Sie skeptisch — Ihr größtes Fragezeichen: was ist Ursache, was ist Wirkung? Folgen erhöhte Entzündungswerte tatsächlich auf TikTok-Konsum (einschlägiger Kanäle)? Oder ist es einfach so, dass Erkrankte (mit erhöhten Entzündungswerten) Rat und Solidarität auf TikTok suchen?</p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2 blackslide center">
+<h2></h2>
+<div class="vspace-small">
+
+</div>
+<div class="columns">
+<div class="column" style="width:68%;">
+<p>Um die Gruppen<em>unterschiede</em> nun ebenfalls mithilfe des t-Tests zu überprüfen, listen Sie nochmals alle relevanten Werte auf, die Sie zum Teil bereits beim z-Test bestimmt hatten:</p>
+<!---  Table --->
+<table>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 10%">
+<col style="width: 27%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Fallzahl <span class="math inline">\(n\)</span></th>
+<th><span class="math inline">\(\Delta\bar{x}\)</span></th>
+<th>Standardfehler <span class="math inline">\(\hat{se}\)</span></th>
+<th>Freiheitsgrade <span class="math inline">\(\text{df}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><u>TikTok</u></td>
+<td><span class="math inline">\(2\times 50\)</span></td>
+<td><span class="math inline">\(0.577\)</span></td>
+<td><span class="math inline">\({0.123}\)</span></td>
+<td><span class="math inline">\(93.7\)</span></td>
+</tr>
+<tr class="even">
+<td><u>Entzündung</u></td>
+<td><span class="math inline">\(2\times 50\)</span></td>
+<td><span class="math inline">\(0.0243\)</span></td>
+<td><span class="math inline">\({0.0147}\)</span></td>
+<td><span class="math inline">\(96.2\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:32%;">
+<p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important" height="200"></p>
+</div>
+</div>
+<div class="vspace-medium">
+
+</div>
+<div>
+<ul>
+<li>Neu hinzugekommen sind die Freiheitsgrade, die Sie in der Tabelle mit der Formel für ungleiche Varianzen bestimmt haben:</li>
+</ul>
+</div>
+<p><span class="math display">\[
+\text{df}=(n-1)\Big(1+\frac{2}{\left(\frac{\hat{\sigma}_\text{control}}{\hat{\sigma}_\text{paradoxia}}\right)^2+\left(\frac{\hat{\sigma}_\text{paradoxia}}{\hat{\sigma}_\text{control}}\right)^2}\Big)
+\]</span></p>
+<div>
+<ul>
+<li>Zur Erinnerung:
+<ul>
+<li>TikTok: <span class="math inline">\(\hat{\sigma}_\text{control}=0.55\)</span>; <span class="math inline">\(\hat{\sigma}_\text{paradoxia}=0.68\)</span></li>
+<li>Entzündung: <span class="math inline">\(\hat{\sigma}_\text{control}=0.068\)</span>; <span class="math inline">\(\hat{\sigma}_\text{paradoxia}=0.078\)</span></li>
+</ul></li>
+</ul>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2 blackslide center">
+<h2></h2>
+<div class="vspace-small">
+
+</div>
+<div class="columns">
+<div class="column" style="width:68%;">
+<p>Mit diesen Information erhalten Sie folgende t-Werte (* in diesem Fall identisch mit den z-Werten!):</p>
+<p><span class="math display">\[
+\text{TikTok:}\qquad t=\frac{\Delta\bar{x}}{\hat{se}} = \frac{0.577}{0.123} = 4.69\\
+\text{Entzündung:}\qquad t=\frac{\Delta\bar{x}}{\hat{se}} = \frac{0.0243}{0.0147} = 1.65
+\]</span></p>
+</div><div class="column" style="width:32%;">
+<p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important" height="200"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Statt der Standardnormalverteilung integrieren Sie nun einfach die entsprechende Fläche unter der t-Verteilung:</p>
+<p><span class="math display">\[
+p=\int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx = 1-F_t(t|\scriptsize\text{df}\normalsize)
+\]</span></p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/paradoxia_nulldist_t.png"></p>
+</div>
+</div>
+<p><span style="font-size: 23px; margin-top: 15px;">(*) Warum identisch? Weil wir für die z-Werte — in Abwesenheit anderweitig bekannter Werte — ebenfalls die Stichprobenstreuung verwendet hatten.</span></p>
+</section>
+<section class="slide level2 blackslide center">
+<h2></h2>
+<!-- <div class="vspace-small"></div> -->
+<div class="columns">
+<div class="column" style="width:68%;">
+<div style="margin-top: -15px">
+<p>Die große Frage ist: würden weiterhin beide Effekte signifikant bleiben? Antwort:</p>
+</div>
+<!-- <div class="vspace-small"></div> -->
+<p><span class="math display">\[
+\text{TikTok:}\qquad p= 1 - F_t(4.83|93.7) \overset{\text{(Computer)}}{=} 0.000003
+\]</span></p>
+<div class="vspace-small">
+
+</div>
+<p><span class="math display">\[
+\text{Entzündung:}\qquad p= 1 - F_t(1.65|96.2) \overset{\text{(Computer)}}{=} 0.051
+\]</span></p>
+</div><div class="column" style="width:32%;">
+<p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important" height="200"></p>
+</div>
+</div>
+<p>Kurios — das Pendel beim Entzündungseffekt schlägt exakt auf der anderen Seite des Signifikanzniveaus aus! Der Effekt ist nun nicht mehr signifikant. Der TikTok-Effekt bleibt stabil.</p>
+<p>Bei beiden Effekten zeigt sich die leicht konservativere Natur der t-Verteilung. Die stärkeren Flanken im Vergleich zur Normalverteilung führen zu geringfügig höheren p-Werten. Notgedrungen müssen Sie Ihre zentrale Grafik anpassen und das Signifikanzsternchen beim Entzündungseffekt entfernen:</p>
+<p><img data-src="images/paradoxia_histogram_inflammation_sem_nonsig.png" height="270"></p>
+<!-- ```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+import os
+from scipy.stats import sem
+import seaborn as sns
+
+np.random.seed(0)
+root = '/home/matteo/OneDrive/lehre/Statistik/stats1_lecture/book/'
+
+fontsize = 15
+
+df = pd.read_csv(os.path.join(root, 'data', 'paradoxia.csv'))
+# print(df.head())
+
+data_tiktok_control = df[df.group == 1]['hours_tiktok_per_day'].values
+data_tiktok_paradoxia = df[df.group == 2]['hours_tiktok_per_day'].values
+data_inflam_control = df[df.group == 1]['inflammation'].values
+data_inflam_paradoxia = df[df.group == 2]['inflammation'].values
+
+print(f'Mean TikTok Control: {np.mean(data_tiktok_control):.2f}')
+print(f'Mean TikTok Paradoxia: {np.mean(data_tiktok_paradoxia):.2f}')
+print(f'Mean Inflam Control: {np.mean(data_inflam_control):.2f}')
+print(f'Mean Inflam Paradoxia: {np.mean(data_inflam_paradoxia):.2f}')
+
+plt.style.use('dark_background')
+plt.figure(figsize=(6, 2.5))
+ax = plt.subplot(121)
+plt.gca().set_facecolor('#eee')
+sns.stripplot(data=df, x='group', y='hours_tiktok_per_day', color='#bbb', jitter=0.25)
+color = 'k'
+plt.errorbar([0], [np.mean(data_tiktok_control)], yerr=[sem(data_tiktok_control)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.errorbar([1], [np.mean(data_tiktok_paradoxia)], yerr=[sem(data_tiktok_paradoxia)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.text(0.25, 0.85, r'$\bar{x}=' + f'{np.mean(data_tiktok_control):.2f}$', ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.text(0.75, 0.85, r'$\bar{x}=' + f'{np.mean(data_tiktok_paradoxia):.2f}$', ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.plot([0, 1], [2.4, 2.4], 'k-', lw=2, zorder=4)
+plt.text(0.5, 2.32, '***', ha='center', va='center', fontsize=15, color='k', backgroundcolor='#eee', zorder=5)
+
+plt.xticks([0, 1], ['Kontroll', 'Paradoxia'], fontsize=fontsize)
+plt.yticks(fontsize=fontsize-2)
+plt.ylabel('Stunden TikTok / 24h', fontsize=fontsize)
+plt.xlabel('')
+# plt.xlim(-0.5, 1.5)
+plt.ylim(0, 1.1*max(data_tiktok_control.max(), data_tiktok_paradoxia.max()))
+
+
+ax = plt.subplot(122)
+plt.gca().set_facecolor('#eee')
+sns.stripplot(data=df, x='group', y='inflammation', color='#bbb', jitter=0.25)
+color = 'k'
+plt.errorbar([0], [np.mean(data_inflam_control)], yerr=[sem(data_inflam_control)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.errorbar([1], [np.mean(data_inflam_paradoxia)], yerr=[sem(data_inflam_paradoxia)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.text(0.25, 0.85, r'$\bar{x}=' + f'{np.mean(data_inflam_control):.2f}$', ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.text(0.75, 0.85, r'$\bar{x}=' + f'{np.mean(data_inflam_paradoxia):.2f}$', ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+# plt.plot([0, 1], [0.25, 0.25], 'k-', lw=2, zorder=4)
+# plt.text(0.5, 0.24, '*', ha='center', va='center', fontsize=15, color='k', backgroundcolor='#eee', zorder=5)
+
+plt.xticks([0, 1], ['Kontroll', 'Paradoxia'], fontsize=fontsize)
+plt.yticks(fontsize=fontsize-2)
+plt.ylabel('Entzündungswert', fontsize=fontsize)
+plt.xlabel('')
+plt.xlim(-0.5, 1.5)
+plt.ylim(0, 1.1*max(data_inflam_control.max(), data_inflam_paradoxia.max()))
+
+
+plt.tight_layout()
+
+plt.savefig('images/paradoxia_histogram_inflammation_sem_nonsig.png', bbox_inches='tight')
+``` -->
+</section>
+<section class="slide level2 blackslide center">
+<h2></h2>
+<img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" height="300"> <!-- Source: Midjourney -->
+<div class="vspace-small">
+
+</div>
+<p>Vor dem Hintergrund dieser neuen Ergebnisse, stellen sich eine Reihe von Fragen:</p>
+<ul>
+<li class="fragment">Ist die Interpretation der Signifikanz fundamental verschieden zwischen dem z- und dem t-Test?</li>
+<li class="fragment">Ist die Entzündungshypothese eindeutig widerlegt?</li>
+<li class="fragment">Können Sie aus dem hochsignifikanten Effekt der TikTok-Hypothese und dem nicht-signifikanten Effekt der Entzündungshypothese schlussfolgern, dass der TikTok-Effekt signifikant stärker ist?</li>
+<li class="fragment">Können Sie schlusfolgern, dass Paradoxia eindeutig durch den TikTok-Effekt verursacht wird?</li>
+</ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<!-- ## {.center}
+
+![[xkcd#1347](https://xkcd.com/1347/)](images/xkcd1347.png)
+
+- Siehe auch [https://www.explainxkcd.com/wiki/index.php/1347](https://www.explainxkcd.com/wiki/index.php/1347)
+ -->
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1><span style=" color: darkred !important;">Bonuscontent</span></h1>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="tnormal" class="slide level2">
+<h2><span style=" color: darkred !important;">t-Test &amp; Normalverteilung</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
+<div class="columns">
+<div class="column" style="width:43%;">
+<p><strong>Warum ist die Normalverteilung des Merkmals <span class="math inline">\(X\)</span> eine (theoretische) Vorausetzung für den t-Test?</strong></p>
+<p>Eigentlich hatten wir ja festgestellt, dass Stichprobenverteilungen der Kennwerte <span class="math inline">\(\hat{\theta}\)</span> <em>unabhängig von der Verteilung des Merkmals</em> <span class="math inline">\(X\)</span> normalverteilt sind (vgl. zentraler Grenzwertsatz / Vorlesung 08).</p>
+</div><div class="column" style="width:57%;">
+<p><img data-src="images/central_limit_theorem_average.png" style="margin-top: 15px !important" height="225"></p>
+</div>
+</div>
+<div style="margin-top: 8px">
+<div class="fragment">
+<p><u>Ein Grund:</u> damit <span class="math inline">\(t=\hat{\theta}/\hat{se}\)</span> einer t-Verteilung folgt, müssen der Stichprobenkennwert <span class="math inline">\(\hat{\theta}\)</span> und sein Standardfehler <span class="math inline">\(\hat{se}\)</span> unabhängig sein (dürfen nicht korrelieren). Dies ist genau dann erfüllt, <em>wenn das gemessene Merkmal <span class="math inline">\(X\)</span> einer Normalverteilung folgt</em> — tatsächlich lässt sich genau mit dieser Bedingung die Normalverteilung ableiten. Insofern wirkt sich hier die Merkmalsverteilung von <span class="math inline">\(X\)</span> doch auf die Stichprobenverteilung von <span class="math inline">\(\hat{\theta}\)</span> aus. <!-- - Der zentrale Grenzwertsatz für die Stichprobenverteilung von $\hat{\theta}$ gilt streng genommen nur für $n\rightarrow\infty$, was in empirischen Studien nie gegeben ist. Ist die Stichprobengröße $n$ begrenzt, kann die Stichprobenverteilung von $\hat{\theta}$ nur dann als normalverteilt angenommen werden, wenn auch das gemessene Merkmal $X$ in der Population normalverteilt ist ([Satz von Cramer](https://de.wikipedia.org/wiki/Satz_von_Cram%C3%A9r_(Normalverteilung))). --></p>
+</div>
+</div>
+<div class="fragment" style="margin-top: 35px">
+<p><strong>Aber wie erwähnt: trotz dieses theoretischen Fallstricks ist der t-Test in der Praxis<br>auch bei nicht-normalverteilten Populationsvariablen <span class="math inline">\(X\)</span> recht robust.</strong></p>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Die t-Verteilung ist bereits standardisiert</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 295px; right: 0px; height: 100px; "></p>
+<p>Vor der Einführung des z-Tests hatten wir zunächst die <strong>unstandardisierte Normalverteilung</strong> kennengelernt, die durch zwei Parameter definiert ist: Mittelwert <span class="math inline">\(\mu\)</span> und Standardabweichung <span class="math inline">\(\sigma\)</span>:</p>
+<p><span class="math display">\[
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+\]</span></p>
+<p>Verwenden wir statt <span class="math inline">\(x\)</span> die standardisierte Variable <span class="math inline">\(\frac{x-\mu}{\sigma}\)</span>, vereinfacht sich die Nullhypothesen-Verteilung zur <strong>Standardnormalverteilung</strong>:</p>
+<div style="margin-top: -10px">
+<p><span class="math display">\[
+f(x)=\varphi(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}
+\]</span></p>
+</div>
+<p>Die Standardnormalverteilung hat keinen Parameter mehr (nur noch die <em>Variable</em> <span class="math inline">\(x\)</span>). Da es sich beim z-Wert auch um eine standardisierte Variable handelte, konnten wir auch für <span class="math inline">\(z\)</span> eine Standardnormalverteilung annehmen:</p>
+<div style="margin-top: -10px">
+<p><span class="math display">\[
+f(z)=\varphi(z)=\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}
+\]</span></p>
+</div>
+<p>Die <strong>t-Verteilung</strong> hatten wir dagegen direkt auf Basis der standardisierten Prüfgröße <span class="math inline">\(\frac{\hat{\theta}}{\hat{se}}\)</span> eingeführt. <span style=" color: navy !important;"><strong>Die klassische t-Verteilung ist aus diesem Grund bereits eine <em>standardisierte Verteilung</em>, die nicht mehr vom Mittelwert oder Streuung abhängt.</strong></span> Im Gegensatz zur Standardnormalverteilung hat sie aber noch einen Parameter: die Zahl der Freiheitsgrade <span class="math inline">\(\text{df}\)</span>.</p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Unstandardisierte t-Verteilung</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 110px; "></p>
+<p>Die Formel für die klassische (standardisierte) t-Verteilung lautet:</p>
+<div style="margin-top: -7px">
+<p><span class="math display">\[
+f_t(x|\scriptsize\text{df}\normalsize) = \frac{\Gamma\left(\frac{\scriptsize\text{df}\normalsize+1}{2}\right)} {\sqrt{\scriptsize\text{df}\normalsize\,\pi}~\Gamma\left(\frac{\scriptsize\text{df}\normalsize}{2}\right)}\left(1+\frac{1}{\scriptsize\text{df}\normalsize}x^{2}\right)^{-\frac{\text{df}+1}{2}}\qquad \left(\Gamma\text{ ist die Gamma-Funktion}\right)
+\]</span></p>
+</div>
+<p>Wie die Standardnormalverteilung hat die t-Verteilung Mittelwert 0 (daher kann sie als Nullhypothesenverteilung fungieren). Ihre Streuung ist jedoch nicht exakt 1, sondern hängt von der Zahl der Freiheitsgrade ab: <span class="math inline">\(\sigma^2=\frac{\scriptsize\text{df}\normalsize}{\scriptsize\text{df}\normalsize-2}\)</span>.</p>
+<div style="margin-top: -3px">
+<p>Tatsächlich gibt es auch zur t-Verteilung ein unstandardisiertes Pendant, die <strong>nicht-standardisierte t-Verteilung</strong>, die von Mittelwert <span class="math inline">\(\color{green}{\mu}\)</span> und Streuung <span class="math inline">\(\color{blue}{\sigma}\)</span> abhängt:</p>
+</div>
+<p><span class="math display">\[
+f_t(x|\color{green}{\mu},\color{blue}{\sigma},\scriptsize\text{df}\normalsize) = \frac{\Gamma\left(\frac{\scriptsize\text{df}\normalsize+1}{2}\right)} {\color{blue}{\sigma}\sqrt{\scriptsize\text{df}\normalsize\,\pi}~\Gamma\left(\frac{\scriptsize\text{df}\normalsize}{2}\right)}\left(1+\frac{1}{\scriptsize\text{df}\normalsize}\left(\frac{x-\color{green}{\mu}}{\color{blue}{\sigma}}\right)^2\right)^{-\frac{\text{df}+1}{2}}
+\]</span></p>
+<p>Ähnlich wie beim z-Test hat es sich in der Praxis aber durchgesetzt immer mit standardisierten Prüfgrößen (wie <span class="math inline">\(z\)</span> oder <span class="math inline">\(t\)</span>) zu arbeiten. Daher finden die unstandardisierte t- und Normalverteilung im Kontext der Hypothesentestung selten eine Anwendung.</p>
+<div style="margin-top: -5px">
+<p>Der <strong>Vorteil standardisierter Prüfgrößen</strong> ist, dass diese vergleichbar zwischen Studien sind. Ein bestimmter z- oder t-Wert hat eine Aussagekraft, ohne den Standardfehler einer Studie zu kennen.</p>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style="color: darkred">Intuition: verdickte Flanken der t-Verteilung</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
+<div>
+<ul>
+<li>Warum sind die Flanken der Verteilung der Testgröße <span class="math inline">\(t=\frac{\hat{\theta}}{\hat{se}}\)</span> stärker ausgeprägt, wenn <span class="math inline">\(\hat{se}\)</span> auf Basis der Stichprobe geschätzt werden muss?</li>
+<li>Der Grund liegt in der (Chi-)Verteilung der Zufallsvariable <span class="math inline">\(\hat{se}\)</span> im Nenner:
+<ul>
+<li>Bei kleinen Stichprobengrößen (kleines df), gibt es eine Assymmetrie der Verteilung hin zu Werten kleiner dem Mittelwert (welcher die korrekte Schätzung von <span class="math inline">\(se\)</span> repräsentiert — in der Abbildung gestrichelte Linien)</li>
+<li>D.h. wir <em>teilen</em> <span class="math inline">\(\hat{\theta}\)</span> <em>überproportional häufig durch zu kleine Werte</em>, wodurch die <em>Teststatistik</em> <span class="math inline">\(t=\frac{\hat{\theta}}{\hat{se}}\)</span> <em>überproportional häufig zu extreme (negative oder positive) Werte</em> liefert.</li>
+<li>Dies führt zu den stärkeren Flanken der t-Verteilung!</li>
+</ul></li>
+</ul>
+</div>
+<p><img data-src="images/chi.png" style="margin-top: -20px !important"></p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Funktionen der t-Verteilung</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 110px; "></p>
+<p><img data-src="images/tdist_cdf.png" style="margin-left:40px !important" height="300"></p>
+<p><img data-src="images/tdist_cdfinv.png" height="400"></p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="pooledvariance" class="slide level2">
+<h2><span style=" color: darkred !important;">Herleitung des gepoolten Standardfehlers</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
+<div style="margin-top: -10px">
+<ul>
+<li class="fragment">Im Fall unabhängiger Messungen und ähnlicher Varianzen wird eine <strong>gepoolte Streuung</strong> <span class="math inline">\(\hat{\sigma}_\text{pooled}\)</span> herangezogen:</li>
+</ul>
+</div>
+<div style="margin-top: -50px">
+<div class="fragment">
+<p><span class="math display">\[
+\hat{se} = \hat{\sigma}_\text{pooled}\sqrt{\frac{1}{n_A}+\frac{1}{n_B}}
+\]</span></p>
+</div>
+</div>
+<div style="margin-top: -15px">
+<ul>
+<li class="fragment">Zur Herleitung starten wir mit der allgemeinen Varianzsummenformel: wir wissen, dass sich die Varianzen der beiden Stichprobenmittelwerte (=quadrierte Standardfehler <span class="math inline">\(\hat{se}_A^2\)</span> und <span class="math inline">\(\hat{se}_B^2\)</span>) aufaddieren:</li>
+</ul>
+</div>
+<div style="margin-top: -54px">
+<div class="fragment">
+<p><span class="math display">\[
+\hat{se}^2 = \hat{se}_A^2 + \hat{se}_B^2\quad\rightarrow\quad \hat{se} = \sqrt{\hat{se}_A^2 + \hat{se}_B^2} = \sqrt{\frac{\hat{\sigma}_A^2}{n_A} + \frac{\hat{\sigma}_B^2}{n_B}}
+\]</span></p>
+</div>
+</div>
+<div style="margin-top: -15px">
+<ul>
+<li class="fragment">Können die Varianzen <span class="math inline">\(\hat{\sigma}_A^2\)</span> und <span class="math inline">\(\hat{\sigma}_B^2\)</span> als ähnlich angenommen werden, gilt folgende Überlegung: statt beide Varianzen einzeln zu schätzen, wird eine einheitliche gepoolte Varianz <span class="math inline">\(\hat{\sigma}_\text{pooled}\)</span> auf Basis beider Stichproben geschätzt (vgl. Vorlesung 07).
+<ul>
+<li class="fragment">Vorteil: diese Varianz kann präziser geschätzt werden als die Einzelvarianzen, da die kombinierte Stichprobenzahl <span class="math inline">\(n_A+n_B\)</span> zugrundegelegt wird.</li>
+</ul></li>
+<li class="fragment">Wir ersetzen also <span class="math inline">\(\hat{\sigma}_A^2\)</span> und <span class="math inline">\(\hat{\sigma}_B^2\)</span> jeweils durch <span class="math inline">\(\hat{\sigma}_\text{pooled}^2\)</span>:</li>
+</ul>
+</div>
+<div style="margin-top: -20px">
+<div class="fragment">
+<p><span class="math display">\[
+\hat{se} = \sqrt{\frac{\hat{\sigma}_\text{pooled}^2}{n_A} + \frac{\hat{\sigma}_\text{pooled}^2}{n_B}} = \hat{\sigma}_\text{pooled}\sqrt{\frac{1}{n_A}+\frac{1}{n_B}}\qquad\text{q.e.d.}
+\]</span></p>
+</div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="welchsatterthwaiteintuition" class="slide level2">
+<h2><span style=" color: darkred !important;">Intuition zur Welch–Satterthwaite-Gleichung</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
+<p>Auch wenn die Welch–Satterthwaite-Gleichung für die Freiheitsgrade beim Zweistichproben-t-Test mit unterschiedlicher Varianz recht kompliziert aussieht, ist eine nähere Betrachtung aufschlussreich.</p>
+<p>Für <span class="math inline">\(n_A=n_B=n\)</span> gilt:</p>
+<p><span class="math display">\[
+\text{df}=(n-1)\Big(1+\frac{2}{\left(\frac{\hat{\sigma}_A}{\hat{\sigma}_B}\right)^2+\left(\frac{\hat{\sigma}_B}{\hat{\sigma}_A}\right)^2}\Big)
+\]</span></p>
+<p>Zwei Fälle sind interessant:</p>
+<div class="vspace-small">
+
+</div>
+<p><u>Fall 1: Sind die Varianzen gleich</u> (entgegen der Annahme), d.h. <span class="math inline">\(\hat{\sigma}_A=\hat{\sigma}_B\)</span>, so vereinfacht sich die Formel zu</p>
+<p><span class="math display">\[
+\text{df} = (n-1)(1+\frac{2}{2}) = 2n -2,
+\]</span></p>
+<p><strong>also exakt die Formel des klassichen Zweistichprobentests.</strong></p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Intuition zur Welch–Satterthwaite-Gleichung</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
+<p><u>Fall 2: Sind die Varianzen extrem unterschiedlich</u>, so wird entweder <span class="math inline">\(\left(\frac{\hat{\sigma}_A}{\hat{\sigma}_B}\right)^2\)</span> oder <span class="math inline">\(\left(\frac{\hat{\sigma}_B}{\hat{\sigma}_A}\right)^2\)</span> extrem groß und die Formel vereinfacht sich zu</p>
+<p><span class="math display">\[
+\text{df} = (n-1)(1+\frac{2}{\infty}) = (n-1)(1+0) = n-1
+\]</span></p>
+<p><strong>also exakt die Formel des Einstichprobentests.</strong></p>
+<p>Für extrem ungleiche Varianzen reduzieren sich also die Freiheitsgrade — und damit die <em>effektive Stichprobengröße</em> — auf die Größe einer der beiden verglichenen Gruppen.</p>
+<p>Das ist durchaus intuitiv: ist z.B. <span class="math inline">\(\hat{\sigma}_A\)</span> extrem viel kleiner als <span class="math inline">\(\hat{\sigma}_B\)</span>, so spielt die Varianz der Gruppe A nahezu keine Rolle mehr. Die Versuchspersonen dieser Gruppe gehen also für die Berechnung des Standardfehlers “verloren”, was sich entsprechend auf die Freiheitsgrade auswirkt.</p>
+<p><em>Im Grenzfall</em> spielt die Varianz dieser Gruppe überhaupt keine Rolle mehr, sondern nur noch ihr Mittelwert. Die Gruppe hat damit die gleiche Funktion wie der Referenzwert <span class="math inline">\(\mu_0\)</span> beim Einstichproben-t-Test.</p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="treg" class="slide level2">
+<h2><span style=" color: darkred !important;">Inferenzstatistik für Regressionskoeffizienten</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
 <div class="columns">
 <div class="column" style="width:64%;">
 <div>
@@ -1515,11 +2009,11 @@ t = r\sqrt{\frac{n-2}{1-r^2}} = 0{,}4\sqrt{\frac{12-2}{1-0{,}4^2}} \overset{(Com
 </div>
 <div class="fragment">
 <p><span class="math display">\[
-\hat{se}(b_1)= \frac{\hat{\sigma}_Y}{\hat{\sigma}_X}\sqrt{\frac{1-r^2}{n-2}}
+\hat{se}(\hat{b}_1)= \frac{\hat{\sigma}_Y}{\hat{\sigma}_X}\sqrt{\frac{1-\hat{\rho}^2}{n-2}}
 \]</span></p>
 </div>
 </div><div class="column" style="width:36%;">
-<p><img data-src="images/regression_basics2.png"></p>
+<p><img data-src="images/regression_basics2_v2.png"></p>
 </div>
 </div>
 <ul>
@@ -1527,7 +2021,7 @@ t = r\sqrt{\frac{n-2}{1-r^2}} = 0{,}4\sqrt{\frac{12-2}{1-0{,}4^2}} \overset{(Com
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
-t = \frac{b_1}{\hat{se}(b_1)} \overset{\text{(s. nächste Folie)}}{=} r\sqrt{\frac{n-2}{1-r^2}}
+t = \frac{\hat{b}_1}{\hat{se}(\hat{b}_1)} \overset{\text{(s. nächste Folie)}}{=} \hat{\rho}\sqrt{\frac{n-2}{1-\hat{\rho}^2}}
 \]</span></p>
 </div>
 <ul>
@@ -1680,358 +2174,11 @@ t = \frac{b_1}{\hat{se}(b_1)} = \frac{\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}r}{\f
 <div class="caption-style">
 <p>Die Analogie von bekannten statistischen Tests und linearem Modell ist lange bekannt, ging aber 2021 durch Beiträge von Jonas Lindeløv viral<a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a> <a href="#/footnotes" class="footnote-ref" id="fnref4" role="doc-noteref" data-footnote-href="#/fn4" onclick=""><sup>4</sup></a> <a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a>.</p>
 </div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-<aside></aside></section>
-<section class="slide level2 blackslide center">
-<h2></h2>
-<div class="vspace-small">
-
-</div>
-<div class="columns">
-<div class="column" style="width:68%;">
-<p><img data-src="images/paradoxia_histogram_correlation_paradoxiker.png" height="300"></p>
-</div><div class="column" style="width:32%;">
-<p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important; margin-left:-20px !important" height="250"></p>
-</div>
-</div>
-<p>Stichwort Signifikanz von Zusammenhängen: die Signifikanz des unerwarteten Zusammenhangs von TikTok-Onlinezeit und Entzündungswerten haben Sie bislang nicht getestet.</p>
-<p>Basierend auf dem Korrelationskoeffizienten <span class="math inline">\(r=0{,}517\)</span> und der Stichprobengröße <span class="math inline">\(n=50\)</span> ergibt sich die Prüfgröße <span class="math inline">\(t\)</span> direkt:</p>
-<div class="vspace-small">
-
-</div>
-<p><span class="math display">\[
-t = \frac{r}{\hat{se}(r)} = r\sqrt{\frac{n-2}{1-r^2}} = 0{,}517\sqrt{\frac{50-2}{1-0{,}517^2}} = 4{,}18
-\]</span></p>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2 blackslide center">
-<h2></h2>
-<div class="vspace-small">
-
-</div>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Der Zusammenhang war unerwartet und es gab dementsprechend keine gerichtete Hypothese. Der p-Wert ist in diesem Fall also der doppelte Wert der Fläche rechts des (positiven) t-Werts von <span class="math inline">\(4{,}18\)</span>, oder analog, der doppelte Wert links des negierten t-Werts <span class="math inline">\(-4{,}18\)</span>.</p>
-<p><span class="math display">\[
-p=2\int_{-\infty}^{-4{,}18}f_t(x|\scriptsize\text{df}\normalsize)dx = 2F_t(-4{,}18|48)=0{,}0001
-\]</span></p>
-<p><span style="font-size:24px">(Die Zahl der Freiheitsgrade beim t-Test der Korrelation ist <span class="math inline">\(n-2\)</span>)</span></p>
-</div><div class="column" style="width:40%;">
-<p><img data-src="images/paradoxia_nulldist_t_r.png"></p>
-</div>
-</div>
-<p>Der Zusammenhang von TikTok-Onlinezeit und Entzündungswerten ist also deutlich signifikant.</p>
-<p>Trotz des hochsignifikanten Effektes bleiben Sie skeptisch — Ihr größtes Fragezeichen: was ist Ursache, was ist Wirkung? Folgen erhöhte Entzündungswerte tatsächlich auf TikTok-Konsum (einschlägiger Kanäle)? Oder ist es einfach so, dass Erkrankte (mit erhöhten Entzündungswerten) Rat und Solidarität auf TikTok suchen?</p>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2 blackslide center">
-<h2></h2>
-<div class="vspace-small">
-
-</div>
-<div class="columns">
-<div class="column" style="width:68%;">
-<p>Um die Gruppen<em>unterschiede</em> nun ebenfalls mithilfe des t-Tests zu überprüfen, listen Sie nochmals alle relevanten Werte auf, die Sie zum Teil bereits beim z-Test bestimmt hatten:</p>
-<!---  Table --->
-<table>
-<colgroup>
-<col style="width: 18%">
-<col style="width: 18%">
-<col style="width: 10%">
-<col style="width: 27%">
-<col style="width: 27%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>Fallzahl <span class="math inline">\(n\)</span></th>
-<th><span class="math inline">\(\Delta\bar{x}\)</span></th>
-<th>Standardfehler <span class="math inline">\(\hat{se}\)</span></th>
-<th>Freiheitsgrade <span class="math inline">\(\text{df}\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><u>TikTok</u></td>
-<td><span class="math inline">\(2\times 50\)</span></td>
-<td><span class="math inline">\(0{,}577\)</span></td>
-<td><span class="math inline">\({0{,}123}\)</span></td>
-<td><span class="math inline">\(93{,}7\)</span></td>
-</tr>
-<tr class="even">
-<td><u>Entzündung</u></td>
-<td><span class="math inline">\(2\times 50\)</span></td>
-<td><span class="math inline">\(0{,}0243\)</span></td>
-<td><span class="math inline">\({0{,}0147}\)</span></td>
-<td><span class="math inline">\(96{,}2\)</span></td>
-</tr>
-</tbody>
-</table>
-</div><div class="column" style="width:32%;">
-<p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important" height="200"></p>
-</div>
-</div>
-<div class="vspace-medium">
-
-</div>
-<div>
-<ul>
-<li>Neu hinzugekommen sind die Freiheitsgrade, die Sie in der Tabelle mit der Formel für ungleiche Varianzen bestimmt haben:</li>
-</ul>
-</div>
-<p><span class="math display">\[
-\text{df}=(n-1)\Big(1+\frac{2}{\left(\frac{\hat{\sigma}_\text{control}}{\hat{\sigma}_\text{paradoxia}}\right)^2+\left(\frac{\hat{\sigma}_\text{paradoxia}}{\hat{\sigma}_\text{control}}\right)^2}\Big)
-\]</span></p>
-<div>
-<ul>
-<li>Zur Erinnerung:
-<ul>
-<li>TikTok: <span class="math inline">\(\hat{\sigma}_\text{control}=0{,}55\)</span>; <span class="math inline">\(\hat{\sigma}_\text{paradoxia}=0{,}68\)</span></li>
-<li>Entzündung: <span class="math inline">\(\hat{\sigma}_\text{control}=0{,}068\)</span>; <span class="math inline">\(\hat{\sigma}_\text{paradoxia}=0{,}078\)</span></li>
-</ul></li>
-</ul>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2 blackslide center">
-<h2></h2>
-<div class="vspace-small">
-
-</div>
-<div class="columns">
-<div class="column" style="width:68%;">
-<p>Mit diesen Information erhalten Sie folgende t-Werte (* in diesem Fall identisch mit den z-Werten!):</p>
-<p><span class="math display">\[
-\text{TikTok:}\qquad t=\frac{\Delta\bar{x}}{\hat{se}} = \frac{0{,}577}{0{,}123} = 4{,}69\\
-\text{Entzündung:}\qquad t=\frac{\Delta\bar{x}}{\hat{se}} = \frac{0{,}0243}{0{,}0147} = 1{,}65
-\]</span></p>
-</div><div class="column" style="width:32%;">
-<p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important" height="200"></p>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Statt der Standardnormalverteilung integrieren Sie nun einfach die entsprechende Fläche unter der t-Verteilung:</p>
-<p><span class="math display">\[
-p=\int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx = 1-F_t(t|\scriptsize\text{df}\normalsize)
-\]</span></p>
-</div><div class="column" style="width:40%;">
-<p><img data-src="images/paradoxia_nulldist_t.png"></p>
-</div>
-</div>
-<p><span style="font-size: 23px; margin-top: 15px;">(*) Warum identisch? Weil wir für die z-Werte — in Abwesenheit anderweitig bekannter Werte — ebenfalls die Stichprobenstreuung verwendet hatten.</span></p>
-</section>
-<section class="slide level2 blackslide center">
-<h2></h2>
-<!-- <div class="vspace-small"></div> -->
-<div class="columns">
-<div class="column" style="width:68%;">
-<div style="margin-top: -15px">
-<p>Die große Frage ist: würden weiterhin beide Effekte signifikant bleiben? Antwort:</p>
-</div>
-<!-- <div class="vspace-small"></div> -->
-<p><span class="math display">\[
-\text{TikTok:}\qquad p= 1 - F_t(4{,}83|93{,}7) \overset{\text{(Computer)}}{=} 0{,}000003
-\]</span></p>
-<div class="vspace-small">
-
-</div>
-<p><span class="math display">\[
-\text{Entzündung:}\qquad p= 1 - F_t(1{,}65|96{,}2) \overset{\text{(Computer)}}{=} 0{,}051
-\]</span></p>
-</div><div class="column" style="width:32%;">
-<p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important" height="200"></p>
-</div>
-</div>
-<p>Kurios — das Pendel beim Entzündungseffekt schlägt exakt auf der anderen Seite des Signifikanzniveaus aus! Der Effekt ist nun nicht mehr signifikant. Der TikTok-Effekt bleibt stabil.</p>
-<p>Bei beiden Effekten zeigt sich die leicht konservativere Natur der t-Verteilung. Die stärkeren Flanken im Vergleich zur Normalverteilung führen zu geringfügig höheren p-Werten. Notgedrungen müssen Sie Ihre zentrale Grafik anpassen und das Signifikanzsternchen beim Entzündungseffekt entfernen:</p>
-<p><img data-src="images/paradoxia_histogram_inflammation_sem_nonsig.png" height="270"></p>
-<!-- ```{python}
-import numpy as np
-import matplotlib.pyplot as plt
-import pandas as pd
-import os
-from scipy.stats import sem
-import seaborn as sns
-
-np.random.seed(0)
-root = '/home/matteo/OneDrive/lehre/Statistik/stats1_lecture/book/'
-
-fontsize = 15
-
-df = pd.read_csv(os.path.join(root, 'data', 'paradoxia.csv'))
-# print(df.head())
-
-data_tiktok_control = df[df.group == 1]['hours_tiktok_per_day'].values
-data_tiktok_paradoxia = df[df.group == 2]['hours_tiktok_per_day'].values
-data_inflam_control = df[df.group == 1]['inflammation'].values
-data_inflam_paradoxia = df[df.group == 2]['inflammation'].values
-
-print(f'Mean TikTok Control: {np.mean(data_tiktok_control):.2f}')
-print(f'Mean TikTok Paradoxia: {np.mean(data_tiktok_paradoxia):.2f}')
-print(f'Mean Inflam Control: {np.mean(data_inflam_control):.2f}')
-print(f'Mean Inflam Paradoxia: {np.mean(data_inflam_paradoxia):.2f}')
-
-plt.style.use('dark_background')
-plt.figure(figsize=(6, 2.5))
-ax = plt.subplot(121)
-plt.gca().set_facecolor('#eee')
-sns.stripplot(data=df, x='group', y='hours_tiktok_per_day', color='#bbb', jitter=0.25)
-color = 'k'
-plt.errorbar([0], [np.mean(data_tiktok_control)], yerr=[sem(data_tiktok_control)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
-plt.errorbar([1], [np.mean(data_tiktok_paradoxia)], yerr=[sem(data_tiktok_paradoxia)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
-plt.text(0.25, 0.85, r'$\bar{x}=' + f'{np.mean(data_tiktok_control):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
-plt.text(0.75, 0.85, r'$\bar{x}=' + f'{np.mean(data_tiktok_paradoxia):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
-plt.plot([0, 1], [2.4, 2.4], 'k-', lw=2, zorder=4)
-plt.text(0.5, 2.32, '***', ha='center', va='center', fontsize=15, color='k', backgroundcolor='#eee', zorder=5)
-
-plt.xticks([0, 1], ['Kontroll', 'Paradoxia'], fontsize=fontsize)
-plt.yticks(fontsize=fontsize-2)
-plt.ylabel('Stunden TikTok / 24h', fontsize=fontsize)
-plt.xlabel('')
-# plt.xlim(-0.5, 1.5)
-plt.ylim(0, 1.1*max(data_tiktok_control.max(), data_tiktok_paradoxia.max()))
-
-
-ax = plt.subplot(122)
-plt.gca().set_facecolor('#eee')
-sns.stripplot(data=df, x='group', y='inflammation', color='#bbb', jitter=0.25)
-color = 'k'
-plt.errorbar([0], [np.mean(data_inflam_control)], yerr=[sem(data_inflam_control)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
-plt.errorbar([1], [np.mean(data_inflam_paradoxia)], yerr=[sem(data_inflam_paradoxia)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
-plt.text(0.25, 0.85, r'$\bar{x}=' + f'{np.mean(data_inflam_control):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
-plt.text(0.75, 0.85, r'$\bar{x}=' + f'{np.mean(data_inflam_paradoxia):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
-# plt.plot([0, 1], [0.25, 0.25], 'k-', lw=2, zorder=4)
-# plt.text(0.5, 0.24, '*', ha='center', va='center', fontsize=15, color='k', backgroundcolor='#eee', zorder=5)
-
-plt.xticks([0, 1], ['Kontroll', 'Paradoxia'], fontsize=fontsize)
-plt.yticks(fontsize=fontsize-2)
-plt.ylabel('Entzündungswert', fontsize=fontsize)
-plt.xlabel('')
-plt.xlim(-0.5, 1.5)
-plt.ylim(0, 1.1*max(data_inflam_control.max(), data_inflam_paradoxia.max()))
-
-
-plt.tight_layout()
-
-plt.savefig('images/paradoxia_histogram_inflammation_sem_nonsig.png', bbox_inches='tight')
-``` -->
-</section>
-<section class="slide level2 blackslide center">
-<h2></h2>
-<img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" height="300"> <!-- Source: Midjourney -->
-<div class="vspace-small">
-
-</div>
-<p>Vor dem Hintergrund dieser neuen Ergebnisse, stellen sich eine Reihe von Fragen:</p>
-<ul>
-<li class="fragment">Ist die Interpretation der Signifikanz fundamental verschieden zwischen dem z- und dem t-Test?</li>
-<li class="fragment">Ist die Entzündungshypothese eindeutig widerlegt?</li>
-<li class="fragment">Können Sie aus dem hochsignifikanten Effekt der TikTok-Hypothese und dem nicht-signifikanten Effekt der Entzündungshypothese schlussfolgern, dass der TikTok-Effekt signifikant stärker ist?</li>
-<li class="fragment">Können Sie schlusfolgern, dass Paradoxia eindeutig durch den TikTok-Effekt verursacht wird?</li>
-</ul>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-<!-- ## {.center}
-
-![[xkcd#1347](https://xkcd.com/1347/)](images/xkcd1347.png)
-
-- Siehe auch [https://www.explainxkcd.com/wiki/index.php/1347](https://www.explainxkcd.com/wiki/index.php/1347)
- -->
-</section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>Bonuscontent</h1>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Die t-Verteilung ist bereits standardisiert</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 295px; right: 0px; height: 100px; "></p>
-<p>Vor der Einführung des z-Tests hatten wir zunächst die <strong>unstandardisierte Normalverteilung</strong> kennengelernt, die durch zwei Parameter definiert ist: Mittelwert <span class="math inline">\(\mu\)</span> und Standardabweichung <span class="math inline">\(\sigma\)</span>:</p>
-<p><span class="math display">\[
-f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
-\]</span></p>
-<p>Verwenden wir statt <span class="math inline">\(x\)</span> die standardisierte Variable <span class="math inline">\(\frac{x-\mu}{\sigma}\)</span>, vereinfacht sich die Nullhypothesen-Verteilung zur <strong>Standardnormalverteilung</strong>:</p>
-<div style="margin-top: -10px">
-<p><span class="math display">\[
-f(x)=\varphi(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}
-\]</span></p>
-</div>
-<p>Die Standardnormalverteilung hat keinen Parameter mehr (nur noch die <em>Variable</em> <span class="math inline">\(x\)</span>). Da es sich beim z-Wert auch um eine standardisierte Variable handelte, konnten wir auch für <span class="math inline">\(z\)</span> eine Standardnormalverteilung annehmen:</p>
-<div style="margin-top: -10px">
-<p><span class="math display">\[
-f(z)=\varphi(z)=\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}
-\]</span></p>
-</div>
-<p>Die <strong>t-Verteilung</strong> hatten wir dagegen direkt auf Basis der standardisierten Prüfgröße <span class="math inline">\(\frac{\hat{\theta}}{\hat{se}}\)</span> eingeführt. <span style=" color: navy !important;"><strong>Die klassische t-Verteilung ist aus diesem Grund bereits eine <em>standardisierte Verteilung</em>, die nicht mehr vom Mittelwert oder Streuung abhängt.</strong></span> Im Gegensatz zur Standardnormalverteilung hat sie aber noch einen Parameter: die Zahl der Freiheitsgrade <span class="math inline">\(\text{df}\)</span>.</p>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Unstandardisierte t-Verteilung</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 110px; "></p>
-<p>Die Formel für die klassische (standardisierte) t-Verteilung lautet:</p>
-<div style="margin-top: -7px">
-<p><span class="math display">\[
-f_t(x|\scriptsize\text{df}\normalsize) = \frac{\Gamma\left(\frac{\scriptsize\text{df}\normalsize+1}{2}\right)} {\sqrt{\scriptsize\text{df}\normalsize\,\pi}~\Gamma\left(\frac{\scriptsize\text{df}\normalsize}{2}\right)}\left(1+\frac{1}{\scriptsize\text{df}\normalsize}x^{2}\right)^{-\frac{\text{df}+1}{2}}\qquad \left(\Gamma\text{ ist die Gamma-Funktion}\right)
-\]</span></p>
-</div>
-<p>Wie die Standardnormalverteilung hat die t-Verteilung Mittelwert 0 (daher kann sie als Nullhypothesenverteilung fungieren). Ihre Streuung ist jedoch nicht exakt 1, sondern hängt von der Zahl der Freiheitsgrade ab: <span class="math inline">\(\sigma^2=\frac{\scriptsize\text{df}\normalsize}{\scriptsize\text{df}\normalsize-2}\)</span>.</p>
-<div style="margin-top: -3px">
-<p>Tatsächlich gibt es auch zur t-Verteilung ein unstandardisiertes Pendant, die <strong>nicht-standardisierte t-Verteilung</strong>, die von Mittelwert <span class="math inline">\(\color{green}{\mu}\)</span> und Streuung <span class="math inline">\(\color{blue}{\sigma}\)</span> abhängt:</p>
-</div>
-<p><span class="math display">\[
-f_t(x|\color{green}{\mu},\color{blue}{\sigma},\scriptsize\text{df}\normalsize) = \frac{\Gamma\left(\frac{\scriptsize\text{df}\normalsize+1}{2}\right)} {\color{blue}{\sigma}\sqrt{\scriptsize\text{df}\normalsize\,\pi}~\Gamma\left(\frac{\scriptsize\text{df}\normalsize}{2}\right)}\left(1+\frac{1}{\scriptsize\text{df}\normalsize}\left(\frac{x-\color{green}{\mu}}{\color{blue}{\sigma}}\right)^2\right)^{-\frac{\text{df}+1}{2}}
-\]</span></p>
-<p>Ähnlich wie beim z-Test hat es sich in der Praxis aber durchgesetzt immer mit standardisierten Prüfgrößen (wie <span class="math inline">\(z\)</span> oder <span class="math inline">\(t\)</span>) zu arbeiten. Daher finden die unstandardisierte t- und Normalverteilung im Kontext der Hypothesentestung selten eine Anwendung.</p>
-<div style="margin-top: -5px">
-<p>Der <strong>Vorteil standardisierter Prüfgrößen</strong> ist, dass diese vergleichbar zwischen Studien sind. Ein bestimmter z- oder t-Wert hat eine Aussagekraft, ohne den Standardfehler einer Studie zu kennen.</p>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style="color: darkred">Intuition: verdickte Flanken der t-Verteilung</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<div>
-<ul>
-<li>Warum sind die Flanken der Verteilung der Testgröße <span class="math inline">\(t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}\)</span> stärker ausgeprägt, wenn <span class="math inline">\(\hat{\sigma}\)</span> auf Basis der Stichprobe geschätzt werden muss?</li>
-<li>Der Grund liegt in der (Chi-)Verteilung der Zufallsvariable <span class="math inline">\(\hat{\sigma}\)</span> im Nenner:
-<ul>
-<li>Bei kleinen Stichprobengrößen (kleines df), gibt es eine Assymmetrie der Verteilung hin zu Werten kleiner dem Mittelwert (welcher die korrekte Schätzung von <span class="math inline">\(\sigma\)</span> repräsentiert — in der Abbildung gestrichelte Linien)</li>
-<li>D.h. wir <em>teilen</em> <span class="math inline">\(\hat{\theta}\)</span> <em>überproportional häufig durch zu kleine Werte</em>, wodurch die <em>Teststatistik</em> <span class="math inline">\(t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}\)</span> <em>überproportional häufig zu extreme (negative oder positive) Werte</em> liefert.</li>
-<li>Dies führt zu den stärkeren Flanken der t-Verteilung!</li>
-</ul></li>
-</ul>
-</div>
-<p><img data-src="images/chi.png" style="margin-top: -20px !important"></p>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Funktionen der t-Verteilung</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 110px; "></p>
-<p><img data-src="images/tdist_cdf.png" style="margin-left:40px !important" height="300"></p>
-<p><img data-src="images/tdist_cdfinv.png" height="400"></p>
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Vorlesung 11: t-Test</p>
 </div>
-</section></section>
+<aside></aside></section></section>
 <section id="footnotes" class="footnotes footnotes-end-of-document smaller scrollable" role="doc-endnotes"><h2>Fußnoten</h2>
 
 <ol>
