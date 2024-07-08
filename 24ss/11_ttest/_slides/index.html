@@ -30,71 +30,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -450,7 +385,6 @@ setup:
 ```
 
 # Einschub: Anmerkungen zur Klausur -->
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {tex} number-lines code-with-copy"><code class="sourceCode"></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -528,9 +462,9 @@ $$
 <div style="margin-top: 75px">
 <p>Zur Erinnerung: beim <strong>z-Test</strong> haben wir für die Verteilung der Prüfgröße <span class="math inline">\(z=\frac{\hat{\theta}}{se}\)</span> eine Normalverteilung annehmen können. Grund:</p>
 <ul>
-<li class="fragment">Aufgrund des zentralen Grenzwertsatzes können statistische Kennwerte bei ausreichender Stichprobengröße als normalverteilt angenommen werden.</li>
+<li class="fragment">Aufgrund des zentralen Grenzwertsatzes können statistische Kennwerte <span class="math inline">\(\hat{\theta}\)</span> bei ausreichender Stichprobengröße als normalverteilt angenommen werden.</li>
 <li class="fragment">Beim z-Test werden die Standardabweichung <span class="math inline">\(\sigma\)</span> der Population(en), und damit auch der Standardfehler <span class="math inline">\(se\)</span> (z.B. <span class="math inline">\(se=\frac{\sigma}{\sqrt{n}}\)</span> bei der Einzelmessung), als bekannt angenommen.</li>
-<li class="fragment">De facto wird also bei der Berechnung der Prüfgröße <span class="math inline">\(z=\frac{\hat{\theta}}{se}\)</span> eine normalverteilte Variable (<span class="math inline">\(\hat{\theta}\)</span>) durch eine bekannte Konstante <span class="math inline">\(se\)</span> geteilt, so dass auch die Prüfgröße <span class="math inline">\(z\)</span> normalverteilt ist.</li>
+<li class="fragment">De facto wird also bei der Berechnung der Prüfgröße <span class="math inline">\(z=\frac{\hat{\theta}}{se}\)</span> eine normalverteilte Variable (<span class="math inline">\(\hat{\theta}\)</span>) durch eine bekannte Konstante (<span class="math inline">\(se\)</span>) geteilt, so dass auch die Prüfgröße <span class="math inline">\(z\)</span> normalverteilt ist.</li>
 </ul>
 <div class="vspace-large">
 
@@ -549,7 +483,7 @@ $$
 </ul>
 <div class="colorbox fragment" style="margin-top:13px">
 <p>Die Gretchen-Frage ist daher: welcher Verteilung folgt die Prüfstatistik <span class="math display">\[
-\frac{\hat{\theta}}{\hat{se}}\qquad\text{?}\qquad\text{(mit Betonung auf dem ^ über dem Standardfehler $se$)}
+\frac{\hat{\theta}}{\hat{se}}\qquad\text{?}\qquad\text{(mit Betonung auf dem ^ über dem Standardfehler $\hat{se}$)}
 \]</span></p>
 </div>
 <div class="notabene fragment" style="margin-top: 25px">
@@ -861,7 +795,7 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 </ul>
 </div>
 <!---  Example --->
-<div class="example fragment" style="font-size:23px !important; margin-top:-12px">
+<div class="example fragment" style="font-size:21px !important; margin-top:10px">
 <div class="columns">
 <div class="column" style="width:7%;">
 <div style="margin-top: 10px">
@@ -874,8 +808,9 @@ t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
 \hat{\sigma}^2 = \frac{1}{4-1}\sum_{i=1}^4 (x_i-\bar{x})^2
 \]</span></p>
 </div>
-<p>Aus der Formel der Varianz erkennen wir, dass wir zur Berechnung der Varianz <strong>einen Parameter</strong> aus den Daten bestimmen müssen, nämlich der Mittelwert <span class="math inline">\(\bar{x}\)</span>. Die Zahl der Freiheitsgrade ergibt sich damit plain &amp; simple nach obiger Definition als <strong>Stichprobengröße n minus 1</strong>, also in diesem Beispiel <span class="math inline">\(\text{df}=3\)</span>.</p>
-<p>Dadurch, dass die Formel der Varianz den Mittelwert aller Datenpunkte als Parameter enthält, können wir nicht mehr alle 4 Datenpunkte beliebig frei variieren. Wir könnten drei beliebige Datenwerte frei bestimmen, der vierte Wert aber wäre durch den Mittelwertparameter automatisch festgelegt. Sagen wir der Mittelwert sei <span class="math inline">\(\bar{x}=2\)</span> und wir würden frei drei Werte als (2, 4, 1) frei wählen. Der vierte Wert ist nun nicht mehr frei, denn um die Randbedingung <span class="math inline">\(\bar{x}=2\)</span> zu garantieren, muss der vierte Wert gleich 1 sein. Diese Logik gilt nicht nur für den Mittelwertsparameter, sondern für jeden Parameter der “auf dem Weg” zur Berechnung einer statistischen Größe geschätzt werden muss (bei der Varianz ist der Mittelwert aber der einzige Zwischenparameter).</p>
+<p><strong>Frage: wie viele Freiheitsgrade haben wir für die Berechnung der Varianz?</strong></p>
+<p>Aus der Formel der Varianz erkennen wir, dass wir zur Berechnung der Varianz <strong>einen Parameter</strong> aus den Daten bestimmen müssen, nämlich der Mittelwert <span class="math inline">\(\bar{x}\)</span>. Die Zahl der Freiheitsgrade ergibt sich damit plain &amp; simple nach obiger Definition als <strong>Stichprobengröße n minus 1</strong>, also in diesem Beispiel <span class="math inline">\(\text{df}=n-1=4-1=3\)</span>.</p>
+<p><strong>Intuition:</strong> dadurch, dass die Formel der Varianz den Mittelwert aller Datenpunkte als Parameter enthält, können wir nicht mehr alle 4 Datenpunkte beliebig frei variieren. Wir könnten drei beliebige Datenwerte frei wählen, der vierte Wert aber wäre durch den gegebenen Mittelwert <span class="math inline">\(\bar{x}\)</span> festgelegt. Sagen wir der Mittelwert sei <span class="math inline">\(\bar{x}=2\)</span> und wir würden frei drei Werte als (2, 4, 1) frei wählen. Der vierte Wert ist nun nicht mehr frei, denn um die Randbedingung <span class="math inline">\(\bar{x}=2\)</span> zu garan- tieren, muss der vierte Wert gleich 1 sein. In diesem Sinne kann man auch sagen: Zwischenparameter wie <span class="math inline">\(\bar{x}\)</span> geben wie in einem Gleichungssystem Randbedingen vor, die die Zahl frei wählbarer Werte für die sonstigen Parameter reduzieren.</p>
 </div>
 </div>
 </div>
@@ -905,9 +840,9 @@ t=\frac{\hat{\theta}}{\hat{se}}
 <li class="fragment">Häufig reicht es, zu zählen, wie viele Mittelwerte für die Berechnung von <span class="math inline">\(\hat{se}\)</span> im Nenner des t-Wertes für die verschiedenen Tests verwendet werden:
 <ul>
 <li class="fragment">Einstichproben-t-Test: 1 Mittelwert für 1 Stichprobe ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
-<li class="fragment">Differenzen-t-Test: 1 Mittelwert für 1 Stichprobe (hier: Mittelwert <span class="math inline">\(\Delta\bar{x}\)</span> der Differenzen <span class="math inline">\(\Delta\bar{x}_i\)</span>) ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
+<li class="fragment">Differenzen-t-Test: 1 Mittelwert für 1 Stichprobe (hier: Mittelwert der Differenzt) ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
 <li class="fragment">Zweistichproben-t-Test (ähnliche Varianzen): 2 Mittelwerte für 2 Stichproben ⟶ <span class="math inline">\(\text{df}=n_A+n_B-2\)</span></li>
-<li class="fragment">(Ausnahme: Zweistichprobentest mit unterschiedlichen Varianzen ⟶ Welch–Satterthwaite-Gleichung)</li>
+<li class="fragment">Zweistichprobentest mit unterschiedlichen Varianzen ⟶ Welch–Satterthwaite-Gleichung (Ausnahme!)</li>
 <li class="fragment">Korrelation und Regression: 2 Mittelwerte für die zwei Zusammenhangsvariablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> ⟶ <span class="math inline">\(\text{df}=n-2\)</span></li>
 </ul></li>
 </ul>
@@ -1332,7 +1267,7 @@ t = \frac{\Delta\bar{x}}{\hat{se}} = \frac{0.1}{1/8} = 0.8
 <p><span class="math display">\[
 \begin{aligned}
 p&amp;=\int_{-\infty}^{-t}f_t(x|\scriptsize\text{df}\normalsize)dx + \int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx \overset{(Symmetrie)}{=} 2\cdot\int_{-\infty}^{-t}f_t(x|\scriptsize\text{df}\normalsize)dx  = \\
-&amp;= 2\cdot F_t(-t|\scriptsize\text{df}\normalsize) \overset{(einsetzen)}{=} 2\cdot F_t(-0.8|31) \overset{(Computer)}{=} 0.43
+&amp;= 2\cdot F_t(-t|\scriptsize\text{df}\normalsize) \overset{(einsetzen)}{=} 2\cdot F_t(-0.8|31) \overset{(Computer)}{\approx} 0.43
 \end{aligned}
 \]</span></p>
 </div>
@@ -1443,7 +1378,7 @@ t = \frac{\hat{\rho}}{\hat{se}(\hat{\rho})} = \hat{\rho}\sqrt{\frac{n-2}{1-\hat{
 </div>
 <div style="margin-top: -15px">
 <ul>
-<li class="fragment">Wir wollen testen, ob die Korrelation auf einem Signifikanzniveau <span class="math inline">\(\alpha=0.05\)</span> signifikant größer als 0 ist.</li>
+<li class="fragment">Wir wollen testen, ob der Korrelationskoeffizient <span class="math inline">\(\hat{\rho}\)</span> auf einem Signifikanzniveau <span class="math inline">\(\alpha=0.05\)</span> signifikant größer als 0 ist.</li>
 </ul>
 </div>
 <div class="columns">
@@ -1453,7 +1388,7 @@ t = \frac{\hat{\rho}}{\hat{se}(\hat{\rho})} = \hat{\rho}\sqrt{\frac{n-2}{1-\hat{
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
-t = \hat{\rho}\sqrt{\frac{n-2}{1-\hat{\rho}^2}} = 0.4\sqrt{\frac{12-2}{1-0.4^2}} \overset{(Computer)}{=} 1.38
+t = \hat{\rho}\sqrt{\frac{n-2}{1-\hat{\rho}^2}} = 0.4\sqrt{\frac{12-2}{1-0.4^2}} \overset{(Computer)}{\approx} 1.38
 \]</span></p>
 </div>
 <ul>
@@ -1514,11 +1449,11 @@ t = \hat{\rho}\sqrt{\frac{n-2}{1-\hat{\rho}^2}} = 0.4\sqrt{\frac{12-2}{1-0.4^2}}
 <p><img data-src="images/summary.png" width="60"></p>
 </div>
 </div><div class="column" style="width:91%;">
-<div class="summary" style="margin-top: 10px; margin-bottom: -15px; padding-top: 0px; padding-bottom: 0px;">
+<div class="summary" style="margin-top: 35px; margin-bottom: -15px; padding-top: 0px; padding-bottom: 0px; font-size: 28px">
 <div style="margin-bottom: -15px;">
 <ul>
 <li class="fragment">Wird der Standardfehler auf Basis der Stichprobe als <span class="math inline">\(\hat{se}\)</span> geschätzt, folgt die Prüfgröße <span class="math inline">\(\frac{\hat{\theta}}{\hat{se}}(=t)\)</span> einer <strong>t-Verteilung</strong>.</li>
-<li class="fragment">Die t-Verteilung <strong>nähert sich für <span class="math inline">\(n\rightarrow\infty\)</span> der Standardnormalverteilung an</strong>. Bei <strong>kleineren Fallzahlen <span class="math inline">\(n\)</span></strong> hat die t-Verteilung etwas <strong>dickere Flanken</strong>.</li>
+<li class="fragment">Die t-Verteilung <strong>nähert sich für <span class="math inline">\(n\rightarrow\infty\)</span> der Standardnormalverteilung an</strong>. Bei kleineren Fallzahlen <span class="math inline">\(n\)</span> hat die t-Verteilung etwas dickere Flanken.</li>
 <li class="fragment">Der <strong>prinzipielle Ansatz ist beim t-Test identisch zum z-Test</strong>: Bestimmung der Fläche für Wertebereiche extremer als die Prüfgröße (hier <span class="math inline">\(t\)</span>).</li>
 <li class="fragment"><strong>t-Test von Mittelwertdifferenzen</strong> (<span class="math inline">\(t=\frac{\Delta\bar{x}}{\hat{se}}\)</span>): je nach Szenario werden unter- schiedliche t-Test-Varianten angwendet. Sie unterscheiden sich hinsichtlich:
 <ul>
@@ -2038,11 +1973,11 @@ t = \frac{\hat{b}_1}{\hat{se}(\hat{b}_1)} \overset{\text{(s. nächste Folie)}}{=
 <div>
 <ul>
 <li>Während die Regressionssteigung abhängt davon, welche Variable als UV (bzw. <span class="math inline">\(x\)</span>) und welche als AV (bzw. <span class="math inline">\(y\)</span>) definiert wird, sind die t-Werte (und damit auch die p-Werte) unabhängig von der Rollenverteilung der Variablen.</li>
-<li>Dies ergibt sich direkt aus dem Zusammenhang von <span class="math inline">\(r\)</span> und <span class="math inline">\(b_1\)</span> (vgl. Vorlesung 06):</li>
+<li>Dies ergibt sich direkt aus dem Zusammenhang von <span class="math inline">\(\hat{\rho}\)</span> und <span class="math inline">\(\hat{b}_1\)</span> (vgl. Vorlesung 06):</li>
 </ul>
 </div>
 <p><span class="math display">\[
-b_1 = \frac{\hat{\sigma}_Y}{\hat{\sigma}_X}r
+\hat{b}_1 = \frac{\hat{\sigma}_Y}{\hat{\sigma}_X}\hat{\rho}
 \]</span></p>
 <div>
 <ul>
@@ -2051,13 +1986,13 @@ b_1 = \frac{\hat{\sigma}_Y}{\hat{\sigma}_X}r
 </div>
 <div style="margin-top: -12px">
 <p><span class="math display">\[
-t = \frac{b_1}{\hat{se}(b_1)} = \frac{\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}r}{\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}\sqrt{\frac{1-r^2}{n-2}}} = \frac{r}{\sqrt{\frac{1-r^2}{n-2}}} = r\sqrt{\frac{n-2}{1-r^2}}
+t = \frac{\hat{b}_1}{\hat{se}(\hat{b}_1)} = \frac{\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}\hat{\rho}}{\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}\sqrt{\frac{1-\hat{\rho}^2}{n-2}}} = \frac{\hat{\rho}}{\sqrt{\frac{1-\hat{\rho}^2}{n-2}}} = \hat{\rho}\sqrt{\frac{n-2}{1-\hat{\rho}^2}}
 \]</span></p>
 </div>
 <div>
 <ul>
-<li>Der t-Wert bei der einfachen Regression ist also identisch zum t-Wert der Korrelation und insbesondere nur noch abhängigg von <span class="math inline">\(r\)</span> und nicht mehr <span class="math inline">\(b_1\)</span></li>
-<li>Da für die Korrelation <span class="math inline">\(r\)</span> die Rollenverteilung der beiden Zusammenhangsvariablen<br>unerheblich ist, folgt, dass der p-Wert bei der Regression ebenso wenig von der<br>Zuordnung der Variablen als UV und AV abhängt.</li>
+<li>Der t-Wert bei der einfachen Regression ist also identisch zum t-Wert der Korrelation und insbesondere nur noch abhängigg von <span class="math inline">\(\hat{\rho}\)</span> und nicht mehr <span class="math inline">\(\hat{b}_1\)</span></li>
+<li>Da für die Korrelation <span class="math inline">\(\hat{\rho}\)</span> die Rollenverteilung der beiden Zusammenhangsvariablen<br>unerheblich ist, folgt, dass der p-Wert bei der Regression ebenso wenig von der<br>Zuordnung der Variablen als UV und AV abhängt.</li>
 </ul>
 </div>
 <!----------------->
@@ -2069,14 +2004,14 @@ t = \frac{b_1}{\hat{se}(b_1)} = \frac{\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}r}{\f
 <p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
 <div>
 <ul>
-<li>Wir haben bislang den Achsenabschnitt <span class="math inline">\(b_0\)</span> aus der Diskussion außen vor gelassen.</li>
-<li>Im Kontext der Regression wird der Achsenabschnitt <span class="math inline">\(b_0\)</span> idR nicht getestet.</li>
+<li>Wir haben bislang den Achsenabschnitt <span class="math inline">\(\hat{b}_0\)</span> aus der Diskussion außen vor gelassen.</li>
+<li>Im Kontext der Regression wird der Achsenabschnitt <span class="math inline">\(\hat{b}_0\)</span> idR nicht getestet.</li>
 <li>Grund: die Frage, ob Variable <span class="math inline">\(Y\)</span> bei <span class="math inline">\(X=0\)</span> einen y-Achsenabschnitt aufweist, der signifikant von Null verschieden ist, ist im Kontext der Regression selten interessant — schließlich ist es ja der ganze Zweck der Regression die systematische Verändeurng von <span class="math inline">\(Y\)</span> in <span class="math inline">\(X\)</span> zu analysieren und dabei gerade nicht nur einen bestimmten Wert von <span class="math inline">\(X\)</span> zu betrachten.</li>
-<li>Nichts desto trotz ist auch die Schätzung von <span class="math inline">\(b_0\)</span> mit Unsicherheit verbunden, die durch folgenden Standardfehler definiert ist:</li>
+<li>Nichts desto trotz ist auch die Schätzung von <span class="math inline">\(\hat{b}_0\)</span> mit Unsicherheit verbunden, die durch folgenden Standardfehler definiert ist:</li>
 </ul>
 </div>
 <p><span class="math display">\[
-\hat{se}(b_0) = \underbrace{\sqrt{\frac{\sum\left(y_i-\hat{y_i}\right)^2}{n-2}}}_\text{Standardabweichung der Residuen}\sqrt{\frac{1}{n}+\frac{\bar{x}^2}{\sum\left(x_i-\bar{x}\right)^2}}
+\hat{se}(\hat{b}_0) = \underbrace{\sqrt{\frac{\sum\left(y_i-\hat{y_i}\right)^2}{n-2}}}_\text{Standardabweichung der Residuen}\sqrt{\frac{1}{n}+\frac{\bar{x}^2}{\sum\left(x_i-\bar{x}\right)^2}}
 \]</span></p>
 <!----------------->
 <!--- New slide --->
@@ -2091,11 +2026,11 @@ t = \frac{b_1}{\hat{se}(b_1)} = \frac{\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}r}{\f
 </ul>
 </div>
 <p><span class="math display">\[
-\hat{y} = b_0
+\hat{y} = \hat{b}_0
 \]</span></p>
 <div>
 <ul>
-<li>In diesem Modell kommt dem Regressionskoeffizienten <span class="math inline">\(b_0\)</span> und dessen Unsicherheit eine interessantere Bedeutung zu: die Frage ob <span class="math inline">\(b_0\)</span> signifikant verschieden von 0 ist, ist hier gleichbedeutend mit der Frage ob die Zufallsvariable <span class="math inline">\(Y\)</span> <strong>signifikant verschieden von Null ist</strong>.</li>
+<li>In diesem Modell kommt dem Regressionskoeffizienten <span class="math inline">\(\hat{b}_0\)</span> und dessen Unsicherheit eine interessantere Bedeutung zu: die Frage ob <span class="math inline">\(\hat{b}_0\)</span> signifikant verschieden von 0 ist, ist hier gleichbedeutend mit der Frage ob die Zufallsvariable <span class="math inline">\(Y\)</span> <strong>signifikant verschieden von Null ist</strong>.</li>
 <li>Mit anderen Worten: dieses Modell ist nichts anderes als ein Einstichproben-t-Test!</li>
 <li>Dies beinhaltet auch den Vergleich zweier abhängiger Messungen A und B, wenn wir zuvor <span class="math inline">\(Y\)</span> als Differenzvariable definieren: <span class="math inline">\(Y=Y_A-Y_B\)</span></li>
 </ul>
@@ -2106,7 +2041,7 @@ t = \frac{b_1}{\hat{se}(b_1)} = \frac{\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}r}{\f
 </ul>
 </div>
 <p><span class="math display">\[
-\hat{y} = b_0
+\hat{y} = \hat{b}_0
 \]</span></p>
 <div>
 <ul>
@@ -2141,31 +2076,31 @@ t = \frac{b_1}{\hat{se}(b_1)} = \frac{\frac{\hat{\sigma}_Y}{\hat{\sigma}_X}r}{\f
 <tbody>
 <tr class="odd">
 <td>Pearson-Korrelation</td>
-<td><span class="math inline">\(\hat{y}=\beta_0 + \beta_1 x\)</span></td>
+<td><span class="math inline">\(\hat{y}=\hat{\beta}_0 + \hat{\beta}_1 x\)</span></td>
 <td>-</td>
 <td><span class="math inline">\(\mathcal{H}_0: \beta_1 = 0\)</span></td>
 </tr>
 <tr class="even">
 <td>Spearman-Korrelation</td>
-<td><span class="math inline">\(\text{Rang}(\hat{y})=\beta_0 + \beta_1 \text{Rang}(x)\)</span></td>
+<td><span class="math inline">\(\text{Rang}(\hat{y})=\hat{\beta}_0 + \hat{\beta}_1 \text{Rang}(x)\)</span></td>
 <td>-</td>
 <td><span class="math inline">\(\mathcal{H}_0: \beta_1 = 0\)</span></td>
 </tr>
 <tr class="odd">
 <td>Einstichproben-t-Test</td>
-<td><span class="math inline">\(\hat{y}=\beta_0\)</span></td>
+<td><span class="math inline">\(\hat{y}=\hat{\beta}_0\)</span></td>
 <td>-</td>
 <td><span class="math inline">\(\mathcal{H}_0: \beta_0 = 0\)</span></td>
 </tr>
 <tr class="even">
 <td>Differenzen-t-Test</td>
-<td><span class="math inline">\(\hat{y_A}-\hat{y_B}=\beta_0\)</span></td>
+<td><span class="math inline">\(\hat{y}_A-\hat{y}_B=\hat{\beta}_0\)</span></td>
 <td>-</td>
 <td><span class="math inline">\(\mathcal{H}_0: \beta_0 = 0\)</span></td>
 </tr>
 <tr class="odd">
 <td>Zweistichproben-t-Test</td>
-<td><span class="math inline">\(\hat{y}=\beta_0 + \beta_1 x\)</span></td>
+<td><span class="math inline">\(\hat{y}=\hat{\beta}_0 + \hat{\beta}_1 x\)</span></td>
 <td><span class="math inline">\(x=0\)</span> für alle Datenpunkte von Gruppe A und <span class="math inline">\(x=1\)</span> für alle Datenpunkte von Gruppe B → Regression auf binäre x-Variable!</td>
 <td><span class="math inline">\(\mathcal{H}_0: \beta_1 = 0\)</span></td>
 </tr>
