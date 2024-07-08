@@ -842,7 +842,7 @@ t=\frac{\hat{\theta}}{\hat{se}}
 <li class="fragment">Einstichproben-t-Test: 1 Mittelwert für 1 Stichprobe ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
 <li class="fragment">Differenzen-t-Test: 1 Mittelwert für 1 Stichprobe (hier: Mittelwert der Differenzt) ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
 <li class="fragment">Zweistichproben-t-Test (ähnliche Varianzen): 2 Mittelwerte für 2 Stichproben ⟶ <span class="math inline">\(\text{df}=n_A+n_B-2\)</span></li>
-<li class="fragment">Zweistichprobentest mit unterschiedlichen Varianzen ⟶ Welch–Satterthwaite-Gleichung (Ausnahme!)</li>
+<li class="fragment">Zweistichprobentest mit unähnlichen Varianzen ⟶ Welch–Satterthwaite-Gleichung (Ausnahme!)</li>
 <li class="fragment">Korrelation und Regression: 2 Mittelwerte für die zwei Zusammenhangsvariablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> ⟶ <span class="math inline">\(\text{df}=n-2\)</span></li>
 </ul></li>
 </ul>
@@ -887,17 +887,17 @@ t=\frac{\hat{\theta}}{\hat{se}}
 <p>Das <strong>Signifikanzniveau</strong> <span class="math inline">\(\alpha\)</span> gibt legt ein Kriterium für die Ablehnung der Nullhypothese fest.<br><br><u>Es gilt:</u> ist <span class="math inline">\(p&lt;\alpha\)</span> lehnen wir die Nullhypothese ab und werten unseren Effekt als statistisch signifikant.</p>
 </div>
 <div class="columns fragment">
-<div class="column" style="width:50%;">
+<div class="column" style="width:52%;">
 <div>
 <ul>
-<li>Der Wert <span class="math inline">\(\alpha\)</span> wird auch Irrtumswahrscheinlichkeit genannt — sie gibt das Risiko an, mit dem wir bereit sind, die Nullhypothese fälschlicherweise abzulehnen.
+<li>Der Wert <span class="math inline">\(\alpha\)</span> wird auch <strong>Irrtumswahrscheinlichkeit</strong> genannt — sie gibt das Risiko an, mit dem wir bereit sind, die Nullhypothese fälschlicherweise abzulehnen.
 <ul>
 <li>Beispiel: ist <span class="math inline">\(\alpha=0.05\)</span>, so gibt es eine 5%-ige Wahrscheinlichkeit, die Nullhypothese abzulehnen, <em>obwohl sie in Wahrheit zutrifft</em>.</li>
 <li>Je kleiner <span class="math inline">\(\alpha\)</span>, desto “konservativer” der Test, d.h. desto eher will ich vermeiden, einen Effekt fälschlicherweise als signifikant zu werten (erhöhe aber dabei mein Risko, einen wahren Effekt zu “verpassen”).</li>
 </ul></li>
 </ul>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:48%;">
 <p><img data-src="images/significance_level.png" style="margin-top:0px !important"></p>
 </div>
 </div>
@@ -1122,7 +1122,7 @@ Falls <span class="math inline">\(n_A=n_B=n:\quad\)</span><a href="#/welchsatter
 <div class="fragment">
 <p>Wir schlagen die Formel für den Standardfehler bei unabhängigen Messungen und unähnlichen Varianzen (<span class="math inline">\(\frac{\hat{\sigma}_\text{med}}{\hat{\sigma}_\text{psych}} &gt; 2\;\)</span>!) nach und setzen ein:</p>
 <p><span class="math display">\[
-\hat{se}= \sqrt{\frac{\hat{\sigma}_\text{med}^2}{n_\text{med}} + \frac{\hat{\sigma}_\text{psych}^2}{n_\text{psych}}} \overset{(Computer)}{\approx}  0.098
+\hat{se}= \sqrt{\frac{\hat{\sigma}_\text{med}^2}{n_\text{med}} + \frac{\hat{\sigma}_\text{psych}^2}{n_\text{psych}}} \overset{(Computer)}{=}  0.098
 \]</span></p>
 <p><span style="font-size:20px">(Erinnerung: es galt <span class="math inline">\(n_\text{med}=n_\text{psych}=30\)</span>)</span></p>
 </div>
@@ -1141,7 +1141,7 @@ Falls <span class="math inline">\(n_A=n_B=n:\quad\)</span><a href="#/welchsatter
 <p>Mit dem Standardfehler bewaffnet, können wir nun den t-Wert berechnen:</p>
 <div style="margin-top: -37px; margin-left: 30px">
 <p><span class="math display">\[
-t = \frac{\Delta \bar{x}}{\hat{se}} = \frac{0.2}{0.098} \approx 2.03
+t = \frac{\Delta \bar{x}}{\hat{se}} = \frac{0.2}{0.098} = 2.03
 \]</span></p>
 </div>
 <div class="fragment">
@@ -1150,7 +1150,7 @@ t = \frac{\Delta \bar{x}}{\hat{se}} = \frac{0.2}{0.098} \approx 2.03
 <p><span class="math display">\[
 \begin{aligned}
 \text{df}&amp;=(n-1)\Big(1+\frac{2}{\left(\frac{\hat{\sigma}_\text{med}}{\hat{\sigma}_\text{psych}}\right)^2+\left(\frac{\hat{\sigma}_\text{psych}}{\hat{\sigma}_\text{med}}\right)^2}\Big) = \\
-&amp;=(30-1)\Big(1+\frac{2}{\left(\frac{0.5}{0.2}\right)^2+\left(\frac{0.2}{0.5}\right)^2}\Big) \approx 38.05
+&amp;=(30-1)\Big(1+\frac{2}{\left(\frac{0.5}{0.2}\right)^2+\left(\frac{0.2}{0.5}\right)^2}\Big) = 38.05
 \end{aligned}
 \]</span></p>
 </div>
@@ -1165,7 +1165,7 @@ t = \frac{\Delta \bar{x}}{\hat{se}} = \frac{0.2}{0.098} \approx 2.03
 </div>
 <div style="margin-top: -35px; margin-left: 120px">
 <p><span class="math display">\[
-p=\int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx = \int_{2.03}^{\infty}f_t(x|38.05)dx = 1-F_t(2.03|38.05) \overset{(Computer)}{\approx} 0.025
+p=\int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx = \int_{2.03}^{\infty}f_t(x|38.05)dx = 1-F_t(2.03|38.05) \overset{(Computer)}{=} 0.025
 \]</span></p>
 </div>
 </div>
@@ -1178,7 +1178,7 @@ p=\int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx = \int_{2.03}^{\inft
 </section>
 <section class="slide level2">
 <h2>t-Test für unabhängige Stichproben</h2>
-<p><strong>Klassischer Zweistichproben-t-Test (ähnliche Varianzen) versus Welch’s t-Test (unterschiedliche Varianzen) — welcher der beiden Tests sollte nun verwendet werden?</strong></p>
+<p><strong>Klassischer Zweistichproben-t-Test (ähnliche Varianzen) versus Welch’s t-Test (unähnliche Varianzen) — welcher der beiden Tests sollte nun verwendet werden?</strong></p>
 <div>
 <ul>
 <li>In der Psychologie sind ungleiche Varianzen die realistischere Annahme. Selbst bei randomisiert-kontrollierten Studien, bei denen Versuchspersonen den Gruppen aus einer identischen Ursprungs-Population zugewiesen werden, kann das Treatment selbst einen Einfluss auf die Varianz haben.</li>
@@ -1267,7 +1267,7 @@ t = \frac{\Delta\bar{x}}{\hat{se}} = \frac{0.1}{1/8} = 0.8
 <p><span class="math display">\[
 \begin{aligned}
 p&amp;=\int_{-\infty}^{-t}f_t(x|\scriptsize\text{df}\normalsize)dx + \int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx \overset{(Symmetrie)}{=} 2\cdot\int_{-\infty}^{-t}f_t(x|\scriptsize\text{df}\normalsize)dx  = \\
-&amp;= 2\cdot F_t(-t|\scriptsize\text{df}\normalsize) \overset{(einsetzen)}{=} 2\cdot F_t(-0.8|31) \overset{(Computer)}{\approx} 0.43
+&amp;= 2\cdot F_t(-t|\scriptsize\text{df}\normalsize) \overset{(einsetzen)}{=} 2\cdot F_t(-0.8|31) \overset{(Computer)}{=} 0.43
 \end{aligned}
 \]</span></p>
 </div>
@@ -1388,7 +1388,7 @@ t = \frac{\hat{\rho}}{\hat{se}(\hat{\rho})} = \hat{\rho}\sqrt{\frac{n-2}{1-\hat{
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
-t = \hat{\rho}\sqrt{\frac{n-2}{1-\hat{\rho}^2}} = 0.4\sqrt{\frac{12-2}{1-0.4^2}} \overset{(Computer)}{\approx} 1.38
+t = \hat{\rho}\sqrt{\frac{n-2}{1-\hat{\rho}^2}} = 0.4\sqrt{\frac{12-2}{1-0.4^2}} \overset{(Computer)}{=} 1.38
 \]</span></p>
 </div>
 <ul>
@@ -1416,12 +1416,16 @@ t = \hat{\rho}\sqrt{\frac{n-2}{1-\hat{\rho}^2}} = 0.4\sqrt{\frac{12-2}{1-0.4^2}}
 </div>
 <div style="margin-top: -15px">
 <ul>
-<li class="fragment"><strong>Standardmäßig</strong> handelt es sich dabei immer um einen <strong>Test für eine ungerichtete Hypothese</strong>.</li>
+<li class="fragment"><strong>Standardmäßig</strong> handelt es sich dabei immer um einen <strong>Test für die ungerichtete Hypothese <span class="math inline">\(\rho \neq 0\)</span></strong>.</li>
 <li class="fragment">War die Hypothese dagegen gerichtet, gilt:
 <ul>
-<li class="fragment">Halbiere den p-Wert der ungerichteten Hypothese, falls das Vorzeichen von <span class="math inline">\(\hat{\rho}\)</span> in Richtung der Hypothese ist.</li>
-<li class="fragment">Verdoppele den p-Wert der ungerichteten Hypothese, falls das Vorzeichen von <span class="math inline">\(\hat{\rho}\)</span> in gegensätzlicher Richtung der Hypothese ist.</li>
-<li class="fragment">Im Beispiel wäre also der Korrelationskoeffizient <span class="math inline">\(2\times 0.198=0.396\)</span>, falls wir einen negativen Zusammenhang vorhergesagt hätten, und <span class="math inline">\(0.198/2=0.099\)</span>, falls wir einen positiven Zusammenhang vorhergesagt hätten.</li>
+<li class="fragment">Falls das Vorzeichen von <span class="math inline">\(\hat{\rho}\)</span> in Richtung der Hypothese ist, halbiere den p-Wert der ungerichteten Hypothese.</li>
+<li class="fragment">Falls das Vorzeichen von <span class="math inline">\(\hat{\rho}\)</span> in gegensätzlicher Richtung der Hypothese ist, halbiere den p-Wert der ungerichteten Hypothese <em>und ziehe dieses Ergebnis von 1 ab</em>.</li>
+</ul></li>
+<li class="fragment">Im Beispiel mit <span class="math inline">\(\hat{\rho}=0.4\)</span> gibt JASP für den p-Wert der <em>ungerichteten Hypothese</em> <span class="math inline">\(\rho \neq 0\)</span> an: <span class="math inline">\(p=0.198\)</span>
+<ul>
+<li class="fragment">Der p-Wert für die <em>gerichtete Hypothese</em> <span class="math inline">\(\rho &gt; 0\)</span> wäre daher <span class="math inline">\(p=0.198/2=0.099\)</span></li>
+<li class="fragment">Im Falle der umgekehrten <em>gerichteten Hypothese</em> <span class="math inline">\(\rho &lt; 0\)</span> würde gelten: <span class="math inline">\(p=1-0.198/2=1-0.099 = 0.901\)</span></li>
 </ul></li>
 </ul>
 </div>
@@ -1507,7 +1511,7 @@ t = \frac{\hat{\rho}}{\hat{se}(\hat{\rho})} = \hat{\rho}\sqrt{\frac{n-2}{1-\hat{
 <div class="column" style="width:60%;">
 <p>Der Zusammenhang war unerwartet und es gab dementsprechend keine gerichtete Hypothese. Der p-Wert ist in diesem Fall also der doppelte Wert der Fläche rechts des (positiven) t-Werts von <span class="math inline">\(4.18\)</span>, oder analog, der doppelte Wert links des negierten t-Werts <span class="math inline">\(-4.18\)</span>.</p>
 <p><span class="math display">\[
-p=2\int_{-\infty}^{-4.18}f_t(x|\scriptsize\text{df}\normalsize)dx = 2F_t(-4.18|48)=0.0001
+p=2\int_{-\infty}^{-4.18}f_t(x|\scriptsize\text{df}\normalsize)dx = 2F_t(-4.18|48)= 0.0001
 \]</span></p>
 <p><span style="font-size:24px">(Die Zahl der Freiheitsgrade beim t-Test der Korrelation ist <span class="math inline">\(n-2\)</span>)</span></p>
 </div><div class="column" style="width:40%;">
@@ -1578,15 +1582,7 @@ p=2\int_{-\infty}^{-4.18}f_t(x|\scriptsize\text{df}\normalsize)dx = 2F_t(-4.18|4
 <p><span class="math display">\[
 \text{df}=(n-1)\Big(1+\frac{2}{\left(\frac{\hat{\sigma}_\text{control}}{\hat{\sigma}_\text{paradoxia}}\right)^2+\left(\frac{\hat{\sigma}_\text{paradoxia}}{\hat{\sigma}_\text{control}}\right)^2}\Big)
 \]</span></p>
-<div>
-<ul>
-<li>Zur Erinnerung:
-<ul>
-<li>TikTok: <span class="math inline">\(\hat{\sigma}_\text{control}=0.55\)</span>; <span class="math inline">\(\hat{\sigma}_\text{paradoxia}=0.68\)</span></li>
-<li>Entzündung: <span class="math inline">\(\hat{\sigma}_\text{control}=0.068\)</span>; <span class="math inline">\(\hat{\sigma}_\text{paradoxia}=0.078\)</span></li>
-</ul></li>
-</ul>
-</div>
+<p><span style="margin-left: 40px; font-size: 19px; margin-top: 25px; display:block">(Es galt &nbsp;&nbsp;&nbsp;<u>TikTok:</u> <span class="math inline">\(\;\;\hat{\sigma}_\text{control}=0.55\)</span>; <span class="math inline">\(\hat{\sigma}_\text{paradoxia}=0.68\quad\;|\quad\;\)</span> <u>Entzündung:</u> <span class="math inline">\(\;\;\hat{\sigma}_\text{control}=0.068\)</span>; <span class="math inline">\(\hat{\sigma}_\text{paradoxia}=0.078\)</span>)</span></p>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1787,7 +1783,7 @@ f(x)=\varphi(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}
 f(z)=\varphi(z)=\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}
 \]</span></p>
 </div>
-<p>Die <strong>t-Verteilung</strong> hatten wir dagegen direkt auf Basis der standardisierten Prüfgröße <span class="math inline">\(\frac{\hat{\theta}}{\hat{se}}\)</span> eingeführt. <span style=" color: navy !important;"><strong>Die klassische t-Verteilung ist aus diesem Grund bereits eine <em>standardisierte Verteilung</em>, die nicht mehr vom Mittelwert oder Streuung abhängt.</strong></span> Im Gegensatz zur Standardnormalverteilung hat sie aber noch einen Parameter: die Zahl der Freiheitsgrade <span class="math inline">\(\text{df}\)</span>.</p>
+<p>Die <strong>t-Verteilung</strong> hatten wir dagegen direkt auf Basis der standardisierten Prüfgröße <span class="math inline">\(\frac{\hat{\theta}}{\hat{se}}\)</span> eingeführt. <strong>Die klassische t-Verteilung ist aus diesem Grund bereits eine standardisierte Verteilung, die nicht mehr vom Mittelwert oder Streuung abhängt.</strong> Im Gegensatz zur Standardnormalverteilung hat sie aber noch einen Parameter: die Zahl der Freiheitsgrade <span class="math inline">\(\text{df}\)</span>.</p>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1803,12 +1799,12 @@ f_t(x|\scriptsize\text{df}\normalsize) = \frac{\Gamma\left(\frac{\scriptsize\tex
 </div>
 <p>Wie die Standardnormalverteilung hat die t-Verteilung Mittelwert 0 (daher kann sie als Nullhypothesenverteilung fungieren). Ihre Streuung ist jedoch nicht exakt 1, sondern hängt von der Zahl der Freiheitsgrade ab: <span class="math inline">\(\sigma^2=\frac{\scriptsize\text{df}\normalsize}{\scriptsize\text{df}\normalsize-2}\)</span>.</p>
 <div style="margin-top: -3px">
-<p>Tatsächlich gibt es auch zur t-Verteilung ein unstandardisiertes Pendant, die <strong>nicht-standardisierte t-Verteilung</strong>, die von Mittelwert <span class="math inline">\(\color{green}{\mu}\)</span> und Streuung <span class="math inline">\(\color{blue}{\sigma}\)</span> abhängt:</p>
+<p>Auch zur t-Verteilung gibt es ein unstandardisiertes Pendant, die <strong>nicht-standardisierte t-Verteilung</strong>, die von Mittelwert <span class="math inline">\(\color{green}{\mu}\)</span> und Streuung <span class="math inline">\(\color{blue}{\sigma}\)</span> abhängt:</p>
 </div>
 <p><span class="math display">\[
 f_t(x|\color{green}{\mu},\color{blue}{\sigma},\scriptsize\text{df}\normalsize) = \frac{\Gamma\left(\frac{\scriptsize\text{df}\normalsize+1}{2}\right)} {\color{blue}{\sigma}\sqrt{\scriptsize\text{df}\normalsize\,\pi}~\Gamma\left(\frac{\scriptsize\text{df}\normalsize}{2}\right)}\left(1+\frac{1}{\scriptsize\text{df}\normalsize}\left(\frac{x-\color{green}{\mu}}{\color{blue}{\sigma}}\right)^2\right)^{-\frac{\text{df}+1}{2}}
 \]</span></p>
-<p>Ähnlich wie beim z-Test hat es sich in der Praxis aber durchgesetzt immer mit standardisierten Prüfgrößen (wie <span class="math inline">\(z\)</span> oder <span class="math inline">\(t\)</span>) zu arbeiten. Daher finden die unstandardisierte t- und Normalverteilung im Kontext der Hypothesentestung selten eine Anwendung.</p>
+<p>Ähnlich wie beim z-Test hat es sich in der Praxis aber durchgesetzt immer mit standardisierten Prüfgrößen (wie <span class="math inline">\(z\)</span> oder <span class="math inline">\(t\)</span>) zu arbeiten. Daher finden die unstandardisierten Normal- und t-Verteilungen im Kontext der Hypothesentestung seltener Anwendung.</p>
 <div style="margin-top: -5px">
 <p>Der <strong>Vorteil standardisierter Prüfgrößen</strong> ist, dass diese vergleichbar zwischen Studien sind. Ein bestimmter z- oder t-Wert hat eine Aussagekraft, ohne den Standardfehler einer Studie zu kennen.</p>
 </div>
@@ -1861,7 +1857,7 @@ f_t(x|\color{green}{\mu},\color{blue}{\sigma},\scriptsize\text{df}\normalsize) =
 </div>
 <div style="margin-top: -15px">
 <ul>
-<li class="fragment">Zur Herleitung starten wir mit der allgemeinen Varianzsummenformel: wir wissen, dass sich die Varianzen der beiden Stichprobenmittelwerte (=quadrierte Standardfehler <span class="math inline">\(\hat{se}_A^2\)</span> und <span class="math inline">\(\hat{se}_B^2\)</span>) aufaddieren:</li>
+<li class="fragment">Zur Herleitung dieser Formel starten wir mit der allgemeinen Varianzsummenformel: wir wissen, dass sich die Varianzen der beiden Stichprobenmittelwerte (=quadrierte Standardfehler <span class="math inline">\(\hat{se}_A^2\)</span> und <span class="math inline">\(\hat{se}_B^2\)</span>) aufaddieren:</li>
 </ul>
 </div>
 <div style="margin-top: -54px">
@@ -1873,7 +1869,7 @@ f_t(x|\color{green}{\mu},\color{blue}{\sigma},\scriptsize\text{df}\normalsize) =
 </div>
 <div style="margin-top: -15px">
 <ul>
-<li class="fragment">Können die Varianzen <span class="math inline">\(\hat{\sigma}_A^2\)</span> und <span class="math inline">\(\hat{\sigma}_B^2\)</span> als ähnlich angenommen werden, gilt folgende Überlegung: statt beide Varianzen einzeln zu schätzen, wird eine einheitliche gepoolte Varianz <span class="math inline">\(\hat{\sigma}_\text{pooled}\)</span> auf Basis beider Stichproben geschätzt (vgl. Vorlesung 07).
+<li class="fragment">Können die Varianzen <span class="math inline">\(\hat{\sigma}_A^2\)</span> und <span class="math inline">\(\hat{\sigma}_B^2\)</span> als ähnlich angenommen werden, gilt folgende Überlegung: statt beide Varianzen einzeln zu schätzen, wird eine einheitliche gepoolte Varianz <span class="math inline">\(\hat{\sigma}^2_\text{pooled}\)</span> auf Basis beider Stichproben geschätzt.
 <ul>
 <li class="fragment">Vorteil: diese Varianz kann präziser geschätzt werden als die Einzelvarianzen, da die kombinierte Stichprobenzahl <span class="math inline">\(n_A+n_B\)</span> zugrundegelegt wird.</li>
 </ul></li>
@@ -1894,7 +1890,7 @@ f_t(x|\color{green}{\mu},\color{blue}{\sigma},\scriptsize\text{df}\normalsize) =
 <section id="welchsatterthwaiteintuition" class="slide level2">
 <h2><span style=" color: darkred !important;">Intuition zur Welch–Satterthwaite-Gleichung</span></h2>
 <p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<p>Auch wenn die Welch–Satterthwaite-Gleichung für die Freiheitsgrade beim Zweistichproben-t-Test mit unterschiedlicher Varianz recht kompliziert aussieht, ist eine nähere Betrachtung aufschlussreich.</p>
+<p>Auch wenn die Welch–Satterthwaite-Gleichung für die Freiheitsgrade beim Zweistichproben-t-Test mit unähnlichen Varianzen recht kompliziert aussieht, ist eine nähere Betrachtung aufschlussreich.</p>
 <p>Für <span class="math inline">\(n_A=n_B=n\)</span> gilt:</p>
 <p><span class="math display">\[
 \text{df}=(n-1)\Big(1+\frac{2}{\left(\frac{\hat{\sigma}_A}{\hat{\sigma}_B}\right)^2+\left(\frac{\hat{\sigma}_B}{\hat{\sigma}_A}\right)^2}\Big)
@@ -1903,7 +1899,7 @@ f_t(x|\color{green}{\mu},\color{blue}{\sigma},\scriptsize\text{df}\normalsize) =
 <div class="vspace-small">
 
 </div>
-<p><u>Fall 1: Sind die Varianzen gleich</u> (entgegen der Annahme), d.h. <span class="math inline">\(\hat{\sigma}_A=\hat{\sigma}_B\)</span>, so vereinfacht sich die Formel zu</p>
+<p><u>Fall 1: Sind die Varianzen gleich</u> (entgegen der Annahme), d.h. <span class="math inline">\(\hat{\sigma}_A=\hat{\sigma}_B\)</span>, so vereinfacht sich die Formel im Grenzfall zu</p>
 <p><span class="math display">\[
 \text{df} = (n-1)(1+\frac{2}{2}) = 2n -2,
 \]</span></p>
