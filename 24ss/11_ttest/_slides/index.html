@@ -837,13 +837,12 @@ t=\frac{\hat{\theta}}{\hat{se}}
 </div>
 </div>
 <ul>
-<li class="fragment">Häufig reicht es, zu zählen, wie viele Mittelwerte für die Berechnung von <span class="math inline">\(\hat{se}\)</span> im Nenner des t-Wertes für die verschiedenen Tests verwendet werden:
+<li class="fragment">Häufig reicht es, zu zählen, wie viele Mittelwerte für die Berechnung von <span class="math inline">\(\hat{se}\)</span> im Nenner des t-Wertes verwendet werden.</li>
+<li class="fragment">Beispiel: Stichprobenkennwert <span class="math inline">\(\hat{\theta}\)</span> = Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span>
 <ul>
-<li class="fragment">Einstichproben-t-Test: 1 Mittelwert für 1 Stichprobe ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
-<li class="fragment">Differenzen-t-Test: 1 Mittelwert für 1 Stichprobe (hier: Mittelwert der Differenzt) ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
-<li class="fragment">Zweistichproben-t-Test (ähnliche Varianzen): 2 Mittelwerte für 2 Stichproben ⟶ <span class="math inline">\(\text{df}=n_A+n_B-2\)</span></li>
-<li class="fragment">Zweistichprobentest mit unähnlichen Varianzen ⟶ Welch–Satterthwaite-Gleichung (Ausnahme!)</li>
-<li class="fragment">Korrelation und Regression: 2 Mittelwerte für die zwei Zusammenhangsvariablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> ⟶ <span class="math inline">\(\text{df}=n-2\)</span></li>
+<li class="fragment">Vergleich des Mittelwertes einer Einzelmessung <span class="math inline">\(\bar{x}\)</span> mit Referenzwert <span class="math inline">\(\mu_0\)</span>:<br>Berechnung von <span class="math inline">\(\hat{se}\)</span> erfordert 1 Mittelwert für 1 Stichprobe ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
+<li class="fragment">Vergleich der Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> zweier abhängiger Messungen:<br>Berechnung von <span class="math inline">\(\hat{se}\)</span> erfordert 1 Mittelwert für 1 Stichprobe (hier: Mittelwert der Differenzen) ⟶ <span class="math inline">\(\text{df}=n-1\)</span></li>
+<li class="fragment">Vergleich der Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> zweier unabhängiger Messungen (Annahme: Varianzen <span class="math inline">\(\hat{\sigma}_A^2\)</span> und <span class="math inline">\(\hat{\sigma}_B^2\)</span> ähnlich):<br>Berechnung von <span class="math inline">\(\hat{se}\)</span> erfordert 2 Mittelwerte für 2 Stichproben ⟶ <span class="math inline">\(\text{df}=n_A+n_B-2\)</span></li>
 </ul></li>
 </ul>
 <!-- - Eine berechtigte Frage ist, warum beim t-Test die Streuung $\hat{\sigma}$ nicht auch als Freiheitsgrad abgezogen werden muss (schließlich wird dieser Parameter bei der Berechnung des t-Wertes verwendet).
