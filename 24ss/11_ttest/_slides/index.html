@@ -461,26 +461,36 @@ $$
 <h2>Problemstellung</h2>
 <div style="margin-top: 75px">
 <p>Zur Erinnerung: beim <strong>z-Test</strong> haben wir für die Verteilung der Prüfgröße <span class="math inline">\(z=\frac{\hat{\theta}}{se}\)</span> eine Normalverteilung annehmen können. Grund:</p>
+<div>
 <ul>
-<li class="fragment">Aufgrund des zentralen Grenzwertsatzes können statistische Kennwerte <span class="math inline">\(\hat{\theta}\)</span> bei ausreichender Stichprobengröße als normalverteilt angenommen werden.</li>
-<li class="fragment">Beim z-Test werden die Standardabweichung <span class="math inline">\(\sigma\)</span> der Population(en), und damit auch der Standardfehler <span class="math inline">\(se\)</span> (z.B. <span class="math inline">\(se=\frac{\sigma}{\sqrt{n}}\)</span> bei der Einzelmessung), als bekannt angenommen.</li>
-<li class="fragment">De facto wird also bei der Berechnung der Prüfgröße <span class="math inline">\(z=\frac{\hat{\theta}}{se}\)</span> eine normalverteilte Variable (<span class="math inline">\(\hat{\theta}\)</span>) durch eine bekannte Konstante (<span class="math inline">\(se\)</span>) geteilt, so dass auch die Prüfgröße <span class="math inline">\(z\)</span> normalverteilt ist.</li>
+<li>Aufgrund des zentralen Grenzwertsatzes können statistische Kennwerte <span class="math inline">\(\hat{\theta}\)</span> bei ausreichender Stichprobengröße als normalverteilt angenommen werden.</li>
+<li>Beim z-Test werden die Standardabweichung <span class="math inline">\(\sigma\)</span> der Population(en), und damit auch der Standardfehler <span class="math inline">\(se\)</span> (z.B. <span class="math inline">\(se=\frac{\sigma}{\sqrt{n}}\)</span> bei der Einzelmessung), als bekannt angenommen.</li>
+<li>De facto wird also bei der Berechnung der Prüfgröße <span class="math inline">\(z=\frac{\hat{\theta}}{se}\)</span> eine normalverteilte Variable (<span class="math inline">\(\hat{\theta}\)</span>) durch eine bekannte Konstante (<span class="math inline">\(se\)</span>) geteilt, so dass auch die Prüfgröße <span class="math inline">\(z\)</span> normalverteilt ist.</li>
 </ul>
+</div>
 <div class="vspace-large">
 
 </div>
+<div class="fragment">
 <p><u>Frage:</u> wie verhält es sich, wenn <span class="math inline">\(se\)</span> <em>nicht bekannt</em> ist?</p>
+</div>
 </div>
 </section>
 <section class="slide level2">
 <h2>Problemstellung</h2>
 <!-- <div class="vspace-xlarge"></div> -->
+<div>
 <ul>
-<li class="fragment">Ist der Populationsstandardfehler <span class="math inline">\(se\)</span> <em>nicht bekannt</em> — und das ist der Regelfall — <strong>muss der Standardfehler auf Basis der Stichprobe als <span class="math inline">\(\hat{se}\)</span> geschätzt werden</strong>.</li>
-<li class="fragment">Die Schätzung von <span class="math inline">\(\hat{se}\)</span> ist mit Unsicherheit behaftet und daher selbst eine <strong>Zufallsvariable</strong>.</li>
+<li>Ist der Populationsstandardfehler <span class="math inline">\(se\)</span> <em>nicht bekannt</em> — und das ist der Regelfall — <strong>muss der Standardfehler auf Basis der Stichprobe als <span class="math inline">\(\hat{se}\)</span> geschätzt werden</strong>.</li>
+<li>Die Schätzung von <span class="math inline">\(\hat{se}\)</span> ist mit Unsicherheit behaftet und daher selbst eine <strong>Zufallsvariable</strong>.</li>
+</ul>
+</div>
+<div style="margin-top: -13px">
+<ul>
 <li class="fragment">Wir teilen also eine normalverteilte Zufallsvariable <span class="math inline">\(\hat{\theta}\)</span> durch eine wie-auch-immer-verteilte (*) zweite Zufallsvariable <span class="math inline">\(\hat{se}\)</span>.<br><span style="font-size: 22px !important">(* die wie-auch-immer-Verteilung ist bekannt: <span class="math inline">\(\hat{se}\)</span> folgt der Chi-Verteilung bzw. χ-Verteilung)</span></li>
 <li class="fragment"><strong>In diesem Fall können wir nicht mehr davon ausgehen, dass die Prüfgröße normalverteilt ist!</strong></li>
 </ul>
+</div>
 <div class="colorbox fragment" style="margin-top:13px">
 <p>Die Gretchen-Frage ist daher: welcher Verteilung folgt die Prüfstatistik <span class="math display">\[
 \frac{\hat{\theta}}{\hat{se}}\qquad\text{?}\qquad\text{(mit Betonung auf dem ^ über dem Standardfehler $\hat{se}$)}
@@ -509,15 +519,11 @@ $$
 <div style="font-size: 26px">
 <ul>
 <li>An dieser Stelle kommt der englische Statistiker <strong>William Sealy Gosset</strong> ins Spiel.</li>
+<li>Er postulierte 1908, dass das Verhältnis eines normalverteilten Kennwertes <span class="math inline">\(\hat{\theta}\)</span> und einer Chi-verteilten Variable einer Wahrscheinlichkeitsverteilung folgt, die seither als <span style=" color: navy !important;"><strong>t-Verteilung</strong></span> (oder auch <span style=" color: navy !important;"><strong>Studentsche t-Verteilung</strong></span>) bezeichnet wird.</li>
+<li>Die Formel der Verteilung ist vergleichsweise kompliziert — für die Praxis entscheidend ist, dass sie <strong>durch einen einzigen Parameter (<span class="math inline">\(\text{df}\,\)</span>) definiert wird</strong>:</li>
 </ul>
 </div>
-<div style="margin-top: -20px; font-size: 26px">
-<ul>
-<li class="fragment">Er postulierte 1908, dass das Verhältnis eines normalverteilten Kennwertes <span class="math inline">\(\hat{\theta}\)</span> und einer Chi-verteilten Variable einer Wahrscheinlichkeitsverteilung folgt, die seither als <span style=" color: navy !important;"><strong>t-Verteilung</strong></span> (oder auch <span style=" color: navy !important;"><strong>Studentsche t-Verteilung</strong></span>) bezeichnet wird.</li>
-<li class="fragment">Die Formel der Verteilung ist vergleichsweise kompliziert — für die Praxis entscheidend ist, dass sie <strong>durch einen einzigen Parameter (<span class="math inline">\(\text{df}\,\)</span>) definiert wird</strong>:</li>
-</ul>
-</div>
-<div class="fragment" style="margin-top:-10px; margin-bottom: 15px">
+<div style="margin-top:-10px; margin-bottom: 15px">
 <p><span class="math display">\[
 t\text{-Verteilung:}\qquad f_t(x|\scriptsize\text{df}\normalsize)
 \]</span></p>
@@ -543,9 +549,7 @@ t\text{-Verteilung:}\qquad f_t(x|\scriptsize\text{df}\normalsize)
 <div class="vspace-small">
 
 </div>
-<div class="fragment">
 <p><img data-src="images/tdist.png" height="300"></p>
-</div>
 </div>
 </div>
 </div>
@@ -627,7 +631,9 @@ t = \frac{\hat{\theta}}{\hat{se}}
 <img data-src="images/tdist2.png" class="r-stretch"><div class="vspace-small">
 
 </div>
+<div class="fragment">
 <p>Die Standardabweichung der t-Verteilung ist im Gegensatz zur Standardnormalverteilung nicht exakt 1 sondern <span class="math inline">\(\sqrt{\frac{\text{df}}{\text{df}-2}}\)</span>. Für <span class="math inline">\(n\rightarrow\infty\)</span> und damit <span class="math inline">\(\text{df}\rightarrow\infty\)</span> nähert sich die Standardabweichung aber 1 an.</p>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -906,9 +912,11 @@ t=\frac{\hat{\theta}}{\hat{se}}
 </section>
 <section class="slide level2">
 <h2>3. Signifikanzniveau &amp; ein/zweiseitige Testung</h2>
+<div>
 <ul>
-<li class="fragment">Abhänging davon, ob die Hypothese gerichtet bzw. ungerichtet wird ein einseitiger bzw. zweiseitiger t-Test durchgeführt.</li>
+<li>Abhänging davon, ob die Hypothese gerichtet bzw. ungerichtet wird ein einseitiger bzw. zweiseitiger t-Test durchgeführt.</li>
 </ul>
+</div>
 <!-- <div class="vspace-medium"></div> -->
 <!---  Table --->
 <table style="width:99%;">
@@ -947,16 +955,22 @@ t=\frac{\hat{\theta}}{\hat{se}}
 </section>
 <section class="slide level2">
 <h2>t-Test für Mittelwertdifferenzen</h2>
+<div>
 <ul>
-<li class="fragment">Zur Erinnerung, bei einem statistischen Test zu Mittelwertdifferenzen stellen wir folgende Fragen:
+<li>Zur Erinnerung, bei einem statistischen Test zu Mittelwertdifferenzen stellen wir folgende Fragen:
 <ul>
-<li class="fragment">Unterscheidet sich ein Mittelwert signifikant von einem Referenzwert? (Einstichprobentest mit Einzelmessung)<br>
+<li>Unterscheidet sich ein Mittelwert signifikant von einem Referenzwert? (Einstichprobentest mit Einzelmessung)<br>
 </li>
-<li class="fragment">Unterscheiden sich die Mittelwerte von zwei abhängigen Bedingungen signifikant voneinander? (Einstichprobentest mit zwei abhängigen Messungen)</li>
-<li class="fragment">Unterscheiden sich die Mittelwerte von zwei unabhängigen Stichproben signifikant voneinander? (Zweistichprobentest)</li>
+<li>Unterscheiden sich die Mittelwerte von zwei abhängigen Bedingungen signifikant voneinander? (Einstichprobentest mit zwei abhängigen Messungen)</li>
+<li>Unterscheiden sich die Mittelwerte von zwei unabhängigen Stichproben signifikant voneinander? (Zweistichprobentest)</li>
 </ul></li>
+</ul>
+</div>
+<div style="margin-top: -15px">
+<ul>
 <li class="fragment">Beispiel Paradoxia (Zweistichprobentest):</li>
 </ul>
+</div>
 <div class="fragment" style="margin-top: 15px">
 <p><img data-src="images/mittelwertdifferenz_paradoxia.png" height="300"></p>
 </div>
@@ -977,7 +991,7 @@ t=\frac{\hat{\theta}}{\hat{se}}
 <ul>
 <li class="fragment">Die Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span> ist einfach zu bestimmen, die zentrale Frage lautet daher: <strong>wie berechnet sich der Standardfehler <span class="math inline">\(\hat{se}\)</span> einer Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span>?</strong></li>
 </ul>
-<div class="merke" style="margin-top: 130px; font-size: 26px">
+<div class="merke fragment" style="margin-top: 130px; font-size: 26px">
 <div class="columns">
 <div class="column" style="width:5%;">
 <div style="margin-top: 18px">
@@ -1373,11 +1387,7 @@ t = \frac{\hat{\rho}}{\hat{se}(\hat{\rho})} = \hat{\rho}\sqrt{\frac{n-2}{1-\hat{
 <div>
 <ul>
 <li>Nehmen wir an, die Korrelation von Größe und Gewicht in einer Stichprobe von <span class="math inline">\(n=12\)</span> betrage <span class="math inline">\(\hat{\rho}=0.4\)</span>.</li>
-</ul>
-</div>
-<div style="margin-top: -15px">
-<ul>
-<li class="fragment">Wir wollen testen, ob der Korrelationskoeffizient <span class="math inline">\(\hat{\rho}\)</span> auf einem Signifikanzniveau <span class="math inline">\(\alpha=0.05\)</span> signifikant größer als 0 ist.</li>
+<li>Wir wollen testen, ob der Korrelationskoeffizient <span class="math inline">\(\hat{\rho}\)</span> auf einem Signifikanzniveau <span class="math inline">\(\alpha=0.05\)</span> signifikant größer als 0 ist.</li>
 </ul>
 </div>
 <div class="columns">
@@ -1395,9 +1405,7 @@ t = \hat{\rho}\sqrt{\frac{n-2}{1-\hat{\rho}^2}} = 0.4\sqrt{\frac{12-2}{1-0.4^2}}
 <li class="fragment">Die Nullhypothese wird also nicht abgelehnt, und der Effekt als nicht signifikant gewertet.</li>
 </ul>
 </div><div class="column" style="width:45%;">
-<div class="fragment">
 <p><img data-src="images/ttable_r.png"></p>
-</div>
 </div>
 </div>
 <!----------------->
@@ -1843,44 +1851,44 @@ f_t(x|\color{green}{\mu},\color{blue}{\sigma},\scriptsize\text{df}\normalsize) =
 <h2><span style=" color: darkred !important;">Herleitung des gepoolten Standardfehlers</span></h2>
 <p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
 <div style="margin-top: -10px">
+<div>
 <ul>
-<li class="fragment">Im Fall unabhängiger Messungen und ähnlicher Varianzen wird eine <strong>gepoolte Streuung</strong> <span class="math inline">\(\hat{\sigma}_\text{pooled}\)</span> herangezogen:</li>
+<li>Im Fall unabhängiger Messungen und ähnlicher Varianzen wird eine <strong>gepoolte Streuung</strong> <span class="math inline">\(\hat{\sigma}_\text{pooled}\)</span> herangezogen:</li>
 </ul>
 </div>
+</div>
 <div style="margin-top: -50px">
-<div class="fragment">
 <p><span class="math display">\[
 \hat{se} = \hat{\sigma}_\text{pooled}\sqrt{\frac{1}{n_A}+\frac{1}{n_B}}
 \]</span></p>
 </div>
-</div>
 <div style="margin-top: -15px">
+<div>
 <ul>
-<li class="fragment">Zur Herleitung dieser Formel starten wir mit der allgemeinen Varianzsummenformel: wir wissen, dass sich die Varianzen der beiden Stichprobenmittelwerte (=quadrierte Standardfehler <span class="math inline">\(\hat{se}_A^2\)</span> und <span class="math inline">\(\hat{se}_B^2\)</span>) aufaddieren:</li>
+<li>Zur Herleitung dieser Formel starten wir mit der allgemeinen Varianzsummenformel: wir wissen, dass sich die Varianzen der beiden Stichprobenmittelwerte (=quadrierte Standardfehler <span class="math inline">\(\hat{se}_A^2\)</span> und <span class="math inline">\(\hat{se}_B^2\)</span>) aufaddieren:</li>
 </ul>
 </div>
+</div>
 <div style="margin-top: -54px">
-<div class="fragment">
 <p><span class="math display">\[
 \hat{se}^2 = \hat{se}_A^2 + \hat{se}_B^2\quad\rightarrow\quad \hat{se} = \sqrt{\hat{se}_A^2 + \hat{se}_B^2} = \sqrt{\frac{\hat{\sigma}_A^2}{n_A} + \frac{\hat{\sigma}_B^2}{n_B}}
 \]</span></p>
 </div>
-</div>
 <div style="margin-top: -15px">
+<div>
 <ul>
-<li class="fragment">Können die Varianzen <span class="math inline">\(\hat{\sigma}_A^2\)</span> und <span class="math inline">\(\hat{\sigma}_B^2\)</span> als ähnlich angenommen werden, gilt folgende Überlegung: statt beide Varianzen einzeln zu schätzen, wird eine einheitliche gepoolte Varianz <span class="math inline">\(\hat{\sigma}^2_\text{pooled}\)</span> auf Basis beider Stichproben geschätzt.
+<li>Können die Varianzen <span class="math inline">\(\hat{\sigma}_A^2\)</span> und <span class="math inline">\(\hat{\sigma}_B^2\)</span> als ähnlich angenommen werden, gilt folgende Überlegung: statt beide Varianzen einzeln zu schätzen, wird eine einheitliche gepoolte Varianz <span class="math inline">\(\hat{\sigma}^2_\text{pooled}\)</span> auf Basis beider Stichproben geschätzt.
 <ul>
-<li class="fragment">Vorteil: diese Varianz kann präziser geschätzt werden als die Einzelvarianzen, da die kombinierte Stichprobenzahl <span class="math inline">\(n_A+n_B\)</span> zugrundegelegt wird.</li>
+<li>Vorteil: diese Varianz kann präziser geschätzt werden als die Einzelvarianzen, da die kombinierte Stichprobenzahl <span class="math inline">\(n_A+n_B\)</span> zugrundegelegt wird.</li>
 </ul></li>
-<li class="fragment">Wir ersetzen also <span class="math inline">\(\hat{\sigma}_A^2\)</span> und <span class="math inline">\(\hat{\sigma}_B^2\)</span> jeweils durch <span class="math inline">\(\hat{\sigma}_\text{pooled}^2\)</span>:</li>
+<li>Wir ersetzen also <span class="math inline">\(\hat{\sigma}_A^2\)</span> und <span class="math inline">\(\hat{\sigma}_B^2\)</span> jeweils durch <span class="math inline">\(\hat{\sigma}_\text{pooled}^2\)</span>:</li>
 </ul>
 </div>
+</div>
 <div style="margin-top: -20px">
-<div class="fragment">
 <p><span class="math display">\[
 \hat{se} = \sqrt{\frac{\hat{\sigma}_\text{pooled}^2}{n_A} + \frac{\hat{\sigma}_\text{pooled}^2}{n_B}} = \hat{\sigma}_\text{pooled}\sqrt{\frac{1}{n_A}+\frac{1}{n_B}}\qquad\text{q.e.d.}
 \]</span></p>
-</div>
 </div>
 <!----------------->
 <!--- New slide --->
