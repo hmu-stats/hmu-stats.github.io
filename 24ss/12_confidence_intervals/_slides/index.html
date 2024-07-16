@@ -703,7 +703,7 @@ z_{(1-\frac{\alpha}{2})} = \Phi\left(1-\frac{\alpha}{2}\right)
 </div>
 <div style="margin-top: -15px">
 <ul>
-<li class="fragment">Die Abhilfe ist hier prinzipiell analog zur Signifikanztestung: sind der <strong>Standardfehler <span class="math inline">\(se\)</span> oder die Merkmalsstreuungen <span class="math inline">\(\sigma\)</span> nicht bekannt</strong>, so <strong>ersetzen wir den kritischen z-Wert <span class="math inline">\(z_{(1-\frac{\alpha}{2})}\)</span> durch den kritischen t-Wert <span class="math inline">\(t_{(1-\frac{\alpha}{2},\;\text{df})}\)</span></strong>:</li>
+<li class="fragment">Die Abhilfe ist hier prinzipiell analog zur Signifikanztestung: sind der <strong>Standardfehler <span class="math inline">\(se\)</span> oder die Merkmalsstreuungen <span class="math inline">\(\sigma\)</span> nicht bekannt</strong>, so <strong>ersetzen wir den kritischen z-Wert <span class="math inline">\(z_{(1-\frac{\alpha}{2})}\)</span> durch den <span style=" color: navy !important;">kritischen t-Wert <span class="math inline">\(t_{(1-\frac{\alpha}{2},\;\text{df})}\)</span></span></strong>:</li>
 </ul>
 </div>
 <div class="colorbox fragment" style="margin-top: 5px">
@@ -877,13 +877,13 @@ CI_{95} = 4.5\pm 2.262\cdot\frac{0.5}{\sqrt{10}} \approx 4.5\pm 0.36
 <p>Für das Verständnis von Konfidenzintervallen ist es gewinnbringend zu untersuchen, wie das Konfidenzintervall von den relevanten Variablen einer Studie abhängt.</p>
 <p>Für das Konfidenzintervall eines einfachen Mittelwertes <span class="math inline">\(\bar{x}\)</span> gilt:</p>
 <p><span class="math display">\[
-CI=\hat{\theta}\pm z_{(1-\frac{\alpha}{2})}\cdot se = \hat{\bar{x}}\pm z_{(1-\frac{\alpha}{2})}\cdot\frac{\sigma}{\sqrt{n}}
+CI=\hat{\theta}\pm t_{(1-\frac{\alpha}{2},\;\text{df})}\cdot se = \hat{\bar{x}}\pm t_{(1-\frac{\alpha}{2},\;\text{n-1})}\cdot\frac{\hat{\sigma}}{\sqrt{n}}
 \]</span></p>
 <p>Damit ergeben sich direkt die <strong>Einflussfaktoren auf das Konfidenzintervall</strong>:</p>
 <ul>
-<li class="fragment">Die <strong>Streuung</strong> <span class="math inline">\(\sigma\)</span> in der Population</li>
+<li class="fragment">Die <strong>Streuung</strong> <span class="math inline">\(\sigma\)</span> in der Population (die mittels <span class="math inline">\(\hat{\sigma}\)</span> geschätzt wird)</li>
 <li class="fragment">Die <strong>Stichprobengröße</strong> <span class="math inline">\(n\)</span></li>
-<li class="fragment">Das <strong>Konfidenzniveau</strong> <span class="math inline">\(1-\alpha\)</span> bzw. der damit verbundene kritische z-Wert <span class="math inline">\(z_{(1-\frac{\alpha}{2})}\)</span></li>
+<li class="fragment">Das <strong>Konfidenzniveau</strong> <span class="math inline">\(1-\alpha\)</span> bzw. der damit verbundene kritische t-Wert <span class="math inline">\(t_{(1-\frac{\alpha}{2},\;\text{df})}\)</span></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -893,9 +893,9 @@ CI=\hat{\theta}\pm z_{(1-\frac{\alpha}{2})}\cdot se = \hat{\bar{x}}\pm z_{(1-\fr
 
 </div>
 
-<img data-src="images/ci_sigma.png" class="r-stretch"><p><strong>Interpretation:</strong> Je größer die Streuung <span class="math inline">\(\sigma\)</span> des Merkmals, desto größer auch der Standardfehler, desto unsicherer ist man bezüglich der Schätzung des Mittelwertes, desto größer das Konfidenzintervall.</p>
+<img data-src="images/ci_sigma_v2.png" class="r-stretch"><p><strong>Interpretation:</strong> Je größer die Streuung <span class="math inline">\(\sigma\)</span> des Merkmals, desto größer auch der Standardfehler, desto unsicherer ist man bezüglich der Schätzung des Mittelwertes, desto größer das Konfidenzintervall.</p>
 <p><span class="math display">\[
-CI=\bar{x}\pm z_{(1-\frac{\alpha}{2})}\cdot\frac{\color{blue}{\sigma}}{\sqrt{n}}
+CI=\bar{x}\pm t_{(1-\frac{\alpha}{2},\;\text{df})}\cdot\frac{\color{blue}{\hat{\sigma}}}{\sqrt{n}}
 \]</span></p>
 <p><strong>Größere Merkmalstreuung <span class="math inline">\(\sigma\)</span> ⟶ Schätzung des Mittelwertes ist mit mehr Unsicherheit behaftet.</strong></p>
 </section>
@@ -906,9 +906,9 @@ CI=\bar{x}\pm z_{(1-\frac{\alpha}{2})}\cdot\frac{\color{blue}{\sigma}}{\sqrt{n}}
 
 </div>
 
-<img data-src="images/ci_N.png" class="r-stretch"><p><strong>Interpretation:</strong> Je größer die Stichprobe, desto kleiner ist der Standardfehler, desto sicherer ist man bezüglich der Schätzung des Mittelwertes, desto kleiner das Konfidenzintervall.</p>
+<img data-src="images/ci_N_v2.png" class="r-stretch"><p><strong>Interpretation:</strong> Je größer die Stichprobe, desto kleiner ist der Standardfehler, desto sicherer ist man bezüglich der Schätzung des Mittelwertes, desto kleiner das Konfidenzintervall.</p>
 <p><span class="math display">\[
-CI=\bar{x}\pm z_{(1-\frac{\alpha}{2})}\cdot\frac{\sigma}{\sqrt{\color{blue}{n}}}
+CI=\bar{x}\pm t_{(1-\frac{\alpha}{2},\;\text{df})}\cdot\frac{\hat{\sigma}}{\sqrt{\color{blue}{n}}}
 \]</span></p>
 <p><strong>Größere Stichprobe <span class="math inline">\(n\)</span> ⟶ Schätzung des Mittelwertes ist mit weniger Unsicherheit behaftet.</strong></p>
 </section>
@@ -919,11 +919,13 @@ CI=\bar{x}\pm z_{(1-\frac{\alpha}{2})}\cdot\frac{\sigma}{\sqrt{\color{blue}{n}}}
 
 </div>
 
-<img data-src="images/ci_alpha.png" class="r-stretch"><p><strong>Interpretation:</strong></p>
-<p>Je größer das Konfidenzniveau <span class="math inline">\(1-\alpha\)</span>, desto größer der kritische z-Wert <span class="math inline">\(z_{(1-\frac{\alpha}{2})}\)</span>, desto größer ist das Intervall potentieller Populationsparameter <span class="math inline">\(\theta\)</span>, die statitisch kompatibel mit dem Stichprobenkennwerwert <span class="math inline">\(\hat{\theta}\)</span> sind.</p>
+<img data-src="images/ci_alpha_v2.png" class="r-stretch"><p><strong>Interpretation:</strong></p>
+<p>Je größer das Konfidenzniveau <span class="math inline">\(1-\alpha\)</span>, desto größer der kritische t-Wert <span class="math inline">\(t_{(1-\frac{\alpha}{2},\;\text{df})}\)</span>, desto größer ist das Intervall potentieller Populationsparameter <span class="math inline">\(\theta\)</span>, die statitisch kompatibel mit dem Stichprobenkennwerwert <span class="math inline">\(\hat{\theta}\)</span> sind.</p>
+<div style="margin-top: -20px">
 <p><span class="math display">\[
-CI=\Delta\bar{x}\pm\color{blue}{z_{(1-\frac{\alpha}{2})}}\cdot\frac{\sigma}{\sqrt{n}}
+CI=\Delta\bar{x}\pm\color{blue}{t_{(1-\frac{\alpha}{2},\;\text{df})}}\cdot\frac{\hat{\sigma}}{\sqrt{n}}
 \]</span></p>
+</div>
 <p><strong>Höheres Konfidenzniveau <span class="math inline">\(1-\alpha\)</span> ⟶ Hat nichts mit der Schätzung des Mittelwertes zu tun 😉</strong></p>
 </section></section>
 <section>
@@ -956,7 +958,7 @@ CI=\Delta\bar{x}\pm t_{(1-\frac{\alpha}{2},\;\text{df})}\cdot \hat{se}
 \]</span></p>
 </div>
 <ul>
-<li class="fragment">Für die Berechnung des Standardfehlers <span class="math inline">\(\hat{se}\)</span> gelten alle Formeln (inkl. Regeln zu Freiheitsgraden <span class="math inline">\(\text{df}\)</span> der t-Verteilung) die wir im Kontext von t-Tests für Mittelwertdifferenzen kennengelernt haben.
+<li class="fragment">Für die Berechnung des Standardfehlers <span class="math inline">\(\hat{se}\)</span> gelten alle Formeln (inkl. Regeln zu Freiheitsgraden <span class="math inline">\(\text{df}\)</span> der t-Verteilung), die wir im Kontext von t-Tests für Mittelwertdifferenzen kennengelernt haben.
 <ul>
 <li class="fragment">Auch hier hängt der Standardfehler <span class="math inline">\(\hat{se}\)</span> davon ab, ob es sich um Messungen in verschiedenen Gruppen handelt, ob die Streuungen <span class="math inline">\(\hat{\sigma}_A\)</span>/<span class="math inline">\(\hat{\sigma}_B\)</span> ähnlich sind, usw.</li>
 </ul></li>
