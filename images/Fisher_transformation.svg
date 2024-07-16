@@ -9,11 +9,34 @@
    id="svg1"
    sodipodi:docname="Fisher_transformation.svg"
    inkscape:version="1.4-dev (1:1.4.0-dev+202401190506+b37f861054)"
+   inkscape:export-filename="Fisher_transformation.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:ns13="http://www.iki.fi/pav/software/textext/">
+  <sodipodi:namedview
+     id="namedview109"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     inkscape:zoom="1.5961539"
+     inkscape:cx="444.19277"
+     inkscape:cy="129.37349"
+     inkscape:window-width="2560"
+     inkscape:window-height="1368"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
   <defs
      id="defs109">
     <defs
@@ -29,25 +52,6 @@
       </clipPath>
     </defs>
   </defs>
-  <sodipodi:namedview
-     id="namedview109"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="pt"
-     inkscape:zoom="3.1923077"
-     inkscape:cx="192.0241"
-     inkscape:cy="189.04819"
-     inkscape:window-width="2560"
-     inkscape:window-height="1368"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg1" />
   <path
      style="fill:#ffffff;stroke:#ffffff;stroke-width:1;stroke-linecap:square;stroke-linejoin:round"
      d="M 0,273.6 H 288 V 0 H 0 v 273.6"
@@ -847,4 +851,108 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Calibri;-inkscape-font-specification:Calibri;stroke-width:0.749999"
        x="62.059422"
        y="262.28061">Korrelationskoeffizient</tspan></text>
+  <rect
+     style="fill:#ffffff;fill-opacity:0.862682;stroke:#646464;stroke-width:0.850002;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect1"
+     width="183.95784"
+     height="33.924759"
+     x="84.343391"
+     y="184.56921" />
+  <text
+     xml:space="preserve"
+     style="font-size:12.6478px;line-height:90%;font-family:sans-serif;text-decoration-color:#000000;fill:#000000;stroke-width:0.749999;-inkscape-stroke:none;stop-color:#000000"
+     x="120.86578"
+     y="198.32671"
+     id="text6"
+     transform="scale(0.99953825,1.000462)"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Calibri;-inkscape-font-specification:Calibri;stroke-width:0.749999"
+       x="120.86578"
+       y="198.32671">Korrelation</tspan></text>
+  <g
+     ns13:version="1.9.0"
+     ns13:texconverter="pdflatex"
+     ns13:pdfconverter="inkscape"
+     ns13:text="$\\hat{\\rho}$"
+     ns13:preamble="/home/matteo/.config/inkscape/extensions/textext/default_packages.tex"
+     ns13:scale="1.11562970767951"
+     ns13:alignment="middle center"
+     ns13:stroke-to-path="0"
+     ns13:inkscapeversion="1.4-dev"
+     transform="matrix(1.3685954,0,0,1.3698602,181.22478,189.2586)"
+     ns13:jacobian_sqrt="1.11563"
+     id="g9"
+     style="stroke-width:0.814787">
+    <defs
+       id="id-c4b92b4f-aecc-4214-ba83-fa58470e01e8">
+      <g
+         id="id-a951186d-999b-4b60-aa0b-2d98f38908aa">
+        <g
+           id="id-d8a2707d-dcac-42cf-961c-26be0380f468">
+          <path
+             d="M 2.5,-6.921875 1.15625,-5.5625 1.328125,-5.390625 2.5,-6.40625 3.640625,-5.390625 3.8125,-5.5625 Z m 0,0"
+             id="id-5a867ec3-8539-4507-a68e-0f91edb241a7" />
+        </g>
+        <g
+           id="id-88099b9c-4063-4d21-8eaf-6d146c367883">
+          <path
+             d="m 0.328125,1.71875 c -0.03125,0.125 -0.03125,0.140625 -0.03125,0.171875 0,0.140625 0.109375,0.265625 0.28125,0.265625 0.203125,0 0.328125,-0.1875 0.34375,-0.21875 0.0625,-0.078125 0.375,-1.421875 0.640625,-2.5 0.203125,0.40625 0.515625,0.671875 0.984375,0.671875 C 3.71875,0.109375 5,-1.296875 5,-2.78125 c 0,-1.0625 -0.65625,-1.625 -1.375,-1.625 -0.96875,0 -2.015625,1 -2.3125,2.21875 z m 2.21875,-1.828125 C 1.84375,-0.109375 1.6875,-0.90625 1.6875,-1 c 0,-0.03125 0.046875,-0.234375 0.078125,-0.359375 0.28125,-1.125 0.375,-1.484375 0.59375,-1.875 0.4375,-0.734375 0.9375,-0.953125 1.234375,-0.953125 0.375,0 0.6875,0.296875 0.6875,0.984375 0,0.546875 -0.28125,1.65625 -0.546875,2.140625 -0.328125,0.640625 -0.8125,0.953125 -1.1875,0.953125 z m 0,0"
+             id="id-46efeca0-7807-4415-a521-0b45100ce075" />
+        </g>
+      </g>
+    </defs>
+    <g
+       fill="#000000"
+       fill-opacity="1"
+       id="id-91b64267-c7cb-4977-8072-3fe815bb0a6b"
+       transform="translate(-149.009,-127.843)"
+       style="stroke-width:0.814787">
+      <g
+         transform="translate(149.627,134.765)"
+         id="g7"
+         style="stroke-width:0.814787">
+        <path
+           d="M 2.5,-6.921875 1.15625,-5.5625 1.328125,-5.390625 2.5,-6.40625 3.640625,-5.390625 3.8125,-5.5625 Z m 0,0"
+           id="id-e218aa03-8d77-4bf2-b286-0829d4097baa"
+           style="stroke-width:0.814787" />
+      </g>
+    </g>
+    <g
+       fill="#000000"
+       fill-opacity="1"
+       id="id-2ae52727-a208-47a0-93b4-d1cffa57540a"
+       transform="translate(-149.009,-127.843)"
+       style="stroke-width:0.814787">
+      <g
+         transform="translate(148.712,134.765)"
+         id="g8"
+         style="stroke-width:0.814787">
+        <path
+           d="m 0.328125,1.71875 c -0.03125,0.125 -0.03125,0.140625 -0.03125,0.171875 0,0.140625 0.109375,0.265625 0.28125,0.265625 0.203125,0 0.328125,-0.1875 0.34375,-0.21875 0.0625,-0.078125 0.375,-1.421875 0.640625,-2.5 0.203125,0.40625 0.515625,0.671875 0.984375,0.671875 C 3.71875,0.109375 5,-1.296875 5,-2.78125 c 0,-1.0625 -0.65625,-1.625 -1.375,-1.625 -0.96875,0 -2.015625,1 -2.3125,2.21875 z m 2.21875,-1.828125 C 1.84375,-0.109375 1.6875,-0.90625 1.6875,-1 c 0,-0.03125 0.046875,-0.234375 0.078125,-0.359375 0.28125,-1.125 0.375,-1.484375 0.59375,-1.875 0.4375,-0.734375 0.9375,-0.953125 1.234375,-0.953125 0.375,0 0.6875,0.296875 0.6875,0.984375 0,0.546875 -0.28125,1.65625 -0.546875,2.140625 -0.328125,0.640625 -0.8125,0.953125 -1.1875,0.953125 z m 0,0"
+           id="id-5e91b2a5-f589-4b41-a05d-0e7045cb129b"
+           style="stroke-width:0.814787" />
+      </g>
+    </g>
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-size:12.6478px;line-height:90%;font-family:sans-serif;text-decoration-color:#000000;fill:#000000;stroke-width:0.749999;-inkscape-stroke:none;stop-color:#000000"
+     x="121.48008"
+     y="212.50275"
+     id="text14"
+     transform="scale(0.99953825,1.000462)"><tspan
+       sodipodi:role="line"
+       id="tspan9"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Calibri;-inkscape-font-specification:Calibri;stroke-width:0.749999"
+       x="121.48008"
+       y="212.50275">Z-transformierte Korrelation</tspan></text>
+  <path
+     style="fill:#ffffff;fill-opacity:0.862682;stroke:#646464;stroke-width:2.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 96.526988,194.87668 H 113.72443"
+     id="path14" />
+  <path
+     style="fill:#ffffff;fill-opacity:0.862682;stroke:#ffa500;stroke-width:2.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 96.526988,209.00254 H 113.72443"
+     id="path15" />
 </svg>

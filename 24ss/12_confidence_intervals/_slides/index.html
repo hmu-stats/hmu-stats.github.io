@@ -543,7 +543,7 @@ Noch etwas allgemeiner gesprochen werden Konfidenzintervalle für **unbekannte P
 </tr>
 <tr class="even">
 <td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
-<td>Ein <span style=" color: navy !important;"><strong>Konfidenzintervall</strong></span> definiert einen Bereich möglicher Populationsparameter <span class="math inline">\(\theta\)</span>, die nicht signifikant verschieden von der Punktschätzung <span class="math inline">\(\hat{\theta}\)</span> sind (auf Basis des Signifikanzniveaus <span class="math inline">\(\alpha\)</span>).</td>
+<td>Ein <span style=" color: navy !important;"><strong>Konfidenzintervall</strong></span> definiert einen Bereich möglicher Populationskennwerte <span class="math inline">\(\theta\)</span>, die nicht signifikant verschieden von der Punktschätzung <span class="math inline">\(\hat{\theta}\)</span> sind (auf Basis des Signifikanzniveaus <span class="math inline">\(\alpha\)</span>).</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -553,7 +553,7 @@ Noch etwas allgemeiner gesprochen werden Konfidenzintervalle für **unbekannte P
 </table>
 </div>
 <ul>
-<li class="fragment">Einfacher gesprochen enthält das Konfidenzintervall also mögliche Populationsparameter <span class="math inline">\(\theta\)</span>, die als statistisch kompatibel mit der Punktschätzung <span class="math inline">\(\hat{\theta}\)</span> gewertet werden.</li>
+<li class="fragment">Einfacher gesprochen enthält das Konfidenzintervall also mögliche Populationskennwerte <span class="math inline">\(\theta\)</span>, die als statistisch kompatibel mit der Punktschätzung <span class="math inline">\(\hat{\theta}\)</span> gewertet werden.</li>
 </ul>
 <div class="vspace-large">
 
@@ -566,7 +566,7 @@ Noch etwas allgemeiner gesprochen werden Konfidenzintervalle für **unbekannte P
 </div>
 </div><div class="column" style="width:93%;">
 <p>Im Kontext von Konfidenzintervallen wird der Stichprobenkennwert <span class="math inline">\(\hat{\theta}\)</span> häufig als <strong>Punktschätzung</strong> bezeichnet. Damit wird betont, dass es sich 1) um einen Einzelwert und keinen Wertebereich handelt (“Punkt…”), und 2) dass dieser Wert nur eine Schätzung des wahren Wertes darstellt (“…schätzung”).</p>
-<p>Durch die Projektion in den Stichprobenkennwert-Raum (<span class="math inline">\(\cdot se\)</span>, <span class="math inline">\(+\hat{\theta}\)</span>) vergleichen wir konzeptuell gesehen nicht mehr <span class="math inline">\(\hat{\theta}\)</span> mit der Null (wie bei der Signifikanztestung), sondern mögliche Populationsparameter <span class="math inline">\(\theta\)</span> mit der Punktschätzung <span class="math inline">\(\hat{\theta}\)</span>. Letztlich sind Signifikanztestung und Konfidenzintervalle aber lediglich zwei Betrachtungsweisen desselben Sachverhaltes.</p>
+<p>Durch die Projektion in den Stichprobenkennwert-Raum (<span class="math inline">\(\cdot se\)</span>, <span class="math inline">\(+\hat{\theta}\)</span>) vergleichen wir konzeptuell gesehen nicht mehr <span class="math inline">\(\hat{\theta}\)</span> mit der Null (wie bei der Signifikanztestung), sondern mögliche Populationskennwerte <span class="math inline">\(\theta\)</span> mit der Punktschätzung <span class="math inline">\(\hat{\theta}\)</span>. Letztlich sind Signifikanztestung und Konfidenzintervalle aber lediglich zwei Betrachtungsweisen desselben Sachverhaltes.</p>
 <!-- Auch wenn das Konfidenzintervalls um die Punktschätzung herum konstruiert wird, kann ein Signifikanztest nie auf Basis einer Verteilung um die Punktschätzung durchgeführt werden. Wie bei der Nullhypothese basieren auch die (hypothetischen) Signifikanztests in der Definition des Konfidenzintervalls auf Verteilungen um fixe angenommene Werte der Population. Berechnet wird *immer* die Wahrscheinlichkeit der Stichprobendaten *gegegeben* einer Annahme über den Populationsparameter $\theta$ (bei der Nullhypothese $\theta=0$). -->
 </div>
 </div>
@@ -576,27 +576,27 @@ Noch etwas allgemeiner gesprochen werden Konfidenzintervalle für **unbekannte P
 <h2>Intution zu Konfidenzintervallen</h2>
 <p><em>Was bedeutet es, ob ein Konfidenzintervall größer oder klein ist?</em> Auf Basis unserer Definition können wir feststellen:</p>
 <ul>
-<li class="fragment">Ist das <strong>Konfidenzintervall</strong> bei einem gegebenen <span class="math inline">\(\alpha\)</span> <strong>verhältnismäßig klein</strong>, so gäbe es auch nur einen kleinen Bereich möglicher Populationsparameter die kompatibel (im Sinn von “nicht signifikant verschieden”) mit unserer Punktschätzung sind.
+<li class="fragment">Ist das <strong>Konfidenzintervall</strong> bei einem gegebenen <span class="math inline">\(\alpha\)</span> <strong>verhältnismäßig klein</strong>, so gäbe es auch nur einen kleinen Bereich möglicher Populationskennwerte <span class="math inline">\(\theta\)</span> die kompatibel (im Sinn von “nicht signifikant verschieden”) mit unserer Punktschätzung <span class="math inline">\(\hat{\theta}\)</span> sind.
 <ul>
-<li class="fragment">Wir können in diesem Fall davon ausgehen, dass unsere <strong>Punktschätzung recht präzise</strong> ist.</li>
+<li class="fragment">Wir können in diesem Fall davon ausgehen, dass unsere <strong>Punktschätzung <span class="math inline">\(\hat{\theta}\)</span> recht präzise</strong> ist.</li>
 </ul></li>
-<li class="fragment">Ist das <strong>Konfidenzintervall</strong> (bei gleichem <span class="math inline">\(\alpha\)</span>) <strong>verhältnismäßig groß</strong>, so ist der Bereich kompatibler Populationsparameter größer.
+<li class="fragment">Ist das <strong>Konfidenzintervall</strong> bei einem gegebenen <span class="math inline">\(\alpha\)</span> <strong>verhältnismäßig groß</strong>, so ist der Bereich kompatibler Populationskennwerte <span class="math inline">\(\theta\)</span> größer.
 <ul>
-<li class="fragment">In diesem Fall ist unsere <strong>Punktschätzung mit mehr Unsicherheit behaftet</strong>.</li>
+<li class="fragment">In diesem Fall ist unsere <strong>Punktschätzung <span class="math inline">\(\hat{\theta}\)</span> mit mehr Unsicherheit behaftet</strong>.</li>
 </ul></li>
-<li class="fragment">Zusammenfassend bemisst das Konfidenzintervall also die <strong>Vertrauenswürdigkeit einer Punktschätzung <span class="math inline">\(\hat{\theta}\)</span></strong> (<span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(\Delta\bar{x}\)</span>, <span class="math inline">\(r\)</span>, usw.). <strong>Je kleiner</strong> das Intervall, <strong>desto präziser</strong> ist unsere Schätzung <span class="math inline">\(\hat{\theta}\)</span> des Populationsparameters <span class="math inline">\(\theta\)</span>.
+<li class="fragment">Zusammenfassend bemisst das Konfidenzintervall also die <strong>Vertrauenswürdigkeit einer Punktschätzung <span class="math inline">\(\hat{\theta}\)</span></strong> (z.B. <span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(\Delta\bar{x}\)</span>, <span class="math inline">\(\hat{\rho}\)</span>, usw).<br><strong>Je kleiner</strong> das Intervall, <strong>desto präziser</strong> ist die Schätzung <span class="math inline">\(\hat{\theta}\)</span> des Populationskennwertes <span class="math inline">\(\theta\)</span>.
 <div class="vspace-large">
 
 </div></li>
 </ul>
-<div class="notabene" style="font-size: 27px !important">
+<div class="notabene" style="font-size: 26px !important">
 <div class="columns">
 <div class="column" style="width:7%;">
 <div style="margin-top: 10px">
 <p><img data-src="images/notabene2.png" height="65"></p>
 </div>
 </div><div class="column" style="width:93%;">
-<p>Dürfte man den Namen von Konfidenzintervall neu wählen, wäre <span style=" color: navy !important;"><strong>Kompatibilitäsintervall</strong></span> ein sinnvoller(er) Begriff, da das Intervall im obigen Sinne eben genau <strong>jene Populationsparameter einschließt, die kompatibel mit dem Stichprobenkennwert sind</strong>.</p>
+<p>Dürfte man den Namen von Konfidenzintervall neu wählen, wäre <span style=" color: navy !important;"><strong>Kompatibilitäsintervall</strong></span> ein sinnvoller(er) Begriff, da das Intervall im obigen Sinne eben genau <strong>jene Populationskennwerte <span class="math inline">\(\theta\)</span> einschließt, die statistisch kompatibel mit dem Stichprobenkennwert <span class="math inline">\(\hat{\theta}\)</span> sind</strong>.</p>
 </div>
 </div>
 </div>
@@ -624,25 +624,14 @@ Noch etwas allgemeiner gesprochen werden Konfidenzintervalle für **unbekannte P
 <p><img data-src="images/ci_68_90.png" style="margin-top:-20px !important" width="650"></p>
 </div>
 </div>
-<div class="columns">
-<div class="column" style="width:50%;">
 <ul>
-<li class="fragment">Das gängiste Konfidenzniveau verwendet <span class="math inline">\(\alpha=0.05\)</span> und wird dementsprechend als <strong>95%-Konfidenzintervall</strong> bezeichnet.
+<li class="fragment">Das gängiste Konfidenzniveau basiert auf <span class="math inline">\(\alpha=0.05\)</span> und damit <span class="math inline">\(1-\alpha=0.95\)</span>. Es wird als <strong>95%-Konfidenzniveau</strong> bzw. das Intervall als <strong>95%-Konfidenzintervall</strong> bezeichnet.
 <ul>
-<li class="fragment"><span class="math inline">\(\alpha=0.01\)</span>  ⟶  99%-Kofidenzintervall</li>
-<li class="fragment"><span class="math inline">\(\alpha=0.1\)</span>  ⟶  90%-Kofidenzintervall</li>
+<li class="fragment">Signifikanzniveau <span class="math inline">\(\alpha=0.01\)</span>  ⟶  Konfidenzniveau <span class="math inline">\(1-\alpha=0.99\)</span>  ⟶  99%-Kofidenzintervall</li>
+<li class="fragment">Signifikanzniveau <span class="math inline">\(\alpha=0.1\)</span>  ⟶  Konfidenzniveau <span class="math inline">\(1-\alpha=0.9\)</span>  ⟶  90%-Kofidenzintervall</li>
 <li class="fragment">usw.</li>
 </ul></li>
 </ul>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center" style="margin-top: 70px">
-<figure>
-<p><img data-src="images/ci95_example.png" width="550"></p>
-<figcaption>Beispiel für die Verwendung eines 95%-Konfidenzintervalls in einer Publikation<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a></figcaption>
-</figure>
-</div>
-</div>
-</div>
 <div class="columns">
 <div class="column" style="width:72%;">
 <ul>
@@ -658,7 +647,7 @@ Noch etwas allgemeiner gesprochen werden Konfidenzintervalle für **unbekannte P
 <!----------------->
 <!--- New slide --->
 <!----------------->
-<aside></aside></section>
+</section>
 <section class="slide level2">
 <h2>Konfidenzniveau und kritischer z-Wert</h2>
 <div class="columns">
@@ -695,7 +684,7 @@ z_{(1-\frac{\alpha}{2})} = \Phi\left(1-\frac{\alpha}{2}\right)
 </div>
 </section>
 <section class="slide level2">
-<h2>Populationsstreuung nicht bekannt</h2>
+<h2>Kritischer t-Wert: Populationsstreuung nicht bekannt</h2>
 <div>
 <ul>
 <li>Wie bereits festgestellt ist die zentrale Annahme bei z-Werten — Populationsstreuungen gegeben — in der Praxis nahezu nie zutreffend.</li>
@@ -712,6 +701,9 @@ z_{(1-\frac{\alpha}{2})} = \Phi\left(1-\frac{\alpha}{2}\right)
 \]</span></p>
 <p><span style="font-size: 22px; margin-left: 50px">(Beachte auch den Übergang von <span class="math inline">\(se\)</span> zu <span class="math inline">\(\hat{se}\)</span>, da wir nun die Streuung auf Basis der Stichprobe schätzen)</span></p>
 </div>
+<ul>
+<li class="fragment">Der kritische t-Wert <span class="math inline">\(t_{(1-\frac{\alpha}{2},\;\text{df})}\)</span> kann der t-Tabelle entnommen werden.</li>
+</ul>
 <div class="vspace-xlarge">
 
 </div>
@@ -1000,7 +992,7 @@ CI=\Delta\bar{x}\pm t_{(1-\frac{\alpha}{2},\;\text{df})}\cdot \hat{se}
 <div class="column" style="width:51%;">
 <ul>
 <li class="fragment">Wie aber sieht die Stichprobenverteilung des Korrelationskoeffizienten aus?</li>
-<li class="fragment">Antwort: kompliziert<a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a>. Grund: der Korrelations-koeffizient ist auf die Grenzen <span class="math inline">\(-1\)</span> und <span class="math inline">\(+1\)</span> beschränkt, was insbesondere für Populations-korrelationen <span class="math inline">\(\rho\)</span> nahe <span class="math inline">\(\pm 1\)</span> zu einer stark asymmetrischen Stichprobenverteilung führt.</li>
+<li class="fragment">Antwort: kompliziert<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a>. Grund: der Korrelations-koeffizient ist auf die Grenzen <span class="math inline">\(-1\)</span> und <span class="math inline">\(+1\)</span> beschränkt, was insbesondere für Populations-korrelationen <span class="math inline">\(\rho\)</span> nahe <span class="math inline">\(\pm 1\)</span> zu einer stark asymmetrischen Stichprobenverteilung führt.</li>
 <li class="fragment">Die Annahme einer Normalverteilung ist hier zumindest bei kleinen bis mittleren Stichproben nicht sinnvoll. Was also tun?</li>
 </ul>
 </div><div class="column" style="width:49%;">
@@ -1044,12 +1036,13 @@ CI=\Delta\bar{x}\pm t_{(1-\frac{\alpha}{2},\;\text{df})}\cdot \hat{se}
 <div class="column" style="width:55%;">
 <ul>
 <li class="fragment">Nach der <strong>Z-Transformation ist die Stichprobenverteilung ungefähr normalverteilt</strong>.</li>
-<li class="fragment">Der Standardfehler ist jetzt nicht mehr von Korrelation abhängig, sondern für jede Populationskorrelation gleich:</li>
+<li class="fragment">Der Standardfehler <span class="math inline">\(\hat{se}\)</span> ist jetzt nicht mehr von der Korrelation <span class="math inline">\(\hat{\rho}\)</span> abhängig:</li>
 </ul>
 <div class="fragment">
 <p><span class="math display">\[
 \hat{se} = \frac{1}{\sqrt{n-3}}
 \]</span></p>
+<p><span style="margin-left: 30px">.. sondern nur noch von der Stichprobengröße <span class="math inline">\(n\)</span>.</span></p>
 </div>
 </div><div class="column" style="width:45%;">
 <div class="vspace-small">
@@ -1066,7 +1059,7 @@ CI=\Delta\bar{x}\pm t_{(1-\frac{\alpha}{2},\;\text{df})}\cdot \hat{se}
 </section>
 <section class="slide level2">
 <h2>Konfidenzintervalle für die Korrelation</h2>
-<p>Die gesamte Prozedur für Konfidenzintervallen von Korrelationskoeffizienten ist wie folgt:</p>
+<p>Die Berechnung von Konfidenzintervallen für Korrelationskoeffizienten umfasst drei Schritte:</p>
 <div class="fragment">
 <p><strong>1. Fisher Z-Transformation</strong></p>
 <p>Transformation des Korrelationskoeffizienten zu Fisher <span class="math inline">\(Z\)</span>:</p>
@@ -1101,7 +1094,7 @@ CI = [\tanh{(Z^{u})}; \tanh{(Z^{o})}]
 <div>
 <ul>
 <li>Gehen wir zurück zu unserem Beispiel aus der letzten Vorlesung, bei dem Sie in einer Stichprobe <span class="math inline">\(n=12\)</span> eine Korrelation zwischen Größe und Gewicht von <span class="math inline">\(\hat{\rho}=0.4\)</span> gemessen hatten.</li>
-<li>Ein Signifikanztest hatte gezeigt, dass die Korrelation bei Anlegen eines Signifikanznievaus <span class="math inline">\(\alpha=0.05\)</span> nicht signifikant war. Da der Test darüber hinaus sogar einseitig war, erwarten wir, dass das 95%-Konfidenzintervall den Wert Null in jedem Fall einschließen wird.</li>
+<li>Ein Signifikanztest hatte gezeigt, dass die Korrelation bei Anlegen eines Signifikanzniveaus <span class="math inline">\(\alpha=0.05\)</span> nicht signifikant war. Da der Test darüber hinaus sogar einseitig war, erwarten wir, dass das 95%-Konfidenzintervall den Wert Null in jedem Fall einschließen wird.</li>
 </ul>
 </div>
 <div class="fragment">
@@ -1116,7 +1109,7 @@ Z = \text{artanh}({\hat{\rho}}) = \text{artanh}({0.4}) = 0.424
 <p>Kritischer z-Wert (z.B. aus z-Tabelle): <span class="math inline">\(\qquad z_{(1-\frac{\alpha}{2})} = z_{(1-\frac{0.05}{2})} = z_{(0.975)} = 1.96\)</span></p>
 <p>Konfidenzintervall:</p>
 <p><span class="math display">\[
-CI_Z = \hat{\rho}\pm z_{(1-\frac{\alpha}{2})}\cdot\hat{se} = 0.424\pm 1.96\cdot \scriptsize\frac{1}{3}\normalsize = [-0.230; 1.077]
+CI_Z = Z\pm z_{(1-\frac{\alpha}{2})}\cdot\hat{se} = 0.424\pm 1.96\cdot \scriptsize\frac{1}{3}\normalsize = [-0.230; 1.077]
 \]</span></p>
 </div>
 <!----------------->
@@ -1134,7 +1127,7 @@ CI = [\tanh{(Z^{u})}; \tanh{(Z^{o})}] = [\tanh{(-0.230)}; \tanh{(1.077)}] = [-0.
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="fragment">
-<p>Damit sind auch Korrelationswerte <span class="math inline">\(\le 0\)</span> im Konfidenzintervall enthalten und wir können direkt ablesen, dass ein Signifikanztest mit <span class="math inline">\(\alpha=0.05\)</span> für die Hypothese <span class="math inline">\(\rho &gt; 0\)</span> nicht signifikant wäre.</p>
+<p>Auch eine Aussage zur Signifikanz lässt sich treffen: da der Wert 0 im Konfidenzintervall enthalten ist, folgt, dass ein Signifikanztest mit <span class="math inline">\(\alpha=0.05\)</span> für die ungerichtete Hypothese <span class="math inline">\(\rho \neq 0\)</span> <u>nicht</u> signifikant wäre.</p>
 </div>
 <div class="fragment">
 <p><span style="font-size: 21px">Warum? Weil das Konfidenzintervall jene Korrelationsbereiche umfasst, in denen mögliche Populationskorrelationen <span class="math inline">\(\rho\)</span> statistisch kompatibel mit dem Stichprobenwert <span class="math inline">\(\hat{\rho}\)</span> sind. Insbesondere schließt das Konfidenzintervall den Wert <span class="math inline">\(0\)</span> ein und die Nullhypothese ist damit definitiv statistisch kompatibel mit unserer Stichprobenkorrelation. Die Nullhypothese ist also <strong>nicht abgelehnt</strong> und die Korrelation ist <strong>nicht signifikant</strong> .</span></p>
@@ -1153,11 +1146,12 @@ CI = [\tanh{(Z^{u})}; \tanh{(Z^{o})}] = [\tanh{(-0.230)}; \tanh{(1.077)}] = [-0.
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
-<h1>Weiteres WissensWertes</h1>
+<h1>Weiteres WissensWertes…</h1>
 <div class="vspace-large">
 
 </div>
 <p><img data-src="images/www.png" height="130"></p>
+<p><span style="font-weight: bold; font-size: 40px; display: block; width: 100%; text-align: center">…zu Konfidenzintervallen</span></p>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1593,7 +1587,7 @@ CI=\hat{b}_1\pm t_{(1-\frac{\alpha}{2},\,n-2)}\cdot\hat{se}=0.16\pm 2.23\cdot 0.
 <div style="margin-top: -15px">
 <ul>
 <li class="fragment">Sind die Stichprobengrößen <span class="math inline">\(n\)</span> nicht zu klein und die Anteile nicht zu extrem (zu nah bei 0 oder 1), kann die Binomialverteilung jedoch durch die <strong>Normalverteilung approximiert</strong> werden.</li>
-<li class="fragment">In diesem Fall können z-Werte für die Konstruktion des Konfidenzintervalls verwendet werden<a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a> <a href="#/footnotes" class="footnote-ref" id="fnref4" role="doc-noteref" data-footnote-href="#/fn4" onclick=""><sup>4</sup></a>:</li>
+<li class="fragment">In diesem Fall können z-Werte für die Konstruktion des Konfidenzintervalls verwendet werden<a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a> <a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a>:</li>
 </ul>
 </div>
 <div class="fragment">
@@ -1612,7 +1606,7 @@ CI(\hat{p}) = \hat{p}\pm z_{(1-\frac{\alpha}{2})}\cdot\hat{se}(\hat{p})
 </div>
 <div style="margin-top: -15px">
 <ul>
-<li class="fragment">Im Computerzeitalter sollten allerdings für die Konfidenzintervalle von Anteilen präzisere Schätzungen wie das <strong>Wilson-Intervall</strong><a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a> verwendet werden.</li>
+<li class="fragment">Im Computerzeitalter sollten allerdings für die Konfidenzintervalle von Anteilen präzisere Schätzungen wie das <strong>Wilson-Intervall</strong><a href="#/footnotes" class="footnote-ref" id="fnref4" role="doc-noteref" data-footnote-href="#/fn4" onclick=""><sup>4</sup></a> verwendet werden.</li>
 </ul>
 </div>
 <div class="notabene fragment">
@@ -1809,11 +1803,10 @@ CI = [\text{min}(x_1, x_2); \text{max}(x_1, x_2)] = [1.2; 1.8]
 <section id="footnotes" class="footnotes footnotes-end-of-document smaller scrollable" role="doc-endnotes"><h2>Fußnoten</h2>
 
 <ol>
-<li id="fn1"><p>Huang X, Wang Y, Zhang H (2023) Effects of physical exercise intervention on depressive and anxious moods of college students: A meta-analysis of randomized controlled trials. Asian Journal of Sport and Exercise Psychology Available at: https://www.sciencedirect.com/science/article/pii/S2667239123000011 [Accessed September 14, 2023].</p></li>
-<li id="fn2"><p>Die exakte Wahrscheinlichkeitsdichte der Stichprobenverteilung findet sich z.B. auf Wikipedia: https://en.wikipedia.org/wiki/Pearson_correlation_coefficient#Using_the_exact_distribution</p></li>
-<li id="fn3"><p>Zu beachten ist allerdings, dass für die Verwendung des z-Wertes nicht die Verteilung von <span class="math inline">\(p\)</span> relevant ist, sondern die Verteilung der Prüfgröße <span class="math inline">\(\frac{\hat{p}}{\hat{se}}\)</span>. Hier handelt es sich dann wieder um das Verhältnis einer (näherungsweise) normalverteilten und einer chi-verteilten Größe, also in Summe einer t-verteilten Prüfgröße. Da es sich aber <em>ohnehin</em> nur um eine Näherung handelt, sind die Differenzen zwischen Normal- vs.&nbsp;t-Verteilung für die Prüfgröße vernachlässigbar und der Einfachheit halber wird die Normalverteilung verwendet. Siehe auch <a href="https://stats.stackexchange.com/questions/411699/why-we-don-t-make-use-of-the-t-distribution-for-constructing-a-confidence-interv">Stackexchange</a>.</p></li>
-<li id="fn4"><p>https://www.econometrics.blog/post/the-wilson-confidence-interval-for-a-proportion/</p></li>
-<li id="fn5"><p>https://de.wikipedia.org/wiki/Konfidenzintervall_f%C3%BCr_die_Erfolgswahrscheinlichkeit_der_Binomialverteilung#Wilson-Intervall</p></li>
+<li id="fn1"><p>Die exakte Wahrscheinlichkeitsdichte der Stichprobenverteilung findet sich z.B. auf Wikipedia: https://en.wikipedia.org/wiki/Pearson_correlation_coefficient#Using_the_exact_distribution</p></li>
+<li id="fn2"><p>Zu beachten ist allerdings, dass für die Verwendung des z-Wertes nicht die Verteilung von <span class="math inline">\(p\)</span> relevant ist, sondern die Verteilung der Prüfgröße <span class="math inline">\(\frac{\hat{p}}{\hat{se}}\)</span>. Hier handelt es sich dann wieder um das Verhältnis einer (näherungsweise) normalverteilten und einer chi-verteilten Größe, also in Summe einer t-verteilten Prüfgröße. Da es sich aber <em>ohnehin</em> nur um eine Näherung handelt, sind die Differenzen zwischen Normal- vs.&nbsp;t-Verteilung für die Prüfgröße vernachlässigbar und der Einfachheit halber wird die Normalverteilung verwendet. Siehe auch <a href="https://stats.stackexchange.com/questions/411699/why-we-don-t-make-use-of-the-t-distribution-for-constructing-a-confidence-interv">Stackexchange</a>.</p></li>
+<li id="fn3"><p>https://www.econometrics.blog/post/the-wilson-confidence-interval-for-a-proportion/</p></li>
+<li id="fn4"><p>https://de.wikipedia.org/wiki/Konfidenzintervall_f%C3%BCr_die_Erfolgswahrscheinlichkeit_der_Binomialverteilung#Wilson-Intervall</p></li>
 </ol>
 </section>
     </div>
