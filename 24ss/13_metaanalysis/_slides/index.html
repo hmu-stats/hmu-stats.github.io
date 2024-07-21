@@ -351,14 +351,6 @@
 <div><button onclick="new Audio('images/appear.mp3').play()" class="intro-sound"><img src="images/paradoxia_group_of_scientists.png" height="240px"></button></div>
 </div>
 </section>
-<section class="slide level2 hcenter-slide">
-<h2>Der Forschungsprozess</h2>
-<div data-animate="" data-src="images/scientific_process.svg"><!-- setup:
-    - element: "#results"
-      modifier: function() { this.node.style.fill = 'green'; }
-    - element: "#resultsbg"
-      modifier: function() { this.node.style.fill = '#d8ffe2';} --></div>
-</section>
 <section class="slide level2">
 <h2>Beispiel</h2>
 <div class="vspace-medium">
@@ -373,6 +365,15 @@
 
 </div>
 <p>→ Für Details zur Literatursuche, siehe Vorlesung Forschungsmethoden.</p>
+<!-- ## Der Forschungsprozess {.hcenter-slide}
+
+```yaml { .animate src="images/scientific_process.svg"}
+setup:
+    - element: "#results"
+      modifier: function() { this.node.style.fill = 'green'; }
+    - element: "#resultsbg"
+      modifier: function() { this.node.style.fill = '#d8ffe2';}
+``` -->
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -600,7 +601,7 @@
 <h2>Berechnung eines metaanalytischen Mittelwertes</h2>
 <ul>
 <li class="fragment">Hauptergebnis einer Metaanalyse ist ein gemittelter statistischer Kennwert für das untersuchte Phänomen.</li>
-<li class="fragment">Ein häufiger Ansatz ist dabei, nicht die unstandardisierten Effekte (z.B. <span class="math inline">\(\bar{x}\)</span> oder <span class="math inline">\(b_1\)</span>) selbst zu mitteln, sondern die entsprechenden standardisierten Effektstärken (z.B. Cohen’s <span class="math inline">\(d\)</span> oder <span class="math inline">\(r\)</span>).
+<li class="fragment">Ein häufiger Ansatz ist dabei, nicht die unstandardisierten Effekte (z.B. <span class="math inline">\(\bar{x}\)</span> oder <span class="math inline">\(\hat{b}_1\)</span>) selbst zu mitteln, sondern die entsprechenden standardisierten Effektstärken (z.B. Cohen’s <span class="math inline">\(d\)</span> oder <span class="math inline">\(\hat{\rho}\)</span>).
 <ul>
 <li class="fragment">Reminder: standardisierte Effekte sind besser vergleichbar zwischen Studien!</li>
 </ul></li>
@@ -630,7 +631,7 @@ w_i = \frac{1}{v_i}
 <ul>
 <li class="fragment">Die Samplingvarianz gibt die Varianz der Kennwerte an, die man bei wiederholter Durchführung der identischen Studie erhalten würde.
 <ul>
-<li class="fragment">Beachte: Samplingvarianz ≠ Stichprobenvarianz/Samplevarianz!</li>
+<li class="fragment">Beachte: Samplingvarianz ≠ Stichprobenvarianz/Samplevarianz! Siehe <a href="#/invsamplingvar" style="color: darkred">Beispiele im Bonuscontent</a>.</li>
 </ul></li>
 <li class="fragment">Dank des zentralen Grenzwertsatzes kann diese diese Varianz ohne tatsächliche Wiederholungen der Studie geschätzt werden.
 <ul>
@@ -645,40 +646,6 @@ w_i = \frac{1}{v_i}
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style=" color: darkred !important;">Inverse Samplingvarianz: Formeln</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<ul>
-<li class="fragment">Cohen’s d (unabhängige Messungen Gruppen A und B):</li>
-</ul>
-<p><span class="math display">\[
-v_i = \frac{n_A + n_B}{n_A n_B} + \frac{d^2}{2(n_A+n_C)}
-\]</span></p>
-<p><span class="math inline">\(n_A\)</span>/<span class="math inline">\(n_B\)</span> sind die Fallzahlen in den Gruppen A/B der Studie <span class="math inline">\(i\)</span>, <span class="math inline">\(d\)</span> ist das Cohen’s <span class="math inline">\(d\)</span> der Studie.</p>
-<ul>
-<li class="fragment">Cohen’s d (abhängige Messungen) <a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a> <a href="#/footnotes" class="footnote-ref" id="fnref6" role="doc-noteref" data-footnote-href="#/fn6" onclick=""><sup>6</sup></a>:</li>
-</ul>
-<div style="margin-top: -25px">
-<p><span class="math display">\[
-v_i = \frac{d^2+2}{2n}
-\]</span></p>
-</div>
-<ul>
-<li class="fragment">Pearson-Korrelation (Annahme: z-transformierte Korrelationskoeffizienten — häufigster Fall!):</li>
-</ul>
-<p><span class="math display">\[
-v_i = \frac{1}{n-3}
-\]</span></p>
-<ul>
-<li class="fragment">Pearson-Korrelation (Rohe Korrelationskoeffizienten):</li>
-</ul>
-<p><span class="math display">\[
-v_i = \frac{\left(1-r^2\right)^2}{n-1}
-\]</span></p>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-<aside></aside></section>
-<section class="slide level2">
 <h2>Ergebnis der Metaanalyse</h2>
 
 <!----------------->
@@ -688,7 +655,7 @@ v_i = \frac{\left(1-r^2\right)^2}{n-1}
 <section class="slide level2">
 <h2>Beispiel 1: wirkt Psychotherapie?</h2>
 <ul>
-<li class="fragment">Metaanalyse von Smith und Glass (1977)<a href="#/footnotes" class="footnote-ref" id="fnref7" role="doc-noteref" data-footnote-href="#/fn7" onclick=""><sup>7</sup></a></li>
+<li class="fragment">Metaanalyse von Smith und Glass (1977)<a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a></li>
 <li class="fragment">Verglichen wurde „Therapie vs.&nbsp;keine Therapie” für eine Reihe von psychischen Störungen (knapp 400 Studien insgesamt):</li>
 <li class="fragment">Berechnet wurde schließlich ein mittleres d:</li>
 </ul>
@@ -703,7 +670,7 @@ v_i = \frac{\left(1-r^2\right)^2}{n-1}
 <section class="slide level2">
 <h2>Beispiel 1: wirkt Psychotherapie?</h2>
 <ul>
-<li class="fragment">Metaanalyse von Smith und Glass (1977)<a href="#/footnotes" class="footnote-ref" id="fnref8" role="doc-noteref" data-footnote-href="#/fn8" onclick=""><sup>8</sup></a></li>
+<li class="fragment">Metaanalyse von Smith und Glass (1977)<a href="#/footnotes" class="footnote-ref" id="fnref6" role="doc-noteref" data-footnote-href="#/fn6" onclick=""><sup>6</sup></a></li>
 <li class="fragment"><strong>Moderatorvariable 1</strong>: unterscheidet sich die Wirksamkeit je nach Art der Therapie?</li>
 </ul>
 <div class="vspace-medium">
@@ -713,7 +680,7 @@ v_i = \frac{\left(1-r^2\right)^2}{n-1}
 <div class="column" style="width:38%;">
 <p><img data-src="images/metaanalysis7.png"></p>
 </div><div class="column" style="width:62%;">
-<p>Nach dieser Metaanalyse weisen die unterschiedlichen Psychpotherapie-Schulen/Arten deutlich unterschiedliche Effektstärken auf: Spannbreite von Gestalttherapie <span class="math inline">\((d=0{,}26)\)</span> bis Systematische Desensibilisierung (Expositionstherapie) <span class="math inline">\((d=0{,}91)\)</span></p>
+<p>Nach dieser Metaanalyse weisen die unterschiedlichen Psychpotherapie-Schulen/Arten deutlich unterschiedliche Effektstärken auf: Spannbreite von Gestalttherapie <span class="math inline">\((d=0.26)\)</span> bis Systematische Desensibilisierung (Expositionstherapie) <span class="math inline">\((d=0.91)\)</span></p>
 <div class="vspace-xlarge">
 
 </div>
@@ -737,7 +704,7 @@ v_i = \frac{\left(1-r^2\right)^2}{n-1}
 <section class="slide level2">
 <h2>Beispiel 1: wirkt Psychotherapie?</h2>
 <ul>
-<li class="fragment">Metaanalyse von Smith und Glass (1977)<a href="#/footnotes" class="footnote-ref" id="fnref9" role="doc-noteref" data-footnote-href="#/fn9" onclick=""><sup>9</sup></a></li>
+<li class="fragment">Metaanalyse von Smith und Glass (1977)<a href="#/footnotes" class="footnote-ref" id="fnref7" role="doc-noteref" data-footnote-href="#/fn7" onclick=""><sup>7</sup></a></li>
 <li class="fragment"><strong>Moderatorvariable 2</strong>: unterscheidet sich die Wirksamkeit je nach Outcome-Maß?</li>
 </ul>
 <div class="vspace-medium">
@@ -747,7 +714,7 @@ v_i = \frac{\left(1-r^2\right)^2}{n-1}
 <div class="column" style="width:43%;">
 <p><img data-src="images/metaanalysis8.png"></p>
 </div><div class="column" style="width:57%;">
-<p>Recht große Verbesserung auf der Angstachse <span class="math inline">\((d=0{,}97)\)</span>, eher geringe Verbesserung im Schul/Arbeitsumfeld <span class="math inline">\((d=0,{31})\)</span>.</p>
+<p>Recht große Verbesserung auf der Angstachse <span class="math inline">\((d=0.97)\)</span>, eher geringe Verbesserung im Schul/Arbeitsumfeld <span class="math inline">\((d=0,{31})\)</span>.</p>
 <div class="vspace-xlarge">
 
 </div>
@@ -774,7 +741,7 @@ v_i = \frac{\left(1-r^2\right)^2}{n-1}
 <section class="slide level2">
 <h2>Beispiel 1: wirkt Psychotherapie?</h2>
 <ul>
-<li class="fragment">Metaanalyse von Smith und Glass (1977)<a href="#/footnotes" class="footnote-ref" id="fnref10" role="doc-noteref" data-footnote-href="#/fn10" onclick=""><sup>10</sup></a></li>
+<li class="fragment">Metaanalyse von Smith und Glass (1977)<a href="#/footnotes" class="footnote-ref" id="fnref8" role="doc-noteref" data-footnote-href="#/fn8" onclick=""><sup>8</sup></a></li>
 <li class="fragment">Unterschiede zwischen Verhaltenstherapie (<em>behavioral</em>) und anderen Therapieformen (<em>nonbehavioral</em>)</li>
 </ul>
 <div class="vspace-medium">
@@ -784,7 +751,7 @@ v_i = \frac{\left(1-r^2\right)^2}{n-1}
 <div class="column" style="width:43%;">
 <p><img data-src="images/metaanalysis9.png"></p>
 </div><div class="column" style="width:57%;">
-<p>Für diese Analyse wurden die verschiedenen Therapieformen in die Superklassen “behavioral” (403 Studien) und “nonbehavioral” (344 Studien) unterteilt. Die Analyse zeigt einen Vorteil für Verhaltenstherapie an (<span class="math inline">\(d=0{,}83\)</span> vs.&nbsp;<span class="math inline">\(d=0{,}59\)</span>).</p>
+<p>Für diese Analyse wurden die verschiedenen Therapieformen in die Superklassen “behavioral” (403 Studien) und “nonbehavioral” (344 Studien) unterteilt. Die Analyse zeigt einen Vorteil für Verhaltenstherapie an (<span class="math inline">\(d=0.83\)</span> vs.&nbsp;<span class="math inline">\(d=0.59\)</span>).</p>
 <div class="vspace-xlarge">
 
 </div>
@@ -808,7 +775,7 @@ v_i = \frac{\left(1-r^2\right)^2}{n-1}
 <section class="slide level2">
 <h2>Beispiel 2: Musikpräferenzen und Persönlichkeit</h2>
 <ul>
-<li class="fragment">Moderne Metaanalyse von Schäfer &amp; Mehlhorn (2017)<a href="#/footnotes" class="footnote-ref" id="fnref11" role="doc-noteref" data-footnote-href="#/fn11" onclick=""><sup>11</sup></a></li>
+<li class="fragment">Moderne Metaanalyse von Schäfer &amp; Mehlhorn (2017)<a href="#/footnotes" class="footnote-ref" id="fnref9" role="doc-noteref" data-footnote-href="#/fn9" onclick=""><sup>9</sup></a></li>
 </ul>
 <div class="vspace-large">
 
@@ -892,7 +859,7 @@ v_i = \frac{\left(1-r^2\right)^2}{n-1}
 <h2>Funnel plot</h2>
 <p><span style=" color: navy !important;"><strong>Funnel Plot</strong></span>: visuelle Methode zur Diagnose eines Publikationsbias’</p>
 <ul>
-<li class="fragment"><strong>Beispiel:</strong> Meta-Analyse zum Zusammenhang von Habituationsfähigkeit im Kindesalter und späterem IQ<a href="#/footnotes" class="footnote-ref" id="fnref12" role="doc-noteref" data-footnote-href="#/fn12" onclick=""><sup>12</sup></a></li>
+<li class="fragment"><strong>Beispiel:</strong> Meta-Analyse zum Zusammenhang von Habituationsfähigkeit im Kindesalter und späterem IQ<a href="#/footnotes" class="footnote-ref" id="fnref10" role="doc-noteref" data-footnote-href="#/fn10" onclick=""><sup>10</sup></a></li>
 </ul>
 <div class="columns">
 <div class="column" style="width:55%;">
@@ -943,11 +910,49 @@ v_i = \frac{\left(1-r^2\right)^2}{n-1}
 <figcaption><a href="https://xkcd.com/1447/">xkcd#1477</a></figcaption>
 </figure>
 </div>
+</section>
+<section>
+<section class="title-slide slide level1 center">
+<h1><span style=" color: darkred !important;">Bonuscontent</span></h1>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="invsamplingvar" class="slide level2">
+<h2><span style=" color: darkred !important;">Inverse Samplingvarianz: Formeln</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
+<ul>
+<li class="fragment">Cohen’s d (unabhängige Messungen Gruppen A und B):</li>
+</ul>
+<p><span class="math display">\[
+v_i = \frac{n_A + n_B}{n_A n_B} + \frac{d^2}{2(n_A+n_C)}
+\]</span></p>
+<p><span class="math inline">\(n_A\)</span>/<span class="math inline">\(n_B\)</span> sind die Fallzahlen in den Gruppen A/B der Studie <span class="math inline">\(i\)</span>, <span class="math inline">\(d\)</span> ist das Cohen’s <span class="math inline">\(d\)</span> der Studie.</p>
+<ul>
+<li class="fragment">Cohen’s d (abhängige Messungen) <a href="#/footnotes" class="footnote-ref" id="fnref11" role="doc-noteref" data-footnote-href="#/fn11" onclick=""><sup>11</sup></a> <a href="#/footnotes" class="footnote-ref" id="fnref12" role="doc-noteref" data-footnote-href="#/fn12" onclick=""><sup>12</sup></a>:</li>
+</ul>
+<div style="margin-top: -25px">
+<p><span class="math display">\[
+v_i = \frac{d^2+2}{2n}
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">Pearson-Korrelation (Annahme: z-transformierte Korrelationskoeffizienten — häufigster Fall!):</li>
+</ul>
+<p><span class="math display">\[
+v_i = \frac{1}{n-3}
+\]</span></p>
+<ul>
+<li class="fragment">Pearson-Korrelation (Rohe Korrelationskoeffizienten):</li>
+</ul>
+<p><span class="math display">\[
+v_i = \frac{\left(1-\hat{\rho}^2\right)^2}{n-1}
+\]</span></p>
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Vorlesung 13: Metaanalyse</p>
 </div>
-</section>
+<aside></aside></section></section>
 <section id="footnotes" class="footnotes footnotes-end-of-document smaller scrollable" role="doc-endnotes"><h2>Fußnoten</h2>
 
 <ol>
@@ -955,14 +960,14 @@ v_i = \frac{\left(1-r^2\right)^2}{n-1}
 <li id="fn2"><p>https://xkcd.com/2755/</p></li>
 <li id="fn3"><p>Glass, G. V. (1976). Primary, Secondary, and Meta-Analysis of Research. Educational Researcher, 5(10), 3. doi:10.2307/1174772</p></li>
 <li id="fn4"><p>Askie, L., &amp; Offringa, M. (2015). Systematic reviews and meta-analysis. Seminars in Fetal and Neonatal Medicine, 20(6), 403–409. doi:10.1016/j.siny.2015.10.002</p></li>
-<li id="fn5"><p>Borenstein, M. (2009). Effect sizes for continuous data. In H. Cooper, L. V. Hedges &amp; J. C. Valentine (Eds.), The Handbook of Research Synthesis and Meta-Analysis (pp.&nbsp;221-236). New York: Russell Sage Foundation.</p></li>
-<li id="fn6"><p>https://stats.stackexchange.com/questions/226836/sampling-variance-for-meta-analysis-one-sample-data</p></li>
+<li id="fn5"><p>Smith ML, Glass GV (1977) Meta-analysis of psychotherapy outcome studies. American Psychologist 32:752–760.</p></li>
+<li id="fn6"><p>Smith ML, Glass GV (1977) Meta-analysis of psychotherapy outcome studies. American Psychologist 32:752–760.</p></li>
 <li id="fn7"><p>Smith ML, Glass GV (1977) Meta-analysis of psychotherapy outcome studies. American Psychologist 32:752–760.</p></li>
 <li id="fn8"><p>Smith ML, Glass GV (1977) Meta-analysis of psychotherapy outcome studies. American Psychologist 32:752–760.</p></li>
-<li id="fn9"><p>Smith ML, Glass GV (1977) Meta-analysis of psychotherapy outcome studies. American Psychologist 32:752–760.</p></li>
-<li id="fn10"><p>Smith ML, Glass GV (1977) Meta-analysis of psychotherapy outcome studies. American Psychologist 32:752–760.</p></li>
-<li id="fn11"><p>Schäfer T, Mehlhorn C (2017) Can personality traits predict musical style preferences? A meta-analysis. Personality and Individual Differences 116:265–273.</p></li>
-<li id="fn12"><p>Bakker M, Van Dijk A, Wicherts JM (2012) The Rules of the Game Called Psychological Science. Perspect Psychol Sci 7:543–554.</p></li>
+<li id="fn9"><p>Schäfer T, Mehlhorn C (2017) Can personality traits predict musical style preferences? A meta-analysis. Personality and Individual Differences 116:265–273.</p></li>
+<li id="fn10"><p>Bakker M, Van Dijk A, Wicherts JM (2012) The Rules of the Game Called Psychological Science. Perspect Psychol Sci 7:543–554.</p></li>
+<li id="fn11"><p>Borenstein, M. (2009). Effect sizes for continuous data. In H. Cooper, L. V. Hedges &amp; J. C. Valentine (Eds.), The Handbook of Research Synthesis and Meta-Analysis (pp.&nbsp;221-236). New York: Russell Sage Foundation.</p></li>
+<li id="fn12"><p>https://stats.stackexchange.com/questions/226836/sampling-variance-for-meta-analysis-one-sample-data</p></li>
 </ol>
 </section>
     </div>
