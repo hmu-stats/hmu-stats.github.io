@@ -39,6 +39,7 @@ function change_semester(semester, semester_str) {
     }
 
     document.getElementById('semester').innerHTML = semester_str.replace(' ', '<br />');
+    document.getElementById('semester').style.color = semester.includes('ws') ? '#d4f2ff' : '#ffddca';
     document.getElementById('img_semester').src = document.getElementById('img_semester').src.replace(document.getElementById('img_semester').src.split('/').pop(), semester.slice(2,4) === 'ws' ? 'wintersemester.png' : 'sommersemester.png');
 
     let lecture_list = '';
@@ -135,7 +136,7 @@ function change_semester_onload() {
 
 <table class="paradoxia-table"><tr>
     <td><img src="images/paradoxia_group_of_scientists_flat.png" class="paradoxia"></td>
-    <td style="font-size: 1.1rem;"><img id="img_semester" src="images/sommersemester.png" height="30px"><div id="semester">2024</div></td>
+    <td style="font-size: 1.1rem;"><img id="img_semester" src="images/sommersemester.png" height="22px"><div id="semester">2024</div></td>
 </tr></table>
 
 <div id="content"></div>
