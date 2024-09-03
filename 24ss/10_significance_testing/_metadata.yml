@@ -1,0 +1,8 @@
+title: "Vorlesung 10: Signifikanztestung"
+date: "9.January 2024"
+semester: "{{< var semester >}}"
+  
+format:
+  revealjs:
+    footer: "Vorlesung 10: Signifikanztestung"
+    fragments: false

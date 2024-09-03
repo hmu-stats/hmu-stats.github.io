@@ -1,0 +1,133 @@
+---
+title: "Vorlesung 09: Wahrscheinlichkeitsdichte"
+---
+
+## Theoretische Häufigkeitsverteilungen
+
+<!-- ## Der Forschungsprozess {.hcenter-slide}
+
+```yaml { .animate src="images/scientific_process.svg"}
+setup:
+    - element: "#inference"
+      modifier: function() { this.node.style.fill = 'green'; }
+    - element: "#inferencebg"
+      modifier: function() { this.node.style.fill = '#d8ffe2';}
+``` -->
+
+
+:::: {.columns}
+::: {.column width="70%"}
+In der letzten Vorlesung haben wir erarbeitet, dass sich die Stichprobenverteilung durch eine Normalverteilung der Form
+
+$$
+f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+$$
+
+beschreiben lässt (wobei die Variable $x$ im Fall der Stichprobenverteilung der Stichprobenkennwert $\hat{\theta}$ ist).
+
+:::
+::: {.column width="30%"}
+![](images/noselength_probability_density_f_x.png){style="margin-top:-60px !important"}
+:::
+::::
+
+- Eine theoretische Häufigkeitsverteilung wie die Normalverteilung gibt für *jeden beliebigen Wert* $x$ des Merkmals $X$ eine Häufigkeit $f(x)$ an.
+- Eine wichtige Frage haben wir bislang jedoch nicht beantwortet: was für eine Art von Häufigkeit ist $f(x)$ an? Wie ist also die y-Achse im Diagramm rechts oben zu interpretieren?
+
+
+
+## Rückblick: das Histogramm
+
+:::: {.columns}
+::: {.column width="70%"}
+
+
+:::{.nonincremental}
+- Um die Bedeutung von $f(x)$ zu verstehen, gehen wir zunächst zurück zum **Histogramm**.
+- Histogramme stellen die Häufigkeit der Merkmalsvariable $X$ in einer Stichprobe oder Population dar. Wird die **relative Häufigkeit** aufgetragen, so ordnet das Histogramm jedem Intervall auf der x-Achse eine relative Häufigkeit dar, die z.B. in Prozent angegeben werden kann.
+:::
+:::
+::: {.column width="30%"}
+![](images/noselength_normal_relative.png)
+:::
+::::
+
+- Die Breite des Intervalls &ndash; die [**Kategorienbreite *d***]{color="navy"} &ndash; ist dabei ein Kompromiss zweier Faktoren:
+    1. **Auflösung:** je schmaler das Intervall, desto feiner wird das Merkmal X unterteilt.
+    2. **Fallzahl:** je breiter das Intervall, desto höher die Zahl der Fälle im Intervall, desto präziser die Schätzung des Häufigkeitswertes im Intervall.
+- Die Gesamtsumme aller Säulen im Histogramm mit relativer Häufigkeit ist immer 1 (oder 100%).
+
+
+<!-- ```{python}
+
+``` -->
+<!-- ```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.stats import norm
+
+np.random.seed(0)
+
+fontsize = 14
+
+mu = 5
+std = 1.5
+fig = plt.figure(figsize=(10, 2.3))
+
+w = 0.01
+xf = np.arange(w/2, 10, w)
+yf = norm.pdf(xf, mu, std)
+
+for i, w in enumerate([2, 1, 0.5, 0.2]): 
+    x = np.arange(w/2, 10, w)
+    y = norm.pdf(x, mu, std)
+    ysum = np.sum(y)
+    y /= ysum
+    plt.subplot(1, 4, i+1)
+    plt.bar(x, y, width=w, ec='w', fc='#783c00')
+    plt.plot(xf, yf/ysum, 'k-')
+    # plt.plot(x, y, 'ko', markersize=4)
+    if i == 0:
+        plt.ylabel('Relative Häufigkeit', fontsize=fontsize)
+    plt.xticks(np.arange(0,10.1,2), fontsize=fontsize-2)
+    plt.yticks(fontsize=fontsize-2)
+    plt.title(f'Kategorienbreite $d={w}cm$', fontsize=fontsize-2)
+
+fig.text(0.5, -0.03, 'Nasenlänge (cm)', fontsize=fontsize, ha='center')
+
+plt.tight_layout()
+plt.savefig('images/probability_density_demo2.png', bbox_inches='tight')
+
+``` -->
+
+## Rückblick: das Histogramm
+
+:::{.nonincremental}
+- Wir nehmen nun an, dass wir das Histogramm auf Basis einer **unendlich großen** Population bilden, in der die theoretische Häufigkeitsverteilung von Nasenlängen durch eine **Normalverteilung** beschrieben wird (im Beispiel: $\mu=5cm, \sigma=1.5cm$).
+- Egal, wie fein wir die Kategorienbreite wählen, gibt es aufgrund der unendlich großen Population genug Datenpunkte für eine präzise Schätzung der relativen Häufigkeit in einer Säule.
+- Es gilt: je kleiner die Kategorienbreite, desto mehr Säulen gibt es, desto kleiner die relativen Häufigkeitswerte jeder einzelnen Säule.
+:::
+
+![](images/probability_density_demo2.png){style="margin-bottom:-3px"}
+
+- Es zeigt sich: mit feiner werdender Kategorienbreite nähert sich das Histogramm einer Normalverteilung &mdash; und damit der theoretische Häufigkeitsverteilung &mdash; an!<br>(&rarr; Gesetz der großen Zahlen)
+
+<!-- - Beispiel: 
+    - Im ersten Plot gilt $d=2cm$. Die relative Häufigkeit, dass ein Merkmal etwa im Intervall $[6cm; 8cm]$ liegt ist ca. $0.22$ (oder 22%).
+    - Im zweiten Plot gilt $d=1cm$. Nun wird etwa das Intervall $[6cm; 8cm]$ aufgeteilt in zwei relative Häufigkeiten für die Bereiche $[6cm; 7cm]$ und $[7cm; 8cm]$, die jeweils beide geringer sind (ca. $0.16$ und $0.06$). -->
+
+
+## Rückblick: das Histogramm
+
+
+- Nun scheint ein Brückenschlag naheliegend: ist die theoretische Häufigkeitsverteilung $f(x)$, die Funktionswerte für beliebige $x$-Werte ausgibt, gleich einem Histogramm, bei dem die Kategorienbreite gegen Null geht?
+
+![](images/probability_density_demo2.png){style="margin-bottom:-3px"}
+
+- Im Prinzip ja, allerdings gibt es noch ein Problem: geht die Kategorienbreite $d$ gegen $0$, gehen die relativen Häufigkeitswerte des Histogramms ebenfalls gegen Null!
+- Würde die theoretische Häufigkeitsverteilung $f(x)$ also relative Häufigkeiten angeben, so wäre $f(x)$ für jedes $x$ Null. Das ist natürlich sinnlos.
+- **Theoretische Häufigkeitsverteilungen $f(x)$ geben aus diesem Grund keine relative Häufigkeit an**.
+- Bleibt die Frage: was stattdessen?
+
+<!-- - Beispiel: die Wahrscheinlichkeit ist **Null**, dass Nasen eine bestimmte, bis auf die "unendlichste" Nachkommastelle angegebene, Länge haben (z.B. $4.318264812357218735....cm$). -->
+

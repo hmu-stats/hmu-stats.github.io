@@ -1,0 +1,274 @@
+# Was ist Statistik?
+
+<!-- ## Daten, Informationen, Verschwörungstheorien
+<div class="vspace-medium"></div>
+
+![Bildnachweis^[https://languagelog.ldc.upenn.edu/nll/?p=52581]](images/data_information_conspiracy.jpg) -->
+
+## Was ist Statistik?
+
+<!-- 
+Statistik vs. Stochastik:
+Basically, the basic distinction is that stochastic (process) is what (we assume) generates the data that statistics analyze. 
+For instance, if you toss a coin 100 times the result is a one possible outcome out of 2100 possible sequences. 
+This process that generates the sequence is stochastic (coin flipping). However, once you got the sequence of Hs and Ts you 
+can use statistics in order to determine if the coin was a fair coin. 
+https://math.stackexchange.com/questions/2573186/difference-between-statistics-and-stochastic
+
+
+Statistics and probability theory solve inverse problems of eachother: In statistics, the goal is to guess the parameters of a 
+probability distribution given several samples from that distribution and, more importantly, to estimate how accurate your guess is. 
+In probability theory, you typically know the parameters of you distribution and you try to predict properties of the samples.
+https://www.reddit.com/r/math/comments/1ztwg5/what_is_the_difference_between_statistics/
+-->
+
+:::: {.columns}
+
+::: {.column width="73%"}
+> Das Wort Statistik stammt von lateinisch *statisticum* „den Staat betreffend“ und italienisch *statista* Staatsmann oder Politiker [...]
+
+[Quelle: Wikipedia]{.quote-citation}
+
+::: {.fragment}
+<div class="vspace-xsmall"></div>
+In diesem Sinne beschrieb der Ausdruck Statistik ursprünglich die [Lehre von den Daten über den Staat]{.increase-letter-spacing}. Heute ist der Begriff wesentlich breiter gefasst:
+
+<div class="vspace-small"></div>
+:::
+
+::: {.fragment}
+___
+[**Statistik**]{color="navy"} ist ein angewandter Zweig der Mathematik, der sich mit der **Erhebung, Analyse und Interpretation empirischer Daten** befasst.
+
+___
+:::
+
+::: {.indent .fragment}
+<br />
+
+| | |
+| --- | --- |
+| **Erhebung** | Wie groß sollte meine Stichprobe sein? |
+| **Analyse** | Was ist der Mittelwert meiner Variable? |
+| **Interpretation** | Unterscheiden sich zwei Gruppen systematisch? |
+
+: Beispiele {tbl-colwidths="[20, 75]"}
+
+:::
+
+:::
+
+::: {.column width="27%"}
+![](images/roman_empire.png)
+
+![Bildnachweis^[https://www.analyticsinsight.net/importance-of-statistics-how-is-statistics-related-to-data-science/] ^[https://www.livescience.com/roman-republic]](images/stats101.png)
+
+:::
+
+
+::::
+
+
+
+
+
+
+## Wozu Statistik?
+
+:::: {.columns}
+::: {.column width='70%'}
+
+Auch ohne Statistik sind Menschen sehr gut darin, Muster oder Zusammenhänge in ihrer Umwelt zu erkennen. Man könnte diese Fähigkeit als **intuitive Empirie** bezeichnen. Wozu also Statistik?
+
+<div class='vspace-small'></div>
+
+::: {.smaller}
+
+:::{.fragment}
+[Probleme intuitiver Empirie (kleiner Ausschnitt)]{.block-heading}
+:::
+
+- Kognitive Biases (z.b. Konfirmationsbias)
+- Schwächen beim probabilistischen Denken (Stichwort *Lotto*)
+- Übergeneralisierung / Tendenz zur vorschnellen Verallgemeinerung
+- Übersensitivität: Muster erkennen, wo keine sind
+- Vermischung mit eigenen Interessen (z.B. Politik)
+- Begrenztes (Arbeits)Gedächtnis: Unfähigkeit, große Datenmengen im Kopf zu behalten und zu verrechnen
+:::
+
+
+:::
+::: {.column width='30%'}
+
+![](images/conspiracy.png){width=300}
+
+![Bildnachweis^[https://www.arte.tv/de/videos/093029-022-A/flick-flack/]](images/pareidolie.png){width=205}
+
+:::
+::::
+
+## Beispiel Prävalenzfehler
+
+:::: {.columns}
+::: {.column width='70%'}
+
+- Nehmen Sie an, 1% der Bevölkerung sind an Corona erkrankt.
+- Ein neuentwickelter Coronatest wird damit beworben, dass er anhand einer Speichelprobe in 100% (!) der Fälle eine bestehende Coronaerkrankung erkennt. 
+- Im Kleingedruckten findet sich der Hinweis, dass der Test in 10% der Fälle eine *gesunde Person fälschlicherweise als krank* ausweist.
+
+::: {.greybox .fragment}
+**Schätzen Sie:** Angenommen Ihr Test ist positiv &mdash; mit welcher Wahrscheinlichkeit sind Sie dann auch tatsächlich an Corona erkrankt?
+:::
+
+:::
+::: {.column width='30%'}
+
+![](images/corona_test.jpg)
+
+:::
+::::
+
+
+<!-- ## -->
+
+<!-- ![](images/menti_corona.png) -->
+
+<!-- [https://www.mentimeter.com/](https://www.mentimeter.com/) -->
+
+## Beispiel Prävalenzfehler
+
+:::: {.columns}
+::: {.column width='70%'}
+
+[Auflösung:]{.underline}
+
+- Von 100 Personen ist im Schnitt 1 Person krank. Diese wird durch den Test auf jeden Fall korrekt als krank erkannt.
+- 99 Personen sind nicht erkrankt, und bei 10% dieser Personen gibt der Test ein falsch-positives Ergebnis (≈ 10 Personen).
+- D.h. bei 100 Personen haben ≈11 Personen ein positives Ergebnis, aber bei 10 von 11 Personen (91%) ist dieses Ergebnis falsch!
+
+::: {.fragment}
+Unsere empirische Intuition versagt in diesem Fall häufig. Im konkreten Beispiel spricht man auch vom **Prävalenzfehler** oder der **Base rate fallacy**.
+:::
+
+:::
+::: {.column width='30%'}
+
+<!-- ![**Weiteres Beispiel:** ist die Häufigkeit/Prävelenz von "Sales people" deutlich größer als die der "Librarians", so ist die Wahrscheinlichkeit groß, dass eine schüchterne Person mit großer Wahrscheinlichkeit eine "Sales person" &ndash; selbst dann, wenn Sales people mehrheitlich eher nicht schüchtern sind.^[https://thedecisionlab.com/biases/base-rate-fallacy]](images/base-rate-fallacy.png) -->
+![](images/corona_test.jpg)
+
+:::
+::::
+
+## Beispiel Meditonsin
+
+:::: {.columns}
+::: {.column width='55%'}
+
+> Meditonsin ist das meistverkaufte homöopathische Erkältungsmittel in Deutschland, mit einem Jahresumsatz von deutlich über zwanzig Millionen Euro. 
+
+> Jedenfalls entwickelte ein Chemieprofessor für Medice eine Apparatur, die alle Zutaten von Meditonsin bis heute in 250-Liter-Fässern vermischt und am Ende zehnmal kräftig in Richtung Erdmittelpunkt schüttelt.
+
+> Meditonsin enthält laut Beipackzettel Tollkirsche und Eisenhut in D5-Auflösung [0,00001%] sowie Quecksilber in D8-Auflösung [0,00000001%].
+
+[Quelle: Sueddetsche Zeitung ^[https://sz-magazin.sueddeutsche.de/gesundheit/meditonsin-wirkung-erkaeltung-globuli-81941]]{.quote-citation}
+
+:::
+::: {.column width='45%'}
+
+![Laut einem Gerichtsurteil aus dem Mai 2023 darf Meditonsin nicht mehr mit einer vorgeblich wissenschaftlich bewiesenen Wirksamkeit werben.^[https://www.astronomy.com/science/in-praise-of-nothing/]](images/meditonsin.png)
+
+:::
+::::
+
+
+## Beispiel Meditonsin
+
+:::: {.columns}
+::: {.column width='55%'}
+
+Woher kommt das große Vertrauten in ein Medikament, bei dem eine Flasche im Schnitt kaum ein Molekül der vorgeblichen Wirksubstanzen enthält?
+
+Warum entsteht bei vielen Menschen subjektiv der Eindruck, Medikamente wie Meditonsin würden wirken?
+
+:::
+::: {.column width='45%'}
+
+![Der Geist in der Flasche.^[https://www.alamy.de/stockfoto-cartoon-geist-in-der-flasche-72046687.html]](images/geist_in_der_flasche.png){width=30%}
+
+:::
+::::
+
+## Beispiel Meditonsin
+
+:::: {.columns}
+::: {.column width='68%'}
+
+Eine Erklärung ist mangelndes Bewusstsein für einen Effekt, der auch als **Regression zur Mitte** bezeichnet wird.
+
+- Meditonsin wird vermutlich häufig eingenommen, wenn eine Erkältung auf ihrem Höhepunkt ist. 
+- *In aller Regel verbessert* sich der Gesundheitszustand nach Erkältungen auch ohne Medikation und pendelt sich wieder auf einen Normalzustand ein (dies ist die "Regression" zur "Mitte").
+- Dadurch entsteht eine subjektiv wahrgenommener Zusammenhang [Einnahme Meditonsin&nbsp;&nbsp; &xrarr; &nbsp;&nbsp;Heilung]{.greybox-inline}
+
+::: {.fragment}
+**Statistische Methoden** ermöglichen hier in Kombination mit einem adäquaten Studiendesign (Interventions- und Placebogruppe) eine objektivere Einschätzung.
+:::
+
+::: {.recommendation .fragment}
+**Empfehlung:** Quarks Science Podcast "Meditonsin, Umckaloabo, Grippostad:
+Die Akte Erkältungsmittel" ^[https://www.quarks.de/podcast/quarks-science-cops-folge-48-erkaeltungsmittel-wissenschaft-oder-kruemeltee/]
+:::
+
+:::
+::: {.column width='32%'}
+
+![Regression zur Mitte. ^[https://theconversation.com/regression-to-the-mean-or-why-perfection-rarely-lasts-74694]](images/regression_to_the_mean.png)
+
+:::
+::::
+
+## Deskriptive Statistik und Inferenzstatistik {style="overflow: hidden;"}
+
+:::: {.columns}
+::: {.column width='65%'}
+
+In Statistik 1 und 2 werden wir Methoden aus der [**deskriptiven Statistik**]{color='navy'} und [**Inferenzstatistik**]{color='navy'} behandeln.
+
+::: {.definebox .fragment}
+Das Ziel der [**deskriptiven Statistik**]{color="navy"} ist die Beschreibung und Zusammenfassung von Daten innerhalb einer Stichprobe.
+:::
+
+::: {.smaller .fragment}
+[Beispielfragen:]{.underline} Wie hoch ist der Mittelwert einer Variable in der Stichprobe? Wie hoch ist die Korrelation zwischen Variable X und Variable Y in der Stichprobe?
+:::
+
+::: {.definebox .fragment}
+Das Ziel der [**Inferenzstatistik**]{color="navy"} sind Schlussfolgerungen über eine Population auf der Grundlage von Stichproben.
+:::
+
+::: {.smaller .fragment}
+[Beispielfragen:]{.underline} 
+Wie groß ist die durchschnittliche Körpergröße der Bevölkerung, basierend auf einer Stichprobe von 500 Personen? Gibt es einen signifikanten Unterschied im durchschnittlichen Einkommen zwischen zwei verschiedenen Berufsgruppen?
+:::
+
+:::
+::: {.column width='35%'}
+
+![Bildnachweis^[https://datatab.net/tutorial/descriptive-inferential-statistics]](images/descriptive_inferential_statistics.svg){.relative style="top: 200px"}
+
+::: {.colaside style="text-align:left"}
+Ein alternativer Ausdruck für Inferenzstastistik ist **Induktive Statistik**.
+:::
+
+
+:::
+::::
+
+
+<!-- ## {.blackslide .center}
+
+![](images/paradoxia_group_of_scientists.png){.center-image height=300px}
+
+<div class='vspace-small'></div>
+
+**Zurück zum Thema:** wie entwickelt man gute Hypothesen? Und was ist eigentlich eine Hypothese? -->
+

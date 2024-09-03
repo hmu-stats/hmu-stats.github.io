@@ -1,0 +1,277 @@
+---
+title: "Vorlesung 10: Signifikanztestung"
+---
+
+
+## {.blackslide .center}
+
+<div class="vspace-small"></div>
+
+:::: {.columns}
+::: {.column width="68%"}
+Kurze Zwischenbilanz: Sie haben Mittelwertsunterschiede zwischen Paradoxikern und Kontrollen sowohl für TikTok-Online-Zeit gefunden, als auch für Entzündungswerte (allerdings mit einer geringeren Effektstärke). Dazu gibt es einen mysteriösen Zusammenhang zwischen beiden abhängigen Variablen: mehr TikTok-Zeit = höherer Entzündungswert.
+
+:::
+::: {.column width="32%"}
+::: {.content-hidden when-format="pdf"}
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=200px style="margin-top:-20px !important"}
+<!-- Source: Midjourney -->
+:::
+:::
+::::
+
+:::: {.columns}
+::: {.column width="62%"}
+![](images/paradoxia_histogram_inflammation_mean_std.png){height=260px}
+:::
+::: {.column width="38%"}
+![](images/paradoxia_histogram_correlation_paradoxiker.png){height=260px}
+:::
+::::
+
+<div class="vspace-medium"></div>
+
+Die finale Frage lautet nun: welcher dieser Effekte ist [**statistisch signifikant**]{.navy-paradoxia} und welcher Effekt ist vermutlich eher eine Zufallsbeobachtung?
+
+
+
+## Der Forschungsprozess {.hcenter-slide}
+
+```yaml { .animate src="images/scientific_process.svg"}
+setup:
+    - element: "#inference"
+      modifier: function() { this.node.style.fill = 'green'; }
+    - element: "#inferencebg"
+      modifier: function() { this.node.style.fill = '#d8ffe2';}
+```
+
+
+## Theoretische Stichprobenverteilung
+
+<div class="vspace-small"></div>
+
+
+Zurück zur **theoretischen Stichprobenverteilung**. Alle Erkenntnisse über die Normalverteilung lassen sich auch auf die theoretische Stichprobenverteilung übertragen. Dies wird uns bis zum Ende des Semesters zwei wesentliche Methoden der Inferenzstatistik eröffnen:
+
+- [**Hypothesentestung** bzw. **Signifikanztestung** (u.a. auch Idee des p-Wertes)]{color="navy"}
+- **Konfidenzintervalle** (Verallgemeinerung des Standardfehlers)
+
+<div class="vspace-medium"></div>
+
+![](images/stichprobenverteilung.png){height=350px}
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Signifikanztestung{.center}
+
+<div class="vspace-medium"></div>
+Ziel der **Signifikanztestung** ist zu klären, ob ein Effekt wahrscheinlich durch Zufall erklärt werden kann (und daher statistisch unbedeutsam ist) *oder* Zufall als alleinige Ursache unwahrscheinlich ist (und der Effekt daher statistisch bedeutsam &mdash; signifikant &mdash; ist).
+
+Signifikanztests bieten ein Kriterium, um wissenschaftliche **Hypothesen** zu überprüfen. Dabei unterscheidet man zwischen zwei Arten von Hypothesen &#9112;
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Nullhypothese und Alternativhypothese
+
+**Nullhypothese ($H_0$)**
+
+Besagt, dass ein bestimmter Effekt *nicht vorliegt*.
+
+- Die Häufigkeit des Haarschneidens und Haardichte **hängen nicht** zusammen.
+- Männer und Frauen **unterscheiden sich nicht** in ihrer emotionalen Intelligenz.
+
+:::{.fragment}
+**Alternativhypothese ($H_1$)**
+
+Besagt, dass ein bestimmter Effekt *vorliegt*.
+
+- Die Häufigkeit des Haarschneidens und Haardichte **hängen** zusammen.
+- Männer und Frauen **unterscheiden sich** in ihrer emotionalen Intelligenz.
+:::
+
+:::{.fragment}
+![](images/null-and-alternate-hypothesis.jpg){height=280px}
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Nullhypothese und Alternativhypothese: Beispiel
+
+<div class="vspace-medium"></div>
+
+![Bildnachweis^[https://www.majordifferences.com/2016/10/5-differences-between-null-and.html]](images/example_null_alternate.jpg)
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Nullhypothesentestung nach Fisher
+
+:::: {.columns}
+::: {.column width="73%"}
+
+:::{.nonincremental}
+- Betrachtet wird [ausschließlich]{.underline} die Nullhypothese.
+- Ziel ist es zu zeigen, dass das **Stichproben-Ergebnis unter der Annahme dieser Nullhypothese so unwahrscheinlich ist, dass man die Nullhypothese „verwerfen“ kann**.
+- Bei der Nullhypothesentestung wird kein Schluss in Bezug auf eine Alternativhypothese gezogen (sie der muss hier nicht einmal formuliert werden!).
+:::
+
+:::
+::: {.column width="27%"}
+![Ronald Aylmer Fisher (1890-1962)](images/portrait_fisher.png)
+
+:::
+::::
+
+::: {.merke .fragment}
+:::: {.columns}
+::: {.column width="5%"}
+::: {style="margin-top: 18px"}
+![](images/merke.png){height="55px"}
+:::
+:::
+::: {.column width="95%"}
+Merke: bei Signifikanztests werden keine Wahrscheinlichkeiten für Hypothesen berechnet (weder $H_0$ noch $H_1$), sondern nur die Wahrscheinlichkeit von Daten unter einer Hypothese (bei Fisher: *unter der Nullhypothese*). 
+
+Die Wahrscheinlichkeit von Daten, gegeben eine Hypothese, heißt auch **Likelihood**.
+:::
+::::
+:::
+
+<div class="vspace-medium"></div>
+
+:::{.fragment}
+Wie kann diese "Wahrscheinlichkeit der Daten unter der Nullhypothese" bestimmt werden? 
+
+&rarr; **p-Wert** &#9112;
+:::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Nullhypothesentestung nach Fisher: p-Wert
+
+:::: {.columns}
+::: {.column width="80%"}
+
+Sie überprüfen die Hypothese, dass Medizinstudierende längere Nasen haben als Psychologiestudierende. 
+
+Die zugehörige Nullhypothese $H_0$ lautet also: *kein Unterschied in der (durchschnittlichen) Nasenlänge von Medizin- und Psychologiestudierenden.*
+
+:::{.fragment}
+Sie führen eine Studie durch ($n_\text{med}=n_\text{psych}=n=30$) und messen folgenden Gruppenunterschied: 
+
+$$
+\Delta \bar{x} = \bar{x}_\text{med} - \bar{x}_\text{psych} = 0{,}2cm
+$$
+:::
+
+<div class="vspace-small"></div>
+
+:::{.fragment style="margin-top: -20px"}
+**Nach Fisher stellen wir nun folgende präzise Frage: **
+:::
+
+:::{.fragment style="font-family: monospace; margin-left: 30px; margin-right: 10px !important;font-size: 25px; margin-top: -5px"}
+Angenommen, die Nasenlänge unterscheidet sich nicht zwischen den Gruppen ($H_0$). Wie wahrscheinlich ist unter diese Annahme das Ergebnis unserer Daten *oder ein noch extremeres Ergebnis*? 
+:::
+
+:::{.fragment}
+**In kurz: **
+
+:::{style="font-family: monospace; margin-left: 30px; margin-right: 0px;;font-size: 25px; margin-top: -5px"}
+Angenommen $H_0$ trifft zu und es gilt $\Delta \bar{x}=0$, wie wahrscheinlich ist es dennoch $\Delta \bar{x} \ge 0{,}2cm$ zu messen?
+:::
+:::
+
+:::
+::: {.column width="20%"}
+![](images/psych_med.png)
+:::
+::::
+
+<div class="vspace-xsmall"></div>
+
+:::{.fragment}
+Diese Wahrscheinlichkeit wird als [**p-Wert**]{color="navy"} bezeichnet (*p* für *probability*).
+:::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## p-Wert und Konstruktion der Nullhypothese
+
+Wir definieren:
+
+::: {.definition}
+<!---  Definition--->
+|||
+|:-:|-|
+|||
+| ![](images/definition.svg){height=70px} | Der **p-Wert** ist die Wahrscheinlichkeit den Stichprobeneffekt *oder einen noch extremeren Effekt zu erhalten*, obwohl für die Population die Nullhypothese angenommen wird. | 
+|||
+: {tbl-colwidths="[10, 90]"}
+:::
+
+:::{.fragment}
+Um diese Wahrscheinlichkeit zu berechnen, benötigen wir die Wahrscheinlichkeitsverteilung aller verschiedenen möglichen Stichprobeneffekten *unter der Annahme der Nullhypothese*. &#9112;
+
+<div class="vspace-small"></div>
+
+![](images/nulldist2b.png){height=350px}
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Konstruktion der Nullhypothese
+
+-  Das Ziel "*die Wahrscheinlichkeitsverteilung aller verschiedenen möglichen Stichprobeneffekten unter der Annahme der Nullhypothese*" zu finden, impliziert, dass wir auch hier eine Art von **Stichprobenverteilung** suchen.
+- Da wir mithilfe der Inferenzstatistik **Effekte** testen wollen, sind hier im Besonderen Stichprobenverteilung von Effekten gemeint.
+- Zu Beginn konzentrieren wir uns hier auf den Effekt des **Mittelwertsunterschiedes**.
+- Wichtig ist hier ein weiteres Mal die Feststellung, dass per zentralem Grenzwertsatz nicht nur die Stichprobenverteilung des Mittelwertes per se normalverteilt ist, sondern auch die Stichprobenverteilung von *Mittelwertsunterschieden* (die Differenz zweier normalverteilter Variablen ist normalverteilt).
+
+:::{.fragment}
+![Bildnachweis^[https://www.statisticsfromatoz.com/blog/new-video-null-hypothesis]](images/null-hyp-cartoon_orig.jpg){height=250px}
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Konstruktion der Nullhypothese
+
+:::: {.columns}
+::: {.column width="66%"}
+
+Wie schon bei der Konstruktion der Stichprobenverteilung, benötigen wir für die Konstruktion der Nullhypothesenverteilung drei Informationen: Form, Mittelwert und Streuung der Verteilung. 
+
+- Für die **Form** können wir uns wieder auf den zentralen Grenzwertsatz beziehen und eine **Normalverteilung** annehmen.
+- Der **Mittelwert** ist auch klar, für die Nullhypothesenverteilung muss er **Null** sein (bzw. das, was als Nulleffekt definiert wird).
+- Bei der **Streuung** stoßen wir allerdings auf ein Problem: wir kennen nur die **Streuung unseres Effektes auf Basis Stichprobe** und wissen, dass dies eine **unpräzise Schätzung der Streuung in der Population** ist.
+:::
+::: {.column width="34%"}
+![](images/nulldist2a.png)
+
+<div class="vspace-medium"></div>
+
+$$
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+$$
+
+::: {.caption-style}
+Formel für die Dichtefunktion der **unstandardisierten Normalverteilung** mit Mittelwert $\mu$ und Standardabweichung $\sigma$.
+:::
+
+:::
+::::

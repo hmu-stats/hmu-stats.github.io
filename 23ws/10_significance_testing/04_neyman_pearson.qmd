@@ -1,0 +1,526 @@
+# Binäres Entscheidungskonzept von Neyman und Pearson
+
+## Idee
+
+:::: {.columns}
+::: {.column width="75%"}
+
+:::{.nonincremental style="margin-bottom: -20px"}
+- **Alternatives Framework zur Hypothesentestung** von Jerzy Neyman und Egon Pearson
+:::
+- Argument: man ist i.d.R. nicht spezifisch an der Nullhypothese interessiert, sondern möchte einen **Test, der zwischen der Nullhypothese $H_0$ und der Alternativhypothese $H_1$ „entscheidet“**.
+- Im einfachsten Fall legt man dafür eine **minimale Effektstärke** $d_1$ fest, bei der die Alternativhypothese $H_1$ noch praktische oder konzeptionelle Relevanz hätte.
+
+:::{.fragment}
+![](images/neyman_pearson1.png){height=300px}
+:::
+
+:::
+::: {.column width="25%"}
+
+![Egon Sharpe Pearson (1895-1980), Sohn von Karl Pearson](images/portrait_pearson_egon.png){width=200px}
+
+![Jerzy Neyman (1894-1981)](images/portrait_neyman.jpg){width=200px}
+
+:::
+::::
+
+
+## Idee
+
+:::{.nonincremental style="margin-bottom: -20px"}
+- Durch das Aufstellen der Alternativhypothese gibt es nun zwei Möglichkeiten sich zu irren:
+    - Die Nullhypothese ist wahr und man entscheidet sich irrtümlich für die Alternativhypothese<br>(Fehler "erster Art" oder α-Fehler).
+    - Die Alternativhypothese ist wahr und man entscheidet sich irrtümlich für die Nullhypothese<br>(Fehler "zweiter Art" oder β-Fehler).
+:::
+- Nehmen wir an, wir legen zur Entscheidung zwischen $H_0$ und $H_1$ einen kritischen Entscheidungswert $z_\text{crit}$ fest, d.h.
+    - Entscheidung für $H_0$ und gegen $H_1$ wenn $z\le z_\text{crit}$
+    - Entscheidung gegen $H_0$ und für $H_1$ wenn $z>z_\text{crit}$
+
+:::: {.columns}
+::: {.column width="50%"}
+- ..dann können beide Fehler als Flächen unter den Hypothesenverteilungen eingetragen werden.
+- α und β sind also Flächeninhalte!
+:::
+::: {.column width="50%"}
+:::{.fragment}
+![](images/neyman_pearson2.png)
+:::
+:::
+::::
+
+## Fehler erster und zweiter Art
+
+<div class="vspace-medium"></div>
+
+![](images/neyman_pearson_table.png)
+
+## Fisher versus Neyman/Pearson
+
+- Nullhypothesenframework nach Fisher:
+    - Betrachtet wird nur eine Nullhypothese
+    - Fokus: p-Wert
+    - p stellt ein **kontinuierliche** Evidenzmaß dar (je kleiner, desto mehr Evidenz)
+    - Signifikanztests nach Fisher sind **Ablehnungstests** [(Nullhypothese wird abgelehnt oder nicht, nie angenommen)]{style="font-size: 22px !important"}
+- Framework nach Neyman und Pearson:
+    - Betrachtet wird sowohl eine Null- als auch eine Alternativhypothese
+    - Fokus: liegt die Prüfgröße rechts oder links von der kritischen Prüfgröße $z_\text{crit}$?
+    - Binäres Entscheidungskonzept (Entscheidung für $H_0$ oder $H_1$); zwar wird auch ein z-Wert (und assoziierter p-Wert) berechnet, diese dienen aber nur zur Entscheidungsfindung und nicht als kontinuierliches Evidenzmaß.
+    - Signifikanztests nach Neyman/Pearson sind **Akzeptanztests** (wir entscheiden uns *für* $H_0$ oder *für* $H_1$)
+
+::: {.merke .fragment style="font-size: 23px !important"}
+:::: {.columns}
+::: {.column width="5%"}
+::: {style="margin-top: 18px"}
+![](images/merke.png){height="55px"}
+:::
+:::
+::: {.column width="95%"}
+[**Beachte:**]{.underline} **auch bei Neyman & Pearson wird nur die Nullhypothese getestet** und wie bei Fisher die Wahrscheinlichkeit (p-Wert) überprüft, dass der Effekt (oder ein noch extremerer Effekt) unter der Nullhypothese $H_0$ entstanden ist. Die **Alternativhypothese spielt bei der Testprozedur selbst keine Rolle**. Sie kommt an zwei Stellen ins Spiel: bei der Power-Berechnung *vor Beginn der Studie* (s. nächste Folien) und bei der wissenschaftlichen Entscheidung *nach der Testprozedur* (Entscheidung für $H_1$ falls $z>z_\text{crit}$).
+:::
+::::
+:::
+
+
+## Fehler erster und zweiter Art
+
+<div class="vspace-medium"></div>
+
+**Merkregel auf Basis der Fabel "Der Hirtenjunge und der Wolf":**
+
+<div class="vspace-medium"></div>
+
+:::: {.columns}
+::: {.column width="75%"}
+
+> Die Hauptperson der Fabel ist ein Hirtenjunge, der aus Langeweile beim Schafehüten laut „Wolf!“ brüllt. Als ihm daraufhin Dorfbewohner aus der Nähe zu Hilfe eilen, finden sie heraus, dass falscher Alarm gegeben wurde und sie ihre Zeit verschwendet haben (**Fehler erster Art**). Als der Junge nach einiger Zeit wirklich einem Rudel Wölfe begegnet, nehmen die Dorfbewohner die Hilferufe nicht mehr ernst und bleiben bei ihrem Tagwerk (**Fehler zweiter Art**). Die Wölfe fressen die ganze Herde und in manchen Versionen der Fabel auch den Jungen.
+
+[Quelle: Wikipedia^[https://de.wikipedia.org/wiki/Der_Hirtenjunge_und_der_Wolf]]{.quote-citation}
+:::
+::: {.column width="25%"}
+![](images/The_Boy_Who_Cried_Wolf_-_Project_Gutenberg_etext_19994.jpg){height=350px}
+:::
+::::
+
+<div class="vspace-medium"></div>
+
+Die Fabel stammt von Äsop, einem griechischen Dichter (6.Jhd. v. Chr.).
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Relevanz für Berechnung der Stichprobengröße
+
+:::{.nonincremental style="margin-bottom: -20px"}
+- Die häufigste Anwendung findet das Neyman-Pearson-Framework bei der Planung der Stichprobengröße.
+:::
+- Der Vorteil des Frameworks ist, dass es nicht wie bei Fisher nur die Irrtumswahrscheinlichkeit $\alpha$ für die $H_0$ berücksichtigt ("Wahrscheinlichkeit das Ergebnis als signifikant zu werten obwohl $H_0$ gilt"), sondern auch die Irrtumswahrscheinlichkeit $\beta$ für die $H_1$ ("Wahrscheinlichkeit das Ergebnis als nicht signifikant zu werten obwohl $H_1$ gilt").
+
+::: {style="margin-top: -20px"}
+:::: {.columns}
+::: {.column width="58%"}
+- Beide Fehlerarten sollten gegeneinander abgewogen werden (welcher Fehler ist wichtiger/fataler?)
+    - Konvention ist es, die Hypothese als $H_0$ festzulegen, die mit geringerer Wahrscheinlichkeit fälschlich abgelehnt werden soll (das impliziert $\alpha<\beta$).
+- Im Kontext der Stichprobenberechnung wird statt der Irrtumswahrscheinlichkeit $\beta$ häufig $1-\beta$ betrachtet.
+    - $1-\beta$ entspricht der Wahrscheinlichkeit die (wahre) Alternativhypothese zu bestätigen, d.h. einen vorhandenen Effekt auch tatsächlich zu finden.
+    - Diese Wahrscheinlichkeit wird als [**Teststärke**]{color="navy"} oder [**Power**]{color="navy"} bezeichnet und die Prozedur daher auch [**Power-Berechnung**]{color="navy"}.
+:::
+::: {.column width="42%"}
+
+<div class="vspace-medium"></div>
+
+:::{.fragment}
+![](images/neyman_pearson3.png)
+:::
+
+<div class="vspace-medium"></div>
+
+::: {.notabene .fragment style="margin-left: 25px !important;margin-right: 25px !important;"}
+:::: {.columns}
+::: {.column width="14%"}
+::: {style="margin-top: 10px"}
+![](images/notabene2.png){height="55px"}
+:::
+:::
+::: {.column width="86%"}
+Eine häufige Wahl für die Teststärke/Power ist 80% (entspricht $\beta=0.2$).
+:::
+::::
+:::
+
+:::
+::::
+:::
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Relevanz für Berechnung der Stichprobengröße
+
+Im Kontext der Stichprobenberechnung, gibt das Neyman-Pearson-Framework eine Antwort auf folgende Frage:
+
+::: {.colorbox .fragment}
+Meine Studie soll einen **Fehler erster Art von höchstens $\alpha$** haben. Ich erwarte, dass mein Effekt eine **Effektstärke $d_1$** aufweist. Wie groß muss ich meine **Fallzahl $n$** wählen, damit ich mit einer **Wahrscheinlichkeit von $1-\beta$ (=Teststärke/Power)** einen tatsächlich vorhandenen Effekt finden würde?
+:::
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Teststärke (Power)
+
+**Drei Größen beeinflussen die statistische Power, also die Wahrscheinlichkeit einen<br>wahren Effekt ($H_1$) auch tatsächlich als signifikant zu werten ($H_0$ abzulehnen):**
+
+- Effektstärke von $H_1$ (hängt ab von $μ_1$ und $\sigma$)
+- Stichprobengröße $n$
+- Fehlerrate erster Art $\alpha$
+
+:::{.fragment}
+![](images/neyman_pearson_power.png){height=440px style="margin-left: 350px !important; margin-top: -30px !important"}
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Relevanz für Berechnung der Stichprobengröße]{color="darkred"}
+
+<div class="vspace-small"></div>
+
+![Die Abbildung zeigt den optimalen $\alpha$-Wert für verschiedene Stichprobengrößen und verschiedene Verhältnisse von Fehler 1. und 2. Art (in der Legende bedeutet z.B. $C_{I/II}=1/4$, dass die Fehlerrate $\beta$ zweiter Art 4x so klein sein soll, wie die Fehlerrate $\alpha$ erster Art). Die "Optimalität" des $\alpha$-Wertes bezieht sich darauf, dass die Summe der Fehlerraten minimal ist (unter Berücksichtigung des Verhältnisses). Aus der Abbildung ist ersichtlich, dass die Konvention $\alpha=0{,}05$ nicht aus der Luft gegriffen ist, sondern bei typischen Stichprobengrößen in der Nähe des optimalen Wertes liegt.^[Wulff J, Taylor L (2023) How and Why Alpha Should Depend on Sample Size: A Bayesian-frequentist Compromise. Academy of Management Annual Meeting Proceedings 2023:12131.]](images/samplesize_alpha.png)
+
+![](images/kein_klausurstoff.png){.absolute bottom=0 right=0 height=110px}
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Veränderung der Stichprobengröße $n$
+
+![](images/demo_neyman_pearson_N30_std15_delta8_zcrit2.png)
+
+![](images/demo_neyman_pearson_N15_std15_delta8_zcrit2.png)
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Veränderung der Populationsstreuung $\sigma$
+
+![](images/demo_neyman_pearson_N30_std15_delta8_zcrit2.png)
+
+![](images/demo_neyman_pearson_N30_std30_delta8_zcrit2.png)
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Veränderung des Mittelwertsunterschiedes $\Delta\overline{IQ}$
+
+![](images/demo_neyman_pearson_N30_std15_delta8_zcrit2.png)
+
+![](images/demo_neyman_pearson_N30_std15_delta15_zcrit2.png)
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Veränderung des kritischen Entscheidungswertes $z_\text{crit}$
+
+![](images/demo_neyman_pearson_N30_std15_delta8_zcrit2.png)
+
+![](images/demo_neyman_pearson_N30_std15_delta8_zcrit1.png)
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+##
+:::: {.columns}
+::: {.column width="9%"}
+::: {style="margin-top:-15px"}
+![](images/summary.png){width=60px}
+:::
+:::
+::: {.column width="91%"}
+::: {.summary}
+- **Signifikanztests** prüfen die Wahrscheinlichkeit, mit der unser experimenteller Effekt (oder ein noch extremerer Effekt) durch Zufall entstanden sein könnte (d.h. für die Annahme dass die *Nullhypothese tatsächlich zutreffend* ist).
+- Signifikanztests nach Fisher basieren auf der **Stichprobenverteilung um den Wert der Nullhypothese**.
+- Signifikanztests treffen Entscheidungen für (Neyman & Pearson) oder gegen (Fisher) eine Hypothese, basierend auf dem berechneten **p-Wert** und dem festgelegten **Signifikanzniveau α**.
+- Das **Binäres Entscheidungskonzept von Neyman und Pearson** findet häufig bei der **Power-Berechnung** in der Planungsphase einer Studie Anwendung.
+:::
+:::
+::::
+
+
+## {.blackslide .center}
+
+::: {.content-hidden when-format="pdf"}
+
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=300px}
+
+<!-- Source: Midjourney -->
+<div class="vspace-small"></div>
+
+:::
+
+Nach kurzer Beratung in der Task Force sind Sie sich einig, dass die Voraussetzungen für einen z-Test nicht optimal sind. Die Populationsstreuung lässt sich nicht aus vorhergehenden Studien ableiten, da die untersuchten Phänomene brandneu sind. Da die Fallzahl von $n=50$ gemäß der Faustregel "$n\ge 30$" aber ausreichend wäre, rechnen Sie aus reiner Neugier dennoch z-Tests für die Gruppenvergleiche.
+
+
+
+## {.blackslide .center}
+
+<div class="vspace-small"></div>
+
+:::: {.columns}
+::: {.column width="68%"}
+Sie erstellen sich eine Tabelle mit den relevanten Parametern für den z-Test:
+
+<!---  Table --->
+|[TikTok]{.underline}|Fallzahl $n$ |Mittelwert $\bar{x}$|Standardabweichung $\sigma$|
+|-|-|-|-|
+| Kontroll | 50 | $1{,}022$ | ${0{,}545}$ |
+| Paradoxia | 50 |$1{,}599$ | ${0{,}677}$ |
+
+: {tbl-colwidths="[20, 20, 20, 33]"}
+
+<div class="vspace-medium"></div>
+
+<!---  Table --->
+|[Entzündung]{.underline}|Fallzahl $n$ |Mittelwert $\bar{x}$|Standardabweichung $\sigma$|
+|-|-|-|-|
+| Kontroll | 50 | $0{,}1233$ | $0{,}0682$ |
+| Paradoxia | 50 |$0{,}1477$ | $0{,}0783$ |
+
+: {tbl-colwidths="[20, 20, 20, 33]"}
+
+:::
+::: {.column width="32%"}
+::: {.content-hidden when-format="pdf"}
+
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=200px style="margin-top:-20px !important"}
+
+:::
+:::
+::::
+
+
+<div class="vspace-medium"></div>
+
+![](images/paradoxia_histogram_inflammation_mean_std.png){height=260px}
+
+
+## {.blackslide .center}
+
+<div class="vspace-small"></div>
+
+:::: {.columns}
+::: {.column width="68%"}
+
+Um den z-Wert zu bestimmen, benötigen Sie den Standardfehler. Da es sich um unabhängige Messungen in zwei Gruppen handelt, verwenden Sie die Formel, die auf der mittleren Varianz beider Gruppen basiert:
+
+$$
+se=\sqrt{\frac{\sigma_\text{control}^2}{n_\text{control}}+\frac{\sigma_\text{paradox}^2}{n_\text{paradox}}}
+$$
+
+:::
+::: {.column width="32%"}
+
+::: {.content-hidden when-format="pdf"}
+
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=200px style="margin-top:-20px !important"}
+
+:::
+:::
+::::
+
+
+
+Sie erhalten:
+
+$$
+\scriptsize{
+\text{TikTok:}\quad\; se=\sqrt{\frac{0{,545}^2}{50}+\frac{0{,}677^2}{50}}=0{,}123\qquad \Delta\bar{x} = \bar{x}_\text{paradox} - \bar{x}_\text{control} = 1{,}599-1{,}022 = 0{,}577 \\
+\text{Entzündung:}\quad\; se=\sqrt{\frac{0{,}0682^2}{50}+\frac{0{,}0783^2}{50}}=0{,}0147\qquad \Delta\bar{x} = \bar{x}_\text{paradox} - \bar{x}_\text{control} = 0{,}1477-0{,}1233 = 0{,}0243
+}
+$$
+
+
+## {.blackslide .center}
+
+<div class="vspace-small"></div>
+
+:::: {.columns}
+::: {.column width="68%"}
+Der z-Wert ergibt sich als das Verhältnis aus dem "Effekt" (hier $\Delta\bar{x}$) und dem Standardfehler:
+
+$$
+\text{TikTok:}\qquad z=\frac{\Delta\bar{x}}{se} = \frac{0{,}577}{0{,}123} = 4{,}69\\
+\text{Entzündung:}\qquad z=\frac{\Delta\bar{x}}{se} = \frac{0{,}0243}{0{,}0147} = 1{,}65
+$$
+
+:::
+::: {.column width="32%"}
+::: {.content-hidden when-format="pdf"}
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=200px style="margin-top:-20px !important"}
+
+:::
+:::
+::::
+
+:::: {.columns}
+::: {.column width="60%"}
+In beiden Fällen haben Sie eine **gerichtete** Hypothese, nämlich dass Pardoxiker höhere Werte als Kontrollen aufweisen. Der p-Wert entspricht also der Fläche unter der Standardnormalverteilung *rechts* vom z-Wert und damit dem Integral:
+
+$$
+p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(z)
+$$
+:::
+::: {.column width="40%"}
+
+![](images/paradoxia_nulldist.png)
+
+:::
+::::
+
+
+
+
+
+## {.blackslide .center}
+
+<div class="vspace-small"></div>
+
+:::: {.columns}
+::: {.column width="68%"}
+
+Die Spannung steigt, als Sie nun zum ersten Mal die Signifikanz Ihrer Ergebnisse beurteilen können. Sie erhalten folgende p-Werte:
+
+<div class="vspace-small"></div>
+
+$$
+\text{TikTok:}\qquad p= 1 - \Phi(4{,}69) \overset{\text{(Computer)}}{=} 0{,}000001
+$$
+
+<div class="vspace-small"></div>
+
+$$
+\text{Entzündung:}\qquad p= 1 - \Phi(1{,}67) \overset{\text{(Computer)}}{=} 0{,}049
+$$
+
+:::
+::: {.column width="32%"}
+::: {.content-hidden when-format="pdf"}
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=200px style="margin-top:-20px !important"}
+
+:::
+:::
+::::
+
+
+Dieser erste Signifikanztest ergibt also, dass die TikTok-Hypothese mit überwältigender Signifikanz bestätigt wird. Aber auch die Entzündungs-Hypothese wird mit einem p-Wert von $0{,}049$  &mdash; und einem Signifikanzniveau von $\alpha=0{,}05$ &mdash; um Haaresbreite bestätigt. 
+
+Noch genießen Sie die Ergebnisse aber mit Vorsicht, da Ihnen bewusst ist, dass der z-Test nicht der ideale Test für Ihre Studie ist.
+
+
+## {.blackslide .center}
+
+<div class="vspace-small"></div>
+
+:::: {.columns}
+::: {.column width="68%"}
+
+Sie aktualisieren vorläufig Ihre vorherige Abbildung in zweierlei Hinsicht:
+
+:::{.nonincremental}
+- Sie ersetzen die Standardabweichung durch den Standardfehler. Dieser legt die Betonung auf den Effekt der Sie interessiert: den Unterschied der [Mittelwerte]{.underline}.
+- Sie fügen Signifikanzsternchen ein. Eine gängige Notation ist ein Sternchen (\*) für p-Werte kleiner 0,05, zwei Sternchen (\*\*) für p-Werte kleiner 0,01 und drei Sternchen (\*\*\*) für p-Werte kleiner 0,001.
+:::
+
+:::
+::: {.column width="32%"}
+::: {.content-hidden when-format="pdf"}
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=200px style="margin-top:-20px !important"}
+
+:::
+:::
+::::
+
+![](images/paradoxia_histogram_inflammation_sem_sig.png){height=290px style="margin-top: 30px !important;"}
+
+<!-- ```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+import os
+from scipy.stats import sem
+import seaborn as sns
+
+np.random.seed(0)
+root = '/home/matteo/OneDrive/lehre/Statistik/stats1_lecture/book/'
+
+fontsize = 15
+
+df = pd.read_csv(os.path.join(root, 'data', 'paradoxia.csv'))
+# print(df.head())
+
+data_tiktok_control = df[df.group == 1]['hours_tiktok_per_day'].values
+data_tiktok_paradoxia = df[df.group == 2]['hours_tiktok_per_day'].values
+data_inflam_control = df[df.group == 1]['inflammation'].values
+data_inflam_paradoxia = df[df.group == 2]['inflammation'].values
+
+print(f'Mean TikTok Control: {np.mean(data_tiktok_control):.2f}')
+print(f'Mean TikTok Paradoxia: {np.mean(data_tiktok_paradoxia):.2f}')
+print(f'Mean Inflam Control: {np.mean(data_inflam_control):.2f}')
+print(f'Mean Inflam Paradoxia: {np.mean(data_inflam_paradoxia):.2f}')
+
+plt.style.use('dark_background')
+plt.figure(figsize=(6, 2.5))
+ax = plt.subplot(121)
+plt.gca().set_facecolor('#eee')
+sns.stripplot(data=df, x='group', y='hours_tiktok_per_day', color='#bbb', jitter=0.25)
+color = 'k'
+plt.errorbar([0], [np.mean(data_tiktok_control)], yerr=[sem(data_tiktok_control)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.errorbar([1], [np.mean(data_tiktok_paradoxia)], yerr=[sem(data_tiktok_paradoxia)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.text(0.25, 0.85, r'$\bar{x}=' + f'{np.mean(data_tiktok_control):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.text(0.75, 0.85, r'$\bar{x}=' + f'{np.mean(data_tiktok_paradoxia):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.plot([0, 1], [2.4, 2.4], 'k-', lw=2, zorder=4)
+plt.text(0.5, 2.32, '***', ha='center', va='center', fontsize=15, color='k', backgroundcolor='#eee', zorder=5)
+
+plt.xticks([0, 1], ['Kontroll', 'Paradoxia'], fontsize=fontsize)
+plt.yticks(fontsize=fontsize-2)
+plt.ylabel('Stunden TikTok / 24h', fontsize=fontsize)
+plt.xlabel('')
+# plt.xlim(-0.5, 1.5)
+plt.ylim(0, 1.1*max(data_tiktok_control.max(), data_tiktok_paradoxia.max()))
+
+
+ax = plt.subplot(122)
+plt.gca().set_facecolor('#eee')
+sns.stripplot(data=df, x='group', y='inflammation', color='#bbb', jitter=0.25)
+color = 'k'
+plt.errorbar([0], [np.mean(data_inflam_control)], yerr=[sem(data_inflam_control)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.errorbar([1], [np.mean(data_inflam_paradoxia)], yerr=[sem(data_inflam_paradoxia)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.text(0.25, 0.85, r'$\bar{x}=' + f'{np.mean(data_inflam_control):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.text(0.75, 0.85, r'$\bar{x}=' + f'{np.mean(data_inflam_paradoxia):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.plot([0, 1], [0.25, 0.25], 'k-', lw=2, zorder=4)
+plt.text(0.5, 0.24, '*', ha='center', va='center', fontsize=15, color='k', backgroundcolor='#eee', zorder=5)
+
+plt.xticks([0, 1], ['Kontroll', 'Paradoxia'], fontsize=fontsize)
+plt.yticks(fontsize=fontsize-2)
+plt.ylabel('Entzündungswert', fontsize=fontsize)
+plt.xlabel('')
+plt.xlim(-0.5, 1.5)
+plt.ylim(0, 1.1*max(data_inflam_control.max(), data_inflam_paradoxia.max()))
+
+
+plt.tight_layout()
+
+plt.savefig('images/paradoxia_histogram_inflammation_sem_sig.png', bbox_inches='tight')
+``` -->

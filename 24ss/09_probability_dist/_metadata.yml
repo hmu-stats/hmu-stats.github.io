@@ -1,0 +1,8 @@
+title: "Vorlesung 09: Wahrscheinlichkeitsdichte"
+date: "12.December 2024"
+semester: "{{< var semester >}}"
+
+format:
+  revealjs:
+    footer: "Vorlesung 09: Wahrscheinlichkeitsdichte"
+    fragments: false

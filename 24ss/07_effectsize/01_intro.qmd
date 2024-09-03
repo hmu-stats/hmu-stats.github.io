@@ -1,0 +1,110 @@
+---
+title: "Vorlesung 07: Effektstärke"
+---
+
+## {.blackslide .center}
+
+<div class="vspace-small"></div>
+
+:::: {.columns}
+::: {.column width="68%"}
+Sie sinnieren weiterehin über das Ergebnis Ihrer Beobachtungsstudie. Paradoxiker verbringen sowohl mehr Zeit auf TikTok, als auch weisen sie höhere Entzündungswerte auf. Zwar ist der Mittelwertsunterschied bei der TikTok-Zeit größer, aber Sie wissen, dass TikTok-Zeit und Entzündungswerte völlig unterschiedliche Skalen und daher nicht vergleichbar sind. 
+
+:::
+::: {.column width="32%"}
+::: {.content-hidden when-format="pdf"}
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=200px style="margin-top:-20px !important"}
+<!-- Source: Midjourney -->
+:::
+:::
+::::
+
+<div class="vspace-medium"></div>
+![](images/paradoxia_histogram_inflammation_mean_std.png){height=300px}
+
+Die Frage lautet: wie kann man die beiden Gruppenunterschiede bezüglich TikTok-Zeit und Entzündungsparametern vergleichbar machen? Wie können wir eine Aussage treffen, welcher der beiden Effekte [stärker]{.underline} ist?
+
+
+# Effektstärke
+
+
+<!-- ## Der Forschungsprozess {.hcenter-slide}
+
+```yaml { .animate src="images/scientific_process.svg"}
+setup:
+    - element: "#results"
+      modifier: function() { this.node.style.fill = 'green'; }
+    - element: "#resultsbg"
+      modifier: function() { this.node.style.fill = '#d8ffe2';}
+``` -->
+
+## Effektstärke
+
+:::: {.columns}
+::: {.column width="60%"}
+:::{.nonincremental}
+- In psycholgischer Forschung untersuchen wir in den meisten Fällen die Auswirkung von Variablen $X_i$ auf Variablen $Y_i$.
+- Diese Auswirkung ist entweder als **Unterschied** (z.B. wenn $X$ die Gruppenzugehörigkeit angibt) oder als **Zusammenhang** (wenn $X$ und $Y$ metrische Variablen mit einer vermuteten kausalen Wechselwirkung sind) messbar &mdash; man spricht auch von [**Effekten**]{color="navy"}.
+:::
+
+:::{style="margin-top: -12px"}
+- Wie kann die Aussagekraft bzw. Bedeutsamkeit von Effekten bestimmt und kommuniziert werden?
+    - &rArr; **statistische Signifikanz** (ab Vorlesung 10): kann ein Effekt *allein durch Zufall erklärt werden*?
+    - &rArr; **praktische Signifikanz** (Effektstärken): ist die Stärke des Effektes *in der Praxis bedeutsam*?
+:::    
+:::
+::: {.column width="40%"}
+![Beispiel: Studie zum Wohlbefinden in Regionen mit und ohne Corona-Kontaktsperre](images/mittelwertunterschied.png)
+:::
+::::
+
+- Die Stärke eines Effektes im Sinne der praktischen Signifikanz wird als [**Effektstärke**]{color="navy"} oder [**Effektgröße**]{color="navy"} bezeichnet. Wir werden nachfolgend den Begriff Effektstärke verwenden.
+- Unterschiedlichen Maße für die Effektstärke werden als [**Effektmaße**]{color="navy"} bezeichnet.
+
+## Unstandardisierte Effektstärken
+
+:::{.nonincremental}
+- Mittelwertsdifferenzen, Kovarianzen und Regressionskoeffizienten sind [**unstandardisierte Effektstärken**]{color="navy"}, weil sie in den Rohwerten der Messung vorliegen.
+:::
+
+<!---  Example --->
+::: {.example .fragment}
+|||
+|:-:|-|
+| ![](images/example.png){height=70px} | **Beispiel Mittelwertunterschied:** der durchschnittliche Größenunterschied von erwachsenen Männern und Frauen in Deutschland beträgt 16**cm**^[https://www.laenderdaten.info/durchschnittliche-koerpergroessen.php]. |
+: {tbl-colwidths="[10, 90]"}
+:::
+
+<div class="vspace-small"></div>
+
+<!---  Example --->
+::: {.example .fragment}
+|||
+|:-:|-|
+| ![](images/example.png){height=70px} | **Beispiel unstandardisierter Regressionskoeffizient:** je 0,1 Verbesserung in der **Abiturnote** steigt das monatliche Einstiegseinkommen um durschnittlich 70 **Euro**^[Arbeitsberichte Dresdner Soziologie Nr. 21, https://tud.qucosa.de/api/qucosa%3A24622/attachment/ATT-0/]. |
+: {tbl-colwidths="[10, 90]"}
+:::
+
+- In beiden Beispielen haben die Effektstärken sinnvolle und interpretierbare Einheiten und wären vergleichbar zwischen Studien.
+- Gerade in der Psychologie ist dies aber nicht immer gegeben:
+    - Fragebögen: Punktzahlen hängen willkürlich vom Kodierungsschema und der Zahl der Items ab
+    - Ratingskalen: Ratingskalen unterscheiden sich häufig (Wohlbefinden auf einer Skala von 0 bis 100%, Wohlbefinden auf einer Skala von -5 bis 5, usw.)
+- Falls die Skala (z.B. der verwendete Fragebogen) neu oder wenig bekannt ist, wie soll dann der Effekt interpretiert werden? Wann kann er als groß und wann als klein gelten?    
+
+## Standardisierte Effektstärken
+
+:::{.nonincremental}
+- Um Effektstärken unabhängig von der verwendeten Skala zu vergleichen, werden Effektstärken **standardisiert**.
+:::
+
+:::{style="margin-top: -12px"}
+- Die Transformation der **Standardisierung** haben wir bereits bei Zufallsvariablen kennengelernt: *Teilen durch die Standardabweichung*.
+  - Dieser Ansatz lässt sich analog auch auf Effekte beziehen
+  - Ein Beispiel für einen Effekt ist die Mittelwertdifferenz &mdash; hier gilt:<br>standardisierte Effektstärke = Mittelwertdifferenz / Standardabweichung
+  - Besteht der Effekt aus einem Produkt zweier Variablen (wie bei der Kovarianz), muss der Effekt durch die Standardabweichung beider Variablen geteilt werden, um die Einheiten herauszukürzen.
+- In der Folge sind standardisierte Effekte einheitslos, da die zugrundegelegten Standardabweichungen die gleiche Einheit wie die Effekte haben.
+- Zu beachten ist, dass das Teilen durch die Standardabweichung der resultierenden Effektstärke eine spezifische Interpretation zuschreibt: *ein Effekt wird als "stärker" gewertet, wenn der unstandardisierte Effekt groß ist im Vergleich zur zugrundegelegten Standardabweichung*.
+- Es gibt zwei wesentliche Funktionen / Einsatzzwecke von Effektstärken:
+  - Einordnung der Stärke eines Effektes in einer *einzelnen Studie*
+  - Vergleichbarmachung von Effekten zwischen *verschiedenen Studien*
+:::

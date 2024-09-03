@@ -1,0 +1,294 @@
+# Verteilungen
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Empirische Verteilungen
+
+- Eine [**Häufigkeitsverteilung**]{color="navy"} oder auch kurz [**Verteilung**]{color="navy"} gibt zu verschiedenen Werten eines Merkmals an, wie häufig dieser Wert vorkommt.
+- Die Häufigkeit kann entweder als **absolute** oder **relative Häufigkeit** angegeben werden.
+
+:::{.fragment}
+![](images/histogram_example.png){height=300px}
+:::
+
+:::{style="margin-top: -10px"}
+- **Empirische Verteilungen** geben an, wie die tatsächlich gemessenen Daten einer Stichprobe verteilt sind. Das AirBnB-Beispiel zeigt empirische Verteilungen.
+- **Theoretische Verteilungen** sind durch eine Funktion definiert, die die Verteilung von Daten mathematisch beschreibt.
+    - Im Gegensatz zu empirischen Verteilungen geben theoretische Verteilungen die (erwartete) Häufigkeit *zu jedem möglichen Wert* des Merkmals an.
+:::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Normalverteilung
+:::: {.columns}
+::: {.column width="67%"}
+- Eine der wichtigsten theoretischen Verteilungen in der Psychologie ist die [**Normalverteilung**]{color="navy"} (auch [**Gauß-Verteilung**]{color="navy"}).
+- Aufgrund ihrer Form wird sie umgangssprachlich auch als **Glockenkurve** bezeichnet.
+- Mathematische Definition:
+
+:::{.fragment}
+$$
+f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+$$
+:::
+:::
+::: {.column width="33%"}
+![](images/normal_distribution.png)
+:::
+::::
+- $\mu$ kennzeichnet den Mittelwert und $\sigma$ die Standardabweichung der Verteilung.
+
+::: {.merke .fragment}
+:::: {.columns}
+::: {.column width="5%"}
+::: {style="margin-top: 18px"}
+![](images/merke.png){height="55px"}
+:::
+:::
+::: {.column width="77%"}
+Zur Wiederholung: müssen statistische Kennwerte wie Mittelwert und Standardabweichung nicht aus Stichproben geschätzt werden, sondern sind als bekannt angenommen, werden sie häufig mit griechischen Buchstaben bezeichnet.
+:::
+::: {.column width="18%"}
+$$
+\bar{x} \longrightarrow \mu \\
+s \longrightarrow \sigma
+$$
+:::
+::::
+:::
+
+- Die Konstante $\frac{1}{\sigma\sqrt{2\pi}}$ sorgt dafür, dass die Fläche unter der Verteilung gleich 1 ist.
+
+<!-- ```{python}
+
+``` -->
+
+<!-- ```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.stats import norm
+
+np.random.seed(0)
+
+fontsize = 12
+colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
+
+mus = [5, 8, 13]
+std = 1.5
+x = np.linspace(0, 21, 200)
+
+plt.figure(figsize=(9, 2.5))
+for i, mu in enumerate(mus):
+    y = norm.pdf(x, mu, std)
+    plt.plot(x, y, color=colors[i], lw=2)
+    plt.plot([mu, mu], [0, 0.26], 'k--')
+    plt.text(mu, 0.2775, f'$\mu={mu}$', color=colors[i], ha='center', fontsize=fontsize)
+plt.xlabel('Nasenlänge (cm)', fontsize=fontsize)
+plt.ylabel('Wahrscheinlichkeitsdichte', fontsize=fontsize)
+plt.xticks(range(0, 21, 2), fontsize=fontsize-2)
+plt.yticks(fontsize=fontsize-2)
+plt.xlim(0, 20)
+plt.ylim(0, 0.31)
+plt.savefig('images/normal_mu.png', bbox_inches='tight')
+``` -->
+
+<!-- ```{python}
+
+``` -->
+<!-- ```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.stats import norm
+
+np.random.seed(0)
+
+fontsize = 12
+colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
+
+mu = 5
+stds = [0.5, 1, 2]
+x = np.linspace(-2, 12, 200)
+
+plt.figure(figsize=(9, 2.5))
+for i, std in enumerate(stds):
+    y = norm.pdf(x, mu, std)
+    plt.plot(x, y, color=colors[i], lw=2)
+    plt.text((5.4, 6.1, 7.3)[i], (0.7, 0.25, 0.12)[i], f'$\sigma={std}$', color=colors[i], fontsize=fontsize)
+plt.text(-1, 0.4, 'Je größer der\nStreuungsparameter $\sigma$,\ndesto breiter\ndie Verteilung', fontsize=fontsize)
+plt.xlabel('Nasenlänge (cm)', fontsize=fontsize)
+plt.ylabel('Wahrscheinlichkeitsdichte', fontsize=fontsize)
+plt.xticks(range(-2, 21, 2), fontsize=fontsize-2)
+plt.yticks(fontsize=fontsize-2)
+plt.xlim(-2, 12)
+# plt.ylim(0, 0.3)
+plt.savefig('images/normal_sigma.png', bbox_inches='tight')
+``` -->
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Normalverteilung: die Parameter $\mu$ und $\sigma$
+- Die Parameter $\mu$ und $\sigma$ sind die [**Formparameter**]{color="navy"} (engl. *shape parameter*) der Normalverteilung &mdash; mit diesen zwei Parametern ist die Verteilung eindeutig definiert.
+- Als Lageparameter verschiebt $\mu$ die Verteilung auf der x-Achse:
+
+:::{.fragment}
+![](images/normal_mu.png){height=240px style="margin-bottom:-15px !important"}
+:::
+
+- Als Streuungsparameter verändert $\sigma$ die Breite der Verteilung:
+
+:::{.fragment}
+![](images/normal_sigma.png){height=240px style="margin-top:-15px !important"}
+:::
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Was ist "normal" an der Normalverteilung bzw. warum ist die Normalverteilung so häufig?
+- Auch wenn die Historie des Terms **Normalverteilung** umstritten ist^[https://stats.stackexchange.com/questions/430621/why-is-the-normal-distribution-called-normal] bringt er zum Ausdruck, dass es sich um eine empirisch sehr häufig beobachtete Verteilung handelt.
+- Die Erklärung für die Häufigkeit der Normalverteilung liefert der [**zentrale Grenzwertsatz**]{color="navy"}:
+
+::: {.definition .fragment}
+<!---  Definition--->
+|||
+|:-:|-|
+|||
+| ![](images/definition.svg){height=70px} | **Zentraler Grenzwertsatz:** bei einer additiven Überlagerung vieler kleiner unabhängiger Zufallseffekte zu einer aggregierten Zufallsvariable $Z$, nähert sich für $n\rightarrow\infty$ die Verteilung von $Z$ der Normalverteilung an. [(Beweis^[https://alanhdu.github.io/posts/2019-10-21-normal-distribution-derivation/] &mdash; kein Klausurstoff)]{style="font-size:17px"}| 
+|||
+: {tbl-colwidths="[10, 90]"}
+:::
+
+- [Fast alle psychologischen Phänomene sind Ausdruck einer Überlagerung vieler kleiner Zufallseffekte:]{style="font-size:26px"}
+    - Genetische Zufallseffekte
+    - Entwicklungsbiologische Zufallseffekte (z.B. im Mutterleib)
+    - Zufällige Umwelteinflüsse (Familie, sozialer Kontext, Klima)
+- Auch Messfehler wären ein solcher Zufallseffekt &mdash; gleichzeitig sind Verteilungen in der Psychologie aufgrund der genannten Effekte *auch ohne Messfehler* häufig normalverteilt.
+- Obwohl die Vielzahl der Zufallseffekte Vorhersagen in der Psychologie enorm erschwert, haben sie **aus statistischer Sicht auch einen Vorteil**: wir können häufig (nicht immer!) annehmen, dass psychologische Merkmale einer Normalverteilung in der Bevölkerung folgen.
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Normalverteilungen in freier Wildbahn
+
+:::: {.columns}
+::: {.column width="50%"}
+
+![](images/gauss_gewichte.jpeg){height=600px style="margin-top: 30px !important"}
+
+:::
+::: {.column width="50%"}
+![](images/gauss-german-mark.jpg)
+
+:::
+::::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Eine kurze Geschichte der Normalverteilung]{color="darkred"}
+
+![](images/kein_klausurstoff.png){.absolute bottom=0 right=0 height=110px}
+
+:::: {.columns}
+::: {.column width="80%"}
+
+- Die Normalverteilung wurde mehrmals, zum Teil unabhängig, und für verschiedene Zwecke hergeleitet.
+- Die erste Herleitung der Normalverteilung stammt aus dem Jahr **1733** von **Abraham de Moivre**, der nach einer **Approximationsfunktion für die Binomialverteilung** $f(k)=\frac{n!}{k!(n-k)!}p^k(1-p)^{n-k}$ suchte, da ihm die Berechnung der Fakultäten (z.B. $n!$) bei großen Zahlen mühselig wurde.
+    - Tatsächlich ist diese Herleitung bereits ein Spezialfall des zentralen Grenzwertsatzes, da die Summe von binären Zufallsvariablen behandelt wird (z.B. wie oft "Kopf" bei "Kopf oder Zahl").
+    - Link zu einer Herleitung^[http://www.stat.yale.edu/~pollard/Courses/241.fall2014/notes2014/Bin.Normal.pdf]
+
+- Der **zentrale Grenzwertsatz** in seiner allgemeinen Form (beliebige Verteilungen) wurde **1778** von **Pierre-Simon Laplace** hergeleitet.
+    - Link zu einer Herleitung^[https://towardsdatascience.com/central-limit-theorem-proofs-actually-working-through-the-math-a994cd582b33]
+- Im Jahr **1808 gelang Robert Adrain** der Nachweis, dass die Normalverteilung eine **valide Beschreibung von zufälligen Messfehlern** ist.
+:::
+::: {.column width="20%"}
+
+![Abraham de Moivre](images/portrait_moivre.png){width=160px}
+
+![Pierre-Simon Laplace](images/portrait_laplace.png){width=160px}
+
+![Robert Adrain](images/portrait_adrain.png){width=160px}
+:::
+::::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Eine kurze Geschichte der Normalverteilung]{color="darkred"}
+
+![](images/kein_klausurstoff.png){.absolute bottom=325 right=0 height=130px}
+
+
+:::: {.columns}
+::: {.column width="86%"}
+
+- Erst im Jahr **1809 tritt Carl Friedrich Gauß** auf die Bildfläche und erbringt ebenfalls den Beweis für die Allgemeingültigkeit der Normalverteilung für Messfehler (daher wird die Normalverteilung auch zuweilen **Fehlergesetz** genannt). 
+:::
+::: {.column width="14%"}
+
+![Carl Friedrich Gauß](images/portrait_gauss.png){width=160px style="margin-top:-30px !important"}
+:::
+::::
+
+::: {style="margin-top: -33px"}
+- Ein wichtige Motivation für Gauß' Arbeit an Fehlerverteilungen waren astronomische Messungen, die häufig ungenau waren und viele Messwiederholungen erforderten. Eine zentrale Frage war: welcher Geseztmäßigkeit folgen diese Messfehler?
+- Der Beweis von Gauß war von besonderer Eleganz und basierte auf drei Annahmen:
+    1. Messfehler sind symmetrisch (Fehler in -X und +X Richtung sind gleich wahrscheinlich)
+    2. Kleinere Fehler sind häufiger als größere Fehler
+    3. Der Mittelwert ist der beste Schätzer für den Lageparameter der wahren theoretischen Verteilung, oder anders gesagt: der beste Schätzer für die unbekannten Fehler $x_i - \mu$ ($\mu$ ist nicht bekannt!) ist $x_i - \bar{x}$.
+- Mit diesen wenigen Annahmen konnte Gauß zeigen, dass *die Funktion die mit größter Wahrscheinlichkeit Fehler dieser Art erzeugt*^[In diesem Kontext erfand Gauß direkt auch das Prinzip der Maximum-Likelihood-Schätzung], die Normalverteilung ist. Herleitung^[https://notarocketscientist.xyz/posts/2023-01-27-how-gauss-derived-the-normal-distribution/]
+:::
+:::: {.columns}
+::: {.column width="87%"}
+- Eine **heute populäre und intuitive Herleitung** basiert auf einem Gedankenexperiment, in dem Würfe von Dartpfeilen auf ein Bull's Eye betrachtet werden, wobei Wurffehler in x- und y-Richtung als unabhängig angenommen werden. Sie geht auf **John Herschel (1850)** zurück. Instruktives Video zur Herleitung^[https://www.youtube.com/watch?v=cy8r7WSuT1I]
+:::
+::: {.column width="13%"}
+
+![John Herschel](images/portrait_herschel.png){width=160px style="margin-top:-22px !important"}
+:::
+::::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Charakteristiken von Verteilungen
+
+<div class="vspace-medium"></div>
+
+![Bildnachweis^[https://matheguru.com/stochastik/schiefe-linksschief-rechtsschief-symmetrisch.html]](images/rechtsschief.png){height=550px}
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Vorschau: p-Wert
+
+:::: {.columns}
+::: {.column width="70%"}
+- In Ihren Übungen mit JASP wird Ihnen u.U. ein Wert bereits jetzt begegnen: der [**p-Wert**]{color="navy"}
+- Der p-Wert ist von zentraler Bedeutung in der psychologischen Forschungsliteratur (for the better or the worse).
+- Der p-Wert ist ein **Signifikanz-Maß**: er gibt vereinfacht gesprochen einen Hinweis darauf, wie wahrscheinlich es ist, dass ein gefundener Effekt (z.B. Mittelwertsunterschied zwischen zwei Gruppen) auf bloßem Zufall basiert.
+- **Je kleiner der p-Wert, desto höher die statistische Signifikanz**, desto sicherer können wir uns also sein, dass ein Effekt nicht nur auf einer zufälligen Schwankung von Messfehlern basiert.
+- Als Konvention hat sich etabliert, dass bei p-Werten kleiner 0,05 Effekte als **statistisch signifikant** gewertet werden.
+- Den p-Wert werden wir noch ausführlich in den Vorlesungen zur Inferenzstatistik behandeln.
+:::
+::: {.column width="30%"}
+![https://xkcd.com/1478/](images/p_values_2x.png)
+:::
+::::
+

@@ -1,0 +1,154 @@
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Inferenzstatistik: Zusammenfassung
+
+<div class="vspace-large"></div>
+
+![](images/inference_overview.png)
+
+
+## {.blackslide .center}
+
+<div class="vspace-small"></div>
+
+:::: {.columns}
+::: {.column width="68%"}
+
+![](images/paradoxia_histogram_inflammation_sem_nonsig.png){height=290px}
+
+:::
+::: {.column width="32%"}
+::: {.content-hidden when-format="pdf"}
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=180px style="margin-top:-20px !important"}
+
+:::
+:::
+::::
+
+Zurück zur Ergebnispräsentation Ihrer Paradoxia-Taskforce. Sie wollen für die beiden zentralen Gruppenvergleiche 95%-Konfidenzintervalle berechnen:
+
+$$
+CI=\Delta\bar{x}\pm t_{(1-\frac{\alpha}{2},\,\text{df})}\cdot\hat{se}\qquad\text{mit}\quad\alpha=0{,}05
+$$
+
+Sie holen nochmals die bereits berechneten Größen von den t-Tests aus der Schublade:
+
+<!---  Table --->
+||Fallzahl $N$|$\Delta\bar{x}$ |Standardfehler $\hat{se}$|Freiheitsgrade $\text{df}$|$t_{(0.975,\,\text{df})}$|
+|-|-|-|-|-|-|
+| [TikTok]{.underline} | $2\times 50$ | $0{,}577$ | ${0{,}123}$ | $93{,}7$ | $1{,}986$|
+| [Entzündung]{.underline} | $2\times 50$ |$0{,}0243$ | ${0{,}0147}$ | $96{,}2$ |$1{,}985$ |
+
+: {tbl-colwidths="[17, 17, 14, 20, 20, 12]"}
+
+<div class="vspace-small"></div>
+
+[Neu hinzugekommen sind hier lediglich die kritischen t-Werte $t_{(1-\frac{\alpha}{2},\,\text{df})}$ für $\alpha=0{,}05$, die jedoch für dieses Beispiel aufgrund der ungeraden Freiheitsgrade ($\text{df}=93{,}7$ und $96{,}2$) mit dem Computer und nicht der t-Tabelle bestimmt wurden. Prüfen Sie jedoch für sich, ob die angegebenen kritischen t-Werte auf Basis der t-Tabelle plausibel erscheinen!]{style="font-size: 19px; line-height: 0.85; display: block"}
+
+## {.blackslide .center}
+
+<div class="vspace-small"></div>
+
+:::: {.columns}
+::: {.column width="68%"}
+
+Damit lauten die Konfidenzintervalle:
+
+$$
+\begin{aligned}
+\text{TikTok:}\qquad CI&=\Delta\bar{x}\pm t_{(1-\frac{\alpha}{2},\,\text{df})}\cdot\hat{se} =\\ 
+&=0{,}577\pm 1{,}986\cdot0{,}123 = [0{,}333; 0{,}821]
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\text{Entzündung:}\quad CI&=\Delta\bar{x}\pm t_{(1-\frac{\alpha}{2},\,\text{df})}\cdot\hat{se} =\\ 
+&=0{,}0243\pm 1{,}985\cdot0{,}0147 = [-0{,}0049; 0{,}0535]
+\end{aligned}
+$$
+
+:::
+::: {.column width="32%"}
+::: {.content-hidden when-format="pdf"}
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=200px style="margin-top:-20px !important"}
+
+:::
+:::
+::::
+
+Das Ergebnis der Konfidenzintervalle bestätigt den Signifikanztest: der **TikTok-Effekt schließt die Null (deutlich) nicht ein** und ist daher signifikant; der **Entzündungs-Effekt schließt die Null (knapp) ein** und ist daher **nicht signifikant**.
+
+:::: {.columns}
+::: {.column width="30%"}
+Sie veranschaulichen die Ergebnisse:
+:::
+::: {.column width="70%"}
+![](images/paradoxia_ci.png){height=330px}
+:::
+::::
+
+
+
+
+## {.blackslide .center}
+
+<div class="vspace-small"></div>
+
+:::: {.columns}
+::: {.column width="68%"}
+
+Bei den **Konfidenzintervallen der Korrelation** zwischen TikTok-Onlinezeit und Entzündungswerten erwarten Sie aufgrund der Stärke und Signifikanz der Korrelation, dass die Null klar außerhalb des 95%-Konfidenzintervalls liegt.
+
+Im ersten Schritt z-transformieren Sie den Korrelationskoeffizienten $r=0{,}517$:
+
+$$
+z_r = \text{artanh}({r}) = \text{artanh}({0{,}517}) = 0{,}572
+$$
+
+:::
+::: {.column width="32%"}
+::: {.content-hidden when-format="pdf"}
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=200px style="margin-top:-20px !important"}
+
+:::
+:::
+::::
+
+Fisher z-Werte sind in guter Näherung normalverteilt, entsprechend verwenden Sie die Prüfgröße $z_{(1-\frac{\alpha}{2})}$:
+
+$$
+\begin{aligned}
+CI_z&=z_r\pm z_{(1-\frac{\alpha}{2})}\cdot \frac{1}{\sqrt{N-3}} = 0{,}572\pm z_{(1-\frac{0{,}05}{2})}\cdot  \frac{1}{\sqrt{50-3}} =\\
+&= 0{,}572\pm 1{,}96\cdot \frac{1}{\sqrt{47}} = [0{,}286;0{,}858]
+\end{aligned}
+$$
+
+
+Rücktransformation zu Korrelation: $CI_r = [\tanh(0{,}286);\tanh(0{,}858)] = [0{,}278; 0{,}695]$
+
+
+## {.blackslide .center}
+
+<div class="vspace-small"></div>
+
+:::: {.columns}
+::: {.column width="68%"}
+Wie erwartet liegt der Korrelationskoeffizient $r=0{,}517$ mit einem 95%-Konfidenzintervall von $[0{,}278; 0{,}695]$ klar im positiven Bereich.
+
+Auch für diese Zusammenhangsanalyse erstellen Sie eine verfeinerte Abbildung, in der
+ Sie zusätzlich zur Regressionssteigung auch deren Konfidenzintervall zeigen (dessen Berechnung Sie aber Ihrem Statistikprogramm überlassen):
+
+:::
+::: {.column width="32%"}
+::: {.content-hidden when-format="pdf"}
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=200px style="margin-top:-20px !important"}
+
+:::
+:::
+::::
+
+<div class="vspace-medium"></div>
+
+![](images/paradoxia_ci_reg.png){height=400px}

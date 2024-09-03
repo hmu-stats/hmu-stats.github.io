@@ -1,0 +1,192 @@
+# Hypothesen
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<!-- ## Der Forschungsprozess {.hcenter-slide}
+
+
+```yaml { .animate src="images/scientific_process.svg"}
+setup:
+    - element: "#hypothesis"
+      modifier: function() { this.node.style.fill = 'green'; }
+    - element: "#hypothesisbg"
+      modifier: function() { this.node.style.fill = '#d8ffe2';}
+``` -->
+
+## Was ist eine Hypothese?
+
+:::: {.columns}
+::: {.column width="70%"}
+
+<div class='vspace-medium'></div>
+
+::: {.definebox .fragment}
+[**Hypothesen:**]{color='navy'} in Form einer **logischen Aussage** formulierte **Annahme** zur Erklärung **empirischer Phänomene**.
+:::
+
+<div class='vspace-medium'></div>
+
+:::{.fragment}
+[Beispiele]{.block-heading}
+:::
+
+- Es gibt einen positiven Zusammenhang zwischen der Feinstaubbelastung einer Stadt und der Prävalenz von Lungenerkrankungen.
+- Eine vorherige Impfung mit dem Corona-Impfstoff verringert die Symptomschwere im Fall einer Infektion.
+:::
+
+<!-- Begin second column -->
+::: {.column width="30%"}
+
+::: {.content-hidden when-format="pdf"}
+![Bildnachweis^[https://pub.towardsai.net/hypotheses-testing-with-scipy-b5ba86430d74]](images/hypotheses.png){.relative style="top: 50px"}
+:::
+
+:::
+::::
+
+- Eine wissenschaftliche Hypothese muss **widerlegbar**/**falsifizierbar** sein; dies impliziert u.a., dass die Hypothese **widerspruchsfrei** ist und **operationalisierbar** ist.
+
+
+## Warum Hypothesen?
+
+- Eine Hypothese überführt eine **Annahme / Vermutung / Intuition**  in eine präzise wissenschaftliche Fragestellung.
+
+:::: {.columns}
+::: {.column width="70%"}
+
+- Eine a priori ("vorab") aufgestellte Hypothese macht **transparent**, was Forscher:innen **vor Durchführung einer Studie erwartet** haben.
+  - Andernfalls handelt es sich um HARKing: "Hypotesizing After Results Known" (d.h. die Hypothese wird *im Nachhinein* an die gemessenen Daten angepasst).
+- Eine präzise Formulierung der Hypothese kann helfen, die **exakte Fragestellung und Methodik einer Studie** festzulegen.
+- Eine präzise Formulierung der Hypothese hilft dabei, einen geeigneten **statistischen Test** auszuwählen.
+:::
+::: {.column width="30%"}
+![Bildnachweis^[https://pub.towardsai.net/hypotheses-testing-with-scipy-b5ba86430d74]](images/hypotheses.png){.relative style="top: 50px"}
+:::
+::::
+
+
+:::{.fragment}
+::: aside
+**Operationalisierung:** Messbarmachung eines theoretischen Konstrukts (Schwerkraft, Intelligenz, psychische Resilienz, ...) durch ein geeignetes Messinstrument (Gravimeter, Intelligenztest, Fragebogen, ...)
+:::
+:::
+
+
+<!-- ## Gute Hypothesen, schlechte Hyothesen
+
+Eine wissenschaftliche Hypothese muss drei Grundvoraussetzungen erfüllen: **Widerspruchsfreiheit**, **Widerlegbarkeit**, **Operationalisierbarkeit**.
+
+<div class='vspace-medium'></div>
+
+
+:::{.fragment}
+[Beispiele]{.block-heading}
+:::
+
+- Alle Lebewesen benötigen Sauerstoff, aber manche Lebenwesen sind anaerob [~~widerspruchsfrei~~, ~~widerlegbar~~, operationalisierbar]
+- Könnten Babies sprechen, würden sie hauptsächlich ihre Gefühle zum Ausdruck bringen [widerspruchsfrei, operationalsierbar, ~~widerlegbar~~]
+- Gott ist eine notwendige Voraussetzung für Leben [widerspruchsfrei, ~~operationalisierbar~~, ~~widerlegbar~~].
+
+:::{.fragment}
+**Beachte:** Hypothese, die nicht widerspruchsfrei oder nicht operationalisierbar sind, sind auch nicht widerlegbar (die umgekehrte Aussage gilt nicht in allen Fällen).
+:::
+
+::: aside
+**Operationalisierung:** Messbarmachung eines theoretischen Konstrukts (Schwerkraft, Intelligenz, psychische Resilienz, ...) durch ein geeignetes Messinstrument (Gravimeter, Intelligenztest, Fragebogen, ...)
+::: -->
+
+
+<!-- ##
+
+Eine *gute* wissenschaftliche Hypothese erfüllt darüber hinaus weitere Kriterien:
+
+| | |
+| --- | --- |
+| **Prädiktivität** | *Hypothesen sollten präzise Vorhersagen ermöglichen*<br />[Negativbeispiel:]{.underline} Das Selbst ist in ein Es, Ich, Über-Ich aufgeteilt.<br />[Positivbeispiel:]{.underline} Eine tägliche morgendliche Meditationsübung verringert das subjektive und objektive Stresslevel. |
+| **Spezifität** | *Hypothesen sollten spezifisch und konkret sein*<br />[Negativbeispiel:]{.underline} Frühe Kindheitstraumata wirken sich nachteilig auf spätere Beziehungen aus.<br />[Positivbeispiel:]{.underline} Kindheitstraumata in einem vorsprachlichen Alter, verursacht durch wichtige Bezugspersonen, erhöhen die Wahrscheinlichkeit von Bindungsangst in engen romantischen Beziehungen. |
+| **Sparsamkeit** | *Hypothesen sollten keine unnötige Komplexität beinhalten*<br />[Negativbeispiel:]{.underline} Die Coronapandemie verstärkt das Gefühl der Vereinsamung in älteren Bevölkerungsschichten, falls diese an einem Dienstag befragt wurden.<br />[Positivbeispiel:]{.underline} Die Coronapandemie verstärkt das Gefühl der Vereinsamung in älteren Bevölkerungsschichten~~, falls diese an einem Dienstag befragt wurden~~. |
+| **Relevanz** | *Hypothesen sollten von theoretischer oder gesellschaftlicher Relevanz sein*<br />[Negativbeispiel:]{.underline} Menschen mit roten Autos bevorzugen rote Gemüsesorten.<br />[Positivbeispiel:]{.underline} Nach persönlichen Erfolgserlebnissen neigen Menschen zu riskantem Fahrverhalten.  |
+
+: {tbl-colwidths="[15, 75]"} -->
+
+## Gerichtete und ungerichtete Hypothesen
+
+:::: {.columns}
+::: {.column width='70%'}
+
+::: {.fragment}
+**Ungerichtete Hypothesen** geben keine Richtung des Effektes an:
+
+- Frauen und Männer haben unterschiedliche viele soziale Kontakte
+- Die Punktzahl im Abitur hängt zusammen mit der späteren Lebenszufriedenheit
+
+:::
+
+::: {.fragment}
+**Gerichtete Hypothesen** geben die Richtung des Effektes an:
+
+- Frauen haben *mehr* soziale Kontakte als Männer
+- Eine höhere Punktzahl im Abitur korreliert *negativ* mit der späteren Lebenszufriedenheit
+:::
+
+:::
+::: {.column width='30%'}
+
+![Bildnachweis^[https://datatab.de/tutorial/hypothesen]](images/directed_undirected_hypotheses.png)
+
+:::
+::::
+
+## Probabilistische Hypothesen
+
+:::: {.columns}
+::: {.column width='75%'}
+
+In der Psychologie sind Hypothesen in aller Regel nicht **deterministisch**, sondern **probabilistisch**, d.h. sie machen Aussagen über Wahrscheinlichkeiten und Mittelwerte.
+
+<div class='vspace-smaller'></div>
+
+::: {.smaller}
+:::{.fragment}
+**Beispiel deterministische Hypothese:** Menschen mit Alkoholabhängigkeit entwickeln eine Depression.
+:::
+
+:::{.fragment}
+**Beispiel probabilistische Hypothese:** Menschen mit Alkoholabhängigkeit haben *im Mittel* eine höhere Ausprägung depressiver Symptome.
+:::
+:::
+
+<div class='vspace-smaller'></div>
+
+- Psychologische Phänomene sind in der Regel von einer Vielzahl von Faktoren beeinflusst, die zum Großteil nicht bekannt sind (biologisch&ndash;z.B. Blutdruck, psychologisch&ndash;z.B. Stimmung, situativ&ndash;z.B. Versuchslabor versus Realität).
+- Diese Faktoren erhöhen die Variabilität von Beobachtungen und führen dazu, dass die meisten psychologischen Phänomene nur durch Mittelwertbildung über eine Reihe von Messwiederholungen sichtbar werden.
+
+:::
+::: {.column width='25%'}
+
+![Bildnachweis^[https://www.toolsgroup.com/blog/what-is-probabilistic-forecasting/]](images/deterministic_probabilistic.png)
+
+:::
+::::
+
+
+
+## {.blackslide .center}
+
+::: {.content-hidden when-format="pdf"}
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=300px}
+<!-- Source: Midjourney -->
+<div class='vspace-small'></div>
+:::
+
+Ok, Task Force: wie lauten eure (Arbeits-)Hypothesen zu den Hintergründen von Paradoxia?
+
+
+::: {.fragment}
+**Hypothese 1:** Die Blaufärbung der Haare ist ein reines Tik-Tok-Phänomen. *Betroffene sollten daher im Mittel mehr Zeit auf der Social-Media-Plattform TikTok verbringen als Nicht-Betroffene.*
+:::
+
+::: {.fragment}
+**Hypothese 2:** Paradoxia wird durch eine virale Infektion verursacht. *Die Blutproben von Betroffenen sollten daher im Mittel eine höhere Konzentration von Entzündungsmarkern aufweisen als von Nicht-Betroffenen.*
+:::

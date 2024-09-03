@@ -1,0 +1,445 @@
+# Stichprobenverteilung
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Verteilung
+
+:::{.nonincremental}
+- **Verteilungen** kennen wir bereits aus der Vorlesung 04 zu Lage- und Streuungsmaßen.
+:::
+
+:::{style="margin-top: -12px"}
+- Wir unterscheiden zwischen **empirischen Verteilungen**, die etwa in der Form von Histogrammen dargestellt werden...
+:::
+
+:::{style="margin-top: -15px"}
+:::{.fragment}
+![](images/histogram_example.png){height=230px}
+:::
+:::
+
+- ... und **theoretischen Verteilungen**, die durch eine mathematische Funktion $f(x)$ definiert sind und für jede Merkmalsausprägung $x$ die Häufigkeit $f(x)$ angeben:
+
+:::: {.columns}
+
+::: {.column width="20%"}
+:::
+::: {.column width="30%"}
+:::{.fragment}
+![](images/normal_sigma_notext.png){height=190px}
+:::
+:::
+::: {.column width="30%"}
+
+:::{.fragment}
+**Normalverteilung:**
+$$
+f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+$$
+:::
+:::
+::: {.column width="20%"}
+:::
+::::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Stichprobenverteilung
+
+<div class="vspace-xlarge"></div>
+<div class="vspace-xlarge"></div>
+
+Empirische und theoretische Verteilungen gibt es **nicht nur für Merkmale $X$, sondern auch für statistische Kennwerte $\hat{\theta}$**, die für das Merkmal $X$ auf Basis einer Stichprobe bestimmt wurden &mdash; zum Beispiel Mittelwert $\bar{x}$. Man spricht dann von einer [**Stichprobenverteilung**]{color="navy"}.
+
+<div class="vspace-xlarge"></div>
+
+Wie aber kann ein statistischer Kennwert eine Verteilung aufweisen? 
+
+Zwei Möglichkeiten &#9112;
+
+<!-- <div class="vspace-large"></div>
+
+Prinzip: wir nehmen nicht nur eine einzelne Studie an, sondern viele Studien $j=1, 2...$, die jeweils einen statistischen Kennwert $\hat{\theta}^{(j)}$ bestimmt haben. Die Kennwerte $\hat{\theta}^{(j)}$ folgen ebenfalls einer Verteilung &mdash; der [**Stichprobenverteilung**]{color="navy"}. -->
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Stichprobenverteilung
+
+:::: {.columns}
+::: {.column width="69%"}
+
+[**Empirische Stichprobenverteilung**]{color="navy"}
+
+:::{.nonincremental style="font-size: 24px; margin-top: -10px"}
+- Dieselbe Studie wurde *tatsächlich mehrmals* durchgeführt und es wurde jeweils der statistische Kennwert $\hat{\theta}^{(j)}$ bestimmt (z.B. $\bar{x}^{(j)}$).
+- Die resultierende Verteilung der Kennwerte $\hat{\theta}^{(j)}$ ist die empirische Stichprobenverteilung.
+- Dies ist die Idee der **Metaanalyse**, die eine Vielzahl empirischer Studien zusammenfasst und analysiert (&rArr; Vorlesung 13).
+:::
+
+<!-- **Zur Erinnerung:**
+
+- Bei der **Metaanalyse** ging es um die Verlässlichkeit der Schätzung von Parametern in Bezug auf die Population
+- Das gemittelte, gewichtete Ergebnis vieler Studien liefert eine bessere Schätzung, als die Ergebnisse einzelner Studien.
+- Die Metaanalyse basiert auf der **empirischen Stichprobenverteilung**. -->
+
+:::{.fragment}
+[**Theoretische Stichprobenverteilung**]{color="navy"}
+
+
+:::{.nonincremental style="font-size: 24px; margin-top: -10px"}
+- Es gibt nur *eine* Studie mit Kennwert $\hat{\theta}$ und die Überlegung ist, wie sich die Kennwerte bei einer hypothetischen wiederholten Durchführung der Studie verteilen würden.
+- Die erwartete Verteilung lässt sich mathematisch ableiten und wird als theoretische Stichprobenverteilung $f(\hat{\theta})$ bezeichnet.
+- $f(\hat{\theta})$ erlaubt eine Einschätzung darüber, wie stabil die Kennwertschätzung bei (hypothetischen) Wiederholungen der Studie sein würde.
+- Die theoretische Stichprobenverteilung ist der zentrale Ansatz der **Inferenzstatistik**.
+:::
+:::
+
+:::
+::: {.column width="31%"}
+
+![Die empirische Stichprobenverteilung besteht aus tatsächlich erhobenen Studien. Die Verteilung empirischer Stichprobenkenn-<br>werte $\hat{\theta}^{(j)}$ folgt im Idealfall (u.a. kein Publikationsbias, großes $n$ pro Stichprobe) einer Normalverteilung.](images/stichprobenverteilung_empirisch.png){style="margin-top:-35px"}
+
+:::{.fragment}
+![Die theoretische Stichprobenverteilung ist durch eine Funktion $f(\hat{\theta})$ gegeben. Ist die Stichprobengröße $n$ groß, kann für die theoretische Stichprobenverteilung eine Normalverteilung angenommen werden.](images/stichprobenverteilung_theoretisch_labeled.png)
+:::
+
+:::
+::::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Experiment zur Stichprobenverteilung: Würfeln
+
+
+<!-- Jeder Student bringt einen Würfel mit. 
+
+Runde 1: alle würfeln, Mittelwert wird notiert
+
+Runde 2: ""
+
+...
+
+Runde n
+
+Alle Mittelwerte werden als Histogramm aufgetragen -> Normalverteilung?
+
+(Beachte: die originale Verteilung ist uniform!) -->
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Stichprobenverteilung: Beispiel
+
+<div class="vspace-medium"></div>
+
+**Gedankenexperiment:** Wir nehmen an, die Population besteht nur aus 9 Männern und wir kennen von allen Männern die Nasenlänge:
+
+<div class="vspace-small"></div>
+
+![](images/inference1_annot.png)
+
+<div class="vspace-small"></div>
+
+In diesem Gedankenexperiment kennen wir also den wahren Mittelwert der Population. Er beträgt $\mu = 6cm$.
+
+<div class="vspace-small"></div>
+
+Nun betrachten wir eine Studie, in der 3 Männer untersucht werden. Wir ziehen also eine zufällige **Stichprobe $n=3$** aus der Population.
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Stichprobenverteilung: Beispiel
+
+<div class="vspace-medium"></div>
+
+![](images/inference2_annot.png)
+
+<!-- ```{python}
+
+``` -->
+
+<!-- ```{python}
+from itertools import combinations
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.stats import norm
+
+fontsize=15
+
+ls = [7, 5, 9, 3, 5, 4, 6, 8, 7]
+
+means = [np.mean(l) for l in list(combinations(ls, 3))]
+print(min(means), max(means))
+bins = [4, 5, 6, 7, 8, 9]
+
+plt.figure(figsize=(4, 3))
+plt.hist(means, width=1, bins=bins, facecolor='#783c00', ec='w')
+for i in range(0, 32):
+    plt.plot([4, 9], [i, i], 'w')
+
+mean = np.mean(means)
+se = np.std(ls, ddof=1) / np.sqrt(3)
+x = np.linspace(mean - 3*se, mean + 3*se, 1000)
+plt.plot(x, 84*norm.pdf(x, mean, se), 'k-', lw=2)
+
+plt.xlabel('Nasenlänge (cm)', fontsize=fontsize)
+plt.ylabel('Absolute Häufigkeit', fontsize=fontsize)
+plt.xticks(fontsize=fontsize-2)
+plt.yticks(fontsize=fontsize-2)
+plt.savefig('images/noselength_example.png', bbox_inches='tight')
+
+``` -->
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Stichprobenverteilung: Beispiel
+
+<div class="vspace-medium"></div>
+
+![](images/inference3_annot.png)
+
+... und so weiter
+
+<div class="vspace-small"></div>
+
+:::: {.columns .fragment}
+::: {.column width="65%"}
+- Jeder Mittelwert wäre eine Schätzung für den wahren Populationswert.
+- Die gesammelten Mittelwerte all dieser hypothetischen Studien können nun ebenfalls in ein Histogramm eingetragen werden (in braun).
+- Wie wir noch sehen werden, lässt sich die Verteilung des Histogramms auch auch mathematisch beschreiben und führt zur theoretischen Stichprobenverteilung (im Bild rechts schon einmal durch die schwarze Kurve angedeutet).
+:::
+::: {.column width="35%"}
+![](images/noselength_example.png)
+:::
+::::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Stichprobenverteilung: Beispiel
+
+<div class="vspace-medium"></div>
+
+**Was lernen wir aus dieser Verteilung?**
+
+:::{.nonincremental}
+- Obwohl es nur einen *wahren Mittelwer*t gibt, weichen die *einzelnen Studienergebnisse* mehr oder weniger davon ab. Die Studienergebnisse haben eine *Bandbreite*. 
+- Die Bandbreite gibt einen Anhaltspunkt für die Genauigkeit der Schätzung des Populationsmittelwertes, die mit einer einzelnen Stichprobe erzielt werden kann.
+- Ein wichtiges Ziel der Inferenzstatistik ist, diese Bandbreite mit mathematischen Methoden abzuschätzen, so dass nicht wie im Gedankenexperiment tatsächlich viele Wiederholungen einer Studie notwendig sind.
+:::
+
+![Stichprobenverteilung der Mittelwerte](images/noselength_example.png){height=300px}
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Stichprobenverteilung
+
+<div class="vspace-medium"></div>
+
+**Übertragen wir nun das Gedankenexperiment auf die Realität:**
+
+- Population seien nun **alle Männer in Deutschland**.
+- Sie haben eine einzelne Studie durchgeführt (also eine Stichprobe aus der Population gezogen).
+
+:::: {.columns .fragment}
+::: {.column width="60%"}
+![](images/noselength_sample_absolute.png){height=300px}
+:::
+::: {.column .caption-style width="40%"}
+Das Histogramm zeigt nun wieder die Verteilung der Daten in einer [einzelnen Studie]{.underline}!
+:::
+::::
+
+- Als Mittelwert erhalten Sie $\bar{x}=5.5cm$.
+- Ihnen ist nun klar, dass das dieser Mittelwert nur *eines von vielen möglichen Ergebnissen* ist.
+- Beim Wiederholen derselben Studie würde also – rein zufallsbedingt – einen etwas anderen Mittelwert erhalten.
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Theoretische Stichprobenverteilung
+
+<div class="vspace-small"></div>
+Wie sieht die zu erwartende Stichprobenverteilung aus, wenn ich, anders als im Gedankenexperiment, nicht *alle möglichen* Stichproben betrachten kann?
+
+:::{.fragment}
+Mit anderen Worten: kann man abschätzen, wie die Verteilung von Stichprobenkennwerten erwartbar aussehen würde, würden wir die Studie &ndash; rein hypothetisch &ndash; **unendlich oft wiederholen**? Die Antwort lautet JA und führt über die mathematischer Herleitung der [**theoretischen Stichprobenverteilung**]{color="navy"}.
+
+<div class="vspace-medium"></div>
+
+![](images/inference6.png)
+:::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Theoretische Stichprobenverteilung
+
+- Als erste Frage stellt sich: durch welche grundlegende **mathematische Funktion** lässt sich die theoretische Stichprobenverteilung beschreiben?
+- Die Antwort auf diese Frage lässt sich aus dem **zentralen Grenzwertsatz** ableiten, demzufolge viele natürliche Merkmale normalverteilt sind, weil sie sich aus einer **Summe von Zufallseffekten** (Genetik, Umwelt, Erziehung, usw.) zusammensetzen.
+- Die zentrale Erkenntnis ist nun, dass sich die gleiche Logik &mdash; **Summe von Zufallseffekten** &mdash; auf statistische Kennwerte $\hat{\theta}$ wie den Mittelwert übertragen lässt!
+- **Häufig kann als Stichprobenverteilung daher die Normalverteilung angenommen werden**.
+
+::: {.colorbox2 .fragment}
+:::: {.columns}
+::: {.column width="75%"}
+
+**Beispiel: statistischer Kennwert $\hat{\theta}$ = Mittelwert $\bar{x}$**
+
+Nehmen wir $j=1..k$ hypothetische Studien an, die jeweils einen Mittelwert $\bar{x}^{(j)}$ berechnen. Jeder Mittelwert basiert auf der **Summe** ($\Sigma$) von **zufällig gezogenen Daten** ($x_i^{(j)}$) aus einer Stichprobe. Gemäß dem zentralen Grenzwertsatz erwarten wir daher im Grenzfall (d.h. Stichprobengröße gegen &infin;), dass die Mittelwerte einer **Normalverteilung** folgen.
+:::
+::: {.column width="23%"}
+
+<div class="vspace-xlarge"></div>
+
+$$
+\quad\bar{x}^{(j)} = \frac{1}{n}\sum x^{(j)}_i
+$$
+:::
+::::
+:::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Theoretische Stichprobenverteilung
+
+:::{.nonincremental}
+- Nochmals in anderen Worten: ziehen wir sehr viele Stichproben aus der Population, berechnen für jede Stichprobe einen statistischen Kennwert $\hat{\theta}$, so sind diese Kennwerte häufig normalverteilt &mdash; und zwar **unabhängig von der Verteilung der zugrundeliegenden Merkmalsvariable $X$**!
+:::
+
+<div class="vspace-xlarge"></div>
+
+![](images/central_limit_theorem_average.png)
+
+
+
+## Theoretische Stichprobenverteilung
+
+<div class="vspace-xlarge"></div>
+<div class="vspace-xlarge"></div>
+
+::: {.merke}
+:::: {.columns}
+::: {.column width="5%"}
+::: {style="margin-top: 18px"}
+![](images/merke.png){height="55px"}
+:::
+:::
+::: {.column width="95%"}
+Zu beachten ist, dass der zentrale Grenzwertsatz streng genommen nur für den *Grenzwert* gilt, d.h. wenn die Stichprobengröße $n$ sehr groß wird. Als Faustregel gilt für den Mittelwert etwa gilt, dass ab $n=30$ die Stichprobenverteilung hinreichend genau durch die Normalverteilung beschrieben werden kann.
+
+ Bei anderen statistischen Kennwerten, v.a. solchen, die auf einen endlichen Bereich beschränkt sind (z.B. Korrelation −1 bis +1, relative Häufigkeiten 0 bis 1), gilt die Normalverteilungs-Näherung bei typischen Stichprobengrößen wie $n=30$ nicht ohne Weiteres.<br>In diesem Fall werden andere &mdash; asymmetrische &mdash; Funktionen als die Normalverteilung für die Stichprobenverteilung angenommen (&rArr; Vorlesung 12).
+:::
+::::
+:::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Theoretische Stichprobenverteilung
+
+<div class="vspace-medium"></div>
+
+:::: {.columns}
+::: {.column width="65%"}
+Die Form der theoretischen Stichprobenverteilung (SV) ist also geklärt (zumindest im Grenzfall $n\rightarrow\infty$): &nbsp;&nbsp;**Normalverteilung**.
+:::
+::: {.column width="35%"}
+:::{style="margin-top: -20px"}
+$$
+f(\hat{\theta}) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{\hat{\theta}-\mu}{\sigma}\right)^2}
+$$
+:::
+:::
+::::
+
+<div class="vspace-large"></div>
+
+:::: {.columns}
+::: {.column width="65%"}
+Dass eine Zufallsvariable wie hier $\hat{\theta}$ normalverteilt ist, wird häufig auch mit folgender Notation zum Ausdruck gebracht:
+
+$$
+\hat{\theta} \sim \mathcal{N}(\mu_\text{SV},\,\sigma_\text{SV})
+$$
+
+[(in Worten: *wir nehmen an, dass potentielle Stichprobenkennwerte $\hat{\theta}$ einer Normalverteilung $\mathcal{N}$ mit Mittelwert $\mu_\text{SV}$ und Standardabweichung $\sigma_\text{SV}$ folgen*)]{style="font-size: 20px"}
+
+:::
+::: {.column width="35%"}
+![](images/stichprobenverteilung_theoretisch_labeled.png)
+:::
+::::
+
+
+:::{.fragment}
+Zwei Informationen fehlen nun noch: 
+:::
+
+1. Was ist der **Mittelwert** ($\mu_\text{SV}$) der theoretischen Stichprobenverteilung?
+2. Was ist die **Streuung** ($\sigma_\text{SV}$) der theoretischen Stichprobenverteilung?
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Mittelwert der theoretischen Stichprobenverteilung
+
+:::{.nonincremental}
+- Kann von einer Normalverteilung für die Form der Stichprobenverteilung ausgegangen werden, ist die beste Schätzung $\hat{\mu}_\text{SV}$ für den Mittelwertsparameter $\mu_\text{SV}$ der Stichprobenverteilung der statistische Kennwert selbst (z.B. $\bar{x}, \hat{\sigma}$).
+:::
+
+:::{style="margin-top: -12px"}
+- Der Mittelwert $\hat{\mu}_\text{SV}$ der Stichprobenverteilung ist identisch mit der besten Kennwertschätzung $\hat{\theta}$ des wahren Populationsparameters $\theta$.
+:::
+
+::: {.colorbox2 .fragment}
+:::: {.columns}
+::: {.column width="70%"}
+
+**Beispiel: statistischer Kennwert $\hat{\theta}$ = Mittelwert $\bar{x}$**
+
+Ist der Mittelwert der betrachtete statistische Stichprobenkennwert so gilt: 
+
+:::{style="margin-top: -10px"}
+$$
+\hat{\mu}_\text{SV} = \bar{x}
+$$
+:::
+
+Die theoretische Stichprobenverteilung wird also in diesem Fall um den Stichprobenmittelwert $\bar{x}$ herum konstruiert.
+:::
+::: {.column width="30%"}
+
+:::{style="margin-top: 50px"}
+![](images/inference8_annot_orange.png){height=200px}
+:::
+:::
+::::
+:::
+

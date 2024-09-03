@@ -1,0 +1,155 @@
+
+
+
+# t-Test für die Korrelation
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Stichprobenverteilung der Korrelation $\hat{\rho}$
+
+:::: {.columns}
+::: {.column width="60%"}
+
+:::{.nonincremental}
+- Analog zu Mittelwertsunterschieden kann auch die **Stichprobenverteilung der Korrelation** aufgestellt werden: als **Normalverteilung** mit dem **Mittelwert unserer Kennwertschätzung (hier $\hat{\rho}$)** und einer Streuung, die dem **Standardfehler** ($\hat{se}$) des Kennwertes entspricht.
+:::
+
+:::{style="margin-top: -15px"}
+- Den Standardfehler der Korrelation haben wir bereits in Vorlesung 08 kennengelernt:
+:::
+
+:::{.fragment style="margin-top: -15px"}
+$$
+\hat{se}(\hat{\rho}) = \sqrt{\frac{1-\hat{\rho}^2}{n-2}}
+$$
+:::
+
+:::
+::: {.column width="40%"}
+![](images/nulldist_rho.png)
+:::
+::::
+
+:::{.fragment}
+:::{.nonincremental}
+- Auch dieser Standardfehler ist eine Schätzung auf Basis der Stichprobe und entsprechend stellt die standardisierte Prüfgröße einen t-Wert dar:
+:::
+
+:::{style="margin-top: -15px"}
+$$
+t = \frac{\hat{\rho}}{\hat{se}(\hat{\rho})} = \hat{\rho}\sqrt{\frac{n-2}{1-\hat{\rho}^2}}
+$$
+:::
+:::
+
+:::{.fragment}
+[(Präziser gesagt handelt es sich auch hier wieder um das Verhältnis einer normalverteilten Variable ($\hat{\rho}$) und einer chi-verteilten Variable ($\hat{se}(\hat{\rho})$) &mdash; ein solches Verhältnis führt zu einer t-verteilten Prüfgröße)]{style="font-size: 23px"}
+:::
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Nullhypothese und Hypothesentestung bei Korrelationen
+
+:::: {.columns}
+::: {.column width="60%"}
+
+:::{.nonincremental}
+- Die **Nullhypothesenverteilung** der Korrelation ist also eine **t-Verteilung**.
+- Die Nullhypothese entspricht der Annahme, dass der wahre Zusammenhang in der Population $\rho = 0$ ist.
+:::
+
+:::{style="margin-top: -15px"}
+- Auch hier können wir gerichtete und ungerichtete Hypothesen testen:
+    - Gerichtete Hypothesen: 
+        - die Korrelation ist größer 0 ($\rho>0$)
+        - die Korrelation ist kleiner 0 ($\rho<0$)
+    - Ungerichtete Hypothese: die Korrelation ist ungleich 0 ($\rho\neq 0$)
+:::
+:::
+::: {.column width="40%"}
+
+![](images/ttest1_rho.png)
+
+:::
+::::
+
+- Die Berechnung der p-Werte erfolgt analog wie bei Mittelwertunterschieden.
+
+::: {.merke .fragment}
+:::: {.columns}
+::: {.column width="5%"}
+::: {style="margin-top: 18px"}
+![](images/merke.png){height="55px"}
+:::
+:::
+::: {.column width="95%"}
+Die Zahl der Freiheitsgrade der Korrelation ist $\text{df}=n-2$. Grund: die Streuung $\hat{se}$ im Nenner des t-Wertes enthält den Korrelationskoeffizient $\hat{\rho}$ und dieser involviert die Berechnung von **zwei** Mittelwerten (Mittelwert $\bar{x}$ der Variable $X$ und Mittelwert $\bar{y}$ der Variable $Y$).
+:::
+::::
+:::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Beispiel: Bestimmung des p-Wertes bei der Korrelation
+
+:::{.nonincremental}
+- Nehmen wir an, die Korrelation von Größe und Gewicht in einer Stichprobe von $n=12$ betrage $\hat{\rho}=0.4$.
+- Wir wollen testen, ob der Korrelationskoeffizient $\hat{\rho}$ auf einem Signifikanzniveau $\alpha=0.05$ signifikant größer als 0 ist.
+:::
+
+:::: {.columns}
+::: {.column width="55%"}
+
+- Berechnung von der Prüfgröße $t$:
+
+:::{.fragment}
+$$
+t = \hat{\rho}\sqrt{\frac{n-2}{1-\hat{\rho}^2}} = 0.4\sqrt{\frac{12-2}{1-0.4^2}} \overset{(Computer)}{=} 1.38
+$$
+:::
+
+- Wir sehen in der Tabelle, dass der kritische t-Wert für $\text{df}=n-2=10$ Freiheitsgrade bei einem (einseitigen!) Signifikanzniveau von $\alpha=0.05$ gleich $1.813$ beträgt.
+- Die Nullhypothese wird also nicht abgelehnt, und der Effekt als nicht signifikant gewertet.
+
+:::
+::: {.column width="45%"}
+![](images/ttable_r.png)
+:::
+::::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Beispiel: Bestimmung des p-Wertes bei der Korrelation
+
+:::: {.columns}
+::: {.column width="61%"}
+:::{.nonincremental}
+- Statistische Programme geben den p-Wert in der Regel automatisch mit an und es ist somit ersichtlich,  ob es sich um eine statistisch signifikante Korrelation handelt.
+:::
+:::{style="margin-top: -15px"}
+- **Standardmäßig** handelt es sich dabei immer um einen **Test für die ungerichtete Hypothese $\rho \neq 0$**. 
+- War die Hypothese dagegen gerichtet, gilt:
+    - Falls das Vorzeichen von $\hat{\rho}$ in Richtung der Hypothese ist, halbiere den p-Wert der ungerichteten Hypothese.
+    - Falls das Vorzeichen von $\hat{\rho}$ in gegensätzlicher Richtung der Hypothese ist, halbiere den p-Wert der ungerichteten Hypothese *und ziehe dieses Ergebnis von 1 ab*.
+- Im Beispiel mit $\hat{\rho}=0.4$ gibt JASP für den p-Wert der *ungerichteten Hypothese* $\rho \neq 0$ an: $p=0.198$
+    - Der p-Wert für die *gerichtete Hypothese* $\rho > 0$ wäre daher $p=0.198/2=0.099$
+    - Im Falle der umgekehrten *gerichteten Hypothese* $\rho < 0$ würde gelten: $p=1-0.198/2=1-0.099 = 0.901$
+:::
+:::
+::: {.column width="39%"}
+
+<div class="vspace-medium"></div>
+
+![Auswahl in JASP: Regression &rarr; Klassisch &rarr; Korrelation. Zusätzliche Selektion des Streudiagramms.](images/jasp_weight_height.png){width=375px}
+:::
+::::

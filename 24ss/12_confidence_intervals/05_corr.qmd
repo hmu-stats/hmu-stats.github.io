@@ -1,0 +1,198 @@
+# Konfidenzintervalle für die Korrelation
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Konfidenzintervalle für die Korrelation
+
+:::{.nonincremental}
+- Auch für den **Pearson-Korrelationskoeffizient** $\hat{\rho}$ lassen sich Konfidenzintervalle bestimmen.
+- Den dafür notwendigen Standardfehler haben wir bereits kennengelernt:
+
+:::
+:::{style="margin-left: -100px"}
+$$
+\hat{se} = \frac{1-\hat{\rho}^2}{\sqrt{n-1}}
+$$
+:::
+
+:::: {.columns .fragment}
+::: {.column width="51%"}
+
+:::{.nonincremental}
+- Wie aber sieht die Stichprobenverteilung des Korrelationskoeffizienten aus?
+- Antwort: kompliziert^[Die exakte Wahrscheinlichkeitsdichte der Stichprobenverteilung findet sich z.B. auf Wikipedia: https://en.wikipedia.org/wiki/Pearson_correlation_coefficient#Using_the_exact_distribution]. Grund: der Korrelations-koeffizient ist auf die Grenzen $-1$ und $+1$ beschränkt, was insbesondere für Populations-korrelationen $\rho$ nahe $\pm 1$ zu einer stark asymmetrischen Stichprobenverteilung führt.
+- Die Annahme einer Normalverteilung ist hier zumindest bei kleinen bis mittleren Stichproben nicht sinnvoll. Was also tun?
+:::
+
+:::
+::: {.column width="49%"}
+![Die theoretische Stichprobenverteilung des Korrelations- koeffizienten $\hat{\theta}$ ist bei kleineren Stichprobengrößen $n$ deutlich verschieden von einer Normalverteilung.](images/pearson_dist_rho.png){height=420px style="margin-top: -15px !important"}
+:::
+::::
+
+<!-- - Wir hatten in Vorlesung 11 gelernt, dass der Korrelationskoffizient ebenfalls mit dem t-Test gegen die Nullhypothese $\rho=0$ getestet werden sollte, daher wäre es naheliegend, auch für das Konfidenzintervall den t-Wert Prüfgröße zu verwenden.
+- Allerdings testet das Konfidenzintervall nicht die Nullhypothese, sondern verschiedene mögliche Populationsparameter $\rho$ (alle hypothetischen Populationsparameter die nicht signifikant verschieden von unserem Stichprobenkennwert sind, konstruieren das Konfidenzintervall).
+- Für $\rho\ne 0$ ist die Testverteilung allerdings nicht mehr symmetrisch &mdash; Grund ist, dass der Korrelationskoeffizient auf das Intervall $[-1; 1]$ eingeschränkt ist.
+  - Am leichtesten ersichtlich ist, wenn $\rho=-1$ bzw. $\rho=+1$ getestet wird &mdash; dann hat die Testverteilung keinen "Platz" mehr nach links bzw. rechts. -->
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Konfidenzintervalle für die Korrelation 
+<!-- https://stats.stackexchange.com/questions/554408/why-the-pearson-correlation-p-value-doesnt-fully-correspond-to-ci-in-r -->
+
+:::: {.columns}
+::: {.column width="65%"}
+
+:::{.nonincremental}
+- Die Lösung für diese Problematik stammt von Ronald Fisher: die Korrelationskoeffizienten werden **Z-transformiert** (in Abgrenzung zum z-Wert verwenden wir hier ein großes Z!) 
+:::
+
+$$
+\color{navy}{\text{Fisher Z-Transformation:}}\quad Z = \text{artanh}({\hat{\rho}})
+$$
+
+[(Hinweis: artanh ist der *Areatangens hyperbolicus*)]{style="font-size:22px"}
+
+:::
+::: {.column width="35%"}
+
+![](images/Fisher_transformation.png){height=300px style="margin-top:-65px !important"}
+<!-- In Orange ist der transformierte Korrelationskoeffizient gezeigt. Grau zeigt als Referenz die Identitätsfunktion, bei der also der Korrelationskoeffizient unverändert bleibt. -->
+:::
+::::
+
+:::: {.columns .fragment}
+::: {.column width="55%"}
+
+:::{.nonincremental}
+- Nach der **Z-Transformation ist die Stichprobenverteilung ungefähr normalverteilt**.
+- Der Standardfehler $\hat{se}$ ist jetzt nicht mehr von der Korrelation $\hat{\rho}$ abhängig:
+:::
+
+$$
+\hat{se} = \frac{1}{\sqrt{n-3}}
+$$
+
+[.. sondern nur noch von der Stichprobengröße $n$.]{style="margin-left: 30px"}
+
+
+:::
+::: {.column width="45%"}
+
+<div class="vspace-small"></div>
+
+![](images/pearson_dist_z_exact_rho.png){height=420px style="margin-top: -22px !important"}
+
+:::
+::::
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Konfidenzintervalle für die Korrelation  
+
+Die Berechnung von Konfidenzintervallen für Korrelationskoeffizienten umfasst drei Schritte:
+
+:::{.fragment}
+**1. Fisher Z-Transformation**
+
+Transformation des Korrelationskoeffizienten zu Fisher $Z$:
+
+$$
+Z = \text{artanh}({\hat{\rho}})
+$$
+
+:::
+:::{.fragment}
+**2. Berechnung des Konfidenzintervalls**
+
+Konfidenzintervalle für Fisher $Z$-Werte werden auf Basis von kritischen z&#8209;Werten $z_{(1-\frac{\alpha}{2})}$ berechnet (auch dann, wenn die Populationsstreuungen unbekannt sind!):
+
+$$
+CI_Z=Z\pm z_{(1-\frac{\alpha}{2})}\cdot \hat{se}
+$$
+
+bzw. nach Einsetzen des Standardfehlers:
+
+$$
+CI_Z=Z\pm z_{(1-\frac{\alpha}{2})}\cdot \frac{1}{\sqrt{n-3}}
+$$
+:::
+
+:::{.fragment}
+**3. Rücktransformation in Korrelation**
+
+Sind $Z^u$ und $Z^o$ die untere und obere Grenze des Konfidenzintervalls von $Z$ aus Schritt 2, so lässt sich dieses mithilfe des *Tangens Hyperbolicus* in eine Korrelation zurücktransformieren:
+
+$$
+CI = [\tanh{(Z^{u})}; \tanh{(Z^{o})}]
+$$
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Konfidenzintervalle für die Korrelation: Beispiel
+
+:::{.nonincremental}
+- Gehen wir zurück zu unserem Beispiel aus der letzten Vorlesung, bei dem Sie in einer Stichprobe $n=12$ eine Korrelation zwischen Größe und Gewicht von $\hat{\rho}=0.4$ gemessen hatten.
+- Ein Signifikanztest hatte gezeigt, dass die Korrelation bei Anlegen eines Signifikanzniveaus $\alpha=0.05$ nicht signifikant war. Da der Test darüber hinaus sogar einseitig war, erwarten wir, dass das 95%-Konfidenzintervall den Wert Null in jedem Fall einschließen wird.
+:::
+
+:::{.fragment}
+**1. Fisher z-Transformation**
+
+$$
+Z = \text{artanh}({\hat{\rho}}) = \text{artanh}({0.4}) = 0.424
+$$
+:::
+
+:::{.fragment}
+**2. Berechnung des Konfidenzintervalls**
+
+Standardfehler: $\qquad \hat{se} = \frac{1}{\sqrt{n-3}} = \frac{1}{\sqrt{12-3}} = \frac{1}{\sqrt{9}} = \frac{1}{3}$
+
+Kritischer z-Wert (z.B. aus z-Tabelle): $\qquad z_{(1-\frac{\alpha}{2})} = z_{(1-\frac{0.05}{2})} = z_{(0.975)} = 1.96$
+
+Konfidenzintervall:
+
+$$
+CI_Z = Z\pm z_{(1-\frac{\alpha}{2})}\cdot\hat{se} = 0.424\pm 1.96\cdot \scriptsize\frac{1}{3}\normalsize = [-0.230; 1.077]
+$$
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Konfidenzintervalle für die Korrelation: Beispiel
+
+**3. Rücktransformation in Korrelation**
+
+Mithilfe des *Tangens Hyperbolicus* transformieren wir das Konfidenzintervall $CI_Z$ zurück in Korrelationswerte:
+
+$$
+CI = [\tanh{(Z^{u})}; \tanh{(Z^{o})}] = [\tanh{(-0.230)}; \tanh{(1.077)}] = [-0.226; 0.792]
+$$
+
+Das Konfidenzintervall für unsere Korrelation $\hat{\rho}=0.4$ lautet also $[-0.226; 0.792]$. Das ist ein sehr großer Bereich, der sowohl negative als auch positive Werte umfasst. **Und wir sehen: bei der Korrelation können Konfidenzintervalle asymmetrisch sein!**
+
+:::: {.columns .fragment}
+::: {.column width="70%"}
+
+:::{}
+Auch eine Aussage zur Signifikanz lässt sich treffen: da der Wert 0 im Konfidenzintervall enthalten ist, folgt, dass ein Signifikanztest mit $\alpha=0.05$ für die ungerichtete Hypothese $\rho \neq 0$ [nicht]{.underline} signifikant wäre.
+:::
+
+[Warum? Weil das Konfidenzintervall jene Korrelationsbereiche umfasst, in denen mögliche Populationskorrelationen $\rho$ statistisch kompatibel mit dem Stichprobenwert $\hat{\rho}$ sind. Insbesondere schließt das Konfidenzintervall den Wert $0$ ein und die Nullhypothese ist damit definitiv statistisch kompatibel mit unserer Stichprobenkorrelation. Die Nullhypothese ist also **nicht abgelehnt** und die Korrelation ist **nicht signifikant** .]{style="font-size: 21px"}
+
+:::
+::: {.column width="30%"}
+![Zu sehen ist in dieser Abbildung auch, dass das Konfidenzintervall um den empirischen Korrelationskoeffizienten  $\hat{\rho}=0.4$ asymmetrisch ist.](images/ci_corr.png)
+:::
+::::
+

@@ -1,0 +1,8 @@
+title: "Vorlesung 01: Intro"
+date: "10.October 2023"
+semester: "Wintersemester 23/24"
+
+format:
+  revealjs:
+    footer: "Vorlesung 01: Intro"
+    fragments: false

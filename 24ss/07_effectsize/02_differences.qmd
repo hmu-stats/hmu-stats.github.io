@@ -1,0 +1,237 @@
+# Mittelwertunterschiede
+
+## Cohen's d
+
+:::{.nonincremental}
+- Es werden drei Fälle von Mittelwertunterschieden unterschieden:
+    - Fall 1: eine Stichprobe + Einzelmessung: Differenz zwischen dem Mittelwert einer Messung und einem Referenzwert (z.B. IQ=100).
+    - Fall 2: eine Stichprobe + abhängige Messungen: Differenz der Mittelwerte zweier Messungen in derselben Gruppe (z.B. IQ morgens und IQ abends).
+    - Fall 3: zwei Stichproben + unabhängige Messungen: Differenz der Gruppenmittelwerte<br>(z.B. IQ in einer blonden versus brünetten Gruppe).
+:::
+
+:::{style="margin-top: -12px"}
+- Die standardisierte Effektstärke für alle drei Fälle eines Mittelwertunterschieds berechnet sich als 
+:::
+
+:::{.fragment}
+$$
+d = \frac{\text{Mittelwertdifferenz}}{\text{Standardabweichung}}
+$$
+:::
+
+- Die Bezeichnung $d$ für standardisierte Mittelwertunterschiede stammt von dem Statistiker Jacob Cohen &mdash; häufig wird daher auch von [**Cohen's d**]{color="navy"} gesprochen.
+- Während die Mittelwertdifferenz eindeutig ist, ist die weniger triviale Frage: Standardabweichung *von was*?
+
+
+## Fall 1: eine Stichprobe + Einzelmessung
+
+:::: {.columns}
+::: {.column width="63%"}
+**Es gibt nur eine einzelne Messung an einer Gruppe und die Frage ist, ob der Mittelwert $\bar{x}$ bedeutsam über einem Referenzwert $\mu_0$ liegt.**
+
+<div class="vspace-small"></div>
+
+$$
+\text{Mittelwertdifferenz} = \bar{x} - \mu_0
+$$
+
+<!-- <div class="vspace-medium"></div> -->
+
+::: {.colorbox .fragment}
+$$
+\text{Standardisierte Effektstärke:}\qquad d = \frac{\bar{x} - \mu_0}{\hat{\sigma}}
+$$
+:::
+
+
+:::
+::: {.column width="37%"}
+::: {style="margin-top:-25px"}
+![Beispiel: Studie zum Wohlbefinden &mdash; ist das Wohlbefinden *in der Gruppe* mit Kontaktsperre noch im positiven Bereich ($\bar{x}>\mu_0 \text{ mit } \mu_0=0$)?](images/unterschied_referenz.png){height=300px}
+:::
+:::
+::::
+
+::: {style="margin-top:-25px"}
+- Die Wahl der Standardabweichung bereitet hier keine Kopfzerbrechen &mdash; es ist schlicht die Standardabweichung der Variable $X$ in der Stichprobe.
+- Die Formel für die Standardabweichung ist die bekannte Formel mit Besselkorrketur:
+:::
+
+::: {.fragment style="margin-top:-25px"}
+$$
+\hat{\sigma} = \sqrt{\frac{\sum\left(x_i-\bar{x}\right)^2}{n\color{darkgreen}{-1}}}
+$$
+:::
+
+
+
+
+
+## Fall 2: eine Stichprobe + zwei abhängige Messungen
+
+:::: {.columns}
+::: {.column width="68%"}
+
+**Es wird die Mittelwertdifferenz $\bar{x}_A - \bar{x}_B$ zweier abhängiger Messungen in einer Stichprobe berechnet und die Frage ist, ob diese Differenz bedeutsam ist.**
+
+
+<!-- <div class="vspace-small"></div> -->
+
+$$
+\text{Mittelwertdifferenz} = \bar{x}_A - \bar{x}_B
+$$
+
+::: {.colorbox .fragment}
+$$
+\text{Standardisierte Effektstärke:}
+$$
+
+<div class="vspace-xsmall"></div>
+
+$$
+d = \frac{\bar{x}_A - \bar{x}_B}{\hat{\sigma}_\Delta}
+$$
+:::
+
+:::
+::: {.column width="32%"}
+![Beispiel: Unterscheidet sich das Wohlbefinden *in derselben Gruppe* vor und nach einer Kontaktsperre?](images/mittelwertunterschied_within2.png)
+:::
+::::
+
+- $\hat{\sigma}_{\Delta}$ ist die Standardabweichung der Differenzenvariable $\Delta X=X_A-X_B$:
+
+:::{.fragment style="margin-top: -25px"}
+$$
+\hat{\sigma}_{\Delta} = \sqrt{\frac{\sum\left(\Delta x_i-\Delta\bar{x}\right)^2}{n-1}} \qquad\text{und}\quad \Delta x_i = x^{(A)}_i - x^{(B)}_i
+$$
+
+:::
+- Wir bezeichnen diese als **Differenzenvarianz**.
+
+
+
+## Fall 2: andere Darstellung der Differenzenvarianz
+
+:::{.nonincremental}
+- Mit einigen mathematischen Tricks lässt sich zeigen, dass die Standardabweichung der Differenzwerte auch wie folgt dargestellt werden kann:
+:::
+
+:::{style="margin-top: -5px"}
+$$
+\hat{\sigma}_\Delta = \sqrt{\hat{\sigma}^2_A + \hat{\sigma}^2_B - 2\,\hat{Cov}(X_A,X_B)} = \sqrt{\hat{\sigma}^2_A + \hat{\sigma}^2_B - 2\,\hat{\rho}\hat{\sigma}_A\hat{\sigma}_B}
+$$
+:::
+
+:::{.compact-sublist}
+- $\hat{\rho}$ ist der Pearson-Korrelationskoeffizient zwischen den Messungen $X_A$ und $X_B$.
+- Diese Formel macht transparent, dass die Differenzenvarianz vom Zusammenhang zwischen $X_A$ und $X_B$ abhängt:
+    - Sind die Zufallsvariablen *nicht korreliert* ($\hat{\rho}=0$), so ist die Varianz der Differenz einfach der Summe der Einzelvarianzen.
+    - Sind die Zufallsvariablen *positiv korreliert* ($\hat{\rho}>0$), so reduziert sich die Summe in Abhängigkeit von der Kovarianz.
+    - Sind die Zufallsvariablen *negativ korreliert* ($\hat{\rho}<0$), so erhöht sich die Summe in Abhängigkeit von der Kovarianz.<br>(*Subtraktion* der *negativen* Kovarianz resultiert in einer Erhöhung &mdash; "minus x minus = plus").
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Fall 2: andere Darstellung der Differenzenvarianz
+
+
+Der Effekt der Kovarianz auf die Varianz der Differenzwerte ist besonders intuitiv bei einer positiven Korrelation. Betrachten wir zwei Variablen $X_A$ und $X_B$ mit unterschiedlichen Kovarianzen und wie sich dabei jeweils die Variabilität des Differenzwertes entwickelt:
+
+<div class="vspace-medium"></div>
+
+![In allen drei Plots gilt $\bar{x}_A=6$ und $\bar{x}_B=5$, d.h. $\bar{x}_A-\bar{x}_B=1$.](images/pooled_variance_dependent.png)
+
+<div class="vspace-medium"></div>
+
+Wir sehen: je höher die Korrelation $\bar{x}_A$ und $\bar{x}_B$, desto geringer die Variabilität der Differenz von $\bar{x}_A-\bar{x}_B$! Ist die Korrelation perfekt ($\hat{\rho}=1$), so ist die Differenz sogar konstant, d.h. ihre Variabilität ist gleich 0.
+
+
+<!-- ```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from scipy.stats import pearsonr
+
+np.random.seed(0)
+
+X = 6+np.random.randn(10)
+X += (6-X.mean())
+
+fontsize = 15
+
+# plt.style.use('dark_background')
+plt.figure(figsize=(10, 2.5))
+
+for i in range(3):
+    plt.subplot(1,3,3-i)
+    Y_ = X+(0,2.7,6.2)[i]*(np.random.rand(10)-0.5)
+    Y_ += (5-Y_.mean())
+    print(f'cov={np.cov(X,Y_)[0, 1]:.3f}; r={pearsonr(X,Y_)[0]:.3f}; deltaX={np.mean(X)-np.mean(Y_):.2f}')
+    plt.plot(X, 'o-', label='$X_A$')
+    plt.plot(Y_, 'o-', label='$X_A$')
+    plt.plot(X-Y_, 'o-', label='$X_A-X_B$')
+    plt.xticks(range(10), range(1, 11), fontsize=fontsize-2)
+    plt.yticks(range(-2, 9, 2), fontsize=fontsize-2)
+    plt.xlabel('Versuchsperson', fontsize=fontsize)
+    plt.ylim(-2, 9)
+    if i == 0:
+        plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+    if i == 1:
+        plt.title(r'$\hat{\rho}=' + f'{pearsonr(X,Y_)[0]:.2f}$')
+    else:
+        plt.title(r'$\hat{\rho}=' + f'{pearsonr(X,Y_)[0]:.0f}$')
+# plt.xlim(0, 1)
+# plt.ylim(0, 1)
+
+plt.tight_layout()
+plt.savefig('images/pooled_variance_dependent.png', bbox_inches='tight')
+``` -->
+
+
+## Fall 3: zwei Stichproben + unabhängige Messungen
+
+:::: {.columns}
+::: {.column width="70%"}
+
+**Es wird die Mittelwertdifferenz $\bar{x}_A - \bar{x}_B$ zweier unabhängiger Gruppen berechnet und die Frage ist, ob diese Differenz bedeutsam ist.**
+
+<!-- <div class="vspace-small"></div> -->
+
+$$
+\text{Mittelwertdifferenz} = \bar{x}_A - \bar{x}_B
+$$
+
+<div class="vspace-small"></div>
+
+::: {.colorbox .fragment}
+$$
+\text{Standardisierte Effektstärke:}\qquad d = \frac{\bar{x}_A - \bar{x}_B}{\hat{\sigma}_\text{pooled}}\qquad
+$$
+:::
+
+- Im Nenner von Cohen's d wird hier die **gepoolte Varianz** verwendet (Details siehe Bonuscontent [Gepoolte Varianz](#pooled_variance){style="color: darkred"} am Ende der Folien). 
+- Es handelt sich dabei um die mittlere Varianz über beide Gruppen hinweg, entsprechend einem an den Stichprobengrößen $n_A$ und $n_B$ gewichteten Mittelwert:
+
+:::
+::: {.column width="30%"}
+![Unterscheidet sich der Mittelwert zweier Gruppen?](images/effectsize_pooledSD.png)
+
+:::
+::::
+
+:::{.fragment}
+$$
+\hat{\sigma}_\text{pooled} = \sqrt{\frac{(n_A-1)\hat{\sigma}_A^2 + (n_B-1)\hat{\sigma}_B^2}{n_A+n_B-2}}\qquad\quad\text{Falls }n_A=n_B=n:\;\; \hat{\sigma}_\text{pooled} = \sqrt{\frac{\hat{\sigma}_A^2 + \hat{\sigma}_B^2}{2}}
+$$
+:::
+
+## Fall 3: zwei Stichproben + unabhängige Messungen
+
+:::{.nonincremental}
+- Streng genommen gilt die angebene Formel für Cohen's bei unabhängigen Stichproben nur, wenn die Gruppenvarianzen $\hat{\sigma}_A$ und $\hat{\sigma}_B$ ähnlich sind.
+    - Gängige Faustregel: Varianzen sollen sich höchstens um Faktor 2 unterscheiden: $0.5<\frac{\sigma^2_A}{\sigma^2_B}<2$
+- Da sich jedoch bislang kein Verfahren für den den Gruppenvergleich mit unähnlichen Varianzen etabliert hat, behandeln wir diesen Fall im Rahmen von Statistik 1 nicht.
+    - Bei Interesse finden Sie eine mögliche Formel für diesen Fall im Bonuscontent [Cohen's d bei unterschiedlichen Gruppenvarianzen](#d_unequal_variance){style="color: darkred"}.
+:::

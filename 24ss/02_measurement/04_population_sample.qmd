@@ -1,0 +1,30 @@
+<!-- ## Population und Stichprobe {style="overflow:hidden"}
+
+- [**Population**]{color="navy"} (auch **Grundgesamtheit**) bezeichnet die Gesamtheit der Personen, für die wir uns in einer wissenschaftlichen Studie interessieren (z.B. Personen mit einer bestimmten Erkrankung; Kinder zwischen 3 und 6; die gesamte Menschheit)
+- In den meisten Fällen ist es nicht möglich alle Mitglieder der Population zu untersuchen (Vollerhebung) &ndash; wir müssen daher eine [**Stichprobe**]{color="navy"} ziehen.
+- Die Annahme ist, dass die Stichprobe ein möglichst **repräsentatives Abbild der Population** ist und sich Ergebnisse in der Stichprobe auf die Population übertragen lassen.
+
+<div class="vspace-medium"></div>
+
+:::{.fragment}
+![Bildnachweis^[https://datatab.de/tutorial/stichprobe]](images/grundgesamtheit_stichprobe.svg){.hcenter-image}
+::: -->
+
+
+
+## {.blackslide .center}
+
+::: {.content-hidden when-format="pdf"}
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=300px}
+<!-- Source: Midjourney -->
+<div class="vspace-small"></div>
+:::
+
+Nach eingehender Prüfung, entscheiden Sie sich aus ethischen Gründen (und schweren Herzens) gegen ein Experiment, und planen stattdessen eine Beobachtungsstudie an Betroffenen (Paradoxiker) und Nicht-Betroffenen (Kontrollen). In Einklang mit den Hypothesen 1 und 2 testen Sie zwei abhängige Variablen:
+
+- [Abhängige Variable 1:]{.underline} durchschnittliche TikTok-Online-Zeit in Stunden pro Tag
+    - Eigenschaften der AV: Verhältnisskala, kontinuierlich, manifest
+- [Abhängige Variable 2:]{.underline} physiologischer Entzündungswert
+    - Eigenschaften der AV: Verhältnisskala, kontinuierlich, manifest
+
+<!-- **Studie 3**: In einem *Experiment* untersuchen Sie eine "Offline"-Gruppe, die für den Experimentalzeitraum auf Internetzugang verzichtet, und eine Kontrollgruppe, für die sich nichts ändert. Abhängige Variable, ist die Erkrankungshäufigkeit in beiden Gruppen. -->

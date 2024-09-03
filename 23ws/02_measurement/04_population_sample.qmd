@@ -1,0 +1,71 @@
+## Population und Stichprobe {style="overflow:hidden"}
+
+- [**Population**]{color="navy"} (auch **Grundgesamtheit**) bezeichnet die Gesamtheit der Personen, für die wir uns in einer wissenschaftlichen Studie interessieren (z.B. Personen mit einer bestimmten Erkrankung; Kinder zwischen 3 und 6; die gesamte Menschheit)
+- In den meisten Fällen ist es nicht möglich alle Mitglieder der Population zu untersuchen (Vollerhebung) &ndash; wir müssen daher eine [**Stichprobe**]{color="navy"} ziehen.
+- Die Annahme ist, dass die Stichprobe ein möglichst **repräsentatives Abbild der Population** ist und sich Ergebnisse in der Stichprobe auf die Population übertragen lassen.
+
+<div class="vspace-medium"></div>
+
+:::{.fragment}
+![Bildnachweis^[https://datatab.de/tutorial/stichprobe]](images/grundgesamtheit_stichprobe.svg){.hcenter-image}
+:::
+
+## Zufallsvariable {style="overflow: hidden"}
+
+- Eine [**Zufallsvariable**]{color="navy"} ist eine Variable, die zu einem gewissen Grad vom Zufall (oder uns zufällig erscheinenden Faktoren) abhängt.
+- In der Psychologie kommt "Zufall" an zwei Stellen ins Spiel:
+    - **Messfehler** (unbekannte, uns zufällig erscheinende, Einflüsse auf die Genauigkeit der Messung)
+    - Beim **zufälligen Ziehen einer Stichprobe** aus der Population
+- Ein wichtiger Aspekt von Zufallsvariablen ist, dass die Zufälligkeit mathematisch beschrieben werden kann &ndash; durch **Wahrscheinlichkeitsverteilungen** (wir kommen darauf später noch einmal zurück)
+    - Beispiel: jeder Wurf eines Würfels ist zufällig, aber wir können sagen, dass die Wahrscheinlichkeit jeder Zahl exakt 1/6 ist.
+
+:::{.fragment}
+![Bildnachweis^[https://www.studienkreis.de/mathematik/zufallsexperimente-muenz-und-wuerfelwurf/]](images/wurfelwahrscheinlichkeiten-ca.png){.hcenter-image style="margin-top: -15px"}
+:::
+
+## Zufallsvariable
+
+:::: {.columns}
+::: {.column width="70%"}
+- Praktisch gesehen, sind nahezu alle Variablen in der Psychologie Zufallsvariablen, daher meint "Variable" in aller Regel "Zufallsvariable"
+- Die Ausnahme der Regel wäre der seltene Fall, dass eine Variable *für alle Personen der Population bekannt* ist und ihre Messung *keinem Messfehler* unterliegt (z.B. Geburtsjahr aller amerikanischen Präsidenten bis zum Jahr 2023).
+- Zufallsvariablen werden mit großen Lettern bezeichnet, i.d.R. $X$ (oder $Y$/$Z$ falls zwei/drei Zufallsvariablen betrachtet werden).
+- Einzelne Beobachtungen einer Zufallsvariable (z.B. der gemessene IQ von *bestimmten Personen*) werden mit kleinen Lettern bezeichnet ($x_i$, $y_i$, $z_i$), wobei $i$ der Durchnummerierung dient.
+<!-- - Der Vektor $\mathbf{x}$ (beachte die Fettschrift) bezeichnet die Gesamtheit der Beobachtungen $x_1 .. x_N$ -->
+:::
+
+
+<!-- Begin second column -->
+::: {.column width="30%"}
+
+:::{.fragment}
+|  | $X$ |
+|-|-|
+| $x_1$ | 99 |
+| $x_2$ | 112 |
+| $x_3$ | 104 |
+| ... | ... |
+
+: [Beispiel: die Zufallsvariable $X$ bezeichnet in der Tabelle den in einer Stichprobe gemessenen Intelligenzquotienten]{style="font-size: 15px; line-height:1.5; display: block"} {tbl-colwidths="[50, 50]"}
+:::
+
+:::
+::::
+
+
+## {.blackslide .center}
+
+::: {.content-hidden when-format="pdf"}
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=300px}
+<!-- Source: Midjourney -->
+<div class="vspace-small"></div>
+:::
+
+Nach eingehender Prüfung, entscheiden Sie sich aus ethischen Gründen (und schweren Herzens) gegen ein Experiment, und planen stattdessen eine Beobachtungsstudie an Betroffenen (Paradoxiker) und Nicht-Betroffenen (Kontrollen). In Einklang mit den Hypothesen 1 und 2 testen Sie zwei abhängige Variablen:
+
+- [Abhängige Variable 1:]{.underline} durchschnittliche TikTok-Online-Zeit in Stunden pro Tag
+    - Eigenschaften der AV: Verhältnisskala, kontinuierlich, manifest
+- [Abhängige Variable 2:]{.underline} physiologischer Entzündungswert
+    - Eigenschaften der AV: Verhältnisskala, kontinuierlich, manifest
+
+<!-- **Studie 3**: In einem *Experiment* untersuchen Sie eine "Offline"-Gruppe, die für den Experimentalzeitraum auf Internetzugang verzichtet, und eine Kontrollgruppe, für die sich nichts ändert. Abhängige Variable, ist die Erkrankungshäufigkeit in beiden Gruppen. -->

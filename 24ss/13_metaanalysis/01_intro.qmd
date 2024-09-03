@@ -1,0 +1,124 @@
+---
+title: "Vorlesung 13: Metaanalyse"
+---
+
+
+## Beispiel
+
+<div class="vspace-medium"></div>
+
+Wir interessieren uns für den Zusammenhang zwischen der Nutzung sozialer Medien und psychischer Gesundheit.
+
+<div class="vspace-medium"></div>
+
+![](images/metaanalysis1.png)
+
+<div class="vspace-medium"></div>
+
+&rarr; Für Details zur Literatursuche, siehe Vorlesung Forschungsmethoden.
+
+
+
+
+<!-- ## Der Forschungsprozess {.hcenter-slide}
+
+```yaml { .animate src="images/scientific_process.svg"}
+setup:
+    - element: "#results"
+      modifier: function() { this.node.style.fill = 'green'; }
+    - element: "#resultsbg"
+      modifier: function() { this.node.style.fill = '#d8ffe2';}
+``` -->
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Beispiel
+
+<div class="vspace-medium"></div>
+
+Ein hypothetischer Beispielartikel aus der Literatursuche:
+
+<div class="vspace-medium"></div>
+
+![](images/metaanalysis2.png){height=470px}
+
+- Frage: wie kombinieren wir die Effekte vieler solcher Studien?
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Metaanalyse &ndash; die Königsdisziplin
+
+![Bildnachweis^[https://openmd.com/guide/levels-of-evidence]](images/levels-of-evidence.svg){height=500px}
+
+- **Aber beachte:** die Qualität von Reviews und Metaanalysen hängt von der Qualität der einzelnen Studien ab! So kann etwa eine große Metaanalyse auf Basis von verzerrten Studien eine geringere Evidenzqualität haben, als ein einzelner RCT (randomized controlled trial).
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Was ist eine Metaanalyse?
+
+- **Generelle Idee:** viele Studien sagen mehr als eine Einzelne
+
+::: {.definition}
+<!---  Definition--->
+|||
+|:-:|-|
+|||
+| ![](images/definition.svg){height=70px} | Eine [**Metaanalyse**]{color="navy"} kombiniert die berichteten Effekte verschiedener Studien mit dem **Ziel eine genauere Schätzung eines Effektes** zu berechnen. |
+|||
+: {tbl-colwidths="[10, 90]"}
+:::
+
+:::: {.columns}
+::: {.column width="70%"}
+- Eine Metaanalyse kann auf unstandardisierten oder standardisierten **Effekten** basieren.
+- Unstandardisierte Effekte:
+  - Relative/absolute Häufigkeiten
+  - Lagemaße
+  - Streuungsmaße
+  - Unterschiede
+  - Kovarianz, Regressionskoeffizient
+- Standardisierte Effekte (aka Effektstärke):
+  - Cohen's d
+  - Korrelation  
+:::
+::: {.column width="30%"}
+![xkcd #2755^[https://xkcd.com/2755/]](images/xkcd2755.png){height=400px style="margin-top:40px"}
+:::
+::::
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Geschichte der Metaanalyse
+
+:::: {.columns}
+::: {.column width="70%"}
+
+- Stammt aus der Psychologischen Forschung
+- Erste Metaanalyse von Hans Jürgen Eysenck (1952): Wirksamkeit der Psychoanalyse und anderer Therapieformen
+- Begriff "Metaanalyse" eingeführt von Gene Glass:
+
+> "**Meta-analysis** refers to the analysis of analyses. I use it to refer to the statistical analysis of a large collection of analysis results from individual studies for the purpose of integrating the findings. It connotes a rigorous alternative to the casual narrative discussions of research studies which typify our attempts to make sense of the rapidly expanding research literature.”
+
+[Glass (1976)^[Glass, G. V. (1976). Primary, Secondary, and Meta-Analysis of Research. Educational Researcher, 5(10), 3. doi:10.2307/1174772]]{.quote-citation}
+:::
+::: {.column width="30%"}
+![Hans Jürgen Eysenck](images/portrait_eysenck.jpg)
+
+<div class="vspace-medium"></div>
+
+![Gene Glass](images/portrait_glass.png){height=300px}
+:::
+::::
+
+

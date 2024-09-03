@@ -1,0 +1,8 @@
+title: "Vorlesung 13: Metaanalyse"
+date: "6.February 2023"
+semester: "Wintersemester 23/24"
+
+format:
+  revealjs:
+    footer: "Vorlesung 13: Metaanalyse"
+    fragments: false

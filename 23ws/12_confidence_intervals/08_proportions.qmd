@@ -1,0 +1,107 @@
+# Konfidenzintervalle für Anteile / relative Häufigkeiten
+
+## Konfidenzintervalle für Anteile / relative Häufigkeiten
+
+**Beispiel:** Wie viele Menschen in Deutschland ernähren sich vegetarisch? Statista liefert einen Anteil von 7,5 % (Grundlage 25.677 Befragte). Das RKI liefert einen Anteil von 4 % (Grundlage 6.933 Befragte).
+
+![](images/anteil_vegetarisch.png){height=490px}
+
+<div class="vspace-small"></div>
+
+**Können wir für die beiden Angaben ein Konfidenzintervall angeben?**
+
+## Konfidenzintervalle für Anteile / relative Häufigkeiten
+
+:::{.nonincremental}
+- **Relative Häufigkeiten** (**Anteile**) setzen eine Teilmenge $k$, die ein bestimmtes Kriterium erfüllt, ins Verhältnis zur Gesamtmenge $n$:
+:::
+
+:::{style="margin-top: -30px; margin-bottom: 10px"}
+$$
+\hat{p} = \frac{k}{n}
+$$
+:::
+
+- Das ^ bringt hier zum Ausdruck, dass wir in der Regel nicht die gesamte Population $N$ untersuchen, sondern eine Stichprobe der Größe $n$ und daher der gemessene Anteil $\hat{p}$ nur eine Schätzung für den wahren Anteil $p$ in der Population darstellt.
+- Im Vegetarier-Beispiel wäre interessant, mit welcher Unsicherheit die Prozentschätzungen behaftet sind &xrarr; Konfidenzintervall!
+- Die Stichprobenverteilung von relativen Häufigkeiten $p$ ist eine **Binomialverteilung**. Ihr Standardfehler ist bekannt:
+
+:::{.fragment}
+$$
+\hat{se}(\hat{p}) = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\quad\scriptsize\text{(Achtung: p steht hier für den Anteil ("proportion") und nicht den p-Wert!)}
+$$
+:::
+
+- Der Standardfehler wäre ein erstes mögliches Maß für die Unsicherheit unserer Schätzung<br>[(zur Erinnerung: der Standardfehler ist das 68%-Konfidenzintervall)]{style="font-size: 23px"}
+
+
+## Konfidenzintervalle für Anteile / relative Häufigkeiten
+
+:::: {.columns}
+::: {.column width="55%"}
+:::{.nonincremental}
+- Ähnlich wie der Korrelationskoeffizient sind Anteile auf einen Bereich eingeschränkt (0 bis 1 bzw. 0 bis 100%) und weisen daher eine **asymmetrische Stichprobenverteilung** auf.
+:::
+:::{style="margin-top: -15px"}
+- Sind die Stichprobengrößen $n$ nicht zu klein und die Anteile nicht zu extrem (zu nah bei 0 oder 1), kann die Binomialverteilung jedoch durch die **Normalverteilung approximiert** werden.
+- In diesem Fall können z-Werte für die Konstruktion des Konfidenzintervalls verwendet werden^[Zu beachten ist allerdings, dass für die Verwendung des z-Wertes nicht die Verteilung von $p$ relevant ist, sondern die Verteilung der Prüfgröße $\frac{\hat{p}}{\hat{se}}$. Hier handelt es sich dann wieder um das Verhältnis einer (näherungsweise) normalverteilten und einer chi-verteilten Größe, also in Summe einer t-verteilten Prüfgröße. Da es sich aber *ohnehin* nur um eine Näherung handelt, sind die Differenzen zwischen Normal- vs. t-Verteilung für die Prüfgröße vernachlässigbar und der Einfachheit halber wird die Normalverteilung verwendet. Siehe auch [Stackexchange](https://stats.stackexchange.com/questions/411699/why-we-don-t-make-use-of-the-t-distribution-for-constructing-a-confidence-interv).] ^[https://www.econometrics.blog/post/the-wilson-confidence-interval-for-a-proportion/]:
+:::
+
+:::{.fragment}
+$$
+CI(\hat{p}) = \hat{p}\pm z_{(1-\frac{\alpha}{2})}\cdot\hat{se}(\hat{p})
+$$
+:::
+
+:::
+::: {.column width="45%"}
+![Stichprobenverteilung für Anteile (Binomialverteilung) für Stichproben der Größe $n=10$ und $n=100$.](images/binom_dist.png)
+
+:::
+::::
+
+:::{style="margin-top: -15px"}
+- Im Computerzeitalter sollten allerdings für die Konfidenzintervalle von Anteilen präzisere Schätzungen wie das **Wilson-Intervall**^[https://de.wikipedia.org/wiki/Konfidenzintervall_f%C3%BCr_die_Erfolgswahrscheinlichkeit_der_Binomialverteilung#Wilson-Intervall] verwendet werden.
+:::
+
+::: {.notabene .fragment}
+:::: {.columns}
+::: {.column width="7%"}
+::: {style="margin-top: 10px"}
+![](images/notabene2.png){height="65px"}
+:::
+:::
+::: {.column width="93%"}
+**Beachte:** bei präziseren Schätzmethoden wie dem Wilson-Intervall ist der wahrscheinlichste Populationswert (und damit der Ankerpunkt für das Konfidenzintervall) nicht mehr $\hat{p}$ sondern ein etwas kleinerer (bei $\hat{p}<0.5$) bzw. größerer (bei $\hat{p}>0.5$) Wert. Zudem handelt es sich um asymmetrischer Konfidenzintervalle.
+:::
+::::
+:::
+
+## Konfidenzintervalle für Anteile / relative Häufigkeiten
+
+:::{.nonincremental}
+- In unserem Vegetarierbeispiel sind die Fallzahlen sehr groß ($n=6933$ und $n=25.677$), so dass eine Näherung mit der Normalverteilung angemessen ist. Wir können diese daher zur Einschätzung der (Un)Sicherheit der Prozentangaben nutzen.
+:::
+
+:::{style="margin-top: -15px"}
+- Für die Standardfehler erhalten wir:
+:::
+
+:::{.fragment}
+$$
+\hat{se}_\text{RKI} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} = \sqrt{\frac{0{,}04(1-0{,}04)}{6933}} = 0{,}0024\\ 
+\hat{se}_\text{Statista} = \sqrt{\frac{0{,}075(1-0{,}075)}{25677}} = 0{,}0016 
+$$
+:::
+
+- Den kritischen z-Wert für ein 95%-Intervall kennen wir mittlerweile aus dem FF: 1,96
+- Damit ergibt sich für die Konfidenzintervalle:
+
+:::{.fragment}
+$$
+CI_\text{RKI} = \hat{p}\pm z_{(1-\frac{\alpha}{2})}\cdot\hat{se}(\hat{p})  = 0{,}04\pm 1{,}96\cdot0{,}0024 = [0{,}0353; 0{,}0447] \\
+CI_\text{Statista} = 0{,}075\pm 1{,}96\cdot0{,}0016 = [0{,}0719; 0{,}0781]
+$$
+:::
+
+- Da das Konfidenzintervall in beiden Fällen weniger als 1% umfasst (prüfe nach!), sind die Schätzung tatsächlich recht präzise. Zugleich widersprechen sich beide Schätzungen (warum?).

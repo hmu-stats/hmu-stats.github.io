@@ -1,0 +1,61 @@
+
+
+# Konfidenzintervalle in der Praxis
+
+## Anwendungsfälle für Konfidenzintervalle
+
+In der Praxis kommen Konfidenzintervallen zwei (subtil) unterschiedliche Funktionen zu.
+
+:::{.fragment}
+**Anwendung als Signifikanzmaß**
+
+Bei Effekten wie z.B. Mittelwert*unterschieden* ist Hauptinteresse idR, ob der Effekt von Null verschieden ist. In diesem Fall ist häufig die relevante Frage an das Konfidenzintervall, ob der Wert Null im Intervall enthalten ist &mdash; in diesem Fall wäre der Effekt nämlich signifikant auf Basis des $\alpha$-Wertes des verwendeten Konfidenzniveaus.
+
+"Der Gruppenunterschied betrug $\Delta\bar{x}=0{,}2cm; CI_{95}=[-0{,}1cm; 0{,}4cm]$" &rarr; impliziert einen nicht-signifikanten Effekt auf einem Signifikanzniveau $\alpha=0{,}05$.
+
+"Der Gruppenunterschied betrug $\Delta\bar{x}=0{,}2cm; CI_{95}=[0{,}1cm; 0{,}3cm]$" &rarr; impliziert einen signifikanten Effekt auf einem Signifikanzniveau $\alpha=0{,}05$.
+:::
+
+:::{.fragment}
+**Anwendung als Streuungsmaß**
+
+Insbesondere im Fall von reinen Rohmaßen wie einem Mittelwert $\bar{x}$ oder Modellparametern ist häufig nicht interessant, ob diese von Null verschieden sind; stattdessen interessiert uns die Genaugkeit unserer Parameterschätzung ("Wie sehr kann ich meinem Mittelwert $\bar{x}$ vertrauen? Wie sicher ist die Schätzung meines Modellparameters?").
+:::
+
+:::{.fragment}
+**In beiden Anwendungsfällen ist jedoch die Berechnung von Konfidenzintervallen exakt gleich &mdash; der Unterschied liegt lediglich im Auge des Betrachters bzw. im Ziel der Analyse.**
+:::
+
+## Populationsstreuung nicht bekannt
+
+:::{.nonincremental}
+- Die bisherige Verwendung des z-Wertes beim Konfidenzintervall basiert wieder implizit auf der Voraussetzung, dass die **Populationsstreuung $\sigma$ und damit $se=\sigma/\sqrt{n}$ bekannt** ist.
+- Wie bereits festgestellt, ist dies **in der Praxis nahezu nie gegeben**.
+:::
+
+:::{style="margin-top: -15px"}
+- Die Abhilfe ist hier analog zur Signifikanztestung. Wir ersetzen den kritischen z-Wert $z_{(1-\frac{\alpha}{2})}$ durch den analogen kritischen t-Wert $t_{(1-\frac{\alpha}{2},\;\text{df})}$ [(hängt zusätzlich von den Freiheitsgraden $\text{df}$ ab)]{style="font-size:21px"}:
+:::
+
+
+::: {.colorbox .fragment style="margin-top: 5px"}
+$$
+\text{Konfidenzintervall:}\qquad CI=\hat{\theta}\pm t_{(1-\frac{\alpha}{2},\;\text{df})}\cdot \hat{se}
+$$
+
+[(Beachte auch den Übergang von $se$ zu $\hat{se}$, da wir nun die Streuung auf Basis der Stichprobe schätzen)]{style="font-size: 22px; margin-left: 50px"}
+:::
+
+## Populationsstreuung nicht bekannt
+
+<div class="vspace-xlarge"></div>
+
+:::{.nonincremental}
+- Ob für die Berechnung eines Konfidenzintervalls der kritischer z-Wert $z_{(1-\frac{\alpha}{2})}$ oder der kritische t-Wert $t_{(1-\frac{\alpha}{2},\;\text{df})}$ verwendet wird, ist in der statistischen Praxis häufig nicht ganz konsistent.
+    - Bei Konfidenzintervallen von Mittelwerten $\bar{x}$ und Mittelwertdifferenzen $\Delta\bar{x}$ wird $t_{(1-\frac{\alpha}{2},\;\text{df})}$ verwendet.
+    - Bei Konfidenzintervallen von Korrelationen $r$ hat es sich eingebürgert, $z_{(1-\frac{\alpha}{2})}$ zu verwenden (in Kombination mit der Fisher-z-Transformation).
+    - Bei Konfidenzintervallen von Regressionskoeffizienten $b_i$ wird $t_{(1-\frac{\alpha}{2},\;\text{df})}$ verwendet.
+    - Bei Konfidenzintervallen von Proportionen/Anteilen $\hat{p}$ wird $z_{(1-\frac{\alpha}{2})}$ verwendet &mdash; dies hängt hier aber damit zusammen, dass die t-Verteilung für Proportionen/Anteile nicht valide ist.
+:::
+
+**Im Weiteren halten wir uns an diese Konventionen der statistischen Praxis.**

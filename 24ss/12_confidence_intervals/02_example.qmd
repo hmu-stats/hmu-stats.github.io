@@ -1,0 +1,162 @@
+# Konfidenzintervall: ein erstes Beispiel
+
+## Beispiel: Berechnung des Konfidenzintervalls
+
+
+<div class="vspace-medium"></div>
+
+:::: {.columns}
+::: {.column width="80%"}
+
+Als Beispiel nehmen wir eine **Studie** an, in der Sie die **durchschnittliche Nasenlänge $\bar{x}$ von Psychologiestudierenden** untersuchen. (Als Referenzwert ist Ihnen der Bundesnasenlängendurchschnitt von $\mu_0=5cm$ bekannt &mdash; dieser Wert ist aber zunächst nicht relevant)
+
+:::{.fragment}
+Sie erheben eine Stichprobe mit $n=10$ Psychologiestudierenden und berechnen das Konfidenzintervall Ihrer Mittelwertsschätzung $\bar{x}$ mit einem Konfidenzniveau von $1-\alpha$.
+:::
+
+:::
+::: {.column width="20%"}
+
+![](images/psych.png)
+
+:::
+::::
+
+:::{.fragment}
+Der Effekt $\hat{\theta}$ ist in diesem Fall ein Mittelwert $\bar{x}$. Da bei einer Einzelmessung außerdem $\hat{se}=\frac{\hat{\sigma}}{\sqrt{n}}$ gilt, lautet das Konfidenzintervall in diesem Beispiel:
+
+<div class="vspace-small"></div>
+
+$$
+CI = \hat{\theta}\pm t_{(1-\frac{\alpha}{2},\;\text{df})}\cdot \hat{se} = \bar{x}\pm t_{(1-\frac{\alpha}{2},\;\text{df})}\cdot\frac{\hat{\sigma}}{\sqrt{n}}
+$$
+:::
+
+<div class="vspace-medium"></div>
+
+:::{.fragment}
+Außerdem gilt bei Einzelmessungen $\text{df}=n-1$, also hier $\text{df}=10-1=9$.
+:::
+
+
+## Beispiel: Berechnung des Konfidenzintervalls
+
+:::: {.columns}
+::: {.column width="70%"}
+
+In Ihrer Stichprobe erhalten Sie für die Nasenlängen einen Mittelwert $\bar{x}=4.5cm$ und eine Streuung $\hat{\sigma}=0.5$. Das Konfidenzniveau $1-\alpha$ solle 95% sein (also $\alpha=0.05$).
+
+:::{.fragment}
+In einem ersten Schritt muss der kritische t-Wert $t_{(1-\frac{\alpha}{2},\;\text{df})}$ bestimmt werden. Wir erhalten ihn beispielsweise aus der t-Tabelle:
+
+$$
+t_{(1-\frac{\alpha}{2},\;\text{df})} = t_{(0.975,\;9)}=2.262
+$$
+
+:::
+
+:::{.fragment}
+
+Wir setzen alle Werte ein, um das Konfidenzintervall für diese Mittelwertschätzung zu erhalten:
+
+$$
+CI_{95} = 4.5\pm 2.262\cdot\frac{0.5}{\sqrt{10}} \approx 4.5\pm 0.36
+$$
+
+$$
+\underset{\text{darstellung}}{\overset{\text{Intervall-}}{\longrightarrow}}\quad CI_{95} = [4.14; 4.86]
+$$
+
+:::
+
+
+
+:::
+::: {.column width="30%"}
+
+![](images/psych.png){height=200px style="margin-top: -35px !important"}
+![Ausschnitt aus der t-Tabelle](images/ci_example_ttable.png){style="margin-top: 20px !important"}
+
+:::
+::::
+
+
+:::{.fragment}
+&rArr; **Ergebnis:** Der Mittelwert $\bar{x}=4.5cm$ ist mit einem 95%-Konfidenzintervall $[4.14cm; 4.86cm]$ verbunden.
+:::
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Beispiel: Bericht des Konfidenzintervalls
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+:::{.nonincremental}
+- Dieses Konfidenzintervall könnten wir nun zum Beispiel in einem Balkendiagramm als **Fehlerbalken** abtragen.
+:::
+
+:::{style="margin-top: -10px"}
+- Im Gegensatz zu Standardfehler/abweichung ist das Konfidenzintervall (wie der Name sagt) bereits ein Intervall, d.h. es kann ohne ±-Rechnung direkt abgetragen werden.
+  - Im Bild rechts sehen wir, dass die obere Kante des Fehlerbalkens der oberen Grenze des Konfidenzintervalls entspricht und die untere Kante der unteren Grenze.
+  <!--  -->
+:::
+:::
+
+::: {.column width="40%"}
+
+![](images/ci_psych_v2.png)
+
+:::
+
+::::
+
+- Im Fließtext wird es zum Beispiel so angegeben:
+
+:::{.fragment style="font-size: 26px"}
+> Die Messung der Nasenlängen ergab einen Mittelwert von $4.5cm$ ($CI_{95}=[4.14cm; 4.86cm]$).
+:::
+
+- Oder ausführlicher (wenn Sie auf der Suche nach Worten für Ihre Bachelorarbeit sind):
+
+:::{.fragment style="font-size: 26px"}
+> Die Messung der Nasenlängen ergab einen Mittelwert von $4.5cm$. Das 95%-Konfidenzintervall der Mittelwertschätzung zeigte eine untere Grenze von $4.14cm$ und eine obere Grenze von $4.86cm$ an.
+:::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Beispiel: Signifikanztestung
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+
+Mithilfe des Konfidenzintervalls können wir implizit eine weitere Frage beantworten: **ist die mittlere Nasenlänge von Psychologiestudierenden signifikant verschieden vom Bundesnasenlängendurchschnitt $\mu_0=5cm$**?
+
+**Antwort:** **ja**, da der Referenzwert $\mu_0=5cm$ außerhalb des Konfidenzintervalls $[4.14cm; 4.86cm]$ liegt.
+:::
+
+::: {.column width="40%"}
+
+![](images/ci_psych_sig.png)
+
+:::
+
+::::
+
+:::{.fragment}
+Ein paar Aspekte gilt es dabei zu beachten:
+:::
+
+- Eine Aussage zur Signifikanz ist nur möglich, wenn wir für den Signifikanztest das dem Konfidenzniveau korrespondierende Signifikanzniveau anlegen. Im Beispiel ist das Konfidenzniveau $1-\alpha=0.95$, daher ist das korrespondierende Signifikanzniveau $\alpha=0.05$.
+- Konfidenzintervalle basieren immer auf einem zweiseitigen Test, entsprechend gelten Aussagen zur Signifikanz auch nur für den zweiseitigen Test und damit für die ungerichtete Hypothese "Stichprobeneffekt $\hat{\theta}$ *verschieden* vom Referenzwert".
+- Anhand des Konfidenzintervalls kann unmittelbar nur eine Aussage über *signifikant* / *nicht signifikant* getroffen werden, jedoch nicht über den genauen p-Wert.
