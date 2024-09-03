@@ -8,11 +8,11 @@ async function on_load() {
     change_semester_onload();
 }
 
-function switch_type(typ) {
+function switch_type(typ, semester) {
     if (typ === 'vorlesungen') {
         document.querySelector('.vorlesungen').style.display='table';
         document.querySelector('.seminare').style.display='none';
-        document.querySelector('.button_vorlesungen').style.backgroundColor='#f8fa75';
+        document.querySelector('.button_vorlesungen').style.backgroundColor=semester.includes('ws') ? '#d4f2ff' : '#ffeaa0';
         document.querySelector('.button_seminare').style.backgroundColor='#ccc';
         document.querySelector('.button_vorlesungen').style.color='#000';
         document.querySelector('.button_seminare').style.color='#666';
@@ -20,7 +20,7 @@ function switch_type(typ) {
         document.querySelector('.vorlesungen').style.display='none';
         document.querySelector('.seminare').style.display='table';
         document.querySelector('.button_vorlesungen').style.backgroundColor='#ccc';
-        document.querySelector('.button_seminare').style.backgroundColor='#f8fa75';
+        document.querySelector('.button_seminare').style.backgroundColor=semester.includes('ws') ? '#d4f2ff' : '#ffeaa0';
         document.querySelector('.button_vorlesungen').style.color='#666';
         document.querySelector('.button_seminare').style.color='#000';
     }
@@ -46,8 +46,8 @@ function change_semester(semester, semester_str) {
     for (let i = 0; i < lectures.lectures[semester].length; i++) {
         lecture_list += `
             <tr>
-                <td><a href="${semester}/${lectures.lectures[semester][i]}/_slides/index.html" target="_blank"><b>${lectures.titles[semester][i].split(':')[0]}:</b>${lectures.titles[semester][i].split(':')[1]}</a></td>
-                <td><a href="${semester}/${lectures.lectures[semester][i]}/_slides/Vorlesung${lectures.lectures[semester][i]}.pdf" target="_blank" class="nohover"><img src="images/pdf_black_small.png" class="img-pdf"></a></td>
+                <td><a href="${semester}/${lectures.lectures[semester][i]}/_slides/index.html" target="_blank" class="lecture_link"><b>${lectures.titles[semester][i].split(':')[0]}:</b>${lectures.titles[semester][i].split(':')[1]}</a></td>
+                <td><a href="${semester}/${lectures.lectures[semester][i]}/_slides/Vorlesung${lectures.lectures[semester][i]}.pdf" target="_blank" class="nohover"><img src="images/pdf_black_small_${semester.includes('ws') ? 'ws': 'ss'}.png" class="img-pdf"></a></td>
             </tr>
         `;
     }
@@ -70,8 +70,8 @@ function change_semester(semester, semester_str) {
         for (let i = 0; i < lectures.seminars[semester].length; i++) {
             seminar_list += `
                 <tr>
-                    <td><a href="${semester}/${lectures.seminars[semester][i]}/_slides/index.html" target="_blank"><b>${lectures.titles_seminars[semester][i].split(':')[0]}:</b>${lectures.titles_seminars[semester][i].split(':')[1]}</a></td>
-                    <td><a href="${semester}/${lectures.seminars[semester][i]}/_slides/${lectures.seminars[semester][i].replace('seminar_', 'Seminar')}.pdf" target="_blank" class="nohover"><img src="images/pdf_black_small.png" class="img-pdf"></a></td>
+                    <td><a href="${semester}/${lectures.seminars[semester][i]}/_slides/index.html" target="_blank" class="lecture_link"><b>${lectures.titles_seminars[semester][i].split(':')[0]}:</b>${lectures.titles_seminars[semester][i].split(':')[1]}</a></td>
+                    <td><a href="${semester}/${lectures.seminars[semester][i]}/_slides/${lectures.seminars[semester][i].replace('seminar_', 'Seminar')}.pdf" target="_blank" class="nohover"><img src="images/pdf_black_small_${semester.includes('ws') ? 'ws': 'ss'}.png" class="img-pdf"></a></td>
                 </tr>
             `;
         }
@@ -82,13 +82,32 @@ function change_semester(semester, semester_str) {
         `;
         let switch_menu = `
             <div class="switch_menu">
-                <button onClick="switch_type('vorlesungen')" class="button_switch button_vorlesungen">Vorlesungen</button>
-                <button onClick="switch_type('seminare')" class="button_switch button_seminare">Seminare</button>
+                <button onClick="switch_type('vorlesungen', '${semester}')" class="button_switch button_vorlesungen">Vorlesungen</button>
+                <button onClick="switch_type('seminare', '${semester}')" class="button_switch button_seminare">Seminare</button>
             </div>
         `;
         document.getElementById('content').innerHTML = `${switch_menu}${content_lectures}${content_seminars}`;
+        switch_type('vorlesungen', semester)
     } else {
         document.getElementById('content').innerHTML = content_lectures;
+    }
+
+    document.getElementById('statistik').style.color = semester.includes('ws') ? '#d4f2ff' : '#ffeaa0';
+    classes_lecture = document.querySelectorAll('.lecture_link');
+    for (let i = 0; i < classes_lecture.length; i++) {
+        classes_lecture[i].classList.remove(semester.includes('ws') ? 'sslink' : 'wslink');
+        classes_lecture[i].classList.add(semester.includes('ws') ? 'wslink' : 'sslink');
+    }
+    if (lectures.seminars[semester].length > 0) {
+        document.querySelector('.button_vorlesungen').classList.remove(semester.includes('ws') ? 'button_switch_ss' : 'button_switch_ws');
+        document.querySelector('.button_vorlesungen').classList.add(semester.includes('ws') ? 'button_switch_ws' : 'button_switch_ss');
+        document.querySelector('.button_seminare').classList.remove(semester.includes('ws') ? 'button_switch_ss' : 'button_switch_ws');
+        document.querySelector('.button_seminare').classList.add(semester.includes('ws') ? 'button_switch_ws' : 'button_switch_ss');
+        classes_seminars = document.querySelectorAll('.lecture_link');
+        for (let i = 0; i < classes_seminars.length; i++) {
+            classes_seminars[i].classList.remove(semester.includes('ws') ? 'sslink' : 'wslink');
+            classes_seminars[i].classList.add(semester.includes('ws') ? 'wslink' : 'sslink');
+        }
     }
 
 }
@@ -106,6 +125,9 @@ function change_semester_onload() {
     }
     change_semester(semester);
     document.querySelector('.dropdown_simple').value = semester;
+    if (lectures.seminars[semester].length > 0) {
+        document.querySelector('.button_vorlesungen').style.backgroundColor = semester.includes('ws') ? '#d4f2ff' : '#ffeaa0';
+    }
 }
 
 
