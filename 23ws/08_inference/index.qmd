@@ -1,3 +1,0 @@
-{{< include 01_law_of_large_numbers.qmd >}}
-{{< include 02_sampling_distribution.qmd >}}
-{{< include 03_sem.qmd >}}

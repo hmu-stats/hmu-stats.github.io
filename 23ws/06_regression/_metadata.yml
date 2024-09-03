@@ -1,8 +1,0 @@
-title: "Vorlesung 06: Regression"
-date: "21.November 2023"
-semester: "Wintersemester 23/24"
-
-format:
-  revealjs:
-    footer: "Vorlesung 06: Regression"
-    fragments: false

@@ -1,5 +1,0 @@
-{{< include 01_tdist.qmd >}}
-{{< include 02_ttest.qmd >}}
-{{< include 03_ttest_diff.qmd >}}
-{{< include 04_ttest_corr.qmd >}}
-{{< include 05_ttest_regression.qmd >}}

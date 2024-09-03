@@ -1,3 +1,0 @@
-{{< include 01_presentation.qmd >}}
-{{< include 02_presentation_bad.qmd >}}
-{{< include 03_distributions.qmd >}}

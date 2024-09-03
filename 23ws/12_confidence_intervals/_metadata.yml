@@ -1,8 +1,0 @@
-title: "Vorlesung 12: Konfidenzintervalle"
-date: "23.January 2024"
-semester: "Wintersemester 23/24"
-
-format:
-  revealjs:
-    footer: "Vorlesung 12: Konfidenzintervalle"
-    fragments: false
