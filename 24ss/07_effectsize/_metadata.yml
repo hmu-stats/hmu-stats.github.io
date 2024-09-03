@@ -1,8 +1,0 @@
-title: "Vorlesung 07: Effektstärke"
-date: "28.November 2023"
-semester: "{{< var semester >}}"
-
-format:
-  revealjs:
-    footer: "Vorlesung 07: Effektstärke"
-    fragments: false

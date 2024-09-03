@@ -1,5 +1,0 @@
-{{< include 01_fisher.qmd >}}
-{{< include 02_ztest.qmd >}}
-{{< include 03_hypothesis_testing.qmd >}}
-{{< include 04_summary_paradoxia.qmd >}}
-{{< include 05_bonus.qmd >}}
