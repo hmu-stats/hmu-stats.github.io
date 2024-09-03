@@ -1,5 +1,0 @@
-{{< include 01_intro.qmd >}}
-{{< include 02_procedure.qmd >}}
-{{< include 03_examples.qmd >}}
-{{< include 04_issues.qmd >}}
-{{< include 05_bonus.qmd >}}
