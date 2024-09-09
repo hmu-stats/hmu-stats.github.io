@@ -1,0 +1,226 @@
+h1 {
+    color: #f8fa75;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+body {
+    background-color: black;
+    font-family: Calibri;
+    color: #f8fa75;
+    padding-bottom: 200px;
+}
+
+.middle {
+    padding-top: 0.5vh;
+    margin: auto;
+    width: 900px;
+/*     border: 1px solid red; */
+    text-align: center;
+}
+
+
+img.paradoxia {
+    width: 150px;
+}
+
+.paradoxia-table {
+    margin-left: auto;
+    margin-right: auto;
+    color: #f8fa75;
+}
+
+.lectures {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.lectures td {
+    font-size: 1.5rem;
+    vertical-align: middle;
+/*     border: 1px solid white; */
+}
+
+img {
+    margin: 0;
+}
+
+img.img-pdf {
+    width: 25px;
+}
+
+img.img-anim {
+    width: 20px;
+}
+
+a {
+    padding: 7px 10px 5px 10px;
+}
+
+a.wslink:link {
+    text-decoration: none;
+    color: #d4f2ff;
+}
+
+
+a.wslink:visited {
+    text-decoration: none;
+    color: #d4f2ff;
+}
+
+a.wslink:active {
+    text-decoration: none;
+    color: black;
+}
+
+a.wslink:not(.nohover):hover {
+    background-color: #d4f2ff;
+    text-decoration: none;
+    color: black;
+}
+
+a.sslink:link {
+    text-decoration: none;
+    color: #ffeaa0;
+}
+
+
+a.sslink:visited {
+    text-decoration: none;
+    color: #ffeaa0;
+}
+
+a.sslink:active {
+    text-decoration: none;
+    color: black;
+}
+
+a.sslink:not(.nohover):hover {
+    background-color: #ffeaa0;
+    text-decoration: none;
+    color: black;
+}
+
+
+a.formelsammlung:not(.nohover):hover {
+    background-color: #ccc;
+    color: black !important;
+}
+
+a.uebung:not(.nohover):hover {
+    background-color: #caf9bb;
+    color: black !important;
+    font-weight: bold;
+}
+
+#statistik {
+    font-size: 2.0rem;
+    user-select: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.dropdown_simple {
+    font-size: 2.0rem;
+    background-color: #bbb;
+    padding: 3px 12px 3px 6px;
+}
+
+.dropdown_simple option {
+    font-size: 2.0rem;
+}
+
+
+#semester {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 7px;
+}
+
+.switch_menu {
+    margin-top: 30px;
+    margin-bottom: -35px;
+    user-select: none;
+}
+
+button.button_switch {
+    border: 2px solid #666;;
+    border-radius: 5px;
+    padding: 3px 10px 3px 10px;
+    font-size: 20px;
+    user-select: none;
+    cursor: pointer;
+}
+
+button.button_switch_ws:hover {
+    background-color: #d4f2ff !important;
+    color: #000 !important;
+}
+
+button.button_switch_ss:hover {
+    background-color: #ffeaa0 !important;
+    color: #000 !important;
+}
+
+button.button_vorlesungen {
+    margin-right: 10px;
+    background-color: #f8fa75;
+    color: #000;
+}
+
+button.button_seminare {
+    margin-left: 10px;
+    background-color: #ccc;
+    color: #000;
+}
+
+@media only screen and (max-width: 600px), only screen and (max-device-width: 600px) {
+
+    h1 {
+        font-size: 3.25rem;
+    }
+
+    .dropdown_simple {
+        font-size: 2.5rem;
+    }
+
+    .dropdown_simple option {
+        font-size: 2.5rem;
+    }
+
+    #semester {
+        font-size: 1.8rem;
+    }
+
+    .lectures td {
+        font-size: 2.1rem;
+    }
+
+    .lectures {
+        border-spacing: 0 0.5rem ;
+    }
+
+    img.img-anim {
+        width: 40px;
+    }
+
+    img.img-pdf {
+        width: 50px;
+    }
+
+    img.paradoxia {
+        width: 300px;
+    }
+
+    button.button_switch {
+        font-size: 40px;
+    }
+
+}
