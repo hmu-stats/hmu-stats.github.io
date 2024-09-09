@@ -1,4 +1,0 @@
-{{< include 01_paradoxia.qmd >}}
-{{< include 02_formalia.qmd >}}
-{{< include 03_intro.qmd >}}
-{{< include 04_hypotheses.qmd >}}
