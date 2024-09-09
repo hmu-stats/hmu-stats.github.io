@@ -1,0 +1,53 @@
+# Aber zunächst: Formalitäten
+
+## Anwesenheits- und Fehlzeitregelung
+
+![Bildnachweis^[Allgemeine Universitätsordnung der HMU]](images/anwesenheit.png){width=75%}
+
+
+## Nützliche Links
+
+<!---  Table --->
+||||
+|-|-|-|
+| Statistik für Psychologie | https://www.statistikpsychologie.de/blog/ | Einige nützliche Blogeinträge zu statistischen Themen der Psychologie | 
+| DATAtab | https://datatab.de/tutorial/ | Online-Kalkulator mit einigen guten Tutorials |
+| StatistikGuru | https://statistikguru.de/ | Fokus auf SPSS und R, aber viele Tutorials in allgemeinem Stil geschrieben |
+| Statistics Supreme with JASP | https://www.youtube.com/@StatisticsSupreme | YouTube-Kanal zu JASP des Kollegen Thomas Langkamp (MSH) |
+| Statistik 1 Vorlesungen auf YouTube | https://www.youtube.com/playlist?list=PLu-U4gWcFfPxmKviyopGSmOY2EaKLVYxF | Prof. Jonas Obleser (Uni Lübeck) |
+
+: {tbl-colwidths="[20, 30, 40]"}
+
+## Vorlesungsfolien
+
+<div class="vspace-medium"></div>
+
+<!---  Table --->
+|||||
+|-|-|-|-|
+| **Trainex** | ![](images/trainex.png) | Format: pdf | [trainex25.de/hmu-trainex](https://www.trainex25.de/hmu-trainex) |
+| **Webseite** | ![](images/m-guggenmos_github.png) | Format: html & pdf | [m-guggenmos.github.io](https://m-guggenmos.github.io) oder [cutt.ly/risch](https://cutt.ly/risch) |
+
+: {tbl-colwidths="[10, 35, 20, 35]"}
+
+## Klausur
+
+- In der vorlesungsfreien Zeit nach Semesterende findet eine **schriftliche Klausur** zu Statistik 1 statt.
+- **Klausurrelevant** sind dabei alle **Inhalte der Vorlesungsfolien**, falls nicht extra gekennzeichnet.
+- **Klausurrelevant** sind auch die **Übungen**, die Sie im **Seminar** durchführen.
+
+
+![](images/klausur2.png){width=450px}
+
+## Literatur
+
+
+<!---  Table --->
+||||
+|-|-|-|
+| ![](images/cover_bortz.jpg){height=140px} | *Jürgen Bortz & Christof Schuster. Statistik für Human- und Sozialwissenschaftler. Springer, 7. Auflage (2010).* | Standardwerk. Umfassend, gute Erklärungen, viele Übungen. |
+| ![](images/cover_schaefer.png){height=140px} | *Thomas Schäfer. Methodenlehre und Statistik. Springer, 1. Auflage (2016).*  | Nah an der Vorlesung, Inhalte auf das Wesentliche heruntergebrochen. |
+| ![](images/eid_gollwitzer_schmitt.jpg){height=140px} | *Michael Eid, Mario Gollwitzer & Manfred Schmitt. Statistik und Forschungsmethoden. Beltz, 5. Auflage (2017).*  | Umfassend, vergleichsweise mathematisch, eher für Fortgeschrittene und weitergehend Interessierte. Enthält nützliche Übungen. |
+| ![](images/cover_larson_farber.jpg){height=140px} | *Ron Larson & Betsy Farber. Elementary Statistics: Picturing the World. Pearson, 7. Auflage (2019).*  | Unterhaltsamer intuitiver Stil, kurz & bündig, viele Übungen, auf Englisch! |
+
+: {tbl-colwidths="[15, 40, 45]"}

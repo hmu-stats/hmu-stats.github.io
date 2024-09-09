@@ -1,0 +1,8 @@
+title: "Vorlesung 08: Inferenzstatistik"
+date: "5.December 2023"
+semester: "Wintersemester 23/24"
+
+format:
+  revealjs:
+    footer: "Vorlesung 08: Inferenzstatistik"
+    fragments: false

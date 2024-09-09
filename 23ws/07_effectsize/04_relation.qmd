@@ -1,0 +1,59 @@
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Umrechnung von Cohen's $d$ und Korrelationskoeffizient $r$]{color="darkred"}
+
+![](images/kein_klausurstoff.png){.absolute bottom=0 right=0 height=110px}
+
+Fassen Metaanalysen sowohl Studien zusammen, die Effekte als Korrelation berichten (Effektmaß $r$), als auch Studien, die Effekte als Mittelwertsunterschiede zwischen Bedingungen/Gruppen berichten (Effektmaß $d$), entsteht die Notwendigkeit $r$ und $d$ ineinander umzurechnen.
+
+**Fall 1: eine der Variablen in der Korrelation ist eine natürliche binäre Variable (z.B. männl./weibl.)**
+
+In diesem Fall gilt:
+
+$$
+d=\frac{2r}{\sqrt{1-r^2}} \qquad\qquad \hat{se}(d) = \frac{2}{\sqrt{(n-1)(1-r^2)}}
+$$
+
+wobei $\hat{se}(d)$ der Standardfehler der Effektstärke $d$ ist, der zusätzlich angegeben werden sollte.
+
+Umgekehrt gilt:
+
+$$
+r = \frac{d}{\sqrt{d^2+4}}
+$$
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Umrechnung von Cohen's $d$ und Korrelationskoeffizient $r$]{color="darkred"}
+
+![](images/kein_klausurstoff.png){.absolute bottom=0 right=0 height=110px}
+
+**Fall 2: beide Variablen in der Korrelation sind kontinuierlich, oder eine Variable ist binär, aber enstand durch Dichotomisierung einer kontinuierlichen Variable (advanced!)**
+
+In diesem Fall muss eine Variable als unabhängige Variable $X$ definiert werden. Falls eine der Variablen durch Dichotomisierung binär ist, ist diese Variable in jedem Fall die unabhängige Variable.
+
+Es gilt:
+
+:::{style="margin-top: -35px"}
+$$
+d=\frac{kr}{\hat{\sigma}_X\sqrt{1-r^2}} \qquad\qquad \hat{se}(d) = |d|\sqrt{\frac{1}{r^2(n-3)} + \frac{1}{2(n-1)}}
+$$
+:::
+
+wobei $\hat{se}(d)$ der Standardfehler der Effektstärke $d$ ist, der zusätzlich angegeben werden sollte.
+
+**Interpretation:** $d$ entspricht der durchschnittlichen Zunahme der standarsierten $Y$-Variable mit jeder Zunahme von $X$ um $k$ (Rohwert)Einheiten &mdash; $k$ muss vom Forscher gewählt werden. 
+
+Hier wird klar, dass die Formel in Fall 1 implizit $k=2\hat{\sigma}_X$ annnimmt. Wählt man dieses $k$ auch in Fall 2, ist die Berechnung von $d$ identisch zu Fall 1 &mdash; der Standardfehler unterscheidet sich allerdings weiterhin! Quelle: ^[Mathur MB, VanderWeele TJ (2020) A Simple, Interpretable Conversion from Pearson’s Correlation to Cohen’s d for Continuous Exposures. Epidemiology 31:e16–e18.]
+
+Umgekehrt gilt:
+
+:::{style="margin-top: -40px"}
+$$
+r = \frac{d \hat{\sigma}_X}{\sqrt{d^2\hat{\sigma}_X^2+k^2}}
+$$
+:::

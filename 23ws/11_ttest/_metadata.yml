@@ -1,0 +1,8 @@
+title: "Vorlesung 11: t-Test"
+date: "16.January 2024"
+semester: "Wintersemester 23/24"
+
+format:
+  revealjs:
+    footer: "Vorlesung 11: t-Test"
+    fragments: false

@@ -1,0 +1,174 @@
+## Die Varianz von Mittelwertunterschieden
+
+Bevor wir uns der Standardisierung von Effektstärken bei Mittelwertsunterschieden widmen, lohnt es sich einen Blick darauf zu werfen, wie Varianzen verschiedener Bedingungen in einer Stichprobe (abhängige Messungen) oder verschiedener Stichproben (unabhängige Messungen) miteinander kombiniert werden können.
+
+:::{.fragment}
+***Abhängige* Messungen in *einer* Stichprobe**
+:::
+
+:::{.fragment}
+Beispiel: Sie messen die Merkfähigkeit einer Stichprobe vor (Bedingung A) und nach (Bedingung B) einer Schlafphase.
+:::
+
+- In diesem Fall können wir die zwei Messwerte $x_{A,i}$ und $x_{B,i}$ auf Versuchspersonenebene direkt voneinander abziehen: $\;\;\Delta x_i = x_{A,i}-x_{B,i}$
+
+:::{.fragment}
+[Die Frage lautet hier:]{.underline} wie groß ist die Variabilität von $\Delta x_i$?
+:::
+
+:::{.fragment}
+Wir können diese Variabilität mit der gewohnten Formel berechnen, nur dass wir statt $x_i$  die $\Delta x_i$ einsetzen:
+
+$$
+\hat{\sigma}^2_\Delta = \frac{1}{n-1}\sum \left(\Delta x_i - \Delta \bar{x}\right)^2 \quad bzw.\quad \hat{\sigma}_{\Delta} = \sqrt{\frac{1}{n-1}\sum \left(\Delta x_i - \Delta \bar{x}\right)^2}
+$$
+:::
+
+::: {.notabene .fragment}
+:::: {.columns}
+::: {.column width="7%"}
+::: {style="margin-top: 10px"}
+![](images/notabene2.png){height="65px"}
+:::
+:::
+::: {.column width="93%"}
+Hinweis: Der Faktor in der Varianz lautet hier $\frac{1}{n-1}$ und nicht $\frac{1}{n}$. Dies ist die **Besselkorrektur** (s. Vorlesung 08), da wir hier die **Populationsvarianz** auf Basis der Stichprobe schätzen.
+:::
+::::
+:::
+
+## Die Varianz von Mittelwertunterschieden
+
+Mit einigen mathematischen Tricks lässt sich zeigen, dass die Formel für die Varianz der Differenzwerte auch wie folgt dargestellt werden kann:
+
+$$
+\hat{\sigma}^2_\Delta = \hat{\sigma}^2_A + \hat{\sigma}^2_B - 2\,\hat{Cov}(X_A,X_B) \quad bzw.
+$$
+
+$$
+\hat{\sigma}_\Delta = \sqrt{\hat{\sigma}^2_A + \hat{\sigma}^2_B - 2\,\hat{Cov}(X_A,X_B)}
+$$
+
+:::{.fragment}
+In dieser Form macht die Formel transparent, was passiert, wenn wir zwei Zufallsvariablen voneinander abziehen:
+:::
+
+- Sind die Zufallsvariablen *nicht korreliert* ($\hat{Cov}(X_A,X_B)=0$), so ist die Varianz der Differenz einfach der Summe der Einzelvarianzen in den Bedingungen A und B.
+- Sind die Zufallsvariablen *positiv korreliert* ($\hat{Cov}(X_A,X_B)>0$), so reduziert sich diese die Summe in Abhängigkeit von der Kovarianz.
+- Sind die Zufallsvariablen *negativ korreliert* ($\hat{Cov}(X_A,X_B)<0$), so erhöht sich die Summe in Abhängigkeit von der Kovarianz.<br>(*Subtraktion* der *negativen* Kovarianz resultiert in einer Erhöhung &mdash; "minus x minus = plus").
+
+## Die Varianz von Mittelwertunterschieden
+
+Der Effekt der Kovarianz auf die Varianz der Differenzwerte ist besonders intuitiv bei einer positiven Korrelation. Betrachten wir zwei Variablen $X_A$ und $X_B$ mit unterschiedlichen Kovarianzen und wie sich dabei jeweils die Variabilität des Differenzwertes entwickelt:
+
+<div class="vspace-medium"></div>
+
+![In allen drei Plots gilt $\bar{x}_A=6$ und $\bar{x}_B=5$, d.h. $\bar{x}_A-\bar{x}_B=1$.](images/pooled_variance_dependent.png)
+
+<div class="vspace-medium"></div>
+
+Wir sehen: je höher die Korrelation $\bar{x}_A$ und $\bar{x}_B$, desto geringer die Variabilität der Differenz von $\bar{x}_A-\bar{x}_B$! Ist die Korrelation perfekt ($r=1$), so ist die Differenz sogar konstant, d.h. ihre Variabilität ist gleich 0.
+
+
+<!-- ```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from scipy.stats import pearsonr
+
+np.random.seed(0)
+
+X = 6+np.random.randn(10)
+X += (6-X.mean())
+
+fontsize = 15
+
+# plt.style.use('dark_background')
+plt.figure(figsize=(10, 2.5))
+
+for i in range(3):
+    plt.subplot(1,3,3-i)
+    Y_ = X+(0,2.7,6.2)[i]*(np.random.rand(10)-0.5)
+    Y_ += (5-Y_.mean())
+    print(f'cov={np.cov(X,Y_)[0, 1]:.3f}; r={pearsonr(X,Y_)[0]:.3f}; deltaX={np.mean(X)-np.mean(Y_):.2f}')
+    plt.plot(X, 'o-', label='$X_A$')
+    plt.plot(Y_, 'o-', label='$X_B$')
+    plt.plot(X-Y_, 'o-', label='$X_A-X_B$')
+    plt.xticks(range(10), range(1, 11), fontsize=fontsize-2)
+    plt.yticks(range(-2, 9, 2), fontsize=fontsize-2)
+    plt.xlabel('Versuchspersonen', fontsize=fontsize)
+    plt.ylim(-2, 9)
+    if i == 0:
+        plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+    plt.title(r'$Cov(X_A,X_B)='+f'{np.cov(X,Y_)[0, 1]:.2f}' + r';\quad r=' + f'{pearsonr(X,Y_)[0]:.2f}$')
+# plt.xlim(0, 1)
+# plt.ylim(0, 1)
+
+plt.tight_layout()
+plt.savefig('images/pooled_variance_dependent.png', bbox_inches='tight')
+``` -->
+
+## Die Varianz von Mittelwertunterschieden
+
+***Unhängige* Messungen in *zwei* Stichproben**
+
+Im Fall zweier unabhängiger Messungen, ist es nicht möglich die Einzelmesswerte $x_{A,i}$ und $x_{B,i}$ auf Versuchspersonenebene voneinander abzuziehen. Es wäre ohnehin völlig unklar, welche Versuchsperson man in Gruppe A mit welcher anderen Versuchsperson in Gruppe B matched.
+
+:::{.fragment}
+[Die Frage lautet hier:]{.underline} wie groß ist die mittlere Varianz beider Gruppen?
+:::
+
+:::{.fragment}
+Da die Stichprobengrößen $n_A$ und $n_B$ unterschiedlich sein können, berechnen wir den *an den Stichprobengrößen* gewichteten Varianzmittelwert:
+
+$$
+\hat{\sigma}^2_\text{pooled} = \frac{(n_A-1)\hat{\sigma}^2_A + (n_B-1)\hat{\sigma}^2_B}{n_A+n_B-2}\quad\text{bzw.}\quad\hat{\sigma}_\text{pooled} = \sqrt{\frac{(n_A-1)\hat{\sigma}^2_A + (n_B-1)\hat{\sigma}^2_B}{n_A+n_B-2}}
+$$
+:::
+
+- $\hat{\sigma}^2_\text{pooled}$ wird als [**gepoolte Varianz**]{color="navy"} bezeichnet. Die Subtraktion von 1 von den Stichprobengrößen ist erneut Ausdruck der Besselkorrektur.
+
+:::{.fragment}
+**Wir halten fest:** die gepoolte Varianz zweier unabhängiger Stichproben entspricht der "mittleren Varianz" beider Gruppen.
+:::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Herleitung der gepoolten Varianz und Standardabweichung]{color="darkred"}
+
+![](images/kein_klausurstoff.png){.absolute bottom=0 right=0 height=110px}
+
+<!-- https://stats.stackexchange.com/questions/1850/difference-between-cohens-d-and-hedges-g-for-effect-size-metrics
+https://stats.stackexchange.com/questions/66956/whats-the-difference-between-hedges-g-and-cohens-d
+https://stats.stackexchange.com/questions/1850/difference-between-cohens-d-and-hedges-g-for-effect-size-metrics -->
+
+:::{.nonincremental}
+- Wir starten mit den (nicht bias-korrigierten) **Varianzen** $s^2_A$ und $s^2_B$ der Stichproben A und B.
+- Die **gepoolte Varianz** ist definiert als der gewichtete Mittelwert der beiden Einzelvarianzen in den beiden Gruppen:
+:::
+
+::: {style="margin-top: -25px"}
+$$
+s^2_\text{pooled} = \frac{n_A\cdot s^2_A + n_B\cdot s^2_B}{n_A+n_B}
+$$
+:::
+
+
+:::{.nonincremental}
+- Da wir von der Stichprobe auf die Population schließen wollen, wird die **Besselkorrektur** verwendet, d.h. $n_A\rightarrow n_A-1$ und $n_B\rightarrow n_B-1$ und $s^2 \rightarrow \hat{\sigma}^2$:
+:::
+
+$$
+\hat{\sigma}^2_\text{pooled} = \frac{(n_A-1)\cdot \hat{\sigma}^2_A + (n_B-1)\cdot \hat{\sigma}^2_B}{n_A+n_B-2}
+$$
+
+
+:::{.nonincremental}
+- Analog gilt:
+:::
+
+$$
+\text{bzw.}\qquad \hat{\sigma}_\text{pooled} = \sqrt{\frac{(n_A-1)\cdot \hat{\sigma}^2_A + (n_B-1)\cdot \hat{\sigma}^2_B}{n_A+n_B-2}}
+$$
