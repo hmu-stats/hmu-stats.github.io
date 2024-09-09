@@ -1,0 +1,583 @@
+---
+title: "Vorlesung 05: Zusammenhänge"
+---
+
+## {.blackslide .center}
+
+::: {.content-hidden when-format="pdf"}
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=300px}
+<!-- Source: Midjourney -->
+<div class="vspace-small"></div>
+:::
+
+Die bisherige Auswertung der Beobachtungsstudie hat Evidenz sowohl für Hypothese 1 (mehr Zeit auf TikTok) als auch Hypothese 2 (erhöhte Entzündungswerte) erbracht. So einen richtigen Reim können Sie sich noch nicht auf das Ergebnis machen.
+
+Ihre Neugier ist aber geweckt und Sie fragen sich: hängen vielleicht Ihre beiden abhängigen Variablen (TikTok-Zeit & Entzündungswerte) selbst miteinander zusammen? Steigen die Entzündungswerte mit zunehmender Online-Zeit auf der Plattform TikTok? 
+
+<div class="vspace-small"></div>
+
+![](images/paradoxia_zusammenhang.png){height=110px}
+
+
+## Der Forschungsprozess {.hcenter-slide}
+
+```yaml { .animate src="images/scientific_process.svg"}
+setup:
+    - element: "#results"
+      modifier: function() { this.node.style.fill = 'green'; }
+    - element: "#resultsbg"
+      modifier: function() { this.node.style.fill = '#d8ffe2';}
+```
+
+## Was sind Zusammenhänge?
+
+:::: {.columns}
+::: {.column width="70%"}
+- Ein [**Zusammenhang**]{color="navy"} beschreibt zu welchem Grad zwei Variablen (Merkmale) systematisch miteinander in Verbindung stehen
+- Zusammenhänge bilden die Essenz der psychologischen Forschung&mdash;durch sie versuchen wir die Mechanik der menschlichen Psyche zu verstehen:
+    - Fördert **Ausdauersport** das **psychische Wohlbefinden**?
+    - Helfen **Psychotherapiestunden** bei der Überwindung einer **Depression**?
+    - Wirkt sich **Bildschirmzeit** nachteilig auf die **Schlafqualität** aus?
+    - Steigt durch **kindliche Frühförderung** die Wahrscheinlichkeit für einen **akadamischen Bildungsabschluss**?
+- Fast jede wissenschaftliche Hypothese lässt sich als Zusammenhang formuliern &ndash; selbst Unterschiede!
+    - [Formulierung als Unterschied]{.underline}: unterscheiden sich Männer und Frauen in ihren verbalen Fähigkeiten?
+    - [Formulierung als Zusammenhang]{.underline}: steht die kategorische Variable **Geschlecht** in Zusammenhang mit der metrischen Variable **verbale Fähigkeiten**?
+:::
+<!-- Begin second column -->
+::: {.column width="30%"}
+![](images/relationship.png){width=200px}
+:::
+::::
+
+## Zusammenhänge im engeren Sinn
+
+- Um Unterschiede und Zusammenhänge voneinander abzugrenzen, verstehen wir nachfolgend Zusammenhänge in einem engeren Sinn:
+
+<!---  Definition--->
+::: {.definition .fragment}
+|||
+|:-:|-|
+|||
+| ![](images/definition.svg){height=70px} | Ein [**Zusammenhang**]{color="navy"} (im engeren Sinn) beschreibt zu welchem Grad die **Variation zweier metrischer Variablen** miteinander in Verbindung steht. | 
+|||
+: {tbl-colwidths="[10, 90]"}
+:::
+
+- Durch die Eingrenzung auf **metrische Variablen** (diskret oder kontinuerlich) stellt etwa die Verbindung von Geschlecht und verbalen Fähigkeiten keinen Zusammenhang im engeren Sinn dar, da Geschlecht eine kategorische Variable ist.
+- In den meisten Fällen sind Zusammenhänge das "schärfere statistische Schwert" als Unterschiede und es lohnt sich oft, Forschungsfragen entsprechend anzupassen:
+    - Unterscheidet sich die akademische Leistung von Rauchern und Nichtrauchern? &rArr; Zusammenhang **Zahl der Zigaretten pro Tag** und **akademische Leistung**
+    - Unterscheidet sich der Medienkonsum von Depressiven und Kontrollen? &rArr; Zusammenhang **Depressivität** und **Medienkonsum**
+    - Unterscheidet sich das Risiko von Alkoholsucht zwischen Nord- und Süddeutschland? &rArr; Zusammenhang **geographischer Breitengrad** und **Alkoholsuchtrisiko**
+
+
+# Kovarianz
+
+## Kovarianz
+
+- Ziel: mathematische Größe, die zum Ausdruck bringt, wie stark die Variation zweier Variablen miteinander in Zusammenhang steht
+- Wir haben bereits eine Größe für die Variation *einer* Variable &mdash; die Varianz:
+
+:::{.fragment}
+$$
+Var(X) = \frac{1}{n}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2 = \frac{1}{n}\sum_{i=1}^n(x_i-\bar{x})\color{darkred}{(x_i-\bar{x})}
+$$
+:::
+
+
+- Die Varianz gibt an, wie stark eine Variable $X$ um ihren Mittelwert $\bar{x}$ schwankt
+- Analog berechnet die [**Kovarianz**]{color="navy"}, wie stark die *gemeinsame Schwankung zweier Variablen um ihren jeweiligen Mittelwert* ist:
+
+:::{.fragment}
+$$
+\text{Kovarianz:}\quad Cov(X,Y) = \frac{1}{n}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2 = \frac{1}{n}\sum_{i=1}^n(x_i-\bar{x})\color{darkred}{(y_i-\bar{y})}
+$$
+:::
+
+- Im Zentrum der Kovarianz steht die Erkenntnis, dass das **mathematische Produkt** zweier Abweichungsvariablen &mdash; hier die Abweichungen $(x_i-\bar{x})$ und $(y_i-\bar{y})$ vom Mittelwert &mdash; angibt, wie stark die beiden Abweichungen gleichsinnig variieren (ko-variieren).
+
+## Kovarianz {data-fragment-index=0}
+
+![](images/covariance-examples.png){height=370px}
+
+[Intuition für positive Kovarianz]{.underline}:
+
+- Sind zwei zusammengehörige Datenpunkte $x_i$ und $y_i$ **größer als der Mittelwert**, sind sowohl $(x_i-\bar{x})$ als auch $(y_i-\bar{y})$ **positiv**, und damit auch das Produkt $(x_i-\bar{x})(y_i-\bar{y})$ **positiv**.
+
+- Sind zwei zusammengehörige Datenpunkte $x_i$ und $y_i$ **geringer als der Mittelwert**, sind sowohl $(x_i-\bar{x})$ als auch $(y_i-\bar{y})$ **negativ**, und damit das Produkt $(x_i-\bar{x})(y_i-\bar{y})$ wieder **positiv**.
+
+<div class="vspace-small"></div>
+
+:::{.fragment}
+Die Intuition für eine negative Kovarianz funktioniert ähnlich.
+:::
+
+
+## Kovarianz: Größe-Gewicht-Beispiel
+
+
+<div class="vspace-small"></div>
+
+:::: {.columns}
+::: {.column width="34%"}
+![](images/covariance_height_weight.png)
+:::
+::: {.column width="66%"}
+
+:::{.fragment}
+$$
+\scriptsize{
+\begin{aligned}
+&Cov(X, Y) = \frac{1}{n}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y}) = \\
+          &= \frac{1}{3}\big[(160-170)(60-70)+(170-170)(70-70)+(180-170)(80-70)\big] = \\
+          &= \frac{1}{3}\big[(-10)\cdot (-10)+0\cdot 0+10\cdot 10\big] = \\
+          &= \frac{1}{3}\cdot 200 = 66{,}67
+\end{aligned}
+}
+$$
+:::
+
+:::
+::::
+
+- Problem: die Kovarianz hängt von den Einheiten ab!
+- Wird im Beispiel die Körpergröße $X$ in der Einheit *Meter* angegeben, so lautet die Kovarianz:
+
+:::{.fragment}
+$$
+\scriptsize{
+\begin{aligned}
+Cov(X, Y) &= \frac{1}{3}\big[(1{,}60-1{,}70)(60-70)+(1{,}70-1{,}70)(70-70)+(1{,}80-1{,}70)(80-70)\big] = \\
+          &= \frac{1}{3}\big[(-0{,}10)\cdot (-10)+0\cdot 0+0{,}10\cdot 10\big] = \frac{1}{3}\cdot 2 = 0{,}667
+\end{aligned}
+}
+$$
+:::
+
+- Kovarianzen sind also **nicht vergleichbar wenn sich Einheiten unterscheiden**, und erst recht nicht, wenn sich die Variablen unterscheiden.
+
+
+# Pearson-Korrelation
+
+## Pearson-Korrelation
+
+:::: {.columns}
+::: {.column width="70%"}
+- Die [**Pearson-Korrelation**]{color="navy"} schafft Abhilfe für das Problem der mangelnden Vergleichbarkeit
+- Der Schlüssel: die Kovarianz wird mit der Standardabweichung beider Variablen normalisiert:
+
+:::{.fragment}
+$$
+\small{
+\text{Korrelation:}\quad r = \frac{Cov(X,Y)}{s_X s_Y} = \frac{1}{n s_X s_Y}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})
+}
+$$
+:::
+
+- Durch das Teilen durch die Standardabweichungen $s_X$ und $s_Y$ werden die Einheiten herausgekürzt &mdash; die Korrelation ist also eine **einheitslose Größe**.
+- Die Korrelation kann Werte zwischen $-1$ (perfekter negativer Zusammenhang) und $+1$ (perfekter positiver Zusammenhang) annehmen.
+
+:::
+<!-- Begin second column -->
+::: {.column width="30%"}
+
+![Der britische Mathematiker Karl Pearson in seinem Büro im Jahr 1910. Neben dem Korrelationskoeffizienten verdanken wir Pearson viele andere statistische Konzepte wie die Hauptkomponentenanalyse oder den p-Wert. Später wurden seine Ansichten zu Eugenik kritisch hinterfragt. Bildnachweis^[http://www.learn-stat.com/life-of-karl-pearson/]](images/karl_pearson.png)
+
+:::
+::::
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Warum ist die Korrelation auf &minus;1 bis 1 beschränkt?]{color="darkred"}
+
+![](images/kein_klausurstoff.png){.absolute bottom=0 right=0 height=110px}
+
+Darstellung der Korrelation nur mit (Ko)Varianzen:
+
+$$
+r_{XY} = \frac{Cov(X,Y)}{s_X s_Y} = \frac{Cov(X,Y)}{\sqrt{Var(X)} \sqrt{Var(Y)}}
+$$
+
+Die Korrelation sollte maximal ($r=1$) sein, wenn $X$ mit sich selbst korreliert wird ($Y=X$). Zu berücksichtigen ist, dass die Kovarianz *von X mit sich selbst* gleich der Varianz ist:
+
+$$
+r_{XX} = \frac{Cov(X,X)}{\sqrt{Var(X)} \sqrt{Var(X)}} = \frac{Var(X)}{\sqrt{Var(X)} \sqrt{Var(X)}} = \frac{Var(X)}{Var(X)} = 1
+$$
+
+
+Umgekehrt sollte die Korrelation maximal negativ sein ($r=-1$), wenn $Y$ genau das Inverse von $X$ ist, also $Y=-X$. Unter Berücksichtigung von $Var(X) = Var(-X)$ gilt:
+$$
+r_{X(-X)} = \frac{Cov(X,-X)}{\sqrt{Var(X)} \sqrt{Var(-X)}} = \frac{-Cov(X,X)}{\sqrt{Var(X)} \sqrt{Var(X)}} = \frac{-Var(X)}{Var(X)} = -1
+$$
+
+
+<!-- ```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import pearsonr, linregress
+
+np.random.seed(0)
+data = np.random.multivariate_normal([0, 0], [[1, 0.5], [0.5, 1]], 30) + 3
+x, y = data[:, 0]/2, data[:, 1]
+fontsize = 15
+
+r, p = pearsonr(x, y)
+reg = linregress(x, y)
+xrange = np.array([0.1, 2.7])
+
+plt.figure(figsize=(4, 3))
+plt.scatter(x, y, s=50, marker='o', color='blue', edgecolors='w')
+plt.plot(xrange, reg.slope*xrange+reg.intercept, color='k', lw=2)
+plt.xlabel('Schokoladenkonsum [kg/Tag]', fontsize=fontsize)
+plt.ylabel('Zufriedenheit', fontsize=fontsize)
+plt.xticks(fontsize=fontsize-2)
+plt.yticks(fontsize=fontsize-2)
+plt.ylim(0, 6.5)
+plt.text(0.05, 0.9, fr'$r={r:.3f}$ ($p={p:.4f}$)'.replace('.', '{,}'), color='k', transform=plt.gca().transAxes, fontsize=fontsize-2)
+plt.title('Streudiagramm', fontsize=fontsize+2, fontstyle='italic')
+plt.savefig('images/streudiagramm.png', bbox_inches="tight")
+``` -->
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Das Streudiagramm
+
+- Zusammenhänge zweier Variablen werden häufig in Form eines [**Streudiagramms**]{color="navy"} (engl. *scatter plot*) dargestellt.
+- Bei der Korrelation ist es dabei willkürlich, welche Variable auf der x- und y-Achse liegt.
+- Häufig wird zusätzlich zur "Punktwolke" auch eine **Regressionsgerade** dargestellt, sowie die Stärke des Zusammenhangs (r=.., p=..).
+
+:::{.fragment}
+![](images/streudiagramm.png){height=400px}
+:::
+
+
+## Pearson-Korrelation: Größe-Gewicht-Beispiel
+
+<div class="vspace-small"></div>
+
+:::: {.columns}
+::: {.column width="44%"}
+![](images/covariance_height_weight.png)
+:::
+::: {.column width="56%"}
+Wir hatten:
+
+$$
+\small{
+\begin{aligned}
+&Cov(X, Y) = \frac{1}{n}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y}) = \frac{200}{3}
+\end{aligned}
+}
+$$
+
+:::{.fragment}
+Und berechnen nun die Korrelation $\;\;r = \frac{Cov(X,Y)}{s_X s_Y}$
+
+$\scriptsize{s_X=\sqrt{\frac{1}{n}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2}=\sqrt{\frac{1}{3}[(-10)^2+0^2+10^2]}=\sqrt{\frac{200}{3}}}$
+
+$\scriptsize{s_Y=\sqrt{\frac{1}{n}\sum_{i=1}^n\big(y_i-\bar{y}\big)^2}=\sqrt{\frac{1}{3}[(-10)^2+0^2+10^2]}=\sqrt{\frac{200}{3}}}$
+
+$$
+\small{
+r = \frac{\frac{200}{3}}{\sqrt{\frac{200}{3}}\cdot\sqrt{\frac{200}{3}}}=1
+}
+$$
+:::
+
+:::
+::::
+
+- Wäre die Körpergröße in der Einheit *Meter* angeben, so kürzt sich der Faktor 100 (1m = 100cm) nicht nur im Zähler, sondern auch im Nenner:
+
+:::: {.columns}
+::: {.column width="40%"}
+:::{.fragment}
+$$
+\small{
+r = \frac{\frac{2\color{darkred}{{,}}00}{3}}{\sqrt{\frac{2\color{darkred}{{,}}00}{3}}\cdot\sqrt{\frac{2\color{darkred}{{,}}00}{3}}}=1
+}
+$$
+:::
+:::
+::: {.column width="60%"}
+:::{.fragment}
+Die Normalisierung mit der Standardabweichung sorgt somit dafür, dass die willkürliche Einheit keine Rolle spielt.
+:::
+:::
+::::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Interpretation der Pearson-Korrelation
+
+- Die Pearson-Korrelation zeigt an, **wie linear** der Zusammenhang zweier Variablen ausgeprägt ist
+- Die Pearson-Korrelation ist dabei [nicht]{.underline} von der Steigung einer gedachten Gerade abhängig.
+
+:::{.fragment}
+![Korrelationskoeffizienten für verschiedene hypothetische Streudiagramme](images/correlation_examples.png){width=1030px}
+:::
+
+- Ein Zusammenhang zweier Variablen kann extrem schwach sein (z.B. so, dass eine Verdopplung von X nur einer 0.1%-Steigerung von Y entspricht) und dennoch kann die Korrelation stark sein (= nah an $\pm 1$), wenn die Punkte exakt auf einer Geraden liegen.
+- Auf einen Satz gemünzt kann man sagen: 
+
+::: {.fragment style="font-size: 26px; margin-top: -10px"}
+> Die Pearson-Korrelation misst, wie gut bivariate Daten durch eine Gerade abgebildet werden können.
+:::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+:::{.content-hidden when-format="pdf"}
+## [https://www.guessthecorrelation.com/]{style="font-size: 37px"}
+
+<iframe width=100% height="100%" src="https://www.guessthecorrelation.com/"></iframe>
+:::
+
+## Voraussetzungen für das Berechnen der Pearson-Korrelation
+
+- Die Pearson-Korrelation *kann* *immer* berechnet werden, solange beide Variablen aus Zahlenwerten bestehen.
+- Es gibt jedoch weitere Kriterien, die für die Sinnhaftigkeit und Interpretierbarkeit der Pearson-Korrelation wichtig sind:
+
+:::{.fragment}
+<!---  Table --->
+|Kriterium|Falls Kriterium nicht erfüllt? | Beispiel | Mögliche Abhilfe? |
+|-|-|-|-|
+| Daten haben mindestens Intervallskalenniveau | ▪&numsp;Keine Aussage über Linearität des untersuchten Zusammenhangs möglich \
+▪&numsp;Korrelation nicht interpretierbar | ![](images/example_ordinal.png) | Rangkorrelation |
+| Keine Ausreißer | Korrelationskoeffizient kann massiv verzerrt sein | ![](images/outlier_example.png) | Ausreißer entfernen oder Rangkorrelation | 
+| Zusammenhang der Daten wird *nicht* durch *nicht-linearen* Anteil dominiert | ▪&numsp;Pearson-Korrelation falsches Modell \
+▪&numsp;Linearität der Daten wird verzerrt wiedergegeben, da die Korrelation vom nicht-linearen Teil beeinflusst wird  | ![](images/nonlinear.png) | Komplexeres Modell, das den nicht-linearen Anteil berücksichtigt |
+
+: {tbl-colwidths="[24, 36, 20, 20]"}
+:::
+
+## Mythen zur Pearson-Korrelation
+
+- In vielen Quellen finden sich darüber hinaus **unzutreffende Behauptungen** zur Pearson-Korrelation:
+
+:::{.fragment style="margin-top: 5px"}
+<!---  Table --->
+||Behauptung| Fact |
+|-|-|-|
+| **Mythos 1** | Die Variablen müssen kontinuierlich sein | **Pearson-Korrelation ist valide für diskrete Daten**, solange diese mindestens Intervallskalenniveau aufweisen. Tatsächlich gibt es sogar eine Variante der Pearson-Korrelation, bei der beide Variablen binär sind (Phi-Koeffizient). |
+| **Mythos 2** | Die Variablen müssen einen linearen Zusammenhang aufweisen | Gegenbeispiel: wenn Daten aus zufälligem Rauschen basieren, sind sie mit Sicherheit nicht linear verbunden &mdash; und dennoch gibt der Pearson-Koeffizient korrekterweise an, dass die Korrelation ungefähr 0 ist. Zusammenhänge in der Psychologie sind *sehr selten* eindeutig linear, dennoch kann es sinnvoll sein, die Pearson-Korrelation anzuwenden. Besser ist daher zu sagen (s. vorherige Folie), dass der Zusammenhang **nicht zu stark durch einen nicht-linearen Anteil dominiert** werden sollten. |
+| **Mythos 3** | Die beiden Variablen müssen normalverteilt sein. | Der **Pearson-Korrelationskoeffizient per se erfordert keine Normalverteilung** der Variablen. Korrekt ist aber, dass die Daten für die **Berechnung eines p-Wertes auf Basis des t-Tests annähernd normalverteilt** (ganz korrekt: *bivariat normalverteilt*) sein sollten. Wenn Normalverteilung nicht gegeben ist, können andere Signifikanztests (Permutation, Bootstrap) verwendet werden.
+| **Mythos 4** | Die Variablen müssen varianzhomogen sein | Varianzhomogenität (auch Homoskedastizität) meint, dass Y-Werte ähnliche Varianz in verschiedenen Abschnitten der X-Achse haben und umgekehrt. Hier gilt das gleiche wie bei Mythos 3: **Varianzhomogenität ist keine Voraussetzung für die Anwendung der Pearson-Korrelation per se, wohl aber für die Anwendung des t-Tests.**
+
+: {tbl-colwidths="[10, 18, 72]"}
+:::
+
+
+<!-- ```{python}
+from string import ascii_letters
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.set_theme(style="white")
+fontsize = 36
+
+data = [
+    [1, 0.13, 0.35, 0.23, -0.2],
+    [0, 1, 0.37, 0.1, -0.4],
+    [0, 0, 1, 0.01, -0.26],
+    [0, 0, 0, 1, -0.1],
+    [0, 0, 0, 0, 1]
+]
+
+annot = [
+    ['1', '0.13', '0.35', '0.23', '-0.2'],
+    ['', '1', '0.37', '0.1', '-0.4'],
+    ['', '', '1', '0.01', '-0.26'],
+    ['', '', '', '1', '-0.1'],
+    ['', '', '', '', '1']
+]
+
+columns = ['O', 'C', 'E', 'A', 'n']
+
+corr = pd.DataFrame(data, columns=columns, index=pd.Index(columns))
+
+# Generate a mask for the upper triangle
+# mask = np.tril(np.ones_like(corr, dtype=bool))
+mask = np.zeros_like(corr, dtype=bool)
+np.fill_diagonal(mask, True)
+
+# Set up the matplotlib figure
+f, ax = plt.subplots(figsize=(11, 9))
+
+# Generate a custom diverging colormap
+cmap = sns.diverging_palette(230, 20, as_cmap=True)
+
+# Draw the heatmap with the mask and correct aspect ratio
+hm = sns.heatmap(corr, annot=annot, fmt='', mask=mask, cmap=cmap, vmax=.3, center=0,
+                 square=True, linewidths=.5, cbar_kws=dict(shrink=1, label='Korrelation'), annot_kws=dict(size=fontsize))
+plt.gca().collections[0].colorbar.ax.tick_params(labelsize=28)
+hm.figure.axes[-1].set_ylabel('Korrelation', size=fontsize)
+hm.tick_params(labelsize=fontsize)
+plt.yticks(rotation=0) 
+hm.patch.set_facecolor('#777')
+plt.tight_layout()
+plt.savefig(f'images/corrmatrix.png', bbox_inches="tight")
+```-->
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Korrelationsmatrix
+
+- Eine **Korrelation** bestimmt immer den Zusammenhang zwischen **zwei Variablen**
+- Gibt es mehr als zwei Variablen (z.B. die "Big Five"), bietet sich eine Darstellung aller paarweisen Korrelationen an &ndash; die [**Korrelationsmatrix**]{color="navy"}
+
+:::: {.columns .vcenter-column style="margin-top:-15px"}
+::: {.column width="60%"}
+:::{.fragment}
+![Tabellarische Korrelationsmatrix. Sterne kennzeichnen häufig das Signifikanzniveau.](images/corrmatrix_table.png)
+:::
+:::
+::: {.column width="40%"}
+:::{.fragment}
+![Korrelationsmatrix als "Heatmap" &ndash; die Einfärbung ist ein visuelles Hilfsmittel zur intuitiven und schnellen Erfassung der Korrelationsstruktur von mehreren Variablen.](images/corrmatrix.png)
+:::
+:::
+::::
+- Die [Nebendiagonalelemente]{color="darkgreen"} sind der interessante Teil der Korrelationsmatrix, sie geben die Korrelationen verschiedener Variablen an
+- Die [Diagonalelemente]{color="darkred"}, also die Korrelationen von Variablen mit sich selbst, sind immer 1
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Kovarianzmatrix
+
+:::: {.columns}
+::: {.column width="75%"}
+- Eine analoge Matrix-Darstellung gibt es auch für die **Kovarianz**.
+- Im Unterschied zur Korrelationsmatrix sind die Diagonalelemente der Kovarianzmatrix nicht 1, sondern geben die **Varianz** der Variable an.
+- Sei $\mathbf{X}$ (beachte Fettschrift) ein Vektor von $n$ Variablen $X_1 .. X_n$, so ist die zugehörige Kovarianzematrix $\operatorname{Cov}(\mathbf{X})$:
+
+:::{.fragment}
+$$
+\small{
+\begin{aligned}
+\operatorname{Cov}(\mathbf{X}) & = 
+\begin{pmatrix}\operatorname{Var}(X_1) & \operatorname{Cov}(X_1,X_2) & \cdots & \operatorname{Cov}(X_1,X_n) \\ \\
+ \operatorname{Cov}(X_2,X_1)  & \operatorname{Var}(X_2) & \cdots & \operatorname{Cov}(X_2,X_n) \\ \\
+ \vdots & \vdots & \ddots & \vdots \\ \\
+\operatorname{Cov}(X_n,X_1) & \operatorname{Cov}(X_n,X_2) & \cdots & \operatorname{Var}(X_n)
+\end{pmatrix}
+\end{aligned}
+}
+$$
+:::
+
+:::
+::: {.column width="25%"}
+:::{.fragment}
+![](images/covariance_matrix.png)
+:::
+:::
+::::
+
+- Im Gegensatz zur Korrelationsmatrix ist die Kovarianzmatrix selten das "Endprodukt" einer Analyse, sondern meist ein Zwischenschritt in fortgeschritteneren statistischen Analysen wie der **Hauptkomponentenanalyse**.
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Punktbiseriale und biseriale Korrelation]{color="darkred"}
+
+![](images/kein_klausurstoff.png){.absolute top=40 right=30 height=110px}
+
+- Korrelationskoeffizienten können auch berechnet werden, wenn eine<br>der beiden Variablen binär ist. Zwei Fälle werden unterschieden.
+
+
+:::{.fragment}
+**Fall 1: die binäre Variable liegt natürlicherweise in dichotomer Form vor (z.B. männl./weibl.)**
+:::
+
+:::{.fragment}
+In diesem Fall haben die beiden Werte der binären Variable *keine natürliche Ordnung* und es wird der [**punktbiseriale Korrelationskoeffizient**]{color="navy"} verwendet.
+:::
+
+:::{.fragment}
+Sei $X$ die binäre Variable und $Y$ die kontinuierliche Variable. Wir teilen die Stichprobe in Gruppe $A$ (für die $X$ den einen Wert einnimmt) und Gruppe $B$ (für die $X$ den anderen Wert einnimmt). Es gilt:
+
+:::{style="margin-top: 0px"}
+$$
+r_\text{population} = \frac{\left(\bar{y}_A - \bar{y}_B\right)}{\sigma_Y}\sqrt{p_A p_B} \qquad\qquad r_\text{sample} = \frac{\left(\bar{y}_A - \bar{y}_B\right)}{s_Y}\sqrt{\frac{n p_A p_B}{n-1}}
+$$
+:::
+
+wobei $\bar{y}_{A/B}$ der Mittelwert von $Y$ und $p_{A/B}$ der Anteil (proportion) der Versuchspersonen in Gruppe $A$/$B$ ist. $\sigma_Y$/$s_Y$ ist die Standardabweichung von $Y$ in der Population/Stichprobe.
+:::
+
+<div class="vspace-medium"></div>
+
+::: {.merke .fragment}
+:::: {.columns}
+::: {.column width="5%"}
+::: {style="margin-top: 18px"}
+![](images/merke.png){height="55px"}
+:::
+:::
+::: {.column width="95%"}
+**Beachte:** der punktbiserielle Korrelationskoeffizient leitet sich direkt aus dem Pearson-Korrelationskoeffizienten ab (ist äquivalent), d.h. die Pearsonkorrelation einschlägiger Statistiksoftware kann verwendet werden!
+:::
+::::
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Punktbiseriale und biseriale Korrelation]{color="darkred"}
+
+![](images/kein_klausurstoff.png){.absolute bottom=0 right=0 height=110px}
+
+**Fall 2: die binäre Variable resultiert aus der Dichotomisierung einer kontinuierlichen Variable**
+
+:::{.fragment}
+In diesem Fall unterschätzt die punktbiseriale Korrelation den wahren Wert und es sollte der [**biseriale Korrelationskoeffizient**]{color="navy"} verwendet:
+
+:::{style="margin-left: -30px"}
+$$
+r_\text{population} = \frac{\left(\bar{y}_A - \bar{y}_B\right)}{f(z_p)\sigma_Y}p_A p_B \qquad\qquad r_\text{sample} = \frac{\left(\bar{y}_A - \bar{y}_B\right)}{f(z_p)s_Y}\frac{n p_A p_B}{n-1}
+$$
+:::
+
+wobei $f(z_p)$ der Wert der Standardnormalverteilung bei $z_p$ ist und $z_p$ der Wert, bei dem die Fläche rechts unter der Standardnormalverteilung gleich $p$ ist ($P(Z>z_p)=p$).
+
+<!-- Antwort auf 
+https://real-statistics.com/correlation/biserial-correlation/comment-page-1/?unapproved=1505005&moderation-hash=fba191d84ae6d8b2252c6b13efb49ba1#comment-1505005
+checken! -->
+
+
+Quellen: ^[https://real-statistics.com/correlation/biserial-correlation/] ^[https://www.ncss.com/wp-content/themes/ncss/pdf/Procedures/NCSS/Point-Biserial_and_Biserial_Correlations.pdf] ^[Jacobs P, Viechtbauer W (2017) Estimation of the biserial correlation and its sampling variance for use in meta-analysis: Biserial Correlation. Res Syn Meth 8:161–180.]
+:::
+
+
+
+::: {.merke .fragment}
+:::: {.columns}
+::: {.column width="5%"}
+::: {style="margin-top: 18px"}
+![](images/merke.png){height="55px"}
+:::
+:::
+::: {.column width="95%"}
+**Beachte:** der biserielle Korrelationskoeffizient ist [nicht]{.underline} äquivalent mit dem Pearson-Korrelationskoeffizienten und sollte manuell berechnet werden.
+:::
+::::
+:::

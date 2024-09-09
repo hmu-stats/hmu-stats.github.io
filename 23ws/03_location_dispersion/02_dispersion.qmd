@@ -1,0 +1,741 @@
+# Streuungsmaße
+
+<div class="vspace-large"></div>
+
+![](images/error-bars-comic.png){.absolute width=400px}
+
+<!-- ```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.stats import truncnorm
+
+fontsize=14
+
+# [default][different mean][different std, different scaling]
+# [different std, same scaling][center peak, some satellites][bimodal, two narrow peaks]
+
+means = [5, 10, 5, 5, 5, 2]
+plusminus = [5, 5, 5, 7, 5, 5]
+std = [1, 1, 1, 2, 1, 1]
+xlim = (-2, 14)
+ylim = (0, 225)
+
+N = 500
+
+plt.figure(figsize=(11, 6))
+
+for i in range(6):
+
+    np.random.seed(2)
+
+    bounds = (means[i]-plusminus[i], means[i]+plusminus[i])
+    data = truncnorm.rvs(a=(bounds[0] - means[i]) / std[i], b=(bounds[1] - means[i]) / std[i], loc=means[i], scale=std[i], size=int(N*1.75) if i == 3 else N)
+    if i == 4:
+        data = np.hstack((data, -np.ones(5), np.zeros(8), 11*np.ones(11), 12*np.ones(6)))
+    elif i == 5:
+        data = np.hstack((data, 8+data))
+
+    print(f'[i={i}] std={np.std(data):.3f}')
+
+    plt.subplot(2,3,i+1)
+
+    plt.hist(data, edgecolor='#999', color='#94b9ea', bins=range(xlim[0], xlim[1], 1))
+    plt.xticks(range(0, 16, 5), range(0, 31, 10) if i == 2 else range(0, 16, 5), fontsize=fontsize)
+    plt.yticks(fontsize=fontsize)
+    plt.xlim(xlim)
+    plt.ylim(ylim)
+
+plt.tight_layout()
+plt.savefig(f'images/dispersion_examples.png', bbox_inches="tight")
+
+``` -->
+
+
+<!-- ```{python}
+import matplotlib.pyplot as plt
+fontsize=15
+plt.figure(figsize=(3, 4))
+plt.bar(1, 95, color='#c6c600')
+plt.bar(2, 105, color='#4a2500')
+plt.ylabel('IQ', fontsize=fontsize)
+plt.xticks([1, 2], ['Blond', 'Brünett'], fontsize=fontsize)
+plt.yticks(range(80, 121, 10), fontsize=fontsize-2)
+plt.ylim(85, 110)
+plt.savefig('images/IQ_blond_brunette_means.png', bbox_inches="tight")
+``` -->
+
+<!-- ```{python}
+import matplotlib.pyplot as plt
+from scipy.stats import truncnorm, ttest_ind
+import numpy as np
+fontsize=15
+
+np.random.seed(0)
+
+mean_blond = 95
+mean_brunette = 105
+plusminus = 60
+bounds_blond = (mean_blond-plusminus, mean_blond+plusminus)
+bounds_brunette = (mean_brunette-plusminus, mean_brunette+plusminus)
+std = 30
+N = 70
+
+data_blond = truncnorm.rvs(a=(bounds_blond[0] - mean_blond) / std, b=(bounds_blond[1] - mean_blond) / 
+std, loc=mean_blond, scale=std, size=N)
+data_blond += mean_blond - np.mean(data_blond)
+data_brunette = truncnorm.rvs(a=(bounds_brunette[0] - mean_brunette) / std, b=(bounds_brunette[1] - mean_brunette) / std, loc=mean_brunette, scale=std, size=N)
+data_brunette += mean_brunette - np.mean(data_brunette)
+
+print(f'Mean blond={np.mean(data_blond)}')
+print(f'Mean blond={np.mean(data_brunette)}')
+print(ttest_ind(data_blond, data_brunette))
+
+plt.figure(figsize=(4, 4))
+plt.hist(data_blond, color='#c6c600', label='Blond')
+plt.hist(data_brunette, color='#4a2500', label='Brünett', alpha=0.7)
+plt.xlabel('IQ', fontsize=fontsize)
+plt.ylabel('Anzahl', fontsize=fontsize)
+# plt.yticks(range(80, 121, 10), fontsize=fontsize-2)
+# plt.ylim(85, 110)
+plt.legend()
+plt.savefig('images/IQ_blond_brunette_dist.png', bbox_inches="tight")
+``` -->
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Warum sind Streuungsmaße wichtig?
+
+<div class="vspace-larger"></div>
+
+:::: {.columns}
+::: {.column width="50%"}
+
+:::{.fragment}
+["In unserer Studie waren brünette Menschen im Schnitt 10 IQ-Punkte schlauer als blonde Menschen"]{.text-center}
+
+![](images/IQ_blond_brunette_means.png){.hcenter-image style="margin-top: 80px !important"}
+:::
+
+:::
+
+<!-- Begin second column -->
+::: {.column width="50%"}
+
+::: {.fragment}
+
+[<br />Behind the scenes:]{.text-center}
+
+![](images/IQ_blond_brunette_dist.png){.hcenter-image style="margin-top: 120px !important"}
+
+:::
+
+:::
+::::
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Warum sind Streuungsmaße wichtig?
+
+<div class="vspace-medium"></div>
+
+
+::: {.content-visible when-format="revealjs"}
+::: {.hcenter-slide}
+```yaml { .animate src="images/warum_streuung_schaefer.svg"}
+setup:
+  - element: "#text1"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "1"
+  - element: "#text2"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "2"
+  - element: "#text3"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "3"
+  - element: "#text4"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "4"        
+```
+:::
+:::
+
+::: {.content-hidden when-format="revealjs"}
+![](images/warum_streuung_schaefer.svg)
+:::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## 
+
+
+<!---  Question --->
+<div class="vspace-large"></div>
+|||
+|:-:|-|
+| ![](images/question_mark.png){height=150px} | [Wie schätzen Sie die Streuung / Variabilität folgender Verteilungen ein?]{style="font-size: 32px"} |
+: {tbl-colwidths="[20, 80]"}
+
+<div class="vspace-large"></div>
+
+![](images/dispersion_examples.png){.hcenter-image}
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Streuungsmaße
+
+:::: {.columns style="display: flex !important"}
+::: {.column width="70%"}
+
+- [**Streuungsmaße**]{color="navy"} geben die Variabilität von Daten an
+- Streuungsmaßes sind eine extrem wichtige Ergänzung zu Lagemaßen beim Bericht wissenschaftlicher Ergebnisse.
+- Die Streuung von Daten kann ein Ausdruck *echter Variabilität* in der Stichprobe sein oder eine Folge der *Messungenauigkeit* (häufig beides).
+- Je nach Skalenniveau und Zweck können verschiedene Streuungsmaße bestimmt werden:
+    - Spannweite (Range)
+    - Interquartilsabstand
+    - Varianz
+    - Standardabweichung
+
+:::
+
+
+<!-- Begin second column -->
+::: {.column width="30%" .center-column-content}
+
+:::{.fragment fragment-index=1}
+![](images/disperson_symbolic.png)
+:::
+
+:::
+::::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Spannweite / Range
+
+- Die [**Spannweite**]{color="navy"} oder [**Range**]{color="navy"} ist die Differenz zwischen dem kleinsten und dem größten Wert:
+
+::: {.fragment}
+$$
+Range = x_{max} - x_{min}
+$$
+:::
+
+- Einfachstes **Streuungsmaß** &mdash; sinnvoll, um dem Leser einen Eindruck der gesamten Spannbreite von Daten zu geben.
+- Allerdings kaum Aussagekraft über die tatsächliche Variabilität der Daten
+    - Beispiel: die Spannbreite von $\mathbf{x}=\{1, 10, 10, 10, 10, 10, 10, 10, 10, 10, 101\}$ ist $101-1=100$, obwohl die Daten bis auf die zwei Ausreißer $1$ und $101$ keine Variabiltät aufweisen.
+
+
+::: {.fragment}
+![Bildnachweis^[https://www.shiksha.com/online-courses/articles/measures-of-dispersion-range-iqr-variance-standard-deviation/]](images/dispersion_range.png){.hcenter-image height=320px}
+:::
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Range: Beispiele
+
+<div class="vspace-medium"></div>
+
+
+::: {.content-visible when-format="revealjs"}
+::: {.hcenter-slide}
+```yaml { .animate src="images/warum_streuung_schaefer_range.svg"}
+setup:
+  - element: "#range1"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "1"
+  - element: "#range2"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "2"
+  - element: "#range3"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "3"
+  - element: "#range4"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "4"        
+```
+:::
+:::
+
+::: {.content-hidden when-format="revealjs"}
+![](images/warum_streuung_schaefer_range.svg)
+:::
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Varianz
+
+- Die Varianz ist definiert als die **Summe der quadrierten Abweichungen aller Werte vom Mittelwert**:
+
+:::{.fragment}
+$$
+Var(X) = \sigma^2 = \frac{1}{n}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2
+$$
+
+[&numsp;&numsp;&numsp;(Die Varianz ist gleich der quadrierten Standardabweichung $\sigma$ &ndash; letztere lernen wir noch kennen)]{style="font-size: 21px"}
+:::
+
+- Durch die Quadrierung wird verhindert, dass sich positive und negative Abweichungen gegenseitig aufheben.
+
+<!-- <div class="vspace-small"></div> -->
+
+:::: {.columns}
+::: {.column width="55%"}
+:::{.fragment}
+![](images/variance_schaefer.png){.hcenter-image}
+:::
+:::
+
+<!-- Begin second column -->
+::: {.column width="45%"}
+
+:::{.fragment}
+$$
+\begin{aligned} \sigma^2 &= \frac{1}{4}\left(0{,}25+2{,}25+0{,}25+2{,}25\right) \\ &= \frac{1}{4}\cdot5=1{,}25 \end{aligned}
+$$
+:::
+
+:::
+::::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Warum werden werden nicht einfach die Absolutwerte der Differenzen genommen? ]{color="darkred"}
+
+![](images/kein_klausurstoff.png){.absolute bottom=0 right=0 height=130px}
+
+:::{.fragment}
+Prinzipiell wäre auch eine Formel für die Varianz mit Absolutabständen denkbar:
+
+$$
+Var_{\text{absolut}}(X) = \frac{1}{n}\sum_{i=1}^n\big|x_i-\bar{x}\big|
+$$
+
+:::
+
+:::{.fragment}
+Über die Gründe, warum sich $Var_{\text{absolut}}$ nicht durchgesetzt hat, streitet sich die Fachwelt. Neben historischen Gründen, gibt es aber einige Eigenschaften, die die Präferenz für Abstandsquadrate zumindest nachvollziehbar machen:
+:::
+
+- Quadrierte Abstände gewichten Punkte, die weiter vom Mittelwert entfernt sind, höher. Dies entspricht einer "Bestrafung" von Ausreißern und kann ein wünschenswertes Verhalten sein.
+- Analogie zur euklidischen Distanz (z.B. Satz des Pythagoras: $a=\sqrt{b^2+c^2}$)
+- Fortgeschritten: die Varianz mit Abstandsquadraten ist für alle $x$ differenzierbar <br> (hingegen ist $Var_{\text{absolut}}$ bei $x=0$ nicht differenzierbar)
+
+::: {.recommendation .fragment}
+Weitergehende Literatur ^[https://web.archive.org/web/20221024193801/https://www4.hcmut.edu.vn/~ndlong/TK/mat/04_standard_deviation_vs_absolute_deviation.pdf]
+:::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Standardabweichung
+
+- Ein Nachteil der Varianz ist, dass sie aufgrund der Abstandsquadrate in quadrierten Einheiten angegeben ist:
+
+<!---  Example --->
+::: {.example .fragment}
+:::: {.columns}
+::: {.column width="10%"}
+::: {style="margin-top: 10px"}
+![](images/example.png){height=70px}
+:::
+:::
+::: {.column width="90%"}
+$x=\{167\,cm, 181\,cm, 154\,cm, 192\,cm, 173\,cm\}\rightarrow Var(X)=180.4\,\color{red}{cm^2}$
+:::
+::::
+:::
+
+
+- Quadrierte Einheiten sind jedoch wenig intuitiv und schwer zu interpretieren.
+- Aus diesem Grund wird häufig die Standardabweichung $\sigma$ angegeben, welche die Wurzel der Varianz darstellt:
+
+:::{.fragment}
+$$
+\sigma=\sqrt{Var(X)}=\sqrt{\frac{1}{n}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2}
+$$
+:::
+
+- Die Standardabweichung drückt die Streuung in den **Rohwerten der Skala** aus.
+- Sie wird häufig auch mit $sd$ oder $SD$ (für *standard deviation*) abgekürzt.
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Einschub: Variablenbenennung
+
+- In psychologischen Studien können in den allermeisten Fällen nur **Stichproben** getest werden und nicht die komplette **Population**.
+- In der Statistik hat es sich eingebürgert, **griechische Buchstaben für Kennwerte der Population** und **lateinische Buchstaben für Kennwerte der Stichprobe** und zu verwenden.
+- Das Zirkumflex (^) wird verwendet, wenn das Ziel ist, auf Basis eines Stichprobenkennwertes den analogen Kennwert in der Population zu **schätzen**.
+
+:::{.fragment}
+<!---  Table --->
+||Stichprobe|Stichprobe (Schätzung für Population)|Population|
+|-|-|-|-|
+| Mittelwert | $\bar{x}$, $m$, $M$ | $\hat{\mu}$ |$\mu$ |
+| Standardabweichung | $s$ | $\hat{\sigma}$ |$\sigma$|
+| Varianz | $s^2$ | $\hat{\sigma}^2$ |$\sigma^2$|
+| Korrelation | $r$ | $\hat{\rho}$ |$\rho^2$|
+| Fallzahl | $n$ |  |$N$|
+
+: {tbl-colwidths="[20, 15, 35, 20]"}
+:::
+
+- Wie wir noch sehen werden, gilt $\bar{x}=\hat{\mu}$, aber (zumindest bei kleinen Stichproben) $s\ne\hat{\sigma}$ bzw. $s^2\ne\hat{\sigma}^2$.
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Standardabweichung: Klassik-Beispiele
+
+<div class="vspace-medium"></div>
+
+
+::: {.content-visible when-format="revealjs"}
+::: {.hcenter-slide}
+```yaml { .animate src="images/warum_streuung_schaefer_range_SD.svg"}
+setup:
+  - element: "#sd1"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "1"
+  - element: "#sd2"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "2"
+  - element: "#sd3"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "3"
+  - element: "#sd4"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "4"        
+```
+:::
+:::
+
+
+::: {.content-hidden when-format="revealjs"}
+![](images/warum_streuung_schaefer_range_SD.svg)
+:::
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Interquartilsabstand (interquartile range = IQR)
+
+- [**Quartile**]{color="navy"} sind eine Spezialform von **Quantilen**
+- **Quantile** teilen eine Verteilung von Daten in gleich große Abschnitte ein
+    - "gleich groß" = jeder Abschnitt hat gleich viele Datenpunkte
+- Beispiel *Dezile*: Einteilung der Verteilung in *10* gleich große Abschnitte
+    - Hier: 20 Werte eingeteilt in 10 Abschnitte (Dezile) á 2 Werte
+
+::: {.fragment style="margin-top:-20px"}
+$$
+\underbrace{1, 1,}_{\small{\text{1.Dezil}}}\;\underbrace{1, 2,}_{\small{\text{2.Dezil}}}\;2, 3, \;3, 5, \;5, 5, \;\color{white}{\underbrace{\color{black}{5, 6,}}_{\small{\color{black}{\text{...}}}}} \;6, 7, \;7, 7, \;7, 8, \;\underbrace{8, 8}_{\small{\text{10.Dezil}}}
+$$
+:::
+
+
+
+- Beispiel *Quintile*: Einteilung der Verteilung in *5* gleich große Abschnitte
+    - Hier: 30 Werte eingeteilt in 5 Abschnitte (Quintile) á 6 Werte
+
+::: {.fragment style="margin-top:-20px"}
+$$
+\underbrace{1, 1, 1, 1, 2, 2,}_{\small{\text{1.Quintil}}}\;\underbrace{2, 2, 2, 3, 3, 3,}_{\small{\text{2.Quintil}}}\;\underbrace{4, 4, 5, 5, 5, 5,}_{\small{\text{3.Quintil}}} \;\underbrace{5, 6, 6, 7, 7, 7,}_{\small{\text{4.Quintil}}} \;\underbrace{8, 8, 9, 9, 9, 9}_{\small{\text{5.Quintil}}}
+$$    
+:::
+
+- Beispiel *Quartile*: Einteilung der Verteilung in *4* gleich große Abschnitte
+    - Hier: 12 Werte in 4 Abschnitte (Quartile) á 3 Werte
+
+::: {.fragment style="margin-top:-20px"}
+$$
+\underbrace{1, 1, 2,}_{\small{\text{1.Quartil}}}\;\underbrace{2, 2, 2,}_{\small{\text{2.Quartil}}}\;\underbrace{3, 4, 5,}_{\small{\text{3.Quartil}}} \;\underbrace{5, 6, 6}_{\small{\text{4.Quartil}}}
+$$
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Interquartilsabstand (interquartile range = IQR)
+<div class="vspace-medium"></div>
+
+![](images/interquartile-range2.png){.hcenter-image width=800px}
+
+<div class="vspace-medium"></div>
+
+- Um eine Reihe von Daten in 4 gleich große Quartile zu teilen, sind genau drei Quartilsgrenzen notwendig
+- Diese Quartilsgrenzen werden mit $Q_1$, $Q_2$, $Q_3$ (bezogen auf *Quartile*) bzw. mit $Q_{25\%}$, $Q_{50\%}$, $Q_{75\%}$ (bezogen auf *Quantile*) bezeichnet
+- Der Interquartilsabstand (IQR) ist die Differenz aus der 75%-*Quantils*grenze und der 25%-Quantilsgrenze bzw. die Differenz aus der 3. und der 1. *Quartils*grenze:
+
+:::{.fragment}
+$$
+IQR = Q_{75\%} - Q_{25\%} = Q_3 - Q_1
+$$
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Interquartilsabstand (interquartile range = IQR)
+
+- Berechnung des IQR:
+    1. Sortiere alle Werte von klein nach groß
+    2. Bestimme die Tiefe des Medians (runde ab bei unganzzahligem Wert):$\,Tiefe_{\text{Median(abgerundet)}}$
+    3. Bestimme die Tiefe des Quartils:&numsp; $Tiefe_{\text{Quartil}}=\frac{Tiefe_{\text{Median(abgerundet)}}+1}{2}=\frac{\text{abgerundet}\big(\frac{n+1}{2}\big)+1}{2}$
+    4. Für das 25%-Quantil ($Q_1$) geht man **von vorne** in die Datenreihe
+    5. Für das 75%-Quantil ($Q_3$) geht man **von hinten** in die Datenreihe
+
+<!---  Example --->
+::: {.fragment .example-with-formulas}
+|||
+|:-:|-|
+|||
+| ![](images/example.png){height=70px} | Folgende 11 Werte werden beobachtet: $x=\{1, 1, \color{darkred}{2}, \color{darkred}{3}, 3, \color{green}{3}, 4, \color{darkblue}{6}, \color{darkblue}{6}, 7, 9\}$ \
+In diesem Fall ist der 6. Wert der Median, also&numsp; $\,\color{green}{Tiefe_{\text{Median(abgerundet)}}=6}$ \
+Die Tiefe des Quartils ist damit&numsp; $Tiefe_{\text{Quartil}}=\frac{\color{darkgreen}{Tiefe_{\text{Median(abgerundet)}}}+1}{2}=\frac{6+1}{3}=3{,}5$ \
+Der "$3{,}5$"-te Wert von vorne ist der Mittelwert aus $\color{darkred}{2}$ und $\color{darkred}{3}$ ($\color{darkred}{Q_1=2{,}5}$), der "$3{,}5$"-te Wert von hinten ist der Mittelwert aus $\color{darkblue}{6}$ und $\color{darkblue}{6}$ ($\color{darkblue}{Q_3=6}$) \
+$IQR = \color{darkblue}{Q_3} - \color{darkred}{Q_1} = \color{darkblue}{6} - \color{darkred}{2.5} = 3{,}5$ |
+|||
+: {tbl-colwidths="[10, 90]"}
+:::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Wann ist der Interquartilsabstand ein sinnvolles Streuungsmaß?
+
+:::: {.columns}
+::: {.column width="66%"}
+Vereinfacht gesagt verhält sich der **Interquartilsabstand** zur **Varianz**, wie der Median zum Mittelwert zum **Mittelwert**.
+
+- Die klassische Standardabweichung kann leicht durch einen einzelnen oder wenige extreme Datenpunkte verzerrt werden (insbesondere durch die Abstandsquadrierung).
+- Der Interquartilsabstand ist **robuster gegen Ausreißer**, da er auf einem ähnlichen Prinzip wie der Median basiert: statt einem arithmetischen Mittel werden basiert der Wert auf tatsächlichen Datenpunkten *in der Mitte der Verteilung*.
+- Wie dem Median ist es daher dem Interquartilsabstand "egal" ob etwa der höchste Wert 10 oder 10 Trillionen ist.
+- Auch bei **stark schiefen Verteilungen** bietet sich der Interquartilsabstand an, da der von der Standardabweichung verwendete Bezugspunkt "Mittelwert" in diesem Fall problematisch ist.
+:::
+::: {.column width="34%"}
+:::{.fragment}
+![](images/iqr_skewed.png)
+:::
+:::
+::::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Interquartilsabstand: Klassik-Beispiele
+
+<div class="vspace-medium"></div>
+
+
+::: {.content-visible when-format="revealjs"}
+::: {.hcenter-slide}
+```yaml { .animate src="images/warum_streuung_schaefer_range_IQR.svg"}
+setup:
+  - element: "#iqr1"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "1"
+  - element: "#iqr2"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "2"
+  - element: "#iqr3"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "3"
+  - element: "#iqr4"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "4"        
+```
+:::
+:::
+
+::: {.content-hidden when-format="revealjs"}
+![](images/warum_streuung_schaefer_range_IQR.svg)
+:::
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Die Streuungsmaße im Vergleich
+
+::: {.td-line-height-1-75 .td-fontsize-25}
+<!---  Table --->
+|||
+|-|-|
+| **Spannbreite (Range)** | ▪&numsp;Gibt die Ausdehnung des gesamten Wertebereiches an \
+▪&numsp;Auf kein bestimmtes Lagemaß bezogen \
+▪&numsp;Geringer statistischer Nutzen, manchmal interessante Zusatzinfo \
+▪&numsp;Maximal abhängig von Ausreißern |
+| **Varianz** | ▪&numsp;Auf den Mittelwert bezogen ("wie stark streuen die Daten um den Mittelwert?") \
+▪&numsp;Relativ anfällig gegenüber Ausreißern \
+▪&numsp;Unnatürliche quadrierte Einheiten |
+| **Standardabweichung** | ▪&numsp;Wie Varianz, aber natürliche unquadrierte Einheiten |
+| **Interquartilsabstand** | ▪&numsp;Auf kein bestimmtes Lagemaß bezogen \
+▪&numsp;Jedoch ähnliches Prinzip wie der Median und häufig im Zusammenhang mit \
+&numsp;&emsp13;diesem angegeben \
+▪&numsp;Robust gegenüber Ausreißern & sinnvoll bei schiefen Verteilungen |
+
+: {tbl-colwidths="[23, 77]"}
+:::
+
+<!-- ```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+import os
+import seaborn as sns
+
+np.random.seed(0)
+root = '/home/matteo/OneDrive/lehre/Statistik/stats1_lecture/book/'
+
+fontsize = 15
+
+df = pd.read_csv(os.path.join(root, 'data', 'paradoxia.csv'))
+# print(df.head())
+
+data_tiktok_control = df[df.group == 1]['hours_tiktok_per_day'].values
+data_tiktok_paradoxia = df[df.group == 2]['hours_tiktok_per_day'].values
+data_inflam_control = df[df.group == 1]['inflammation'].values
+data_inflam_paradoxia = df[df.group == 2]['inflammation'].values
+
+print(f'Mean TikTok Control: {np.mean(data_tiktok_control):.2f}')
+print(f'Mean TikTok Paradoxia: {np.mean(data_tiktok_paradoxia):.2f}')
+print(f'Mean Inflam Control: {np.mean(data_inflam_control):.2f}')
+print(f'Mean Inflam Paradoxia: {np.mean(data_inflam_paradoxia):.2f}')
+
+plt.style.use('dark_background')
+plt.figure(figsize=(6, 2.5))
+ax = plt.subplot(121)
+plt.gca().set_facecolor('#eee')
+sns.stripplot(data=df, x='group', y='hours_tiktok_per_day', color='#bbb', jitter=0.25)
+color = 'k'
+plt.errorbar([0], [np.mean(data_tiktok_control)], yerr=[np.std(data_tiktok_control)], fmt='o', markersize=5, capsize=10, capthick=2, elinewidth=2, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.errorbar([1], [np.mean(data_tiktok_paradoxia)], yerr=[np.std(data_tiktok_paradoxia)], fmt='o', markersize=5, capsize=10, capthick=2, elinewidth=2, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.text(0.25, 0.85, r'$\bar{x}=' + f'{np.mean(data_tiktok_control):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.text(0.75, 0.85, r'$\bar{x}=' + f'{np.mean(data_tiktok_paradoxia):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+
+plt.xticks([0, 1], ['Kontroll', 'Paradoxia'], fontsize=fontsize)
+plt.yticks(fontsize=fontsize-2)
+plt.ylabel('Stunden TikTok / 24h', fontsize=fontsize)
+plt.xlabel('')
+# plt.xlim(-0.5, 1.5)
+plt.ylim(0, 1.1*max(data_tiktok_control.max(), data_tiktok_paradoxia.max()))
+
+
+ax = plt.subplot(122)
+plt.gca().set_facecolor('#eee')
+sns.stripplot(data=df, x='group', y='inflammation', color='#bbb', jitter=0.25)
+color = 'k'
+plt.errorbar([0], [np.mean(data_inflam_control)], yerr=[np.std(data_inflam_control)], fmt='o', markersize=5, capsize=10, capthick=2, elinewidth=2, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.errorbar([1], [np.mean(data_inflam_paradoxia)], yerr=[np.std(data_inflam_paradoxia)], fmt='o', markersize=5, capsize=10, capthick=2, elinewidth=2, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.text(0.25, 0.85, r'$\bar{x}=' + f'{np.mean(data_inflam_control):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.text(0.75, 0.85, r'$\bar{x}=' + f'{np.mean(data_inflam_paradoxia):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+
+plt.xticks([0, 1], ['Kontroll', 'Paradoxia'], fontsize=fontsize)
+plt.yticks(fontsize=fontsize-2)
+plt.ylabel('Entzündungswert', fontsize=fontsize)
+plt.xlabel('')
+plt.xlim(-0.5, 1.5)
+plt.ylim(0, 1.1*max(data_inflam_control.max(), data_inflam_paradoxia.max()))
+
+
+plt.tight_layout()
+
+plt.savefig('images/paradoxia_histogram_inflammation_mean_std.png', bbox_inches='tight')
+``` -->
+
+
+## {.blackslide .center}
+
+<div class="vspace-medium"></div>
+
+:::: {.columns}
+::: {.column width="65%"}
+Die Daten in Ihrer Beobachtungsstudie weisen keine größeren Ausreißer auf uns Sie entscheiden sich für Mittelwert bzw. Standardabweichung als Ihr Lage- bzw. Streuungsmaß. Für eine erste Kommunikation mit den anderen Task Forces erstellen Sie folgende Abbildung:
+:::
+::: {.column width="35%"}
+::: {.content-hidden when-format="pdf"}
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=200px style="margin-top:-100px !important"}
+<!-- Source: Midjourney -->
+:::
+:::
+::::
+
+<div class="vspace-large"></div>
+![](images/paradoxia_histogram_inflammation_mean_std.png){height=330px}
+
+## {.blackslide .center}
+
+
+<div class="vspace-medium"></div>
+![](images/paradoxia_histogram_inflammation_mean_std.png){height=330px}
+
+Aus den Werten und der Abbildung wird ersichtlich: tatsächlich sind auch die Entzündungswerte bei Paradoxikern erhöht! Auf Basis der Mittelwerte finden Sie also Evidenz für *beide Hypothesen*!

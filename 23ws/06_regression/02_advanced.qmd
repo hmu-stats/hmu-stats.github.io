@@ -1,0 +1,626 @@
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Totale, erklärte und Residuenquadratsumme
+
+:::: {.columns}
+::: {.column width="49%"}
+- Die Methode der kleinsten Quadrate minimiert die **Residuenquadratsumme (SQR)**:
+
+:::{.fragment}
+$$
+SQR = \sum\left(\hat{y}_i-y_i\right)^2 = \sum\hat{\epsilon}_i^2
+$$
+:::
+
+- Diese wiederum lässt sich in Bezug setzen zur **totalen Quadratsumme (SQT)** und zur **erklärten Quadratsumme (SQE)**:
+
+:::{.fragment}
+$$
+SQR = SQT - SQE\qquad\text{bzw.}
+$$
+:::
+
+:::{.fragment}
+$$
+SQT = SQT + SQR
+$$
+:::
+
+- Mit
+
+:::{.fragment}
+$$
+SQE = \sum\left(\hat{y}_i-\bar{y}\right)^2
+$$
+:::
+
+
+:::{.fragment}
+$$
+SQT = \sum\left(y_i-\bar{y}\right)^2
+$$
+:::
+
+:::
+::: {.column width="51%"}
+<div class="vspace-medium"></div>
+![](images/quadratsummen2.png)
+:::
+::::
+
+- Falls alle Punkte exakt auf der Regressionsgeraden liegen ($\hat{y}_i = y_i$) ist die erklärte Quadratsumme identisch der totalen Quadratsumme ($SQE = SQT$) und die Residuenquadratsumme ist 0
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Bestimmtheitsmaß {.nonincremental}
+
+::: {.nonincremental}
+- Das [**Bestimmtheitsmaß**]{color="navy"} $R^2$ gibt an, wie gut die Datenpunkte durch die Regressionsgerade gefittet werden ("Anpassungsgüte")
+- Es gibt an, welcher Anteil der Datenvarianz $Var(Y)$ durch die Varianz der Vorhersage $Var(\hat{Y})$ erklärt wird..
+:::
+
+:::{.fragment}
+$$
+R^2 = \frac{Var(\hat{Y})}{Var(Y)} = \frac{\sum\left(\hat{y_i}-\bar{y}\right)^2}{\sum\left(y_i-\bar{y}\right)^2} = \frac{SQE}{SQT}
+$$
+:::
+
+:::{.fragment}
+- .. oder äquivalent, den Anteil der erklärten Quadratsumme an der totalen Quadratsumme.
+:::
+
+::: {.merke .fragment}
+:::: {.columns}
+::: {.column width="5%"}
+::: {style="margin-top: 18px"}
+![](images/merke.png){height="55px"}
+:::
+:::
+::: {.column width="95%"}
+Bei einer einfachen Regression gilt: $R^2 = r^2$<br>
+Das Bestimmtheitsmaß ist bei einer einfachen Regression also identisch dem quadrierten Korrelationskoeffizienten zwischen den Variablen X und Y!
+:::
+::::
+:::
+
+<div class="vspace-medium"></div>
+
+
+<!---  Example --->
+::: {.example .fragment}
+:::: {.columns}
+::: {.column width="10%"}
+::: {style="margin-top: 10px"}
+![](images/example.png){height=70px}
+:::
+:::
+::: {.column width="90%"}
+Lebenszufriedenheit und sportliche Aktivität haben eine Korrelation von $r=0{,}8$.<br>&rArr; Sportliche Aktivität erklärt $\;r^2=0{,}64\;\widehat{=}\;64\%$ der Varianz von Lebenszufriedenheit (und umgekehrt).
+:::
+::::
+:::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Bestimmtheitsmaß
+
+
+:::: {.columns}
+::: {.column width="50%"}
+![Beispiele für zwei Regressionen mit Bestimmtheitsmaß $R^2=98{,}92\%$ und $R^2=57{,}13\%$. Selbst das schwächere Beispiel mit $57{,}13$ wäre für typische Effekte in der Psychologie noch ein außerordentlich hoher Wert.^[https://de.wikipedia.org/wiki/Datei:R2values.svg]](images/coefficient_of_determination_examples.png)
+:::
+::: {.column width="50%"}
+- Das Bestimmtheitsmaß $R^2$ gibt an, wie gut sich die Variable $Y$ mit einer linearen Gleichung basierend auf $X$ vorhersagen lässt.
+- Der Maximal wert von $R^2$ ist 1. In diesem Fall erklärt die lineare Gleichung in $X$ die Daten $Y$ perfekt.
+- Da das Bestimmtheitsmaß $R^2$ angibt, welcher Anteil der Varianz in den Daten durch die lineare Gleichung erklärt wird, wird es manchmal in Prozent ausgedrückt (d.h. mit 100 multipliziert; wie im Bild links). Der Maximalwert von $R^2$ ist dann 100%.
+:::
+::::
+
+
+
+## [Analytische Form der Regressionskoeffizienten (einfache Regression)]{style="font-size:38px"}
+
+Die optimalen [**Regressionskoeffizienten**]{color="navy"} $b_0$ (Achsenabschnitt) und $b_1$ (Steigung) lassen sich analytisch herleiten:
+
+![](images/regression_derivation3.png){height=150px}
+
+- Aus den Mittelwerten und der Kovarianz von $X$ und $Y$, sowie der Varianz von $X$, lassen sich also die Regressionskoeffizienten vollständig bestimmen.
+- Auch hier zeigt sich wieder die Assymmetrie der Regression: während bei der Formel für die Pearson-Korrelation $Var(X)Var(Y)$ im Nenner steht, ist es beim Regressionskoeffizienten lediglich die Varianz der unabhäbgigen Variable $Var(X)$
+- Wäre stattdessen $Y$ die unabhängige Variable, stünde $Var(Y)$ im Nenner, und der Regressionskoeffizient hätte i.d.R. einen anderen Wert.
+    - Dies ist auch der Grund, weshalb die Regressionsgleichung nicht einfach invertiert werden darf: 
+    
+::: {.fragment style="margin-top: -23px"}
+$$
+\require{cancel}
+\scriptsize{
+\cancel{
+x_i = \frac{1}{b_1}\hat{y}_i-\frac{b_0}{b_1}
+}\\
+\left(\text{.. und }\frac{1}{b_1}\text{ im Allgemeinen }\textbf{nicht}\text{ der Regressionskoeffizient für $Y$ als unabhängige Variable ist.}\right)
+}
+$$
+:::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Zusammenhang Regression &harr; Korrelation
+
+- Folgendener Zusammenhang gilt zwischen der Steigung $b_1$ und dem Korrelationskoeffizienten $r$:
+$$
+\scriptsize{
+b_1 = \frac{Cov(X,Y)}{Var(X)} = \frac{Cov(X,Y)}{s_X^2} = \frac{s_Y}{s_Y}\frac{Cov(X,Y)}{s_Xs_X} = \frac{s_Y}{s_X}\underbrace{\frac{Cov(X,Y)}{s_Xs_Y}}_{r} = \frac{s_Y}{s_X}r
+}
+$$
+
+- Es gilt also
+
+::: {.fragment style="margin-top: -15px"}
+$$
+b_1 = \frac{s_Y}{s_X}r\qquad\quad\text{bzw.}\qquad r = \frac{s_X}{s_Y}b_1
+$$
+:::
+
+::: {.merke .fragment}
+:::: {.columns}
+::: {.column width="5%"}
+::: {style="margin-top: 18px"}
+![](images/merke.png){height="55px"}
+:::
+:::
+::: {.column width="95%"}
+Sind die Standardabweichungen $s_X$ und $s_Y$ bekannt, kann aus der Steigung $b_1$ der Regression immer auch der Korrelationskoeffizient $r$ bestimmt werden (und  umgekehrt).
+:::
+::::
+:::
+
+<div class="vspace-medium"></div>
+
+- Der Ausruck $\frac{s_X}{s_Y}b_1$ wird auch [**standardisierter Regressionskoeffizient**]{color="navy"}  $\beta_1$ genannt: 
+
+::: {.fragment style="margin-top:-15px"}
+$$
+    \beta_1 = \frac{s_X}{s_Y}b_1
+$$
+:::
+
+- Bei der einfachen Regression ist der standardisierte Regressionskoeffizient identisch mit dem Korrelationskoeffizienten: $\quad\beta_1 = r$
+
+<!-- https://stats.stackexchange.com/questions/435699/how-to-derive-the-formula-for-coefficient-slope-of-a-simple-linear-regression -->
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Standardisierter Regressionskoeffizient
+- Wie gesehen erhält man den **standardisierten Regressionskoeffizienten** $\beta$ durch die Transformation $\beta_1 = \frac{s_X}{s_Y}b_1$ 
+- Im Gegensatz zu $b_1$ ist $\beta_1$ unabhängig von der Skalierung von $X$ und $Y$ (also z.B. ob die Einheit als $cm$ oder $m$ gewählt wurde) &rArr; $\beta$-Koeffizienten lassen sich besser zwischen verschiedenen Regressionen vergleichen
+
+::: {.definition .fragment }
+<!---  Definition--->
+|||
+|:-:|-|
+|||
+| ![](images/definition.svg){height=70px} | **Standardisierung einer Variable $X$**&#x2254; Variable $X$ durch ihre Standardabweichung $s_X$ teilen<br>Die Variable $X$ hat nach der Standardisierung die Standardabweichung $s_X=1$. | 
+|||
+: {tbl-colwidths="[9, 91]"}
+:::
+- Wurden sowohl $X$ als auch $Y$ vor der Regression standardisiert, also $s_X=s_Y=1$, so sind die Regressionskoeffizienten automatisch standardisiert:
+
+::: {.fragment style="margin-top: -10px"}
+$$
+\beta_1 = \frac{s_X}{s_Y}b_1 = \frac{1}{1}b_1 = b_1
+$$
+:::
+
+<!---  Table --->
+:::{.fragment}
+|||
+|-|-|
+| $b_1$ | Um welchen Wert ändert sich $Y$ bei einer Änderung von $X$ um den Wert $1$? |
+| $\beta_1$ | Um welchen Wert ändert sich $Y$ bei einer Änderung von $X$ um *eine* Standardabweichung $s_X$? |
+
+: Interpretation im Kontext der Regressionsgleichungen $\quad\hat{Y}=b_0+b_1X\quad$ bzw. $\quad\hat{Y}=\beta_0+\beta_1X$ {tbl-colwidths="[10, 90]"}
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Herleitung der Regressionskoeffizienten]{color="darkred"}
+
+![](images/kein_klausurstoff.png){.absolute bottom=0 right=0 height=110px}
+
+- Die Methode der kleinsten Quadrate entspricht der Minimierung der quadratischen Residuen:
+$$
+SQR = \sum\left(\hat{y}_i-y_i\right)^2 = \sum\left(b_0+b_1 x_i-y_i\right)^2 \overset{!}{=}\text{min}
+$$
+- Um das Minimum von SQR in Abhängigkeit von $b_0$ und $b_1$ zu finden, setzen wir die Ableitungen von SQR nach den Parametern gleich Null (Infinitesimalrechnung@Schule &#128521;)
+- Zunächst leiten wir SQR nach $b_0$ ab (Kettenregel):
+$$
+\frac{dSQR}{db_0} = \sum2\left(b_0+b_1 x_i-y_i\right)=2nb_0+2\sum\left(b_1 x_i-y_i\right)=0
+$$
+
+::: {.fragment style="border: 1px solid darkblue"}
+$$
+\color{darkblue}{\longrightarrow b_0} = \frac{1}{n}\sum\left(y_i-b_1x_i\right) = \frac{1}{n}\sum y_i-\frac{b_1}{n}\sum x_i = \color{darkblue}{\bar{y}-b_1\bar{x}}
+$$
+:::
+
+<div class="vspace-xlarge"></div>
+
+- ... jetzt benötigen wir noch $b_1$
+
+## [Herleitung der Regressionskoeffizienten]{color="darkred"}
+
+![](images/kein_klausurstoff.png){.absolute bottom=0 right=0 height=110px}
+
+:::{style="margin-top: -10px !important"}
+- SQR nach $b_1$ ableiten und gleich Null setzen:
+:::
+
+:::{.fragment}
+$$
+\small{
+\frac{dSQR}{db_1} = \sum2(b_0+b_1 x_i-y_i)x_i=2b_0\sum x_i + 2b_1\sum x_i^2-2\sum x_i y_i = 0
+}
+$$
+:::
+
+:::{.fragment style="margin-top: -10px !important"}
+$$\small{
+\longrightarrow b_1 = \frac{\sum x_i y_i}{{\sum x_i^2}} - \frac{b_0\sum x_i}{\sum x_i^2} \overset{\color{darkgreen}{(b_0\,einsetzen)}}{=} \frac{\sum x_i y_i}{{\sum x_i^2}} - \frac{\bar{y}\sum x_i}{\sum x_i^2}+b_1\frac{\bar{x}\sum x_i}{\sum x_i^2}
+}
+$$
+:::
+
+- Alle $b_1$-Terme auf die linke Seite bringen und einige Umformungen vornehmen:
+
+::: {.fragment style="margin-top: -12px"}
+$$
+\small{
+b_1 - b_1\frac{\bar{x}\sum x_i}{\sum x_i^2} = \frac{\sum x_i y_i}{{\sum x_i^2}} - \frac{\bar{y}\sum x_i}{\sum x_i^2}
+}
+$$
+:::
+
+
+:::{.fragment}
+$$
+\scriptsize{
+b_1 \left(1 - \frac{\bar{x}\sum x_i}{\sum x_i^2}\right) = \frac{\sum x_i y_i - \bar{y}\sum x_i}{\sum x_i^2}
+}
+$$ 
+:::
+
+ 
+:::{.fragment}
+$$
+\scriptsize{
+b_1 \left(\frac{\sum x_i^2}{\sum x_i^2} - \frac{\bar{x}\sum x_i}{\sum x_i^2}\right) = \frac{\sum x_i y_i - \bar{y}\sum x_i}{\sum x_i^2}
+}
+$$
+:::
+
+
+:::{.fragment}
+$$
+\scriptsize{
+b_1 \frac{\sum x_i^2 - \bar{x}\sum x_i}{\sum x_i^2} = \frac{\sum x_i y_i - \bar{y}\sum x_i}{\sum x_i^2}
+}
+$$
+:::
+
+
+::: {.fragment style="margin-left: -100px"}
+$$
+\scriptsize{
+\longrightarrow    
+b_1 = \frac{\color{darkred}{\sum x_i^2}}{\sum x_i^2-\bar{x}\sum x_i}\frac{\sum x_i y_i - \bar{y}\sum x_i}{\color{darkred}{\sum x_i^2}} = \frac{\sum x_i y_i - \bar{y}\sum x_i}{\sum x_i^2-\bar{x}\sum x_i}
+\overset{\color{darkgreen}{\left(\sum x_i=n\bar{x}\right)}}{=} \frac{\sum x_i y_i - n\bar{x}\bar{y}}{\sum x_i^2-n\bar{x}^2} \overset{\color{darkgreen}{:n}}{=} \frac{\frac{1}{n}\sum x_i y_i - \bar{x}\bar{y}}{\frac{1}{n}\sum x_i^2-\bar{x}^2}
+}
+$$
+:::
+
+
+
+
+## [Herleitung der Regressionskoeffizienten]{color="darkred"}
+
+![](images/kein_klausurstoff.png){.absolute bottom=0 right=0 height=110px}
+
+- Zwischenergebnis:
+
+::: {.fragment style="margin-top:-35px"}
+$$
+b_1 = \frac{\frac{1}{n}\sum x_i y_i - \bar{x}\bar{y}}{\frac{1}{n}\sum x_i^2-\bar{x}^2}
+$$
+:::
+
+- Um zu erkennen, dass der Zähler der Kovarianz und der Nenner der Varianz entspricht, betrachten wir nochmal die Formeln der (Ko)Varianz:
+
+
+:::{.fragment}
+$$
+\scriptsize{
+\begin{aligned}
+Cov(X,Y) &= \frac{1}{n}\sum(x_i-\bar{x})(y_i-\bar{y}) = \frac{1}{n}\sum\left(x_iy_i-x_i\bar{y}-y_i\bar{x}+\bar{x}\bar{y}\right) = 
+\frac{1}{n}\sum x_iy_i-
+\bar{y}\frac{1}{n}\sum x_i-
+\bar{x}\frac{1}{n}\sum y_i+
+\bar{x}\bar{y} = \\
+&\underset{\color{darkgreen}{\left(\frac{1}{n}\sum y_i=\bar{y}\right)}}{\overset{\color{darkgreen}{\left(\frac{1}{n}\sum x_i=\bar{x}\right)}}{=}} \frac{1}{n}\sum x_iy_i - \bar{y}\bar{x}-\bar{x}\bar{y}+\bar{x}\bar{y} = \frac{1}{n}\sum x_iy_i - \bar{x}\bar{y}
+\end{aligned}
+}
+$$
+:::
+
+
+:::{.fragment}
+$$
+\scriptsize{
+\begin{aligned}
+Var(X) &= \frac{1}{n}\sum\left(x_i-\bar{x}\right)^2 = \frac{1}{n}\sum\left(x_i^2-2x_i\bar{x}+\bar{x}^2\right) = \frac{1}{n}\sum x_i^2-2\bar{x}\frac{1}{n}\sum x_i+\bar{x}^2 = \\
+ &\overset{\color{darkgreen}{\left(\frac{1}{n}\sum x_i=\bar{x}\right)}}{=} \frac{1}{n}\sum x_i^2-2\bar{x}^2+\bar{x}^2 = \frac{1}{n}\sum x_i^2-\bar{x}^2 
+\end{aligned}
+}
+$$
+:::
+
+
+- Es gilt also tatsächlich:
+
+::: {.fragment style="margin-top:-20px"}
+$$
+\color{darkblue}{b_1 = \frac{Cov(X,Y)}{Var(X)}}
+$$
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Intuition hinter der Regressionssteigung
+
+- Die Formel für die Steigung bei der einfachen Regression
+
+::: {.fragment style="margin-top:-20px"}
+$$
+b_1 = \frac{Cov(X,Y)}{Var(X)}
+$$
+:::
+
+:::{.fragment}
+.. erinnert an die Formel der Korrelation, bei der die Kovarianz ebenfalls standardisiert wird (mit $\frac{1}{s_Xs_Y}$)
+:::
+
+- Der entscheidende Unterschied ist, dass bei der Korrelation eine Standardisierung bezüglich *beider* Variablen vorgenommen wird, bei der Regression aber nur bezüglich der *unabhängigen* Variable.
+- In der Folge wird bei der Regression folgende Frage beantwortet: 
+
+> Was ist die Auswirkung einer Änderung der unabhängigen Variable $X$ um 1 (**einheitslos!**) auf die abhängige Variable $Y$ (**in deren Rohwerteinheiten!**).
+
+- Auch hier wird wieder deutlich, dass bei der Regression eine feste Rollenverteilung vorgenommen wird: nur die unabhängige Variable wird standardisiert.
+- Da die Steigung also von der Varianz der als unabhängig deklarierten Variable abhängt, ist es nicht zulässig anzunehmen, dass $\frac{1}{b_1}$ einfach die Steigung wäre, wenn $Y$ die unabhängige und $X$ die abhängige Variable ist. Für die umgekehrte Steigung müssten wir schließlich auch die Varianz von $Y$ berücksichtigen!
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Beweis, dass $R^2=r^2$ bei einfacher Regression]{color="darkred"}
+
+![](images/kein_klausurstoff.png){.absolute bottom=0 right=0 height=110px}
+
+- Ausgestattet mit der Formel für den Regressionskoeffizienten, lässt sich nun auch beweisen, dass bei der einfachen Regression gilt: $\quad \color{darkblue}{R^2=r^2}$
+
+
+:::{.fragment}
+$$
+\small{
+\begin{aligned}
+R^2 = \frac{Var(\hat{Y})}{Var(Y)} &= \frac{\frac{1}{n}\sum\left(\hat{y}_i-\bar{y}\right)^2}{Var(Y)}
+ \underset{\color{darkgreen}{\left(\bar{y} = b_0+b_1\bar{x}\right)}}{\overset{\color{darkgreen}{\left(\hat{y}_i = b_0+b_1x_i\right)}}{=}} \frac{\frac{1}{n}\sum\left[(b_0+b_1x_i)-(b_0+b_1\bar{x})\right]^2}{Var(Y)} = \frac{\frac{1}{n}\sum\left(b_1x_i-b_1\bar{x}\right)^2}{Var(Y)} = \\
+&= b_1^2\frac{\frac{1}{n}\sum\left(x_i-\bar{x}\right)^2}{Var(Y)}= b_1^2\frac{Var(X)}{Var(Y)}\qquad\qquad \scriptsize{\left(\text{NB sieht man, dass gilt:}\quad Var(\hat{Y}) = b_1^2Var(X)\right)}
+\end{aligned}
+}
+$$
+:::
+
+- Nun $b_1 = \frac{Cov(X,Y)}{Var(X)}$ einsetzen:
+
+:::{.fragment}
+$$
+\small{
+\color{darkblue}{R^2} = \frac{Cov^2(X,Y)}{\color{darkred}{Var^2(X)}}\frac{\color{darkred}{Var(X)}}{Var(Y)} = \color{darkblue}{\frac{Cov^2(X,Y)}{Var(X)Var(Y)}}
+}
+$$
+:::
+
+- Vergleiche mit $r^2$:
+
+:::{.fragment}
+$$
+\small{
+\color{darkblue}{r^2} = \left[\frac{Cov(X,Y)}{s_Xs_Y}\right]^2 = \frac{Cov^2(X,Y)}{s_X^2s_Y^2} = \frac{Cov^2(X,Y)}{Var(X)Var(Y)}
+}
+$$
+:::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Ausblick: Multiple Regression
+
+- Gibt es mehr als eine **unabhängige Variable** (auch **Prädiktoren** genannt), handelt es sich nicht mehr um eine einfache Regression, sondern um eine [**multiple Regression**]{color="navy"}:
+
+<div class="vspace-medium"></div>
+
+:::{.fragment}
+![](images/ausblick_multiple_regression.png){height="300px"}
+:::
+
+<div class="vspace-medium"></div>
+
+- Jeder Prädiktor $X_1, X_2, ... X_n$ hat einen eigenen Regressionskoeffizienten $b_1, b_2, ... b_n$
+- Multiple Regression wird ausführlich in Statistik 2 behandelt.
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## ["Formula Notation": Formalisierung von Regressionsmodellen]{style="font-size: 40px"}
+
+- Da Regressionen heute auschließlich mit dem Computer berechnet werden, hat sich eine eigene Sprache etabliert, um Regressionsmodelle zu definieren (bekannt als *Formula Notation*):
+
+<div class="vspace-medium"></div>
+:::{.fragment}
+![](images/patsy_simple.png)
+:::
+<div class="vspace-medium"></div>
+
+- Der Ausdruck ["DV &Tilde; 1 + IV1 + IV2"]{style="font-family:monospace"} kann der Statistiksoftware als *String* übergeben werden; so wird definiert, welches Regressionsmodell gerechnet werden soll.
+- [DV]{style="font-family:monospace"}, [IV1]{style="font-family:monospace"}, [IV2]{style="font-family:monospace"} sind dabei die gewählten Variablennamen &mdash; beliebige Ausdrücke sind möglich
+
+
+<!---  Example --->
+::: {.example .fragment}
+:::: {.columns}
+::: {.column width="10%"}
+::: {style="margin-top: 10px"}
+![](images/example.png){height=70px}
+:::
+:::
+::: {.column width="90%"}
+["satisfaction &Tilde;  1 + physical_activity"]{style="font-family:monospace"} \
+[Dies wäre eine mögliche Definition unserer einfachen Regression mit sportlicher Aktivität als unabhängiger und Lebenszufriedenheit als abhängiger Variable.]{style="display:block;margin-top:12px;line-height:1.1"}
+:::
+::::
+:::
+
+
+
+## Regression: Erklärung versus Vorhersage
+
+<!---  Table --->
+||[Erklärung]{color="navy"}|[Vorhersage]{color="navy"}|
+|-|:-:|:-:|
+| **Ziel** | Zusammenhänge zwischen Variablen untersuchen:\
+- Hängen die Variablen $X$ und $Y$ zusammen? \
+- Ist der Zusammenhang positiv oder negativ? \
+- Wie stark ist der Zusammenhang? | Wie gut kann Variable $Y$ durch Variable $X$ vorhergesagt werden? |
+| **Interessante Größe** | Steigung $b_1$ | Bestimmtheitsmaß $R^2$ |
+|**Visuelle Hervorhebung der interessanten Größe**|![](images/regression_explanation.png){.hcenter-image height=200px}|![](images/regression_prediction.png){.hcenter-image height=200px}|
+| **Beispiel** | Regression von Lebenszufriedenheit auf sportliche Aktivität. Der Regressionskoeffizient sei $b_1=0{,}5$.\
+- Der Zusammenhang ist positiv. \
+- Eine Erhöhung von sportlicher Aktivität um den Wert 1 führt im Schnitt zu einer Erhöhung der Lebenszufriedenheit um den Wert $0{,}5$.  | Regression von Lebenszufriedenheit auf sportliche Aktivität. Das Bestimmtheitsmaß sei $R^2=0{,}4$.\
+- Sportliche Aktivität hat eine gute Vorhersagekraft für Lebenszufriedenheit. \
+- Sportliche Aktivität erklärt 40% der Varianz von interindividueller Lebenszufriedenheit. |
+
+: {tbl-colwidths="[20, 40, 40]"}
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+##
+:::: {.columns}
+::: {.column width="9%"}
+::: {style="margin-top:-15px"}
+![](images/summary.png){width=60px}
+:::
+:::
+::: {.column width="91%"}
+::: {.summary style="margin-top:20px !important"}
+- Die lineare Regression erweitert die Korrelation zu einer [**Vorhersageanalyse**]{color="navy"}: wenn Variablen korrelieren, lässt sich eine Variable aus der anderen vorhersagen.
+- Die Vorhersage basiert auf einer [**Regressionsgerade**]{color="navy"}, die alle Datenpunkte so gut wie möglich repräsentiert.
+- Die Regressionsgerade wird durch den [**Achsenabschnitt**]{color="navy"} $b_0$ und die [**Steigung**]{color="navy"} $b_1$  beschrieben.
+- Die standardisierte Form des Steigungs-Koeffizienten wird [**Beta**]{color="navy"} oder [**Beta-Gewicht**]{color="navy"} genannt und ist identisch dem Korrelationskoeffizienzen (bei einfacher Regression).
+- Das [**Bestimmtheitsmaß**]{color="navy"} $R^2$ bemisst die Vorhersagegenauigkeit der Regression.
+- Die Regression kann sowohl der [**Vorhersage**]{color="navy"} einer Variable $Y$ auf Basis einer Variable $X$ dienen, als auch der [**Erklärung**]{color="navy"} bzw. Beschreibung eines Zusammehangs von $X$ und $Y$.
+:::
+:::
+::::
+
+<!--- ```{python}
+
+``` --->
+
+
+<!---```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from scipy.stats import linregress, pearsonr
+
+np.random.seed(0)
+root = '/home/matteo/OneDrive/lehre/Statistik/stats1_lecture/book/'
+df = pd.read_csv(os.path.join(root, 'data', 'paradoxia.csv'))
+data_tiktok_paradoxia = df[df.group == 2]['hours_tiktok_per_day'].values
+data_inflam_paradoxia = df[df.group == 2]['inflammation'].values
+
+r, p = pearsonr(data_tiktok_paradoxia, data_inflam_paradoxia)
+
+fontsize = 15
+
+plt.style.use('dark_background')
+plt.figure(figsize=(6, 2.8))
+
+plt.subplot(121)
+plt.scatter(data_tiktok_paradoxia, data_inflam_paradoxia)
+linrg = linregress(data_tiktok_paradoxia, data_inflam_paradoxia)
+plt.plot([0.1, 3.1], linrg.intercept + linrg.slope * np.array([0.1, 3.1]), color='#ff00ff', lw=2)
+plt.text(0.2, 0.3075, r'$\bf{slope=' + f'{linrg.slope:.3f}' + r'}$', color='#ff00ff', fontsize=fontsize-2)
+plt.xticks(fontsize=fontsize-2)
+plt.yticks(fontsize=fontsize-2)
+plt.xlabel('Stunden TikTok / 24h', fontsize=fontsize)
+plt.ylabel('Entzündungswerte', fontsize=fontsize)
+plt.xlim(0, 3.2)
+plt.ylim(0, 0.34)
+
+plt.subplot(122)
+plt.scatter(data_inflam_paradoxia, data_tiktok_paradoxia)
+linrg = linregress(data_inflam_paradoxia, data_tiktok_paradoxia)
+plt.plot([0.01, 0.31], linrg.intercept + linrg.slope * np.array([0.01, 0.31]), color='#ff00ff', lw=2)
+plt.text(0.015, 3.15, r'$\bf{slope=' + f'{linrg.slope:.2f}' + r'}$', color='#ff00ff', fontsize=fontsize-2)
+plt.xticks(fontsize=fontsize-2)
+plt.yticks(fontsize=fontsize-2)
+plt.xlabel('Entzündungswerte', fontsize=fontsize)
+plt.ylabel('Stunden TikTok / 24h', fontsize=fontsize)
+plt.xlim(0, 0.34)
+plt.ylim(0, 3.5)
+
+plt.tight_layout()
+
+plt.savefig('images/paradoxia_slope_paradoxiker.png', bbox_inches='tight')
+``` --->
+
+## {.blackslide .center}
+
+<div class="vspace-medium"></div>
+
+:::: {.columns}
+::: {.column width="68%"}
+Sie führen nun eine Regressionsanalyse bezüglich des Zusammenhangs von TikTok-Online-Zeit und Entzündungswerten durch. Einmal mit TikTok-Online-Zeit und einmal mit Entzündungswerten als unabhängiger Variable:
+:::
+::: {.column width="32%"}
+::: {.content-hidden when-format="pdf"}
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=200px style="margin-top:-50px !important"}
+<!-- Source: Midjourney -->
+:::
+:::
+::::
+
+<div class="vspace-large"></div>
+![](images/paradoxia_slope_paradoxiker.png){height=280px}
+
+Es zeigt sich, dass 1 Stunde zusätzlicher TikTok-Konsum mit einer Erhöhung des Entzündungsparameters um 0,043 verbunden ist. Umgekehrt ist eine Erhöhung des Entzündungswertes um 1 mit 4,04 Stunden &mdash; bzw. etwas praktikabeler, eine Erhöhung des Entzündungswertes um 0,1 mit 0,404 Stunden (24 Minuten) &mdash; verbunden.
+
+Diese "rohen" Effektstärken zeigen: es handelt sich um ein substantiellen Zusammenhang!
+

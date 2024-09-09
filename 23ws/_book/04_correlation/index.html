@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Statistik 1 - 4&nbsp; Vorlesung 04: Zusammenhänge</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../05_regression/index.html" rel="next">
+<link href="../03_location_dispersion/index.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04_correlation/index.html">Vorlesung 04: Korrelation</a></li><li class="breadcrumb-item"><a href="../04_correlation/index.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Vorlesung 04: Korrelation</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Statistik 1</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Vorlesung 01: Intro</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_intro/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Vorlesung 01: Intro</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Vorlesung 02: Messen in der Psychologie</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02_messen/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Vorlesung 02: Messen in der Psychologie</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Vorlesung 03: Lage- und Streuungsmaße</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../03_location_dispersion/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Vorlesung 03: Lage- und Streuungsumaße</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Vorlesung 04: Korrelation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../04_correlation/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Vorlesung 04: Korrelation</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Vorlesung 05: Regression</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../05_regression/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Vorlesung 05: Regression</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#was-sind-zusammenhänge" id="toc-was-sind-zusammenhänge" class="nav-link active" data-scroll-target="#was-sind-zusammenhänge">Was sind Zusammenhänge?</a></li>
+  <li><a href="#zusammenhänge-im-engeren-sinn" id="toc-zusammenhänge-im-engeren-sinn" class="nav-link" data-scroll-target="#zusammenhänge-im-engeren-sinn">Zusammenhänge im engeren Sinn</a></li>
+  <li><a href="#kovarianz" id="toc-kovarianz" class="nav-link" data-scroll-target="#kovarianz"><span class="header-section-number">5</span> Kovarianz</a>
+  <ul class="collapse">
+  <li><a href="#kovarianz-1" id="toc-kovarianz-1" class="nav-link" data-scroll-target="#kovarianz-1">Kovarianz</a></li>
+  <li><a href="#kovarianz-2" id="toc-kovarianz-2" class="nav-link" data-scroll-target="#kovarianz-2">Kovarianz</a></li>
+  <li><a href="#kovarianz-größe-gewicht-beispiel" id="toc-kovarianz-größe-gewicht-beispiel" class="nav-link" data-scroll-target="#kovarianz-größe-gewicht-beispiel">Kovarianz: Größe-Gewicht-Beispiel</a></li>
+  </ul></li>
+  <li><a href="#pearson-korrelation" id="toc-pearson-korrelation" class="nav-link" data-scroll-target="#pearson-korrelation"><span class="header-section-number">6</span> Pearson-Korrelation</a>
+  <ul class="collapse">
+  <li><a href="#pearson-korrelation-1" id="toc-pearson-korrelation-1" class="nav-link" data-scroll-target="#pearson-korrelation-1">Pearson-Korrelation</a></li>
+  <li><a href="#warum-ist-die-korrelation-auf-1-bis-1-beschränkt" id="toc-warum-ist-die-korrelation-auf-1-bis-1-beschränkt" class="nav-link" data-scroll-target="#warum-ist-die-korrelation-auf-1-bis-1-beschränkt"><span style=" color: darkred !important;">Warum ist die Korrelation auf −1 bis 1 beschränkt?</span></a></li>
+  <li><a href="#das-streudiagramm" id="toc-das-streudiagramm" class="nav-link" data-scroll-target="#das-streudiagramm">Das Streudiagramm</a></li>
+  <li><a href="#pearson-korrelation-größe-gewicht-beispiel" id="toc-pearson-korrelation-größe-gewicht-beispiel" class="nav-link" data-scroll-target="#pearson-korrelation-größe-gewicht-beispiel">Pearson-Korrelation: Größe-Gewicht-Beispiel</a></li>
+  <li><a href="#interpretation-der-pearson-korrelation" id="toc-interpretation-der-pearson-korrelation" class="nav-link" data-scroll-target="#interpretation-der-pearson-korrelation">Interpretation der Pearson-Korrelation</a></li>
+  <li><a href="#voraussetzungen-fur-das-berechnen-der-pearson-korrelation" id="toc-voraussetzungen-fur-das-berechnen-der-pearson-korrelation" class="nav-link" data-scroll-target="#voraussetzungen-fur-das-berechnen-der-pearson-korrelation">Voraussetzungen für das Berechnen der Pearson-Korrelation</a></li>
+  <li><a href="#mythen-zur-pearson-korrelation" id="toc-mythen-zur-pearson-korrelation" class="nav-link" data-scroll-target="#mythen-zur-pearson-korrelation">Mythen zur Pearson-Korrelation</a></li>
+  <li><a href="#korrelationsmatrix" id="toc-korrelationsmatrix" class="nav-link" data-scroll-target="#korrelationsmatrix">Korrelationsmatrix</a></li>
+  <li><a href="#kovarianzmatrix" id="toc-kovarianzmatrix" class="nav-link" data-scroll-target="#kovarianzmatrix">Kovarianzmatrix</a></li>
+  </ul></li>
+  <li><a href="#rangkorrelationen" id="toc-rangkorrelationen" class="nav-link" data-scroll-target="#rangkorrelationen"><span class="header-section-number">7</span> Rangkorrelationen</a>
+  <ul class="collapse">
+  <li><a href="#was-ist-eine-rangkorrelation" id="toc-was-ist-eine-rangkorrelation" class="nav-link" data-scroll-target="#was-ist-eine-rangkorrelation">Was ist eine Rangkorrelation?</a></li>
+  <li><a href="#berechnung-von-rängen" id="toc-berechnung-von-rängen" class="nav-link" data-scroll-target="#berechnung-von-rängen">Berechnung von Rängen</a></li>
+  <li><a href="#spearman-korrelation" id="toc-spearman-korrelation" class="nav-link" data-scroll-target="#spearman-korrelation">Spearman-Korrelation</a></li>
+  <li><a href="#kendalls-tau" id="toc-kendalls-tau" class="nav-link" data-scroll-target="#kendalls-tau">Kendalls Tau</a></li>
+  <li><a href="#rangkorrelationen-robust-gegen-ausreißer" id="toc-rangkorrelationen-robust-gegen-ausreißer" class="nav-link" data-scroll-target="#rangkorrelationen-robust-gegen-ausreißer">Rangkorrelationen: Robust gegen Ausreißer</a></li>
+  <li><a href="#wann-spearman-und-wann-kendall" id="toc-wann-spearman-und-wann-kendall" class="nav-link" data-scroll-target="#wann-spearman-und-wann-kendall"><span style=" color: darkred !important;">Wann Spearman und wann Kendall?</span></a></li>
+  <li><a href="#der-phi-koeffizient" id="toc-der-phi-koeffizient" class="nav-link" data-scroll-target="#der-phi-koeffizient">Der Phi-Koeffizient</a></li>
+  <li><a href="#phi-koeffizient-beispiel" id="toc-phi-koeffizient-beispiel" class="nav-link" data-scroll-target="#phi-koeffizient-beispiel">Phi-Koeffizient: Beispiel</a></li>
+  </ul></li>
+  <li><a href="#interpretation-von-korrelationen" id="toc-interpretation-von-korrelationen" class="nav-link" data-scroll-target="#interpretation-von-korrelationen"><span class="header-section-number">8</span> Interpretation von Korrelationen</a>
+  <ul class="collapse">
+  <li><a href="#korrelation-und-kausalität" id="toc-korrelation-und-kausalität" class="nav-link" data-scroll-target="#korrelation-und-kausalität">Korrelation und Kausalität</a></li>
+  <li><a href="#korrelation-und-kausalität-1" id="toc-korrelation-und-kausalität-1" class="nav-link" data-scroll-target="#korrelation-und-kausalität-1">Korrelation und Kausalität</a></li>
+  <li><a href="#korrelation-und-kausalität-2" id="toc-korrelation-und-kausalität-2" class="nav-link" data-scroll-target="#korrelation-und-kausalität-2">Korrelation und Kausalität</a></li>
+  <li><a href="#korrelation-und-kausalität-3" id="toc-korrelation-und-kausalität-3" class="nav-link" data-scroll-target="#korrelation-und-kausalität-3">Korrelation und Kausalität</a></li>
+  <li><a href="#wann-ist-ein-korrelationskoeffizient-groß-oder-klein" id="toc-wann-ist-ein-korrelationskoeffizient-groß-oder-klein" class="nav-link" data-scroll-target="#wann-ist-ein-korrelationskoeffizient-groß-oder-klein">Wann ist ein Korrelationskoeffizient groß oder klein?</a></li>
+  <li><a href="#wann-ist-ein-korrelationskoeffizient-groß-oder-klein-1" id="toc-wann-ist-ein-korrelationskoeffizient-groß-oder-klein-1" class="nav-link" data-scroll-target="#wann-ist-ein-korrelationskoeffizient-groß-oder-klein-1"><span style=" color: darkred !important;">Wann ist ein Korrelationskoeffizient groß oder klein?</span></a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../04_correlation/index.html">Vorlesung 04: Korrelation</a></li><li class="breadcrumb-item"><a href="../04_correlation/index.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Vorlesung 04: Korrelation</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Vorlesung 04: Zusammenhänge</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+<section id="was-sind-zusammenhänge" class="level2">
+<h2 class="anchored" data-anchor-id="was-sind-zusammenhänge">Was sind Zusammenhänge?</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li>Ein <span style=" color: navy !important;"><strong>Zusammenhang</strong></span> beschreibt zu welchem Grad zwei Variablen (Merkmale) systematisch miteinander in Verbindung stehen</li>
+<li>Zusammenhänge bilden die Essenz der psychologischen Forschung—durch sie versuchen wir die Mechanik der menschlichen Psyche zu verstehen:
+<ul>
+<li>Fördert <strong>Ausdauersport</strong> das <strong>psychische Wohlbefinden</strong>?</li>
+<li>Helfen <strong>Psychotherapiestunden</strong> bei der Überwindung einer <strong>Depression</strong>?</li>
+<li>Wirkt sich <strong>Bildschirmzeit</strong> nachteilig auf die <strong>Schlafqualität</strong> aus?</li>
+<li>Steigt durch <strong>kindliche Frühförderung</strong> die Wahrscheinlichkeit für einen <strong>akadamischen Bildungsabschluss</strong>?</li>
+</ul></li>
+<li>Fast jede wissenschaftliche Hypothese lässt sich als Zusammenhang formuliern – selbst Unterschiede!
+<ul>
+<li><u>Formulierung als Unterschied</u>: unterscheiden sich Männer und Frauen in ihren verbalen Fähigkeiten?</li>
+<li><u>Formulierung als Zusammenhang</u>: steht die kategorische Variable <strong>Geschlecht</strong> in Zusammenhang mit der metrischen Variable <strong>verbale Fähigkeiten</strong>?</li>
+</ul></li>
+</ul>
+</div><!-- Begin second column --><div class="column" style="width:30%;">
+<p><img src="images/relationship.png" class="img-fluid" width="200"></p>
+</div>
+</div>
+</section>
+<section id="zusammenhänge-im-engeren-sinn" class="level2">
+<h2 class="anchored" data-anchor-id="zusammenhänge-im-engeren-sinn">Zusammenhänge im engeren Sinn</h2>
+<ul>
+<li>Um Unterschiede und Zusammenhänge voneinander abzugrenzen, verstehen wir nachfolgend Zusammenhänge in einem engeren Sinn:</li>
+</ul>
+<!---  Definition--->
+<div class="definition">
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><img src="images/definition.svg" height="70"></td>
+<td>Ein <span style=" color: navy !important;"><strong>Zusammenhang</strong></span> (im engeren Sinn) beschreibt zu welchem Grad die <strong>Variation zweier metrischer Variablen</strong> miteinander in Verbindung steht.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Durch die Eingrenzung auf <strong>metrische Variablen</strong> (diskret oder kontinuerlich) stellt etwa die Verbindung von Geschlecht und verbalen Fähigkeiten keinen Zusammenhang im engeren Sinn dar, da Geschlecht eine kategorische Variable ist.</li>
+<li>In den meisten Fällen sind Zusammenhänge das “schärfere statistische Schwert” als Unterschiede und es lohnt sich oft, Forschungsfragen entsprechend anzupassen:
+<ul>
+<li>Unterscheidet sich die akademische Leistung von Rauchern und Nichtrauchern? ⇒ Zusammenhang <strong>Zahl der Zigaretten pro Tag</strong> und <strong>akademische Leistung</strong></li>
+<li>Unterscheidet sich der Medienkonsum von Depressiven und Kontrollen? ⇒ Zusammenhang <strong>Depressivität</strong> und <strong>Medienkonsum</strong></li>
+<li>Unterscheidet sich das Depressionsrisiko zwischen Nord- und Süddeutschland? ⇒ Zusammenhang <strong>geographischer Breitengrad</strong> und <strong>Depressionsrisiko</strong></li>
+</ul></li>
+</ul>
+</section>
+<section id="kovarianz" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Kovarianz</h1>
+<section id="kovarianz-1" class="level2">
+<h2 class="anchored" data-anchor-id="kovarianz-1">Kovarianz</h2>
+<ul>
+<li>Ziel: mathematische Größe, die zum Ausdruck bringt, wie stark die Variation zweier Variablen miteinander in Zusammenhang steht</li>
+<li>Wir haben bereits eine Größe für die Variation <em>einer</em> Variable — die Varianz:</li>
+</ul>
+<p><span class="math display">\[
+Var(X) = \frac{1}{N}\sum_{i=1}^N\big(x_i-\bar{X}\big)^2 = \frac{1}{N}\sum_{i=1}^N(x_i-\bar{X})\color{darkred}{(x_i-\bar{X})}
+\]</span></p>
+<ul>
+<li><p>Die Varianz gibt an, wie stark eine Variable <span class="math inline">\(X\)</span> um ihren Mittelwert <span class="math inline">\(\bar{X}\)</span> schwankt</p></li>
+<li><p>Analog berechnet die <span style=" color: navy !important;"><strong>Kovarianz</strong></span>, wie stark die <em>gemeinsame Schwankung zweier Variablen um ihren jeweiligen Mittelwert</em> ist: <span class="math display">\[
+\text{Kovarianz:}\quad Cov(X,Y) = \frac{1}{N}\sum_{i=1}^N\big(x_i-\bar{X}\big)^2 = \frac{1}{N}\sum_{i=1}^N(x_i-\bar{X})\color{darkred}{(y_i-\bar{Y})}
+\]</span></p></li>
+<li><p>Im Zentrum der Kovarianz steht die Erkenntnis, dass das <strong>mathematische Produkt</strong> zweier Abweichungsvariablen — hier die Abweichungen <span class="math inline">\((x_i-\bar{X})\)</span> und <span class="math inline">\((y_i-\bar{Y})\)</span> vom Mittelwert — angibt, wie stark die beiden Abweichungen gleichsinnig variieren (ko-variieren).</p></li>
+</ul>
+</section>
+<section id="kovarianz-2" class="level2">
+<h2 class="anchored" data-anchor-id="kovarianz-2">Kovarianz</h2>
+<p>Intuition:</p>
+<ul>
+<li><p>Sind zwei zusammengehörige Datenpunkte <span class="math inline">\(x_i\)</span> und <span class="math inline">\(y_i\)</span> <strong>größer als der Mittelwert</strong>, sind sowohl <span class="math inline">\((x_i-\bar{X})\)</span> als auch <span class="math inline">\((y_i-\bar{Y})\)</span> <strong>positiv</strong>, und damit auch das Produkt <span class="math inline">\((x_i-\bar{X})(y_i-\bar{Y})\)</span> <strong>positiv</strong>.</p></li>
+<li><p>Sind zwei zusammengehörige Datenpunkte <span class="math inline">\(x_i\)</span> und <span class="math inline">\(y_i\)</span> <strong>geringer als der Mittelwert</strong>, sind sowohl <span class="math inline">\((x_i-\bar{X})\)</span> als auch <span class="math inline">\((y_i-\bar{Y})\)</span> <strong>negativ</strong>, und damit das Produkt <span class="math inline">\((x_i-\bar{X})(y_i-\bar{Y})\)</span> wieder <strong>positiv</strong>.</p></li>
+</ul>
+<div class="vspace-medium">
+
+</div>
+<p><img src="images/covariance-examples.png" class="img-fluid"></p>
+</section>
+<section id="kovarianz-größe-gewicht-beispiel" class="level2">
+<h2 class="anchored" data-anchor-id="kovarianz-größe-gewicht-beispiel">Kovarianz: Größe-Gewicht-Beispiel</h2>
+<div class="vspace-small">
+
+</div>
+<div class="columns">
+<div class="column" style="width:34%;">
+<p><img src="images/covariance_iq.png" class="img-fluid"></p>
+</div><div class="column" style="width:66%;">
+<p><span class="math display">\[
+\scriptsize{
+\begin{aligned}
+&amp;Cov(X, Y) = \frac{1}{N}\sum_{i=1}^N(x_i-\bar{X})(y_i-\bar{Y}) = \\
+          &amp;= \frac{1}{3}\big[(160-170)(60-70)+(170-170)(70-70)+(180-170)(80-70)\big] = \\
+          &amp;= \frac{1}{3}\big[(-10)\cdot (-10)+0\cdot 0+10\cdot 10\big] = \\
+          &amp;= \frac{1}{3}\cdot 200 = 66{,}67
+\end{aligned}
+}
+\]</span></p>
+</div>
+</div>
+<ul>
+<li>Problem: die Kovarianz hängt von den Einheiten ab!</li>
+<li>Wird im Beispiel die Körpergröße <span class="math inline">\(X\)</span> in der Einheit <em>Meter</em> angegeben, so lautet die Kovarianz:</li>
+</ul>
+<p><span class="math display">\[
+\scriptsize{
+\begin{aligned}
+Cov(X, Y) &amp;= \frac{1}{3}\big[(1{,}60-1{,}70)(60-70)+(1{,}70-1{,}70)(70-70)+(1{,}80-1{,}70)(80-70)\big] = \\
+          &amp;= \frac{1}{3}\big[(-0{,}10)\cdot (-10)+0\cdot 0+0{,}10\cdot 10\big] = \frac{1}{3}\cdot 2 = 0{,}667
+\end{aligned}
+}
+\]</span></p>
+<ul>
+<li>Kovarianzen sind also <strong>nicht vergleichbar wenn sich Einheiten unterscheiden</strong>, und erst recht nicht, wenn sich die Variablen unterscheiden.</li>
+</ul>
+</section>
+</section>
+<section id="pearson-korrelation" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Pearson-Korrelation</h1>
+<section id="pearson-korrelation-1" class="level2">
+<h2 class="anchored" data-anchor-id="pearson-korrelation-1">Pearson-Korrelation</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li>Die <span style=" color: navy !important;"><strong>Pearson-Korrelation</strong></span> schafft Abhilfe für das Problem der mangelnden Vergleichbarkeit</li>
+<li>Der Schlüssel: die Kovarianz wird mit der Standardabweichung beider Variablen normalisiert:</li>
+</ul>
+<p><span class="math display">\[
+\small{
+\text{Korrelation:}\;\; r_{XY} = \frac{Cov(X,Y)}{s_X s_Y} = \frac{1}{N s_X s_Y}\sum_{i=1}^N(x_i-\bar{X})(y_i-\bar{Y})
+}
+\]</span></p>
+<ul>
+<li>Durch das Teilen durch die Standardabweichungen <span class="math inline">\(s_X\)</span> und <span class="math inline">\(s_Y\)</span> werden die Einheiten herausgekürzt — die Korrelation ist also eine <strong>einheitslose Größe</strong>.</li>
+<li>Die Korrelation kann Werte zwischen <span class="math inline">\(-1\)</span> (perfekter negativer Zusammenhang) und <span class="math inline">\(+1\)</span> (perfekter positiver Zusammenhang) annehmen.</li>
+</ul>
+</div><!-- Begin second column --><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/karl_pearson.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Der britische Mathematiker Karl Pearson in seinem Büro im Jahr 1910. Neben dem Korrelationskoeffizienten verdanken wir Pearson viele andere statistische Konzepte wie die Hauptkomponentenanalyse oder den p-Wert. Später wurden seine Ansichten zu Eugenik kritisch hinterfragt. Bildnachweis<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="warum-ist-die-korrelation-auf-1-bis-1-beschränkt" class="level2">
+<h2 class="anchored" data-anchor-id="warum-ist-die-korrelation-auf-1-bis-1-beschränkt"><span style=" color: darkred !important;">Warum ist die Korrelation auf −1 bis 1 beschränkt?</span></h2>
+<p><img src="images/kein_klausurstoff.png" class="absolute" data-bottom="0" data-right="0" height="130"></p>
+<p>Darstellung der Korrelation nur mit (Ko)Varianzen:</p>
+<p><span class="math display">\[
+r_{XY} = \frac{Cov(X,Y)}{s_X s_Y} = \frac{Cov(X,Y)}{\sqrt{Var(X)} \sqrt{Var(Y)}}
+\]</span></p>
+<p>Die Korrelation sollte maximal (<span class="math inline">\(r=1\)</span>) sein, wenn <span class="math inline">\(X\)</span> mit sich selbst korreliert wird (<span class="math inline">\(Y=X\)</span>). Zu berücksichtigen ist, dass die Kovarianz <em>von X mit sich selbst</em> gleich der Varianz ist:</p>
+<p><span class="math display">\[
+r_{XX} = \frac{Cov(X,X)}{\sqrt{Var(X)} \sqrt{Var(X)}} = \frac{Var(X)}{\sqrt{Var(X)} \sqrt{Var(X)}} = \frac{Var(X)}{Var(X)} = 1
+\]</span></p>
+<p>Umgekehrt sollte die Korrelation maximal negativ sein (<span class="math inline">\(r=-1\)</span>), wenn <span class="math inline">\(Y\)</span> genau das Inverse von <span class="math inline">\(X\)</span> ist, also <span class="math inline">\(Y=-X\)</span>. Unter Berücksichtigung von <span class="math inline">\(Var(X) = Var(-X)\)</span> gilt: <span class="math display">\[
+r_{X(-X)} = \frac{Cov(X,-X)}{\sqrt{Var(X)} \sqrt{Var(-X)}} = \frac{-Cov(X,X)}{\sqrt{Var(X)} \sqrt{Var(X)}} = \frac{-Var(X)}{Var(X)} = -1
+\]</span></p>
+<!-- ```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import pearsonr, linregress
+
+np.random.seed(0)
+data = np.random.multivariate_normal([0, 0], [[1, 0.5], [0.5, 1]], 30) + 3
+x, y = data[:, 0]/2, data[:, 1]
+fontsize = 15
+
+r, p = pearsonr(x, y)
+reg = linregress(x, y)
+xrange = np.array([0.1, 2.7])
+
+plt.style.use('dark_background')
+plt.figure()
+plt.gca().tick_params(color='white')
+plt.scatter(x, y)
+plt.plot(xrange, reg.slope*xrange+reg.intercept, color='#b8ffc3')
+plt.xlabel('Stunden auf TikTok / 24h', fontsize=fontsize)
+plt.ylabel('Entzündungswerte', fontsize=fontsize)
+plt.xticks(fontsize=fontsize-2)
+plt.yticks(fontsize=fontsize-2)
+plt.text(1.6, 0.7, fr'$r={r:.3f}$ ($p={p:.4f}$)', color='white', fontsize=fontsize-2)
+plt.savefig('images/streudiagramm.png', bbox_inches="tight")
+``` -->
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="das-streudiagramm" class="level2 blackslide">
+<h2 class="blackslide anchored" data-anchor-id="das-streudiagramm">Das Streudiagramm</h2>
+<ul>
+<li>Von einer kleinen Stichprobe im TikTok-Datensatz des CCC sind auch Entzündungswerte bekannt</li>
+<li>In der Task Force fragen Sie sich, ob es unter den Paradoxikern einen Zusammenhang zwischen der Zahl der Stunden auf TikTok und den Entzündungswerten gibt</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>Sie fassen Ihr Ergebnis in einem <span style=" color: lightblue !important;"><strong>Streudiagramm</strong></span> zusammen.</p>
+<ul>
+<li>Das Streudiagramm (engl. <em>scatter plot</em>) ist die häufigste Visualisierung eins biavariaten Zusammenhangs</li>
+<li>Bei der Korrelation ist es dabei willkürlich, welche Variable auf der X- und Y-Achse liegt</li>
+<li>Häufig wird zusätzlich zur “Punktwolke” auch eine <strong>Regressionsgerade</strong> angegeben, sowie die Stärke des Zusammenhangs (r=.., p=..)</li>
+</ul>
+</div><div class="column" style="width:55%;">
+<p><img src="images/streudiagramm.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="pearson-korrelation-größe-gewicht-beispiel" class="level2">
+<h2 class="anchored" data-anchor-id="pearson-korrelation-größe-gewicht-beispiel">Pearson-Korrelation: Größe-Gewicht-Beispiel</h2>
+<div class="vspace-small">
+
+</div>
+<div class="columns">
+<div class="column" style="width:44%;">
+<p><img src="images/covariance_iq.png" class="img-fluid"></p>
+</div><div class="column" style="width:56%;">
+<p>Wir hatten:</p>
+<p><span class="math display">\[
+\small{
+\begin{aligned}
+&amp;Cov(X, Y) = \frac{1}{N}\sum_{i=1}^N(x_i-\bar{X})(y_i-\bar{Y}) = \frac{200}{3}
+\end{aligned}
+}
+\]</span></p>
+<p>Und berechnen nun die Korrelation <span class="math inline">\(\;\;r_{XY} = \frac{Cov(X,Y)}{s_X s_Y}\)</span></p>
+<p><span class="math inline">\(\scriptsize{s_X=\sqrt{\frac{1}{N}\sum_{i=1}^N\big(x_i-\bar{X}\big)^2}=\sqrt{\frac{1}{3}[(-10)^2+0^2+10^2]}=\sqrt{\frac{200}{3}}}\)</span></p>
+<p><span class="math inline">\(\scriptsize{s_Y=\sqrt{\frac{1}{N}\sum_{i=1}^N\big(y_i-\bar{Y}\big)^2}=\sqrt{\frac{1}{3}[(-10)^2+0^2+10^2]}=\sqrt{\frac{200}{3}}}\)</span></p>
+<p><span class="math display">\[
+\small{
+r_{XY} = \frac{\frac{200}{3}}{\sqrt{\frac{200}{3}}\cdot\sqrt{\frac{200}{3}}}=1
+}
+\]</span></p>
+</div>
+</div>
+<ul>
+<li>Wäre die Körpergröße in der Einheit <em>Meter</em> angeben, so kürzt sich der Faktor 100 (1m = 100cm) nicht nur im Zähler, sondern auch im Nenner:</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><span class="math display">\[
+\small{
+r_{XY} = \frac{\frac{2\color{darkred}{{,}}00}{3}}{\sqrt{\frac{2\color{darkred}{{,}}00}{3}}\cdot\sqrt{\frac{2\color{darkred}{{,}}00}{3}}}=1
+}
+\]</span></p>
+</div><div class="column" style="width:60%;">
+<p>Die Normalisierung mit der Standardabweichung sorgt somit dafür, dass die willkürliche Einheit keine Rolle spielt.</p>
+</div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="interpretation-der-pearson-korrelation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation-der-pearson-korrelation">Interpretation der Pearson-Korrelation</h2>
+<ul>
+<li>Die Pearson-Korrelation zeigt an, <strong>wie linear</strong> der Zusammenhang zweier Variablen ausgeprägt ist</li>
+<li>Die Pearson-Korrelation ist dabei <u>nicht</u> von der Steigung einer gedachten Gerade abhängig.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/correlation_examples.png" class="img-fluid figure-img" width="1030"></p>
+<figcaption class="figure-caption">Korrelationskoeffizienten für verschiedene hypothetische Streudiagramme</figcaption>
+</figure>
+</div>
+<ul>
+<li>Ein Zusammenhang zweier Variablen kann extrem schwach sein (z.B. so, dass eine Verdopplung von X nur einer 0.1%-Steigerung von Y entspricht) und dennoch kann die Korrelation stark sein (= nah an <span class="math inline">\(\pm 1\)</span>), wenn die Punkte exakt auf einer Geraden liegen.</li>
+<li>Auf einen Satz gemünzt kann man sagen:</li>
+</ul>
+<div style="font-size: 26px; margin-top: -10px">
+<blockquote class="blockquote">
+<p>Die Pearson-Korrelation misst, wie gut bivariate Daten durch eine Gerade abgebildet werden können.</p>
+</blockquote>
+</div>
+</section>
+<section id="voraussetzungen-fur-das-berechnen-der-pearson-korrelation" class="level2">
+<h2 class="anchored" data-anchor-id="voraussetzungen-fur-das-berechnen-der-pearson-korrelation">Voraussetzungen für das Berechnen der Pearson-Korrelation</h2>
+<ul>
+<li>Die Pearson-Korrelation <em>kann</em> <em>immer</em> berechnet werden, solange beide Variablen aus Zahlenwerten bestehen.</li>
+<li>Es gibt jedoch weitere Kriterien, die für die Sinnhaftigkeit und Interpretierbarkeit der Pearson-Korrelation wichtig sind:</li>
+</ul>
+<!---  Table --->
+<table class="table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 36%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Kriterium</th>
+<th>Falls Kriterium nicht erfüllt?</th>
+<th>Beispiel</th>
+<th>Mögliche Abhilfe?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Daten haben mindestens Intervallskalenniveau</td>
+<td>▪ Keine Aussage über Linearität des untersuchten Zusammenhangs möglich<br>
+▪ Korrelation nicht interpretierbar</td>
+<td><img src="images/example_ordinal.png" class="img-fluid"></td>
+<td>Rangkorrelation</td>
+</tr>
+<tr class="even">
+<td>Keine Ausreißer</td>
+<td>Korrelationskoeffizient kann massiv verzerrt sein</td>
+<td><img src="images/outlier_example.png" class="img-fluid"></td>
+<td>Ausreißer entfernen oder Rangkorrelation</td>
+</tr>
+<tr class="odd">
+<td>Zusammenhang der Daten wird nicht durch <em>nicht-linearen</em> Anteil dominiert</td>
+<td>▪ Pearson-Korrelation falsches Modell<br>
+▪ Linearität der Daten wird verzerrt wiedergegeben, da die Korrelation vom nicht-linearen Teil beeinflusst wird</td>
+<td><img src="images/nonlinear.png" class="img-fluid"></td>
+<td>Komplexeres Modell, das den nicht-linearen Anteil berücksichtigt</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="mythen-zur-pearson-korrelation" class="level2">
+<h2 class="anchored" data-anchor-id="mythen-zur-pearson-korrelation">Mythen zur Pearson-Korrelation</h2>
+<ul>
+<li>In vielen Quellen finden sich darüber hinaus <strong>unzutreffende Behauptungen</strong> zur Verwendung der Pearson-Korrelation:</li>
+</ul>
+<!---  Table --->
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 25%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Behauptung</th>
+<th>Fact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Mythos 1</strong></td>
+<td>Die Variablen müssen kontinuierlich sein</td>
+<td><strong>Pearson-Korrelation ist valide für diskrete Daten</strong>, solange diese mindestens Intervallskalenniveau aufweisen. Tatsächlich gibt es sogar eine Variante der Pearson-Korrelation, bei der beide Variablen binär sind (Phi-Koeffizient).</td>
+</tr>
+<tr class="even">
+<td><strong>Mythos 2</strong></td>
+<td>Die beiden Variablen müssen normalverteilt sein.</td>
+<td>Die beiden Variablen müssen nicht normalverteilt sein. Korrekt ist, dass die Daten für die Berechnung eines p-Wertes <strong>bivariat normalverteilt</strong> sein sollten.</td>
+</tr>
+<tr class="odd">
+<td><strong>Mythos 3</strong></td>
+<td>Die Variablen müssen einen linearen Zusammenhang aufweisen</td>
+<td>Gegenbeispiel: wenn Daten nur aus zufälligem Rauschen bestehen, sind sie hochgradig nicht-linear, aber dennoch gibt der Pearson-Koeffizient idR korrekterweise an, dass die Korrelation ungefähr 0 ist.<br>Zusammenhänge in der Psychologie sind <em>sehr selten</em> eindeutig linear, dennoch kann es sinnvoll sein, die Pearson-Korrelation anzuwenden. Besser ist es daher zu sagen (wie in der Folie zuvor), dass der <strong>Zusammenhang nicht zu stark durch einen nicht-linearen Anteil dominiert</strong> werden sollten.</td>
+</tr>
+<tr class="even">
+<td><strong>Mythos 4</strong></td>
+<td>Die Variablen müssen varianzhomogen sein</td>
+<td>Varianzhomogenität (auch Homoskedastizität) meint, dass Y-Werte ähnliche Varianz in verschiedenen Abschnitten der X-Achse haben und umgekehrt. Jedoch ist Varianzhomogenität keine zwingende Voraussetzung für die Anwendung der Pearson-Korrelation. Korrekt ist, dass der erhaltene Korrelationskoeffizient <strong>ungenauer</strong> und der <strong>p-Wert nicht mehr korrekt</strong> ist.</td>
+</tr>
+</tbody>
+</table>
+<!-- ```{python}
+from string import ascii_letters
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.set_theme(style="white")
+fontsize = 36
+
+data = [
+    [1, 0.13, 0.35, 0.23, -0.2],
+    [0, 1, 0.37, 0.1, -0.4],
+    [0, 0, 1, 0.01, -0.26],
+    [0, 0, 0, 1, -0.1],
+    [0, 0, 0, 0, 1]
+]
+
+annot = [
+    ['1', '0.13', '0.35', '0.23', '-0.2'],
+    ['', '1', '0.37', '0.1', '-0.4'],
+    ['', '', '1', '0.01', '-0.26'],
+    ['', '', '', '1', '-0.1'],
+    ['', '', '', '', '1']
+]
+
+columns = ['O', 'C', 'E', 'A', 'N']
+
+corr = pd.DataFrame(data, columns=columns, index=pd.Index(columns))
+
+# Generate a mask for the upper triangle
+# mask = np.tril(np.ones_like(corr, dtype=bool))
+mask = np.zeros_like(corr, dtype=bool)
+np.fill_diagonal(mask, True)
+
+# Set up the matplotlib figure
+f, ax = plt.subplots(figsize=(11, 9))
+
+# Generate a custom diverging colormap
+cmap = sns.diverging_palette(230, 20, as_cmap=True)
+
+# Draw the heatmap with the mask and correct aspect ratio
+hm = sns.heatmap(corr, annot=annot, fmt='', mask=mask, cmap=cmap, vmax=.3, center=0,
+                 square=True, linewidths=.5, cbar_kws=dict(shrink=1, label='Korrelation'), annot_kws=dict(size=fontsize))
+plt.gca().collections[0].colorbar.ax.tick_params(labelsize=28)
+hm.figure.axes[-1].set_ylabel('Korrelation', size=fontsize)
+hm.tick_params(labelsize=fontsize)
+plt.yticks(rotation=0) 
+hm.patch.set_facecolor('#777')
+plt.tight_layout()
+plt.savefig(f'images/corrmatrix.png', bbox_inches="tight")
+```-->
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="korrelationsmatrix" class="level2">
+<h2 class="anchored" data-anchor-id="korrelationsmatrix">Korrelationsmatrix</h2>
+<ul>
+<li>Eine <strong>Korrelation</strong> bestimmt immer den Zusammenhang zwischen <strong>zwei Variablen</strong></li>
+<li>Gibt es mehr als zwei Variablen (z.B. die “Big Five”), bietet sich eine Darstellung aller paarweisen Korrelationen an – die <span style=" color: navy !important;"><strong>Korrelationsmatrix</strong></span></li>
+</ul>
+<div class="columns vcenter-column" style="margin-top:-15px">
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/corrmatrix_table.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Tabellarische Korrelationsmatrix. Sterne kennzeichnen häufig das Signifikanzniveau.</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/corrmatrix.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Korrelationsmatrix als “Heatmap” – die Einfärbung ist ein visuelles Hilfsmittel zur intuitiven und schnellen Erfassung der Korrelationsstruktur eines Variablen-Sets.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Die <span style=" color: darkgreen !important;">Nebendiagonalelemente</span> sind der interessante Teil der Korrelationsmatrix, sie geben die Korrelationen verschiedener Variablen an</li>
+<li>Die <span style=" color: darkred !important;">Diagonalelemente</span>, also die Korrelationen von Variablen mit sich selbst, sind immer 1</li>
+</ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="kovarianzmatrix" class="level2">
+<h2 class="anchored" data-anchor-id="kovarianzmatrix">Kovarianzmatrix</h2>
+<div class="columns">
+<div class="column" style="width:75%;">
+<ul>
+<li>Eine analoge Matrix-Darstellung gibt es auch für die <strong>Kovarianz</strong></li>
+<li>Im Unterschied zur Korrelationsmatrix sind die Diagonalelemente der Kovarianzmatrix nicht 1, sondern geben die <strong>Varianz</strong> der Variable an.</li>
+<li>Sei <span class="math inline">\(\mathbf{X}\)</span> (beachte Fettschrift) ein Vektor von <span class="math inline">\(n\)</span> Variablen <span class="math inline">\(X_1 .. X_n\)</span>, so ist die zugehörige Kovarianzematrix <span class="math inline">\(\operatorname{Cov}(\mathbf{X})\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+\small{
+\begin{aligned}
+\operatorname{Cov}(\mathbf{X}) &amp; =
+\begin{pmatrix}\operatorname{Var}(X_1) &amp; \operatorname{Cov}(X_1,X_2) &amp; \cdots &amp; \operatorname{Cov}(X_1,X_n) \\ \\
+\operatorname{Cov}(X_2,X_1)  &amp; \operatorname{Var}(X_2) &amp; \cdots &amp; \operatorname{Cov}(X_2,X_n) \\ \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \\
+\operatorname{Cov}(X_n,X_1) &amp; \operatorname{Cov}(X_n,X_2) &amp; \cdots &amp; \operatorname{Var}(X_n)
+\end{pmatrix}
+\end{aligned}
+}
+\]</span></p>
+</div><div class="column" style="width:25%;">
+<p><img src="images/covariance_matrix.png" class="img-fluid"></p>
+</div>
+</div>
+<ul>
+<li>Im Gegensatz zur Korrelationsmatrix ist die Kovarianzmatrix selten das “Endprodukt” einer Analyse, sondern meist ein Zwischenschritt in fortgeschritteneren statistischen Analysen wie der <strong>Hauptkomponentenanalyse</strong></li>
+</ul>
+</section>
+</section>
+<section id="rangkorrelationen" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Rangkorrelationen</h1>
+<section id="was-ist-eine-rangkorrelation" class="level2">
+<h2 class="anchored" data-anchor-id="was-ist-eine-rangkorrelation">Was ist eine Rangkorrelation?</h2>
+<div class="columns">
+<div class="column" style="width:72%;">
+<ul>
+<li><span style=" color: navy !important;"><strong>Rangkorrelationsmaße</strong></span> ermöglichen es, Zusammenhänge von ordinalskalierten und nicht-linearen Variablem zu untersuchen.
+<ul>
+<li>Dies ist mit der Pearson-Korrelation nicht möglich</li>
+</ul></li>
+<li>“Rang” bezieht sich auf das Ordinalskalenniveau, d.h. dass die Daten nur als “Rang” oder “Reihenfolge” interpretiert werden können.</li>
+<li>Im Gegensatz zur Pearson-Korrelation bewerten Rangkorrelationen nicht die Linearität eines Zusammenhangs, sondern die <strong>Monotonie des Zusammmenhangs</strong>.</li>
+<li>Ein weiterer Anwendungsfall sind intervallskalierte Daten, die Ausreißer aufweisen und daher die Pearson-Korrelation verzerren.
+<ul>
+<li>Rangkorrelationen sind <strong>robust gegenüber Ausreißern</strong></li>
+<li>In diesem Fall werden die Variablen künstlich in Ränge umgewandelt.</li>
+</ul></li>
+<li>Hier behandeln wir zwei Maße für die Rangkorrelation:
+<ul>
+<li><span style=" color: navy !important;"><strong>Spearman-Korrelation</strong></span></li>
+<li><span style=" color: navy !important;"><strong>Kendall’sches Tau</strong></span></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:28%;">
+<p><img src="images/rankorder_example.png" class="img-fluid"></p>
+<div class="vspace-medium">
+
+</div>
+<p><img src="images/rankorder_example2.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="berechnung-von-rängen" class="level2">
+<h2 class="anchored" data-anchor-id="berechnung-von-rängen">Berechnung von Rängen</h2>
+<ul>
+<li>Liegen die Variablen nicht als Ränge vor, müssen sie zunächst in Ränge umgewandelt werden:
+<ol type="1">
+<li>Werte der Variable sortieren</li>
+<li>(Unnormierte) Ränge zuordnen</li>
+<li>Normierung: Gleiche Werte erhalten den Mittelwert ihrer Ränge</li>
+<li>(Optional) Variablen in ihre ursprüngliche Reihenfolge bringen</li>
+</ol></li>
+</ul>
+<p><img src="images/rangbildung.png" class="img-fluid" data-heigh="375px"></p>
+<ul>
+<li>Die Tabelle gibt die Rangberechnung <em>einer</em> Variablen an (z.B. X) – für die andere Variable (Y) muss das analoge Prozedere durchgeführt werden.</li>
+</ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="spearman-korrelation" class="level2">
+<h2 class="anchored" data-anchor-id="spearman-korrelation">Spearman-Korrelation</h2>
+<ul>
+<li>Die Spearman-Korrelation ist identisch zur Pearson-Korrelation, wenn die Variablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> als Ränge <span class="math inline">\(R(X)\)</span> und <span class="math inline">\(R(Y)\)</span> vorliegen (Spearman wird häufig mit dem Buchstaben <span class="math inline">\(\rho\)</span> bezeichnet):</li>
+</ul>
+<p><span class="math display">\[
+\rho_{XY} = \frac{cov(R(X),R(Y))}{s_{R(X)} s_{R(Y)}}
+\]</span>   wobei <span class="math inline">\(s_{R(X)}\)</span> und <span class="math inline">\(s_{R(Y)}\)</span> die Standardabweichungen der Ränge von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> sind.</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>Wie die Pearson-Korrelation nimmt die Spearman-Korrelation Werte zwischen <span class="math inline">\(-1\)</span> und <span class="math inline">\(+1\)</span> an:
+<ul>
+<li>Ein positiver Wert impliziert eine positiven monotonen Zusammenhang</li>
+<li>Ein negativer Wert impliziert eine negativen monotonen Zusammenhang</li>
+<li>Ein Wert nahe bei 0 impliziert einen schwachen (oder keinen) monotonen Zusammenhang</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img src="images/monotonie.png" class="img-fluid"></p>
+</div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="kendalls-tau" class="level2">
+<h2 class="anchored" data-anchor-id="kendalls-tau">Kendalls Tau</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<ul>
+<li>Eine Alternative Rangkorrelation zu Spearman ist <span style=" color: navy !important;"><strong>Kendalls Tau</strong></span></li>
+<li>Kendalls Tau vergleicht inwieweit die Rangfolge <em>aller</em> Paare <span class="math inline">\(x_i\)</span>, <span class="math inline">\(x_j\)</span> mit der Rangfolge <em>aller</em> Paare <span class="math inline">\(y_i\)</span>, <span class="math inline">\(y_j\)</span> übereinstimmt</li>
+<li>Dazu wird die Zahl der konkordanten (übereinstimmenden) und diskordanten (nicht übereinstimmenden) Paare gezählt</li>
+</ul>
+</div><div class="column" style="width:35%;">
+<div class="vspace-large">
+
+</div>
+<p><img src="images/Kendalls_Tau_Gleichung.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="greybox">
+<p><strong>Beispiel</strong></p>
+</div>
+<p><span class="math display">\[
+\small{
+X=\begin{pmatrix} 9\\ 3\\ 7\\ 5 \end{pmatrix}
+Y=\begin{pmatrix} 18\\ 7\\ 8\\ 21 \end{pmatrix}
+}
+\]</span></p>
+</div><div class="column" style="width:70%;">
+<ul>
+<li>Die Paare von X sind: <span class="math inline">\(\small{(9, 3), (9, 7), (9, 5), (3, 7), (3, 5), (7, 5)}\)</span></li>
+<li>Die Paare von Y sind: <span class="math inline">\(\small{(18, 7), (18, 8), (18, 21), (7, 8), (7, 21), (8, 21)}\)</span></li>
+<li>Die Paare <span class="math inline">\((x_1=9, x_3=7)\)</span> und <span class="math inline">\((y_1=18, y_3=2)\)</span> wären konkordant, da die Rangfolge des X-Paares (<span class="math inline">\(x_1 &gt; x_3\)</span>) gleich der Rangfolge des entsprechenden Y-Paares (<span class="math inline">\(y_1 &gt; y_3\)</span>) ist</li>
+<li>Die Paare<span class="math inline">\((x_1=9, x_4=5)\)</span> und <span class="math inline">\((y_1=18, y_4=21)\)</span> wären diskonkordant, da die Rangfolge des X-Paares (<span class="math inline">\(x_1 &gt; x_4\)</span>) ungleich der Rangfolge des entsprechenden Y-Paares (<span class="math inline">\(y_1 &lt; y_4\)</span>) ist</li>
+</ul>
+</div>
+</div>
+<p><span style="margin-top:-12px; display: block">Insgesamt gibt es im Beispiel 4 konkordante Paare und 2 diskordante Paare (prüfe nach!), daher gilt:</span></p>
+<p><span class="math display">\[
+\tau = \frac{K-D}{K+D} = \frac{4-2}{3+3} = \frac{2}{6} = 0.333..
+\]</span></p>
+<!-- ```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.stats import pearsonr, spearmanr, linregress
+np.random.seed(13)
+fontsize=15
+
+data = np.random.multivariate_normal([0, 0], [[1, 0.1], [0.1, 1]], 20) + 3
+data = np.vstack((data, [5, 12]))
+x, y = data[:, 0], data[:, 1]
+
+reg = linregress(x, y)
+reg2 = linregress(x[:-1], y[:-1])
+r, p = pearsonr(x, y)
+r2, p2 = pearsonr(x[:-1], y[:-1])
+xrange = np.array([1.1, 5.2])
+
+plt.figure(figsize=(11, 4))
+plt.subplot(121)
+plt.scatter(x[:-1], y[:-1], c='#888')
+plt.scatter(x[-1], y[-1], c='#d80000')
+plt.plot(xrange, reg.slope*xrange+reg.intercept, color='#d80000')
+plt.plot(xrange, reg2.slope*xrange+reg2.intercept, color='#888')
+plt.xticks(fontsize=fontsize-2)
+plt.yticks(fontsize=fontsize-2)
+plt.xlabel('X', fontsize=fontsize)
+plt.ylabel('Y', fontsize=fontsize)
+plt.text(1, 10.25, f'Pearson (mit Ausreißer): $r = {r:.3f}$', fontsize=fontsize-2, color='#d80000')
+plt.text(1, 11.4, f'Pearson (ohne Ausreißer): $r = {r2:.3f}$', fontsize=fontsize-2, color='#888')
+plt.text(4.53, 11, 'Ausreißer', fontsize=fontsize-2, color='#d80000')
+
+xr, yr = data[:, 0].argsort().argsort()+1, data[:, 1].argsort().argsort()+1
+print(data[:, 0], data[:, 1])
+print(xr, yr)
+rr, pr = spearmanr(xr, yr)
+rr2, pr2 = spearmanr(xr[:-1], yr[:-1])
+regr = linregress(xr, yr)
+regr2 = linregress(xr[:-1], yr[:-1])
+xrange = np.array([1, 22])
+
+plt.subplot(122)
+plt.scatter(xr[:-1], yr[:-1], c='#888')
+plt.scatter(xr[-1], yr[-1], c='#d80000')
+plt.plot(xrange, regr.slope*xrange+regr.intercept, color='#d80000')
+plt.plot(xrange, regr2.slope*xrange+regr2.intercept, color='#888')
+plt.xticks(range(0, 21, 5), fontsize=fontsize-2)
+plt.yticks(fontsize=fontsize-2)
+plt.xlabel('Rang(X)', fontsize=fontsize)
+plt.ylabel('Rang(Y)', fontsize=fontsize)
+plt.text(0.5, 23.5, fr'Spearman (mit Ausreißer): $\rho = {rr:.3f}$', fontsize=fontsize-2, color='#d80000')
+plt.text(0.5, 26, fr'Spearman (ohne Ausreißer): $\rho = {rr2:.3f}$', fontsize=fontsize-2, color='#888')
+plt.ylim(0, 29)
+
+plt.tight_layout()
+
+plt.savefig('images/pearson_outlier.png', bbox_inches="tight")
+
+``` -->
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="rangkorrelationen-robust-gegen-ausreißer" class="level2">
+<h2 class="anchored" data-anchor-id="rangkorrelationen-robust-gegen-ausreißer">Rangkorrelationen: Robust gegen Ausreißer</h2>
+<ul>
+<li>Beispiel Pearson vs.&nbsp;Spearman:</li>
+</ul>
+<p><img src="images/pearson_outlier.png" class="img-fluid"></p>
+<ul>
+<li>Ein einziger Ausreißer verändert die Pearson-Korrelation im Beispiel von <span class="math inline">\(r=-0.046\)</span> nach <span class="math inline">\(r=0.410\)</span></li>
+<li>Demgegnüber ist die Spearman-Korrelation “robuster” gegenüber dem Ausreißer – sie verändert sich “lediglich” von <span class="math inline">\(\rho=-0.030\)</span> nach <span class="math inline">\(\rho=0.110\)</span>.</li>
+<li>Intution: während der <em>Wert</em> es Ausreißers deutlich über dem zweithöchsten Y-Wert liegt, ist der <em>Rang</em> nur um 1 höher.</li>
+</ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="wann-spearman-und-wann-kendall" class="level2">
+<h2 class="anchored" data-anchor-id="wann-spearman-und-wann-kendall"><span style=" color: darkred !important;">Wann Spearman und wann Kendall?</span></h2>
+<p><img src="images/kein_klausurstoff.png" class="absolute" data-bottom="0" data-right="0" height="130"></p>
+<ul>
+<li>Beide Rangkorrelationskoeffizienten bestimmen die Monotonie eines Zusammenhangs</li>
+<li><strong>Kendall ist robuster bei kleinen Stichproben</strong> und ist in diesen Fällen bevorzugt</li>
+<li><strong>Spearman ist etwas weniger sensitiv gegenüber Rangbindungen</strong> (also wenn zwei Werte den gleichen Rang haben) und ist daher bevorzugt, wenn es viele Rangbindungen gibt<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>
+<ul>
+<li>Beachte: auch bei den Kendall’schen Paaren gibt es Rangbindungen, und zwar dann, wenn die verglichenen <em>Paare</em> zwischen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> genau identisch sind</li>
+<li>Diese Paare sind weder konkordant noch diskordant und es gibt verschiedene Algorithmen diese Fälle zu berücksichtigen (hier nicht behandelt)</li>
+</ul></li>
+<li><strong>In Abwesenheit von Rangbindungen liefert Kendall präzisere Schätzungen</strong> und ist Kendall zu bevorzugen.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></li>
+<li>In der Statistik wird Kendall häufig als “Default”-Rangkorrelation empfohlen<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>:
+<ul>
+<li>idR präzisere Schätzung des Populationsparameters</li>
+<li>Standardfehler ist bekannt (für Spearman gibt es lediglich Approximationen<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>)</li>
+</ul></li>
+<li>Faktisch ist aber Spearman der weitaus verbreitetere Korrelationskoeffizient –<br> womöglich weil er idR größer als der Kendall-Koeffizient ist 😉</li>
+</ul>
+<!-- https://www.researchgate.net/post/Does-Spearmans-rho-have-any-advantage-over-Kendalls-tau     -->
+</section>
+<section id="der-phi-koeffizient" class="level2">
+<h2 class="anchored" data-anchor-id="der-phi-koeffizient">Der Phi-Koeffizient</h2>
+<ul>
+<li>Spezialfall: <strong>beide Variablen haben nur zwei Ausprägungen</strong></li>
+<li>Darstellbar in der <span style=" color: navy !important;"><strong>Vierfeldertafel</strong></span>:</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/vierfeldertafel.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Bildnachweis<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>In die vier Felder werden die Häufigkeiten der jeweiligen Variablen-Kombination eingetragen (im Beispiel blaugefärbt)</li>
+<li>Optional: In der letzten Zeile/Spalte die Summe</li>
+</ul>
+</div>
+</div>
+<div style="margin-top: -29px">
+<ul>
+<li>Wie alle Korrelationskoeffizienten beantwortet der <span style=" color: navy !important;"><strong>Phi-Koeffizient</strong></span> die Frage, ob zwei Variablen miteinander zusammenhängen
+<ul>
+<li>Im Beispiel: hängt das gewählte Fach vom Geschlecht ab?</li>
+</ul></li>
+</ul>
+</div>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p><span class="math display">\[
+\small{
+\text{Formel:}\quad Phi = \frac{ad-bc}{\sqrt{(a+b)(c+d)(a+c)(b+d)}}
+}
+\]</span></p>
+<ul>
+<li>Auch der Phi-Koeffizient hat einen Wertebereich von <span class="math inline">\([-1; 1]\)</span></li>
+</ul>
+</div><div class="column" style="width:35%;">
+<div style="margin: -50px 0 0 -50px !important">
+<p><img src="images/vierfeldertafel2.png" height="165"></p>
+</div>
+</div>
+</div>
+<div style="margin-top: -19px">
+<ul>
+<li>NB: der Phi-Koeffizient ist identisch mit der Pearson-Korrelation und der Spearman-Korrelation, wenn beide dichotomen Variablen mit 0 und 1 kodiert werden.</li>
+</ul>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="phi-koeffizient-beispiel" class="level2">
+<h2 class="anchored" data-anchor-id="phi-koeffizient-beispiel">Phi-Koeffizient: Beispiel</h2>
+<div class="vspace-medium">
+
+</div>
+<p><img src="images/vierfeldertafel_beispiel.png" height="220"></p>
+<p><span class="math display">\[\begin{align}
+Phi &amp;= \frac{ad-bc}{\sqrt{(a+b)(c+d)(a+c)(b+d)}} = \\
+    &amp;= \frac{2\cdot11-8\cdot12}{\sqrt{(2+8)(12+11)(2+12)(8+11)}} = \\
+    &amp;= \frac{22-96}{\sqrt{10\cdot23\cdot14\cdot19}} = \frac{-74}{\sqrt{61180}} = -0.299
+\end{align}\]</span></p>
+</section>
+</section>
+<section id="interpretation-von-korrelationen" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Interpretation von Korrelationen</h1>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<section id="korrelation-und-kausalität" class="level2 blackslide">
+<h2 class="blackslide anchored" data-anchor-id="korrelation-und-kausalität">Korrelation und Kausalität</h2>
+<div class="columns">
+<div class="column" style="width:59%;">
+<p>Die Task Force ist immer noch einigermaßen perblex, ob des Zusammenhangs von TikTok-Onlinezeit und den Entzündungswerten.</p>
+<ul>
+<li>Als erfahrenen Statistiker:innen kennen Sie die <strong>erste Regel der Korrelation</strong>:</li>
+</ul>
+<div style="color:lightblue; margin: -5px 0 0 5px; font-family: monospace; border: 2px solid lightblue; outline: 2px solid lightblue; outline-offset:-7px; padding-left: 14px">
+<p><strong>Korrelation ist nicht gleich Kausalität</strong></p>
+</div>
+<div style="text-align: left">
+<p>(Oder falls Sie den Lateiner heraushängen lassen wollen: <em>Cum hoc ergo propter hoc</em>)</p>
+</div>
+</div><div class="column" style="width:41%;">
+<p><img src="images/streudiagramm.png" class="img-fluid"></p>
+</div>
+</div>
+<ul>
+<li>Es scheint unmöglich, dass virutelle TikTok-Zeit einen <span style=" color: lightblue !important;"><strong>kausalen Einfluss</strong></span> auf biologische Entzündungswerte hat.</li>
+<li>Sie wissen, dass ein häufiger alternativer Grund für eine Korrelation eine dritte Variable ist, die wiederum Einfluss auf beide Variablen der Korrelation hat— eine <span style=" color: lightblue !important;"><strong>Störvariable</strong></span>.</li>
+<li>In diesem Fall vermuten Sie, dass die Störvariable eine vorhandene Paradoxie-Erkrankung selbst ist: die Erkrankung führt einerseits zu höheren Entzündungswerten und andererseits zu vermehrter TikTok-Zeit (um Trost bei Leidensgenossen zu erfahren?)</li>
+</ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="korrelation-und-kausalität-1" class="level2">
+<h2 class="anchored" data-anchor-id="korrelation-und-kausalität-1">Korrelation und Kausalität</h2>
+<ul>
+<li>Rein rechnerisch bedeutet eine Korrelation einen Zusammenhang zweier Variablen, sogar, dass man die eine Variable aus der anderen statistisch vorhersagen kann</li>
+<li>Dies <strong>bedeutet jedoch nicht, dass sich die Variablen auch kausal bedingen</strong></li>
+<li>Einerseits <strong>können Korrelation zufällig zustande kommen</strong> (die Wahrscheinlichkeit von solchen irrtümlichen Befunden untersuchen wir noch genauer beim Thema Signifikanztestung)</li>
+<li>.. andererseits könen Korrelationen durch dritte Variablen (<strong>Störvariablen</strong>) verursacht sein.</li>
+</ul>
+<div class="vspace-medium">
+
+</div>
+<p><img src="images/correlation_confounder.png" class="img-fluid"></p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="korrelation-und-kausalität-2" class="level2">
+<h2 class="anchored" data-anchor-id="korrelation-und-kausalität-2">Korrelation und Kausalität</h2>
+<div class="vspace-xlarge">
+&nbsp;
+</div>
+<p><img src="images/correlation_nicolascage.png" class="img-fluid"></p>
+<p><img src="images/tylergiven.png" class="absolute" data-bottom="0" data-left="0" height="150"></p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="korrelation-und-kausalität-3" class="level2">
+<h2 class="anchored" data-anchor-id="korrelation-und-kausalität-3">Korrelation und Kausalität</h2>
+<div class="vspace-xlarge">
+
+</div>
+<p><img src="images/correlation_confounder_sharks.png" class="img-fluid"></p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="wann-ist-ein-korrelationskoeffizient-groß-oder-klein" class="level2">
+<h2 class="anchored" data-anchor-id="wann-ist-ein-korrelationskoeffizient-groß-oder-klein">Wann ist ein Korrelationskoeffizient groß oder klein?</h2>
+<ul>
+<li>Pauschal schwer zu beantworten</li>
+<li>In der psychologischen Literatur hat sich folgende Nomenklatur nach Jacob Cohen<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> eingebürgert:</li>
+</ul>
+<!---  Table --->
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Korrelation (r)</th>
+<th>Nomenklatur</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.1-0.29</td>
+<td>“kleiner” Effekt</td>
+</tr>
+<tr class="even">
+<td>0.3-0.49</td>
+<td>“mittlerer” Effekt</td>
+</tr>
+<tr class="odd">
+<td>0.5-1</td>
+<td>“großer” Effekt</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Allerdings fügt Cohen im gleichen Artikel hinzu:</li>
+</ul>
+<blockquote class="blockquote">
+<p>These proposed conventions were set forth throughout with much diffidence [Zurückhaltung], qualifications [Bedingungen], and invitations <strong>not to employ</strong> them if possible.</p>
+</blockquote>
+<ul>
+<li>Bei der Beurteilung sollte der Korrelationskoeffizient, wie jede Effektgröße, immer in Relation zu typischen Werten im jeweiligen Forschungsfeld gesetzt werden.</li>
+</ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="wann-ist-ein-korrelationskoeffizient-groß-oder-klein-1" class="level2">
+<h2 class="anchored" data-anchor-id="wann-ist-ein-korrelationskoeffizient-groß-oder-klein-1"><span style=" color: darkred !important;">Wann ist ein Korrelationskoeffizient groß oder klein?</span></h2>
+<p><img src="images/kein_klausurstoff.png" class="absolute" data-bottom="0" data-right="0" height="120"></p>
+<ul>
+<li>In einer kürzlichen Metaanalyse von Lovakov Agadullina (2021)<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> wurden typische Effektstärken in der Sozialpsychologie untersucht:</li>
+</ul>
+<p><img src="images/lovakov_2021.png" height="400"></p>
+<ul>
+<li>Erkenntnis: “mittlere” und “starke” Korrelationen (definiert als das 50%- und 75%- Quantil)<br> sind in der Realität kleiner als von Cohen angenommen</li>
+</ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+<div class="columns">
+<div class="column" style="width:9%;">
+<div style="margin-top:-15px">
+<p><img src="images/summary.png" class="img-fluid"></p>
+</div>
+</div><div class="column" style="width:91%;">
+<div class="summary">
+<ul>
+<li>Zusammenhänge werden mit <strong>Kovarianz</strong> und <strong>Korrelation</strong> untersucht</li>
+<li>Die <strong>Kovarianz</strong> ist die Basis der Pearson-Korrelation – aber sie ist abhängig von den gewählten Einheiten</li>
+<li>Die <strong>Pearson-Korrelation</strong> misst die Linearität eines Zusammenhangs und gilt für intervallskalierte Daten</li>
+<li>Für ordinalskalierte Variablen eignen sich <strong>Rangkorrelationen</strong>: <strong>Spearmans Rho</strong> und <strong>Kendalls Tau</strong> – sie messen die Monotonie eines Zusammenhangs</li>
+<li>Sind beide Variablen dichotom, greift der <strong>Phi-Koeffizient</strong></li>
+<li><strong>Correlation does not imply causation, Correlation does not imply causation, Correlation does not imply causation, Correlation does not</strong></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+<aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>http://www.learn-stat.com/life-of-karl-pearson/<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Puth M-T, Neuhäuser M, Ruxton GD (2015) Effective use of Spearman’s and Kendall’s correlation coefficients for association between two measured traits. Animal Behaviour 102:77–84. <a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Puth M-T, Neuhäuser M, Ruxton GD (2015) Effective use of Spearman’s and Kendall’s correlation coefficients for association between two measured traits. Animal Behaviour 102:77–84.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>DC Howell (2012). Statistical Methods for Psychology. Wadsworth.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>https://stats.stackexchange.com/questions/18887/how-to-calculate-a-confidence-interval-for-spearmans-rank-correlation<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>https://learnattack.de/mathematik/baumdiagramm-und-vierfeldertafel<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Cohen J. (1988). Statistical Power Analysis for the Behavioral Sciences. New York, NY: Routledge Academic<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>Lovakov A, Agadullina ER (2021) Empirically derived guidelines for effect size interpretation in social psychology. Eur J Soc Psychol 51:485–504.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../03_location_dispersion/index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Vorlesung 03: Lage- und Streuungsumaße</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../05_regression/index.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Vorlesung 05: Regression</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

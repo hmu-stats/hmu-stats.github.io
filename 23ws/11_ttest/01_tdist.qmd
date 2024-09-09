@@ -1,0 +1,521 @@
+---
+title: "Vorlesung 11: t-Test"
+---
+
+
+
+## {.blackslide .center}
+
+<div class="vspace-small"></div>
+
+:::: {.columns}
+::: {.column width="68%"}
+
+**Erinnerung:** den z-Test haben Sie unter der Voraussetzung durchgeführt, dass die Streuung $\sigma$ in der Population bekannt ist (bzw. die Streuung*en* bei zwei Populationen).
+
+![](images/paradoxia_histogram_inflammation_sem_sig.png){height=270px style="margin-top: 30px !important;margin-bottom: 50px !important;"}
+
+:::
+::: {.column width="32%"}
+::: {.content-hidden when-format="pdf"}
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=200px style="margin-top:-20px !important"}
+
+:::
+:::
+::::
+
+
+:::: {.columns}
+::: {.column width="60%"}
+<div class="vspace-medium"></div>
+Wie schon angesprochen, kommt dieser Fall in der Praxis allerdings nahezu nie vor und gilt auch für den vorliegenden Fall nicht. What shall you do?
+
+:::
+
+::: {.column width="40%"}
+![](images/paradoxia_nulldist2g.png){height=260px style="margin-top: -70px !important"}
+
+:::
+::::
+
+## Der Forschungsprozess {.hcenter-slide}
+
+```yaml { .animate src="images/scientific_process.svg"}
+setup:
+    - element: "#inference"
+      modifier: function() { this.node.style.fill = 'green'; }
+    - element: "#inferencebg"
+      modifier: function() { this.node.style.fill = '#d8ffe2';}
+```
+
+# Einschub: Anmerkungen zur Klausur
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Infos zur Klausur: Allgemeines
+
+- **Struktur:** 50% Verständnisfragen (Großteil *multiple choice*), 50% Rechnen
+- **Hilfsmittel:** Formelsammlung, einfacher Taschenrechner ($+$/$-$/$\cdot$/$:$), ein Lineal oder Geodreieck wird nicht benötigt (ist aber erlaubt)
+- **Wichtig:** die Formelsammlung druckt das Prüfungsbüro für Sie aus. Sie dürfen keinen eigenen Ausdruck in die Klausur mitnehmen.
+- **Klausurinhalt:** Stoff der Vorlesungsfolien (Ausnahme: rot markiert)
+- **Rechnen:** welche Formeln muss ich beherrschen? 
+  - Die Formelsammlung bietet einen sehr guten Überblick über mögliche Formeln in der Klausur. 
+  - Bis auf rot gefärbte Formeln sind alle Formeln klausurrelevant.
+  - Sie können und sollen die Formelsammlung in der Klausur anwenden.
+  - Das Ziel von Statistik 1 ist explizit nicht, dass Sie Formeln auswendig lernen; Ziel ist die Kompetenz, passende Formeln nachzuschlagen und konzeptuell zu verstehen.
+  - Achten Sie darauf, dass Sie die aktuelle Version der Formelsammlung von der Website [hmu-stats.github.io](https://hmu-stats.github.io) verwenden: 
+    - Version vom 19.1.2024 &mdash; siehe Datum in der Formelsammlung
+    - Im Fall einer Aktualisierung der Formelsammlung vor der Klausur gebe ich Ihnen in jedem Fall Bescheid.
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Infos zur Klausur: spezifische Bemerkungen
+
+- **z-Test:** es werden keine *Rechen*aufgaben zum z-Test in der Klausur gestellt, da dieser eine geringe Praxisrelevanz hat und hauptsächlich aus pädagogischen Gründen gelehrt wird.
+  - [Aber:]{.underline} Sie sollten konzeptuell verstehen, was der prinzipielle Einsatzzweck des z-Testes ist (verglichen mit dem t-Test).
+- **Bessel-Korrektur:**
+  - Es soll verstanden werden, warum es sie gibt und wann sie prinzipiell angewendet (Stichprobe -> Population) oder nicht angewendet (deskriptive Beschreibung der Stichprobe) wird.
+  - Bei Rechenaufgaben wird die Besselkorrektur keine Rolle spielen, d.h. es wird nicht als Fehler gewertet, wenn Sie die Besselkorrektur irrtümlich anwenden oder nicht anwenden.
+  - Das impliziert auch, dass Sie bei Rechenaufgaben wahlweise die Stichprobenvarianz $s^2$ oder die Populationsschätzung $\hat{\sigma}^2$ angeben bzw. verwenden können.
+  - Der Grund ist, dass die Anwendung der Besselkorrektur selbst in akademischen Veröffentlichungen und Lehrbüchern sehr inkonsistent ist. Auf den folgenden beiden Folien finden Sie zwei Beispiele.
+
+
+<!--- New slide --->
+<!----------------->
+## Besselkorrektur meets practise: z-Transformation
+
+- Die **z-Standardisierung** oder **z-Transformation** ist eine häufig genutzte Methode, um Variablen zwischen verschiedenen Studien vergleichbar zu machen.
+- *Streng genommen* nimmt die z-Transformation an, dass Populationsmittelwert $\mu$ und die Populationsstreuung $\sigma$ bekannt sind. Die Formel lautet daher:
+
+:::{.fragment}
+$$
+\text{z-Transformation:}\qquad Z = \frac{X-\mu}{\sigma}
+$$
+:::
+
+- In der Praxis sind $\sigma$ und $\mu$ aber nahezu nie bekannt und daher werden häufig der empirische Mittelwert $\Delta\bar{x}$ und die Populationsschätzung $\hat{\sigma}$ mit Besselkorrektur verwendet.
+- Seien Sie sich aber bewusst, dass dies aus theoretischer Sicht eine Ungenauigkeit darstellt, denn bei unbekannter Populationsstreuung handelt es sich bei $Z$ nicht um einen normalverteilten Wert, sondern um einen t-verteilten Wert (und damit eigentlich um eine *t-Transformation*).
+- Erst ab ca. $N\ge 30$ sind die Stichprobenschätzungen so gut, dass die z-Transformation guten Gewissens auch bei unbekannten Populationsparametern angwendet werden sollte.
+
+<!--- New slide --->
+<!----------------->
+## Besselkorrektur meets practise: Korrelation
+
+Für die Formel der Pearson-Korrelation hatten wir kennengelernt:
+
+$$
+r = \frac{1}{s_X s_Y}\frac{1}{n}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})
+$$
+
+- Dies ist **Stichprobenkorrelationskoeffizient**.
+- In der Regel sind wir aber an einer Schätzung der Korrelation in der Population interessiert &xrarr; dies führt zum **empirischen Korrelationskoeffizienten**:
+
+:::{.fragment}
+$$
+\hat{\rho} = \frac{1}{\hat{\sigma}_X \hat{\sigma}_Y}\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})
+$$
+(beachten Sie den Übergang $s\rightarrow\hat{\sigma}$ und $n\rightarrow n-1$, d.h. die Besselkorrektur)
+:::
+
+- In der Praxis herrscht hier leider keine Einheitlichkeit. De facto wird in der Literatur standardmäßig die Bezeichnung $r$ für den Korrelationskoeffizienten verwendet, aber mit der Formel des empirischen Korrelationskoeffizienten.
+
+# Der t-Test
+
+## Problemstellung
+
+- Beim **z-Test** für Mittelwertunterschiede haben wir für die Verteilung der Prüfgröße $z=\frac{\Delta\bar{x}}{se}$ eine Normalverteilung annehmen können. Grund:
+  - Aufgrund des zentralen Grenzwertsatzes können viele statistische Kennwerte, darunter auch die Mittelwertdifferenz $\Delta\bar{x}$, bei ausreichender Stichprobengröße als normalverteilt angenommen werden.
+  - Beim z-Test wird die Standardabweichung $\sigma$ der Population, und damit auch der Standardfehler $se=\frac{\sigma}{\sqrt{n}}$, als bekannt angenommen.
+  - De facto wird also bei der Berechnung der Prüfgröße $z=\frac{\Delta\bar{x}}{se}$ eine normalverteilte Variable ($\Delta\bar{x}$) durch eine Konstante ($\sigma/\sqrt{n}$) geteilt, so dass auch die Prüfgröße normalverteilt ist. 
+- Ist $\sigma$ *nicht bekannt*, muss die Streuung auf Basis der Stichprobe als $\hat{\sigma}$ geschätzt werden. 
+- Die Schätzung von $\hat{\sigma}$ ist mit Unsicherheit behaftet und daher selbst eine **Zufallsvariable**. 
+- Wir teilen also eine normalverteilte Zufallsvariable $\Delta\bar{x}$ durch eine wie-auch-immer-verteilte (*) zweite Zufallsvariable $\hat{\sigma}$. [(* die wie-auch-immer-Verteilung ist bekannt: $\hat{\sigma}$ folgt der Chi-Verteilung bzw. χ-Verteilung)]{style="font-size: 22px !important"}
+- **In diesem Fall können wir nicht mehr davon ausgehen, dass die Prüfgröße normalverteilt ist!**
+
+::: {.colorbox .fragment style="margin-top:-3px"}
+Die Gretchen-Frage ist daher:&numsp;welcher Verteilung folgt die Prüfstatistik
+$$
+\frac{\Delta\bar{x}}{\hat{se}}=\frac{\Delta\bar{x}}{\hat{\sigma}/\sqrt{n}}\qquad\text{?}\qquad\text{(mit Betonung auf dem ^ über } \hat{\sigma}\text{)}
+$$
+:::
+
+## Statistischer Kennwert $\hat{\theta}$
+
+:::{.nonincremental}
+- Bevor wir uns der eigentlichen Frage widmen, führen wir ein neues Symbol ein, das als Platzhalter für einen statistischen Kennwert steht, der auf Basis einer Stichprobe berechnet wurde:
+:::
+
+$$
+\text{Statistischer Kennwert:}\qquad\hat{\theta}
+$$
+
+- Das Symbol $\hat{\theta}$ ist ein allgemeines Symbol für alle statistischen Kennwerte, die wir bisher kennen-gelernt haben: Mittelwert $\bar{x}$, Mittelwertdifferenz $\Delta\bar{x}$, Korrelation $r$, Regressionskoeffizient $b_1$,...
+
+::: {.colorbox .fragment style="margin-top:6px"}
+Wir formulieren unsere Frage also etwas allgemeiner: welcher Verteilung folgt die Größe 
+
+:::{style="margin-top: -10px"}
+$$
+\frac{\hat{\theta}}{\hat{se}}\qquad\text{?}
+$$
+:::
+:::
+
+::: {.notabene .fragment style="margin-top: 45px"}
+:::: {.columns}
+::: {.column width="7%"}
+::: {style="margin-top: 10px"}
+![](images/notabene2.png){height="65px"}
+:::
+:::
+::: {.column width="93%"}
+Streng genommen lautet die fragliche Prüfgröße $\frac{\hat{\theta}-\theta_0}{\hat{se}}$. Von einigen Ausnahmen abgesehen gilt jedoch zumeist $\theta_0=0$ und wir lassen $\theta_0$ aus diesem Grund auch im Folgenden weg.
+
+Ein Bespiel für eine Ausnahme ist, wenn $\hat{\theta}$ ein einfacher Mittelwert ist und gegen einen Referenzwert wie den Durchschnitts-IQ $\theta_0=100$ getestetet wird; in diesem Fall muss also $\theta_0=100$ zunächst vom Mittelwert $\hat{\theta}$ abgezogen werden.
+:::
+::::
+:::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Die t-Verteilung
+
+:::: {.columns}
+::: {.column width="80%"}
+:::{.nonincremental style="font-size: 26px"}
+- An dieser Stelle kommt der englische Statistiker **William Sealy Gosset** ins Spiel.
+:::
+
+:::{style="margin-top: -20px; font-size: 26px"}
+- Er postulierte 1908, dass das Verhältnis eines normalverteilten Kennwertes $\hat{\theta}$ und einer Chi-verteilten Variable einer Wahrscheinlichkeitsverteilung folgt, die seither als [**t-Verteilung**]{color="navy"} (oder auch [**Studentsche t-Verteilung**]{color="navy"}) bezeichnet wird.
+- Die Formel der Verteilung ist vergleichsweise kompliziert &mdash; für die Praxis entscheidend ist, dass sie **durch einen einzigen Parameter ($\text{df}\,$) definiert wird**:
+:::
+
+:::{.fragment style="margin-top:-10px; margin-bottom: 15px"}
+$$
+t\text{-Verteilung:}\qquad f_t(x|\scriptsize\text{df}\normalsize)
+$$
+:::
+
+:::
+::: {.column width="20%"}
+![William Sealy Gosset (1876-1937)](images/portrait_gosset.png)
+:::
+::::
+
+::: {style="margin-top: -10px; font-size: 26px"}
+:::: {.columns}
+::: {.column width="45%"}
+- Der Parameter $\text{df}$ steht für die [**Zahl der Freiheitsgrade**]{color="navy"} (*degrees of freedom*) und hängt eng mit der Stichprobengröße $n$ zusammen.
+- Im Bild rechts ist eine t-Verteilung mit 4 Freiheitsgraden im Vergleich zur Normalverteilung aufgetragen.
+- Erste Erkenntnis: die t-Verteilung hat etwas dickere Flanken (*fat tails*)!
+:::
+::: {.column width="55%"}
+
+<div class="vspace-small"></div>
+:::{.fragment}
+![](images/tdist.png)
+:::
+:::
+::::
+:::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## t-Wert
+
+:::: {.columns}
+::: {.column width="60%"}
+
+:::{.nonincremental}
+- Wir kennen nun also die Form der Nullverteilung, wenn die Streuung als $\hat{\sigma}$ auf Basis der Stichprobe geschätzt werden muss: **t-Verteilung**
+- In Korrespondenz mit dem Namen der Verteilung wird die Prüfgröße auf Basis von $\hat{\sigma}$ als [**t-Wert**]{color="navy"} bezeichnet:
+:::
+
+$$
+t = \frac{\hat{\theta}}{\hat{se}} = \frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}
+$$
+
+:::
+::: {.column width="40%"}
+
+![](images/ttest1.png){style="margin-top: -40px !important"}
+
+:::
+::::
+
+- Das Prinzip der p-Wert-Bestimmung ist exakt wie beim z-Test: es wird die Fläche unter der t-Verteilung relativ zum Prüfgrößenwert $t$ bestimmt:
+    - Gerichtete Hypothese $\hat{\theta} > 0$: Fläche rechts von $t$
+    - Gerichtete Hypothese $\hat{\theta} < 0$: Fläche links von $t$
+    - Ungerichtete Hypothese $\hat{\theta} \neq 0$: Fläche links von $−|t|$&numsp;**PLUS**&numsp;Fläche rechts von $|t|$
+- Merke: der *t-Wert* ist zur *t-Verteilung* wie der *z-Wert* zur *Standardnormalverteilung*!
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<!-- ## [Herleitung der t-Verteilung]{style="font-size: 36px !important; color: darkred"}
+
+![](images/kein_klausurstoff.png){.absolute bottom=0 right=0 height=110px}
+
+:::: {.columns}
+::: {.column width="60%"}
+:::{.nonincremental}
+- Um ein Gefühl dafür zu bekommen, wie die t-Verteilung hergeleitet werden kann, ist es sinnvoll nochmals das Testen des **unstandardisierten Mittelwertunterschiedes** $\Delta\bar{x}$ zu betrachten.
+- Da die Streubreite $\hat{\sigma}/\sqrt{n}$ der Stichprobenverteilung nicht genau bekannt ist, sondern mit Unsicherheit behaftet ist (siehe gestrichelte Linien im unteren Bild), ist der p-Wert nicht eindeutig bestimmt.
+- Es ist dennoch möglich, den (erwarteten) p-Wert zu berechnen, in dem man nicht nur die Fläche auf Basis der eigentlichen Schätzung $\hat{\sigma}$ berechnet, sondern *für alle möglichen* Werte von $\sigma$.
+- Die so erhalteten Flächen mittelt man gewichtet an der Wahrscheinlichkeit jedes möglichen Wertes von $\sigma$ &mdash; dadurch wird die Unsicherheit von $\hat{\sigma}$ "marginalisiert".
+:::
+:::
+::: {.column width="40%"}
+:::{style="margin-top: -30px !important"}
+![](images/nulldist2d2.png)
+:::
+
+![](images/nulldist2d3.png)
+:::
+::::
+
+:::{.nonincremental style="margin-top: -15px"}
+- Betrachtet man diese Art der Integration mit Marginalisierung nicht für einen<br>konkreten Fall, sondern für die theoretische Verteilung, ergibt sich die t-Verteilung.
+::: -->
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Die t-Verteilung ist bereits standardisiert]{color="darkred"}
+
+![](images/kein_klausurstoff.png){.absolute top=295 right=0 height=100px}
+
+Vor der Einführung des z-Tests hatten wir zunächst die **unstandardisierte Normalverteilung** kennengelernt, die durch zwei Parameter definiert ist: Mittelwert $\mu$ und Standardabweichung $\sigma$:
+
+$$
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+$$
+
+Verwenden wir statt $x$ die standardisierte Variable $\frac{x-\mu}{\sigma}$, vereinfacht sich die Nullhypothesen-Verteilung zur **Standardnormalverteilung**:
+
+:::{style="margin-top: -10px"}
+$$
+f(x)=\varphi(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}
+$$
+:::
+
+Die Standardnormalverteilung hat keinen Parameter mehr (nur noch die *Variable* $x$). Da es sich beim z-Wert auch um eine standardisierte Variable handelte, konnten wir auch für $z$ eine Standardnormalverteilung annehmen:
+
+:::{style="margin-top: -10px"}
+$$
+f(z)=\varphi(z)=\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}
+$$
+:::
+
+Die **t-Verteilung** hatten wir dagegen direkt auf Basis der standardisierten Prüfgröße $\frac{\hat{\theta}}{\hat{se}}$ eingeführt. [**Die klassische t-Verteilung ist aus diesem Grund bereits eine *standardisierte Verteilung*, die nicht mehr vom Mittelwert oder Streuung abhängt.**]{color="navy"} Im Gegensatz zur Standardnormalverteilung hat sie aber noch einen Parameter: die Zahl der Freiheitsgrade $\text{df}$.
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Unstandardisierte t-Verteilung]{color="darkred"}
+
+![](images/kein_klausurstoff.png){.absolute top=10 right=0 height=110px}
+
+Die Formel für die klassische (standardisierte) t-Verteilung lautet:
+
+:::{style="margin-top: -7px"}
+$$
+f_t(x|\scriptsize\text{df}\normalsize) = \frac{\Gamma\left(\frac{\scriptsize\text{df}\normalsize+1}{2}\right)} {\sqrt{\scriptsize\text{df}\normalsize\,\pi}~\Gamma\left(\frac{\scriptsize\text{df}\normalsize}{2}\right)}\left(1+\frac{1}{\scriptsize\text{df}\normalsize}x^{2}\right)^{-\frac{\text{df}+1}{2}}\qquad \left(\Gamma\text{ ist die Gamma-Funktion}\right)
+$$
+:::
+
+Wie die Standardnormalverteilung hat die t-Verteilung Mittelwert 0 (daher kann sie als Nullhypothesenverteilung fungieren). Ihre Streuung ist jedoch nicht exakt 1, sondern hängt von der Zahl der Freiheitsgrade ab: $\sigma^2=\frac{\scriptsize\text{df}\normalsize}{\scriptsize\text{df}\normalsize-2}$.
+
+:::{style="margin-top: -3px"}
+Tatsächlich gibt es auch zur t-Verteilung ein unstandardisiertes Pendant, die **nicht-standardisierte t-Verteilung**, die von Mittelwert $\color{green}{\mu}$ und Streuung $\color{blue}{\sigma}$ abhängt:
+:::
+
+$$
+f_t(x|\color{green}{\mu},\color{blue}{\sigma},\scriptsize\text{df}\normalsize) = \frac{\Gamma\left(\frac{\scriptsize\text{df}\normalsize+1}{2}\right)} {\color{blue}{\sigma}\sqrt{\scriptsize\text{df}\normalsize\,\pi}~\Gamma\left(\frac{\scriptsize\text{df}\normalsize}{2}\right)}\left(1+\frac{1}{\scriptsize\text{df}\normalsize}\left(\frac{x-\color{green}{\mu}}{\color{blue}{\sigma}}\right)^2\right)^{-\frac{\text{df}+1}{2}}
+$$
+
+Ähnlich wie beim z-Test hat es sich in der Praxis aber durchgesetzt immer mit standardisierten Prüfgrößen (wie $z$ oder $t$) zu arbeiten. Daher finden die unstandardisierte t- und Normalverteilung im Kontext der Hypothesentestung selten eine Anwendung.
+
+:::{style="margin-top: -5px"}
+Der **Vorteil standardisierter Prüfgrößen** ist, dass diese vergleichbar zwischen Studien sind. Ein bestimmter z- oder t-Wert hat eine Aussagekraft, ohne den Standardfehler einer Studie zu kennen.
+:::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## t-Verteilung versus Normalverteilung
+
+<div class="vspace-medium"></div>
+:::{.nonincremental}
+- Der einzige Parameter der t-Verteilung, die Zahl der Freiheitsgrade $\text{df}$, bestimmt die Form der Verteilung.
+- Die Zahl der Freiheitsgrade df hängt eng mit der Stichprobengröße $n$ zusammen<br>(z.B. $\text{df}=n-1$ bei einer Mittelwertdifferenz abhängiger Messungen).
+- Je größer df/Stichprobengröße, desto ähnlicher wird die t-Verteilung der Normalverteilung!
+:::
+
+<div class="vspace-small"></div>
+
+![](images/tdist2.png)
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Intuition: verdickte Flanken der t-Verteilung]{style="color: darkred"}
+
+![](images/kein_klausurstoff.png){.absolute bottom=0 right=0 height=110px}
+
+:::{.nonincremental}
+- Warum sind die Flanken der Verteilung der Testgröße $t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}$ stärker ausgeprägt, wenn $\hat{\sigma}$ auf Basis der Stichprobe geschätzt werden muss?
+- Der Grund liegt in der (Chi-)Verteilung der Zufallsvariable $\hat{\sigma}$ im Nenner: 
+    - Bei kleinen Stichprobengrößen (kleines df), gibt es eine Assymmetrie der Verteilung hin zu Werten kleiner dem Mittelwert (welcher die korrekte Schätzung von $\sigma$ repräsentiert &mdash; in der Abbildung gestrichelte Linien)
+    - D.h. wir *teilen* $\hat{\theta}$ *überproportional häufig durch zu kleine Werte*, wodurch die *Teststatistik* $t=\frac{\hat{\theta}}{\hat{\sigma}/\sqrt{n}}$ *überproportional häufig zu extreme (negative oder positive) Werte* liefert.
+    - Dies führt zu den stärkeren Flanken der t-Verteilung!
+:::
+
+![](images/chi.png){style="margin-top: -20px !important"}
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Funktionen der t-Verteilung
+
+:::: {.columns}
+::: {.column width="65%"}
+Wie die Normalverteilung wird auch die t-Verteilung durch eine **Wahrscheinlichkeitsdichte** definiert:
+
+![](images/tdist_notation.png){height=200px style="margin-top:15px !important"}
+
+:::
+::: {.column width="35%"}
+![](images/ttest1_f.png)
+:::
+::::
+
+<div class="vspace-small"></div>
+
+:::{.fragment}
+:::: {.columns}
+::: {.column width="65%"}
+
+Die zugehörige **kumulative Verteilungsfunktion** wird der Konvention entsprechend mit einem großen $F$ denotiert:
+
+<div class="vspace-small"></div>
+
+$$
+\text{Kumulative Verteilungsfunktion:}\\ 
+F_t(x|\scriptsize\text{df}\normalsize) = \int_{-\infty}^{x}f_t(x'|\scriptsize\text{df}\normalsize)dx'
+$$
+
+Die kumulative Verteilungsfunktion ordnet jedem t-Wert den Flächeinhalt unter der t-Verteilung im Bereich $[-\infty; t]$ zu.
+
+<div class="vspace-small"></div>
+
+
+:::
+::: {.column width="35%"}
+![](images/ttest1_f_cdf.png)
+:::
+::::
+:::
+
+
+## Funktionen der t-Verteilung
+
+<div class="vspace-small"></div>
+
+:::: {.columns}
+::: {.column width="45%"}
+
+Zuweilen stellt sich die umgekehrte Frage:<br> *Wie lautet der t-Wert für einen bestimmten Flächeninhalt (z.B. einen bestimmten p-Wert) unter der t-Verteilung?*
+
+Diesen Zusammenhang stellt die [**inverse kumulative Verteilungsfunktion**]{color="navy"} her:
+
+<div class="vspace-small"></div>
+
+$$
+t = F^{-1}_t(a|\scriptsize\text{df}\normalsize)
+$$
+
+:::
+::: {.column width="55%"}
+
+![](images/tdist_cdfinv0.png){style="margin-top:-50px !important"}
+
+:::
+::::
+
+wobei $a$ die Fläche ([a]{.underline}rea) bezeichnet. Da die t-Verteilung eine Wahrscheinlichkeitsverteilung ist, kann die Fläche $a$ nur Werte zwischen 0 und 1 annehmen.
+
+:::{.fragment}
+Die Funktion wird auch **Quantilfunktion** genannt, da sie z.B. für $a=0{,}8$ den Wert $t$ zurück gibt, der 80% der t-Verteilung (von $-\infty$ gerechnet) umfasst.
+:::
+
+::: {.notabene .fragment}
+:::: {.columns}
+::: {.column width="7%"}
+::: {style="margin-top: 10px"}
+![](images/notabene2.png){height="65px"}
+:::
+:::
+::: {.column width="93%"}
+Sämtliche Funktionen (Wahrscheinlichkeitsdichte, kumulative Verteilungsfunktion, inverse kumulative Verteilungsfunktion) sind zu kompliziert zur manuellen Berechnung und werden mit dem Computer ausgewertet. Zusätzlich bietet die t-Tabelle die Möglichkeit, kritische t-Werte für ausgewählte Signifikanzniveaus nachzuschlagen.
+:::
+::::
+:::
+
+
+## Funktionen der t-Verteilung
+
+Mit der inversen kumulativen Verteilungsfunktion können [**kritische t-Werte**]{color="navy"} für gegebene Signifikanzniveaus $\alpha$ berechnet werden, wie sie von der **t-Tabelle** bereitgestellt werden. 
+
+Bei gerichteter Hypothese ist der kritische t-Wert bei einem Signifikanzniveau von $\alpha$ gleich $F^{-1}_t(1-\alpha|\scriptsize\text{df}\normalsize)$, bei ungerichteter Hypothese gleich $F^{-1}_t(1-\frac{\alpha}{2}|\scriptsize\text{df}\normalsize)$. Für die Angabe eines kritischen t-Wertes wird als Subscript die kritische Fläche und die Zahl der Freiheitsgrade $\text{df}$ angegeben:
+
+$$
+\text{Gerichtet:}\quad t_\text{crit} = t_{(1-\alpha,\,\text{df})}\qquad\text{Ungerichtet:}\quad t_\text{crit} = t_{(1-\frac{\alpha}{2},\,\text{df})}
+$$
+
+
+<!-- <div class="vspace-medium"></div> -->
+
+:::: {.columns}
+::: {.column width="50%"}
+
+![](images/ttest1_alpha.png){height=330px}
+
+:::
+::: {.column width="50%"}
+
+![](images/ttest1_alpha_ungerichtet.png){height=330px}
+
+:::
+::::
+
+**$t_\text{crit}$ gibt den Wert an, den die Prüfgröße $t$ mindestens erreichen muss, damit der zugehörige p-Wert kleiner als das Signifikanzniveau $\alpha$ ist.**
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Funktionen der t-Verteilung]{color="darkred"}
+
+![](images/kein_klausurstoff.png){.absolute top=10 right=0 height=110px}
+
+![](images/tdist_cdf.png){height=300px style="margin-left:40px !important"}
+
+![](images/tdist_cdfinv.png){height=400px}
+
+

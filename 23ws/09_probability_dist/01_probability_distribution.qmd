@@ -1,0 +1,118 @@
+---
+title: "Vorlesung 09: Wahrscheinlichkeitsverteilungen"
+---
+
+
+
+## Der Forschungsprozess {.hcenter-slide}
+
+```yaml { .animate src="images/scientific_process.svg"}
+setup:
+    - element: "#inference"
+      modifier: function() { this.node.style.fill = 'green'; }
+    - element: "#inferencebg"
+      modifier: function() { this.node.style.fill = '#d8ffe2';}
+```
+
+## Wahrscheinlichkeitsverteilung
+
+:::: {.columns}
+::: {.column width="70%"}
+Wir kennen nun die Form und die Formparameter (Mittelwert, Standardfehler) der theoretischen Stichprobenverteilung. Mathematisch handelt es sich bei der Funktion, die diese Verteilung beschreibt, um eine **Wahrscheinlichkeitsverteilung**.
+:::
+::: {.column width="30%"}
+![](images/noselength_probability_density_f.png){style="margin-top:-60px !important"}
+:::
+::::
+
+
+::: {.definition}
+<!---  Definition--->
+|||
+|:-:|-|
+|||
+| ![](images/definition.svg){height=70px} | Eine [**Wahrscheinlichkeitsverteilung**]{color="navy"} ist eine **mathematische Funktion**, die jeder Merkmalsausprägung auf der $x$-Achse einen Häufigkeitswert $f(x)$ auf der y-Achse zuweist. | 
+|||
+: {tbl-colwidths="[10, 90]"}
+:::
+
+:::{.fragment}
+Um dieses Konzept zu verstehen, verlassen wir kurz die Idee der Stichprobenverteilung und gehen zurück zu einem Konzept, das wir bereits kennen: **relative Häufigkeiten, dargestellt als Histogramme**.
+:::
+
+:::: {.columns .fragment}
+::: {.column width="65%"}
+Zur Erinnerung: Histogramme stellen die Häufigkeit der *ursprünglichen Merkmalsvariable* in einer Stichprobe oder Population dar. Wird die **relative Häufigkeit** aufgetragen, handelt es sich dabei um eine **empirische Wahrscheinlichkeitsverteilung**.
+:::
+::: {.column width="35%"}
+![](images/noselength_normal_relative_noannot.png){style="margin-top:-30px !important"}
+:::
+::::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Wahrscheinlichkeitsverteilung
+
+<div class="vspace-medium"></div>
+
+:::: {.columns}
+::: {.column width="70%"}
+
+
+:::{.nonincremental}
+- Bei der **relativen Häufigkeit in Histogrammdarstellung** wird für jedes Intervall der untersuchten Variable abgetragen, welcher Anteil der Versuchspersonen das Merkmal im jeweiligen Wertebereich trägt.
+:::
+
+- Die Breite des Intervalls &ndash; auch [**Kategorienbreite *d***]{color="navy"} genannt &ndash; ist dabei im Fall von *empirischen* Daten immer ein Kompromiss zweier Faktoren:
+    1. **Auflösung:** je schmaler das Intervall, desto besser die Auflösung.
+    2. **Fallzahl:** je breiter das Intervall, desto höher die Zahl der Fälle in diesem Intervall, desto besser die Schätzung für die Häufigkeit.
+:::
+::: {.column width="30%"}
+![](images/noselength_normal_relative.png)
+:::
+::::
+
+<!-- - Sie definiert die theoretisch zu erwartende Verteilung eines Merkmals.
+- Sie "generiert" Zufallsereignisse (Würfelwurfe, Nasenlängen, IQ-Werte, usw.) bzw. Zufallsereignisse werden aus der theoretischen Verteilung "gezogen".
+- Selbst die Population wurde aus der theoretischen Verteilung gezogen! -->
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Wahrscheinlichkeitsverteilung
+
+Wie ist es nun, wenn wir die **mathematische Funktion** kennen, die eine Wahrscheinlichkeitsverteilung beschreibt?
+
+**Beispiel Normalverteilung:**
+
+$$
+f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2} = \frac{1}{\sigma\sqrt{2\pi}}\text{exp}\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
+$$
+
+- In diesem Fall ist uns für *jedes Intervall* und für *jede noch so kleine Kategorienbreite* der<br>*wahre y-Wert* bekannt ist (wir kennen ja die Funktion).
+- Wir können also die Kategorienbreite beliebig klein wählen, und wüssten immer noch den präzisen Wahrscheinlichkeitswert.
+
+<div class="vspace-medium"></div>
+
+:::{.fragment}
+![](images/probability_density_demo.png)
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Wahrscheinlichkeitsverteilung
+
+<div class="vspace-small"></div>
+
+![](images/probability_density_demo.png){style="margin-bottom:-3px"}
+
+- Je kleiner die Kategorienbreite, desto geringer werden die relativen Häufigkeiten
+    - Beispiel: die relative Häufigkeit, dass ein Merkmal im Intervall $[6; 8]$ liegt ist größer, als die relative Häufigkeit, dass das Merkmal im Intervall $[6; 7]$ liegt.
+    - Für jede gewählte Kategorienbreite ist die Summe aller Balken allerdings weiterhin 1, denn die Wahrscheinlichkeit, dass das Merkmal *irgendeinen* der Werte annimmt, muss 1 sein.   
+- Für $d\rightarrow 0$ gehen die y-Werte gegen Null
+    - Beispiel: die Wahrscheinlichkeit, dass Nasen eine bis auf die unendlichste Nachkommastelle präzise Länge haben (z.B. $4{,}318264812357218735....cm$) ist **Null**.
+- Diese Überlegung führt uns zur **Dichte*funktion*** &#9112;

@@ -1,0 +1,3 @@
+{{< include 01_covariance_pearson.qmd >}}
+{{< include 02_rankorder.qmd >}}
+{{< include 03_interpretation.qmd >}}

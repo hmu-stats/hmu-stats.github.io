@@ -1,0 +1,8 @@
+title: "Vorlesung 07: Effektstärke"
+date: "28.November 2023"
+semester: "Sommersemester 2024"
+
+format:
+  revealjs:
+    footer: "Vorlesung 07: Effektstärke"
+    fragments: false

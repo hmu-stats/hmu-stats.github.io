@@ -1,0 +1,222 @@
+
+# Das Experiment
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+::: {.content-hidden when-format="pdf"}
+## Der Forschungsprozess {.hcenter-slide}
+
+
+```yaml { .animate src="images/scientific_process.svg"}
+setup:
+    - element: "#experiment"
+      modifier: function() { this.node.style.fill = 'green'; }
+    - element: "#experimentbg"
+      modifier: function() { this.node.style.fill = '#d8ffe2';}
+```
+:::
+
+
+## Was ist ein Experiment?
+
+- Ein Experiment ist eine Überführung der Forschungsfrage in eine objektivierbare und quantifizierbare Untersuchung
+- Im Zentrum des Experimentes steht die **unabhängige Variable**, durch die das Experiment in zwei oder mehr **experimentelle Bedingungen** unterteilt wird.
+
+
+
+::: {.definition .fragment}
+<!---  Definition--->
+|||
+|:-:|-|
+|||
+| ![](images/definition.svg){height=70px} | Ein [**Experiment**]{color="navy"} ist eine **systematische Veränderung in einer unabhängigen Variable** (Treatment / Manipulation), mit dem Ziel, ursächlich eine **Veränderung in der abhängigen Variable** (d.h. der gemessenen Variable) herbeizuführen. | 
+|||
+: {tbl-colwidths="[10, 90]"}
+:::
+
+
+<div class="vspace-medium"></div>
+
+:::{.fragment}
+... was heißt das konkret?
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Beispiel
+
+
+
+:::: {.columns}
+::: {.column width="70%"}
+::: {.greybox}
+Was schmeck besser: Coca-Cola oder Pepsi Cola?
+:::
+
+:::{.fragment}
+**Experiment:** Blindverkostung durch N Versuchspersonen, die jeweils Coca-Cola und Pepsi Cola in einem neutralen Gefäß probieren und auf einer Skala von 1 bis 10 bewerten.
+:::
+
+- **Unabhängige Variable:** Getränkemarke (zwei Werte: Cola, Pepsi; kategorial)
+- **Abhängige Variable:** Bewertung durch die Versuchspersonen (10 Werte, 1-10; diskret)
+:::
+::: {.column width="30%"}
+![Bildnachweis^[https://delishably.com/beverages/Why-Pepsi-is-Better-than-Coke]](images/coke_vs_pepsi.png)
+
+:::{.fragment}
+![Bildnachweis^[Midjourney]](images/coke_vs_pepsi_blind_tasting.png)
+:::
+
+:::
+::::
+
+:::{.fragment}
+Im genannten Beispiel handelt sich um ein Experiment mit [**within-subject Design**]{color="navy"}, da jede Versuchsperson alle (hier zwei) Bedingungen der unabhängigen Variable durchläuft.
+:::
+
+<div class="vspace-large"></div>
+
+::: {.notabene .fragment}
+:::: {.columns}
+::: {.column width="7%"}
+::: {style="margin-top: 10px"}
+![](images/notabene2.png){height="65px"}
+:::
+:::
+::: {.column width="93%"}
+Überlegen Sie: wie könnte das Experiment in einem between-subject Design aussehen?
+:::
+::::
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Within- und between-subject Design
+
+<!---  Table --->
+|Design| Definition | Beispiel |
+|-|-|-|
+| Within-subject | Alle Versuchspersonen durchlaufen alle Experimentalbedingungen  | Jede VP probiert Cola und Pepsi |
+| Between-subject | Verschiedene Versuchspersonen*gruppen* durchlaufen jeweils nur eine Experimentalbedingung | Gruppe 1 probiert Cola, Gruppe 2 probiert Pepsi |
+| Mixed | Mindestens eine Experimentalbedingung wird innerhalb der Teilnehmer variiert (within-subject) und eine Experimentalbedingung zwischen den Teilnehmern variiert (between-subject) | Gruppe 1 probiert Cola mit und ohne Eis, Gruppe 2 probiert Pepsi mit und ohne Eis |
+
+: {tbl-colwidths="[20, 50, 30]"}
+
+<div class="vspace-large"></div>
+
+![Bildnachweis^[https://www.nngroup.com/articles/between-within-subjects/]](images/within_between_horizontal.png)
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Within-subject & Messwiederholung (ein kleiner Rant) {style="font-size: 24px"}
+
+:::{.fragment}
+Ein synonymer Begriff für das **within-subject Design** ist **Design mit Messwiederholung** (engl. repeated measures).
+
+Messwiederholung bezeichnet, exakt wie das within-subject Design, die geplante Durchführung mehrerer Experimentalbedingungen an einer VP.
+:::
+
+:::{.fragment}
+Messwiederholung ist ein recht unglücklich gewählter und verwirrender Begriff:
+:::
+
+- Ursprünglich bezeichnet der Begriff er vermutlich allein die Messung einer VP zu verschiedenen Zeitpunkten (z.B. Test vor und nach einer Intervention). Hier ergibt der Begriff "Wiederholung" Sinn. In der heutigen Anwendung bezieht sich der Begriff Messwiederholung allerdings nicht nur auf den within-subject Faktor "Zeit" (mit verschiedenen Messzeitpunkten als within-subject Experimentalbedingungen), sondern *auf jede Art* von within-subject Faktor (z.B. mit und ohne Eis im Cola-Beispiel). "Wiederholung" verwirrt in diesem Zusammenhang, da unterschiedliche Experimentalbedingungen getestet werden (wenn auch in derselben Person).
+- Experimente beinhalten häufig eine tatsächliche Art von Messwiederholung, nämlich die wiederholte Durchführung ein und derselben Experimentalbedingung (auch "Trial" genannt), um durch Mittelwertbildung die Präzision der Messung zu erhöhen. Hier wäre der Begriff Messwiederholung besser angebracht.
+- Aus dem Begriff selbst wird nicht deutlich, dass eine Messung tatsächlich innerhalb derselben VP wiederholt wird &ndash; der Begriff *within-subject* ist hier präziser.
+
+:::{.fragment}
+Der Ausdruck *Messwiederholung* oder *Repeated Measures* ist allerdings so verbreitet (in wissenschaftlichen Artikeln, Statistik-Software usw.), dass Sie ihn kennen sollten.
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Beispiel between-subject Design: das Asch-Experiment {style="font-size: 24px"}
+
+:::: {.columns}
+::: {.column width="70%"}
+
+- Konstrukt: gruppenkonformes Verhalten
+- Experiment: die Versuchsperson (VP) musste auswählen, welche von drei Vergleichlinien dieselbe Länge wie eine Referenzlinie hat. Außer der VP waren noch weitere vorgebliche VPen anwesend (in Wirklichkeit Vertraute der Experimentalleitung &ndash; die "Konfidenten").
+    - **Unabhängige Variable:** zwei Gruppen (Gruppe A: Konfidenten geben richtige Antworten; Gruppe B: Konfidenten geben in 2/3 der Fälle eine falsche Antwort)
+    - **Abhängige Variable:** Prozentzahl der Fehler der VP
+
+
+[Ergebnis:]{.block-heading .fragment style="margin-top: -7px"}
+
+- 1% Fehlentscheidungen in Kontrollgruppe
+- 37% Fehlentscheidungen in der Experimentalgruppe 
+
+::: {.fragment .leftalign style="margin-top: -5px"}
+&xrarr; Die Operationalsierung des Konstruktes "gruppenkonformes Verhalten" entspricht hier also einem experimentellen Kontrast:
+:::
+
+::: {.colorbox .fragment style="margin-top: -7px"}
+Fehlerrate Experimentalgruppe&numsp;&minus;&numsp;Fehlerrate Kontrollgruppe
+:::
+
+:::
+
+<!-- Begin second column -->
+::: {.column width="30%"}
+
+![](images/asch1951_lines.png)
+![](images/asch1951_setting.png)
+
+:::
+::::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Ist jede wissenschaftliche Studie ein Experiment?
+
+[Nein.]{color="red"}
+
+- In [**Beobachtungsstudien**]{color="navy"} werden Phänomene oder Zusammenhänge *ohne Manipulation einer unabhängigen Variable* untersucht.
+- Beispiele: Quasi-Experiment, Längsschnittstudien, Fall-Kontroll-Studie
+- Im Gegensatz zum Experiment können in Beobachtungsstudien **keine kausalen Schlüsse** gezogen werden
+- Warum? Jeder Unterschied zwischen Gruppen oder Zusammenhang zweier Variablen zwischen Personen kann immer auch durch (bekannte oder unbekannte) Störvariablen verursacht sein.
+
+:::{.fragment}
+![](images/stoervariable.png){.hcenter-image height="160px" style="margin-top: -10px; margin-bottom: 10px"}
+:::
+
+
+:::{.fragment}
+&rarr; Mehr dazu im Modul Forschungsmethoden!
+:::
+
+
+<!-- ::: {.sternchen}
+(*)Angenommen wird hier ein "echtes Experiment", d.h. mit randomisierter Zuordnung einer Stichprobe zu Experimentalbedingungen (das sog. **randomisiert-kontrollierte Experiment**)
+::: -->
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<!-- ## {.blackslide .center}
+::: {.content-hidden when-format="pdf"}
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=300px}
+<div class='vspace-small'></div>
+:::
+
+Im Team der Task Force betrachten Sie noch einmal Hypothese 1:
+
+::: {.fragment}
+**Hypothese 1:** Paradoxia wird durch eine virale Infektion verursacht. *Die Blutproben von Menschen mit Paradoxia sollten daher eine höhere Menge von Entzündungsmarkern aufweisen.*
+:::
+
+<div class="vspace-large"></div>
+
+Warum wäre zur Überprüfung dieser Hypothese ein echtes Experiment ethisch schwierig? Welche Probleme weist andererseits eine reine Beobachtungsstudie (Vergleich der Entzündungsmarker von Paradoxikern und Kontrollen) auf? -->
