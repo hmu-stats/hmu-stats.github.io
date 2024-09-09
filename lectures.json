@@ -1,0 +1,140 @@
+{
+    "lectures": {
+        "23ws": [
+            "01_intro",
+            "02_measurement",
+            "03_location_dispersion",
+            "04_presentation",
+            "05_correlation",
+            "06_regression",
+            "07_effectsize",
+            "08_inference",
+            "09_probability_dist",
+            "10_significance_testing",
+            "11_ttest",
+            "12_confidence_intervals",
+            "13_metaanalysis"
+        ],
+        "24ss": [
+            "01_intro",
+            "02_measurement",
+            "03_location_dispersion",
+            "04_presentation",
+            "05_correlation",
+            "06_regression",
+            "07_effectsize",
+            "08_inference",
+            "09_probability_dist",
+            "10_significance_testing",
+            "11_ttest",
+            "12_confidence_intervals",
+            "13_metaanalysis"
+        ],
+        "24ws": [
+            "01_intro",
+            "02_measurement",
+            "03_location_dispersion",
+            "04_correlation",
+            "05_regression",
+            "06_inference",
+            "07_probability_dist",
+            "08_significance_testing",
+            "09_ttest",
+            "10_confidence_intervals",
+            "11_effectsize",
+            "12_power",
+            "13_metaanalysis"
+        ]
+    },
+    "titles": {
+        "23ws": [
+            "Vorlesung 01: Intro",
+            "Vorlesung 02: Messen in der Psychologie",
+            "Vorlesung 03: Lage- und Streuungsma&szlig;e",
+            "Vorlesung 04: Darstellung von Daten",
+            "Vorlesung 05: Korrelation",
+            "Vorlesung 06: Regression",
+            "Vorlesung 07: Effektst&auml;rke",
+            "Vorlesung 08: Inferenzstatistik",
+            "Vorlesung 09: Wahrscheinlichkeitsverteilungen",
+            "Vorlesung 10: Signifikanztestung",
+            "Vorlesung 11: t-Test",
+            "Vorlesung 12: Konfidenzintervalle",
+            "Vorlesung 13: Metaanalyse"
+        ],
+        "24ss": [
+            "Vorlesung 01: Intro",
+            "Vorlesung 02: Messen in der Psychologie",
+            "Vorlesung 03: Lage- und Streuungsma&szlig;e",
+            "Vorlesung 04: Darstellung von Daten",
+            "Vorlesung 05: Korrelation",
+            "Vorlesung 06: Regression",
+            "Vorlesung 07: Effektst&auml;rke",
+            "Vorlesung 08: Inferenzstatistik",
+            "Vorlesung 09: Wahrscheinlichkeitsdichte",
+            "Vorlesung 10: Signifikanztestung",
+            "Vorlesung 11: t-Test",
+            "Vorlesung 12: Konfidenzintervalle",
+            "Vorlesung 13: Metaanalyse"
+        ],
+        "24ws": [
+            "Vorlesung 01: Einf&uuml;hrung",
+            "Vorlesung 02: Messen in der Psychologie",
+            "Vorlesung 03: Lage- und Streuungsma&szlig;e",
+            "Vorlesung 04: Korrelation",
+            "Vorlesung 05: Regression",
+            "Vorlesung 06: Inferenzstatistik",
+            "Vorlesung 07: Wahrscheinlichkeitsdichte",
+            "Vorlesung 08: Signifikanztestung",
+            "Vorlesung 09: t-Test",
+            "Vorlesung 10: Konfidenzintervalle",
+            "Vorlesung 11: Effektst&auml;rke",
+            "Vorlesung 12: Power und Fallzahlsch&auml;tzung",
+            "Vorlesung 13: Metaanalyse"
+        ]
+    },
+    "semester_dict": {
+        "23ws": "Wintersemester 2023/2024",
+        "24ss": "Sommersemester 2024",
+        "24ws": "Wintersemester 2024/2025"
+    },
+    "default_semester": "24ss",
+    "seminars": {
+        "23ws": [],
+        "24ss": [],
+        "24ws": [
+            "seminar_00_intro",
+            "seminar_01_jasp",
+            "seminar_02_measurement",
+            "seminar_03_location_dispersion",
+            "seminar_04_correlation",
+            "seminar_05_regression",
+            "seminar_06_inference",
+            "seminar_07_probability_dist",
+            "seminar_08_significance_testing",
+            "seminar_09_ttest",
+            "seminar_10_confidence_intervals",
+            "seminar_11_effectsize",
+            "seminar_12_power"
+        ]
+    },
+    "titles_seminars": {
+        "23ws": [],
+        "24ss": [],
+        "24ws": [
+            "Seminar 00: Einf&uuml;hrung",
+            "Seminar 01: JASP",
+            "Seminar 02: Messen in der Psychologie",
+            "Seminar 03: Lage- und Streuungsma&szlig;e",
+            "Seminar 04: Korrelation",
+            "Seminar 05: Regression",
+            "Seminar 06: Inferenzstatistik",
+            "Seminar 07: Wahrscheinlichkeitsdichte",
+            "Seminar 08: Signifikanztestung",
+            "Seminar 09: t-Test",
+            "Seminar 10: Konfidenzintervalle",
+            "Seminar 11: Effektst&auml;rke",
+            "Seminar 12: Power und Fallzahlsch&auml;tzung"
+        ]
+    }
+}
