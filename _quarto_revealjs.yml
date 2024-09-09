@@ -1,0 +1,60 @@
+project:
+  output-dir: _slides
+  render:  
+    - index.qmd
+
+profile:
+  default: htmlslides
+
+lang: de
+
+editor:
+  render-on-save: false  
+
+execute:
+  freeze: true
+
+darkcyan: #0d6478
+
+module: "M24 Statistik 1"
+subtitle: "&nbsp;"
+author: "MSc Albert Anoschin & Prof. Matthias Guggenmos"
+institute: "Health and Medical University Potsdam"
+date-format: "DD.MM.YYYY"
+# title-slide-attributes:
+#   data-background-image: images/logo.png
+#   data-background-size: contain
+#   data-background-opacity: "0.07"
+# date: "25/07/2022"
+# bibliography: references.bib
+
+format:
+  revealjs: 
+    fragments: false    
+    slide-number: true
+    mouseWheel: true
+    transitionSpeed: fast
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: images/hmu_logo.png
+    hash: true
+    hash-type: number
+    respond-to-hash-changes: true
+    fragment-in-url: true    
+    template-partials: 
+      - title-slide.html
+    incremental: true
+    # scrollable: true
+    progress: true
+    margin-top: "0"
+    reference-location: document
+    width: 1150
+    height: 770
+    overview: false
+    controls: true
+    touch: true
+filters: 
+  - _extensions/fradav/animate/animate.lua
+  - filters/pdf/color-text.lua
+  - _extensions/tarleb/parse-latex/parse-latex.lua

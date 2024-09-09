@@ -1,0 +1,14 @@
+project:
+  output-dir: _pdfslides
+
+format:
+  revealjs: 
+    theme: 
+      - presentation.scss
+      - pdfslides.scss
+    fragments: false
+revealjs-plugins:
+  - animate
+
+statslogo: "logo.png"
+semestercolor: "#777"
