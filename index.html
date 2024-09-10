@@ -111,6 +111,8 @@ function change_semester(semester, semester_str) {
         }
     }
 
+    window.history.replaceState(null, null, `?${semester}`);
+
 }
 
 
