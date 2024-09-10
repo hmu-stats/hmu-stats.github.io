@@ -1,4 +1,0 @@
-{{< include 01_fisher.qmd >}}
-{{< include 02_ztest.qmd >}}
-{{< include 03_hypothesis_testing.qmd >}}
-{{< include 04_neyman_pearson.qmd >}}

@@ -1,5 +1,0 @@
-{{< include 01_inferential_statistics.qmd >}}
-{{< include 02_sampling_distribution.qmd >}}
-{{< include 03_sem.qmd >}}
-{{< include 04_bonus.qmd >}}
-<!-- {{< include 05_law_of_large_numbers.qmd >}} -->

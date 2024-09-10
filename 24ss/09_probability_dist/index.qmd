@@ -1,3 +1,0 @@
-{{< include 01_probability_distribution.qmd >}}
-{{< include 02_pdf.qmd >}}
-{{< include 03_cdf.qmd >}}

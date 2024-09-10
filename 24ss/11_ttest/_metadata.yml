@@ -1,8 +1,0 @@
-title: "Vorlesung 11: t-Test"
-date: "16.January 2024"
-semester: "{{< var semester >}}"
-
-format:
-  revealjs:
-    footer: "Vorlesung 11: t-Test"
-    fragments: false

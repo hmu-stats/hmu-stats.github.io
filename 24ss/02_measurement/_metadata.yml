@@ -1,8 +1,0 @@
-title: "Vorlesung 02: Messen in der Psychologie"
-date: "17.October 2023"
-semester: "{{< var semester >}}"
-
-format:
-  revealjs:
-    footer: "Vorlesung 02: Messen in der Psychologie"
-    fragments: false

@@ -1,4 +1,0 @@
-{{< include 01_variables.qmd >}}
-{{< include 02_experiment.qmd >}}
-{{< include 03_graphing.qmd >}}
-{{< include 04_population_sample.qmd >}}
