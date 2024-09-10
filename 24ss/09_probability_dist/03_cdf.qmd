@@ -1,0 +1,217 @@
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Verteilungsfunktion
+
+:::: {.columns}
+::: {.column width="63%"}
+Die Integration einer Wahrscheinlichkeitsdichte *bis zu einem bestimmten Wert $x$* ist ein sehr häufiger Fall im Umgang mit Wahrscheinlichkeitsdichten. Daher definieren wir dafür eine eigene Funktion, die [**Verteilungsfunktion**]{color="navy"} $F(x)$:
+
+$$
+F(x) = \int_{-\infty}^{x} f(x') dx'
+$$
+:::
+::: {.column width="37%"}
+![](images/verteilungsfunktion_x.png)
+:::
+::::
+
+
+
+Die Verteilungsfunktion $F$ gibt uns den Flächeninhalt der Dichtefunktion $f$ "links von $x$" an.
+
+<div class="vspace-medium"></div>
+
+<!---  Example --->
+::: {.example .fragment}
+:::: {.columns}
+::: {.column width="10%"}
+::: {style="margin-top: 10px"}
+![](images/example.png){height=70px}
+:::
+:::
+::: {.column width="60%"}
+Nehmen wir wieder die normalverteilte Nasenlängen-Population an mit Mittelwert $\mu=5$ und Standardabweichung $\sigma=1{,}5$.
+Die Wahrscheinlichkeit, dass eine zufällig gezogene Nase eine Länge kleiner $4cm$ hat, ist gegeben durch den Wert $F(4)$ der Verteilungsfunktion dieser Normalverteilung:
+
+$$
+F(4) = \int_{-\infty}^{4} f(x') dx' = \\
+=\frac{1}{1{,}5\sqrt{2\pi}}\int_{-\infty}^4\text{exp}\left(-\frac{(x'-5)^2}{2\cdot1{,}5^2}\right)dx' \overset{(Computer!)}{\approx} 0{,}25
+$$
+
+:::
+::: {.column width="30%"}
+![](images/verteilungsfunktion.png)
+:::
+::::
+:::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Verteilungsfunktion
+
+:::: {.columns}
+::: {.column width="63%"}
+Mithilfe der Verteilungsfunktion, lässt sich nun das Integral
+
+$$
+P(x_0<x<x_1) = \int_{x_0}^{x_1} f(x) dx
+$$
+
+mit dem wir die Fläche zwischen einer Untergrenz $x_0$ und Obergrenze $x_1$ berechnen, auch folgendermaßen aufstellen:
+<div class="vspace-small"></div>
+
+$$
+P(x_0<x<x_1) = F(x_1) - F(x_0)
+$$
+:::
+::: {.column width="37%"}
+![](images/verteilungsfunktion_general.png)
+:::
+::::
+
+<div class="vspace-xlarge"></div>
+
+<!---  Example --->
+::: {.example .fragment}
+:::: {.columns}
+::: {.column width="10%"}
+::: {style="margin-top: 10px"}
+![](images/example.png){height=70px}
+:::
+:::
+::: {.column width="55%"}
+Die eingezeichnete Fläche aus unserem vorherigen Beispiel lässt sich berechnen als:
+
+$$
+P(2<x<4) = F(4) - F(2) \overset{(Computer!)}{\approx} 0{,}23
+$$
+:::
+
+::: {.column width="35%"}
+![](images/density_integral.png)
+:::
+::::
+:::
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Verteilungsfunktion und Stammfunktion
+
+![](images/verteilungsfunktion_f_F.png)
+
+- $F(x)$ ist eine Stammfunktion von $f(x)$ wenn gilt: $\frac{dF}{dx}=f(x)$ bzw. $F(x) = \int_a^x f(x')dx'$.
+- Die Verteilungsfunktion $F(x)$ entspricht der Stammfunktion $\int_a^x f(x')dx'$ mit $a=-\infty$.
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## 68-95-99.7-Prozentregel
+
+Mithilfe der Verteilungsfunktion lassen sich charakteristische Flächeninhalte der Normalverteilung berechnen. Als Faustregel ergibt sich die **68-95-99.7-Prozentregel**:
+
+
+:::{.nonincremental}
+- Der Bereich Mittelwert $\pm$ eine Standardabweichung ($\mu\pm1\sigma$) umfasst **68%** der Daten
+- Der Bereich Mittelwert $\pm$ zwei Standardabweichungen ($\mu\pm2\sigma$) umfasst **95%** der Daten
+- Der Bereich Mittelwert $\pm$ drei Standardabweichungen ($\mu\pm3\sigma$) umfasst **99.7%** der Daten
+:::
+
+![](images/normal_68_95_99.png)
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Standardnormalverteilung
+
+
+:::: {.columns}
+::: {.column width="65%"}
+:::{.nonincremental}
+- Die Normalverteilung ist durch zwei Parameter charakterisiert, die Mittelwert und Standardabweichung der Verteilung definieren (idR $\mu$ und $\sigma$):
+:::
+
+:::{style="margin-top: -15px"}
+$$
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2} 
+$$
+:::
+
+- Im weiteren Verlauf von Statistik 1 werden wir häufig die standardisierte Form der Normalverteilung verwenden &mdash; die [**Standardnormalverteilung**]{color="navy"}.
+- Die Standardnormalverteilung hat Mittelwert $0$ und Standardabweichung $1$:
+
+$$
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}\quad\underset{\sigma=1}{\overset{\mu=0}{=}}\quad\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}
+$$
+
+:::
+::: {.column width="35%"}
+![](images/normal_dist.png){height=250px}
+
+<div class="vspace-xlarge"></div>
+
+![](images/normal_dist_standard.png){height=250px}
+
+:::
+::::
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Das ABC der Normalverteilung
+
+Aufgrund ihrer Bedeutung in der Statistik, haben sich für die (Standard)Normalverteilung bestimmte Bezeichnung eingebürgert, auf die wir ab jetzt zugreifen werden.
+
+
+<div class="vspace-large"></div>
+
+<!---  Table --->
+|||
+|-|-|
+| **Normalverteilung mit Angabe des Mittelwertes $\mu$ und der Varianz $\sigma^2$** | $\mathcal{N}(\mu, \sigma^2)$ |
+| **Standardnormalverteilung (Mittelwert 0, Varianz 1)** | $\mathcal{N}(0, 1)$ |
+| **Dichtefunktion der Normalverteilung** | $f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$ |
+| **Dichtefunktion der Standardnormalverteilung** | $\varphi(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2}$  (sprich "Klein Phi") \
+Es gilt: $\quad f(x) = \frac{1}{\sigma}\varphi\left(\frac{x-\mu}{\sigma}\right)$ |
+| **Verteilungsfunktion der Normalverteilung** | $F(x)=\frac{1}{\sigma\sqrt{2\pi}}\int_{-\infty}^x e^{-\frac{1}{2}\left(\frac{x'-\mu}{\sigma}\right)^2}dx\qquad$ |
+| **Verteilungsfunktion der Standardnormalverteilung** | $\Phi(x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^x e^{-\frac{1}{2}x'^2}dx\qquad$ (sprich "Groß Phi") \
+Es gilt: $\quad F(x) = \Phi\left(\frac{x-\mu}{\sigma}\right)$ |
+
+: {tbl-colwidths="[47, 50]"}
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Vorschau
+
+<div class="vspace-small"></div>
+
+
+Im nächsten Schritt kehren wir zurück zur **theoretischen Stichprobenverteilung**. Die Erkenntnisse zur Wahrscheinlichkeitsdichte und Verteilungsfunktion lassen sich auf die theoretische Stichprobenverteilung übertragen und eröffnen so zwei wesentliche Methoden der Inferenzstatistik:
+
+:::{.nonincremental}
+- **Hypothesentestung** bzw. **Signifikanztestung** (u.a. auch Idee des p-Wertes)
+- **Konfidenzintervalle** (Verallgemeinerung des Standardfehlers)
+:::
+
+<div class="vspace-medium"></div>
+
+![](images/stichprobenverteilung.png){height=370px}

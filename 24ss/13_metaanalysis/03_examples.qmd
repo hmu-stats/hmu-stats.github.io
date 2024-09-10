@@ -1,0 +1,152 @@
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Beispiel 1: wirkt Psychotherapie?
+
+- Metaanalyse von Smith und Glass (1977)^[Smith ML, Glass GV (1977) Meta-analysis of psychotherapy outcome studies. American Psychologist 32:752–760.]
+- Verglichen wurde „Therapie vs. keine Therapie" für eine Reihe von psychischen Störungen (knapp 400 Studien insgesamt):
+- Berechnet wurde schließlich ein mittleres d:
+
+<div class="vspace-medium"></div>
+![](images/metaanalysis6.png)
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Beispiel 1: wirkt Psychotherapie?
+
+- Metaanalyse von Smith und Glass (1977)^[Smith ML, Glass GV (1977) Meta-analysis of psychotherapy outcome studies. American Psychologist 32:752–760.]
+- **Moderatorvariable 1**: unterscheidet sich die Wirksamkeit je nach Art der Therapie?
+
+<div class="vspace-medium"></div>
+
+:::: {.columns}
+::: {.column width="38%"}
+![](images/metaanalysis7.png)
+:::
+::: {.column width="62%"}
+Nach dieser Metaanalyse weisen die unterschiedlichen Psychpotherapie-Schulen/Arten deutlich unterschiedliche Effektstärken auf: Spannbreite von Gestalttherapie $(d=0.26)$ bis Systematische Desensibilisierung (Expositionstherapie) $(d=0.91)$
+
+<div class="vspace-xlarge"></div>
+
+::: {.notabene}
+:::: {.columns}
+::: {.column width="12%"}
+::: {style="margin-top: 10px"}
+![](images/notabene2.png){height="65px"}
+:::
+:::
+::: {.column width="88%"}
+Ergebnis ist mit Vorsicht zu genießen: keine Information über die jeweils behandelten Erkrankungen; recht alte Studie, die Probleme wie Publikationsbias und Studienqualität nicht nach heutigen Maßstäben berücksichtigt.
+:::
+::::
+:::
+:::
+::::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Beispiel 1: wirkt Psychotherapie?
+
+- Metaanalyse von Smith und Glass (1977)^[Smith ML, Glass GV (1977) Meta-analysis of psychotherapy outcome studies. American Psychologist 32:752–760.]
+- **Moderatorvariable 2**: unterscheidet sich die Wirksamkeit je nach Outcome-Maß?
+
+<div class="vspace-medium"></div>
+
+:::: {.columns}
+::: {.column width="43%"}
+![](images/metaanalysis8.png)
+:::
+::: {.column width="57%"}
+Recht große Verbesserung auf der Angstachse $(d=0.97)$, eher geringe Verbesserung im Schul/Arbeitsumfeld $(d=0,{31})$.
+
+<div class="vspace-xlarge"></div>
+<div class="vspace-xlarge"></div>
+
+::: {.notabene}
+:::: {.columns}
+::: {.column width="14%"}
+::: {style="margin-top: 10px"}
+![](images/notabene2.png){height="65px"}
+:::
+:::
+::: {.column width="86%"}
+Ergebnis ist mit Vorsicht zu genießen: keine Information über die jeweils behandelten Erkrankungen; recht alte Studie, die Probleme wie Publikationsbias und Studienqualität nicht nach heutigen Maßstäben berücksichtigt.
+:::
+::::
+:::
+:::
+::::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Beispiel 1: wirkt Psychotherapie?
+
+- Metaanalyse von Smith und Glass (1977)^[Smith ML, Glass GV (1977) Meta-analysis of psychotherapy outcome studies. American Psychologist 32:752–760.]
+- Unterschiede zwischen Verhaltenstherapie (*behavioral*) und anderen Therapieformen (*nonbehavioral*)
+
+<div class="vspace-medium"></div>
+
+:::: {.columns}
+::: {.column width="43%"}
+![](images/metaanalysis9.png)
+:::
+::: {.column width="57%"}
+Für diese Analyse wurden die verschiedenen Therapieformen in die Superklassen "behavioral" (403 Studien) und "nonbehavioral" (344 Studien) unterteilt. Die Analyse zeigt einen Vorteil für Verhaltenstherapie an ($d=0.83$ vs. $d=0.59$).
+
+<div class="vspace-xlarge"></div>
+
+::: {.notabene}
+:::: {.columns}
+::: {.column width="14%"}
+::: {style="margin-top: 10px"}
+![](images/notabene2.png){height="65px"}
+:::
+:::
+::: {.column width="86%"}
+Ergebnis ist mit Vorsicht zu genießen: keine Information über die jeweils behandelten Erkrankungen; recht alte Studie, die Probleme wie Publikationsbias und Studienqualität nicht nach heutigen Maßstäben berücksichtigt.
+:::
+::::
+:::
+:::
+::::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Beispiel 2: Musikpräferenzen und Persönlichkeit
+
+- Moderne Metaanalyse von Schäfer & Mehlhorn (2017)^[Schäfer T, Mehlhorn C (2017) Can personality traits predict musical style preferences? A meta-analysis. Personality and Individual Differences 116:265–273.]
+
+<div class="vspace-large"></div>
+
+![](images/metaanalysis10.png)
+
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Forest-Plot
+
+Die Ergebnisse der einbezogenen Studien sowie das Gesamtergebnis werden in einem [**Forest-Plot**]{color="navy"} dargestellt (zeigt die Effekte und ihre Konfidenzintervalle).
+
+:::: {.columns}
+::: {.column width="35%"}
+- **Schnelle visuelle Orientierung** über gemeinsame Trends der betrachteten Studien.
+- Jedes quadratische Kästchen repräsentiert die **Effektstärke einzelner Studien**.
+- **Konfidenzintervalle** geben Unsicherheit der einzelnen Studien an.
+- Diamant-Symbol in der letzten Reihe zeigt den **gemittelten Gesamteffekt**.
+:::
+::: {.column width="65%"}
+![](images/metaanalysis11.png)
+:::
+::::
+

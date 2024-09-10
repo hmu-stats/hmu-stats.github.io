@@ -1,0 +1,271 @@
+# [Bonuscontent]{color="darkred"}
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Gepoolte Varianz]{color="darkred"}{#pooled_variance}
+
+:::{.nonincremental}
+- Bei unabhängigen Messungen ist es nicht (wie in Fall 2) möglich, die Einzelmesswerte $x_{A,i}$ und $x_{B,i}$ direkt voneinander abzuziehen. Nicht zuletzt wäre es völlig unklar, welche Versuchsperson aus A jeweils von welcher Versuchsperson aus B subtrahiert wird.
+- Damit kann auch nicht die Varianz der individuellen Effekte der Versuchspersonen berechnet werden ("Differenzenvarianz"), sondern lediglich eine **gepoolte Varianz** $\hat{\sigma}^2_\text{pooled}$.
+- Die Annahme ist dabei, dass beide Gruppen eine ähnliche Streuung haben, z.B. weil sie randomisiert aus derselben Population gezogen wurden und man nicht erwartet, dass die Gruppenzugehörigkeit die Varianz beeinflusst.
+- Der Name leitet sich von der Vorstellung ab, die Datenpunkte beider Gruppen in einen gemeinsamen "Pool" zu werfen, und dann die Varianz auf allen Daten zu berechnen.
+- Vor dem "Wurf in den Pool" müssen die Mittelwerte der Datenpunkte aus den jeweiligen Gruppen gleichgesetzt werden &mdash; im einfachsten Fall so, dass jeweils der Gruppenmittelwert von den Datenpunkten abgezogen wird (die Daten werden **zentriert** &mdash; beide Gruppen haben danach den Mittelwert 0):
+
+:::{style="margin-top:-43px"}
+$$
+X'_A = X_A - \bar{X}_A\qquad und\qquad X'_B = X_B - \bar{X}_B
+$$
+:::
+
+$$
+X_\text{pooled} = [X'_A; X'_B]
+$$
+
+$$
+\hat{\sigma}^2_\text{pooled} = \hat{Var}(X_\text{pooled})
+$$
+
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Gepoolte Varianz]{color="darkred"}
+
+:::{.nonincremental}
+- Es lässt sich mathematisch recht einfach zeigen, dass die gepoolte Varianz identisch dem an den Stichprobengrößen $n_A$ und $n_B$ gewichteten Varianzmittelwert ist:
+
+$$
+\hat{\sigma}^2_\text{pooled} = \frac{(n_A-1)\hat{\sigma}^2_A + (n_B-1)\hat{\sigma}^2_B}{n_A+n_B-2}\quad\text{bzw.}\quad\hat{\sigma}_\text{pooled} = \sqrt{\frac{(n_A-1)\hat{\sigma}^2_A + (n_B-1)\hat{\sigma}^2_B}{n_A+n_B-2}}
+$$
+
+:::{.smaller}
+&numsp;&numsp;Die Subtraktion von 1 von den Stichprobengrößen $n_A$ und $n_B$ ist Ausdruck der Besselkorrektur.
+:::
+
+- Die Gewichtung mit den Stichprobengrößen grenzt die gepoolte Varianz von der einfach gemittelten Varianz $\hat{\sigma}_\text{av}^2$ ab:
+
+:::{style="margin-top: -20px"}
+$$
+\hat{\sigma}_\text{av}^2 = \frac{\hat{\sigma}_A^2+\hat{\sigma}_B^2}{2}\quad\text{bzw.}\quad\hat{\sigma}_\text{av}^2 = \sqrt{\frac{\hat{\sigma}_A^2+\hat{\sigma}_B^2}{2}}
+$$
+:::
+
+- $\hat{\sigma}_\text{av}^2$ wird auch als **ungepoolte Varianz** bezeichnet, weil hier nicht alle Datenpunkte in einen Pool geworfen werden, sondern die Varianzen $\hat{\sigma}_A^2$ und $\hat{\sigma}_B^2$ einzeln berechnet und anschließend ohne Berücksichtigung unterschiedlicher Stichprobengrößen gemittelt werden.
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Gepoolte Varianz]{color="darkred"}
+
+:::{.nonincremental}
+- Der Nachteil der gepoolten Varianz ist, dass sie nicht mehr der interindividuellen Variabilität des Effektes (hier Mittelwertdifferenz) entspricht, sondern der Variabilität des gemessenen Merkmals $X$.
+    - Die Mittelwertdifferenz im Zähler wird also streng genommen nicht mehr ins Verhältnis zu ihrer eigenen Variabilität gesetzt.
+- Die gepoolte Varianz hat jedoch auch einen Vorteil: es wird de facto nur eine Varianz geschätzt (die Popuationsvarianz des Merkmals $X$) und diese Schätzung basiert auf $n_A+n_B$ Versuchspersonen. Sie kann also recht präzise geschätzt werden. Die Präzision der Varianz bestimmt wiederum direkt und wesentlich die Präzision des Effektstärkenmaßes selbst.
+- Wenn Effektstärken in erster Linie zur Vergleichbarmachung mit anderen Studien dienen (Stichwort **Metaanalyse**), ist eine a) *präzise* und b) *zwischen Studien vergleichbare* Schätzung der Varianz ein wichtiger Aspekt &mdash; ggf. wichtiger als die Interpretierbarkeit des resultierenden Effektmaßes.
+:::
+
+
+<!---  Example --->
+::: {.example}
+:::: {.columns}
+::: {.column width="10%"}
+::: {style="margin-top: 10px"}
+![](images/example.png){height=70px}
+:::
+:::
+::: {.column width="90%"}
+Bei einem Pre-post-Interventionsdesign (Messung vor und nach einer Intervention an derselben Gruppe), kann es vorteilhaft sein, nur die *Standardabweichung des Vortestes* für die Standardisierung zu nehmen. Grund: die Variabilität *vor* einer Intervention ist am ehesten zwischen Studien vergleichbar &mdash; damit werden auch die Effektstärken besser vergleichbar.^[Cumming G (2013) Cohen’s d needs to be readily interpretable: Comment on Shieh (2013). Behav Res 45:968–971.] In der Praxis geschieht dies aber selten (nicht immer ist die statistisch beste auch die populärste Praxis).
+:::
+::::
+:::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Cohen's d bei unterschiedlichen Gruppenvarianzen]{color="darkred"}{#d_unequal_variance}
+
+:::{.nonincremental}
+- Eine wichtige Voraussetzung für die Verwendung der gepoolten Varianz bei Cohen's d mit unabhängigen Messungen ist, dass die Einzelvarianzen $\hat{\sigma}^2_A$ und $\hat{\sigma}^2_A$ ähnlich sind.
+- Warum? Die Idee ist, die Varianzschätzung des Merkmals durch Nutzung der Datenpunkte *beider* Gruppen zu verbessern. Sind die Varianzen in beiden Gruppen jedoch unterschiedlich, so ist der Fall gegeben, dass es gar nicht *die eine* Varianz des Merkmals gibt, sondern die Varianz stark von der Gruppenzugehörigkeit abhängt.
+- Eine gängige Faustregel besagt, dass die Varianzen sich höchstens um den Faktor 2 unterscheiden sollten, d.h. $0.5<\frac{\hat{\sigma}^2_A}{\hat{\sigma}^2_B}<2$.
+- Diese Einschränkung bei der Verwendung der gepoolten Varianz wird jedoch häufg missachtet, mutmaßlich auch, weil sich keine alternative Lösung für den Fall unabhängiger Messungen in großer Breite etabliert hat.
+- Eine häufig empfohlene Variante im Fall unabhängiger Messungen und unterschiedlicher Varianzen ist die Effektstärkengröße *Hedges*’ g* auf Basis der **ungepoolten Varianz** $\hat{\sigma}_\text{av}$ ^[Delacre M, Lakens D, Ley C, Liu L, Leys C (2023) Why Hedges’ g*s based on the non-pooled standard deviation should be reported with Welch’s t-test. Open Science Framework. Available at: https://osf.io/tu6mp. Hinweis: der Terminus "ungepoolte" Varianz meint hier, dass die Daten nicht implizit in einen Pool geworfen werden und dann die Gesamtvarianz berechnet wird; stattdessen wird unabhängig von möglicherweise unterschiedlich großen Gruppengrößen $n_A$ und $n_B$ der Mittelwert der beiden Einzelvarianzen berechnet.]:
+:::
+
+$$
+\text{Hedges'}\,g^* \approx \left(1-\frac{3}{4(n_A+n_B)-9}\right)\cdot \frac{\bar{x}_A - \bar{x}_B}{\hat{\sigma}_\text{av}}\quad\text{mit}\quad \hat{\sigma}_\text{av}=\sqrt{\frac{\hat{\sigma}^2_A+\hat{\sigma}^2_B}{2}}
+$$
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Effektstärkenvergleich zwischen abhängigen und unabhängigen Designs]{style="font-size: 36px; color: darkred"}
+
+**Problem:** häufig sollen Effektstärken zwischen Designs mit *abhängigen* und *unabhängigen* Messungen verglichen werden &mdash; jedoch lässt sich in Fall 2 (unabhängige Messungen) keine Differenzenvarianz berechnen.
+
+:::{.nonincremental}
+- In diesem Fall wird manchmal folgende Variante von Cohen's d bei abhängigen Messungen verwendet, die auf der **gepoolten Varianz** basiert:
+:::
+
+$$
+d = \frac{\bar{x}_A - \bar{x}_B}{\hat{\sigma}_\text{pooled}}\quad\text{mit}\quad\hat{\sigma}_\text{pooled} = \sqrt{\frac{\hat{\sigma}^2_A + \hat{\sigma}^2_B}{2}}
+$$
+
+:::{.nonincremental}
+- Beachte, dass hier die gepoolte Varianz $\hat{\sigma}^2_\text{pooled}$ identisch mit der ungepoolten (einfach gemittelten) Varianz $\hat{\sigma}^2_\text{av}$ ist, da bei abhängigen Messungen immer gilt: $n=n_A=n_B$.
+
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Effektstärkenvergleich zwischen abhängigen und unabhängigen Designs]{style="font-size: 36px; color: darkred"}
+
+:::{.nonincremental}
+- Laut einer aktuellen Forschungsarbeit^[Cousineau D (2020) Approximating the distribution of Cohen’s d_p in within-subject designs. TQMP 16:418–421.] sind die Werte von Cohen's d auf Basis der gepoolten Varianz nicht exakt vergleichbar zwischen abhängigen und unabhängigen Messungen (auch dann, wenn die Varianzen ähnlich sind).
+- Die Arbeit bietet dafür folgende Modifikation von Cohen's d für abhängige Messungen an:
+
+:::
+
+$$
+d = \sqrt{\frac{2(1-r)}{n}}\cdot t'_\nu(\lambda)\quad\text{mit}\quad \lambda = \sqrt{\frac{n}{2(1-r)}}\cdot\frac{\bar{x}_A - \bar{x}_B}{\hat{\sigma}_\text{pooled}}
+$$
+
+:::{.smaller}
+wobei $r$ die Pearson-Korrelation zwischen den beiden abhängigen Messungen ist und $t'$ die nichtzentrale *t*-Verteilung mit $\nu = 2(n − 1)/(1 + r^2)$ Freiheitsgraden. Beachte, dass die Formel nur gilt, falls ähnliche Varianzen in den beiden Bedingungen A und B angenommen werden können.
+:::
+
+:::{.nonincremental}
+- Laut dem Autor Denis Cousineau der Forschungsarbeit ist damit Cohen's d exakt vergleichbar zwischen abhängigen und unabhängigen Messungen.
+- Weiterer nützlicher Link zu Effektstärken bei abhängigen Messungen: ^[http://jakewestfall.org/blog/index.php/2016/03/25/five-different-cohens-d-statistics-for-within-subject-designs/]
+
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<!-- ## [Umrechnung von Cohen's $d$ zu $\hat{\rho}$: ein Nachtrag]{style="color: darkred; font-size: 37px" #d_corr} -->
+## [Umrechnung von Cohen's $d$ zu $\hat{\rho}$: ein Nachtrag]{style="color: darkred; font-size: 37px"}{#d_corr}
+
+:::{.nonincremental}
+- Wie erwähnt, impliziert die Formel $d=\frac{2\hat{\rho}}{\sqrt{1-\hat{\rho}^2}}$ eigentlich, dass eine der beiden Variablen als *unabhängige Variable* festgelegt wurde. Cohen's $d$ bemisst dabei die Effektstärke in der Variablen $Y$, die mit einer Erhöhung der unabhängigen Variablen $X$ um zwei Standardabweichungen $\sigma_{\mkern-2mu\scriptscriptstyle{X}}$ verbunden ist.
+- Tatsächlich ist die angebene Formel lediglich ein Spezialfall folgender allgemeiner Formel^[Mathur MB, VanderWeele TJ (2020) A Simple, Interpretable Conversion from Pearson’s Correlation to Cohen’s d for Continuous Exposures. Epidemiology 31:e16–e18.]:
+
+:::
+:::{style="margin-top: -35px"}
+$$
+d=\frac{k\hat{\rho}}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sqrt{1-\hat{\rho}^2}}\qquad\text{bzw.}\qquad\hat{\rho} = \frac{d \sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\sqrt{d^2\sigma_{\mkern-2mu\scriptscriptstyle{X}}^2+k^2}}
+$$
+:::
+
+:::{.nonincremental}
+- Hier gilt allgemein: $d$ entspricht der durchschnittlichen Zunahme der standarsierten $Y$-Variable mit jeder Zunahme von $X$ um $k$ (Rohwert)Einheiten; $k$ muss vom Forschenden gewählt werden.
+- Wählt man $k=2\sigma_{\mkern-2mu\scriptscriptstyle{X}}$, so ergibt sich tatsächlich die vereinfachte Formel. 
+- Allerdings ist $k=2\sigma_{\mkern-2mu\scriptscriptstyle{X}}$ zum einen ein ziemlich extremer Kontrast und zum anderen von der Studien- oder Populations-spezifischen Standardabweichung $\sigma_{\mkern-2mu\scriptscriptstyle{X}}$ abhängig. Daher scheint in Metaanalysen eigentlich die Festlegung auf einen kleineren und konstanten Wert von $k$ sinnvoll.
+
+:::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Effektstärken für Mittelwertunterschiede bei mehr als zwei Messungen]{style="font-size: 36px; color: darkred"}
+
+:::{.nonincremental}
+- Gibt es mehr als zwei Experimentalbedingungen oder Gruppen (A, B, C, ...), gibt es zwei Möglichkeiten:
+    1. Von Interesse sind die **paarweisen** Mittelwertunterschiede (z.B: $A-B$, $A-C$, $B-C$) &xrarr; in diesem Fall kann wie bisher Cohen's d für für jedes Paar angewendet werden.
+    2. Von Interesse ist, ob sich die Mittelwerte in den Gruppen A, B, C **in ihrer Gesamtheit betrachtet** unterscheiden, d.h. ob die Aufteilung in diese spezifischen Gruppen sinnvoll ist.
+
+Fall 2 ist unser erster Kontakt mit der **Varianzanalyse**, die in Statistik 2 ausführlich behandelt wird. Man kann die Fragestellung in Fall 2 auch folgendermaßen formulieren: 
+
+    Zu welchem Grad wird die Varianz der gepoolten Daten aller Gruppen bereits erklärt durch die Mittelwerte der Gruppen?
+
+- Auf Basis dieser Formulierung ist nicht mehr überraschend, dass die Effektstärke für Mittlwertunterschiede von mehreren Messungen als *Verhältnis zweier Streuungen* ausgedrückt werden kann:
+
+:::
+
+
+:::: {.columns}
+::: {.column width="50%"}
+$$
+\eta^2 = \frac{QS_\text{Mittelwerte}}{QS_\text{Gesamt}}
+$$
+:::
+::: {.column width="50%"}
+![Die Quadratsumme entspricht dem Zähler in der Formel für die Varianz.](images/quadratsumme.png){height=80px}
+
+:::
+::::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Effektstärken für Mittelwertunterschiede bei mehr als zwei Messungen]{style="font-size: 36px; color: darkred"}
+
+![Courtesy of Prof. Thomas Schäfer, Medical School Berlin](images/effectsize_eta_squared.png){height=320px}
+
+:::{.nonincremental}
+- $\eta^2$ ("Eta Quadrat") gibt an, wie viel der Gesamtvarianz durch die Varianz der Mittelwerte aufgeklärt wird.
+- Es kann zwischen 0 (Mittelwerte erklären keine Varianz) und 1 (Mittelwerte erklären die komplette Varianz) liegen.
+- Die Berechnung von $QS_\text{Gesamt}$ umfasst 1) die Varianz zwischen den Bedingungen, 2) die Varianz zwischen zwischen Personen (über Bedingungen hinweg), und 3) wie sehr sich die Varianz der Bedingungen zwischen Personen unterscheidet:
+:::
+
+
+:::{style="margin-top: -15px"}
+$$
+QS_\text{Gesamt} = QS_\text{Bedingungen} + QS_\text{Personen} + QS_\text{Personen x Bedingungen}
+$$
+:::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Effektstärken für Mittelwertunterschiede bei mehr als zwei Messungen]{style="font-size: 36px; color: darkred"}
+
+
+:::{.nonincremental}
+- Es kann argumentiert werden, dass die Varianz, die lediglich die interindividuellen Unterschiede der Versuchspersonen (Varianzanteil 2 bzw. $QS_\text{Personen}$) charakterisiert, für die Effektstärke irrelevant ist und nicht zu $QS_\text{Gesamt}$ gezählt werden sollte, d.h.:
+:::
+$$
+QS_\text{Gesamt} = QS_\text{Bedingungen} + QS_\text{Personen x Bedingungen}
+$$
+- Wird die Varianz $QS_\text{Personen}$ nicht berücksichtigt, spricht man vom [**partiellen**]{color="navy"} $\color{navy}{\eta_p^2}$.
+
+:::{.nonincremental}
+- Eine ausführliche Diskussion zum Pro und Kontra von $\eta^2$ vs. $\eta_p^2$ findet sich z.B. im Buch von Eid, Gollwitzer und Schmitt im Kapitel zur Varianzanalyse.
+:::
+
+::: {.notabene}
+:::: {.columns}
+::: {.column width="7%"}
+::: {style="margin-top: 10px"}
+![](images/notabene2.png){height="65px"}
+:::
+:::
+::: {.column width="93%"}
+Warum werden bei der Berechnung von $\eta^2$ die Quadratsummen und nicht die Varianzen direkt verwendet? Grund ist, dass die Varianz die *durchschnittliche* (quadrierte) Abweichung vom Mittelwert angibt (daher der Faktor $\frac{1}{n}$), und beim Vergleich verschiedener Variabilitätskomponenten nicht festgestellt werden kann, wie viel der Datenvariabilität *absolut gesehen* durch eine Variabilitätskomponente erklärt wird.
+
+:::
+::::
+:::
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## [Empfehlungen nach Lakens (2013)^[Lakens D (2013) Calculating and reporting effect sizes to facilitate cumulative science: a practical primer for t-tests and ANOVAs. Frontiers in Psychology 4 Available at: https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00863]]{color="darkred"}
+
+![](images/effectsizes_recommendation_lakens2013.png)
+

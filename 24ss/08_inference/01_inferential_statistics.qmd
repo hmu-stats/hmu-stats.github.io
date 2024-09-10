@@ -1,0 +1,69 @@
+---
+title: "Vorlesung 08: Inferenzstatistik"
+---
+
+# Inferenzstatistik
+
+## Statistischer Kennwert $\hat{\theta}$
+
+:::{.nonincremental}
+- Wir führen ein neues Symbol ein, das von nun an Platzhalter für einen statistischen Kennwert steht, der auf Basis einer Stichprobe berechnet wurde:
+:::
+
+$$
+\text{Statistischer Kennwert:}\qquad\hat{\theta}
+$$
+
+::: {.definition}
+<!---  Definition--->
+|||
+|:-:|-|
+|||
+| ![](images/definition.svg){height=70px} | Als statistische Kennwerte werden quantitative Maße bezeichnet, die eine Eigenschaft von Stichprobendaten in einer Zahl zusammenfassen. Das Symbol $\hat{\theta}$ dient dabei als allgemeines Symbol statistische Kennwerte. | 
+|||
+: {tbl-colwidths="[10, 90]"}
+:::
+
+:::{.nonincremental}
+- Zu statischen Kennwerten zählen nicht nur Lage- und Streuungsmaße, die *eine* Variable beschreiben (z.B. Mittelwert $\bar{x}$, Varianz $\hat{\sigma}^2$), sondern auch *zwei* Variablen (z.B. Korrelation $\hat{\rho}$, Regressionskoeffizient $\hat{b}_1$) oder noch mehr Variablen (&rArr; Statistik 2).
+:::
+
+
+
+## Was ist Inferenzstatistik?
+
+:::: {.columns}
+::: {.column width="45%"}
+<div class="vspace-small"></div>
+![Die statistische Prozess in der Psychologie auf einen Blick: eine Teilmenge von Versuchspersonen wird aus der Population gezogen &mdash; die Stichprobe. In der Stichprobe werden Daten $(x_1, x_2, ..., x_n)$ eines Merkmals $X$ gemessen. Mit Methoden der deskriptiven Statistik werden **Kennwerte** in der Stichprobe beschrieben $(\bar{x}, s^2, r)$. Letztendlich ist das Ziel ein Rückschluss auf die wahren **Parameter** $\theta$ der Population $(\mu, \sigma^2, \rho)$ und das Testen von Hypothesen über die Population. Bildnachweis^[https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Introductory_Statistics_(Shafer_and_Zhang)/01%3A_Introduction_to_Statistics/1.01%3A_Basic_Definitions_and_Concepts]](images/grand_picture_of_statistics_update.png)
+:::
+::: {.column .nonincremental width="55%"}
+- In den vergangenen Vorlesungen haben wir kennengelernt, wie Merkmale in Stichproben quantitativ beschrieben werden können &mdash; wir haben **deskriptive Statistik** betrieben.
+- In den meisten Fällen ist das Ziel in der Psychologie allerdings nicht die Beschreibung der spezifischen Stichprobe, sondern ein Rückschluss &ndash; eine Inferenz, eine Verallgemeinerung &ndash; auf die Population.
+- Die Mathematik hinter diesem Inferenzprozess ist Gegenstand der [**Inferenzstatistik**]{color="navy"}.
+:::
+::::
+
+
+
+<!-- ## Der Forschungsprozess {.hcenter-slide}
+
+```yaml { .animate src="images/scientific_process.svg"}
+setup:
+    - element: "#inference"
+      modifier: function() { this.node.style.fill = 'green'; }
+    - element: "#inferencebg"
+      modifier: function() { this.node.style.fill = '#d8ffe2';}
+``` -->
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Was ist Inferenzstatistik?
+
+<div class="vspace-medium"></div>
+
+![](images/population_sample_schaefer_rev.png)
+
+**Zentrale Frage:** Ist das Ergebnis meiner Studie eine gute Schätzung für die wahren Verhältnisse in der Population?

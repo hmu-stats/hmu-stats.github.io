@@ -1,0 +1,261 @@
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Streuung der theoretischen Stichprobenverteilung
+
+<div class="vspace-large"></div>
+
+Bleibt die Frage nach dem Streuungsparameter $\sigma_\text{SV}$ der theoretischen Stichprobenverteilung: woher wissen wir, wie die Ergebnisse von hypothetischen Stichproben streuen würden?
+
+:::: {.columns .fragment }
+::: {.column width="32%"}
+Gehen wir dazu zu unserem Gedankenexperiment zurück:
+:::
+::: {.column width="68%"}
+![](images/inference1_annot.png)
+:::
+::::
+
+:::{.fragment}
+**Was würde die Streuung der hypothetischen Einzelstichproben verkleinern?**
+:::
+
+1. Wenn die Stichproben größer ist als lediglich $n=3$ Personen (z.B. $n=6$)<br>&xrarr; damit lägen die Mittelwerte der Einzelstichproben idR näher am wahren Mittelwert!
+
+2. Wenn die Population grundsätzlich eine geringere Streuung $\sigma$ aufweist<br>&xrarr; damit würden auch die Mittelwerte der Einzelstichproben weniger streuen.
+
+:::{.fragment}
+Der Streuungsparameter $\sigma_\text{SV}$ der theoretischen Stichprobenverteilung muss also eine Funktion der Stichprobengröße $n$ und der Streuung $\sigma$ in der Population sein. 
+:::
+
+<div class="vspace-xsmall"></div>
+
+:::{.fragment}
+$$
+\sigma_\text{SV} = f(n, \sigma)
+$$
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Streuung der theoretischen Stichprobenverteilung
+
+<div class="vspace-xlarge"></div>
+
+:::{.nonincremental}
+- Kann für die Stichprobenverteilung eine Normalverteilung angenommen werden, so wird die Streuung $\sigma_\text{SV}$ als [**Standardfehler**]{color="navy"} (engl. *standard error*) oder $se$ bezeichnet. 
+
+$$
+\sigma_\text{SV} = se
+$$
+
+- Da wir in der Regel $\sigma_\text{SV}$ bzw. $se$ nicht kennen und als $\hat{se}$ schätzen müssen heißt es in der Praxis:
+
+$$
+\hat{\sigma}_\text{SV} = \hat{se}
+$$
+
+:::: {.columns}
+::: {.column width="50%"}
+- Der Standard*fehler* ist die Standard*abweichung* der normalverteilten Stichprobenverteilung um den Mittelwert $\hat{\theta}$.
+:::
+::: {.column width="50%"}
+![](images/inference8_annot_se.png){height="300px"}
+:::
+::::
+
+:::
+
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Beispiel: Standardfehler des Mittelwertes
+
+
+::: {.colorbox2}
+:::: {.columns}
+::: {.column width="68%"}
+
+**Beispiel: statistischer Kennwert $\hat{\theta}$ = Mittelwert $\bar{x}$**
+
+Beim statistischen Kennwert "Mittelwert" berechnet sich der Standardfehler als Standardabweichung der Population $\sigma$ geteilt durch die Wurzel aus der Stichprobengröße $n$ ("Wurzel-N-Gesetz"):
+
+$$
+\text{Standardfehler des Mittelwertes:}\qquad\hat{\sigma}_\text{SV} = \hat{se} = \frac{\hat{\sigma}}{\sqrt{n}}
+$$
+
+In der Regel kennen wir die wahre Standardabweichung $\sigma$ der Population nicht und schätzen sie deshalb (wie gehabt) als $\hat{\sigma}$ auf Basis der Stichprobe. Siehe Bonuscontent für eine [Herleitung des Standardfehlers des Mittelwertes](#sem){style="color: darkred"}.
+
+:::
+::: {.column width="32%"}
+
+:::{style="margin-top: 50px"}
+![](images/inference8_annot_se_mean.png){height=200px}
+:::
+:::
+::::
+:::
+
+
+- Intuitiv sagt der Standardfehler des Mittelwertes aus, wie sicher wir uns bei der Bestimmung des Mittelwertes sein können:
+    - Großer Standardfehler: Gemessener Mittelwert ist eher unsicher
+    - Kleiner Standardfehler: Gemessener Mittelwert ist eher sicher
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<!-- ## Beispiel: Standardfehler des Mittelwertes
+
+
+::: {.merke .vcenter}
+:::: {.columns}
+::: {.column width="5%"}
+::: {style="margin-top: 18px"}
+![](images/merke.png){height="55px"}
+:::
+:::
+::: {.column width="95%"}
+**Beachte:** der Standardfehler des Mittelwertes allein sagt nichts über die tatsächliche Streubreite des Merkmals. Der Standardfehler kann klein sein, obwohl die Standardabweichung $\sigma$ des gemessenen Merkmals groß ist, wenn im Gegenzug die Stichprobengröße $n$ groß ist. Umgekehrt kann ein Standardfehler groß sein, obwohl die Standardabweichung $\sigma$ klein ist, wenn $n$ klein ist.
+:::
+::::
+::: -->
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Zwischenfazit
+
+::: {.colorbox style="margin-bottom:15px"}
+Die theoretische Stichprobenverteilung folgt einer **Normalverteilung** (falls n groß genug) mit einem **Mittelwert, der dem statistischen Kennwert entspricht**, und einer Standardabweichung, die sich aus der Populationsstreuung $\sigma$ und der Stichprobengröße $n$ berechnet (der sog. **Standardfehler**).
+:::
+
+- Der Standardfehler gibt darüber Auskunft, wie verlässlich unsere Schätzung des statistischen Kennwertes ist.
+- Wie wir noch sehen werden umfasst $1 \hat{se}$ die mittleren 68% der möglichen Ergebnisse in der theoretischen Stichprobenverteilung.
+
+<!---  Example --->
+::: {.example .fragment}
+:::: {.columns}
+::: {.column width="10%"}
+::: {style="margin-top: 10px"}
+![](images/example.png){height=70px}
+:::
+:::
+::: {.column width="55%"}
+Nehmen wir an, die Nasenlängen der Männer in unserer Studie weisen eine durchschnittliche Länge von $6cm$ auf und einen Standardfehler (des Mittelwertes) von $0{,}5cm$. 
+
+Wir können damit sagen, dass der Bereich
+
+$$
+\bar{x}\pm\hat{se} = 6\pm 0{,}5 = [5{,}5; 6{,}5]
+$$
+
+68% der Stichprobenverteilung umfasst. 
+
+[In Vorlesung 12 werden wir noch feststellen, dass wir (leider) [nicht]{.underline} schlussfolgern können, dass der wahre Populationsmittelwert $\mu$ mit 68% Wahrscheinlichkeit in diesem Intervall liegt.]{style="font-size: 18px"}
+
+
+:::
+::: {.column width="35%"}
+![](images/sem_example.png){height=280px}
+:::
+::::
+:::
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Interpretation des Standardfehlers
+
+<div class="vspace-medium"></div>
+
+**Wie kann man den Wert eines Standardfehlers interpretieren?**
+
+- Prinzipiell gilt: **je kleiner, desto präziser ist die Kennwertschätzung** auf Basis der Stichprobe.
+- Allerdings ist der Standardfehler keine standardisierte Größe wie z.B. Cohen's $d$, sondern hängt von den gewählten Einheiten der Variable $X$ ab.
+    - Interpretation ohne Kenntnis der Einheit/Messskala nicht möglich.
+- Anhaltspunkt: Vergleich/Verhältnis des Standardfehlers zum Wertebereich Skala (z.B. Ratingskala 1-10) oder zur Standardabweichung in der Stichprobe:
+
+<div class="vspace-large"></div>
+
+<!---  Example --->
+::: {.example .fragment}
+:::: {.columns}
+::: {.column width="10%"}
+::: {style="margin-top: 10px"}
+![](images/example.png){height=70px}
+:::
+:::
+::: {.column width="90%"}
+Im Nasenlängen-Beispiel galt $\bar{x}=6cm$ und $\hat{se}=0{,}5cm$. Nehmen wir an, die Standard*abweichung* von Nasenlängen in der Stichprobe wurde zu $5cm$ gemessen, also $\hat{\sigma}=5cm$. In diesem Fall beträgt der Standardfehler &mdash; unser Maß für die Präzision der Mittelwertmessung &mdash; 10% der Streubreite des Merkmals in der Stichprobe. Dies entspricht einer recht guten/präzisen Schätzung des Mittelwertes.
+
+(Als kleine Übung: wie hoch müsste in diesem Beispiel die Stichprobenzahl gewesen sein? (Antwort: $n=100$)
+:::
+::::
+:::
+
+<div class="vspace-large"></div>
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Verwendung des Standardfehlers in der Praxis
+
+:::{.nonincremental}
+- Im Text wird der Standardfehler des Mittelwertes oft in folgender Form angegeben: $M = 3.2 \pm 0.6 \,\,(\text{SEM})$. 
+    - Wichtig: es sollte prinzipiell immer angegeben werden, um was für ein Streuungsmaß es sich handelt (SEM ist hier die geläufige englische Abkürzung für *standard error of the mean*).
+:::
+
+:::{style="margin-top: -12px"}
+- In Abbildungen wird der Standardfehler ähnlich wie die Standardabweichung häufig in Form von Fehlerbalken dargestellt:
+:::
+
+<div class="vspace-small"></div>
+
+:::{.fragment}
+![](images/sem_praxis.png){height=270px}
+:::
+
+- Ist das Hauptinteresse ob sich Experimentalbedingungen **in ihrem Mittelwert unterscheiden**, ist der **Standardfehler aussagekräftiger** als die Varianz oder Standardabweichung.
+- Siehe Bonuscontent für eine [Übersicht von Standardfehlern](#sem_overview){style="color: darkred"} für bekannte statistische Kennwerte.
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+##
+:::: {.columns}
+::: {.column width="9%"}
+::: {style="margin-top:-15px"}
+![](images/summary.png){width=60px}
+:::
+:::
+::: {.column width="91%"}
+::: {.summary style="margin-top: 20px"}
+- Das grundsätzliche **Ziel der Inferenzstatistik** ist es die **Verallgemeinerbarkeit von Stichprobenkennwerten auf die Population** zu untersuchen.
+- Eine wichtige Frage ist dabei, **wie präzise Schätzungen von Populationskennwerten $\theta$ auf Basis der Stichschätzungen $\hat{\theta}$** sind.
+- Generelle Idee: Was würde passieren, wenn die Studie unendlich oft durch-<br>geführt (j=1,2,..) und jeweils der Stichprobenkennwert $\hat{\theta}^{(j)}$ bestimmt würde?
+- Dies führt zur **theoretischen Stichprobenverteilung** $f(\hat{\theta})$.
+- Für $f(\hat{\theta})$ kann aufgrund des Zentralen Grenzwertsatzes häufig eine **Normalverteilung** angenommen werden.
+- Der Mittelwert $\mu_\text{SV}$ der normalverteilten Stichprobenverteilung ist der Kennwert $\hat{\theta}$ selbst und ihre Standardabweichung $\sigma_\text{SV}$ wird als **Standardfehler** $se$ bezeichnet.
+- Beispiel Kennwert $\hat{\theta}$ = Mittelwert $\bar{x}$: $\quad\hat{\mu}_\text{SV}=\bar{x}$, $\quad\hat{\sigma}_\text{SV}=\hat{se}=\frac{\hat{\sigma}}{\sqrt{n}}$.
+:::
+:::
+::::
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## {.center}
+
+![Bildnachweis^[http://www.peaya.com/peaya.php?comicsid=1005]](images/peaya_sem.png)
+

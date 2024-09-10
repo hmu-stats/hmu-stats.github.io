@@ -1,0 +1,185 @@
+# Interpretation
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Interpretation von Cohen's d: Vorzeichen
+
+:::{.nonincremental}
+- Die Werte von Cohen's $d$ reichen von $-\infty$ bis $+\infty$. Negative Werte sind möglich, da das Vorzeichen davon abhängt, ob bei der Mittewertdifferenz im Zähler Mittelwert A von Mittelwert B abgezogen wird, oder umgekehrt.
+    - Für die Interpretation der Effektstärke ist ausschlaggebend, was mit "Effekt" gemeint ist "wie rum" die Mittelwertdifferenz gebildet wurde.
+    - Es ist prinzipiell eine sinnvolle Konvention, $d$ so zu berechnen, dass $d$ positiv ausfällt, falls der Effekt in die hypothesierte Richtung geht.
+:::
+
+<!---  Example --->
+::: {.example .fragment}
+:::: {.columns}
+::: {.column width="10%"}
+::: {style="margin-top: 10px"}
+![](images/example.png){height=70px}
+:::
+:::
+::: {.column width="90%"}
+Eine Studie untersucht den "Albtraum-Effekt", also die Hypothese, dass Albträume die Konzentrationsfähigkeit $X$ am nächsten Tag in Mitleidenschaft ziehen. Es zeigt sich, dass
+
+$$
+d = \frac{\bar{x}_\text{Albtraum} - \bar{x}_\text{Keine Albtraum}}{\hat{\sigma}_\Delta} = -0.8
+$$
+
+Das Ergebnis zeigt, dass die Konzentrationsfähikeit tatsächlich geringer nach Albtraum-Nächten ist. Cohen's d ist hier negativ, allerdings entspricht das Vorzeichen der Richtung der Hypothese und der "Albtraum-Effekt" würde als ein starker Effekt entsprechend $d=0.8$ gewertet werden (siehe übernächste Folie).
+
+Hier wäre es ggf. sinnvoll, die Mittelwertdifferenz direkt so zu bilden, dass $d$ positiv ist, wenn die Hypothese zutrifft.
+
+:::
+::::
+:::
+
+
+## Interpretation von Cohen's d: Magnitude / Stärke
+
+:::{.nonincremental}
+- Cohen's d drückt aus, **um wie viel Standardabweichungen ein Effekt von einem Nulleffekt abweicht**. 
+- Auch hier ist die Frage "Standardabweichungen von *Was*?"
+:::
+
+:::{style="margin-top: -12px"}
+- Die Interpretation ist am intuitivsten für den Fall einer *Einzelmessung mit Referenzwert*:
+:::
+
+<!---  Example --->
+::: {.fragment .example}
+:::: {.columns}
+::: {.column width="10%"}
+::: {style="margin-top: 10px"}
+![](images/example.png){height=70px}
+:::
+:::
+::: {.column width="90%"}
+Eine Studie untersucht, ob die Schlafdauer in einer Gruppe von Psychologiestudierenden in der Bachelorarbeitsphase geringer ist als die durchschnittliche Schlafdauer in Deutschland (7:45 Stunden). Tatsächlich zeigt sich eine verringerte Schlafdauer mit einem Cohen's d von $0.3$.
+
+Die Effektstärke von $0.3$ sagt aus, dass die Schlafdauer um $0.3$ *Standardabweichungen* gegenüber dem Durchschnittswert verringert ist. Die Einheit *Standardabweichung* bezieht sich dabei auf die Standardabweichung $\hat{\sigma}$ der Schlafdauer in der untersuchten Gruppe.
+:::
+::::
+:::
+
+:::{style="margin-top: 25px"}
+- Die Interpretation der Effektstärke bei Mittelwertdifferenzen *zweier* abhängiger oder unabhängiger Messungen ist im Prinzip identisch, jedoch ist die Frage "Standardabweichungen von *Was*?" weniger intuitiv zu beantworten (&rarr; $\hat{\sigma}_{\Delta}$, $\hat{\sigma}_\text{pooled}$).
+:::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Interpretation von Effektstärken
+
+:::{.nonincremental}
+- Um Effektstärken besser einordnen und kommunizieren zu können, hat Jacob Cohen folgende Unterteilung vorgeschlagen:
+
+
+:::{style="margin-top: -25px"}
+<!---  Table --->
+|d|r|Interpretation|
+|:-:|:-:|-|
+| $<0.2$ | $<0.1$ | Trivialer Effekt |
+| ab $0.2$ | ab $0.1$ | Kleiner Effekt |
+| ab $0.5$ | ab $0.3$ | Mittlerer Effekt |
+| ab $0.8$ | ab $0.5$ | Großer Effekt |
+: {tbl-colwidths="[33, 33, 34]"}
+
+:::
+:::
+
+- Zugleich fügt aber Cohen selbst folgende Qualifizierung an:
+
+:::{.fragment}
+![](images/cohen_effectsizes.png){height=140px}
+:::
+
+- Effektstärken sollten also idealerweise in ihrem jeweiligen Kontext interpretiert werden.
+- **Beispiel:** Effektstärken bezüglich der Veränderung des Körpergewichts durch Diäten sind erwartbar größer, als Veränderungen bei eher stabilen Merkmalen wie Persönlichkeitsfacetten. &rArr; Ein d-Wert der einer vergleichsweise geringen Veränderung des Körpergewichts entspricht, würde vielleicht in der Persönlichkeitsforschung als starker Effekt gelten.
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Interpretation von Cohen's d
+
+:::{.nonincremental}
+- Um zu beurteilen, was als kleine / mittlere / starke Effekte in einem spezifischen Kontext gilt, konsultiert man prinzipiell die entsprechende Fachliteratur nach typischen Referenzeffektstärken.
+- Problem: es gibt gute Evidenz, dass *publizierte Effekte* die *wahren Effekte*<br>überschätzen (**Publikationsbias**) &rArr; führt zu falschen Maßstäben
+:::
+
+:::: {.columns}
+::: {.column width="70%"}
+
+![](images/effectsizes_prereg_schaefer.png){height=330px}
+
+:::
+::: {.column .caption-style width="30%"}
+Die Abbildung zeigt, dass die Verteilung von Effekten bei präregistrierten Studien (grün) deutlich zu geringeren Effektstärken hin verschoben ist, verglichen mit Studien ohne Präregistrierung (lila).^[Schäfer T, Schwarz MA (2019) The Meaningfulness of Effect Sizes in Psychological Research: Differences Between Sub-Disciplines and the Impact of Potential Biases. Frontiers in Psychology 10 Available at: https://www.frontiersin.org/articles/10.3389/fpsyg.2019.00813.]
+
+:::
+::::
+
+&rArr; Die Interpretation und Einordnung von Effektstärken ist ein nicht-triviales Problem, das viel "domain knowledge" erfordert. Dies gilt für standardisierte wie unstandardisierte Effektstärken.
+
+:::{.nonincremental}
+- Faustregeln finden sich hier: 
+<a href="https://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize" target="_blank">https://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize</a>
+:::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Typische Effektstärken in der Sozialpsychologie
+
+![](images/kein_klausurstoff.png){.absolute bottom=0 right=0 height=110px}
+
+<div class="vspace-medium"></div>
+![Typische Effektstärke in der sozialpsychologischen Literatur^[Lovakov A, Agadullina ER (2021) Empirically derived guidelines for effect size interpretation in social psychology. Eur J Soc Psychol 51:485–504.].](images/lovakov2021_typical.png){height=550px}
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Typische Effektstärken in der Sozialpsychologie
+
+![](images/kein_klausurstoff.png){.absolute bottom=0 right=0 height=110px}
+
+<div class="vspace-medium"></div>
+![Trotz Publikationsbias sind die tatsächlich in der Literatur berichteten Effektstärken geringer als bei der Einteilung nach Cohen angenommen. Auf Basis dieser Studie wären die korrekten Grenzen für Cohen's d 0,15, 0,36, und 0,65. Bild adaptiert von Lovakov & Agadulina (2021)^[Lovakov A, Agadullina ER (2021) Empirically derived guidelines for effect size interpretation in social psychology. Eur J Soc Psychol 51:485–504.].](images/lovakov2021_effectsizes.png){height=550px}
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+:::{.content-hidden when-format="pdf"}
+## https://rpsychologist.com/d3/cohend/
+<iframe width=100% height=100% src="https://rpsychologist.com/d3/cohend/"></iframe>
+:::
+
+
+## Standardisierte oder unstandardisierte Effektstärken?
+
+:::{.nonincremental}
+- Ob Effektstärken in standardisierter oder unstandardisierter Form berichtet werden sollten wird kontrovers diskutiert^[https://twitter.com/ceptional/status/1687577019629142017] ^[Baguley T (2009) Standardized or simple effect size: What should be reported? British Journal of Psychology 100:603–617.].
+- Standardisierte Effektstärken ermöglichen eine bessere Vergleichbarkeit zwischen unterschied-lichen Skalen, gleichzeitig wird die intuitive Bedeutung von *Effektstärke* aber verwässert.
+:::
+
+<!---  Example --->
+::: {.fragment .example}
+:::: {.columns}
+::: {.column width="10%"}
+::: {style="margin-top: 10px"}
+![](images/example.png){height=70px}
+:::
+:::
+::: {.column width="90%"}
+Es wird berichtet, dass ein Coronoaimpfstoff die Viruslast bei einer Infektion reduziert. Die Effektstärke wird mit $\text{Cohen's }d=0.4$ angegeben.
+:::
+::::
+:::
+
+- Auf Basis der standardisierten Effektstärke $d=0.4$ ist nicht ersichtlich, ob die Viruslast nennenswert reduziert wurde oder, ob der Rückgang tatsächlich eher klein war, aber die Standardabweichung in der Gruppe so gering, dass dennoch ein hoher $d$-Wert erreicht wurde.
+- Darüber hinaus hängt die Standardabweichung einer Variable häufig mit eher nebensächlichen Details eines experimentellen Designs (within-subject vs. between-subject) oder einer Stichprobe (nur Psychologiestudierende oder heterogeneres Sample der Allgemeinbevölkerung?) zusammenhängt, die für die Effektstärke wenig relevant sind.
+- Aus diesen Gründen sollte für **Effekte, die in interpretierbaren Einheiten vorliegen, immer (auch) die unstandardisierte Effektstärke** angegeben werden (z.B. Notenstufen, Einkommen, IQ-Punkte, Größe- Gewichtsangaben, Zeitangaben).

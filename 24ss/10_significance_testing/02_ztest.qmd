@@ -1,0 +1,249 @@
+# z-Test
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Vereinfachung: Populationsstreuungen bekannt
+:::: {.columns}
+::: {.column width="65%"}
+
+:::{.nonincremental}
+- In einem ersten Schritt betrachten wir den **vereinfachten Fall, dass die Streuung $se$ bekannt ist**. 
+:::
+
+:::{.fragment style="margin-top: -12px"}
+- Entweder ist $se$ selbst bekannt, oder aber die Streuungen $\sigma$ der Merkmale, die dem Effekt zugrunde liegen, denn aus diesen lässt sich $se$ ableiten.
+:::
+
+:::{.fragment style="margin-top: -12px"}
+:::{.nonincremental}
+- Im Nasenlängenbeispiel etwa können wir annehmen, dass die Populationsstreuungen $\sigma_\text{med}$ und $\sigma_\text{psych}$ des Merkmals Nasenlänge bekannt sind. Der Standardfehler $se$ der Mittelwertdifferenz lässt sich aus diesen Populationsstreuungen wie folgt ableiten (siehe [Cheatsheet](#cheatsheet){style="color: navy"}): 
+:::
+
+
+$$
+se=\sqrt{\frac{\sigma_\text{med}^2}{n_\text{med}} + \frac{\sigma_\text{psych}^2}{n_\text{psych}}}
+$$
+:::
+:::
+::: {.column width="34%"}
+<div class="vspace-medium"></div>
+![](images/nulldist2c.png)
+
+:::
+::::
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Vereinfachung: Populationsstreuungen bekannt
+
+
+
+:::: {.columns}
+::: {.column width="65%"}
+
+:::{.nonincremental}
+- Nehmen wir an, der Standardfehler der Mittelwertdifferenz von Psychologen- und Medizinernasenlängen ist als $se=0.1$ bekannt. 
+- Mit dieser Information können wir können unseren ersten p-Wert berechnen!
+- Der p-Wert ist im Beispiel die Wahrscheinlichkeit der gemessenen Nasenlängendifferenz $\Delta\bar{x}$ *oder eines noch größeren Effektes* unter der Nullhypothesenverteilung.
+- Dazu muss die Fläche unter der Nullhypothesenverteilung [rechts]{.underline} von $\hat{\theta}=\Delta\bar{x}=\bar{x}_\text{med}-\bar{x}_\text{psych}$ berechnet werden.
+
+:::
+:::
+::: {.column width="34%"}
+![](images/nulldist2d.png)
+:::
+::::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Vereinfachung: Populationsstreuungen bekannt
+
+:::: {.columns}
+::: {.column width="65%"}
+
+Die Fläche bzw. der p-Wert berechnet sich wie folgt:
+$$
+\begin{aligned}
+p &= \int_{\hat\theta}^{\infty}f(x)dx = 1 - F(\hat\theta) = \\
+&= 1 - F(0.2) \overset{(Computer)}{\approx} 0.023
+\end{aligned}
+$$
+
+wobei $f(x)$ bzw. $F(x)$ hier die Dichte bzw. Verteilungsfunktion der gebenen Normalverteilung $\mathcal{N}(0, 0.1)$ ist.
+
+$F(x)$ berechnet die Fläche bis zum Punkt $x$, "1 minus diese Fläche" gibt uns also die Fläche rechts vom angebenen Punkt $x$ &mdash; im vorliegenden Fall die Fläche rechts von $\hat{\theta}=\Delta\bar{x}=\bar{x}_\text{med}-\bar{x}_\text{psych}=0.2$.
+
+Der p-Wert ist $0.023$. 
+
+:::
+::: {.column width="34%"}
+![](images/nulldist2d.png)
+:::
+::::
+
+
+In Worten können wir feststellen: die Wahrscheinlichkeit, dass unser Effekt $\hat{\theta}=\Delta\bar{x}$ durch Zufall entstanden ist &mdash; also unter der Annahme, dass die Nullhypothese gilt &mdash; beträgt (nur) $2.3\%$.
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## z-Wert &mdash; eine standardisierte Prüfgröße
+
+:::{.nonincremental}
+- In der Praxis wird die Berechnung von p-Werten um das Konzept der [**standardisierten Prüfgröße**]{color="navy"} erweitert. 
+    - Um das Konzept zu verstehen, erinnern wir uns, dass wir im Beispiel eine Fläche unter der Normalverteilung $\mathcal{N}(0, 0.1)$ berechnet haben. Für die nächste statistische Analyse müssten wir sehr wahrscheinlich die Fläche unter einer Normalverteilung mit einer anderen Streuung als $0.1$ berechnen.
+    - Gerade im Vorcomputerzeitalter war die Berechnung von Flächen unter beliebigen Normalverteilungen eine Herausforderung.
+:::
+
+
+:::{.fragment}
+:::: {.columns}
+::: {.column width="65%"}
+
+Abhilfe schafft die **Standardisierung des Effektes**:
+
+$$
+z = \frac{\hat{\theta}}{se}
+$$
+
+
+Nach Teilen von $\hat{\theta}$ durch die Streuung $se$, hat die Nullverteilung nicht mehr die Streuung $se$, sondern *immer* die Streuung $\frac{se}{se}=1$!
+
+:::
+::: {.column width="34%"}
+![](images/nulldist2e.png){style="margin-top:-10px !important"}
+:::
+::::
+
+$z$ wird als **standardisierte Prüfgröße** bezeichnet, während der einfache Effekt $\hat{\theta}$ (z.B. $\Delta\bar{x}$) eine **unstandardisierte Prüfgröße** darstellte.
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## z-Wert &mdash; eine standardisierte Prüfgröße
+
+<div class="vspace-large"></div>
+
+Es gibt auch im Computerzeitalter noch Vorteile für diese Art der Standardisierung:
+
+:::{.nonincremental}
+- Der resultierende z-Wert ist vergleichbar zwischen Studien, im Gegensatz zu unstandardisierten Effekten $\hat{\theta}$ wie dem Mittelwertsunterschied $\Delta \bar{x}$, die von der spezifischen Skala abhängen.
+- Der z-Wert hat eine (halbwegs) intuitive Interpretation: er gibt an, *wie viele Standardfehler der Effekt von einem Nulleffekt entfernt ist*.
+:::
+
+<div class="vspace-large"></div>
+
+![](images/z_interpretation.png){height=325px}
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## z-Test
+
+
+:::: {.columns}
+::: {.column width="65%"}
+
+
+Mit dem z-Wert als Prüfgröße benötigten wir für alle Tests dieser Art nur noch eine einzige Verteilung &mdash; die Normalverteilung mit Mittelwert $0$ und Streuung $1$, also die **Standardnormalverteilung**:
+
+<div class="vspace-small"></div>
+
+
+$$
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}\quad\underset{\sigma=1}{\overset{\mu=0}{=}}\quad\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}
+$$
+
+<!-- $$
+\text{Standardnormalverteilung:}\qquad X \sim \mathcal{N}(0, 1)
+$$ -->
+
+:::
+::: {.column width="34%"}
+![](images/nulldist2e.png)
+:::
+::::
+
+Die Art der Berechnung des p-Wertes ändert sich nicht &mdash; wir berechnen in unserem Beispiel weiterhin die Fläche rechts von unserem Effekt, nur dass der "Effekt" jetzt standardisiert und als $z = \frac{\hat{\theta}}{se} = \frac{\Delta\bar{x}}{se} = \frac{\bar{x}_\text{med}-\bar{x}_\text{psych}}{se}$ definiert ist. Der resultierende p-Wert ist derselbe.
+
+<div class="vspace-large"></div>
+
+::: {.colorbox .fragment}
+Der [**z-Test**]{color="navy"} ist ein statistischer Nullhypothesentest, der auf Basis der standardisierten Prüfgröße $z=\frac{\hat{\theta}}{se}$ durchgeführt wird.
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## z-Test
+
+:::: {.columns}
+::: {.column width="66%"}
+
+Berechnen wir nun den p-Wert im Nasenlängenbeispiel mithilfe des z-Tests. 
+
+Wir bestimmen die standardisierte Prüfgröße $z$:
+
+$$
+z = \frac{\hat{\theta}}{se} = \frac{\Delta\bar{x}}{se} = \frac{0.2}{0.1} = 2
+$$
+
+Und berechnen die Fläche rechts von $z$:
+
+$$
+p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(z) = 1 - \Phi(2) \overset{(Computer)}{=} 0.023
+$$
+:::
+::: {.column width="34%"}
+![](images/nulldist2f.png)
+:::
+::::
+
+
+Beachte, dass wir hier statt $f(x)$ die Nomenklatur $\varphi(x)$ für die Dichte der Standardnormalverteilung verwenden, und statt $F(x)$ den Ausdruck $\Phi(x)$ für die Verteilungsfunktion der Standardnormalverteilung.
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## z-Test: Cheat Sheet für Mittelwertdifferenzen{#cheatsheet}
+
+<div class="vspace-small"></div>
+
+Der z-Test kann auf alle Arten von Mittelwertsvergleichen angewendet werden:
+
+<div class="vspace-small"></div>
+
+<!---  Table --->
+|Fall|z-Wert|Bekannt|Standardfehler|
+|-|-|:-:|-|
+| **Einzelmessung:** Vergleich von $\bar{x}$ mit einem Referenzwert $\mu_0$ | $z=\frac{\bar{x}-\mu_0}{se}$ |$\sigma$|$se=\frac{\sigma}{\sqrt{n}}$|
+| **Abhängige Messungen:** Vergleich der Mittelwerte $\bar{x}_A$ und $\bar{x}_B$ von *zwei Bedingungen A und B in einer Gruppe* | $z=\frac{\bar{x}_A-\bar{x}_B}{se}=\frac{\Delta \bar{x}}{se}$ |$\sigma_A, \sigma_B, \rho$|$se=\frac{\sigma_\Delta}{\sqrt{n}}\;\;$ mit $\;\;\scriptsize{\sigma_\Delta=\sqrt{\sigma_A^2+\sigma_B^2-2\,\rho\sigma_A\sigma_B}}$|
+| **Unabhängige Messungen:** Vergleich der Mittelwerte $\bar{x}_A$ und $\bar{x}_B$ von *zwei unabhängigen Gruppen A und B* |  $z=\frac{\bar{x}_A-\bar{x}_B}{se}=\frac{\Delta \bar{x}}{se}$  |$\sigma_A, \sigma_B$ |$se=\sqrt{\frac{\sigma_A^2}{n_A}+\frac{\sigma_B^2}{n_B}}$|
+
+: {tbl-colwidths="[35, 17, 13, 35]"}
+
+<div class="vspace-xlarge"></div>
+
+:::{.fragment}
+::: {.merke style="font-size: 24px"}
+:::: {.columns}
+::: {.column width="5%"}
+::: {style="margin-top: 18px"}
+![](images/merke.png){height="55px"}
+:::
+:::
+::: {.column width="95%"}
+Die Formeln für die Standardfehler gelten für den Fall, dass die **Varianzen $\sigma_A^2$ bzw. $\sigma_B^2$ in den Populationen bekannt sind** (wie beim z-Test). Siehe Bonuscontent für eine [Herleitung der Standardfehler von Mittelwertdifferenzen](#sem){style="color: darkred"}.
+
+Sind die Populationsstreuungen nicht bekannt, sehen die Standardfehlerformeln aufgrund der Besselkorrektur etwas anders aus (&rarr; siehe t-Test in Vorlesung 11).
+:::
+::::
+:::
+:::

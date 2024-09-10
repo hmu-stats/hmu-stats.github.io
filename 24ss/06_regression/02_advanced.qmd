@@ -1,0 +1,485 @@
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<!-- ## Totale, erklärte und Residuenquadratsumme
+
+:::: {.columns}
+::: {.column width="49%"}
+- Die Methode der kleinsten Quadrate minimiert die **Residuenquadratsumme (SQR)**:
+
+:::{.fragment}
+$$
+SQR = \sum\left(\hat{y}_i-y_i\right)^2 = \sum\hat{\epsilon}_i^2
+$$
+:::
+
+- Diese wiederum lässt sich in Bezug setzen zur **totalen Quadratsumme (SQT)** und zur **erklärten Quadratsumme (SQE)**:
+
+:::{.fragment}
+$$
+SQR = SQT - SQE\qquad\text{bzw.}
+$$
+:::
+
+:::{.fragment}
+$$
+SQT = SQE + SQR
+$$
+:::
+
+- Mit
+
+:::{.fragment}
+$$
+SQE = \sum\left(\hat{y}_i-\bar{y}\right)^2
+$$
+:::
+
+
+:::{.fragment}
+$$
+SQT = \sum\left(y_i-\bar{y}\right)^2
+$$
+:::
+
+:::
+::: {.column width="51%"}
+<div class="vspace-medium"></div>
+![](images/quadratsummen2.png)
+:::
+::::
+
+- Falls alle Punkte exakt auf der Regressionsgeraden liegen ($\hat{y}_i = y_i$) ist die erklärte Quadratsumme identisch der totalen Quadratsumme ($SQE = SQT$) und die Residuenquadratsumme ist 0
+ -->
+
+## Totale, erklärte und Residuenquadratsumme
+
+:::: {.columns}
+::: {.column width="61%"}
+- Die Methode der kleinsten Quadrate minimiert die **Residuenquadratsumme (SQR)**:
+
+:::{.fragment style="margin-top:-10px"}
+$$
+SQR = \sum\left(\hat{y}_i-y_i\right)^2 = \sum\hat{\epsilon}_i^2
+$$
+:::
+
+- Diese lässt sich in Bezug setzen zur **totalen Quadratsumme (SQT)** und zur **erklärten Quadratsumme (SQE)**.
+
+
+
+:::
+::: {.column width="39%"}
+
+<!-- <div class="vspace-medium"></div> -->
+
+![](images/quadratsummen3.png)
+:::
+::::
+
+<!-- <div class="vspace-large"></div> -->
+
+<!---  Table --->
+|||||
+|-|-|-|-|
+| **Totale Quadratsumme** | $SQT = \sum\left(y_i-\bar{y}\right)^2$ | Abstandsquadrate der Datenpunkte $y_i$ vom Mittelwert $\bar{y}$ | Gesamte Variabilität der Daten $y_i$. |
+| **Erklärte Quadratsumme** | $SQE = \sum\left(\hat{y}_i-\bar{y}\right)^2$ | Abstandsquadrate der Vorhersa- gen $\hat{y}_i$ vom Mittelwert $\bar{y}$ | Variabilität, die durch das Regressions- modell ($\hat{y}_i$) erklärt wird. |
+| **Residuen- quadratsumme** | $SQR = \sum\left(\hat{y}_i-y_i\right)^2$ | Abstandsquadrate der Vorhersa- gen $\hat{y}_i$ von den Datenpunkten $y_i$ | Variabilität, die durch das Regressions- modell ($\hat{y}_i$) [nicht]{.underline} erklärt wird. |
+
+
+: {tbl-colwidths="[13, 19, 31, 37]"}
+
+
+:::{.fragment style="margin-top:30px"}
+
+<!---  Table --->
+|||
+|-|-|
+| $SQT = SQE + SQR$| Die totale Quadratsumme (SQT) ist die Summe aus der erklärten Quadratsumme (SQE) und der Residuenquadratsumme (SQR). |
+| $SQR = SQT - SQE$ | Der Teil der Datenvarianz (SQT), der nicht durch das Modell erklärt wird (SQE), entspricht der Residuenquadratsumme (SQR). |
+
+: Es gilt {tbl-colwidths="[20, 80]"}
+:::
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Bestimmtheitsmaß {.nonincremental}
+
+::: {.nonincremental}
+- Das [**Bestimmtheitsmaß**]{color="navy"} $R^2$ gibt an, wie gut die Datenpunkte durch die Regressionsgerade gefittet werden ("Anpassungsgüte").
+- Es gibt an, welcher Anteil der Datenvarianz $Var(Y)$ durch die Varianz der Vorhersage $Var(\hat{Y})$ erklärt wird..
+:::
+
+:::{.fragment}
+$$
+R^2 = \frac{Var(\hat{Y})}{Var(Y)} = \frac{\sum\left(\hat{y_i}-\bar{y}\right)^2}{\sum\left(y_i-\bar{y}\right)^2} = \frac{SQE}{SQT}
+$$
+:::
+
+:::{.fragment}
+- .. oder äquivalent, den Anteil der erklärten Quadratsumme an der totalen Quadratsumme.
+:::
+
+::: {.merke .fragment}
+:::: {.columns}
+::: {.column width="5%"}
+::: {style="margin-top: 18px"}
+![](images/merke.png){height="55px"}
+:::
+:::
+::: {.column width="95%"}
+Bei einer einfachen Regression gilt: $R^2 = \rho^2$<br>
+Das Bestimmtheitsmaß ist bei einer einfachen Regression also identisch dem quadrierten Korrelationskoeffizienten zwischen den Variablen $X$ und $Y$!
+:::
+::::
+:::
+
+<div class="vspace-medium"></div>
+
+
+<!---  Example --->
+::: {.example .fragment}
+:::: {.columns}
+::: {.column width="10%"}
+::: {style="margin-top: 10px"}
+![](images/example.png){height=70px}
+:::
+:::
+::: {.column width="90%"}
+Lebenszufriedenheit und sportliche Aktivität haben eine Korrelation von $\rho=0.8$.<br>&rArr; Sportliche Aktivität erklärt $\;\rho^2=0.64\;\widehat{=}\;64\%$ der Varianz von Lebenszufriedenheit (und umgekehrt).
+:::
+::::
+:::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Bestimmtheitsmaß
+
+
+:::: {.columns}
+::: {.column width="50%"}
+![Beispiele für zwei Regressionen mit Bestimmtheitsmaß $R^2=98{,}92\%$ und $R^2=57{,}13\%$. Selbst das schwächere Beispiel mit $57{,}13$ wäre für typische Effekte in der Psychologie noch ein außerordentlich hoher Wert.^[https://de.wikipedia.org/wiki/Datei:R2values.svg]](images/coefficient_of_determination_examples.png)
+:::
+::: {.column width="50%"}
+- Das Bestimmtheitsmaß $R^2$ gibt an, wie gut sich die Variable $Y$ mit einer linearen Gleichung basierend auf $X$ vorhersagen lässt.
+- Der Maximal wert von $R^2$ ist 1. In diesem Fall erklärt die lineare Gleichung in $X$ die Daten $Y$ perfekt.
+- Da das Bestimmtheitsmaß $R^2$ angibt, welcher Anteil der Varianz in den Daten durch die lineare Gleichung erklärt wird, wird es manchmal in Prozent ausgedrückt (d.h. mit 100 multipliziert; wie im Bild links). Der Maximalwert von $R^2$ ist dann 100%.
+:::
+::::
+
+
+
+## [Analytische Form der Regressionskoeffizienten (einfache Regression)]{style="font-size:38px"}
+
+Die [**Regressionskoeffizienten**]{color="navy"} $b_0$ (Achsenabschnitt) und $b_1$ (Steigung) lassen sich analytisch herleiten:
+
+![](images/regression_derivation3_dach.png){height=150px}
+
+- Aus den Mittelwerten und der Kovarianz von $X$ und $Y$, sowie der Varianz von $X$, lassen sich also die Regressionskoeffizienten vollständig bestimmen.
+- Auch hier zeigt sich wieder die Assymmetrie der Regression: während bei der Formel für die Pearson-Korrelation $\hat{\rho}$ der symmetrische Ausdruck $\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sigma_{\mkern-2mu\scriptscriptstyle{Y}}$ im Nenner steht, ist es beim Steigungskoeffizienten $\hat{b}_1$ lediglich die Varianz der unabhängigen Variable $Var(X)$.
+- Wäre stattdessen $Y$ die unabhängige Variable, stünde $Var(Y)$ im Nenner, und $\hat{b}_1$ hätte i.d.R. einen anderen Wert.
+    - Dies ist auch der Grund, weshalb die Regressionsgleichung nicht einfach invertiert werden darf: 
+    
+::: {.fragment style="margin-top: -23px"}
+$$
+\require{cancel}
+\scriptsize{
+\cancel{
+x_i = \frac{1}{\hat{b}_1}\hat{y}_i-\frac{\hat{b}_0}{\hat{b}_1}
+}\\
+\left(\text{.. und }\frac{1}{\hat{b}_1}\text{ im Allgemeinen }\textbf{nicht}\text{ der Steigungskoeffizient für $Y$ als unabhängige Variable ist.}\right)
+}
+$$
+:::
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Zusammenhang Regression &harr; Korrelation
+
+- Folgendener Zusammenhang gilt zwischen der Steigung $b_1$ und dem Korrelationskoeffizienten $r$:
+$$
+\displaystyle{
+\hat{b}_1 = \frac{Cov(X,Y)}{Var(X)} = \frac{Cov(X,Y)}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}^2} = \underbrace{\frac{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}}_{1}\frac{Cov(X,Y)}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sigma_{\mkern-2mu\scriptscriptstyle{X}}} = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}\underbrace{\frac{Cov(X,Y)}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}}_{\hat{\rho}} = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}\hat{\rho}
+}
+$$
+
+- Es gilt also
+
+::: {.fragment style="margin-top: -15px"}
+$$
+\hat{b}_1 = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}\hat{\rho}\qquad\quad\text{bzw.}\qquad \hat{\rho} = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1
+$$
+:::
+
+::: {.merke .fragment}
+:::: {.columns}
+::: {.column width="5%"}
+::: {style="margin-top: 18px"}
+![](images/merke.png){height="55px"}
+:::
+:::
+::: {.column width="95%"}
+Sind die Standardabweichungen $\sigma_{\mkern-2mu\scriptscriptstyle{X}}$ und $\sigma_{\mkern-2mu\scriptscriptstyle{Y}}$ bekannt, kann aus der Steigung $\hat{b}_1$ der Regression immer auch der Korrelationskoeffizient $\hat{\rho}$ bestimmt werden (und  umgekehrt).
+:::
+::::
+:::
+
+<div class="vspace-medium"></div>
+
+- Der Ausruck $\frac{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1$ wird auch [**standardisierter Regressionskoeffizient**]{color="navy"}  $\hat{\beta}_1$ genannt: 
+
+::: {.fragment style="margin-top:-15px"}
+$$
+    \hat{\beta}_1 = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1
+$$
+:::
+
+- Bei der einfachen Regression ist der standardisierte Regressionskoeffizient identisch mit dem Korrelationskoeffizienten: $\quad\hat{\beta}_1 = \hat{\rho}$
+
+<!-- https://stats.stackexchange.com/questions/435699/how-to-derive-the-formula-for-coefficient-slope-of-a-simple-linear-regression -->
+
+
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Standardisierter Regressionskoeffizient
+- Wie gesehen erhält man den **standardisierten Regressionskoeffizienten** $\hat{\beta}$ durch die Transformation $\hat{\beta}_1 = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1$.
+- Im Gegensatz zu $\hat{b}_1$ ist $\hat{\beta}_1$ unabhängig von der Skalierung von $X$ und $Y$ (also z.B. ob die Einheit als $cm$ oder $m$ gewählt wurde) &rArr; $\hat{\beta}$-Koeffizienten lassen sich besser zwischen verschiedenen Regressionen vergleichen.
+
+
+<!---  Table --->
+:::{.fragment}
+|||
+|-|-|
+| $\hat{b}_1$ | Veränderung von $Y$ in Originaleinheiten bei einer Änderung von $X$ um den Wert $1$. |
+| $\hat{\beta}_1$ | Veränderung von $Y$ in Standardabweichungen ($\sigma_{\mkern-2mu\scriptscriptstyle{Y}}$) bei einer Änderung von $X$ um *eine* Standardabweichung $\sigma_{\mkern-2mu\scriptscriptstyle{X}}$. |
+
+: Interpretation im Kontext der Regressionsgleichungen $\quad\hat{Y}=\hat{b}_0+\hat{b}_1X\quad$ bzw. $\quad\hat{Y}=\hat{\beta}_0+\hat{\beta}_1X$ {tbl-colwidths="[5, 95]"}
+:::
+
+
+- Wurden sowohl $X$ als auch $Y$ vor der Regression standardisiert, also $\sigma_{\mkern-2mu\scriptscriptstyle{X}}=\sigma_{\mkern-2mu\scriptscriptstyle{Y}}=1$, so sind die Regressionskoeffizienten automatisch standardisiert:
+
+
+::: {.fragment style="margin-top: -10px"}
+$$
+\hat{\beta}_1 = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1 = \frac{1}{1}\hat{b}_1 = \hat{b}_1
+$$
+:::
+
+::: {.definition .fragment}
+<!---  Definition--->
+|||
+|:-:|-|
+|||
+| ![](images/definition.svg){height=70px} | **Standardisierung einer Variable $X$** = Variable $X$ durch Stichprobenstandardabweichung $\sigma_{\mkern-2mu\scriptscriptstyle{X}}$ teilen. Für die Variable $X$ gilt nach der Standardisierung $\sigma_{\mkern-2mu\scriptscriptstyle{X}}=1$. | 
+|||
+: {tbl-colwidths="[9, 91]"}
+:::
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Intuition hinter der Regressionssteigung
+
+- Die Formel für die Steigung bei der einfachen Regression
+
+::: {.fragment style="margin-top:-20px"}
+$$
+\hat{b}_1 = \frac{Cov(X,Y)}{Var(X)}
+$$
+:::
+
+:::{.fragment}
+.. erinnert an die Formel der Korrelation, bei der die Kovarianz ebenfalls standardisiert wird (mit $\frac{1}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}$)
+:::
+
+- Der entscheidende Unterschied ist, dass bei der Korrelation eine Standardisierung bezüglich *beider* Variablen vorgenommen wird, bei der Regression aber nur bezüglich der *unabhängigen* Variable.
+- In der Folge wird bei der Regression folgende Frage beantwortet: 
+
+> Was ist die Auswirkung einer Änderung der unabhängigen Variable $X$ um 1 (**einheitslos!**) auf die abhängige Variable $Y$ (**in deren Rohwerteinheiten!**).
+
+- Auch hier wird wieder deutlich, dass bei der Regression eine feste Rollenverteilung vorgenommen wird: nur die unabhängige Variable wird standardisiert.
+- Da die Steigung also von der Varianz der unabhängigen Variable abhängt, ist es nicht zulässig anzunehmen, dass $\frac{1}{\hat{b}_1}$ einfach die Steigung wäre, wenn $Y$ die unabhängige und $X$ die abhängige Variable ist. Für die umgekehrte Steigung müssten wir schließlich die Varianz von $Y$ berücksichtigen!
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## Ausblick: Multiple Regression
+
+- Gibt es mehr als eine **unabhängige Variable** (auch **Prädiktoren** genannt), handelt es sich nicht mehr um eine einfache Regression, sondern um eine [**multiple Regression**]{color="navy"}:
+
+<div class="vspace-medium"></div>
+
+:::{.fragment}
+![](images/ausblick_multiple_regression_dach.png){height="300px"}
+:::
+
+<div class="vspace-medium"></div>
+
+- Jeder Prädiktor $X_1, X_2, ... X_n$ hat einen eigenen Regressionskoeffizienten $\hat{b}_1, \hat{b}_2, ... \hat{b}_n$
+- Multiple Regression wird ausführlich in Statistik 2 behandelt.
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+## ["Formula Notation": Formalisierung von Regressionsmodellen]{style="font-size: 40px"}
+
+- Da Regressionen heute auschließlich mit dem Computer berechnet werden, hat sich eine eigene Sprache etabliert, um Regressionsmodelle zu definieren (bekannt als *Formula Notation*):
+
+<div class="vspace-medium"></div>
+:::{.fragment}
+![](images/patsy_simple_dach.png)
+:::
+<div class="vspace-medium"></div>
+
+- Der Ausdruck ["DV &Tilde; 1 + IV1 + IV2"]{style="font-family:monospace"} kann der Statistiksoftware als *String* übergeben werden; so wird definiert, welches Regressionsmodell gerechnet werden soll.
+- [DV]{style="font-family:monospace"}, [IV1]{style="font-family:monospace"}, [IV2]{style="font-family:monospace"} sind dabei die gewählten Variablennamen &mdash; beliebige Ausdrücke sind möglich
+
+
+<!---  Example --->
+::: {.example .fragment}
+:::: {.columns}
+::: {.column width="10%"}
+::: {style="margin-top: 10px"}
+![](images/example.png){height=70px}
+:::
+:::
+::: {.column width="90%"}
+["satisfaction &Tilde;  1 + physical_activity"]{style="font-family:monospace"} \
+[Dies wäre eine mögliche Definition unserer einfachen Regression mit sportlicher Aktivität als unabhängiger und Lebenszufriedenheit als abhängiger Variable.]{style="display:block;margin-top:12px;line-height:1.1"}
+:::
+::::
+:::
+
+
+
+## Regression: Erklärung versus Vorhersage
+
+<!---  Table --->
+||[Erklärung]{color="navy"}|[Vorhersage]{color="navy"}|
+|-|:-:|:-:|
+| **Ziel** | Zusammenhänge zwischen Variablen untersuchen:\
+- Hängen die Variablen $X$ und $Y$ zusammen? \
+- Ist der Zusammenhang positiv oder negativ? \
+- Wie stark ist der Zusammenhang? | Wie gut kann Variable $Y$ durch Variable $X$ vorhergesagt werden? |
+| **Interessante Größe** | Steigung $\hat{b}_1$ | Bestimmtheitsmaß $R^2$ |
+|**Visuelle Hervorhebung der interessanten Größe**|![](images/regression_explanation.png){.hcenter-image height=200px}|![](images/regression_prediction.png){.hcenter-image height=200px}|
+| **Beispiel** | Regression von Lebenszufriedenheit auf sportliche Aktivität. Der Regressionskoeffizient sei $\hat{b}_1=0.5$.\
+- Der Zusammenhang ist positiv. \
+- Eine Erhöhung von sportlicher Aktivität um den Wert 1 führt im Schnitt zu einer Erhöhung der Lebenszufriedenheit um den Wert $0.5$.  | Regression von Lebenszufriedenheit auf sportliche Aktivität. Das Bestimmtheitsmaß sei $R^2=0.4$.\
+- Sportliche Aktivität hat eine gute Vorhersagekraft für Lebenszufriedenheit. \
+- Sportliche Aktivität erklärt 40% der Varianz von interindividueller Lebenszufriedenheit. |
+
+: {tbl-colwidths="[20, 40, 40]"}
+
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+##
+:::: {.columns}
+::: {.column width="9%"}
+::: {style="margin-top:-15px"}
+![](images/summary.png){width=60px}
+:::
+:::
+::: {.column width="91%"}
+::: {.summary style="margin-top:20px !important"}
+- Die lineare Regression erweitert die Korrelation zu einer [**Vorhersageanalyse**]{color="navy"}: wenn Variablen korrelieren, lässt sich eine Variable aus der anderen vorhersagen.
+- Die Vorhersage basiert auf einer [**Regressionsgerade**]{color="navy"}, die alle Datenpunkte so gut wie möglich repräsentiert.
+- Die Regressionsgerade wird durch den [**Achsenabschnitt**]{color="navy"} $\hat{b}_0$ und die [**Steigung**]{color="navy"} $\hat{b}_1$  beschrieben.
+- Die standardisierte Form des Steigungs-Koeffizienten wird [**Beta**]{color="navy"} oder [**Beta-Gewicht**]{color="navy"} genannt und ist identisch dem Korrelationskoeffizienzen (bei einfacher Regression).
+- Das [**Bestimmtheitsmaß**]{color="navy"} $R^2$ bemisst die Vorhersagegenauigkeit der Regression.
+- Die Regression kann sowohl der [**Vorhersage**]{color="navy"} einer Variable $Y$ auf Basis einer Variable $X$ dienen, als auch der [**Erklärung**]{color="navy"} bzw. Beschreibung eines Zusammehangs von $X$ und $Y$.
+:::
+:::
+::::
+
+<!--- ```{python}
+
+``` --->
+
+
+<!---```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from scipy.stats import linregress, pearsonr
+
+np.random.seed(0)
+root = '/home/matteo/OneDrive/lehre/Statistik/stats1_lecture/book/'
+df = pd.read_csv(os.path.join(root, 'data', 'paradoxia.csv'))
+data_tiktok_paradoxia = df[df.group == 2]['hours_tiktok_per_day'].values
+data_inflam_paradoxia = df[df.group == 2]['inflammation'].values
+
+r, p = pearsonr(data_tiktok_paradoxia, data_inflam_paradoxia)
+
+fontsize = 15
+
+plt.style.use('dark_background')
+plt.figure(figsize=(6, 2.8))
+
+plt.subplot(121)
+plt.scatter(data_tiktok_paradoxia, data_inflam_paradoxia)
+linrg = linregress(data_tiktok_paradoxia, data_inflam_paradoxia)
+plt.plot([0.1, 3.1], linrg.intercept + linrg.slope * np.array([0.1, 3.1]), color='#ff00ff', lw=2)
+plt.text(0.2, 0.3075, r'$\bf{slope=' + f'{linrg.slope:.3f}' + r'}$', color='#ff00ff', fontsize=fontsize-2)
+plt.xticks(fontsize=fontsize-2)
+plt.yticks(fontsize=fontsize-2)
+plt.xlabel('Stunden TikTok / 24h', fontsize=fontsize)
+plt.ylabel('Entzündungswerte', fontsize=fontsize)
+plt.xlim(0, 3.2)
+plt.ylim(0, 0.34)
+
+plt.subplot(122)
+plt.scatter(data_inflam_paradoxia, data_tiktok_paradoxia)
+linrg = linregress(data_inflam_paradoxia, data_tiktok_paradoxia)
+plt.plot([0.01, 0.31], linrg.intercept + linrg.slope * np.array([0.01, 0.31]), color='#ff00ff', lw=2)
+plt.text(0.015, 3.15, r'$\bf{slope=' + f'{linrg.slope:.2f}' + r'}$', color='#ff00ff', fontsize=fontsize-2)
+plt.xticks(fontsize=fontsize-2)
+plt.yticks(fontsize=fontsize-2)
+plt.xlabel('Entzündungswerte', fontsize=fontsize)
+plt.ylabel('Stunden TikTok / 24h', fontsize=fontsize)
+plt.xlim(0, 0.34)
+plt.ylim(0, 3.5)
+
+plt.tight_layout()
+
+plt.savefig('images/paradoxia_slope_paradoxiker.png', bbox_inches='tight')
+``` --->
+
+## {.blackslide .center}
+
+<div class="vspace-medium"></div>
+
+:::: {.columns}
+::: {.column width="68%"}
+Sie führen nun eine Regressionsanalyse bezüglich des Zusammenhangs von TikTok-Online-Zeit und Entzündungswerten durch. Einmal mit TikTok-Online-Zeit und einmal mit Entzündungswerten als unabhängiger Variable:
+:::
+::: {.column width="32%"}
+::: {.content-hidden when-format="pdf"}
+![](images/paradoxia_group_of_scientists.png){.hcenter-image height=200px style="margin-top:-50px !important"}
+<!-- Source: Midjourney -->
+:::
+:::
+::::
+
+<div class="vspace-large"></div>
+![](images/paradoxia_slope_paradoxiker.png){height=280px}
+
+Es zeigt sich, dass 1 Stunde zusätzlicher TikTok-Konsum mit einer Erhöhung des Entzündungsparameters um 0,043 verbunden ist. Umgekehrt ist eine Erhöhung des Entzündungswertes um 1 mit 4,04 Stunden &mdash; bzw. etwas praktikabeler, eine Erhöhung des Entzündungswertes um 0,1 mit 0,404 Stunden (24 Minuten) &mdash; verbunden.
+
+Diese "rohen" Effektstärken zeigen: es handelt sich um ein substantiellen Zusammenhang!
