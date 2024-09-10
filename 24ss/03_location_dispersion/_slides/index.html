@@ -1,0 +1,2159 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/tabby.min.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.251">
+
+  <meta name="author" content="MSc Albert Anoschin &amp; Prof.&nbsp;Matthias Guggenmos">
+  <title>Vorlesung 03: Lage- und Streuungsmaße</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, minimal-ui">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-custom-controls/style.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<style>
+  /* .semester {color: #0d6478} */
+  .semester {color: #b0f1ff}
+  h1.title {font-size: 4rem !important; margin-top: 10vh !important;}
+  .titlesection {height: 90% !important;}
+</style>
+
+<section data-background-color="black" class="titlesection quarto-title-block center">
+  <p class="semester">M24 Statistik 1:&nbsp;&nbsp;Sommersemester 2024</p>
+  <h1 class="title">Vorlesung 03: Lage- und Streuungsmaße</h1>
+  
+  <p class="subtitle">&nbsp;</p>
+
+  <p class="author">MSc Albert Anoschin &amp; Prof.&nbsp;Matthias Guggenmos</p>
+  <p class="institute">Health and Medical University Potsdam</p>
+<!--   <p class="date">24.10.2023</p>
+ -->
+<div style="display: flex; justify-content: space-between; align-items: baseline">
+<div><img src="images/logo_black.png" height="200px"></div>
+<div><button onclick="new Audio('images/appear.mp3').play()" class="intro-sound"><img src="images/paradoxia_group_of_scientists.png" height="240px"></button></div>
+</div>
+</section>
+<section class="slide level2 blackslide center">
+<h2></h2>
+<img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" height="250"> <!-- Source: Midjourney -->
+<div class="vspace-small">
+
+</div>
+<p>Die Daten der ersten Beobachtungsstudie zu Paradoxia sind frisch eingetroffen!</p>
+<!---  Table --->
+<table style="width:90%;">
+<caption>Table 1. Results.</caption>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 20%">
+<col style="width: 30%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>id</th>
+<th>group</th>
+<th>hours_tiktok_per_day</th>
+<th>inflammation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>control</td>
+<td>1.14</td>
+<td>0.24</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>control</td>
+<td>2.24</td>
+<td>0.19</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>50</td>
+<td>control</td>
+<td>1.14</td>
+<td>0.13</td>
+</tr>
+<tr class="odd">
+<td>51</td>
+<td>paradoxia</td>
+<td>1.57</td>
+<td>0.03</td>
+</tr>
+<tr class="even">
+<td>52</td>
+<td>paradoxia</td>
+<td>2.59</td>
+<td>0.21</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>100</td>
+<td>paradoxia</td>
+<td>0.52</td>
+<td>0.12</td>
+</tr>
+</tbody>
+</table>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2 blackslide">
+<h2></h2>
+<div class="vspace-medium">
+
+</div>
+<p>Hier ist das Histogramm der TikTok-Zeiten von Paradoxikern:</p>
+<div class="vspace-small">
+
+</div>
+<p><img data-src="images/paradoxia_histogram_tiktok_paradoxiker.png" height="400"></p>
+<p>Überschlagen Sie: passt das Histogramm zur angegeben Stichprobe von n=50 Paradoxikern? Und handelt es sich um eine Abbildung relativer oder absoluter Häufigkeit?</p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2 blackslide">
+<h2></h2>
+<div class="vspace-medium">
+
+</div>
+<p>Vergleich mit der Kontrollgruppe:</p>
+<div class="vspace-small">
+
+</div>
+<p><img data-src="images/paradoxia_histogram_tiktok.png" height="400"></p>
+<p>Wir können hier schon erahnen, dass die Studie tatsächlich Evidenz für einen erhöhte TikTok-Zeit bei Paradoxikern erbringt (Hypothese 1)!</p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2 blackslide">
+<h2></h2>
+<p>Erinnerung: statt der Anzahl (absolute Häufigkeit) kann auch die Wahrscheinlichkeit (relative Häufigkeit) dargestellt werden:</p>
+
+<img data-src="images/paradoxia_histogram_tiktok_probability.png" class="hcenter-image r-stretch" width="600"><p>Jeder Wert in dieser Abbildung gibt also die Wahrscheinlichkeit an, dass ein Entzündungswert im Intervall des jeweiligen Balkens liegt.</p>
+<p>Während sich die Balken eines Histogramms mit absoluter Häufigkeit (Anzahl) zur Stichprobengröße aufaddieren, addieren sie sich beim Histogramm mit relativer Häufigkeit (Wahrscheinlichkeit) zu 1.</p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2 blackslide">
+<h2></h2>
+<div class="vspace-medium">
+
+</div>
+<p>Die ersten Daten sind also eingetroffen, und Sie machen sich nun an die Auswertung. Das führt zu Sie zum Thema der heutigen Vorlesung: <strong>wie kann man Daten statistisch beschreiben</strong>?</p>
+<!-- ![](images/paradoxia_histogram_inflammation_whitebg_annot.svg) -->
+<div class="vspace-medium">
+
+</div>
+<div class="hcenter-slide">
+<div data-animate="" data-src="images/paradoxia_histogram_tiktok_paradoxiker_blackbg_annot.svg"><!-- setup:
+  - element: "#location"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "1"
+  - element: "#location_label"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "1"
+  - element: "#dispersion"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "2"
+  - element: "#dispersion_label"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "2"         --></div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<!-- ## Der Forschungsprozess {.hcenter-slide}
+
+```yaml { .animate src="images/scientific_process.svg"}
+setup:
+    - element: "#results"
+      modifier: function() { this.node.style.fill = 'green'; }
+    - element: "#resultsbg"
+      modifier: function() { this.node.style.fill = '#d8ffe2';}
+``` -->
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Anwesenheitsliste</h2>
+
+<img data-src="images/Anwesenheitsliste.png" class="r-stretch"><p><a href="https://trainex42.de/hmu24">TraiNex</a></p>
+</section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Notation</h1>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Drei Fälle bei der Berechnung statistischer Kennwerte</h2>
+<div class="columns">
+<div class="column" style="width:71%;">
+<p><span style=" color: #00a216 !important;"><u><strong>Fall 1: Populationskennwerte</strong></u></span></p>
+<p>Vollständige Population liegt vor (z.B. alle US-Präsidenten) <br>⇒ Bestimmung exakter statistische Kennwerte für die Population<br>⇒ <em>Populationskennwerte</em> (z.B. Populationsstreuung)<br><span style="font-size:20px">(Hinweis: man spricht auch manchmal von Populations<em>parametern</em>)</span></p>
+<div class="vspace-xsmall">
+
+</div>
+<p><span style=" color: #000db2 !important;"><u><strong>Fall 2: Stichprobenkennwerte</strong></u></span></p>
+<p>Stichprobe liegt vor<br>⇒ Ziel ist Beschreibung der Stichprobe <em>ohne Inferenz auf die Population</em><br>⇒ <em>Stichprobenkennwerte</em> (z.B. Stichprobenstreuung)</p>
+<div class="vspace-xsmall">
+
+</div>
+<p><span style=" color: #c89f00 !important;"><u><strong>Fall 3: Inferentielle Kennwerte</strong></u></span></p>
+<p>Stichprobe liegt vor<br>⇒ Ziel ist <em>Inferenz auf die Population</em>, d.h. die Populationskennwerte sollen auf Basis der Stichprobe geschätzt werden.<br>⇒ <em>Inferentielle Kennwerte</em> (z.B. inferentielle Streuung)</p>
+</div><div class="column" style="width:29%;">
+<div class="vspace-medium">
+
+</div>
+<p><img data-src="images/population_stichprobe_inferenz.png"></p>
+</div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Notation / Variablenbenennung</h2>
+<ul>
+<li class="fragment">Folgendes Schema hat sich in der Literatur etabliert:
+<ul>
+<li class="fragment"><span style=" color: #00a216 !important;">Populationskennwerte</span>: griechische Buchstaben</li>
+<li class="fragment"><span style=" color: #000db2 !important;">Stichprobenkennwerte</span>: lateinische Buchstaben</li>
+<li class="fragment"><span style=" color: #c89f00 !important;">Inferentielle Kennwerte</span>: griechische Buchstaben mit Zirkumflex (^).</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<!---  Table --->
+<table style="width:77%;">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><span style=" color: #00a216 !important;">Populations-<br>
+Kennwert</span></th>
+<th><span style=" color: #000db2 !important;">Stichproben-<br>
+Kennwert</span></th>
+<th><span style=" color: #c89f00 !important;">Inferentieller<br>
+Kennwert</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mittelwert</td>
+<td><span class="math inline">\(\mu\)</span></td>
+<td><span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(m\)</span>, <span class="math inline">\(M\)</span></td>
+<td><span class="math inline">\(\hat{\mu}\)</span></td>
+</tr>
+<tr class="even">
+<td>Standardabweichung</td>
+<td><span class="math inline">\(\sigma\)</span></td>
+<td><span class="math inline">\(s\)</span></td>
+<td><span class="math inline">\(\hat{\sigma}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Varianz</td>
+<td><span class="math inline">\(\sigma^2\)</span></td>
+<td><span class="math inline">\(s^2\)</span>, <span class="math inline">\(Var(X)\)</span></td>
+<td><span class="math inline">\(\hat{\sigma}^2\)</span>, <span class="math inline">\(\hat{Var}(X)\)</span></td>
+</tr>
+<tr class="even">
+<td>Kovarianz</td>
+<td><span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{XY}}\)</span></td>
+<td><span class="math inline">\(s_{\mkern-2mu\scriptscriptstyle{XY}}\)</span>, <span class="math inline">\(Cov(X,Y)\)</span></td>
+<td><span class="math inline">\(\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{XY}}\)</span>, <span class="math inline">\(\hat{Cov}(X,Y)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Korrelation</td>
+<td><span class="math inline">\(\rho\)</span></td>
+<td><span class="math inline">\(r\)</span></td>
+<td><span class="math inline">\(\hat{\rho}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li class="fragment">Grund für die aufwendige Unterscheidung in der Notation:
+<ul>
+<li class="fragment">Kommunikation des Analyseziels in einer Formel</li>
+<li class="fragment">Formeln für Populations- und Stichprobenkennwerte sind identisch, die Formeln für inferentielle Kennwerte können jedoch verschieden sein!</li>
+<li class="fragment">(Ausnahme: beim Mittelwert gilt <span class="math inline">\(\hat{\mu}=\bar{x}\)</span>)</li>
+</ul></li>
+</ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Hinweis</h2>
+<div class="vspace-large">
+
+</div>
+<div class="colorbox fragment">
+<p>Um die Komplexität zu reduzieren, werden wir <strong>in dieser Vorlesungsreihe konsequent Formeln für inferentielle Kennwerte behandeln</strong> (zu erkennen am ^). Dies ist der mit Abstand häufigste Fall in der Psychologie und de facto in allen empirischen Wissenschaften.</p>
+</div>
+<div class="vspace-large">
+
+</div>
+<div class="notabene">
+<div class="columns">
+<div class="column" style="width:7%;">
+<div style="margin-top: 10px">
+<p><img data-src="images/notabene2.png" height="65"></p>
+</div>
+</div><div class="column" style="width:93%;">
+<p>In der Literatur (Lehrbücher, Statistikportale, Wikipedia, …) herrscht ein heilloses Durcheinander bezüglich der Verwendung der Begriffe Populationskennwert (z.B. Populationsvarianz) und Stichprobenkennwert (z.B. Stichprobenvarianz). Beide Begriffe werden zum Teil dafür verwendet, was hier als inferentieller Kennwert bezeichnet wird. Eine Ursache ist, dass sich für das Konzept des “inferentiellen Kennwerts” bislang kein etablierter Begriff herausgebildet hat. Den Begriff “inferentieller Kennwert” werden Sie daher bei Google nicht finden.</p>
+<p>Die Lösung dieses Dilemmas in dieser Veranstaltung besteht eben in der Einführung des Begriffs <strong>inferentieller Kennwert</strong>. In dieser Logik beschreibt ein Populationskennwert die Population, ein Stichprobenkennwert beschreibt die Stichprobe, und ein inferentieller Kennwert schätzt die Populationskennwerte auf Basis der Stichprobe (“Inferenz auf die Population”).</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Lagemaße</h1>
+
+</section>
+<section class="slide level2" style="overflow:hidden">
+<h2>Lagemaße</h2>
+<ul>
+<li class="fragment"><p>Der weithin bekannte <strong>Durchschnittswert</strong> oder <strong>Mittelwert</strong> ist ein Beispiel für ein <span style=" color: navy !important;"><strong>Lagemaß</strong></span> von Verteilungen.</p></li>
+<li class="fragment"><p>Man spricht dabei auch von der <strong>zentralen Tendenz</strong> (engl. <em>central tendency</em>) einer Verteilung</p></li>
+<li class="fragment"><p>Die drei wichtigsten Lagemaße sind:</p>
+<ul>
+<li class="fragment">Mittelwert (gemeint ist das <em>arithmetische Mittel</em>)</li>
+<li class="fragment">Median</li>
+<li class="fragment">Modus (auch Modalwert)</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/mean_median_modus.png" class="hcenter-image"></p>
+<figcaption>Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a></figcaption>
+</figure>
+</div>
+</div>
+<aside></aside></section>
+<section class="slide level2">
+<h2>Mittelwert</h2>
+<ul>
+<li class="fragment">Berechnung (verbal):
+<ol type="1">
+<li class="fragment">Addiere alle <span class="math inline">\(n\)</span> Stichprobenwerte</li>
+<li class="fragment">Teile durch die Anzahl der Werte</li>
+</ol></li>
+<li class="fragment">Berechnung (Formel):</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+\bar{x} = \hat{\mu} = \frac{1}{n}\sum_{i=1}^n x_i
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">Notation: Strich über dem kleinen Letter der Zufallsvariable = Mittelwert der Zufallsvariable</li>
+</ul>
+<div class="fragment">
+<p><span class="block-heading" style="text-align:center; margin-bottom: 3px">Beispiel</span></p>
+<p>Folgende Beobachtungen der Zufallsvariable <span class="math inline">\(X\)</span> “Punktzahl in der Abi-Matheprüfung” werden in einer Stichprobe von 7 Psychologiestudierenden gemacht:  <span class="math inline">\(\mathbf{x} = \{13, 7, 15, 8, 4, 9, 14\}\)</span></p>
+<p><span class="math display">\[
+\bar{x} = \frac{1}{7}(13+7+15+8+4+9+14) = \frac{1}{7}\cdot 70 = 10
+\]</span></p>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<!-- ```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+mode = 'histogram3'
+data = dict(
+    histogram1=[13, 7, 15, 8, 4, 9, 14],
+    histogram2=[3, 1, 4, 2, 2, 5, 15],
+    histogram3=[13, 15, 11, 12, 9, 15, 1]
+)[mode]
+
+fontsize=20
+plt.figure(figsize=(9, 3))
+plt.hist(data, edgecolor='#999', color='#94b9ea', bins=range(0, 17, 1))
+mean = np.mean(data)
+plt.plot([mean, mean], [0, 2.1], '-', linewidth=4, color='darkred')
+if mode == 'histogram2':
+  plt.text(mean+0.3, 1.7, 'Mittelwert', ha='left', fontsize=1.5*fontsize, color='darkred', fontweight='bold')
+else:
+  plt.text(mean-0.3, 1.7, 'Mittelwert', ha='right', fontsize=1.5*fontsize, color='darkred', fontweight='bold')
+# plt.xlabel('', fontsize=fontsize)
+# plt.xticks(np.arange(0, 0.51, 0.05))
+# plt.ylabel('Anzahl', fontsize=fontsize)
+# plt.xticks(np.arange(1.5, 16, 3), ['0-3', '3-6', '6-9', '9-12', '12-15'], fontsize=fontsize)
+plt.xticks(np.arange(0.5, 16.5), range(0, 16), fontsize=fontsize)
+plt.yticks(range(0, 5), fontsize=fontsize)
+plt.xlim(0, 16)
+plt.ylim(0, 2.1)
+plt.savefig(f'images/{mode}.png', bbox_inches="tight")
+```             -->
+</section>
+<section class="slide level2">
+<h2>Wann ist der Mittelwert sinnvoll?</h2>
+<ul>
+<li class="fragment">Der Mittelwert ist ein sinnvolles Lagemaß, wenn er nicht durch einzelne <strong>Ausreißer</strong> (extreme Werte) dominiert bzw. verzerrt wird.</li>
+</ul>
+<div class="vspace-small">
+
+</div>
+<div class="fragment">
+<!---  Table --->
+<table>
+<colgroup>
+<col style="width: 28%">
+<col style="width: 7%">
+<col style="width: 43%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\mathbf{x}\)</span> (z.B. Punktzahlen im Abi)</th>
+<th style="text-align: center;"><span class="math inline">\(\bar{x}\)</span></th>
+<th style="text-align: center;">Histogramm</th>
+<th style="text-align: center;">Mittelwert sinnvoll?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\{13, 7, 15, 8, 4, 9, 14\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(10\)</span></td>
+<td style="text-align: center;"><img data-src="images/histogram1.png" height="140"></td>
+<td style="text-align: center;"><span style="font-size:60px; color: green; font-weight: bold">✓</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\{3, 1, 4, 2, 2, 6, 15\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(4.7\)</span></td>
+<td style="text-align: center;"><img data-src="images/histogram2.png" height="140"></td>
+<td style="text-align: center;"><span style="font-size:60px; color: red">✗</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\{13, 15, 11, 12, 9, 14, 1\}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(10.7\)</span></td>
+<td style="text-align: center;"><img data-src="images/histogram3.png" height="140"></td>
+<td style="text-align: center;"><span style="font-size:60px; color: red">✗</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="slide level2" style="overflow: hidden">
+<h2>Median</h2>
+<ul>
+<li class="fragment">Gibt es dominante Ausreißer in den Daten, so ist häufig der <span style=" color: navy !important;"><strong>Median</strong></span> das sinnvollere Lagemaß</li>
+<li class="fragment">Berechnung:
+<ol type="1">
+<li class="fragment">Alle <span class="math inline">\(n\)</span> Stichprobenwerte der Größe nach aufreihen</li>
+<li class="fragment">Der Wert, der genau in der Mitte liegt, ist der Median</li>
+<li class="fragment">Bei einer geraden Anzahl von Werten bilden zwei Werte die Mitte – in diesem Fall ist der Median der Mittelwert dieser beiden Werte</li>
+<li class="fragment"><span class="math inline">\(\Big(\)</span> Alternativ mit Formel:  <span class="math inline">\(Tiefe_{\,\text{Median}}=\frac{n+1}{2}\Big)\)</span></li>
+</ol></li>
+<li class="fragment">Der Median wird mit einer Tilde (~) über der Variablen bezeichnet:  <span class="math inline">\(\tilde{x}, \tilde{y}, ..\)</span></li>
+</ul>
+<div style="font-size:22px">
+<div class="fragment">
+<p><span class="block-heading" style="text-align:center; margin-bottom: 3px">Beispiel</span></p>
+<p>Folgende Beobachtungen der Zufallsvariable <span class="math inline">\(X\)</span> “Punktzahl in der Abi-Matheprüfung” werden in einer Stichprobe von 7 Psychologiestudierenden gemacht:  <span class="math inline">\(\mathbf{x} = \{13, 7, 15, 8, 4, 9, 14\}\)</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+\text{Sortierte Reihenfolge:} \;\mathbf{x} = \{4, 7, 8, \color{green}{\mathbf{9}}, 13, 14, 15\} \;\rightarrow\; \tilde{x} = 9
+\]</span></p>
+</div>
+<div class="fragment">
+<p>Wir fügen den Wert eines weiteren Studierenden hinzu:   <span class="math inline">\(\mathbf{x} = \{13, 7, 15, 8, 4, 9, 14, 10\}\)</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+\text{Sortierte Reihenfolge:} \;\mathbf{x} = \{4, 7, 8, \color{green}{\mathbf{9}, \mathbf{10}}, 13, 14, 15\} \;\rightarrow\; \tilde{x} = \frac{9+10}{2} = 9.5
+\]</span></p>
+</div>
+</div>
+<!-- ```{python}
+
+``` -->
+<!-- ```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+np.random.seed(0)
+fontsize=14
+
+data1 = [1, 2, 2, 3, 3, 3, 4, 5]
+data2 = [10, 11, 11, 12, 12, 13, 14]
+median = np.median(np.hstack((data1, data2))) 
+print(f"Median={median:.2f}")
+
+plt.figure(figsize=(11, 3))
+plt.subplot(121)
+plt.hist(data1, edgecolor='#999', color='#94b9ea', bins=range(0, 17, 1))
+plt.hist(data2, edgecolor='#999', color='#94b9ea', bins=range(0, 17, 1))
+plt.plot([median+0.5, median+0.5], [0, 10], '-', linewidth=4, color='darkred')
+plt.text(median+0.8, 2.7, 'Median', ha='left', fontsize=1.1*fontsize, color='darkred', fontweight='bold')
+plt.xticks(np.arange(0.5, 16.5), range(0, 16), fontsize=fontsize)
+plt.yticks(range(4), fontsize=fontsize)
+plt.xlim(0, 16)
+plt.ylim(0, 3.1)
+
+data1 = [1, 2, 2, 3, 3, 3, 4]
+data2 = [10, 11, 11, 12, 12, 13, 14, 10]
+median = np.median(np.hstack((data1, data2))) 
+print(f"Median={median:.2f}")
+
+plt.subplot(122)
+plt.hist(data1, edgecolor='#999', color='#94b9ea', bins=range(0, 17, 1))
+plt.hist(data2, edgecolor='#999', color='#94b9ea', bins=range(0, 17, 1))
+plt.plot([median+0.5, median+0.5], [0, 10], '-', linewidth=4, color='darkred')
+plt.text(median+0.8, 2.7, 'Median', ha='left', fontsize=1.1*fontsize, color='darkred', fontweight='bold')
+plt.xticks(np.arange(0.5, 16.5), range(0, 16), fontsize=fontsize)
+plt.yticks(range(4), fontsize=fontsize)
+plt.xlim(0, 16)
+plt.ylim(0, 3.1)
+plt.tight_layout()
+plt.savefig(f'images/median_bimodal.png', bbox_inches="tight")
+``` -->
+</section>
+<section class="slide level2">
+<h2>Median</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li class="fragment">Der <strong>Median ist sinnvoll</strong> bei:
+<ul>
+<li class="fragment">Ausreißern in den Daten.</li>
+<li class="fragment">Schiefen Verteilungen der Daten (dazu kommen wir noch).</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:30%;">
+<div class="fragment">
+<p><img data-src="images/rechtsschief_linksschief.png" height="200"></p>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">Der <strong>Median ist nicht sinnvoll</strong>, wenn:
+<ul>
+<li class="fragment">Auch der Mittelwert ein sinnvolles Lagemaß darstellt (der Mittelwert hat einige hilfreiche mathematische Eigenschaften<a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a>). <!-- - in der zugrundeliegenden Verteilung zwei oder mehr Wertebereiche deutlich häufiger vorkommen als andere Wertebereiche, und diese Bereiche nicht überlappen (z.B. hat der Median von $\{2, 2, 2, 2, 9, 9, 9\}$ den wenig aussagekräftigen Wert 2). --></li>
+</ul></li>
+</ul>
+<!-- :::{.fragment}
+![Für diese "bimodale" Verteilung der Daten ist der Median eine schlechte Wahl. Der Wert springt mehr oder weniger zufällig zwischen den beiden dominanten Wertebereichen der Daten (1-5 und 10-14), je nachdem, welcher Bereich mehr Werte aufweist.](images/median_bimodal.png){height=170px .hcenter-image}
+::: -->
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<aside></aside></section>
+<section class="slide level2">
+<h2>Modus</h2>
+<ul>
+<li class="fragment">In manchen Fällen ist es interessant zu wissen, was der <strong>häufigste Wert</strong> in einem Datensatz ist – dies ist der <span style=" color: navy !important;"><strong>Modus</strong></span>.</li>
+<li class="fragment">Berechnung:
+<ol type="1">
+<li class="fragment">Zähle die Häufigkeit aller vorkommenden Werte</li>
+<li class="fragment">Der häufigste Wert ist der Modus</li>
+</ol></li>
+<li class="fragment">Im Fall von <strong>kategorialen Variablen</strong> ist der Modus das einzig mögliche Lagemaß (Beispiel: aus welchem Bundesland kommen die meisten von Ihnen?)</li>
+<li class="fragment">Ein weiterer sinnvoller Anwendungsfall können schiefe Verteilungen sein:</li>
+</ul>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/schiefe_verteilungen.png" class="hcenter-image" height="290"></p>
+<figcaption>Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a></figcaption>
+</figure>
+</div>
+</div>
+<aside></aside></section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Streuungsmaße</h1>
+<div class="vspace-large">
+
+</div>
+<p><img data-src="images/error-bars-comic.png" class="absolute" style="width: 400px; "></p>
+<!-- ```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.stats import truncnorm
+
+fontsize=14
+
+# [default][different mean][different std, different scaling]
+# [different std, same scaling][center peak, some satellites][bimodal, two narrow peaks]
+
+means = [5, 10, 5, 5, 5, 2]
+plusminus = [5, 5, 5, 7, 5, 5]
+std = [1, 1, 1, 2, 1, 1]
+xlim = (-2, 14)
+ylim = (0, 225)
+
+N = 500
+
+plt.figure(figsize=(11, 6))
+
+for i in range(6):
+
+    np.random.seed(2)
+
+    bounds = (means[i]-plusminus[i], means[i]+plusminus[i])
+    data = truncnorm.rvs(a=(bounds[0] - means[i]) / std[i], b=(bounds[1] - means[i]) / std[i], loc=means[i], scale=std[i], size=int(N*1.75) if i == 3 else N)
+    if i == 4:
+        data = np.hstack((data, -np.ones(5), np.zeros(8), 11*np.ones(11), 12*np.ones(6)))
+    elif i == 5:
+        data = np.hstack((data, 8+data))
+
+    print(f'[i={i}] std={np.std(data):.3f}')
+
+    plt.subplot(2,3,i+1)
+
+    plt.hist(data, edgecolor='#999', color='#94b9ea', bins=range(xlim[0], xlim[1], 1))
+    plt.xticks(range(0, 16, 5), range(0, 31, 10) if i == 2 else range(0, 16, 5), fontsize=fontsize)
+    plt.yticks(fontsize=fontsize)
+    plt.xlim(xlim)
+    plt.ylim(ylim)
+
+plt.tight_layout()
+plt.savefig(f'images/dispersion_examples.png', bbox_inches="tight")
+
+``` -->
+<!-- ```{python}
+import matplotlib.pyplot as plt
+fontsize=15
+plt.figure(figsize=(3, 4))
+plt.bar(1, 95, color='#c6c600')
+plt.bar(2, 105, color='#4a2500')
+plt.ylabel('IQ', fontsize=fontsize)
+plt.xticks([1, 2], ['Blond', 'Brünett'], fontsize=fontsize)
+plt.yticks(range(80, 121, 10), fontsize=fontsize-2)
+plt.ylim(85, 110)
+plt.savefig('images/IQ_blond_brunette_means.png', bbox_inches="tight")
+``` -->
+<!-- ```{python}
+import matplotlib.pyplot as plt
+from scipy.stats import truncnorm, ttest_ind
+import numpy as np
+fontsize=15
+
+np.random.seed(0)
+
+mean_blond = 95
+mean_brunette = 105
+plusminus = 60
+bounds_blond = (mean_blond-plusminus, mean_blond+plusminus)
+bounds_brunette = (mean_brunette-plusminus, mean_brunette+plusminus)
+std = 30
+N = 70
+
+data_blond = truncnorm.rvs(a=(bounds_blond[0] - mean_blond) / std, b=(bounds_blond[1] - mean_blond) / 
+std, loc=mean_blond, scale=std, size=N)
+data_blond += mean_blond - np.mean(data_blond)
+data_brunette = truncnorm.rvs(a=(bounds_brunette[0] - mean_brunette) / std, b=(bounds_brunette[1] - mean_brunette) / std, loc=mean_brunette, scale=std, size=N)
+data_brunette += mean_brunette - np.mean(data_brunette)
+
+print(f'Mean blond={np.mean(data_blond)}')
+print(f'Mean blond={np.mean(data_brunette)}')
+print(ttest_ind(data_blond, data_brunette))
+
+plt.figure(figsize=(4, 4))
+plt.hist(data_blond, color='#c6c600', label='Blond')
+plt.hist(data_brunette, color='#4a2500', label='Brünett', alpha=0.7)
+plt.xlabel('IQ', fontsize=fontsize)
+plt.ylabel('Anzahl', fontsize=fontsize)
+# plt.yticks(range(80, 121, 10), fontsize=fontsize-2)
+# plt.ylim(85, 110)
+plt.legend()
+plt.savefig('images/IQ_blond_brunette_dist.png', bbox_inches="tight")
+``` -->
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Warum sind Streuungsmaße wichtig?</h2>
+<div class="vspace-larger">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="fragment">
+<p><span class="text-center">“In unserer Studie waren brünette Menschen im Schnitt 10 IQ-Punkte schlauer als blonde Menschen”</span></p>
+<p><img data-src="images/IQ_blond_brunette_means.png" class="hcenter-image" style="margin-top: 80px !important"></p>
+</div>
+</div><!-- Begin second column --><div class="column" style="width:50%;">
+<div class="fragment">
+<p><span class="text-center"><br>Behind the scenes:</span></p>
+<p><img data-src="images/IQ_blond_brunette_dist.png" class="hcenter-image" style="margin-top: 120px !important"></p>
+</div>
+</div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Warum sind Streuungsmaße wichtig?</h2>
+<div class="vspace-medium">
+
+</div>
+<div class="hcenter-slide">
+<div data-animate="" data-src="images/warum_streuung_schaefer.svg"><!-- setup:
+  - element: "#text1"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "1"
+  - element: "#text2"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "2"
+  - element: "#text3"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "3"
+  - element: "#text4"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "4"         --></div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2></h2>
+<!---  Question --->
+<div class="vspace-large">
+
+</div>
+<table>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 80%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img data-src="images/question_mark.png" height="150"></td>
+<td><span style="font-size: 32px">Wie schätzen Sie die Streuung / Variabilität folgender Verteilungen ein?</span></td>
+</tr>
+</tbody>
+</table>
+<div class="vspace-large">
+
+</div>
+<p><img data-src="images/dispersion_examples.png" class="hcenter-image"></p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Streuungsmaße</h2>
+<div class="columns" style="display: flex !important">
+<div class="column" style="width:70%;">
+<ul>
+<li class="fragment"><span style=" color: navy !important;"><strong>Streuungsmaße</strong></span> geben die Variabilität von Daten an</li>
+<li class="fragment">Streuungsmaßes sind eine extrem wichtige Ergänzung zu Lagemaßen beim Bericht wissenschaftlicher Ergebnisse.</li>
+<li class="fragment">Die Streuung von Daten kann ein Ausdruck <em>echter Variabilität</em> in der Stichprobe sein oder eine Folge der <em>Messungenauigkeit</em> (häufig beides).</li>
+<li class="fragment">Je nach Skalenniveau und Zweck können verschiedene Streuungsmaße bestimmt werden:
+<ul>
+<li class="fragment">Spannweite (Range)</li>
+<li class="fragment">Interquartilsabstand</li>
+<li class="fragment">Varianz</li>
+<li class="fragment">Standardabweichung</li>
+</ul></li>
+</ul>
+</div><!-- Begin second column --><div class="column center-column-content" style="width:30%;">
+<div class="fragment" data-fragment-index="1">
+<p><img data-src="images/disperson_symbolic.png"></p>
+</div>
+</div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Spannweite / Range</h2>
+<ul>
+<li class="fragment">Die <span style=" color: navy !important;"><strong>Spannweite</strong></span> oder <span style=" color: navy !important;"><strong>Range</strong></span> ist die Differenz zwischen dem kleinsten und dem größten Wert:</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+Range = x_{max} - x_{min}
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">Einfachstes <strong>Streuungsmaß</strong> — sinnvoll, um dem Leser einen Eindruck der gesamten Spannbreite von Daten zu geben.</li>
+<li class="fragment">Allerdings kaum Aussagekraft über die tatsächliche Variabilität der Daten
+<ul>
+<li class="fragment">Beispiel: die Spannbreite von <span class="math inline">\(\mathbf{x}=\{1, 10, 10, 10, 10, 10, 10, 10, 10, 10, 101\}\)</span> ist <span class="math inline">\(101-1=100\)</span>, obwohl die Daten bis auf die zwei Ausreißer <span class="math inline">\(1\)</span> und <span class="math inline">\(101\)</span> keine Variabiltät aufweisen.</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/dispersion_range.png" class="hcenter-image" height="320"></p>
+<figcaption>Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref4" role="doc-noteref" data-footnote-href="#/fn4" onclick=""><sup>4</sup></a></figcaption>
+</figure>
+</div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<aside></aside></section>
+<section class="slide level2">
+<h2>Range: Beispiele</h2>
+<div class="vspace-medium">
+
+</div>
+<div class="hcenter-slide">
+<div data-animate="" data-src="images/warum_streuung_schaefer_range.svg"><!-- setup:
+  - element: "#range1"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "1"
+  - element: "#range2"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "2"
+  - element: "#range3"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "3"
+  - element: "#range4"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "4"         --></div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Varianz</h2>
+<ul>
+<li class="fragment">Die Varianz ist definiert als <strong>mittleres Abstandsquadrat aller Werte vom Mittelwert</strong>:</li>
+</ul>
+<div class="fragment">
+<div style="margin-top: -32px">
+<p><span class="math display">\[
+\hat{Var}(X) = \hat{\sigma}^2 = \frac{1}{n-1}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2
+\]</span></p>
+</div>
+<p><span style="font-size: 21px">   (Die Varianz ist gleich der quadrierten Standardabweichung <span class="math inline">\(\sigma\)</span> – letztere lernen wir noch kennen)</span></p>
+</div>
+<ul>
+<li class="fragment"><strong>Hinweis:</strong> hierbei handelt es sich um die Formel für die <span style=" color: #c89f00 !important;">inferentielle Varianz</span>. Soll kein Rückschluss auf eine Population gezogen werden, ändert sich der Nenner von <span class="math inline">\(n-1\)</span> zu <span class="math inline">\(n\)</span>.</li>
+<li class="fragment">Beispiel:
+<div class="vspace-small">
+
+</div></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="fragment">
+<p><img data-src="images/variance_schaefer.png" height="250"></p>
+</div>
+</div><!-- Begin second column --><div class="column" style="width:50%;">
+<div class="fragment">
+<p><span class="math display">\[
+\begin{aligned} \sigma^2 &amp;= \frac{1}{4-1}\left(0.25+2.25+0.25+2.25\right) \\ &amp;= \frac{1}{3}\cdot5=\frac{5}{3} \end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Besselkorrektur</h2>
+<ul>
+<li class="fragment">Streng genommen stellt die gezeigte Varianzformel nicht exakt das <em>mittlere</em> Abstandsquadrat aller Werte vom Mittelwert dar, da im Nenner durch <span class="math inline">\(n-1\)</span> und nicht durch <span class="math inline">\(n\)</span> geteilt wird.</li>
+<li class="fragment">Die Korrektur von <span class="math inline">\(n\;\longrightarrow n-1\)</span> heißt <strong>Besselkorrektur</strong> und tritt häufig auf, wenn <strong>inferentielle Kennwerte</strong> bestimmt werden sollen.</li>
+<li class="fragment">Die Korrektur wird notwendig, weil die Schätzung der Populationsvarianz eigentlich erfordert, dass die Abstandsquadrate der <span class="math inline">\(x_i\)</span> <em>um den wahren Populationsmittelwert</em> <span class="math inline">\(\mu\)</span> berechnet werden.</li>
+<li class="fragment">Das wahre <span class="math inline">\(\mu\)</span> ist jedoch nicht bekannt, sondern lediglich die Schätzung <span class="math inline">\(\hat{\mu}=\bar{x}\)</span> auf Basis der Stichprobe.</li>
+<li class="fragment">Es stellt sich heraus, dass die Streuung der <span class="math inline">\(x_i\)</span> um den Mittelwert <span class="math inline">\(\bar{x}\)</span> der Stichprobe immer etwas kleiner ist, als es die Streuung der <span class="math inline">\(x_i\)</span> um den wahren Wert <span class="math inline">\(\mu\)</span> wäre.</li>
+<li class="fragment">Aus diesem Grund muss die Varianzformel durch einen kleineren Wert (<span class="math inline">\(n-1\)</span> statt <span class="math inline">\(n\)</span>) geteilt werden, damit der Varianzschätzer “nach oben” korrigiert wird.</li>
+</ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Standardabweichung</h2>
+<ul>
+<li class="fragment">Ein Nachteil der Varianz ist, dass sie aufgrund der Abstandsquadrate in quadrierten Einheiten angegeben ist:</li>
+</ul>
+<!---  Example --->
+<div class="example fragment">
+<div class="columns">
+<div class="column" style="width:10%;">
+<div style="margin-top: 10px">
+<p><img data-src="images/example.png" height="70"></p>
+</div>
+</div><div class="column" style="width:90%;">
+<p><span class="math inline">\(x=\{167\,cm, 181\,cm, 154\,cm, 192\,cm, 173\,cm\}\rightarrow \hat{Var}(X)=205.3\,\color{red}{cm^2}\)</span></p>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">Quadrierte Einheiten sind jedoch wenig intuitiv und schwer zu interpretieren.</li>
+<li class="fragment">Aus diesem Grund wird häufig die Standardabweichung <span class="math inline">\(\hat{\sigma}\)</span> angegeben, welche die Wurzel der Varianz darstellt:</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+\hat{\sigma}=\sqrt{\hat{Var}(X)}=\sqrt{\frac{1}{n-1}\sum_{i=1}^n\big(x_i-\bar{x}\big)^2}
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">Die Standardabweichung drückt die Streuung in den <strong>Rohwerten der Skala</strong> aus.</li>
+<li class="fragment">Sie wird häufig auch mit <span class="math inline">\(sd\)</span> oder <span class="math inline">\(SD\)</span> (für <em>standard deviation</em>) abgekürzt.</li>
+</ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Standardabweichung: Klassik-Beispiele</h2>
+<div class="vspace-medium">
+
+</div>
+<div class="hcenter-slide">
+<div data-animate="" data-src="images/warum_streuung_schaefer_range_SD.svg"><!-- setup:
+  - element: "#sd1"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "1"
+  - element: "#sd2"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "2"
+  - element: "#sd3"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "3"
+  - element: "#sd4"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "4"         --></div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Interquartilsabstand (interquartile range = IQR)</h2>
+<ul>
+<li class="fragment"><span style=" color: navy !important;"><strong>Quartile</strong></span> sind eine Spezialform von <strong>Quantilen</strong></li>
+<li class="fragment"><strong>Quantile</strong> teilen eine Verteilung von Daten in gleich große Abschnitte ein
+<ul>
+<li class="fragment">“gleich groß” = jeder Abschnitt hat gleich viele Datenpunkte</li>
+</ul></li>
+<li class="fragment">Beispiel <em>Dezile</em>: Einteilung der Verteilung in <em>10</em> gleich große Abschnitte
+<ul>
+<li class="fragment">Hier: 20 Werte eingeteilt in 10 Abschnitte (Dezile) á 2 Werte</li>
+</ul></li>
+</ul>
+<div class="fragment" style="margin-top:-20px">
+<p><span class="math display">\[
+\underbrace{1, 1,}_{\small{\text{1.Dezil}}}\;\underbrace{1, 2,}_{\small{\text{2.Dezil}}}\;2, 3, \;3, 5, \;5, 5, \;\color{white}{\underbrace{\color{black}{5, 6,}}_{\small{\color{black}{\text{...}}}}} \;6, 7, \;7, 7, \;7, 8, \;\underbrace{8, 8}_{\small{\text{10.Dezil}}}
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">Beispiel <em>Quintile</em>: Einteilung der Verteilung in <em>5</em> gleich große Abschnitte
+<ul>
+<li class="fragment">Hier: 30 Werte eingeteilt in 5 Abschnitte (Quintile) á 6 Werte</li>
+</ul></li>
+</ul>
+<div class="fragment" style="margin-top:-20px">
+<p><span class="math display">\[
+\underbrace{1, 1, 1, 1, 2, 2,}_{\small{\text{1.Quintil}}}\;\underbrace{2, 2, 2, 3, 3, 3,}_{\small{\text{2.Quintil}}}\;\underbrace{4, 4, 5, 5, 5, 5,}_{\small{\text{3.Quintil}}} \;\underbrace{5, 6, 6, 7, 7, 7,}_{\small{\text{4.Quintil}}} \;\underbrace{8, 8, 9, 9, 9, 9}_{\small{\text{5.Quintil}}}
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">Beispiel <em>Quartile</em>: Einteilung der Verteilung in <em>4</em> gleich große Abschnitte
+<ul>
+<li class="fragment">Hier: 12 Werte in 4 Abschnitte (Quartile) á 3 Werte</li>
+</ul></li>
+</ul>
+<div class="fragment" style="margin-top:-20px">
+<p><span class="math display">\[
+\underbrace{1, 1, 2,}_{\small{\text{1.Quartil}}}\;\underbrace{2, 2, 2,}_{\small{\text{2.Quartil}}}\;\underbrace{3, 4, 5,}_{\small{\text{3.Quartil}}} \;\underbrace{5, 6, 6}_{\small{\text{4.Quartil}}}
+\]</span></p>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Interquartilsabstand (interquartile range = IQR)</h2>
+<div class="vspace-medium">
+
+</div>
+
+<img data-src="images/interquartile-range2.png" class="hcenter-image r-stretch" width="800"><div class="vspace-medium">
+
+</div>
+<ul>
+<li class="fragment">Um eine Reihe von Daten in 4 gleich große Quartile zu teilen, sind genau drei Quartilsgrenzen notwendig</li>
+<li class="fragment">Diese Quartilsgrenzen werden mit <span class="math inline">\(Q_1\)</span>, <span class="math inline">\(Q_2\)</span>, <span class="math inline">\(Q_3\)</span> (bezogen auf <em>Quartile</em>) bzw. mit <span class="math inline">\(Q_{25\%}\)</span>, <span class="math inline">\(Q_{50\%}\)</span>, <span class="math inline">\(Q_{75\%}\)</span> (bezogen auf <em>Quantile</em>) bezeichnet</li>
+<li class="fragment">Der Interquartilsabstand (IQR) ist die Differenz aus der 75%-<em>Quantils</em>grenze und der 25%-Quantilsgrenze bzw. die Differenz aus der 3. und der 1. <em>Quartils</em>grenze:</li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+IQR = Q_{75\%} - Q_{25\%} = Q_3 - Q_1
+\]</span></p>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Interquartilsabstand (interquartile range = IQR)</h2>
+<ul>
+<li class="fragment">Berechnung des IQR:
+<ol type="1">
+<li class="fragment">Sortiere alle Werte von klein nach groß</li>
+<li class="fragment">Bestimme die Tiefe des Medians:<span class="math inline">\(\,Tiefe_{\text{Median}}\)</span></li>
+<li class="fragment">Bestimme die Tiefe des Quartils:  <span class="math inline">\(Tiefe_{\text{Quartil}}=\frac{Tiefe_{\text{Median}}+1}{2}=\frac{\frac{n+1}{2}+1}{2}=\frac{n+3}{4}\)</span></li>
+<li class="fragment">Für das 25%-Quantil (<span class="math inline">\(Q_1\)</span>) geht man <strong>von vorne</strong> in die Datenreihe</li>
+<li class="fragment">Für das 75%-Quantil (<span class="math inline">\(Q_3\)</span>) geht man <strong>von hinten</strong> in die Datenreihe</li>
+</ol></li>
+</ul>
+<!---  Example --->
+<div class="fragment example-with-formulas">
+<table>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 91%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><img data-src="images/example.png" height="70"></td>
+<td>Folgende 12 Werte werden beobachtet: <span class="math inline">\(x=\{1, 1, \color{darkred}{2}, \color{darkred}{3}, 3, 3, 4, 4, \color{darkblue}{6}, \color{darkblue}{7}, 7, 9\}\)</span><br>
+In diesem Fall ist der “6,5”-te Wert der Median, da  <span class="math inline">\(\,Tiefe_{\text{Median}}=\frac{n+1}{2}=\frac{12+1}{2}=6.5\)</span><br>
+Die Tiefe des Quartils ist damit  <span class="math inline">\(Tiefe_{\text{Quartil}}=\frac{Tiefe_{\text{Median}}+1}{2}=\frac{6.5+1}{3}=3.75\)</span><br>
+Der “<span class="math inline">\(3.75\)</span>”-te Wert von vorne befindet sich auf 75% der Strecke zwischen dem 3. Wert (2) und dem 4. Wert (3), also <span class="math inline">\(\color{darkred}{Q_1=2.75}\)</span>; der “<span class="math inline">\(3.75\)</span>”-te Wert von hinten befindet sich auf 75% der Strecke zwischen der 7 und der 6, also <span class="math inline">\(\color{darkblue}{Q_3=6.25}\)</span>.<br>
+<span class="math inline">\(IQR = \color{darkblue}{Q_3} - \color{darkred}{Q_1} = \color{darkblue}{6.25} - \color{darkred}{2.75} = 3.5\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Wann ist der Interquartilsabstand ein sinnvolles Streuungsmaß?</h2>
+<div class="columns">
+<div class="column" style="width:66%;">
+<ul>
+<li class="fragment">Die klassische Standardabweichung kann leicht durch einen einzelnen oder wenige extreme Datenpunkte verzerrt werden (insbesondere durch die Abstandsquadrierung).</li>
+<li class="fragment">Der Interquartilsabstand ist <strong>robuster gegen Ausreißer</strong>, da er auf einem ähnlichen Prinzip wie der Median basiert: statt einem arithmetischen Mittel werden basiert der Wert auf tatsächlichen Datenpunkten <em>in der Mitte der Verteilung</em>.</li>
+<li class="fragment">Wie dem Median ist es daher dem Interquartilsabstand “egal” ob etwa der höchste Wert 10 oder 10 Trillionen ist.</li>
+<li class="fragment">Auch bei <strong>stark schiefen Verteilungen</strong> bietet sich der Interquartilsabstand an, da der von der Standardabweichung verwendete Bezugspunkt “Mittelwert” in diesem Fall problematisch ist.</li>
+</ul>
+</div><div class="column" style="width:34%;">
+<div class="fragment">
+<p><img data-src="images/iqr_skewed.png"></p>
+</div>
+</div>
+</div>
+<p>Vereinfacht gesagt verhält sich der <strong>Interquartilsabstand</strong> zur <strong>Varianz</strong>, wie der <strong>Median</strong> zum <strong>Mittelwert</strong>.</p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Interquartilsabstand: Klassik-Beispiele</h2>
+<div class="vspace-medium">
+
+</div>
+<div class="hcenter-slide">
+<div data-animate="" data-src="images/warum_streuung_schaefer_range_IQR.svg"><!-- setup:
+  - element: "#iqr1"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "1"
+  - element: "#iqr2"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "2"
+  - element: "#iqr3"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "3"
+  - element: "#iqr4"
+    modifier: attr
+    parameters:
+      - class: fragment
+        data-fragment-index: "4"         --></div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Die Streuungsmaße im Vergleich</h2>
+<div class="td-line-height-1-75 td-fontsize-25">
+<!---  Table --->
+<table>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 77%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Spannbreite (Range)</strong></td>
+<td>▪ Gibt die Ausdehnung des gesamten Wertebereiches an<br>
+▪ Auf kein bestimmtes Lagemaß bezogen<br>
+▪ Geringer statistischer Nutzen, manchmal interessante Zusatzinfo<br>
+▪ Maximal abhängig von Ausreißern</td>
+</tr>
+<tr class="even">
+<td><strong>Varianz</strong></td>
+<td>▪ Auf den Mittelwert bezogen (“wie stark streuen die Daten um den Mittelwert?”)<br>
+▪ Relativ anfällig gegenüber Ausreißern<br>
+▪ Unnatürliche quadrierte Einheiten</td>
+</tr>
+<tr class="odd">
+<td><strong>Standardabweichung</strong></td>
+<td>▪ Wie Varianz, aber natürliche unquadrierte Einheiten</td>
+</tr>
+<tr class="even">
+<td><strong>Interquartilsabstand</strong></td>
+<td>▪ Auf kein bestimmtes Lagemaß bezogen<br>
+▪ Jedoch ähnliches Prinzip wie der Median und häufig im Zusammenhang mit<br>
+  diesem angegeben<br>
+▪ Robust gegenüber Ausreißern &amp; sinnvoll bei schiefen Verteilungen</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- ```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+import os
+import seaborn as sns
+
+np.random.seed(0)
+root = '/home/matteo/OneDrive/lehre/Statistik/stats1_lecture/book/'
+
+fontsize = 15
+
+df = pd.read_csv(os.path.join(root, 'data', 'paradoxia.csv'))
+# print(df.head())
+
+data_tiktok_control = df[df.group == 1]['hours_tiktok_per_day'].values
+data_tiktok_paradoxia = df[df.group == 2]['hours_tiktok_per_day'].values
+data_inflam_control = df[df.group == 1]['inflammation'].values
+data_inflam_paradoxia = df[df.group == 2]['inflammation'].values
+
+print(f'Mean TikTok Control: {np.mean(data_tiktok_control):.2f}')
+print(f'Mean TikTok Paradoxia: {np.mean(data_tiktok_paradoxia):.2f}')
+print(f'Mean Inflam Control: {np.mean(data_inflam_control):.2f}')
+print(f'Mean Inflam Paradoxia: {np.mean(data_inflam_paradoxia):.2f}')
+
+plt.style.use('dark_background')
+plt.figure(figsize=(6, 2.5))
+ax = plt.subplot(121)
+plt.gca().set_facecolor('#eee')
+sns.stripplot(data=df, x='group', y='hours_tiktok_per_day', color='#bbb', jitter=0.25)
+color = 'k'
+plt.errorbar([0], [np.mean(data_tiktok_control)], yerr=[np.std(data_tiktok_control)], fmt='o', markersize=5, capsize=10, capthick=2, elinewidth=2, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.errorbar([1], [np.mean(data_tiktok_paradoxia)], yerr=[np.std(data_tiktok_paradoxia)], fmt='o', markersize=5, capsize=10, capthick=2, elinewidth=2, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.text(0.25, 0.85, r'$\bar{x}=' + f'{np.mean(data_tiktok_control):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.text(0.75, 0.85, r'$\bar{x}=' + f'{np.mean(data_tiktok_paradoxia):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+
+plt.xticks([0, 1], ['Kontroll', 'Paradoxia'], fontsize=fontsize)
+plt.yticks(fontsize=fontsize-2)
+plt.ylabel('Stunden TikTok / 24h', fontsize=fontsize)
+plt.xlabel('')
+# plt.xlim(-0.5, 1.5)
+plt.ylim(0, 1.1*max(data_tiktok_control.max(), data_tiktok_paradoxia.max()))
+
+
+ax = plt.subplot(122)
+plt.gca().set_facecolor('#eee')
+sns.stripplot(data=df, x='group', y='inflammation', color='#bbb', jitter=0.25)
+color = 'k'
+plt.errorbar([0], [np.mean(data_inflam_control)], yerr=[np.std(data_inflam_control)], fmt='o', markersize=5, capsize=10, capthick=2, elinewidth=2, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.errorbar([1], [np.mean(data_inflam_paradoxia)], yerr=[np.std(data_inflam_paradoxia)], fmt='o', markersize=5, capsize=10, capthick=2, elinewidth=2, ecolor=color, mfc=color, mec=color, zorder=3)
+plt.text(0.25, 0.85, r'$\bar{x}=' + f'{np.mean(data_inflam_control):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.text(0.75, 0.85, r'$\bar{x}=' + f'{np.mean(data_inflam_paradoxia):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+
+plt.xticks([0, 1], ['Kontroll', 'Paradoxia'], fontsize=fontsize)
+plt.yticks(fontsize=fontsize-2)
+plt.ylabel('Entzündungswert', fontsize=fontsize)
+plt.xlabel('')
+plt.xlim(-0.5, 1.5)
+plt.ylim(0, 1.1*max(data_inflam_control.max(), data_inflam_paradoxia.max()))
+
+
+plt.tight_layout()
+
+plt.savefig('images/paradoxia_histogram_inflammation_mean_std.png', bbox_inches='tight')
+``` -->
+</section>
+<section class="slide level2 blackslide center">
+<h2></h2>
+<div class="vspace-medium">
+
+</div>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p>Die Daten in Ihrer Beobachtungsstudie weisen keine größeren Ausreißer auf uns Sie entscheiden sich für den Mittelwert als Lagemaß und die Standardabweichung als Streuungsmaß. Für eine erste Kommunikation mit den anderen Task Forces erstellen Sie folgende Abbildung:</p>
+</div><div class="column" style="width:35%;">
+<p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-100px !important" height="200"> <!-- Source: Midjourney --></p>
+</div>
+</div>
+<div class="vspace-large">
+
+</div>
+<p><img data-src="images/paradoxia_histogram_inflammation_mean_std.png" height="330"></p>
+</section>
+<section class="slide level2 blackslide center">
+<h2></h2>
+<div class="vspace-medium">
+
+</div>
+<p><img data-src="images/paradoxia_histogram_inflammation_mean_std.png" height="330"></p>
+<p>Aus den Werten und der Abbildung wird ersichtlich: tatsächlich sind auch die Entzündungswerte bei Paradoxikern erhöht! Auf Basis der Mittelwerte finden Sie also Evidenz für <em>beide Hypothesen</em>!</p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Besselkorrektur</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 70px; right: 0px; height: 90px; "></p>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div>
+<ul>
+<li>Der deutsche Naturwissenschaftler Friedrich Wilhelm Bessel zeigte, dass für eine Schätzung <span class="math inline">\(\hat{\sigma}^2\)</span> der Populationsstreuung auf Basis der Stichprobenstreuung <span class="math inline">\(s^2\)</span>, der Faktor <span class="math inline">\(\frac{1}{n}\)</span> in der Varianzformel durch <span class="math inline">\(\frac{1}{n-1}\)</span> ersetzt werden muss:</li>
+</ul>
+</div>
+<p><span class="math display">\[
+\text{Schätzung der Populationsvarianz:}\\
+\hat{\sigma}^2 = \frac{n}{n-1}s = \frac{1}{n\color{darkgreen}{-1}}\sum\left(x_i-\bar{x}\right)^2
+\]</span></p>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/portrait_bessel.png"></p>
+<figcaption>Friedrich Wilhelm Bessel (1748-1846)<a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">Die Größe <span class="math inline">\(\hat{\sigma}^2\)</span> ist die <strong>Schätzung der Populationsvarianz auf Basis der Stichprobe</strong> und wird in dieser Vorlesungsreihe als <span style=" color: navy !important;"><strong>inferentielle Varianz</strong></span> bezeichnet.</li>
+<li class="fragment">Intution: die Varianz wird im Fall von <span class="math inline">\(\frac{1}{n-1}\)</span> <em>durch weniger geteilt</em> als beim ursprünglichen Faktor <span class="math inline">\(\frac{1}{n}\)</span>, d.h. die resultierende Varianz wird <em>zu einem größeren Wert hin</em> korrigiert.</li>
+<li class="fragment">Die “<span class="math inline">\(n-1\)</span>”-Korrektur für Stichproben wird als <span style=" color: navy !important;"><strong>Besselkorrektur</strong></span> bezeichnet.</li>
+<li class="fragment">Ab ca. <span class="math inline">\(n=30\)</span> spielt die Besselkorrektur kaum eine Rolle mehr (<span class="math inline">\(\frac{1}{30}=0.033\)</span> vs.&nbsp;<span class="math inline">\(\frac{1}{29}=0.034\)</span>)</li>
+</ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<aside></aside></section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Herleitung des Faktors <span class="math inline">\(\frac{1}{n-1}\)</span></span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 60px; right: 0px; height: 110px; "></p>
+<div>
+<ul>
+<li>Der Ausgangspunkt der Besselkorrektur die Beobachtung, dass die (unkorrigierte) Varianz <span class="math inline">\(s^2\)</span> der Stichprobe die Varianz <span class="math inline">\(\sigma^2\)</span> der Population systematisch unterschätzt.</li>
+<li>Der Grund ist liegt im Stichprobenmittelwert <span class="math inline">\(\bar{x}\)</span>: er ist keine perfekte Schätzung für den wahren Mittelwert <span class="math inline">\(\mu\)</span> ist — er streut um das “wahre” <span class="math inline">\(\mu\)</span>.</li>
+<li>Diese Streuung werden wir noch kennenlernen — es ist der Standardfehler <span class="math inline">\(\hat{se}=\frac{\hat{\sigma}}{\sqrt{n}}\)</span>. Als Varianz formuliert:</li>
+</ul>
+</div>
+<div style="margin-top:-50px !important">
+<p><span class="math display">\[
+\hat{se}^2 = \frac{\hat{\sigma}^2}{n}
+\]</span></p>
+</div>
+<div>
+<ul>
+<li>Für die Schätzung der Populationsvarianz <span class="math inline">\(\hat{\sigma}^2\)</span> muss nun die <em>zusätzliche</em> Variabilität <span class="math inline">\(\hat{se}^2\)</span> aufgrund der Unsicherheit des Mittelwertes auf die Stichprobenvarianz <span class="math inline">\(s^2\)</span> addiert werden:</li>
+</ul>
+</div>
+<div style="margin-top:-20px">
+<p><span class="math display">\[
+\hat{\sigma}^2 = s^2 + \hat{se}^2 = s^2 + \frac{\hat{\sigma}^2}{n}\quad \longrightarrow\quad \hat{\sigma}^2 - \frac{\hat{\sigma}^2}{n} = s^2
+\]</span></p>
+</div>
+<div>
+<ul>
+<li>Linke Seite umformen:</li>
+</ul>
+</div>
+<div style="margin-top:-20px !important">
+<p><span class="math display">\[
+\hat{\sigma}^2 - \frac{\hat{\sigma}^2}{n} = \hat{\sigma}^2\left(1 - \frac{1}{n}\right) = \hat{\sigma}^2\frac{n-1}{n} \overset{!}{=} s^2 \;\;\longrightarrow\;\; \hat{\sigma}^2 = \frac{n}{n-1}s^2
+\]</span></p>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Herleitung des Faktors <span class="math inline">\(\frac{1}{n-1}\)</span></span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 30px; right: 0px; height: 110px; "></p>
+<p><span class="math display">\[
+\text{Zwischenergebnis:}\qquad \hat{\sigma}^2 = \frac{n}{n-1}s^2
+\]</span></p>
+<div>
+<ul>
+<li>Die unkorrigierte Varianz <span class="math inline">\(s^2\)</span> lautet:</li>
+</ul>
+</div>
+<div style="margin-top:-25px">
+<p><span class="math display">\[
+s^2 = \frac{1}{n}\sum\left(x_i-\bar{x}\right)^2
+\]</span></p>
+</div>
+<div>
+<ul>
+<li>Einsetzen:</li>
+</ul>
+</div>
+<div style="margin-top: -30px !important">
+<p><span class="math display">\[
+\hat{\sigma}^2 = \frac{n}{n-1}s^2 = \frac{n}{n-1}\frac{1}{n}\sum\left(x_i-\bar{x}\right)^2 = \color{navy}{\frac{1}{n-1}}\sum\left(x_i-\bar{x}\right)^2
+\]</span></p>
+</div>
+<div>
+<ul>
+<li>Nun haben wir unseren Faktor <span class="math inline">\(\color{navy}{\frac{1}{n-1}}\)</span>.</li>
+<li>Für die korrigierte Standardabweichung der Stichprobe wird häufig analog angenommen:</li>
+</ul>
+</div>
+<p><span class="math display">\[
+\hat{\sigma} = \sqrt{\color{navy}{\frac{1}{n-1}}\sum\left(x_i-\bar{x}\right)^2}
+\]</span></p>
+<div>
+<ul>
+<li>Diese analoge Korrektur für die Standardabweichung ist nicht 100% gültig<a href="#/footnotes" class="footnote-ref" id="fnref6" role="doc-noteref" data-footnote-href="#/fn6" onclick=""><sup>6</sup></a> — für alle<br>praktischen Zwecke reicht sie aber aus.</li>
+</ul>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<aside></aside></section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Varianz: warum werden werden nicht einfach die Absolutwerte der Differenzen genommen?</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 130px; "></p>
+<div class="fragment">
+<p>Prinzipiell wäre auch eine Formel für die Varianz mit Absolutabständen denkbar:</p>
+<p><span class="math display">\[
+\hat{Var}_{\text{absolut}}(X) = \frac{1}{n-1}\sum_{i=1}^n\big|x_i-\bar{x}\big|
+\]</span></p>
+</div>
+<div class="fragment">
+<p>Über die Gründe, warum sich <span class="math inline">\(\hat{Var}_{\text{absolut}}\)</span> nicht durchgesetzt hat, streitet sich die Fachwelt. Neben historischen Gründen, gibt es aber einige Eigenschaften, die die Präferenz für Abstandsquadrate zumindest nachvollziehbar machen:</p>
+</div>
+<ul>
+<li class="fragment">Quadrierte Abstände gewichten Punkte, die weiter vom Mittelwert entfernt sind, höher. Dies entspricht einer “Bestrafung” von Ausreißern und kann ein wünschenswertes Verhalten sein.</li>
+<li class="fragment">Analogie zur euklidischen Distanz (z.B. Satz des Pythagoras: <span class="math inline">\(a=\sqrt{b^2+c^2}\)</span>)</li>
+<li class="fragment">Fortgeschritten: die Varianz mit Abstandsquadraten ist für alle <span class="math inline">\(x\)</span> differenzierbar <br> (hingegen ist <span class="math inline">\(\hat{Var}_{\text{absolut}}\)</span> bei <span class="math inline">\(x=0\)</span> nicht differenzierbar)</li>
+</ul>
+<div class="recommendation fragment">
+<p>Weitergehende Literatur <a href="#/footnotes" class="footnote-ref" id="fnref7" role="doc-noteref" data-footnote-href="#/fn7" onclick=""><sup>7</sup></a></p>
+</div>
+<p><img src="images/hmu_logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Vorlesung 03: Lage- und Streuungsmaße</p>
+</div>
+<aside></aside></section></section>
+<section id="footnotes" class="footnotes footnotes-end-of-document smaller scrollable" role="doc-endnotes"><h2>Fußnoten</h2>
+
+<ol>
+<li id="fn1"><p>https://datatab.de/tutorial/mittelwert-median-modus</p></li>
+<li id="fn2"><p>Beispielsweise ist der Mittelwert der Mittelwerte von zwei Gruppen mit je n Datenpunkten gleich dem Mittelwert aller 2*n Datenpunkte. Beim Median ist dies nicht gegeben. Auch beziehen sich viele statistische Standardtests auf den Mittelwert und nicht den Median.</p></li>
+<li id="fn3"><p>https://youtu.be/inJ4OvU0zMA</p></li>
+<li id="fn4"><p>https://www.shiksha.com/online-courses/articles/measures-of-dispersion-range-iqr-variance-standard-deviation/</p></li>
+<li id="fn5"><p>http://www.digiporta.net/index.php?id=658493715</p></li>
+<li id="fn6"><p>https://en.wikipedia.org/wiki/Unbiased_estimation_of_standard_deviation</p></li>
+<li id="fn7"><p>https://web.archive.org/web/20221024193801/https://www4.hcmut.edu.vn/~ndlong/TK/mat/04_standard_deviation_vs_absolute_deviation.pdf</p></li>
+</ol>
+</section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-animate/plugin.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-animate/svg.min.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-animate/js-yaml.min.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-custom-controls/plugin.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-custom-controls/all.min.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":false},
+'animate': {"autoplay":true},
+'customcontrols': {"controls":[{"id":"home","title":"Startseite","icon":"<i class=\"fa-solid fa-house\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}?${location.pathname.slice(1, 5)}`, '_blank');"},{"id":"print-pdf","title":"Als PDF","icon":"<i class=\"fa-solid fa-file-pdf\" style=\"color:#8398dd\"></i>","action":"window.open(`${location.protocol}//${location.host}${location.pathname}`.replace('index.html', `Vorlesung${location.pathname.split('/')[2]}.pdf`), '_blank');"},{"id":"print","title":"Drucken","icon":"<i class=\"fa-solid fa-print\" style=\"color:#8398dd\"></i>","action":"location.href = location.href.includes('print-pdf') ? `${location.protocol}//${location.host}${location.pathname}${location.hash}` : `${location.protocol}//${location.host}${location.pathname}?print-pdf${location.hash}`;"},{"id":"toggle-notes","title":"Notizen (c)","icon":"<i class=\"fa-solid fa-pen\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleNotesCanvas(event);"},{"id":"toggle-chalkboard","title":"Tafel (b)","icon":"<i class=\"fa-solid fa-person-chalkboard\" style=\"color:#8398dd\"></i>","action":"RevealMenuToolHandlers.toggleChalkboard(event);"},{"id":"toggle-fragments","title":"Animationen","icon":"<i class=\"fa-solid fa-bolt\" style=\"color:#8398dd\"></i>","action":"Reveal.getConfig().fragments = !Reveal.getConfig().fragments; document.querySelector('.fa-bolt').style.color = Reveal.getConfig().fragments ?  '#dfe169' : '#8398dd'; if (Reveal.getConfig().fragments) {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]');for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('was_anim')) {elements[i].innerHTML = elements[i].innerHTML_prev;}}} else {elements = Reveal.getCurrentSlide().querySelectorAll('[data-animate]'); for (var i = 0; i < elements.length; i++ ){if (elements[i].innerHTML.includes('class: fragment')) {elements[i].innerHTML = `<div><img src='${elements[i].getAttribute('data-src')}' class='was_anim'></div>`;}}fragments = document.querySelectorAll('.fragment');for (let i = 0; i < fragments.length; i++) {fragments[i].classList.add('visible');}}"},{"id":"intro-sound","title":"Play intro","icon":"<i class=\"fa-solid fa-music\" style=\"color:#8398dd\"></i>","action":"new Audio('images/appear.mp3').play()"},{"id":"zoom","title":"Zoom","icon":"<i class=\"fa-solid fa-magnifying-glass\" style=\"color:#8398dd\"></i>","action":"disable_slide_nav = typeof disable_slide_nav === 'undefined' || !disable_slide_nav; Reveal.configure({touch: !disable_slide_nav}); document.querySelector('.fa-magnifying-glass').style.color = disable_slide_nav ?  '#dfe169' : '#8398dd';"}]},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: false,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: false,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: true,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'fast',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1150,
+
+        height: 770,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealAnimate, RevealCustomControls, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script>
+      function bgcolor() {
+        if(Reveal.isFirstSlide()) {
+            document.querySelector('div.reveal').style.backgroundColor = 'black'
+        } else {
+            document.querySelector('div.reveal').style.backgroundColor = 'white'
+        }
+        Reveal.on('slidechanged', event => {
+          if(Reveal.isFirstSlide()) {
+            document.querySelector('div.reveal').style.backgroundColor = 'black'
+          } else {
+            document.querySelector('div.reveal').style.backgroundColor = 'white'
+          }
+        });
+
+        // We smuglle this one here in to disable controls on non-mobile devises
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (!isMobile) {
+          Reveal.configure({controls: false});
+          document.getElementById('zoom').style.display = 'none';
+        } else {
+          document.getElementById('print').style.display = 'none';
+          document.getElementById('print-pdf').style.display = 'none';
+        }
+      }
+      // identifystring
+
+      window.onload = bgcolor();
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Kopiert");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Kopiert");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
