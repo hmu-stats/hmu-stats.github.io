@@ -98,7 +98,7 @@
         "24ss": "Sommersemester 2024",
         "24ws": "Wintersemester 2024/2025"
     },
-    "default_semester": "24ss",
+    "default_semester": "24ws",
     "seminars": {
         "23ws": [],
         "24ss": [],
