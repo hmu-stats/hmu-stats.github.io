@@ -3,6 +3,30 @@
 
 /*-- scss:rules --*/
 
+/* h1.title {
+    color: blue;
+} */
+
+
+
+h1:not(.title) {
+    font-size: calc(1.29rem + 0.48vw)
+}
+
+@media(min-width: 1200px) {
+    h1:not(.title) {
+        font-size:1.65rem
+    }
+}
+
+h1 .header-section-number {
+    color: inherit;
+}
+
+h1 .header-section-number::after {
+    content: ".";
+}
+
 input[type="radio"] {
     margin-right: 10px !important;
 }

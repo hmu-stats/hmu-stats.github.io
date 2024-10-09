@@ -661,6 +661,66 @@ se = \sigma\sqrt{\frac{2}{n}}
 <!----------------->
 </section>
 <section class="slide level2">
+<h2><span style=" color: darkred !important;">Power bei der Pearson-Korrelation: exakte Formel</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 100px; "></p>
+<ul>
+<li class="fragment">Wir erinnern uns, dass bei der Pearson-Korrelation der t-Wert wie folgt definiert war:</li>
+</ul>
+<div style="margin-top: -20px">
+<p><span class="math display">\[
+t = \rho\sqrt{\frac{n-2}{1-\rho^2}} = t_1
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">Hierbei ergibt sich eine Komplikation: die Annahme, dass der t-Wert der Korrelation einer t-Verteilung folgt, gilt nur für die Nullhypothese <span class="math inline">\(H_0\)</span> (<span class="math inline">\(\rho=0\)</span>). Falls <span class="math inline">\(\rho\ne0\)</span>, also bei der Alternativhypothse <span class="math inline">\(H_1\)</span>, folgt der t-Wert der Korrelation dagegen der sog. <strong>nicht-zentralen t-Verteilung</strong> <span class="math inline">\(\tilde{f}_t\)</span> mit einem zusätzlichen Nicht-Zentralitätsparameter <span class="math inline">\(\lambda\)</span>, der auf der angenommenen Populationskorrelation <span class="math inline">\(\rho\)</span> basiert:</li>
+</ul>
+<div style="margin-top: -35px">
+<p><span class="math display">\[
+\lambda = \rho\sqrt{\frac{n}{1-\rho^2}}
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">Nun muss wie gewohnt mithilfe der Verteilungsfunktion (hier <span class="math inline">\(\tilde{F}_t\)</span>) die kritische Fläche unter der angenommenen <span class="math inline">\(H_1\)</span>-Verteilung berechnet werden. Zu beachten ist, dass <span class="math inline">\(\tilde{F}_t\)</span> nicht zuvor bei <span class="math inline">\(t_\text{crit}-t_1\)</span> ausgewertet werden muss, sondern bei <span class="math inline">\(t_\text{crit}\)</span>, da die nicht-zentrale t-Verteilung die Verschiebung um <span class="math inline">\(t_1\)</span> bereits durch den Parameter <span class="math inline">\(\lambda\)</span> enthält (beachte, dass <span class="math inline">\(\lambda\approx t_1\)</span>!). Es gilt daher:</li>
+</ul>
+<div style="margin-top: -12px">
+<p><span class="math display">\[
+\textbf{Korrelation:}\quad\text{Power} = 1-\tilde{F}_t(t_\text{crit}\,|\,\small\text{df}\normalsize,\,\lambda)
+\]</span></p>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Power bei der Pearson-Korrelation: vereinfachte Formeln</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li class="fragment">Bei größeren Stichproben kann auch bei der Korrelation für die <span class="math inline">\(H_0\)</span>- und <span class="math inline">\(H_1\)</span>-Verteilung eine Normalverteilung angenommen werden.</li>
+<li class="fragment">Es gilt dann:</li>
+</ul>
+<div style="margin-top: -8px">
+<p><span class="math display">\[
+t_1 = \rho\sqrt{\frac{n-2}{1-\rho^2}} \approx z_1
+\]</span></p>
+</div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/power3.png"></p>
+</div>
+</div>
+<ul>
+<li class="fragment">Für eine angenommene Populationskorrelation <span class="math inline">\(\rho\)</span> gilt damit:</li>
+</ul>
+<div class="colorbox" style="margin-top: 0; margin-right: auto; width: fit-content;margin-left: auto;padding: 5px 70px;">
+<p><span class="math display">\[
+\textbf{Korrelation:}\quad\text{Power} = 1-\Phi(z_\text{crit}-z_1) = 1-\Phi(z_\text{crit}-\rho\sqrt{\frac{n-2}{1-\rho^2}} )
+\]</span></p>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
 <h2>Eigenschaften der statistischen Power</h2>
 <p><strong>Drei Größen beeinflussen die statistische Power, also die Wahrscheinlichkeit einen<br>wahren Effekt (<span class="math inline">\(H_1\)</span>) auch tatsächlich als signifikant zu werten (<span class="math inline">\(H_0\)</span> abzulehnen):</strong></p>
 <ul>
@@ -958,6 +1018,25 @@ n_\text{einseitig} = \left(\frac{t_{(1-\alpha, \text{df})} + t_{(1-\beta, \text{
 <li class="fragment">Umgekehrt gilt: ist ohnehin klar, dass die Fallzahl recht groß sein wird (Faustregel <span class="math inline">\(n&gt;30\)</span>), so kann auch im Fall des t-Testes näherungsweise die analytische Fallzahlformel des z-Testes verwendet werden.</li>
 </ul></li>
 </ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Fallzahl bei einer Korrelation</h2>
+<ul>
+<li class="fragment">Eine exakte Fallzahlschätzung basiert auch bei der Korrelation auf der t-Verteilung (bzw. für <span class="math inline">\(H_1\)</span> sogar der nicht-zentralen t-Verteilung), so dass eine analytische Berechnung der Fallzahl nicht möglich ist.</li>
+<li class="fragment">Auch hier verwenden Statistikprogramme numerische Verfahren, um die Fallzahl zu errechnen.</li>
+<li class="fragment">Es exitiert jedoch eine bekannte Näherungsformel, die auf kritischen z-Werten basiert. Für eine angenommene Populationskorrelation <span class="math inline">\(\rho\)</span> gilt:</li>
+</ul>
+<div class="colorbox" style="margin-right: auto; width: fit-content;margin-left: auto;padding: 5px 70px;">
+<p><span class="math display">\[
+\textbf{Korrelation:}\quad n = (1-\rho^2)\left(\frac{z_\text{crit} + z_{1-\beta}}{\rho}\right)^2 + 3
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">Bei typischen Annahmen für <span class="math inline">\(\alpha\)</span> und <span class="math inline">\(\beta\)</span> und liegt diese Näherungsformel sehr nah an einer exakten Schätzung. Eine Ausnahme sind extrem kleine angenommene Populationskorrelationen <span class="math inline">\(\rho\)</span> für die <span class="math inline">\(H_1\)</span>, v.a. im Bereich <span class="math inline">\(\rho &lt; 0.1\)</span>.</li>
+</ul>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
@@ -1212,30 +1291,36 @@ n = \left(\frac{t_\text{crit}\hat{\sigma}}{x}\right)^2
 <section class="slide level2">
 <h2><span style="font-size: 36px">Fallzahl gegeben: Bestimmung der minimalen detektierbaren Effektstärke</span></h2>
 <p>In manchen Fällen ist die Stichprobengröße durch externe Faktoren vorgegeben:</p>
-<div style="font-size: 25px">
+<div style="font-size: 23px; margin-top:-10px">
 <ul>
 <li class="fragment">Sie haben nur X Wochen Zeit in Ihrer Bachelorarbeit und können daher nur <span class="math inline">\(n\)</span> Versuchspersonen testen.</li>
 <li class="fragment">Sie untersuchen eine bestimmte Patientengruppe mit seltener Erkrankung X und können von dieser an Ihrem Standort nur <span class="math inline">\(n\)</span> Versuchspersonen testen.</li>
 <li class="fragment">Sie haben nur X Geld in Ihrem Forschungsbudet und können daher nur <span class="math inline">\(n\)</span> Versuchspersonen bezahlen.</li>
 </ul>
 </div>
+<div style="margin-top: -15px">
 <p>In diesem Fall ist es sinnvoll die inverse Frage zu stellen: welche kleinste Effektstärke kann mit der gegebenen Stichprobengröße <span class="math inline">\(n\)</span> mit einer Power von <span class="math inline">\(1-\beta\)</span> und einem Signifikanzniveau <span class="math inline">\(\alpha\)</span> detektiert werden? Man bezeichnet diese Effektstärke als <strong>minimale detektierbare Effektstärke (MDES</strong>).</p>
+</div>
 <p>Wir können hierzu unsere Formel</p>
-<div style="margin-top: -40px">
+<div style="margin-top: -50px">
 <p><span class="math display">\[
 n = \left(\frac{z_{1-\alpha} + z_{1-\beta}}{d}\right)^2
 \]</span></p>
 </div>
 <p>nach <span class="math inline">\(d\)</span> auflösen:</p>
-<div style="margin-top: -40px">
+<div class="colorbox" style="margin-top: -40px; margin-right: auto; width: fit-content;margin-left: auto;padding: 0px 70px;">
 <p><span class="math display">\[
 d=d_\text{MDES} = \frac{z_{1-\alpha} + z_{1-\beta}}{\sqrt{n}}
 \]</span></p>
 </div>
+<div style="margin-top: -10px">
 <p>Achtung: gilt für Einzelmessungen bzw. abhängige Messungen. Bei unabhängigen Messungen gilt:</p>
+</div>
+<div class="colorbox" style="margin-top: -10px; margin-right: auto; width: fit-content;margin-left: auto;padding: 0px 70px;">
 <p><span class="math display">\[
 d_\text{MDES}(\text{unabh. Messungen}) = \frac{z_{1-\alpha} + z_{1-\beta}}{\sqrt{\frac{n}{2}}}
 \]</span></p>
+</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->

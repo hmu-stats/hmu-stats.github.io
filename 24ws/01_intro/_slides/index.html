@@ -371,7 +371,7 @@
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/grit_spelling_bee.png" height="300"></p>
-<figcaption>Quelle<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a></figcaption>
+<figcaption>x-Achse: <em>Final round reached as a function of ranked quartiles of grit, self-control, and IQ among National Spelling Bee finalists</em>. Quelle<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a></figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:37%;">
@@ -503,6 +503,9 @@ Statistik II Vorlesung 13: partielle Korrelation und multiple Regression für Pe
 <aside></aside></section>
 <section class="slide level2">
 <h2>Nützliche Links</h2>
+<div class="vspace-large">
+
+</div>
 <!---  Table --->
 <table style="width:90%;">
 <colgroup>
@@ -513,28 +516,33 @@ Statistik II Vorlesung 13: partielle Korrelation und multiple Regression für Pe
 <tbody>
 <tr class="odd">
 <td>Statistik für Psychologie</td>
-<td>https://www.statistikpsychologie.de/blog/</td>
+<td><a href="https://www.statistikpsychologie.de/blog/" target="_blank">statistikpsychologie.de/blog</a></td>
 <td>Einige nützliche Blogeinträge zu statistischen Themen der Psychologie</td>
 </tr>
 <tr class="even">
 <td>DATAtab</td>
-<td>https://datatab.de/tutorial/</td>
+<td><a href="https://datatab.de/tutorial/" target="_blank">datatab.de/tutorial</a></td>
 <td>Online-Kalkulator mit einigen guten Tutorials</td>
 </tr>
 <tr class="odd">
 <td>StatistikGuru</td>
-<td>https://statistikguru.de/</td>
+<td><a href="https://statistikguru.de/" target="_blank">statistikguru.de</a></td>
 <td>Fokus auf SPSS und R, aber viele Tutorials in allgemeinem Stil geschrieben</td>
 </tr>
 <tr class="even">
 <td>Statistics Supreme with JASP</td>
-<td>https://www.youtube.com/<span class="citation" data-cites="StatisticsSupreme">@StatisticsSupreme</span></td>
+<td><a href="https://www.youtube.com/@StatisticsSupreme" target="_blank">youtube.com/<span class="citation" data-cites="StatisticsSupreme">@StatisticsSupreme</span></a></td>
 <td>YouTube-Kanal zu JASP des Kollegen Thomas Langkamp (MSH)</td>
 </tr>
 <tr class="odd">
 <td>Statistik 1 Vorlesungen auf YouTube</td>
-<td>https://www.youtube.com/playlist?list=PLu-U4gWcFfPxmKviyopGSmOY2EaKLVYxF</td>
+<td><a href="https://www.youtube.com/playlist?list=PLu-U4gWcFfPxmKviyopGSmOY2EaKLVYxF" target="_blank">youtube.com/playlist?list=PLu-U4gWcFfPxmKviyopGSmOY2EaKLVYxF</a></td>
 <td>Prof.&nbsp;Jonas Obleser (Uni Lübeck)</td>
+</tr>
+<tr class="even">
+<td>KI</td>
+<td>ChatGPT &amp; Co!</td>
+<td>Mittlerweile unverzichtbar</td>
 </tr>
 </tbody>
 </table>
@@ -557,13 +565,13 @@ Statistik II Vorlesung 13: partielle Korrelation und multiple Regression für Pe
 <td><strong>Trainex</strong></td>
 <td><img data-src="images/trainex.png"></td>
 <td>Format: pdf</td>
-<td><a href="https://www.trainex25.de/hmu-trainex">trainex25.de/hmu-trainex</a></td>
+<td><a href="https://www.trainex42.de/hmu24" target="_blank">trainex42.de/hmu24</a></td>
 </tr>
 <tr class="even">
 <td><strong>Webseite</strong></td>
 <td><img data-src="images/m-guggenmos_github.png"></td>
 <td>Format: html &amp; pdf</td>
-<td><a href="https://hmu-stats.github.io">hmu-stats.github.io</a></td>
+<td><a href="https://hmu-stats.github.io" target="_blank">hmu-stats.github.io</a></td>
 </tr>
 </tbody>
 </table>
@@ -574,9 +582,10 @@ Statistik II Vorlesung 13: partielle Korrelation und multiple Regression für Pe
 <li class="fragment">In der vorlesungsfreien Zeit nach Semesterende findet eine <strong>schriftliche Klausur</strong> zu Statistik 1 statt.</li>
 <li class="fragment"><strong>Klausurrelevant</strong> sind dabei alle <strong>Inhalte der Vorlesungsfolien</strong>, falls nicht extra gekennzeichnet.</li>
 <li class="fragment"><strong>Klausurrelevant</strong> sind auch die <strong>Übungen</strong>, die Sie im <strong>Seminar</strong> durchführen.</li>
+<li class="fragment">Außerdem ist es möglich, dass Sie ich Ihnen in der Klausur einen <strong>Output der Statistik-Software JASP</strong> zeige, den Sie interpretieren müssen.</li>
 </ul>
 
-<img data-src="images/klausur2.png" width="450" class="r-stretch"></section>
+<img data-src="images/klausur2.png" width="400" class="r-stretch"></section>
 <section class="slide level2">
 <h2>Literatur</h2>
 <!---  Table --->
@@ -1170,12 +1179,12 @@ Kennwert</span></th>
 </table>
 </div>
 <ul>
-<li class="fragment">Grund für die aufwendige Unterscheidung in der Notation:
+<li class="fragment">Gründe für die (nicht gerade unaufwendige) Unterscheidung in der Notation:
 <ul>
-<li class="fragment">Kommunikation des Analyseziels in einer Formel</li>
-<li class="fragment">Formeln für Populations- und Stichprobenkennwerte sind identisch, die Formeln für inferentielle Kennwerte können jedoch verschieden sein!</li>
-<li class="fragment">(Ausnahme: beim Mittelwert gilt <span class="math inline">\(\hat{\mu}=\bar{x}\)</span>)</li>
+<li class="fragment">Kommunikation des Analyseziels in einer Formel (Aussage über Stichprobe oder Population?)</li>
+<li class="fragment">Formeln zum Teil unterschiedlich (z.B. <span class="math inline">\(s_{\mkern-2mu\scriptscriptstyle{XY}}\)</span> versus <span class="math inline">\(\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{XY}}\)</span>).</li>
 </ul></li>
+<li class="fragment">Hinweis: da sich <span class="math inline">\(\bar{x}\)</span> (leider) auch bei inferentiellen Analysen eingebürgert hat, werden wir in Formeln ausschließlich <span class="math inline">\(\bar{x}\)</span> verwenden. Da gilt <span class="math inline">\(\bar{x} = \hat{\mu}\)</span>, ist das jedoch nicht problematisch.</li>
 </ul>
 <!----------------->
 <!--- New slide --->

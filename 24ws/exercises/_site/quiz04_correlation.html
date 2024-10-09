@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Übungen im Wintersemester 2024 / 2025 – quiz04_correlation</title>
+<title>Übungen im Wintersemester 2024 / 2025 - Quiz 04: Korrelation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,6 +64,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -77,11 +79,9 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Wintersemester&lt;br&gt;2024 / 2025
-      </li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+        <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Quiz 04: Korrelation</h1>
+        </a>     
     </div>
   </nav>
 </header>
@@ -129,11 +129,132 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Übung 03: Lage- und Streuungsmaße</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercise04_correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 04: Korrelation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercise05_regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 05: Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercise06_inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 06: Inferenzstatistik</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercise07_probability_dist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 07: Wahrscheinlichkeitsdichte</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercise08_significance_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 08: Signifikanztestung</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercise09_ttest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übung 09: t-Test</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Quizze</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Quizze</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quiz00_abicheck.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz 00: Abi-Check</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quiz01_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz 01: Einführung</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quiz02_measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz 02: Messen in der Psychologie</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quiz03_location_dispersion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz 03: Lage- und Streuungsmaße</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quiz04_correlation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Quiz 04: Korrelation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quiz05_regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz 05: Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quiz06_inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz 06: Inferenzstatistik</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quiz07_probability_dist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz 07: Wahrscheinlichkeitsdichte</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quiz08_significance_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz 08: Signifikanztestung</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quiz09_ttest.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz 09: t-Test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quiz10_ci.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz 10: Konfidenzintervall</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quiz11_effectsize.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz 11: Effektstärke</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quiz12_power.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz 12: Power und Fallzahlschätzung</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -144,15 +265,29 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Quiz 04: Korrelation</h1>
+</div>
 
 
-<section id="quiz-04-korrelation" class="level1">
-<h1>Quiz 04: Korrelation</h1>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
 <!----------------->
-<!---- Aufgabe ---->
+<!---- Quizfrage ---->
 <!----------------->
-<section id="aufgabe-1" class="level2">
-<h2 class="anchored" data-anchor-id="aufgabe-1">Aufgabe 1</h2>
+<section id="quizfrage" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Quizfrage</h1>
 <p>Welche der folgenden Aussagen zum Spearman-Korrelationskoeffizienten trifft zu?</p>
 <p><label class="checkbox-container"><input type="checkbox"> Misst lineare Zusammenhänge. </label> <label class="checkbox-container"><input type="checkbox"> Ist robust gegenüber Ausreißern. </label> <label class="checkbox-container"><input type="checkbox"> Funktioniert nur mit intervallskalierten Daten. </label> <label class="checkbox-container"><input type="checkbox"> Hat einen Wertebereich von −1 bis 1. </label></p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
@@ -172,11 +307,11 @@ Lösung
 </div>
 </div>
 <!----------------->
-<!---- Aufgabe ---->
+<!---- Quizfrage ---->
 <!----------------->
 </section>
-<section id="aufgabe-2" class="level2">
-<h2 class="anchored" data-anchor-id="aufgabe-2">Aufgabe 2</h2>
+<section id="quizfrage-1" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Quizfrage</h1>
 <p>Die Pearsonkorrelation entspricht… ?</p>
 <p><label class="checkbox-container"><input type="radio" name="def"> Varianz von X geteilt durch Varianz von Y. </label> <label class="checkbox-container"><input type="radio" name="def"> Produkt der Standardabweichungen von X und Y geteilt durch die Kovarianz von X und Y. </label> <label class="checkbox-container"><input type="radio" name="def"> Kovarianz von X und Y geteilt durch das Produkt der Standardabweichungen von X und Y. </label></p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
@@ -195,9 +330,211 @@ Lösung
 </div>
 </div>
 </div>
-
-
+<!----------------->
+<!---- Quizfrage ---->
+<!----------------->
 </section>
+<section id="quizfrage-2" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Quizfrage</h1>
+<p>Welche Aussagen zur Kovarianz sind falsch?</p>
+<div class="choices">
+<ul class="task-list">
+<li><label><input type="checkbox">Sie hat einen Wertebereich von <span class="math inline">\(-1\)</span> bis <span class="math inline">\(+1\)</span>.</label></li>
+<li><label><input type="checkbox">Sie beschreibt den Zusammenhang zwischen zwei Variablen.</label></li>
+<li><label><input type="checkbox">Sie lässt sich über verschiedene Studien hinweg als Effektstärke interpretieren.</label></li>
+<li><label><input type="checkbox">Für ihre Berechnung müssen zunächst Ränge gebildet werden.</label></li>
+</ul>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul class="task-list">
+<li><label><input type="checkbox" checked=""><strong>Sie hat einen Wertebereich von <span class="math inline">\(-1\)</span> bis <span class="math inline">\(+1\)</span>.</strong></label></li>
+<li><label><input type="checkbox">Sie beschreibt den Zusammenhang zwischen zwei Variablen.</label></li>
+<li><label><input type="checkbox" checked=""><strong>Sie lässt sich über verschiedene Studien hinweg als Effektstärke interpretieren.</strong></label></li>
+<li><label><input type="checkbox" checked=""><strong>Für ihre Berechnung müssen zunächst Ränge gebildet werden.</strong></label></li>
+</ul>
+</div>
+</div>
+</div>
+<!----------------->
+<!---- Quizfrage ---->
+<!----------------->
+</section>
+<section id="quizfrage-3" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Quizfrage</h1>
+<p>Welche Aussagen zur Korrelation treffen zu?</p>
+<div class="choices">
+<ul class="task-list">
+<li><label><input type="checkbox">Der Pearson-Korrelationskoeffizient sollte nur für Ränge berechnet werden.</label></li>
+<li><label><input type="checkbox">Die Rangkorrelation ist robuster gegen Ausreißer als die Pearson-Korrelation.</label></li>
+<li><label><input type="checkbox"><span class="math inline">\(\hat{\rho} = -1\)</span> weist auf einen perfekt linearen Zusammenhang hin.</label></li>
+<li><label><input type="checkbox">Bei einer signifikanten Korrelation zwischen A und B können wir schlussfolgern, dass A einen Effekt auf B hat.</label></li>
+</ul>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul class="task-list">
+<li><label><input type="checkbox">Der Pearson-Korrelationskoeffizient sollte nur für Ränge berechnet werden.</label></li>
+<li><label><input type="checkbox" checked=""><strong>Die Rangkorrelation ist robuster gegen Ausreißer als die Pearson-Korrelation.</strong></label></li>
+<li><label><input type="checkbox" checked=""><strong><span class="math inline">\(\hat{\rho} = -1\)</span> weist auf einen perfekt linearen Zusammenhang hin.</strong></label></li>
+<li><label><input type="checkbox">Bei einer signifikanten Korrelation zwischen A und B können wir schlussfolgern, dass A einen Effekt auf B hat.</label></li>
+</ul>
+</div>
+</div>
+</div>
+<!----------------->
+<!---- Quizfrage ---->
+<!----------------->
+</section>
+<section id="quizfrage-4" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Quizfrage</h1>
+<p>Worauf weist ein negatives Vorzeichen bei der Korrelation hin?</p>
+<div class="choices">
+<p><input type="radio" name="corr_sign">Dass die Vorzeichen von <span class="math inline">\(\bar{x}\)</span> und <span class="math inline">\(\bar{y}\)</span> gegensinnig sind.<br> <input type="radio" name="corr_sign">Dass die Differenz von <span class="math inline">\(\bar{x}-\bar{y}\)</span> negativ ist.<br> <input type="radio" name="corr_sign">Dass die Vorzeichen von <span class="math inline">\(\hat{\sigma}_x\)</span> und <span class="math inline">\(\hat{\sigma}_y\)</span> gegensinnig sind.<br> <input type="radio" name="corr_sign">Dass <span class="math inline">\(X\)</span> tendenziell kleiner wird, je größer <span class="math inline">\(Y\)</span>.<br></p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><input type="radio" name="corr_sign_s">Dass die Vorzeichen von <span class="math inline">\(\bar{x}\)</span> und <span class="math inline">\(\bar{y}\)</span> gegensinnig sind.<br> <input type="radio" name="corr_sign_s">Dass die Differenz von <span class="math inline">\(\bar{x}-\bar{y}\)</span> negativ ist.<br> <input type="radio" name="corr_sign_s">Dass die Vorzeichen von <span class="math inline">\(\hat{\sigma}_x\)</span> und <span class="math inline">\(\hat{\sigma}_y\)</span> gegensinnig sind.<br> <input type="radio" name="corr_sign_s" checked=""><strong>Dass <span class="math inline">\(X\)</span> tendenziell kleiner wird, je größer <span class="math inline">\(Y\)</span>.</strong><br></p>
+</div>
+</div>
+</div>
+<!----------------->
+<!---- Quizfrage ---->
+<!----------------->
+</section>
+<section id="quizfrage-5" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Quizfrage</h1>
+<p>Woran erkannt man bei der Pearson-Korrelation die Stärke des linearen Zusammenhangs?</p>
+<div class="choices">
+<p><input type="radio" name="corr_strength">Die Pearson-Korrelation sagt nichts über die Stärke des linearen Zusammenhangs aus.<br> <input type="radio" name="corr_strength">Je näher <span class="math inline">\(r\)</span> bei <span class="math inline">\(0\)</span>, desto stärker der Zusammenhang.<br> <input type="radio" name="corr_strength">Je größer <span class="math inline">\(r\)</span>, desto stärker der Zusammenhang.<br> <input type="radio" name="corr_strength">Je größer <span class="math inline">\(|r|\)</span>, desto stärker der Zusammenhang.<br></p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><input type="radio" name="corr_strength_s">Die Pearson-Korrelation sagt nichts über die Stärke des linearen Zusammenhangs aus.<br> <input type="radio" name="corr_strength_s">Je näher <span class="math inline">\(r\)</span> bei <span class="math inline">\(0\)</span>, desto stärker der Zusammenhang.<br> <input type="radio" name="corr_strength_s">Je größer <span class="math inline">\(r\)</span>, desto stärker der Zusammenhang.<br> <input type="radio" name="corr_strength_s" checked=""><strong>Je größer <span class="math inline">\(|r|\)</span>, desto stärker der Zusammenhang.</strong><br></p>
+</div>
+</div>
+</div>
+<!----------------->
+<!---- Quizfrage ---->
+<!----------------->
+</section>
+<section id="quizfrage-6" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Quizfrage</h1>
+<p>Welche Bedingung sollte erfüllt sein, um Kovarianzen <span class="math inline">\(\hat{Cov}(X,Y)\)</span> zwischen zwei Gruppen miteinander vergleichen zu können?</p>
+<div class="choices">
+<p><input type="radio" name="cov_compare">Die Standardabweichungen von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> sollten zwischen beiden Gruppen ähnlich sein.<br> <input type="radio" name="cov_compare">Die Mittelwerte von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> sollten in beiden Gruppen 0 sein.<br> <input type="radio" name="cov_compare">Die Mittelwerte von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> sollten zwischen beiden Gruppen ähnlich sein.<br> <input type="radio" name="cov_compare">Kovarianzen sind grundsätzlich nicht zwischen Gruppen vergleichbar.<br></p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><input type="radio" name="cov_compare_s" checked=""><strong>Die Standardabweichungen von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> sollten zwischen beiden Gruppen ähnlich sein.</strong><br> <input type="radio" name="cov_compare_s">Die Mittelwerte von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> sollten in beiden Gruppen 0 sein.<br> <input type="radio" name="cov_compare_s">Die Mittelwerte von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> sollten zwischen beiden Gruppen ähnlich sein.<br> <input type="radio" name="cov_compare_s">Kovarianzen sind grundsätzlich nicht zwischen Gruppen vergleichbar.<br></p>
+</div>
+</div>
+</div>
+<!----------------->
+<!---- Quizfrage ---->
+<!----------------->
+</section>
+<section id="quizfrage-7" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Quizfrage</h1>
+<p>Wie würden Sie die folgende Aussage interpretieren: „Wir fanden einen signifikanten Zusammenhang zwischen Prokrastination und Gewissenhaftigkeit, <span class="math inline">\(\hat{\rho} = -0.48\)</span>“.</p>
+<div class="choices">
+<p><input type="radio" name="corr_interpret">Stärker prokrastinierende Menschen sind tendenziell weniger gewissenhaft.<br> <input type="radio" name="corr_interpret">Weniger prokrastinierende Menschen sind tendenziell gewissenhafter.<br> <input type="radio" name="corr_interpret">Gewissenhaftere Menschen prokrastinieren tendenziell weniger.<br> <input type="radio" name="corr_interpret">Weniger gewissenhaftere Menschen prokrastinieren tendenziell mehr.<br> <input type="radio" name="corr_interpret">Alle Antwortmöglichkeiten sind korrekt.<br></p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><input type="radio" name="corr_interpret_s1" checked=""><strong>Stärker prokrastinierende Menschen sind tendenziell weniger gewissenhaft.</strong><br> <input type="radio" name="corr_interpret_s2" checked=""><strong>Weniger prokrastinierende Menschen sind tendenziell gewissenhafter.</strong><br> <input type="radio" name="corr_interpret_s3" checked=""><strong>Gewissenhaftere Menschen prokrastinieren tendenziell weniger.</strong><br> <input type="radio" name="corr_interpret_s4" checked=""><strong>Weniger gewissenhaftere Menschen prokrastinieren tendenziell mehr.</strong><br> <input type="radio" name="corr_interpret_s5" checked=""><strong>Alle Antwortmöglichkeiten sind korrekt.</strong><br></p>
+</div>
+</div>
+</div>
+<p>Erklären Sie, wodurch jeweils ein positiver und negativer Zusammenhang zwischen zwei Variablen zustande kommt. Geben Sie jeweils ein Beispiel.</p>
+<blockquote class="blockquote">
+<p>Ein positiver Zusammenhang bedeutet, dass die Werte auf beiden Variablen in gleicher Weise variieren, d.&nbsp;h. überdurchschnittliche Werte auf x entsprechen überdurchschnittlichen Werten auf y, während unterdurchschnittliche Werte auf x mit unterdurchschnittlichen Werten auf y einhergehen (Beispiel: Aufmerksamkeit und Erinnerung). Ein negativer Zusammenhang tritt auf, wenn hohe Werte auf der einen Variable mit niedrigen Werten auf der anderen einhergehen und umgekehrt (Beispiel: Angst und Selbstsicherheit)</p>
+</blockquote>
+<p>Was besagt eine Kovarianz/Korrelation von null?</p>
+<blockquote class="blockquote">
+<p>Eine Kovarianz (Korrelation) von null besagt, dass die untersuchten Merkmale voneinander unabhängig sind, d.&nbsp;h., Variable x steht in keinerlei Zusammenhang mit Variable y.</p>
+</blockquote>
+<p>Wie führt man eine arithmetische Mittelung von Korrelationskoeffizienten durch? Nennen Sie die wesentlichen Schritte.</p>
+<blockquote class="blockquote">
+<p>Mithilfe der Fishers Z-Transformation lassen sich Produkt-Moment-Korrelationen mitteln. Die nötigen Schritte sind: 1. Transformation der einzelnen Werte in Fishers Z-Werte; 2. Bilden eines Z-Mittelwerts; 3. Rücktransformation des Z-Mittelwerts in eine Korrelation</p>
+</blockquote>
+<p>Bringen Sie die Begriffe lineare Regression, Kriterium, Prädiktor, Regressionsgleichung, abhängige Variable und unabhängige Variable in einen sinnvollen Zusammenhang!</p>
+<blockquote class="blockquote">
+<p>Die lineare Regression dient der Merkmalsvorhersage. Aus der Ausprägung der unabhängigen Variable x, genannt Prädiktor, kann die zugehörige Ausprägung der abhängigen Variable, des Kriteriums, mithilfe der Regressionsgleichung vorhergesagt werden.</p>
+</blockquote>
+<p>Welche Aussage gestattet der Determinationskoeffizient?</p>
+<blockquote class="blockquote">
+<p>Der Determinationskoeffizient gibt denjenigen Varianzanteil der abhängigen Variable y wieder, der durch die unabhängige Variable aufgeklärt werden kann. Er ist somit ein prozentuales Maß für den gemeinsamen Varianzanteil zweier Variablen. Ebenso lässt er sich als Effektstärkenmaß begreifen, das die Größe des Einflusses der unabhängigen Variable auf die abhängige Variable angibt.</p>
+</blockquote>
+<p>Welche Beziehung besteht bei der linearen Regression zwischen der Gesamtvarianz, der Regressionsvarianz und der Residualvarianz?</p>
+<blockquote class="blockquote">
+<p>Bei der linearen Regression lässt sich die Gesamtvarianz der tatsächlichen Werte des Kriteriums in die Regressionsvarianz und die Residualvarianz aufspalten:</p>
+</blockquote>
+<p><span class="math display">\[
+\hat{\sigma}^2_y = \hat{\sigma}^2_\hat{y} + \hat{\sigma}^2_{y/x}
+\]</span></p>
+
+
 </section>
 
 </main> <!-- /main -->
