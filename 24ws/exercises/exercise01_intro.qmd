@@ -1,0 +1,111 @@
+---
+title: "Übung 01: Einführung"
+---
+
+
+
+<!----------------->
+<!---- Aufgabe ---->
+<!----------------->
+# Aufgabe
+
+**Eine Mathematikklausur in der 9. Klasse hat folgende Notenliste ergeben:**
+
+$6, 6, 4, 2, 6, 3, 2, 2, 1, 2, 2, 6, 3, 3, 2, 3, 1, 1, 3, 1, 6, 2, 4, 4, 1$
+
+a. Berechnen Sie $\sum_{i=1}^3 x_i$.
+
+::: {.callout-tip collapse=true title="Lösung"}
+
+$\sum_{i=1}^3 x_i = 6 + 6 + 4 = 16$
+
+:::
+
+b. Berechnen Sie $\sum_{i=1}^5 (x_i - 1)$.
+
+::: {.callout-tip collapse=true title="Lösung"}
+
+$\sum_{i=1}^5 (x_i - 1) = (6 - 1) + (6 - 1) + (4 - 1) + (2 - 1) + (6 - 1) = 5 + 5 + 3 + 1 + 5 = 19$
+
+:::
+
+c. Berechnen Sie $\sum_{i=1}^3 x_i - 1$.
+
+::: {.callout-tip collapse=true title="Lösung"}
+
+$\sum_{i=1}^3 x_i - 1 = 16 - 1 = 15$
+
+:::
+
+
+d. Berechnen Sie $\sum_{i=2}^4 (x_i - 1)^2$.
+
+::: {.callout-tip collapse=true title="Lösung"}
+
+$\sum_{i=2}^4 (x_i - 1)^2 = (6 - 1)^2 + (4 - 1)^2 + (2 - 1)^2 = 25 + 9 + 1 = 35$
+
+:::
+
+
+<!--  -->
+
+
+<!----------------->
+<!---- Aufgabe ---->
+<!----------------->
+# Aufgabe
+
+**Eine Klasse wurde hinsichtlich ihrer Leistungsstärke so zusammengestellt, dass zu Beginn des Schuljahres jede Zeugnisnote gleich wahrscheinlich ist.**
+
+a. Wie hoch ist die Wahrscheinlichkeit, dass ein zufällig ausgewählter Schüler am Ende des Schuljahres eine 1 auf dem Zeugnis hat?
+
+::: {.callout-tip collapse=true title="Lösung"}
+
+$P = \frac{1}{6}$
+
+:::
+
+b. Wie hoch ist die Wahrscheinlichkeit, dass von zwei zufällig ausgewählten Schülern am Ende des Schuljahres beide eine 1 auf dem Zeugnis haben?
+
+::: {.callout-tip collapse=true title="Lösung"}
+
+$P = \frac{1}{6}\cdot\frac{1}{6} = \frac{1}{36}$
+
+:::
+
+c. Wie hoch ist die Wahrscheinlichkeit, dass ein zufällig ausgewählter Schüler am Ende des Schuljahres [keine]{.underline} 1 auf dem Zeugnis hat?
+
+::: {.callout-tip collapse=true title="Lösung"}
+
+$P = \frac{5}{6}$
+
+:::
+
+d. Wie hoch ist die Wahrscheinlichkeit, dass von zwei zufällig ausgewählten Schülern am Ende des Schuljahres [keiner]{.underline} eine 1 auf dem Zeugnis hat?
+
+::: {.callout-tip collapse=true title="Lösung"}
+
+$P = \frac{5}{6}\cdot \frac{5}{6} = \frac{25}{36}\approx0.7$
+
+:::
+
+e. Wie hoch ist die Wahrscheinlichkeit, dass von zwei zufällig ausgewählten Schülern am Ende des Schuljahres mindestens einer eine 1 auf dem Zeugnis hat?
+
+::: {.callout-tip collapse=true title="Lösung"}
+
+$P = 1 - \frac{25}{36}\approx0.3$
+
+:::
+
+<!----------------->
+<!---- Aufgabe ---->
+<!----------------->
+# Aufgabe
+
+Ein fauler Mathematiklehrer lässt die Notenschnitte seiner Schule durch einen Zufallszahlengenerator erstellen. Die Notenschnitte werden vom Zufallszahlengenerator dabei auf beliebig viele Stellen genau ausgegeben. Wie hoch ist die Wahrscheinlichkeit, dass ein Schüler einen Notenschnitt von exakt $1{,}00000...$ erhält?
+
+::: {.callout-tip collapse=true title="Lösung"}
+
+P = 0. Die Wahrscheinlichkeit ist unendlich klein (also 0), da unendlich viele Nachkommastellen exakt 0 sein müssten.
+
+:::
