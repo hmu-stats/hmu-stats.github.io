@@ -1522,12 +1522,12 @@ plt.savefig('images/normal_sigma.png', bbox_inches='tight')
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Was ist “normal” an der Normalverteilung bzw. warum ist die Normalverteilung so häufig?</h2>
+<h2>Was ist “normal” an der Normalverteilung?</h2>
 <ul>
 <li class="fragment">Auch wenn die Historie des Terms <strong>Normalverteilung</strong> umstritten ist<a href="#/footnotes" class="footnote-ref" id="fnref8" role="doc-noteref" data-footnote-href="#/fn8" onclick=""><sup>8</sup></a> bringt er zum Ausdruck, dass es sich um eine empirisch sehr häufig beobachtete Verteilung handelt.</li>
 <li class="fragment">Die Erklärung für die Häufigkeit der Normalverteilung liefert der <span style=" color: navy !important;"><strong>zentrale Grenzwertsatz</strong></span>:</li>
 </ul>
-<div class="definition fragment">
+<div class="definition fragment" style="margin-top: -10px">
 <!---  Definition--->
 <table>
 <colgroup>
@@ -1622,7 +1622,7 @@ plt.savefig('images/normal_sigma.png', bbox_inches='tight')
 <aside></aside></section>
 <section class="slide level2">
 <h2><span style=" color: darkred !important;">Eine kurze Geschichte der Normalverteilung</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 325px; right: 0px; height: 130px; "></p>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 355px; right: 0px; height: 110px; "></p>
 <div class="columns">
 <div class="column" style="width:86%;">
 <ul>
@@ -1642,9 +1642,9 @@ plt.savefig('images/normal_sigma.png', bbox_inches='tight')
 <li class="fragment">Ein wichtige Motivation für Gauß’ Arbeit an Fehlerverteilungen waren astronomische Messungen, die häufig ungenau waren und viele Messwiederholungen erforderten. Eine zentrale Frage war: welcher Geseztmäßigkeit folgen diese Messfehler?</li>
 <li class="fragment">Der Beweis von Gauß war von besonderer Eleganz und basierte auf drei Annahmen:
 <ol type="1">
-<li class="fragment">Messfehler sind symmetrisch (Fehler in -X und +X Richtung sind gleich wahrscheinlich)</li>
-<li class="fragment">Kleinere Fehler sind häufiger als größere Fehler</li>
-<li class="fragment">Der Mittelwert ist der beste Schätzer für den Lageparameter der wahren theoretischen Verteilung, oder anders gesagt: der beste Schätzer für die unbekannten Fehler <span class="math inline">\(x_i - \mu\)</span> (<span class="math inline">\(\mu\)</span> ist nicht bekannt!) ist <span class="math inline">\(x_i - \bar{x}\)</span>.</li>
+<li class="fragment"><span style="font-size:22px;display:block;margin-bottom:-12px; margin-top:-10px">Messfehler sind symmetrisch (Fehler in -X und +X Richtung sind gleich wahrscheinlich)</span></li>
+<li class="fragment"><span style="font-size:22px;display:block;margin-bottom:-12px">Kleinere Fehler sind häufiger als größere Fehler</span></li>
+<li class="fragment"><span style="font-size:22px;display:block;line-height:1">Der Mittelwert ist der beste Schätzer für den Lageparameter der wahren theoretischen Verteilung, oder anders gesagt: der beste Schätzer für die unbekannten Fehler <span class="math inline">\(x_i - \mu\)</span> (<span class="math inline">\(\mu\)</span> ist nicht bekannt!) ist <span class="math inline">\(x_i - \bar{x}\)</span>.</span></li>
 </ol></li>
 <li class="fragment">Mit diesen wenigen Annahmen konnte Gauß zeigen, dass <em>die Funktion die mit größter Wahrscheinlichkeit Fehler dieser Art erzeugt</em><a href="#/footnotes" class="footnote-ref" id="fnref12" role="doc-noteref" data-footnote-href="#/fn12" onclick=""><sup>12</sup></a>, die Normalverteilung ist. Herleitung<a href="#/footnotes" class="footnote-ref" id="fnref13" role="doc-noteref" data-footnote-href="#/fn13" onclick=""><sup>13</sup></a></li>
 </ul>
@@ -1691,7 +1691,7 @@ plt.savefig('images/normal_sigma.png', bbox_inches='tight')
 <li class="fragment">Der p-Wert ist von zentraler Bedeutung in der psychologischen Forschungsliteratur (for the better or the worse).</li>
 <li class="fragment">Der p-Wert ist ein <strong>Signifikanz-Maß</strong>: er gibt vereinfacht gesprochen einen Hinweis darauf, wie wahrscheinlich es ist, dass ein gefundener Effekt (z.B. Mittelwertsunterschied zwischen zwei Gruppen) auf bloßem Zufall basiert.</li>
 <li class="fragment"><strong>Je kleiner der p-Wert, desto höher die statistische Signifikanz</strong>, desto sicherer können wir uns also sein, dass ein Effekt nicht nur auf einer zufälligen Schwankung von Messfehlern basiert.</li>
-<li class="fragment">Als Konvention hat sich etabliert, dass bei p-Werten kleiner 0,05 Effekte als <strong>statistisch signifikant</strong> gewertet werden.</li>
+<li class="fragment">Als Konvention hat sich etabliert, dass bei p-Werten kleiner 0.05 Effekte als <strong>statistisch signifikant</strong> gewertet werden.</li>
 <li class="fragment">Den p-Wert werden wir noch ausführlich in den Vorlesungen zur Inferenzstatistik behandeln.</li>
 </ul>
 </div><div class="column" style="width:30%;">
