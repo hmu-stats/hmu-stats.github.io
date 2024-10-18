@@ -1,0 +1,156 @@
+---
+title: "Quiz 01: Einführung"
+---
+
+# Quizfrage
+
+Forscher nehmen an, dass die Corona-Mutante B117 eine um 50% höhere Infektiosität hat als der Wildtyp (d.h. das originale Corona-Virus). Diese Hypothese ist... ?
+
+:::{.choices}
+- [ ] widerlegbar
+- [ ] ungerichtet
+- [ ] probabilistisch
+:::
+
+
+::: {.callout-tip collapse=true title="Lösung"}
+- [x] **widerlegbar**
+- [ ] ungerichtet
+- [x] **probabilistisch**
+:::
+
+# Quizfrage
+
+Bei der Hypothese "Körpergröße korreliert nicht positiv mit Gewicht" handelt es sich um eine... ?
+
+<label class="checkbox-container"><input type="radio" name="h0">
+    Nullhypothese $\;H_0$
+</label>
+<label class="checkbox-container"><input type="radio" name="h0">
+    Alternativhypothese $\;H_1$
+</label>
+<label class="checkbox-container"><input type="radio" name="h0">
+    Beides ist möglich.
+</label>
+
+::: {.callout-tip collapse=true title="Lösung"}
+<label class="checkbox-container"><input type="radio" name="h0_s">
+    Nullhypothese $\;H_0$
+</label>
+<label class="checkbox-container"><input type="radio" name="h0_s">
+    Alternativhypothese $\;H_1$
+</label>
+<label class="checkbox-container"><input type="radio" name="_s" checked>
+    **Beides ist möglich.**
+</label>
+
+Hinweis: Die Hypothese wäre die $H_0$, falls $H_1$ lautet: "Körpergröße korreliert positiv mit Gewicht".
+
+:::
+
+
+# Quizfrage
+
+Bei welchen Hypothesen handelt es sich um gerichtete Hypothesen?
+
+<label class="checkbox-container"><input type="checkbox">
+    Im Winter sind Menschen introvertierter als im Sommer.
+</label>
+<label class="checkbox-container"><input type="checkbox">
+    Im Winter sind Menschen weniger introvertiert als im Sommer.
+</label>
+<label class="checkbox-container"><input type="checkbox">
+    Der Grad der Introversion unterscheidet sich bei Menschen zwischen Sommer und Winter.
+</label>
+<label class="checkbox-container"><input type="checkbox">
+    Außentemperatur und Introversion hängen voneinander ab.
+</label>
+<label class="checkbox-container"><input type="checkbox">
+    Mit steigender Außentemperatur werden Menschen introvertierter.
+</label>
+<label class="checkbox-container"><input type="checkbox">
+    Mit steigender Außentemperatur werden Menschen weniger introvertiert.
+</label>
+<label class="checkbox-container"><input type="checkbox">
+    Mit fallender Außentemperatur werden Menschen weniger introvertiert.
+</label>
+
+::: {.callout-tip collapse=true title="Lösung"}
+<label class="checkbox-container"><input type="checkbox" checked>
+    **Im Winter sind Menschen introvertierter als im Sommer.**
+</label>
+<label class="checkbox-container"><input type="checkbox" checked>
+    **Im Winter sind Menschen weniger introvertiert als im Sommer.**
+</label>
+<label class="checkbox-container"><input type="radio">
+    Der Grad der Introversion unterscheidet sich bei Menschen zwischen Sommer und Winter.
+</label>
+<label class="checkbox-container"><input type="checkbox">
+    Außentemperatur und Introversion hängen voneinander ab.
+</label>
+<label class="checkbox-container"><input type="checkbox" checked>
+    **Mit steigender Außentemperatur werden Menschen introvertierter.**
+</label>
+<label class="checkbox-container"><input type="checkbox" checked>
+    **Mit steigender Außentemperatur werden Menschen weniger introvertiert.**
+</label>
+<label class="checkbox-container"><input type="checkbox" checked>
+    **Mit fallender Außentemperatur werden Menschen weniger introvertiert.**
+</label>
+:::
+
+
+
+# Quizfrage
+
+Sie bestimmen den Frauenanteil in Prozent unter allen deutschen Bundeskanzlern. Um was für einen Kennwert handelt es sich hier?
+
+<label class="checkbox-container"><input type="radio" name="bk">
+    Populationskennwert
+</label>
+<label class="checkbox-container"><input type="radio" name="bk">
+    Stichprobenkennwert
+</label>
+<label class="checkbox-container"><input type="radio" name="bk">
+    Inferentieller Kennwert
+</label>
+
+::: {.callout-tip collapse=true title="Lösung"}
+<label class="checkbox-container"><input type="radio" name="bk_s" checked>
+    **Populationskennwert**
+</label>
+<label class="checkbox-container"><input type="radio" name="bk_s">
+    Stichprobenkennwert
+</label>
+<label class="checkbox-container"><input type="radio" name="bk_s">
+    Inferentieller Kennwert
+</label>
+:::
+
+
+# Quizfrage
+
+Sie untersuchen die finanzielle Situation von HMU-Studierenden und erheben dazu mittels Fragebogen das monatliche Einkommen von 20 repräsentativen Studierenden. Um was für einen Kennwert handelt es sich hier?
+
+<label class="checkbox-container"><input type="radio" name="money">
+    Populationskennwert
+</label>
+<label class="checkbox-container"><input type="radio" name="money">
+    Stichprobenkennwert
+</label>
+<label class="checkbox-container"><input type="radio" name="money">
+    Inferentieller Kennwert
+</label>
+
+::: {.callout-tip collapse=true title="Lösung"}
+<label class="checkbox-container"><input type="radio" name="money_s">
+    Populationskennwert
+</label>
+<label class="checkbox-container"><input type="radio" name="money_s">
+    Stichprobenkennwert
+</label>
+<label class="checkbox-container"><input type="radio" name="money_s" checked>
+    **Inferentieller Kennwert**
+</label>
+:::
+
