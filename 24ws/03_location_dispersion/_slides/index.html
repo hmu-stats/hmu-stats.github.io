@@ -659,13 +659,12 @@ plt.savefig(f'images/{mode}.png', bbox_inches="tight")
 <section class="slide level2" style="overflow: hidden">
 <h2>Median</h2>
 <ul>
-<li class="fragment">Gibt es dominante Ausreißer in den Daten, so ist häufig der <span style=" color: navy !important;"><strong>Median</strong></span> das sinnvollere Lagemaß</li>
+<li class="fragment">Gibt es dominante Ausreißer in den Daten, so ist häufig der <span style=" color: navy !important;"><strong>Median</strong></span> das sinnvollere Lagemaß.</li>
 <li class="fragment">Berechnung:
 <ol type="1">
-<li class="fragment">Alle <span class="math inline">\(n\)</span> Stichprobenwerte der Größe nach aufreihen</li>
-<li class="fragment">Der Wert, der genau in der Mitte liegt, ist der Median</li>
-<li class="fragment">Bei einer geraden Anzahl von Werten bilden zwei Werte die Mitte – in diesem Fall ist der Median der Mittelwert dieser beiden Werte</li>
-<li class="fragment"><span class="math inline">\(\Big(\)</span> Alternativ mit Formel:  <span class="math inline">\(Tiefe_{\,\text{Median}}=\frac{n+1}{2}\Big)\)</span></li>
+<li class="fragment">Alle <span class="math inline">\(n\)</span> Stichprobenwerte der Größe nach aufreihen.</li>
+<li class="fragment">Der Wert, der genau in der Mitte liegt, ist der Median. Wie “tief” der Median (von rechts oder links kommend) in der Zahlenreihe liegt, gibt folgende Formel an: <span class="math inline">\(\;\text{Tiefe}_{\,\text{Median}}=\frac{n+1}{2}\)</span></li>
+<li class="fragment">Bei einer geraden Anzahl von Werten bilden zwei Werte die Mitte – in diesem Fall ist der Median der Mittelwert dieser beiden Werte.</li>
 </ol></li>
 <li class="fragment">Der Median wird mit einer Tilde (~) über der Variablen bezeichnet:  <span class="math inline">\(\tilde{x}, \tilde{y}, ..\)</span></li>
 </ul>
@@ -750,9 +749,10 @@ plt.savefig(f'images/median_bimodal.png', bbox_inches="tight")
 </div>
 </div>
 <ul>
-<li class="fragment">Der <strong>Median ist nicht sinnvoll</strong>, auch der Mittelwert ein sinnvolles Lagemaß darstellt, denn der Mittelwert hat einige hilfreiche mathematische Eigenschaften.
+<li class="fragment">Der <strong>Median ist nicht sinnvoll</strong>, wenn auch der Mittelwert ein sinnvolles Lagemaß darstellt, denn der Mittelwert hat einige hilfreiche mathematische Eigenschaften.
 <ul>
-<li class="fragment">Beispielsweise ist der Mittelwert der Mittelwerte von zwei Gruppen mit je n Datenpunkten gleich dem Mittelwert aller 2*n Datenpunkte. Beim Median ist dies nicht gegeben. Auch beziehen sich viele statistische Standardtests auf den Mittelwert und nicht den Median. <!-- - in der zugrundeliegenden Verteilung zwei oder mehr Wertebereiche deutlich häufiger vorkommen als andere Wertebereiche, und diese Bereiche nicht überlappen (z.B. hat der Median von $\{2, 2, 2, 2, 9, 9, 9\}$ den wenig aussagekräftigen Wert 2). --></li>
+<li class="fragment">Beispielsweise ist der Mittelwert der Mittelwerte von zwei Gruppen mit je n Datenpunkten gleich dem Mittelwert aller 2*n Datenpunkte. Beim Median ist dies nicht gegeben.</li>
+<li class="fragment">Viele etablierte statistische Tests beziehen sich auf den Mittelwert und nicht den Median. <!-- - in der zugrundeliegenden Verteilung zwei oder mehr Wertebereiche deutlich häufiger vorkommen als andere Wertebereiche, und diese Bereiche nicht überlappen (z.B. hat der Median von $\{2, 2, 2, 2, 9, 9, 9\}$ den wenig aussagekräftigen Wert 2). --></li>
 </ul></li>
 </ul>
 <!-- :::{.fragment}
@@ -973,7 +973,7 @@ plt.savefig('images/IQ_blond_brunette_dist.png', bbox_inches="tight")
 <div class="column" style="width:70%;">
 <ul>
 <li class="fragment"><span style=" color: navy !important;"><strong>Streuungsmaße</strong></span> geben die Variabilität von Daten an</li>
-<li class="fragment">Streuungsmaßes sind eine extrem wichtige Ergänzung zu Lagemaßen beim Bericht wissenschaftlicher Ergebnisse.</li>
+<li class="fragment">Streuungsmaßes sind eine sehr wichtige Ergänzung zu Lagemaßen beim Bericht wissenschaftlicher Ergebnisse.</li>
 <li class="fragment">Die Streuung von Daten kann ein Ausdruck <em>echter Variabilität</em> in der Stichprobe sein oder eine Folge der <em>Messungenauigkeit</em> (häufig beides).</li>
 <li class="fragment">Je nach Skalenniveau und Zweck können verschiedene Streuungsmaße bestimmt werden:
 <ul>
@@ -1254,8 +1254,8 @@ IQR = Q_{75\%} - Q_{25\%} = Q_3 - Q_1
 <li class="fragment">Berechnung des IQR:
 <ol type="1">
 <li class="fragment">Sortiere alle Werte von klein nach groß</li>
-<li class="fragment">Bestimme die Tiefe des Medians:<span class="math inline">\(\,Tiefe_{\text{Median}}\)</span></li>
-<li class="fragment">Bestimme die Tiefe des Quartils:  <span class="math inline">\(Tiefe_{\text{Quartil}}=\frac{Tiefe_{\text{Median}}+1}{2}=\frac{\frac{n+1}{2}+1}{2}=\frac{n+3}{4}\)</span></li>
+<li class="fragment">Bestimme die Tiefe des Medians:  <span class="math inline">\(\text{Tiefe}_\text{Median}=\frac{n+1}{2}\)</span></li>
+<li class="fragment">Bestimme die Tiefe des Quartils:  <span class="math inline">\(\text{Tiefe}_{\text{Quartil}}=\frac{\text{Tiefe}_{\text{Median}}+1}{2}=\frac{\frac{n+1}{2}+1}{2}=\frac{n+3}{4}\)</span></li>
 <li class="fragment">Für das 25%-Quantil (<span class="math inline">\(Q_1\)</span>) geht man <strong>von vorne</strong> in die Datenreihe</li>
 <li class="fragment">Für das 75%-Quantil (<span class="math inline">\(Q_3\)</span>) geht man <strong>von hinten</strong> in die Datenreihe</li>
 </ol></li>
@@ -1275,8 +1275,8 @@ IQR = Q_{75\%} - Q_{25\%} = Q_3 - Q_1
 <tr class="even">
 <td style="text-align: center;"><img data-src="images/example.png" height="70"></td>
 <td>Folgende 12 Werte werden beobachtet: <span class="math inline">\(x=\{1, 1, \color{darkred}{2}, \color{darkred}{3}, 3, 3, 4, 4, \color{darkblue}{6}, \color{darkblue}{7}, 7, 9\}\)</span><br>
-In diesem Fall ist der “6,5”-te Wert der Median, da  <span class="math inline">\(\,Tiefe_{\text{Median}}=\frac{n+1}{2}=\frac{12+1}{2}=6.5\)</span><br>
-Die Tiefe des Quartils ist damit  <span class="math inline">\(Tiefe_{\text{Quartil}}=\frac{Tiefe_{\text{Median}}+1}{2}=\frac{6.5+1}{3}=3.75\)</span><br>
+In diesem Fall ist der “6,5”-te Wert der Median, da  <span class="math inline">\(\,\text{Tiefe}_{\text{Median}}=\frac{n+1}{2}=\frac{12+1}{2}=6.5\)</span><br>
+Die Tiefe des Quartils ist damit  <span class="math inline">\(\text{Tiefe}_{\text{Quartil}}=\frac{\text{Tiefe}_{\text{Median}}+1}{2}=\frac{6.5+1}{3}=3.75\)</span><br>
 Der “<span class="math inline">\(3.75\)</span>”-te Wert von vorne befindet sich auf 75% der Strecke zwischen dem 3. Wert (2) und dem 4. Wert (3), also <span class="math inline">\(\color{darkred}{Q_1=2.75}\)</span>; der “<span class="math inline">\(3.75\)</span>”-te Wert von hinten befindet sich auf 75% der Strecke zwischen der 7 und der 6, also <span class="math inline">\(\color{darkblue}{Q_3=6.25}\)</span>.<br>
 <span class="math inline">\(IQR = \color{darkblue}{Q_3} - \color{darkred}{Q_1} = \color{darkblue}{6.25} - \color{darkred}{2.75} = 3.5\)</span></td>
 </tr>
@@ -1293,18 +1293,21 @@ Der “<span class="math inline">\(3.75\)</span>”-te Wert von vorne befindet s
 </section>
 <section class="slide level2">
 <h2>Interquartilsabstand (interquartile range = IQR)</h2>
+<div class="vspace-large">
 
+</div>
+<p><img data-src="images/quartil.png" height="600"></p>
 <!----------------->
 <!--- New slide --->
 <!----------------->
-<img data-src="images/quartil.png" class="r-stretch"></section>
+</section>
 <section class="slide level2">
-<h2>Wann ist der Interquartilsabstand ein sinnvolles Streuungsmaß?</h2>
+<h2><span style="font-size:41px">Wann ist der Interquartilsabstand ein sinnvolles Streuungsmaß?</span></h2>
 <div class="columns">
 <div class="column" style="width:66%;">
 <ul>
-<li class="fragment">Die klassische Standardabweichung kann leicht durch einen einzelnen oder wenige extreme Datenpunkte verzerrt werden (insbesondere durch die Abstandsquadrierung).</li>
-<li class="fragment">Der Interquartilsabstand ist <strong>robuster gegen Ausreißer</strong>, da er auf einem ähnlichen Prinzip wie der Median basiert: statt einem arithmetischen Mittel werden basiert der Wert auf tatsächlichen Datenpunkten <em>in der Mitte der Verteilung</em>.</li>
+<li class="fragment">Die klassische Standardabweichung kann leicht durch einen oder wenige extreme Datenpunkte verzerrt werden (insbesondere durch die Abstandsquadrierung).</li>
+<li class="fragment">Der Interquartilsabstand ist <strong>robuster gegen Ausreißer</strong>, da er auf einem ähnlichen Prinzip wie der Median basiert: statt einem arithmetischen Mittel basiert der Wert auf <em>tatsächlichen Datenpunkten</em> in der <em>Mitte der Verteilung</em>.</li>
 <li class="fragment">Wie dem Median ist es daher dem Interquartilsabstand “egal” ob etwa der höchste Wert 10 oder 10 Trillionen ist.</li>
 <li class="fragment">Auch bei <strong>stark schiefen Verteilungen</strong> bietet sich der Interquartilsabstand an, da der von der Standardabweichung verwendete Bezugspunkt “Mittelwert” in diesem Fall problematisch ist.</li>
 </ul>
@@ -1575,31 +1578,6 @@ plt.savefig('images/IQ_blond_brunette_means_sds_nobar.png', bbox_inches="tight")
 <div class="fragment">
 <p><img data-src="images/IQ_blond_brunette_means_sds_nobar.png" height="400"></p>
 </div>
-</section>
-<section class="slide level2">
-<h2>Der Box-Plot</h2>
-<div class="columns">
-<div class="column" style="width:65%;">
-<ul>
-<li class="fragment">Eine bekannte Darstellungsform für den Median ist der <span style=" color: navy !important;"><strong>Boxplot</strong></span></li>
-<li class="fragment">In einer gängigen Variante zeigt der Boxplot drei Informationen an:
-<ol type="1">
-<li class="fragment"><strong>Median (als einfache Linie)</strong></li>
-<li class="fragment"><strong>Box:</strong> die “mittleren 50% der Daten” (25% über dem Median, 25% unter dem Median)</li>
-<li class="fragment"><strong>Antennen (“Whiskers”):</strong> zeigen Grenzen der Ausreißer-Definition an (Ausreißer = alle Punkte unter- und überhalb der Antennen). Häufig ist hier das Kriterium, dass die Daten im Bereich <span class="math inline">\([Q_1-1.5\cdot IQR; Q_3+1.5\cdot IQR]\)</span> liegen müssen.</li>
-</ol></li>
-</ul>
-</div><!-- Begin second column --><div class="column" style="width:35%;">
-<p><img data-src="images/boxplot.png"></p>
-</div>
-</div>
-<ul>
-<li class="fragment">Der Boxplot gibt eine schnelle Übersicht über wesentliche Kennwerte eines Datensatzen</li>
-<li class="fragment">Zu beachten ist, dass zahlreiche Varianten des Boxplots existieren
-<ul>
-<li class="fragment">Bei einer weiteren häufigen Variante zeigen die Antennen das absolute Maximum und Minimum der Daten an (also <em>inklusive</em> möglicher Ausreißer)</li>
-</ul></li>
-</ul>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1643,10 +1621,35 @@ plt.savefig('images/IQ_blond_brunette_means_sds_nobar.png', bbox_inches="tight")
 </ul></li>
 </ul>
 </div>
+<aside></aside></section>
+<section class="slide level2">
+<h2>Der Box-Plot</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<ul>
+<li class="fragment">Eine bekannte Darstellungsform für den Median ist der <span style=" color: navy !important;"><strong>Boxplot</strong></span></li>
+<li class="fragment">In einer gängigen Variante zeigt der Boxplot drei Informationen an:
+<ol type="1">
+<li class="fragment"><strong>Median (als einfache Linie)</strong></li>
+<li class="fragment"><strong>Box:</strong> die “mittleren 50% der Daten” (25% über dem Median, 25% unter dem Median)</li>
+<li class="fragment"><strong>Antennen (“Whiskers”):</strong> zeigen Grenzen der Ausreißer-Definition an (Ausreißer = alle Punkte unter- und überhalb der Antennen). Häufig ist hier das Kriterium, dass die Daten im Bereich <span class="math inline">\([Q_1-1.5\cdot IQR; Q_3+1.5\cdot IQR]\)</span> liegen müssen.</li>
+</ol></li>
+</ul>
+</div><!-- Begin second column --><div class="column" style="width:35%;">
+<p><img data-src="images/boxplot.png"></p>
+</div>
+</div>
+<ul>
+<li class="fragment">Der Boxplot gibt eine schnelle Übersicht über wesentliche Kennwerte eines Datensatzen</li>
+<li class="fragment">Zu beachten ist, dass zahlreiche Varianten des Boxplots existieren
+<ul>
+<li class="fragment">Bei einer weiteren häufigen Variante zeigen die Antennen das absolute Maximum und Minimum der Daten an (also <em>inklusive</em> möglicher Ausreißer)</li>
+</ul></li>
+</ul>
 <!----------------->
 <!--- New slide --->
 <!----------------->
-<aside></aside></section>
+</section>
 <section class="slide level2">
 <h2>Abschneiden der y-Achse</h2>
 <div class="columns">
@@ -1665,7 +1668,7 @@ plt.savefig('images/IQ_blond_brunette_means_sds_nobar.png', bbox_inches="tight")
 <li class="fragment">Es gibt aber Ausnahmen:
 <ul>
 <li class="fragment">Vorliegen eines anderen natürlichen Referenzwertes (z.B. IQ-Wert 100, wenn alle Werte über 100 liegen).</li>
-<li class="fragment">Wären <em>tatsächlich vorhandene Unterschiede</em> zwischen Balken verschiedener Bedingungen überhaupt nicht mehr wahrnehmbar, kann ein Abschneiden der y-Achse sinnvoll sein (oder eine Logarithmus-Skala!).</li>
+<li class="fragment">Wären <em>tatsächlich vorhandene Unterschiede</em> zwischen Balken verschiedener Bedingungen überhaupt nicht mehr wahrnehmbar, kann ein Abschneiden der y-Achse sinnvoll sein (oder eine Logarithmus-Skala).</li>
 <li class="fragment">In manchen Fällen können Messwerte niemals unter einen Mindestwert fallen. Beispielsweise sind motorische Reaktionszeiten physiologisch bedingt fast immer über 100ms – in diesem Fall ist der Bereich<br> 0-100ms “Totraum” und kann sinnvollerweise weggelassen werden.</li>
 <li class="fragment">Im Idealfall wird das Abschneiden der y-Achse durch einen “Bruch” angezeigt (siehe nächste Folie).</li>
 </ul></li>
