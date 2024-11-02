@@ -851,51 +851,46 @@ t_1 = \rho\sqrt{\frac{n-2}{1-\rho^2}} \approx z_1
 </section>
 <section class="slide level2">
 <h2>Berechnung der notwendigen Fallzahl (z-Test)</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
 <ul>
 <li class="fragment">Wir betrachten zunächst den Fall abhängige Messungen oder Einzelmessung.</li>
-<li class="fragment">Durch Festlegung der Power auf einen Wert <span class="math inline">\(1-\beta\)</span> gilt:</li>
+<li class="fragment">Da <span class="math inline">\(\Phi(x)\)</span> die Verteilungsfunktion einer um 0 symmetrischen Verteilung ist, gilt <span class="math inline">\(1-\Phi(x) = \Phi(-x)\)</span> und damit:</li>
 </ul>
-<div style="margin-top: -15px">
+<div style="margin-top: -10px">
 <p><span class="math display">\[
-\text{Power} = 1-\Phi(z_\text{crit}-d\sqrt{n}) \overset{!}{=} 1-\beta
+\text{Power} = 1-\Phi(z_\text{crit}-d\sqrt{n}) \overset{(Symmetrie)}{=} \Phi(d\sqrt{n}-z_\text{crit})
 \]</span></p>
 </div>
 <ul>
-<li class="fragment">Oder äquivalent:</li>
+<li class="fragment">Durch Festlegung der Power auf einen Wert <span class="math inline">\(1-\beta\)</span> fordern wir:</li>
 </ul>
-<div style="margin-top: -12px">
+<div style="margin-top: -15px">
 <p><span class="math display">\[
-\Phi(z_\text{crit}-d\sqrt{n}) = \beta
+\text{Power} = \Phi(d\sqrt{n}-z_\text{crit}) \overset{!}{=} 1-\beta
 \]</span></p>
 </div>
 <ul>
 <li class="fragment">Ziel muss nun sein, die Gleichung nach <span class="math inline">\(n\)</span> aufzulösen.</li>
 </ul>
-<div class="columns">
-<div class="column" style="width:65%;">
+</div><div class="column" style="width:35%;">
+<p><img data-src="images/z_symmetry2.png" style="margin-top:-10px !important" height="330"></p>
+</div>
+</div>
 <div style="margin-top: -15px">
 <ul>
-<li class="fragment">Damit <span class="math inline">\(\Phi(..)=\beta\)</span>, muss das Argument <span class="math inline">\((..)\)</span> gleich <span class="math inline">\(z_\beta\)</span> sein:</li>
+<li class="fragment">Damit <span class="math inline">\(\Phi(..)=1-\beta\)</span>, muss das Argument <span class="math inline">\((..)\)</span> gleich <span class="math inline">\(z_{1-\beta}\)</span> sein:</li>
 </ul>
 </div>
-<div style="margin-top: -18px">
+<div style="margin-top: 0px">
 <p><span class="math display">\[
-z_\text{crit}-d\sqrt{n} = z_\beta \overset{(Symmetrie)}{=} -z_{1-\beta}
+d\sqrt{n}-z_\text{crit} = z_{1-\beta}
 \]</span></p>
 </div>
-<div style="margin-top: 30px">
-<p><span class="math display">\[
-\text{Es gilt also:}\quad d\sqrt{n} = z_\text{crit} + z_{1-\beta}
-\]</span></p>
-</div>
-<div style="margin-top: 5px">
+<div style="margin-top: 20px">
 <p><span class="math display">\[
 \text{Nach $n$ aufgelöst:}\quad n = \left(\frac{z_\text{crit} + z_{1-\beta}}{d}\right)^2
 \]</span></p>
-</div>
-</div><div class="column" style="width:35%;">
-<p><img data-src="images/z_symmetry.png" style="margin-top:-50px !important" height="330"></p>
-</div>
 </div>
 </section>
 <section class="slide level2">
