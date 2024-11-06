@@ -511,7 +511,7 @@ setup:
 <li class="fragment">Die Vorhersage/Erklärung von <span class="math inline">\(X\)</span> durch <span class="math inline">\(Y\)</span> geschieht durch eine Gleichung – die <strong>Regressionsgleichung</strong> – die im Streudiagramm als Gerade eingezeichnet werden kann.</li>
 </ul>
 </div><div class="column" style="width:40%;">
-<div style="margin-top: -25px">
+<div style="margin-top: -40px">
 <div class="fragment">
 <p><img data-src="images/regression_sports.png"></p>
 </div>
@@ -594,7 +594,7 @@ setup:
 <li class="fragment">in der Regel UV auf der x-Achse und AV auf der y-Achse</li>
 </ul>
 <div class="fragment">
-<p><img data-src="images/regression_scatter.png" style="margin-top: 20px !important" height="500"></p>
+<p><img data-src="images/regression_scatter_v2.png" style="margin-top: 20px !important" height="500"></p>
 </div>
 <!----------------->
 <!--- New slide --->
@@ -684,7 +684,7 @@ $$
 <ul>
 <li class="fragment">Die Methode der kleinsten Quadrate minimiert die <strong>Residuenquadratsumme (SQR)</strong>:</li>
 </ul>
-<div class="fragment" style="margin-top:-10px">
+<div class="fragment" style="margin-top:-20px">
 <p><span class="math display">\[
 SQR = \sum\left(\hat{y}_i-y_i\right)^2 = \sum\hat{\epsilon}_i^2
 \]</span></p>
@@ -727,7 +727,7 @@ SQR = \sum\left(\hat{y}_i-y_i\right)^2 = \sum\hat{\epsilon}_i^2
 </tr>
 </tbody>
 </table>
-<div class="fragment" style="margin-top:30px">
+<div class="fragment" style="margin-top:20px">
 <!---  Table --->
 <table>
 <caption>Es gilt</caption>
@@ -1096,7 +1096,7 @@ x_i = \frac{1}{\hat{b}_1}\hat{y}_i-\frac{\hat{b}_0}{\hat{b}_1}
 <li class="fragment">Die lineare Regression erweitert die Korrelation zu einer <span style=" color: navy !important;"><strong>Vorhersageanalyse</strong></span>: wenn Variablen korrelieren, lässt sich eine Variable aus der anderen vorhersagen.</li>
 <li class="fragment">Die Vorhersage basiert auf einer <span style=" color: navy !important;"><strong>Regressionsgerade</strong></span>, die alle Datenpunkte so gut wie möglich repräsentiert.</li>
 <li class="fragment">Die Regressionsgerade wird durch den <span style=" color: navy !important;"><strong>Achsenabschnitt</strong></span> <span class="math inline">\(\hat{b}_0\)</span> und die <span style=" color: navy !important;"><strong>Steigung</strong></span> <span class="math inline">\(\hat{b}_1\)</span> beschrieben.</li>
-<li class="fragment">Die standardisierte Form des Steigungs-Koeffizienten wird <span style=" color: navy !important;"><strong>Beta</strong></span> oder <span style=" color: navy !important;"><strong>Beta-Gewicht</strong></span> genannt und ist identisch dem Korrelationskoeffizienzen (bei einfacher Regression).</li>
+<li class="fragment">Die standardisierte Form des Steigungs-Koeffizienten wird <span style=" color: navy !important;"><strong>Beta</strong></span> bwz. <span class="math inline">\(\hat{\beta}_1\)</span> genannt und ist identisch dem Korrelationskoeffizienzen (bei einfacher Regression).</li>
 <li class="fragment">Das <span style=" color: navy !important;"><strong>Bestimmtheitsmaß</strong></span> <span class="math inline">\(R^2\)</span> bemisst die Vorhersagegenauigkeit der Regression.</li>
 <li class="fragment">Die Regression kann sowohl der <span style=" color: navy !important;"><strong>Vorhersage</strong></span> einer Variable <span class="math inline">\(Y\)</span> auf Basis einer Variable <span class="math inline">\(X\)</span> dienen, als auch der <span style=" color: navy !important;"><strong>Erklärung</strong></span> bzw. Beschreibung eines Zusammehangs von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>.</li>
 </ul>
@@ -1210,7 +1210,7 @@ SQR = \sum\left(\hat{y}_i-y_i\right)^2 = \sum\left(\hat{b}_0+\hat{b}_1 x_i-y_i\r
 <li class="fragment">SQR nach <span class="math inline">\(\hat{b}_1\)</span> ableiten und gleich Null setzen:</li>
 </ul>
 </div>
-<div class="fragment">
+<div class="fragment" style="margin-top: -15px !important">
 <p><span class="math display">\[
 \small{
 \frac{dSQR}{d\hat{b}_1} = \sum2(\hat{b}_0+\hat{b}_1 x_i-y_i)x_i=2\hat{b}_0\sum x_i + 2\hat{b}_1\sum x_i^2-2\sum x_i y_i = 0
@@ -1254,7 +1254,7 @@ b_1 \left(\frac{\sum x_i^2}{\sum x_i^2} - \frac{\bar{x}\sum x_i}{\sum x_i^2}\rig
 }
 \]</span></p>
 </div>
-<div class="fragment" style="margin-left: -100px">
+<div class="fragment" style="margin-left: -100px; margin-top:-10px">
 <p><span class="math display">\[
 \scriptsize{
 \longrightarrow    
