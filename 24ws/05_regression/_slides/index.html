@@ -443,41 +443,38 @@ setup:
     - element: "#resultsbg"
       modifier: function() { this.node.style.fill = '#d8ffe2';}
 ``` -->
-<aside></aside></section>
-<section class="slide level2">
-<h2>Woher kommt der Ausdruck “Regression”?</h2>
-<ul>
-<li class="fragment">Lateinisch »regredi« = „umkehren, zurückgehen“</li>
-<li class="fragment">Psychoanalyse: Regression = Zurückfallen in kindliche Verhaltensmuster</li>
-</ul>
-<div class="fragment">
-<blockquote>
-<p>Wir heißen es <strong>Regression</strong>, wenn sich im Traum die Vorstellung in das sinnliche Bild zurückverwandelt, aus dem sie irgend einmal hervorgegangen ist.</p>
-</blockquote>
-<p><span class="quote-citation">Sigmund Freud (1900). “Traumdeutung”.</span></p>
-</div>
-<div class="columns">
-<div class="column" style="width:70%;">
-<ul>
-<li class="fragment">In die Statistik wird der Ausdruck “Regression” klassischerweise auf <strong>Francis Galton</strong> (Cousin von Charles Darwin) attribuiert, der bereits 1885 ein Phänomen beschrieb, das er <em>regression toward mediocrity</em> (<strong>Regression zur Mitte</strong>) taufte</li>
-<li class="fragment">Das Phänomen bestand darin, dass Nachfahren großer Eltern dazu tendieren, selbst nur durchschnittlich groß zu werden</li>
-<li class="fragment">Neuere Forschung zeigt allerdings, dass sich Galton selbst wohl noch nicht des statistischen Ursprungs dieses Phänomens bewusst war und eine biologische Erklärung favorisierte<a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a>.</li>
-</ul>
-</div><div class="column" style="width:30%;">
-<div class="fragment">
-<p><img data-src="images/galton.png"></p>
-</div>
-</div>
-</div>
+<!-- ## Woher kommt der Ausdruck "Regression"?
+
+- Lateinisch »regredi« = „umkehren, zurückgehen“
+- Psychoanalyse: Regression = Zurückfallen in kindliche Verhaltensmuster
+
+:::{.fragment}
+> Wir heißen es **Regression**, wenn sich im Traum die Vorstellung in das sinnliche Bild zurückverwandelt, aus dem sie irgend einmal hervorgegangen ist.
+
+[Sigmund Freud (1900). "Traumdeutung".]{.quote-citation}
+:::
+
+:::: {.columns}
+::: {.column width="70%"}
+- In die Statistik wird der Ausdruck "Regression" klassischerweise auf **Francis Galton** (Cousin von Charles Darwin) attribuiert, der bereits 1885 ein Phänomen beschrieb, das er *regression toward mediocrity* (**Regression zur Mitte**) taufte
+- Das Phänomen bestand darin, dass Nachfahren großer Eltern dazu tendieren, selbst nur durchschnittlich groß zu werden
+- Neuere Forschung zeigt allerdings, dass sich Galton selbst wohl noch nicht des statistischen Ursprungs dieses Phänomens bewusst war und eine biologische Erklärung favorisierte^[Krashniak A, Lamm E (2021) Francis Galton’s regression towards mediocrity and the stability of types. Studies in History and Philosophy of Science Part A 86:6–19.].
+:::
+::: {.column width="30%"}
+:::{.fragment}
+![](images/galton.png)
+:::
+:::
+:::: -->
 <aside></aside></section>
 <section class="slide level2">
 <h2>Regression</h2>
 <ul>
-<li class="fragment">Dem Wortsinn nach ist Ziel der <span style=" color: navy !important;"><strong>Regression</strong></span> eine abhängige Variable auf eine oder mehrere unabhängige Variablen zurückzuführen (auf diese zu <em>regredieren</em>).</li>
-<li class="fragment">Eingängiger ist aber die umgekehrte Formulierung: Ziel der Regression ist es, auf Basis der unabhängigen Variablen die abhängige Variable <strong>vorherzusagen</strong> oder <strong>zu erklären</strong>:
+<li class="fragment">Dem Wortsinn nach ist Ziel der <span style=" color: navy !important;"><strong>Regression</strong></span> eine abhängige Variable auf eine oder mehrere Prädiktorvariablen zurückzuführen (auf diese zu <em>regredieren</em>).</li>
+<li class="fragment">Eingängiger ist aber die umgekehrte Formulierung: Ziel der Regression ist es, auf Basis der Prädiktorariablen die abhängige Variable <strong>vorherzusagen</strong> oder <strong>zu erklären</strong>:
 <ul>
-<li class="fragment"><strong>Unabhängige Variable(n) = vorher<em>sagende</em> oder erklär<em>ende</em> Variable(n)</strong> (“<strong>U</strong>rsache”).</li>
-<li class="fragment"><strong>Abhängige Variable = vorher<em>gesagte</em> oder erklär<em>te</em> Variable</strong> (“<strong>A</strong>uswirkung”).</li>
+<li class="fragment"><strong>Prädiktorvariable(n) = vorher<em>sagende</em> oder erklär<em>ende</em> Variable(n)</strong>.</li>
+<li class="fragment"><strong>Abhängige Variable = vorher<em>gesagte</em> oder erklär<em>te</em> Variable</strong>.</li>
 </ul></li>
 </ul>
 <div class="fragment">
@@ -485,10 +482,10 @@ setup:
 </div>
 <div style="margin-top: -5px">
 <ul>
-<li class="fragment">Beispiel: Studie untersucht Zusammenhang von Lebenszufriedenheit und sportlicher Aktivität.
+<li class="fragment">Beispiel: Studie untersucht Auswirkung von sportlicher Aktivität auf Lebenszufriedenheit.
 <ul>
-<li class="fragment"><strong>Lebenszufriedenheit:</strong> unabhängige/vorhersagende/erklärende Variable.</li>
-<li class="fragment"><strong>Sportliche Aktivität:</strong> abhängige/vorhergesagte/erklärte Variable.</li>
+<li class="fragment"><strong>Sportliche Aktivität:</strong> vorhersagende/erklärende (Prädiktor-)Variable.</li>
+<li class="fragment"><strong>Lebenszufriedenheit:</strong> vorhergesagte/erklärte Variable.</li>
 </ul></li>
 </ul>
 </div>
@@ -499,7 +496,7 @@ setup:
 <div class="column" style="width:70%;">
 <ul>
 <li class="fragment">Im Gegensatz zur Korrelation bestimmt die Regression nicht die Linearität des Zusammenhangs (vielmehr wird dies vorausgesetzt), sondern die <strong>Steigung</strong> des Zusammenhangs.</li>
-<li class="fragment">Aus diesem Grund ist die Regression (wieder im Gegensatz zur Korrelation) nicht symmetrisch – die Steigung ist abhängig davon welche Variable als abhängig und unabhängig deklariert wird.
+<li class="fragment">Aus diesem Grund ist die Regression (wieder im Gegensatz zur Korrelation) nicht symmetrisch – die Steigung ist abhängig davon welche Variable als abhängig oder Prädiktor deklariert wird.
 <ul>
 <li class="fragment">Wie wir noch sehen werden, ist es auch nicht gestattet, die Regressionsgleichung zu invertieren ( <span class="math inline">\(x_i = \frac{1}{\hat{b}_1}\hat{y}_i-\frac{\hat{b}_0}{\hat{b}_1}\)</span>) — im Allgemeinen ist <span class="math inline">\(\frac{1}{\hat{b}_1}\)</span> <em>nicht</em> die Steigung, wenn die Rollen von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> vertauscht werden.</li>
 </ul></li>
@@ -538,7 +535,7 @@ setup:
 </div>
 </div>
 <ul>
-<li class="fragment">Die <strong>einfache Regression</strong> mit nur einer unabhängigen Variablen hat zwei freie Parameter, um die Gerade an die Datenpunkte anzupassen (zu “fitten”):
+<li class="fragment">Die <strong>einfache Regression</strong> mit nur einer Prädiktorvariablen hat zwei freie Parameter, um die Gerade an die Datenpunkte anzupassen (zu “fitten”):
 <ul>
 <li class="fragment"><strong>y-Achsenabschnitt</strong> <span class="math inline">\(\hat{b}_0\)</span> (engl. <em>intercept</em>)</li>
 <li class="fragment"><strong>Steigung</strong> <span class="math inline">\(\hat{b}_1\)</span> (engl. <em>slope</em>)</li>
@@ -548,12 +545,12 @@ setup:
 </ul>
 </section>
 <section class="slide level2">
-<h2>Warum weichen die Datenpunkte überhaupt von einer Geraden ab?</h2>
+<h2>Warum weichen die Datenpunkte von einer Geraden ab?</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p>Verschiedene Gründe:</p>
 <ul>
-<li class="fragment">Variablen hängen gar nicht zusammen</li>
+<li class="fragment">Variablen hängen überhaupt nicht zusammen</li>
 <li class="fragment">Zusammenhang ist nichtlinear</li>
 <li class="fragment">Einfluss von Störvariablen</li>
 <li class="fragment">Messungenauigkeit</li>
@@ -779,7 +776,7 @@ R^2 = \frac{Var(\hat{Y})}{Var(Y)} = \frac{\sum\left(\hat{y_i}-\bar{y}\right)^2}{
 <p><img data-src="images/merke.png" height="55"></p>
 </div>
 </div><div class="column" style="width:95%;">
-<p>Bei einer einfachen Regression gilt: <span class="math inline">\(R^2 = \rho^2\)</span><br> Das Bestimmtheitsmaß ist bei einer einfachen Regression also identisch dem quadrierten Korrelationskoeffizienten zwischen den Variablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>!</p>
+<p>Bei einer einfachen Regression gilt: <span class="math inline">\(R^2 = \rho^2\qquad\)</span> Siehe <a href="#/rEqualsR2" style="color: darkred">Herleitung</a>.<br> Das Bestimmtheitsmaß ist bei einer einfachen Regression also identisch dem quadrierten Korrelationskoeffizienten zwischen den Variablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>!</p>
 </div>
 </div>
 </div>
@@ -809,7 +806,7 @@ R^2 = \frac{Var(\hat{Y})}{Var(Y)} = \frac{\sum\left(\hat{y_i}-\bar{y}\right)^2}{
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/coefficient_of_determination_examples.png"></p>
-<figcaption>Beispiele für zwei Regressionen mit Bestimmtheitsmaß <span class="math inline">\(R^2=98{,}92\%\)</span> und <span class="math inline">\(R^2=57{,}13\%\)</span>. Selbst das schwächere Beispiel mit <span class="math inline">\(57{,}13\)</span> wäre für typische Effekte in der Psychologie noch ein außerordentlich hoher Wert.<a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a></figcaption>
+<figcaption>Beispiele für zwei Regressionen mit Bestimmtheitsmaß <span class="math inline">\(R^2=98{,}92\%\)</span> und <span class="math inline">\(R^2=57{,}13\%\)</span>. Selbst das schwächere Beispiel mit <span class="math inline">\(57{,}13\)</span> wäre für typische Effekte in der Psychologie noch ein außerordentlich hoher Wert.<a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a></figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -823,12 +820,12 @@ R^2 = \frac{Var(\hat{Y})}{Var(Y)} = \frac{\sum\left(\hat{y_i}-\bar{y}\right)^2}{
 <aside></aside></section>
 <section class="slide level2">
 <h2><span style="font-size:38px">Analytische Form der Regressionskoeffizienten (einfache Regression)</span></h2>
-<p>Die <span style=" color: navy !important;"><strong>Regressionskoeffizienten</strong></span> <span class="math inline">\(b_0\)</span> (Achsenabschnitt) und <span class="math inline">\(b_1\)</span> (Steigung) lassen sich analytisch herleiten:</p>
+<p>Die <span style=" color: navy !important;"><strong>Regressionskoeffizienten</strong></span> <span class="math inline">\(b_0\)</span> (Achsenabschnitt) und <span class="math inline">\(b_1\)</span> (Steigung) lassen sich analytisch <a href="#/deriveCoef" style="color: darkred">herleiten</a>:</p>
 <p><img data-src="images/regression_derivation3_dach.png" height="150"></p>
 <ul>
 <li class="fragment">Aus den Mittelwerten und der Kovarianz von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>, sowie der Varianz von <span class="math inline">\(X\)</span>, lassen sich also die Regressionskoeffizienten vollständig bestimmen.</li>
-<li class="fragment">Auch hier zeigt sich wieder die Assymmetrie der Regression: während bei der Formel für die Pearson-Korrelation <span class="math inline">\(\hat{\rho}\)</span> der symmetrische Ausdruck <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sigma_{\mkern-2mu\scriptscriptstyle{Y}}\)</span> im Nenner steht, ist es beim Steigungskoeffizienten <span class="math inline">\(\hat{b}_1\)</span> lediglich die Varianz der unabhängigen Variable <span class="math inline">\(Var(X)\)</span>.</li>
-<li class="fragment">Wäre stattdessen <span class="math inline">\(Y\)</span> die unabhängige Variable, stünde <span class="math inline">\(Var(Y)\)</span> im Nenner, und <span class="math inline">\(\hat{b}_1\)</span> hätte i.d.R. einen anderen Wert.
+<li class="fragment">Auch hier zeigt sich wieder die Asymmetrie der Regression: während bei der Formel für die Pearson-Korrelation <span class="math inline">\(\hat{\rho}\)</span> der symmetrische Ausdruck <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sigma_{\mkern-2mu\scriptscriptstyle{Y}}\)</span> im Nenner steht, ist es beim Steigungskoeffizienten <span class="math inline">\(\hat{b}_1\)</span> lediglich die Varianz der Prädiktorvariable <span class="math inline">\(Var(X)\)</span>.</li>
+<li class="fragment">Wäre stattdessen <span class="math inline">\(Y\)</span> die Prädiktorvariable, stünde <span class="math inline">\(Var(Y)\)</span> im Nenner, und <span class="math inline">\(\hat{b}_1\)</span> hätte i.d.R. einen anderen Wert.
 <ul>
 <li class="fragment">Dies ist auch der Grund, weshalb die Regressionsgleichung nicht einfach invertiert werden darf:</li>
 </ul></li>
@@ -840,7 +837,7 @@ R^2 = \frac{Var(\hat{Y})}{Var(Y)} = \frac{\sum\left(\hat{y_i}-\bar{y}\right)^2}{
 \cancel{
 x_i = \frac{1}{\hat{b}_1}\hat{y}_i-\frac{\hat{b}_0}{\hat{b}_1}
 }\\
-\left(\text{.. und }\frac{1}{\hat{b}_1}\text{ im Allgemeinen }\textbf{nicht}\text{ der Steigungskoeffizient für $Y$ als unabhängige Variable ist.}\right)
+\left(\text{.. und }\frac{1}{\hat{b}_1}\text{ im Allgemeinen }\textbf{nicht}\text{ der Steigungskoeffizient für $Y$ als Prädiktorvariable ist.}\right)
 }
 \]</span></p>
 </div>
@@ -968,15 +965,15 @@ x_i = \frac{1}{\hat{b}_1}\hat{y}_i-\frac{\hat{b}_0}{\hat{b}_1}
 <p>.. erinnert an die Formel der Korrelation, bei der die Kovarianz ebenfalls standardisiert wird (mit <span class="math inline">\(\frac{1}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\)</span>)</p>
 </div>
 <ul>
-<li class="fragment">Der entscheidende Unterschied ist, dass bei der Korrelation eine Standardisierung bezüglich <em>beider</em> Variablen vorgenommen wird, bei der Regression aber nur bezüglich der <em>unabhängigen</em> Variable.</li>
+<li class="fragment">Der entscheidende Unterschied ist, dass bei der Korrelation eine Standardisierung bezüglich <em>beider</em> Variablen vorgenommen wird, bei der Regression aber nur bezüglich der <em>Prädiktor</em>variable.</li>
 <li class="fragment">In der Folge wird bei der Regression folgende Frage beantwortet:</li>
 </ul>
 <blockquote>
-<p>Was ist die Auswirkung einer Änderung der unabhängigen Variable <span class="math inline">\(X\)</span> um 1 (<strong>einheitslos!</strong>) auf die abhängige Variable <span class="math inline">\(Y\)</span> (<strong>in deren Rohwerteinheiten!</strong>).</p>
+<p>Was ist die Auswirkung einer Änderung der Prädiktorvariable <span class="math inline">\(X\)</span> um 1 (<strong>einheitslos!</strong>) auf die abhängige Variable <span class="math inline">\(Y\)</span> (<strong>in deren Rohwerteinheiten!</strong>).</p>
 </blockquote>
 <ul>
-<li class="fragment">Auch hier wird wieder deutlich, dass bei der Regression eine feste Rollenverteilung vorgenommen wird: nur die unabhängige Variable wird standardisiert.</li>
-<li class="fragment">Da die Steigung also von der Varianz der unabhängigen Variable abhängt, ist es nicht zulässig anzunehmen, dass <span class="math inline">\(\frac{1}{\hat{b}_1}\)</span> einfach die Steigung wäre, wenn <span class="math inline">\(Y\)</span> die unabhängige und <span class="math inline">\(X\)</span> die abhängige Variable ist. Für die umgekehrte Steigung müssten wir schließlich die Varianz von <span class="math inline">\(Y\)</span> berücksichtigen!</li>
+<li class="fragment">Auch hier wird wieder deutlich, dass bei der Regression eine feste Rollenverteilung vorgenommen wird: nur die Prädiktorvariable wird standardisiert.</li>
+<li class="fragment">Da die Steigung also von der Varianz der Prädiktorvariable abhängt, ist es nicht zulässig anzunehmen, dass <span class="math inline">\(\frac{1}{\hat{b}_1}\)</span> einfach die Steigung wäre, wenn <span class="math inline">\(Y\)</span> die Prädiktorvariable und <span class="math inline">\(X\)</span> die abhängige Variable ist. Für die umgekehrte Steigung müssten wir schließlich die Varianz von <span class="math inline">\(Y\)</span> berücksichtigen!</li>
 </ul>
 <!----------------->
 <!--- New slide --->
@@ -985,7 +982,7 @@ x_i = \frac{1}{\hat{b}_1}\hat{y}_i-\frac{\hat{b}_0}{\hat{b}_1}
 <section class="slide level2">
 <h2>Ausblick: Multiple Regression</h2>
 <ul>
-<li class="fragment">Gibt es mehr als eine <strong>unabhängige Variable</strong> (auch <strong>Prädiktoren</strong> genannt), handelt es sich nicht mehr um eine einfache Regression, sondern um eine <span style=" color: navy !important;"><strong>multiple Regression</strong></span>:</li>
+<li class="fragment">Gibt es mehr als eine <strong>Prädiktorvariable</strong>, handelt es sich nicht mehr um eine einfache Regression, sondern um eine <span style=" color: navy !important;"><strong>multiple Regression</strong></span>:</li>
 </ul>
 <div class="vspace-medium">
 
@@ -1013,7 +1010,7 @@ x_i = \frac{1}{\hat{b}_1}\hat{y}_i-\frac{\hat{b}_0}{\hat{b}_1}
 
 </div>
 <div class="fragment">
-<p><img data-src="images/patsy_simple_dach.png"></p>
+<p><img data-src="images/patsy_simple_dach_v2.png"></p>
 </div>
 <div class="vspace-medium">
 
@@ -1031,7 +1028,7 @@ x_i = \frac{1}{\hat{b}_1}\hat{y}_i-\frac{\hat{b}_0}{\hat{b}_1}
 </div>
 </div><div class="column" style="width:90%;">
 <p><span style="font-family:monospace">“satisfaction ∼ 1 + physical_activity”</span><br>
-<span style="display:block;margin-top:12px;line-height:1.1">Dies wäre eine mögliche Definition unserer einfachen Regression mit sportlicher Aktivität als unabhängiger und Lebenszufriedenheit als abhängiger Variable.</span></p>
+<span style="display:block;margin-top:12px;line-height:1.1">Dies wäre eine mögliche Definition unserer einfachen Regression mit sportlicher Aktivität als Prädiktor und Lebenszufriedenheit als abhängiger Variable.</span></p>
 </div>
 </div>
 </div>
@@ -1164,7 +1161,7 @@ plt.savefig('images/paradoxia_slope_paradoxiker.png', bbox_inches='tight')
 </div>
 <div class="columns">
 <div class="column" style="width:68%;">
-<p>Sie führen nun eine Regressionsanalyse bezüglich des Zusammenhangs von TikTok-Online-Zeit und Entzündungswerten durch. Einmal mit TikTok-Online-Zeit und einmal mit Entzündungswerten als unabhängiger Variable:</p>
+<p>Sie führen nun eine Regressionsanalyse bezüglich des Zusammenhangs von TikTok-Online-Zeit und Entzündungswerten durch. Einmal mit TikTok-Online-Zeit und einmal mit Entzündungswerten als Prädiktorvariable:</p>
 </div><div class="column" style="width:32%;">
 <p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-50px !important" height="200"> <!-- Source: Midjourney --></p>
 </div>
@@ -1183,7 +1180,7 @@ plt.savefig('images/paradoxia_slope_paradoxiker.png', bbox_inches='tight')
 <!--- New slide --->
 <!----------------->
 </section>
-<section class="slide level2">
+<section id="deriveCoef" class="slide level2">
 <h2><span style=" color: darkred !important;">Herleitung der Regressionskoeffizienten</span></h2>
 <ul>
 <li class="fragment">Die Methode der kleinsten Quadrate entspricht der Minimierung der quadratischen Residuen: <span class="math display">\[
@@ -1316,7 +1313,7 @@ Var(X) &amp;= \frac{1}{n}\sum\left(x_i-\bar{x}\right)^2 = \frac{1}{n}\sum\left(x
 <!--- New slide --->
 <!----------------->
 </section>
-<section class="slide level2">
+<section id="rEqualsR2" class="slide level2">
 <h2><span style=" color: darkred !important;">Beweis, dass <span class="math inline">\(R^2=\hat{\rho}^2\)</span> bei einfacher Regression</span></h2>
 <ul>
 <li class="fragment">Ausgestattet mit der Formel für den Regressionskoeffizienten, lässt sich nun auch beweisen, dass bei der einfachen Regression gilt: <span class="math inline">\(\quad \color{darkblue}{R^2=\hat{\rho}^2}\)</span></li>
@@ -1361,8 +1358,7 @@ R^2 = \frac{Var(\hat{Y})}{Var(Y)} &amp;= \frac{\frac{1}{n}\sum\left(\hat{y}_i-\b
 
 <ol>
 <li id="fn1"><p>https://flowingdata.com/2014/06/25/duck-vs-rabbit-plot/</p></li>
-<li id="fn2"><p>Krashniak A, Lamm E (2021) Francis Galton’s regression towards mediocrity and the stability of types. Studies in History and Philosophy of Science Part A 86:6–19.</p></li>
-<li id="fn3"><p>https://de.wikipedia.org/wiki/Datei:R2values.svg</p></li>
+<li id="fn2"><p>https://de.wikipedia.org/wiki/Datei:R2values.svg</p></li>
 </ol>
 </section>
     </div>
