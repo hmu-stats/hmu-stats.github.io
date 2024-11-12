@@ -776,7 +776,7 @@ R^2 = \frac{Var(\hat{Y})}{Var(Y)} = \frac{\sum\left(\hat{y_i}-\bar{y}\right)^2}{
 <p><img data-src="images/merke.png" height="55"></p>
 </div>
 </div><div class="column" style="width:95%;">
-<p>Bei einer einfachen Regression gilt: <span class="math inline">\(R^2 = \rho^2\qquad\)</span> Siehe <a href="#/rEqualsR2" style="color: darkred">Herleitung</a>.<br> Das Bestimmtheitsmaß ist bei einer einfachen Regression also identisch dem quadrierten Korrelationskoeffizienten zwischen den Variablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>!</p>
+<p>Bei einer einfachen Regression gilt: <span class="math inline">\(R^2 = \hat{\rho}^2\qquad\)</span> Siehe <a href="#/rEqualsR2" style="color: darkred">Herleitung</a>.<br> Das Bestimmtheitsmaß ist bei einer einfachen Regression also identisch dem quadrierten Korrelationskoeffizienten zwischen den Variablen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>!</p>
 </div>
 </div>
 </div>
@@ -791,7 +791,7 @@ R^2 = \frac{Var(\hat{Y})}{Var(Y)} = \frac{\sum\left(\hat{y_i}-\bar{y}\right)^2}{
 <p><img data-src="images/example.png" height="70"></p>
 </div>
 </div><div class="column" style="width:90%;">
-<p>Lebenszufriedenheit und sportliche Aktivität haben eine Korrelation von <span class="math inline">\(\rho=0.8\)</span>.<br>⇒ Sportliche Aktivität erklärt <span class="math inline">\(\;\rho^2=0.64\;\widehat{=}\;64\%\)</span> der Varianz von Lebenszufriedenheit (und umgekehrt).</p>
+<p>Lebenszufriedenheit und sportliche Aktivität haben eine Korrelation von <span class="math inline">\(\hat{\rho}=0.8\)</span>.<br>⇒ Sportliche Aktivität erklärt <span class="math inline">\(\;\hat{\rho}^2=0.64\;\widehat{=}\;64\%\)</span> der Varianz von Lebenszufriedenheit (und umgekehrt).</p>
 </div>
 </div>
 </div>
@@ -820,12 +820,12 @@ R^2 = \frac{Var(\hat{Y})}{Var(Y)} = \frac{\sum\left(\hat{y_i}-\bar{y}\right)^2}{
 <aside></aside></section>
 <section class="slide level2">
 <h2><span style="font-size:38px">Analytische Form der Regressionskoeffizienten (einfache Regression)</span></h2>
-<p>Die <span style=" color: navy !important;"><strong>Regressionskoeffizienten</strong></span> <span class="math inline">\(b_0\)</span> (Achsenabschnitt) und <span class="math inline">\(b_1\)</span> (Steigung) lassen sich analytisch <a href="#/deriveCoef" style="color: darkred">herleiten</a>:</p>
+<p>Die <span style=" color: navy !important;"><strong>Regressionskoeffizienten</strong></span> <span class="math inline">\(\hat{b}_0\)</span> (Achsenabschnitt) und <span class="math inline">\(\hat{b}_1\)</span> (Steigung) lassen sich analytisch <a href="#/deriveCoef" style="color: darkred">herleiten</a>:</p>
 <p><img data-src="images/regression_derivation3_dach.png" height="150"></p>
 <ul>
 <li class="fragment">Aus den Mittelwerten und der Kovarianz von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>, sowie der Varianz von <span class="math inline">\(X\)</span>, lassen sich also die Regressionskoeffizienten vollständig bestimmen.</li>
-<li class="fragment">Auch hier zeigt sich wieder die Asymmetrie der Regression: während bei der Formel für die Pearson-Korrelation <span class="math inline">\(\hat{\rho}\)</span> der symmetrische Ausdruck <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sigma_{\mkern-2mu\scriptscriptstyle{Y}}\)</span> im Nenner steht, ist es beim Steigungskoeffizienten <span class="math inline">\(\hat{b}_1\)</span> lediglich die Varianz der Prädiktorvariable <span class="math inline">\(Var(X)\)</span>.</li>
-<li class="fragment">Wäre stattdessen <span class="math inline">\(Y\)</span> die Prädiktorvariable, stünde <span class="math inline">\(Var(Y)\)</span> im Nenner, und <span class="math inline">\(\hat{b}_1\)</span> hätte i.d.R. einen anderen Wert.
+<li class="fragment">Auch hier zeigt sich wieder die Asymmetrie der Regression: während bei der Formel für die Pearson-Korrelation <span class="math inline">\(\hat{\rho}\)</span> der symmetrische Ausdruck <span class="math inline">\(\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}\)</span> im Nenner steht, ist es beim Steigungskoeffizienten <span class="math inline">\(\hat{b}_1\)</span> lediglich die Varianz der Prädiktorvariable <span class="math inline">\(\hat{Var}(X)\)</span>.</li>
+<li class="fragment">Wäre stattdessen <span class="math inline">\(Y\)</span> die Prädiktorvariable, stünde <span class="math inline">\(\hat{Var}(Y)\)</span> im Nenner, und <span class="math inline">\(\hat{b}_1\)</span> hätte i.d.R. einen anderen Wert.
 <ul>
 <li class="fragment">Dies ist auch der Grund, weshalb die Regressionsgleichung nicht einfach invertiert werden darf:</li>
 </ul></li>
@@ -850,14 +850,14 @@ x_i = \frac{1}{\hat{b}_1}\hat{y}_i-\frac{\hat{b}_0}{\hat{b}_1}
 <ul>
 <li class="fragment"><p>Folgendener Zusammenhang gilt zwischen der Steigung <span class="math inline">\(b_1\)</span> und dem Korrelationskoeffizienten <span class="math inline">\(r\)</span>: <span class="math display">\[
 \displaystyle{
-\hat{b}_1 = \frac{Cov(X,Y)}{Var(X)} = \frac{Cov(X,Y)}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}^2} = \underbrace{\frac{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}}_{1}\frac{Cov(X,Y)}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sigma_{\mkern-2mu\scriptscriptstyle{X}}} = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}\underbrace{\frac{Cov(X,Y)}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}}_{\hat{\rho}} = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}\hat{\rho}
+\hat{b}_1 = \frac{\hat{Cov}(X,Y)}{\hat{Var}(X)} = \frac{\hat{Cov}(X,Y)}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}^2} = \underbrace{\frac{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}}_{1}\frac{\hat{Cov}(X,Y)}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}} = \frac{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}}\underbrace{\frac{\hat{Cov}(X,Y)}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}}_{\hat{\rho}} = \frac{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}}\hat{\rho}
 }
 \]</span></p></li>
 <li class="fragment"><p>Es gilt also</p></li>
 </ul>
-<div class="fragment" style="margin-top: -15px">
+<div class="fragment" style="margin-top: -30px">
 <p><span class="math display">\[
-\hat{b}_1 = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}\hat{\rho}\qquad\quad\text{bzw.}\qquad \hat{\rho} = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1
+\hat{b}_1 = \frac{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}}\hat{\rho}\qquad\quad\text{bzw.}\qquad \hat{\rho} = \frac{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1
 \]</span></p>
 </div>
 <div class="merke fragment">
@@ -867,7 +867,7 @@ x_i = \frac{1}{\hat{b}_1}\hat{y}_i-\frac{\hat{b}_0}{\hat{b}_1}
 <p><img data-src="images/merke.png" height="55"></p>
 </div>
 </div><div class="column" style="width:95%;">
-<p>Sind die Standardabweichungen <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}\)</span> und <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{Y}}\)</span> bekannt, kann aus der Steigung <span class="math inline">\(\hat{b}_1\)</span> der Regression immer auch der Korrelationskoeffizient <span class="math inline">\(\hat{\rho}\)</span> bestimmt werden (und umgekehrt).</p>
+<p>Sind die Standardabweichungen <span class="math inline">\(\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}\)</span> und <span class="math inline">\(\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}\)</span> bekannt, kann aus der Steigung <span class="math inline">\(\hat{b}_1\)</span> der Regression immer auch der Korrelationskoeffizient <span class="math inline">\(\hat{\rho}\)</span> bestimmt werden (und umgekehrt).</p>
 </div>
 </div>
 </div>
@@ -875,11 +875,11 @@ x_i = \frac{1}{\hat{b}_1}\hat{y}_i-\frac{\hat{b}_0}{\hat{b}_1}
 
 </div>
 <ul>
-<li class="fragment">Der Ausruck <span class="math inline">\(\frac{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1\)</span> wird auch <span style=" color: navy !important;"><strong>standardisierter Regressionskoeffizient</strong></span> <span class="math inline">\(\hat{\beta}_1\)</span> genannt:</li>
+<li class="fragment">Der Ausruck <span class="math inline">\(\frac{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1\)</span> wird auch <span style=" color: navy !important;"><strong>standardisierter Regressionskoeffizient</strong></span> <span class="math inline">\(\hat{\beta}_1\)</span> genannt:</li>
 </ul>
 <div class="fragment" style="margin-top:-15px">
 <p><span class="math display">\[
-    \hat{\beta}_1 = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1
+    \hat{\beta}_1 = \frac{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1
 \]</span></p>
 </div>
 <ul>
@@ -893,7 +893,7 @@ x_i = \frac{1}{\hat{b}_1}\hat{y}_i-\frac{\hat{b}_0}{\hat{b}_1}
 <section class="slide level2">
 <h2>Standardisierter Regressionskoeffizient</h2>
 <ul>
-<li class="fragment">Wie gesehen erhält man den <strong>standardisierten Regressionskoeffizienten</strong> <span class="math inline">\(\hat{\beta}\)</span> durch die Transformation <span class="math inline">\(\hat{\beta}_1 = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1\)</span>.</li>
+<li class="fragment">Wie gesehen erhält man den <strong>standardisierten Regressionskoeffizienten</strong> <span class="math inline">\(\hat{\beta}\)</span> durch die Transformation <span class="math inline">\(\hat{\beta}_1 = \frac{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1\)</span>.</li>
 <li class="fragment">Im Gegensatz zu <span class="math inline">\(\hat{b}_1\)</span> ist <span class="math inline">\(\hat{\beta}_1\)</span> unabhängig von der Skalierung von <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> (also z.B. ob die Einheit als <span class="math inline">\(cm\)</span> oder <span class="math inline">\(m\)</span> gewählt wurde) ⇒ <span class="math inline">\(\hat{\beta}\)</span>-Koeffizienten lassen sich besser zwischen verschiedenen Regressionen vergleichen.</li>
 </ul>
 <!---  Table --->
@@ -911,7 +911,7 @@ x_i = \frac{1}{\hat{b}_1}\hat{y}_i-\frac{\hat{b}_0}{\hat{b}_1}
 </tr>
 <tr class="even">
 <td><span class="math inline">\(\hat{\beta}_1\)</span></td>
-<td>Veränderung von <span class="math inline">\(Y\)</span> in Standardabweichungen (<span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{Y}}\)</span>) bei einer Änderung von <span class="math inline">\(X\)</span> um <em>eine</em> Standardabweichung <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}\)</span>.</td>
+<td>Veränderung von <span class="math inline">\(Y\)</span> in Standardabweichungen (<span class="math inline">\(\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}\)</span>) bei einer Änderung von <span class="math inline">\(X\)</span> um <em>eine</em> Standardabweichung <span class="math inline">\(\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}\)</span>.</td>
 </tr>
 </tbody>
 </table>
@@ -921,32 +921,10 @@ x_i = \frac{1}{\hat{b}_1}\hat{y}_i-\frac{\hat{b}_0}{\hat{b}_1}
 </ul>
 <div class="fragment" style="margin-top: -10px">
 <p><span class="math display">\[
-\hat{\beta}_1 = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1 = \frac{1}{1}\hat{b}_1 = \hat{b}_1
+\hat{\beta}_1 = \frac{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1 \overset{(\hat{\sigma}=\frac{n-1}{n}\sigma)}{=} \frac{\frac{n-1}{n}\sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\frac{n-1}{n}\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1 = \frac{\sigma_{\mkern-2mu\scriptscriptstyle{X}}}{\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\hat{b}_1 = \frac{1}{1}\hat{b}_1 = \hat{b}_1
 \]</span></p>
 </div>
-<div class="definition fragment">
-<!---  Definition--->
-<table>
-<colgroup>
-<col style="width: 9%">
-<col style="width: 91%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
-<td><strong>Standardisierung einer Variable <span class="math inline">\(X\)</span></strong> = Variable <span class="math inline">\(X\)</span> durch Stichprobenstandardabweichung <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}\)</span> teilen. Für die Variable <span class="math inline">\(X\)</span> gilt nach der Standardisierung <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}=1\)</span>.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
+<p>Zur Erinnerung: die Standardisierung basiert auf der Stichprobenstandardabweichung (ohne ^).</p>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -958,11 +936,11 @@ x_i = \frac{1}{\hat{b}_1}\hat{y}_i-\frac{\hat{b}_0}{\hat{b}_1}
 </ul>
 <div class="fragment" style="margin-top:-20px">
 <p><span class="math display">\[
-\hat{b}_1 = \frac{Cov(X,Y)}{Var(X)}
+\hat{b}_1 = \frac{\hat{Cov}(X,Y)}{\hat{Var}(X)}
 \]</span></p>
 </div>
 <div class="fragment">
-<p>.. erinnert an die Formel der Korrelation, bei der die Kovarianz ebenfalls standardisiert wird (mit <span class="math inline">\(\frac{1}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}\sigma_{\mkern-2mu\scriptscriptstyle{Y}}}\)</span>)</p>
+<p>.. erinnert an die Formel der Korrelation, bei der die Kovarianz ebenfalls standardisiert wird (mit <span class="math inline">\(\frac{1}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}\)</span>)</p>
 </div>
 <ul>
 <li class="fragment">Der entscheidende Unterschied ist, dass bei der Korrelation eine Standardisierung bezüglich <em>beider</em> Variablen vorgenommen wird, bei der Regression aber nur bezüglich der <em>Prädiktor</em>variable.</li>
@@ -1306,7 +1284,7 @@ Var(X) &amp;= \frac{1}{n}\sum\left(x_i-\bar{x}\right)^2 = \frac{1}{n}\sum\left(x
 </ul>
 <div class="fragment" style="margin-top:-20px">
 <p><span class="math display">\[
-\color{darkblue}{b_1 = \frac{Cov(X,Y)}{Var(X)}}
+\color{darkblue}{b_1 = \frac{Cov(X,Y)}{Var(X)} \overset{(\text{identisch})}{=} \frac{\hat{Cov}(X,Y)}{\hat{Var}(X)}}
 \]</span></p>
 </div>
 <!----------------->
