@@ -401,6 +401,37 @@ Zurück zur **theoretischen Stichprobenverteilung**. Alle Erkenntnisse über die
 <!--- New slide --->
 <!----------------->
 </section>
+<section class="slide level2">
+<h2>Kennwert, Effekt und Parameter</h2>
+<div class="vspace-large">
+
+</div>
+<ul>
+<li class="fragment">Wir hatten als Platzhalter für einen <strong>statistischen Kennwert</strong> das Symbol <span class="math inline">\(\hat{\theta}\)</span> eingeführt. <span class="math inline">\(\hat{\theta}\)</span> kann für einen Mittelwert <span class="math inline">\(\bar{x}\)</span>, eine Korrelation <span class="math inline">\(\hat{\rho}\)</span> aber auch eine Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span> stehen.</li>
+<li class="fragment"><strong>Effekte</strong> sind im Speziellen solche Kennwerte <span class="math inline">\(\hat{\theta}\)</span>, die für eine Überprüfung der Forschungshypothese geeignet sind.</li>
+</ul>
+<!---  Example --->
+<div class="example">
+<div class="columns">
+<div class="column" style="width:10%;">
+<div style="margin-top: 10px">
+<p><img data-src="images/example.png" height="70"></p>
+</div>
+</div><div class="column" style="width:90%;">
+<p>Eine Studie untersucht die Hypothese, dass ein neues Antidepressivum zu einer Linderung depressiver Symptome führt. Zur Überprüfung der Hypothese wird vor und nach der medikamentösen Intervention für jede Versuchsperson ein Depressions-Score <span class="math inline">\(x_i\)</span> bestimmt. Auf Basis dieser Daten werden <strong>drei Kennwerte</strong> berechnet: <span class="math inline">\(\bar{x}_\text{vorher}\)</span>, <span class="math inline">\(\bar{x}_\text{nachher}\)</span> und <span class="math inline">\(\Delta\bar{x}=\bar{x}_\text{nachher}-\bar{x}_\text{vorher}\)</span>. Nur der letzte Kennwert <span class="math inline">\(\Delta\bar{x}\)</span> würde im Kontext dieser Studie und Forschungshypothese als <strong>Effekt</strong> bezeichnet werden, da nur dieser Kennwert zur Überprüfung der Hypothese geeignet ist.</p>
+</div>
+</div>
+</div>
+<div class="vspace-large">
+
+</div>
+<ul>
+<li class="fragment">Als <strong>Populationsparameter</strong> oder kurz <strong>Parameter</strong> werden die wahren Werte <span class="math inline">\(\theta\)</span> in der Population bezeichnet, die in der Regel unbekannt sind. Handelt es sich bei <span class="math inline">\(\theta\)</span> um einen Effekt im Sinne der Forschungshypothese, spricht man auch von <strong>Populationseffekt</strong>.</li>
+</ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
 <section class="slide level2 center">
 <h2>Signifikanztestung</h2>
 <div class="vspace-medium">
@@ -419,22 +450,22 @@ Zurück zur **theoretischen Stichprobenverteilung**. Alle Erkenntnisse über die
 
 </div>
 <div class="columns">
-<div class="column" style="width:70%;">
-<p><strong>Nullhypothese (<span class="math inline">\(H_0\)</span>)</strong></p>
-<p>Annahme, dass ein Effekt <span class="math inline">\(\theta\)</span> in der Population <em>nicht vorliegt</em>.</p>
+<div class="column" style="width:74%;">
+<p><strong>Alternativhypothese (<span class="math inline">\(H_1\)</span>)</strong></p>
+<p>Hypothese, dass eine Annahme über den Populationseffekt <span class="math inline">\(\theta\)</span> <u>zutrifft</u>.</p>
 <ul>
-<li class="fragment">Die Häufigkeit des Haarschneidens und Haardichte <strong>hängen nicht</strong> zusammen.</li>
-<li class="fragment">Frauen haben <strong>keine höhere</strong> emotionale Intelligenz als Männer.</li>
+<li class="fragment">Die Häufigkeit des Haarschneidens und Haardichte <strong>hängen</strong><br>zusammen (<span class="math inline">\(\theta=\rho\ne0\)</span>).</li>
+<li class="fragment">Frauen haben <strong>eine höhere</strong> emotionale Intelligenz als Männer<br>(<span class="math inline">\(\theta=\Delta\mu&gt;0\)</span>).</li>
 </ul>
 <div class="fragment">
-<p><strong>Alternativhypothese (<span class="math inline">\(H_1\)</span>)</strong></p>
-<p>Annahme, dass ein Effekt <span class="math inline">\(\theta\)</span> in der Population <em>vorliegt</em>.</p>
+<p><strong>Nullhypothese (<span class="math inline">\(H_0\)</span>)</strong></p>
+<p>Hypothese, dass eine Annahme über den Populationseffekt <span class="math inline">\(\theta\)</span> <u>nicht zutrifft</u>.</p>
 <ul>
-<li class="fragment">Die Häufigkeit des Haarschneidens und Haardichte <strong>hängen</strong> zusammen.</li>
-<li class="fragment">Frauen haben <strong>eine höhere</strong> emotionale Intelligenz als Männer.</li>
+<li class="fragment">Die Häufigkeit des Haarschneidens und Haardichte <strong>hängen nicht</strong> zusammen (<span class="math inline">\(\theta=\rho=0\)</span>).</li>
+<li class="fragment">Frauen haben <strong>keine höhere</strong> emotionale Intelligenz als Männer<br>(<span class="math inline">\(\theta=\Delta\mu\le0\)</span>).</li>
 </ul>
 </div>
-</div><div class="column" style="width:30%;">
+</div><div class="column" style="width:26%;">
 <div class="fragment">
 <p><img data-src="images/null-and-alternate-hypothesis.jpg"></p>
 </div>
@@ -594,22 +625,44 @@ Zurück zur **theoretischen Stichprobenverteilung**. Alle Erkenntnisse über die
 </section>
 <section class="slide level2">
 <h2>Konstruktion der Nullverteilung</h2>
+<p>Die <strong>Nullhypothese besagt, dass es den vermuteten Effekt <span class="math inline">\(\theta\)</span> in der Population nicht gibt</strong>. In unserem Nasenlängenbeispiel wäre dies der Fall, wenn sich die wahren Nasenlängenpopulationsmittelwerte zwischen Psychologen und Medizinern nicht unterscheiden <u>oder</u> die mittleren Nasenlängen <span class="math inline">\(\mu_\text{med}\)</span> der Mediziner sogar kleiner sind als die mittleren Nasenlängen <span class="math inline">\(\mu_\text{psych}\)</span> der Psychologen:</p>
+<p><span class="math display">\[
+\text{Nullhypothese }H_0:\quad\theta=\mu_\text{med} - \mu_\text{psych} \le 0
+\]</span></p>
+<div class="vspace-medium">
+
+</div>
 <div class="columns">
 <div class="column" style="width:67%;">
-<p>Die Nullhypothese besagt, dass es den vermuteten Effekt in der Population <strong>nicht gibt</strong>. In unserem Nasenlängenbeispiel wäre dies beispielsweise der Fall, wenn sich die wahren Nasenlängenpopulationsmittelwerte zwischen Psychologen und Medizinern <strong>nicht unterscheiden</strong>, also in Wahrheit gilt:</p>
-<p><span class="math display">\[
-\mu_\text{med} = \mu_\text{psych}
-\]</span></p>
+<p>Während also die Nullhypothese einen ganzen Bereich von Werten für <span class="math inline">\(\theta\)</span> umfassen kann, <strong>muss für die die Konstruktion der Nullverteilung ein konkreter Wert <span class="math inline">\(\theta_0\)</span> herangezogen werden</strong>. <strong>Man verwendet <span class="math inline">\(\theta_0=0\)</span></strong>, da dies <em>aus Sicht der Nullhypothese der günstigste</em> und <em>aus Sicht der Alternativhypothese ungünstigste</em> Wert ist (Begründung siehe nachfolgende Folie).</p>
+<p>Im Nasenlängenbeispiel ist dies gleichbedeutend mit der Annahme, dass die mittleren Nasenlängen identisch zwischen Psychologen und Medizinern ist (<span class="math inline">\(\mu_\text{med}=\mu_\text{psych}\)</span>).</p>
 </div><div class="column" style="width:33%;">
 <p><img data-src="images/nullconstruction1.png"></p>
 </div>
 </div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Konstruktion der Nullverteilung</h2>
 <div class="columns">
-<div class="column" style="width:33%;">
+<div class="column" style="width:67%;">
+<p>Kann für die Stichprobenverteilung eines Kennwertes eine Normalverteilung angenommen werden (davon gehen wir im Folgenden aus), so <strong>ist die Nullverteilung eine Normalverteilung mit Mittelwert <span class="math inline">\(\theta_0=0\)</span></strong>.</p>
+<p>Die Streuung dieser Nullverteilung kennen wir ebenfalls: da es sich um eine Stichprobenverteilung handelt, entspricht ihre Standardabweichung dem <strong>Standardfehler</strong> <span class="math inline">\(se\)</span>.</p>
+</div><div class="column" style="width:33%;">
 <p><img data-src="images/nullconstruction2.png"></p>
-</div><div class="column" style="width:67%;">
-<p><em>Wenn diese Annahme zuträfe</em>, wüssen wir, dass für die Differenz der Nasenlängenmittelwerte gilt: <span class="math inline">\(\mu_\text{med} - \mu_\text{psych} = 0\)</span>. Damit wäre auch klar, wie die theoretische Erwartung für die Stichprobenverteilung aussähe, nämlich eine <strong>Normalverteilung mit Mittelwert 0</strong>. Das ist die Nullverteilung!</p>
-<p>Die Streuung der Nullverteilung kennen wir auch. Da es sich um eine Stichprobenverteilung handelt, entspricht die Standardabweichung der Verteilung dem <strong>Standardfehler</strong> <span class="math inline">\(se\)</span>.</p>
+</div>
+</div>
+<div class="merke" style="font-size: 22px; margin-top: 100px">
+<div class="columns">
+<div class="column" style="width:5%;">
+<div style="margin-top: 18px">
+<p><img data-src="images/merke.png" height="55"></p>
+</div>
+</div><div class="column" style="width:95%;">
+<p>In der Praxis ist die Streuung <span class="math inline">\(se\)</span> idR nicht bekannt und muss als <span class="math inline">\(\hat{se}\)</span> geschätzt werden. Wir betrachten diesen etwas komplexeren Fall hier noch nicht. Jedoch ist diese Problematik größer, als auf den ersten Blick angenommen, und führt uns in der Vorlesung zum t-Test zur Erkenntnis, dass die Annahme einer Normalverteilung für die Nullhypothesenverteilung nicht mehr gerechtfertigt ist (stattdessen benötigen wir dann die t-Verteilung). Behalten Sie dies im Hinterkopf!</p>
+</div>
 </div>
 </div>
 <!----------------->
@@ -632,9 +685,7 @@ Zurück zur **theoretischen Stichprobenverteilung**. Alle Erkenntnisse über die
 <!----------------->
 <!--- New slide --->
 <!----------------->
-</section>
-<section class="slide level2">
-<h2>Konstruktion der Nullverteilung</h2>
+<!-- ## Konstruktion der Nullverteilung -->
 <!-- :::: {.columns}
 ::: {.column width="66%"}
 
@@ -660,17 +711,6 @@ Formel für die Dichtefunktion der Normalverteilung mit Mittelwert $0$ und gesch
 
 :::
 :::: -->
-<div class="merke" style="font-size: 22px; margin-top: 50px">
-<div class="columns">
-<div class="column" style="width:5%;">
-<div style="margin-top: 18px">
-<p><img data-src="images/merke.png" height="55"></p>
-</div>
-</div><div class="column" style="width:95%;">
-<p>In der Praxis ist die Streuung <span class="math inline">\(se\)</span> idR nicht bekannt und muss als <span class="math inline">\(\hat{se}\)</span> geschätzt werden. Wir betrachten diesen etwas komplexeren Fall hier noch nicht. Jedoch ist diese Problematik größer, als auf den ersten Blick angenommen, und führt uns in der Vorlesung zum t-Test zur Erkenntnis, dass die Annahme einer Normalverteilung für die Nullhypothesenverteilung nicht mehr gerechtfertigt ist (stattdessen benötigen wir dann die t-Verteilung). Behalten Sie dies im Hinterkopf!</p>
-</div>
-</div>
-</div>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -689,13 +729,13 @@ Formel für die Dichtefunktion der Normalverteilung mit Mittelwert $0$ und gesch
 <div class="vspace-small">
 
 </div>
-<p>… also die Null-Annahme, dass die Nasenlängen der Psychologen <em>nicht größer</em> bzw. <em>kleiner gleich</em> sind als die Nasenlängen der Mediziner. Die zugehörige Nullhypothesenverteilung ist eine Normalverteilung mit Mittelwert <span class="math inline">\(\theta_0=0\)</span>.</p>
+<p>… also die Null-Annahme, dass die Nasenlängen der Psychologen <em>nicht größer</em> bzw. <em>kleiner gleich</em> sind als die Nasenlängen der Mediziner. Die zugehörige Nullhypothesenverteilung ist jedoch im Speziellen eine Normalverteilung mit <strong>Mittelwert <span class="math inline">\(\theta_0=0\)</span></strong>.</p>
 </div><div class="column" style="width:34%;">
 <p><img data-src="images/nulldist2a1.png"></p>
 </div>
 </div>
-<p><strong>Frage:</strong> warum eigentlich gerade <span class="math inline">\(\theta_0=0\)</span> und nicht irgendein Wert <span class="math inline">\(\color{green}{\theta_0 &lt; 0}\)</span>? Schließlich besagt die Nullhypothese im Beispiel ja gerade <span class="math inline">\(\theta \le 0\)</span>, also die Annahme, dass der Effekt <span class="math inline">\(\theta\)</span> in der Population <span style=" color: green !important;">kleiner</span> oder gleich Null ist?</p>
-<p><strong>Antwort:</strong> <span class="math inline">\(\theta_0=0\)</span> ist der “unvorteilhafteste” Mittelwert für die Ablehnung der Nullhypothese, da <span class="math inline">\(\theta_0=0\)</span> dem Stichprobeneffekt <span class="math inline">\(\hat{\theta}\)</span> näher ist als alle anderen potentiellen <span class="math inline">\(H_0\)</span>-Mittelwerte <span class="math inline">\(\theta_0&lt;0\)</span>. Wir bewerten also einen empirischen Effekt <span class="math inline">\(\hat{\theta}\)</span> als signifikant, wenn er so stark ist, dass wir die Nullhypothese sogar unter Annahme des Mittelwertes <span class="math inline">\(\theta_0=0\)</span> ablehnen können. Für <span class="math inline">\(\theta_0&lt;0\)</span>, kann in diesem Fall die Nullhypothese erst recht abgelehnt werden.</p>
+<p><strong>Frage:</strong> warum gerade <span class="math inline">\(\theta_0=0\)</span> und nicht irgendein ein anderer Wert <span class="math inline">\(\theta_0 &lt; 0\)</span>?</p>
+<p><strong>Antwort:</strong> <span class="math inline">\(\theta_0=0\)</span> ist der “unvorteilhafteste” Mittelwert für die Ablehnung der Nullhypothese, da <span class="math inline">\(\theta_0=0\)</span> einem potentiellen Stichprobeneffekt <span class="math inline">\(\hat{\theta} &gt; 0\)</span> näher ist als alle anderen denkbaren <span class="math inline">\(H_0\)</span>-Mittelwerte <span class="math inline">\(\theta_0&lt;0\)</span>. Wir bewerten also einen empirischen Effekt <span class="math inline">\(\hat{\theta}\)</span> als signifikant, wenn er so stark ist, dass wir die Nullhypothese sogar unter Annahme des Mittelwertes <span class="math inline">\(\theta_0=0\)</span> ablehnen können. Für <span class="math inline">\(\theta_0&lt;0\)</span>, kann in diesem Fall die Nullhypothese erst recht abgelehnt werden.</p>
 <p>Kurzum: es genügt für <span class="math inline">\(\theta_0=0\)</span> zu testen, alle anderen Fälle <span class="math inline">\(\theta_0&lt;0\)</span> sind damit abgedeckt.</p>
 </section></section>
 <section>
