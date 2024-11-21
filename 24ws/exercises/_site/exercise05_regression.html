@@ -249,10 +249,134 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <p><strong>a)</strong> Zeichnen Sie die Daten in ein Streudiagramm ein.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><img src="../images/ex_streudiagramm_lernen_punkte.png" height="300"></p>
+</div>
+</div>
+</div>
 <p><strong>b)</strong> Berechnen Sie die Steigung (<span class="math inline">\(\hat{b}_1\)</span>) und den y-Achsenabschnitt (<span class="math inline">\(\hat{b}_0\)</span>) der Regressionsgerade.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Es gilt:</p>
+<p><span class="math display">\[
+\quad\hat{b}_1 = \frac{\hat{Cov}(X, Y)}{\hat{Var}(X)}
+\]</span></p>
+<p>Berechnung der Kovarianz <span class="math inline">\(\hat{Cov}(X, Y)\)</span> und der Varianz <span class="math inline">\(\hat{Var}(X)\)</span> entweder mit JASP oder manuell.</p>
+<p>Mit JASP ergibt sich die Kovarianz zu <span class="math inline">\(4.5=\frac{9}{2}\)</span> und die Varianz zu <span class="math inline">\(1.666...=\frac{5}{3}\)</span>:</p>
+<p><span class="math display">\[
+\quad\hat{b}_1 = \frac{\frac{9}{2}}{\frac{5}{3}} = \frac{9\cdot 3}{2\cdot 5}=\frac{27}{10}=2.7
+\]</span></p>
+<p>Bei manueller Berechnung bietet sich zunächst folgende Vereinfachung an:</p>
+<p><span class="math display">\[
+\hat{b}_1 = \frac{\hat{Cov}(X, Y)}{\hat{Var}(X)} = \frac{\frac{1}{n-1}\sum (x_i-\bar{x})(y_i-\bar{y})}{\frac{1}{n-1}\sum (x_i-\bar{x})^2} = \frac{\sum (x_i-\bar{x})(y_i-\bar{y})}{\sum (x_i-\bar{x})^2}
+\]</span></p>
+<p>Berechnet werden muss also “nur” <span class="math inline">\(\sum (x_i-\bar{x})(y_i-\bar{y})\)</span> und <span class="math inline">\(\sum (x_i-\bar{x})^2\)</span>:</p>
+<p><span class="math display">\[
+\bar{x} = \frac{1+2+3+4}{4} = 2.5
+\]</span></p>
+<p><span class="math display">\[
+\bar{y} = \frac{5+4+10+12}{4} = 7.75
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum (x_i-\bar{x})(y_i-\bar{y}) &amp;= (1-2.5)(5-7.75)+(2-2.5)(4-7.75)+(3-2.5)(10-7.75)+(4-2.5)(12-7.75) = \\
+&amp;= (-1.5)(-2.75)+(-0.5)(-3.75)+0.5\cdot 2.25+1.5\cdot 4.25 = \\
+&amp;= 4.125+1.875+1.125+6.375 = 13.5
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum (x_i-\bar{x})^2 &amp;= (1-2.5)^2+(2-2.5)^2+(3-2.5)^2+(4-2.5)^2 = \\
+&amp;= (-1.5)^2+(-0.5)^2+0.5^2+1.5^2 = \\
+&amp;= 2.25+0.25+0.25+2.25 = 5
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\colorbox{palegreen}{$\hat{b}_1$} = \frac{\sum (x_i-\bar{x})(y_i-\bar{y})}{\sum (x_i-\bar{x})^2} = \frac{13.5}{5}=\colorbox{palegreen}{2.7}
+\]</span></p>
+<p>Formel für den y-Achsenabschnitt:</p>
+<p><span class="math display">\[
+\colorbox{palegreen}{$\hat{b}_0$} = \bar{y} - \hat{b}_1\bar{x} = 7.75 - 2.7\cdot 2.5 = 7.75 - 6.75 = \colorbox{palegreen}{1}
+\]</span></p>
+</div>
+</div>
+</div>
 <p><strong>c)</strong> Was wäre die erwartete Punktzahl, wenn Sie überhaupt nicht lernen?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Überhaupt nicht lernen heißt <span class="math inline">\(x=0\)</span>. Die Punktzahl bei <span class="math inline">\(x=0\)</span> ist nichts anderes als der <span class="math inline">\(y\)</span>-Achsenabschnitt <span class="math inline">\(\hat{b}_0\)</span>. Die erwartete Punktzahl beträgt also 1.</p>
+</div>
+</div>
+</div>
 <p><strong>d)</strong> Um wie viel erhöht sich die erwartete Punktzahl, wenn Sie Ihre Lernzeit um 2 Stunden erhöhen?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Der Steigungskoeffizient <span class="math inline">\(\hat{b}_1\)</span> gibt an, um wie viel Einheiten sich <span class="math inline">\(y\)</span> bei einer Erhöhung von <span class="math inline">\(x\)</span> um <span class="math inline">\(1\)</span> verändert. Der Steigungskoeffizient wurde zu <span class="math inline">\(2.7\)</span> bestimmt, d.h. bei Erhöhung der Lernzeit um 1 Stunde erhöht sich die Punktzahl um <span class="math inline">\(2.7\)</span> und bei einer Erhöhung der Lernzeit um 2 Stunden um <span class="math inline">\(2\cdot 2.7=5.4\)</span>.</p>
+</div>
+</div>
+</div>
 <p><strong>e)</strong> Was wäre die erwartete Punktzahl, wenn Sie 5 Stunden lernen?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Auf Basis der Geradengleichung kann für beliebige x-Werte (Lernstunden) eine Vorhersage bezüglich des y-Wertes (Punktzahl) gemacht werden:</p>
+<p><span class="math display">\[
+\hat{y} = \hat{b}_0+\hat{b}_1 x = 1+2.7\cdot 5 = 1+13.5 = 14.5
+\]</span></p>
+<p>Die erwartete Punktzahl bei 5 Stunden Lernzeit beträgt 14.5 Punkte.</p>
+</div>
+</div>
+</div>
 
 
 </section>
