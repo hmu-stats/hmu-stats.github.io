@@ -1066,27 +1066,6 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(z) = 1 - \Phi(2) \overset{(Computer)}
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Kritischer z-Wert</h2>
-<ul>
-<li class="fragment">Das gewählte Signifikanzniveau bestimmt unmittelbar den z-Wert, den die Prüfgröße mindestens erreichen muss, um die Nullhypothese <span class="math inline">\(H_0\)</span> abzulehnen.</li>
-<li class="fragment">Dieser Wert heißt <span style=" color: navy !important;"><strong>kritischer z-Wert</strong></span> oder <span class="math inline">\(z_\text{crit}\)</span>.</li>
-<li class="fragment">Der kritische z-Wert lässt sich in die Nullverteilung eintragen und schneidet dort exakt die Fläche ab, die durch das Signifikanzniveau als zulässige Irrtumswahrscheinlichkeit festgelegt wurde.</li>
-</ul>
-
-<img data-src="images/nulldist_zcrit.png" style="margin-top:15px !important" class="r-stretch"><div class="vspace-small">
-
-</div>
-<ul>
-<li class="fragment"><strong>Ist die empirisch gefundene Prüfgröße <span class="math inline">\(z\)</span> in der Stichprobe extremer als <span class="math inline">\(z_\text{crit}\)</span> — sie ist also im <span style=" color: green !important;"><strong>Ablehnungsbereich der <span class="math inline">\(H_0\)</span></strong></span> — kann die Nullhypothese abgelehnt werden</strong>.
-<ul>
-<li class="fragment">Es gilt dann sicher: <span class="math inline">\(p&lt;\alpha\)</span></li>
-</ul></li>
-</ul>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
 <h2>Ein- und zweiseitiges Testen</h2>
 <div style="font-size: 26px">
 <p>Bislang haben wir konkrete <strong>gerichtete Hypothese</strong> betrachtet, etwa indem bei der Nasenlängenhypothese festgelegt wurde, welche der beiden Gruppen im Mittel eine längere Nase hat. Es gibt jedoch insgesamt <strong>drei Fälle</strong>.</p>
@@ -1205,6 +1184,27 @@ Dies wirkt sich auf die Flächen unter der Nullverteilung aus, die wir betrachte
 <p>Es ist zusätzlich gewinnbringend, sich den Vergleich von gerichteten und ungerichteten Hypothesen aus der Perspektive des Signifikanzniveaus <span class="math inline">\(\alpha\)</span> zu betrachten:</p>
 <p><img data-src="images/significance_level2.png" height="420"></p>
 <p>Beim zweiseitigen Test verteilt sich die Irrtumswahrscheinlichkeit (im Bild 5%) <em>auf beide Flanken</em> der Nullverteilung. Es wird damit auf beiden Seiten schwieriger für unseren Effekt einen noch extremeren Wert aufzuweisen, als durch die Irrtumswahrscheinlichkeit vorgegeben.</p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Kritischer z-Wert</h2>
+<ul>
+<li class="fragment">Das gewählte Signifikanzniveau bestimmt unmittelbar den z-Wert, den die Prüfgröße mindestens erreichen muss, um die Nullhypothese <span class="math inline">\(H_0\)</span> abzulehnen.</li>
+<li class="fragment">Dieser Wert heißt <span style=" color: navy !important;"><strong>kritischer z-Wert</strong></span> oder <span class="math inline">\(z_\text{crit}\)</span>.</li>
+<li class="fragment">Der kritische z-Wert lässt sich in die Nullverteilung eintragen und schneidet dort exakt die Fläche ab, die durch das Signifikanzniveau als zulässige Irrtumswahrscheinlichkeit festgelegt wurde.</li>
+</ul>
+
+<img data-src="images/nulldist_zcrit.png" style="margin-top:15px !important" class="r-stretch"><div class="vspace-small">
+
+</div>
+<ul>
+<li class="fragment"><strong>Ist die empirisch gefundene Prüfgröße <span class="math inline">\(z\)</span> in der Stichprobe extremer als <span class="math inline">\(z_\text{crit}\)</span> — sie ist also im <span style=" color: green !important;"><strong>Ablehnungsbereich der <span class="math inline">\(H_0\)</span></strong></span> — kann die Nullhypothese abgelehnt werden</strong>.
+<ul>
+<li class="fragment">Es gilt dann sicher: <span class="math inline">\(p&lt;\alpha\)</span></li>
+</ul></li>
+</ul>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
