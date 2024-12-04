@@ -248,9 +248,7 @@ ul.task-list li input[type="checkbox"] {
 <h1 data-number="1"><span class="header-section-number">1</span> Aufgabe</h1>
 <p>Ein Test für Extraversion hat den Populationsmittelwert von <span class="math inline">\(\mu=15\)</span> und eine Populationsstreuung von <span class="math inline">\(\sigma=2\)</span>.</p>
 <p><strong>a)</strong> Wie groß ist die Wahrscheinlichkeit, dass eine Versuchsperson in diesem Test einen Wert von 10 oder weniger bekommt?</p>
-<p><strong>b)</strong> Wie wahrscheinlich ist es, dass eine Versuchsperson einen Wert zwischen 13 und 17 erhält?</p>
-<p><strong>c)</strong> Eine Stichprobe von 25 Psychologiestudierenden weist einen Mittelwert von <span class="math inline">\(\bar{x}=18\)</span> auf. Kann daraus geschlossen werden, dass Psychologiestudierende eine signifikant höhere Extraversion als der Durchschnitt aufweisen? (Signifikanzniveau <span class="math inline">\(\alpha=0.05\)</span>)</p>
-<div class="hide callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -262,24 +260,16 @@ Lösung
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>a)</strong></p>
 <ol type="1">
 <li>&nbsp;z-Transformation: <span class="math inline">\(z=−2.5\)</span></li>
 <li>&nbsp;z-Tabelle: Fläche <span class="math inline">\(a\)</span> für <span class="math inline">\(|z|=2.5\)</span> nachschlagen ⟶ <span class="math inline">\(a=0.9938\)</span></li>
-<li>&nbsp;<span class="math inline">\(p = 1 - a = 1 - 0.9938 = 0,0062\;(0,62 \%)\)</span></li>
+<li>&nbsp;<span class="math inline">\(P = 1 - a = 1 - 0.9938 = 0,0062\;(0,62 \%)\)</span></li>
 </ol>
-<p><strong>b)</strong> Der Bereich 13 bis 17 entspricht ± eine Standardabweichung um den Populationsmittelwert <span class="math inline">\(15\)</span>. Die Wahrscheinlichkeit, dass eine Versuchsperson einen Wert zwischen 13 und 17 erhält, ist daher <span class="math inline">\(68\,\%\)</span>.</p>
 </div>
 </div>
 </div>
-<!----------------->
-<!---- Aufgabe ---->
-<!----------------->
-</section>
-<section id="aufgabe-1" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Aufgabe</h1>
-<p>Ein Firmenchef möchte nur sehr intelligente Bewerber einstellen, nämlich nur solche, die in den oberen <span class="math inline">\(0.3\,\%\)</span> der Population liegen. Wie groß muss der IQ-Wert einer Person in einem Intelligenztest mindestens sein, um bei ihm einen Job zu bekommen? (Intelligenztest: <span class="math inline">\(\mu = 100;\;\sigma = 15\)</span>)</p>
-<div class="hide callout callout-style-default callout-tip callout-titled" title="Lösung">
+<p><strong>b)</strong> Wie wahrscheinlich ist es, dass eine Versuchsperson einen Wert zwischen 13 und 17 erhält?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -290,6 +280,70 @@ Lösung
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Der Bereich 13 bis 17 entspricht ± 1 Standardabweichung um den Populationsmittelwert <span class="math inline">\(15\)</span>. Die Wahrscheinlichkeit, dass eine Versuchsperson einen Wert zwischen 13 und 17 erhält, beträgt gemäß der 68-95-99.7%-Regel <span class="math inline">\(68\,\%\)</span>.</p>
+<p><strong>Rechnerischer Weg:</strong></p>
+<ol type="1">
+<li>Bestimmung der oberen Grenze <span class="math inline">\(z_\text{o}\)</span> und unteren Grenze <span class="math inline">\(z_\text{u}\)</span>:</li>
+</ol>
+<p><span class="math display">\[
+z_\text{o} = \frac{\text{obere Grenze}-\mu}{\sigma} = \frac{17-15}{2} = 1
+\]</span></p>
+<p><span class="math display">\[
+z_\text{u} = \frac{\text{untere Grenze}-\mu}{\sigma} = \frac{13-15}{2} = -1
+\]</span></p>
+<ol start="2" type="1">
+<li>Die Fläche eines Intervalls ergibt sich aus der Differenz der Fläche links von <span class="math inline">\(z_\text{o}\)</span> und links von <span class="math inline">\(z_\text{u}\)</span>:</li>
+</ol>
+<p>Die Fläche links von <span class="math inline">\(z_\text{o}=1\)</span> ergibt sich aus der z-Tabelle zu <span class="math inline">\(a_o=0.8413\)</span>. Die Fläche für einen negativen Wert <span class="math inline">\(z\)</span> ergibt sich als 1 minus die Fläche links von <span class="math inline">\(|z|\)</span>, also <span class="math inline">\(a_u = 1 - 0.8413 = 0.1587\)</span>.</p>
+<p>Die Fläche für das Intervall ergibt sich damit zu:</p>
+<p><span class="math inline">\(a=a_o-a_u = 0.8413 - 0.1587 = 0.6826\)</span></p>
+<p>oder gut 68%.</p>
+</div>
+</div>
+</div>
+<p><strong>c)</strong> Eine Stichprobe von 25 Psychologiestudierenden weist einen Mittelwert von <span class="math inline">\(\bar{x}=18\)</span> auf. Kann daraus geschlossen werden, dass Psychologiestudierende eine signifikant höhere Extraversion als der Durchschnitt aufweisen (Signifikanzniveau <span class="math inline">\(\alpha=0.05\)</span>)? Nehmen Sie für die Psychologiestudierenden die Populationsstreuung an.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Standardfehler:</p>
+<p><span class="math display">\[
+se = \frac{\sigma}{\sqrt{n}} = \frac{2}{\sqrt{25}} = \frac{2}{5} = 0.4
+\]</span></p>
+<p><span class="math display">\[
+z = \frac{\bar{x} - \mu_0}{se} = \frac{18 - 15}{0.4} = \frac{3}{0.4} = 7.5
+\]</span></p>
+<p>Bei einem Signifikanzniveau von <span class="math inline">\(\alpha=0.05\)</span> und einem einseitigen Test ist die Fläche links vom kritischen z-Wert <span class="math inline">\(a=0.95\)</span>. Aus der z-Tabelle ergibt sich, dass <span class="math inline">\(z_\text{crit}\)</span> zwischen <span class="math inline">\(1.64\)</span> und <span class="math inline">\(1.65\)</span> liegen muss. Da der Wert <span class="math inline">\(z=7.5\)</span> deutlich darüber liegt, wird die Hypothese bestätigt.</p>
+</div>
+</div>
+</div>
+<!----------------->
+<!---- Aufgabe ---->
+<!----------------->
+</section>
+<section id="aufgabe-1" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Aufgabe</h1>
+<p>Ein Firmenchef möchte nur sehr intelligente Bewerber einstellen, nämlich nur solche, die in den oberen <span class="math inline">\(0.3\,\%\)</span> der Population liegen. Wie groß muss der IQ-Wert einer Person in einem Intelligenztest mindestens sein, um bei ihm einen Job zu bekommen? (Intelligenztest: <span class="math inline">\(\mu = 100;\;\sigma = 15\)</span>)</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Bestimmt werden muss der IQ-Wert, der <span class="math inline">\(0.3\,\%\)</span> der Fläche in der Häufigkeitsverteilung nach rechts abschneidet.</p>
 <ol type="1">
@@ -309,7 +363,7 @@ Lösung
 <p>In einer großen chronobiologischen Studie untersuchen Sie den Zusammenhang von Chronotypen und Depressivität. Sie legen sich für die Hypothesentestung auf ein Signifikanzniveau <span class="math inline">\(\alpha=0.05\)</span> fest.</p>
 <p><strong>a)</strong> In einer ersten Teilstudie untersuchen Sie die Hypothese, dass “Eulen” (nachtaktiv) eine höhere Depressivität aufweisen als “Lärchen” (werden Abends früh müde, aber sind morgens fit). In beiden Gruppen messen Sie 16 Versuchspersonen. Für die Eulen-Gruppe erhalten Sie einen Depressivitäts-Mittelwert <span class="math inline">\(\bar{x}_\text{E}=26.0\)</span> und für die Lärchen-Gruppe <span class="math inline">\(\bar{x}_\text{L}=24.4\)</span>. Die Standardabweichungen sind bekannt als <span class="math inline">\(\sigma_\text{L}=3\)</span> und <span class="math inline">\(\sigma_\text{E}=4\)</span>. Bestätigt sich Ihre Hypothese aus statistischer Sicht?</p>
 <p><strong>b)</strong> Liegt die Depressivität der Lärchen-Gruppe signifikant unter dem Bevölkerungsdurchschnitt <span class="math inline">\(\mu_0 = 25\)</span>?</p>
-<p><strong>c)</strong> In der zweiten Teilstudie überprüfen Sie die Hypothese, dass Eulen- und Lärchen-ähnliche Schlafpläne eine unterschiedliche Auswirkung auf Depressivität haben. Eine Gruppe von 100 gesunden Versuchspersonen hält sich in einer ersten Versuchsphase an einen Eulen-typischen Schlafplan und in der zweiten Versuchsphase an einen Lärchen-typischen Schlafplan. Nach beiden Phasen wird anschließend die Depressivität gemessen. Es ergeben sich die Mittelwerte <span class="math inline">\(\bar{x}_1=24.95\)</span> (Versuchsphase 1) und <span class="math inline">\(\bar{x}_2=25.05\)</span> (Versuchsphase 2). Die Standardabweichung ist in beiden Phasen gleich und bekannt als <span class="math inline">\(\sigma=1\)</span>. Die Werte in den beiden Versuchsphasen korrelieren mit <span class="math inline">\(\rho=0.5\)</span>. Bestätigt sich Ihre Hypothese aus statistischer Sicht?</p>
+<p><strong>c)</strong> In der zweiten Teilstudie überprüfen Sie die Hypothese, dass Eulen- und Lärchen-ähnliche Schlafpläne eine unterschiedliche Auswirkung auf Depressivität haben. Eine Gruppe von 100 gesunden Versuchspersonen hält sich in einer ersten Versuchsphase an einen Eulen-typischen Schlafplan und in der zweiten Versuchsphase an einen Lärchen-typischen Schlafplan. Nach beiden Phasen wird anschließend die Depressivität gemessen. Es ergeben sich die Mittelwerte <span class="math inline">\(\bar{x}_E=25.05\)</span> (Versuchsphase 1 mit Eulen-Schlafplan) und <span class="math inline">\(\bar{x}_L=24.95\)</span> (Versuchsphase 2 mit Lärchen-Schlafplan). Die Standardabweichung ist in beiden Phasen gleich und bekannt als <span class="math inline">\(\sigma=1\)</span>. Die Werte in den beiden Versuchsphasen korrelieren mit <span class="math inline">\(\rho=0.5\)</span>. Bestätigt sich Ihre Hypothese aus statistischer Sicht?</p>
 
 
 </section>
