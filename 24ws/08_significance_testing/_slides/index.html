@@ -546,7 +546,7 @@ Zurück zur **theoretischen Stichprobenverteilung**. Alle Erkenntnisse über die
 <div class="columns">
 <div class="column" style="width:80%;">
 <p>Sie überprüfen die Hypothese, dass die mittlere Nasenlänge von Medizinstudierenden (<span class="math inline">\(\mu_\text{med}\)</span>) größer ist als die mittlere Nasenlänge von Psychologiestudierenden (<span class="math inline">\(\mu_\text{psych}\)</span>).</p>
-<p>Die zugehörige Nullhypothese <span class="math inline">\(H_0\)</span> lautet: <em>Psychologiestudierende haben <u>gleich lange oder kürzere</u> Nasen als Medizinstudierende.</em></p>
+<p>Die zugehörige <span class="math inline">\(H_0\)</span> lautet: <em>die mittlere Nasenlänge von Medizinstudierenden ist <u>gleich lang oder kleiner</u> als die mittlere Nasenlänge von Psychologiestudierenden.</em></p>
 <p>Oder mathematisch:</p>
 <div style="margin-top: -5px; margin-bottom: 25px">
 <p><span class="math display">\[
@@ -996,6 +996,7 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(z) = 1 - \Phi(2) \overset{(Computer)}
 <ul>
 <li>Einstichprobentest und Zweistichprobentest</li>
 <li>Signifikanzniveau</li>
+<li>Kritsicher z-Wert</li>
 <li>Ein- und zweiseitiges Testen</li>
 </ul>
 </div>
@@ -1060,6 +1061,24 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(z) = 1 - \Phi(2) \overset{(Computer)}
 <p><img data-src="images/significance_level.png" style="margin-top:0px !important"></p>
 </div>
 </div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Kritischer z-Wert</h2>
+<ul>
+<li class="fragment">Das gewählte Signifikanzniveau bestimmt unmittelbar den z-Wert, den die Prüfgröße mindestens erreicht werden muss, um die Nullhypothese abzulehnen.</li>
+<li class="fragment">Dieser Wert heißt <span style=" color: navy !important;"><strong>kritischer z-Wert</strong></span> oder <span class="math inline">\(z_\text{crit}\)</span>.</li>
+<li class="fragment">Der kritische z-Wert lässt sich in die Nullverteilung eintragen und schneidet dort exakt die Fläche ab, die durch das Signifikanzniveau als zulässige Irrtumswahrscheinlichkeit festgelegt wurde.</li>
+</ul>
+
+<img data-src="images/nulldist_zcrit.png" style="margin-top:15px !important" class="r-stretch"><div class="vspace-medium">
+
+</div>
+<ul>
+<li class="fragment"><strong>Ist die empirisch gefundene Prüfgröße <span class="math inline">\(z\)</span> in der Stichprobe extremer als <span class="math inline">\(z_\text{crit}\)</span>, kann die Nullhypothese abgelehnt werden</strong> (es gilt dann sicher: <span class="math inline">\(p&lt;\alpha\)</span>).</li>
+</ul>
 <!----------------->
 <!--- New slide --->
 <!----------------->
