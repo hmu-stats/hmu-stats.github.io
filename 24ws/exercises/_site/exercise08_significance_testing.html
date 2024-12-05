@@ -282,21 +282,17 @@ Lösung
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Der Bereich 13 bis 17 entspricht ± 1 Standardabweichung um den Populationsmittelwert <span class="math inline">\(15\)</span>. Die Wahrscheinlichkeit, dass eine Versuchsperson einen Wert zwischen 13 und 17 erhält, beträgt gemäß der 68-95-99.7%-Regel <span class="math inline">\(68\,\%\)</span>.</p>
-<p><strong>Rechnerischer Weg:</strong></p>
-<ol type="1">
-<li>Bestimmung der oberen Grenze <span class="math inline">\(z_\text{o}\)</span> und unteren Grenze <span class="math inline">\(z_\text{u}\)</span>:</li>
-</ol>
+<p><u>Rechnerischer Weg:</u></p>
+<p><strong>Umwandlung der Grenzen 13 und 17 in z-Werte (obere Grenze: <span class="math inline">\(z_\text{o}\)</span>; untere Grenze: <span class="math inline">\(z_\text{u}\)</span>):</strong></p>
 <p><span class="math display">\[
 z_\text{o} = \frac{\text{obere Grenze}-\mu}{\sigma} = \frac{17-15}{2} = 1
 \]</span></p>
 <p><span class="math display">\[
 z_\text{u} = \frac{\text{untere Grenze}-\mu}{\sigma} = \frac{13-15}{2} = -1
 \]</span></p>
-<ol start="2" type="1">
-<li>Die Fläche eines Intervalls ergibt sich aus der Differenz der Fläche links von <span class="math inline">\(z_\text{o}\)</span> und links von <span class="math inline">\(z_\text{u}\)</span>:</li>
-</ol>
-<p>Die Fläche links von <span class="math inline">\(z_\text{o}=1\)</span> ergibt sich aus der z-Tabelle zu <span class="math inline">\(a_o=0.8413\)</span>. Die Fläche für einen negativen Wert <span class="math inline">\(z\)</span> ergibt sich als 1 minus die Fläche links von <span class="math inline">\(|z|\)</span>, also <span class="math inline">\(a_u = 1 - 0.8413 = 0.1587\)</span>.</p>
-<p>Die Fläche für das Intervall ergibt sich damit zu:</p>
+<p><strong>Die Fläche des Intervalls entspricht der Differenz der Flächen links von <span class="math inline">\(z_\text{o}\)</span> und links von <span class="math inline">\(z_\text{u}\)</span>:</strong></p>
+<p>Die Fläche links von <span class="math inline">\(z_\text{o}=1\)</span> ergibt sich aus der z-Tabelle zu <span class="math inline">\(a_o=0.8413\)</span>. Die Fläche für einen negativen Wert <span class="math inline">\(z\)</span> ergibt sich als 1 <em>minus</em> die Fläche links von <span class="math inline">\(|z|\)</span>, also <span class="math inline">\(a_u = 1 - 0.8413 = 0.1587\)</span>.</p>
+<p>Damit erhält man für die Fläche <span class="math inline">\(a\)</span> des Intervalls:</p>
 <p><span class="math inline">\(a=a_o-a_u = 0.8413 - 0.1587 = 0.6826\)</span></p>
 <p>oder gut 68%.</p>
 </div>
