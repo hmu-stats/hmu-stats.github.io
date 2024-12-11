@@ -479,29 +479,30 @@ setup:
 </ul>
 </div>
 <div class="columns fragment">
-<div class="column" style="width:50%;">
+<div class="column" style="width:52%;">
 <div style="margin-top: -10px">
 <div>
 <ul>
-<li>Zugleich definiert das Signifikanzniveau ein Intervall <span class="math inline">\([-z_\text{crit}; z_\text{crit}]\)</span>, in dem der Effekt <u>nicht</u> signifikant wäre.
+<li>Zugleich definiert das Signifikanzniveau ein Intervall <span class="math inline">\([-z_\text{crit}; z_\text{crit}]\)</span>, in dem der Effekt bzw. die Prüfgröße <u>nicht</u> signifikant wäre.
 <ul>
-<li>Dieses Intervall — in der Abbildung bezeichnet als “Nicht-signifikanter Bereich” — hängt nicht von den Daten (<span class="math inline">\(\hat{\theta}\)</span>, <span class="math inline">\(se\)</span>) ab, sondern ausschließlich vom gewählten Signifikanzniveau <span class="math inline">\(\alpha\)</span>.</li>
-<li>Im nicht-signifikanten Bereich werden Stichprobeneffekte als <em>mit der Nullhypothese kompatibel</em> gewertet, bzw. ein Effekt in diesem Intervall würde die <em>Nullhypothese nicht ablehnen</em>.</li>
+<li>In der Abbildung ist das Intervall als <strong>Kompatibilitäts-<br>bereich</strong> bezeichnet, weil es den Bereich möglicher Werte für die Prüfgröße <span class="math inline">\(z\)</span> umfasst, die kompatibel mit der Nullhypothese <span class="math inline">\(H_0\)</span> sind.</li>
+<li>Bei einem Effekt in diesem Intervall würde man die <em>Nullhypothese nicht ablehnen</em>.</li>
+<li>Beachte, dass dieses im z-Raum definierte Intervall nicht von der tatsächlichen Prüfgröße <span class="math inline">\(z=\frac{\hat{\theta}}{se}\)</span> abhängt, sondern ausschließlich vom gewählten Signifikanzniveau <span class="math inline">\(\alpha\)</span>.</li>
 </ul></li>
 </ul>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
-<p><img data-src="images/ci_motivation_left.png" style="margin-top: -10px !important" height="380"></p>
+</div><div class="column" style="width:48%;">
+<p><img data-src="images/ci_motivation_left_v2.png" style="margin-top: -10px !important" height="380"></p>
 </div>
 </div>
 </section>
 <section class="slide level2">
 <h2>Konfidenzintervall</h2>
-<p><img data-src="images/ci_motivation.png" height="335"></p>
+<p><img data-src="images/ci_motivation_v2.png" height="335"></p>
 <div>
 <ul>
-<li>Projizieren wir diesen <em>nicht-signifikanten Bereich</em> der Standardnormalverteilung zurück in den Raum der Stichprobenverteilung (<span class="math inline">\(\cdot se\)</span>, <span class="math inline">\(+\hat{\theta}\)</span>), so wird er <span style=" color: navy !important;"><strong>Konfidenzintervall</strong></span> genannt und umfasst folgenden Wertebereich:</li>
+<li>Projizieren wir diesen <em>Kompatibilitätsbereich</em> der Standardnormalverteilung zurück in den Raum der Stichprobenverteilung (<span class="math inline">\(\cdot se\)</span>, <span class="math inline">\(+\hat{\theta}\)</span>), so wird er <span style=" color: navy !important;"><strong>Konfidenzintervall</strong></span> genannt und umfasst folgenden Wertebereich:</li>
 </ul>
 </div>
 <div style="margin-top: -17px; margin-bottom: 7px">
@@ -534,7 +535,7 @@ Noch etwas allgemeiner gesprochen werden Konfidenzintervalle für **unbekannte P
 </section>
 <section class="slide level2">
 <h2>Definition</h2>
-<p>Die Projektion des nicht-signifikanten Bereiches in den Stichprobenkennwert-Raum führt zu einer ersten Definition von Konfidenzintervallen:</p>
+<p>Die Projektion des Kompatibilitätsbereiches (d.h. des <em>nicht-signifikanten Bereiches</em>) in den Stichprobenkennwert-Raum führt zu einer ersten Definition von Konfidenzintervallen:</p>
 <div class="definition">
 <!---  Definition--->
 <table>
