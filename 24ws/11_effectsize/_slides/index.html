@@ -396,7 +396,7 @@ setup:
 <ul>
 <li class="fragment">Wie kann die Aussagekraft bzw. Bedeutsamkeit von Effekten bestimmt und kommuniziert werden?
 <ul>
-<li class="fragment">⇒ <strong>statistische Signifikanz</strong> (ab Vorlesung 10): kann ein Effekt <em>allein durch Zufall erklärt werden</em>?</li>
+<li class="fragment">⇒ <strong>statistische Signifikanz</strong> (ab Vorlesung 08): kann ein Effekt <em>allein durch Zufall erklärt werden</em>?</li>
 <li class="fragment">⇒ <strong>praktische Signifikanz</strong> (Effektstärken): ist die Stärke des Effektes <em>in der Praxis bedeutsam</em>?</li>
 </ul></li>
 </ul>
@@ -724,7 +724,7 @@ plt.savefig('images/pooled_variance_dependent.png', bbox_inches='tight')
 <ul>
 <li>Streng genommen gilt die angebene Formel für Cohen’s bei unabhängigen Stichproben nur, wenn die Gruppenvarianzen <span class="math inline">\(\hat{\sigma}_A\)</span> und <span class="math inline">\(\hat{\sigma}_B\)</span> ähnlich sind.
 <ul>
-<li>Gängige Faustregel: Varianzen sollen sich höchstens um Faktor 2 unterscheiden: <span class="math inline">\(0.5&lt;\frac{\sigma^2_A}{\sigma^2_B}&lt;2\)</span></li>
+<li>Gängige Faustregel: Varianzen sollen sich höchstens um Faktor 2 unterscheiden: <span class="math inline">\(0.5\le\frac{\hat{\sigma}^2_A}{\hat{\sigma}^2_B}\le2\)</span></li>
 </ul></li>
 <li>Da sich jedoch bislang kein Verfahren für den den Gruppenvergleich mit unähnlichen Varianzen etabliert hat, behandeln wir diesen Fall im Rahmen von Statistik 1 nicht.
 <ul>
@@ -966,10 +966,10 @@ d = \frac{\bar{x}_\text{Albtraum} - \bar{x}_\text{Keine Albtraum}}{\hat{\sigma}_
 </ul>
 </div>
 <p><span class="math display">\[
-\hat{\rho} = \frac{\hat{Cov}(X,Y)}{\sigma_{\mkern-2mu\scriptscriptstyle{X}} \sigma_{\mkern-2mu\scriptscriptstyle{Y}}}
+\hat{\rho} = \frac{\hat{Cov}(X,Y)}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}} \hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}
 \]</span></p>
 <ul>
-<li class="fragment">Der Nenner <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}} \sigma_{\mkern-2mu\scriptscriptstyle{Y}}\)</span> stellt hier die Standardisierung dar.</li>
+<li class="fragment">Der Nenner <span class="math inline">\(\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}} \hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}\)</span> entspricht bei der Pearson-Korrelation der Standardisierung.</li>
 </ul>
 <div class="vspace-large">
 
@@ -1026,187 +1026,6 @@ d=\frac{2\hat{\rho}}{\sqrt{1-\hat{\rho}^2}}
 </div>
 </div>
 </div>
-</section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1>Weitere Effektmaße</h1>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>Weitere Effektmaße</h2>
-<div>
-<ul>
-<li>Im Bereich klinischer Studien finden sich weitere Effektmaße, die in der Regel zum Ziel haben, die Wirksamkeit einer Intervention (Behandlung) zu quantifizieren.</li>
-<li>Folgende drei Effektmaße aus diesem Kontext betrachten wir:
-<ul>
-<li>Absolute Risikoreduktion (ARR)</li>
-<li>Numbers Needed to Treat (NNT)</li>
-<li>Odds ratio (OR)</li>
-</ul></li>
-</ul>
-</div>
-<div class="vspace-large">
-
-</div>
-<p><img data-src="images/clinical_effect_sizes.png" height="300"></p>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>Absolute Risikoreduktion (ARR)</h2>
-<p>Sind beide Variablen dichotom, sind weder der Korrelationskoeffizient noch Cohen’s d intuitive Effektmaße.</p>
-<!---  Example --->
-<div class="example">
-<table>
-<colgroup>
-<col style="width: 10%">
-<col style="width: 90%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><img data-src="images/example.png" height="70"></td>
-<td>Sie untersuchen, ob ein neues Medikament die Heilungsrate (Erfolgsrate) einer Krankheit verbessert. Die Treatmentgruppe erhält das Medikament, die Kontrollgruppe Placebo.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Eine sinnnvolles Effektmaß ist hier, <em>um wie viel</em> die Erfolgsrate in der Treatmentgruppe die Erfolgsrate in der Kontrollgruppe übersteigt. Dies lässt sich einfach aus einer Vierfeldertafel ableiten:</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="images/vierfeldertafel.png"></p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="images/arr.png"></p>
-</div>
-</div>
-<div>
-<ul>
-<li><span class="math inline">\(ARR\)</span> ist die <span style=" color: navy !important;"><strong>Absolute Risikoreduktion</strong></span>.</li>
-</ul>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>Numbers Needed to Treat (NNT)</h2>
-<div>
-<ul>
-<li>Noch gängiger als die Absolute Risikoreduktion ist die inverse Größe, die als <span style=" color: navy !important;"><strong>Numbers Needed to Treat (NNT)</strong></span> bezeichnet wird.</li>
-</ul>
-</div>
-<div class="definition">
-<!---  Definition--->
-<table>
-<colgroup>
-<col style="width: 10%">
-<col style="width: 90%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
-<td><strong>Number Needed to Treat:</strong> Anzahl der Personen, die behandelt werden müssten, damit eine zusätzliche Person einen Nutzen hat.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Mathematisch ist <span class="math inline">\(NNT\)</span> das Inverse der <span class="math inline">\(ARR\)</span>:</p>
-<p><span class="math display">\[
-NNT = \frac{1}{ARR}
-\]</span></p>
-<div>
-<ul>
-<li>Da es um Personen geht, wird die NNT immer aufgerundet.</li>
-</ul>
-</div>
-<!---  Example --->
-<div class="example" style="border-width: 0 !important">
-<table>
-<colgroup>
-<col style="width: 10%">
-<col style="width: 30%">
-<col style="width: 60%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><img data-src="images/example.png" height="60"></td>
-<td><img data-src="images/vierfeldertafel_numbers.png"></td>
-<td><span class="math inline">\(ARR = \frac{90}{90+10} - \frac{35}{35+35}=0{,}9-0{,}5=0{,}4\quad\rightarrow\quad NRR=\frac{1}{0{,}4}=2{,}5\)</span><br>
-⇒ Drei weitere Personen müssten behandelt werden, damit eine zusätzliche Person einen Nutzen hat (d.h. die andernfalls nicht geheilt würde).</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>Odds Ratio (OR)</h2>
-<div>
-<ul>
-<li>Das <span style=" color: navy !important;"><strong>Odds Ratio</strong></span> (<span class="math inline">\(OR\)</span>) vergleicht das <em>Heilerfolgsverhältnis in der Treatmentgruppe</em> zum <em>Heilerfolgsverhältnis in der Kontrollgruppe</em>:</li>
-</ul>
-</div>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="images/vierfeldertafel.png"></p>
-</div><div class="column" style="width:50%;">
-<p><span class="math display">\[
-\text{OR} = \frac{\frac{a}{b}}{\frac{c}{d}} = \frac{a\cdot d}{b\cdot c}
-\]</span></p>
-<p><span style="font-size: 20px; line-height: 1.05 !important; display: block; margin-top: 40px; color:#777">Beachte: Als Heilerfolgsverhältnis wird hier das Verhältnis der Zahl der geheilten Patienten gegenüber der Zahl der nicht geheilten Patienten verstanden.</span></p>
-</div>
-</div>
-<ul>
-<li class="fragment">Hat das Treatment keine Auswirkung, so sind die Heilerfolgsverhältnisse in beiden Gruppen gleich, d.h. <span class="math inline">\(OR=1\)</span>.</li>
-<li class="fragment">Ist das Treatment erfolgreich, ist das Heilerfolgsverhältnis in der Treatmentgruppen höher als in der Kontrollgruppe, d.h. <span class="math inline">\(OR&gt;1\)</span>.</li>
-<li class="fragment">Ist das Treatment sogar nachteilig, ist das Heilerfolgsverhältnis in der Treatmentgruppen <em>kleiner</em> als in der Kontrollgruppe, d.h. <span class="math inline">\(OR&lt;1\)</span>.</li>
-</ul>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>ARR, NNT, OR: Caveat</h2>
-<div>
-<ul>
-<li>Auch wenn das Ziel der Effektmaße <span class="math inline">\(ARR\)</span>, <span class="math inline">\(NNT\)</span>, <span class="math inline">\(OR\)</span> eine einfache laienverständliche Kommunikation der Treatmenteffizienz ist, darf angezweifelt werden, ob dies immer der Fall ist, wie durch folgendes Beispiel demonstriert<a href="#/footnotes" class="footnote-ref" id="fnref8" role="doc-noteref" data-footnote-href="#/fn8" onclick=""><sup>8</sup></a>:</li>
-</ul>
-</div>
-<p><img data-src="images/quote_NNT.png"></p>
-<div>
-<ul>
-<li>Hinweis: <span class="math inline">\(ARR\)</span> und <span class="math inline">\(OR\)</span> haben das gleiche Problem.</li>
-</ul>
-</div>
-<aside></aside></section>
-<section class="slide level2 nonincremental">
-<h2>Zusammenfassung: Übersicht Effektmaße</h2>
-<div class="vspace-medium">
-
-</div>
-<p><img data-src="images/overview_effectsizes.png" height="600"></p>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -1225,7 +1044,7 @@ NNT = \frac{1}{ARR}
 <li class="fragment">Effektstärken sind <strong>standardisierte einheitslose Maße</strong>, die <strong>zwischen Studien verglichen</strong> werden können.</li>
 <li class="fragment">Während <strong>Korrelationskoeffizienten bereits standardisiert</strong> sind, müssen <strong>Mittelwertsunterschiede</strong> erst in standardisierte Effektmaße überführt werden: <strong>Cohend’s d</strong>.</li>
 <li class="fragment">Die Berechnung von Cohen’s d hängt ab vom Design ab: Standardisierung mit der <strong>Differenzenvarianz</strong> bei abhängigen Messungen und mit der <strong>gepoolten Varianz</strong> bei unabhängigen Messungen.</li>
-<li class="fragment">Im medizinischen Kontext sind weitere Effekmaße geläufig: absolute Risikoreduktion (ARR), Numbers Needed to Treat (NNT) und Odds Ratio (OR).</li>
+<li class="fragment">Im medizinischen Kontext sind weitere Effekmaße geläufig: absolute Risikoreduktion (ARR), Numbers Needed to Treat (NNT) und Odds Ratio (OR). <a href="#/other_effect_sizes" style="color: darkred">→ Bonuscontent</a>)</li>
 </ul>
 </div>
 </div>
@@ -1388,7 +1207,7 @@ X_\text{pooled} = [X'_A; X'_B]
 <p><img data-src="images/example.png" height="70"></p>
 </div>
 </div><div class="column" style="width:90%;">
-<p>Bei einem Pre-post-Interventionsdesign (Messung vor und nach einer Intervention an derselben Gruppe), kann es vorteilhaft sein, nur die <em>Standardabweichung des Vortestes</em> für die Standardisierung zu nehmen. Grund: die Variabilität <em>vor</em> einer Intervention ist am ehesten zwischen Studien vergleichbar — damit werden auch die Effektstärken besser vergleichbar.<a href="#/footnotes" class="footnote-ref" id="fnref9" role="doc-noteref" data-footnote-href="#/fn9" onclick=""><sup>9</sup></a> In der Praxis geschieht dies aber selten (nicht immer ist die statistisch beste auch die populärste Praxis).</p>
+<p>Bei einem Pre-post-Interventionsdesign (Messung vor und nach einer Intervention an derselben Gruppe), kann es vorteilhaft sein, nur die <em>Standardabweichung des Vortestes</em> für die Standardisierung zu nehmen. Grund: die Variabilität <em>vor</em> einer Intervention ist am ehesten zwischen Studien vergleichbar — damit werden auch die Effektstärken besser vergleichbar.<a href="#/footnotes" class="footnote-ref" id="fnref8" role="doc-noteref" data-footnote-href="#/fn8" onclick=""><sup>8</sup></a> In der Praxis geschieht dies aber selten (nicht immer ist die statistisch beste auch die populärste Praxis).</p>
 </div>
 </div>
 </div>
@@ -1404,7 +1223,7 @@ X_\text{pooled} = [X'_A; X'_B]
 <li>Warum? Die Idee ist, die Varianzschätzung des Merkmals durch Nutzung der Datenpunkte <em>beider</em> Gruppen zu verbessern. Sind die Varianzen in beiden Gruppen jedoch unterschiedlich, so ist der Fall gegeben, dass es gar nicht <em>die eine</em> Varianz des Merkmals gibt, sondern die Varianz stark von der Gruppenzugehörigkeit abhängt.</li>
 <li>Eine gängige Faustregel besagt, dass die Varianzen sich höchstens um den Faktor 2 unterscheiden sollten, d.h. <span class="math inline">\(0.5&lt;\frac{\hat{\sigma}^2_A}{\hat{\sigma}^2_B}&lt;2\)</span>.</li>
 <li>Diese Einschränkung bei der Verwendung der gepoolten Varianz wird jedoch häufg missachtet, mutmaßlich auch, weil sich keine alternative Lösung für den Fall unabhängiger Messungen in großer Breite etabliert hat.</li>
-<li>Eine häufig empfohlene Variante im Fall unabhängiger Messungen und unterschiedlicher Varianzen ist die Effektstärkengröße <em>Hedges</em>’ g* auf Basis der <strong>ungepoolten Varianz</strong> <span class="math inline">\(\hat{\sigma}_\text{av}\)</span> <a href="#/footnotes" class="footnote-ref" id="fnref10" role="doc-noteref" data-footnote-href="#/fn10" onclick=""><sup>10</sup></a>:</li>
+<li>Eine häufig empfohlene Variante im Fall unabhängiger Messungen und unterschiedlicher Varianzen ist die Effektstärkengröße <em>Hedges</em>’ g* auf Basis der <strong>ungepoolten Varianz</strong> <span class="math inline">\(\hat{\sigma}_\text{av}\)</span> <a href="#/footnotes" class="footnote-ref" id="fnref9" role="doc-noteref" data-footnote-href="#/fn9" onclick=""><sup>9</sup></a>:</li>
 </ul>
 </div>
 <p><span class="math display">\[
@@ -1438,7 +1257,7 @@ d = \frac{\bar{x}_A - \bar{x}_B}{\hat{\sigma}_\text{pooled}}\quad\text{mit}\quad
 <h2><span style="font-size: 36px; color: darkred">Effektstärkenvergleich zwischen abhängigen und unabhängigen Designs</span></h2>
 <div>
 <ul>
-<li>Laut einer aktuellen Forschungsarbeit<a href="#/footnotes" class="footnote-ref" id="fnref11" role="doc-noteref" data-footnote-href="#/fn11" onclick=""><sup>11</sup></a> sind die Werte von Cohen’s d auf Basis der gepoolten Varianz nicht exakt vergleichbar zwischen abhängigen und unabhängigen Messungen (auch dann, wenn die Varianzen ähnlich sind).</li>
+<li>Laut einer aktuellen Forschungsarbeit<a href="#/footnotes" class="footnote-ref" id="fnref10" role="doc-noteref" data-footnote-href="#/fn10" onclick=""><sup>10</sup></a> sind die Werte von Cohen’s d auf Basis der gepoolten Varianz nicht exakt vergleichbar zwischen abhängigen und unabhängigen Messungen (auch dann, wenn die Varianzen ähnlich sind).</li>
 <li>Die Arbeit bietet dafür folgende Modifikation von Cohen’s d für abhängige Messungen an:</li>
 </ul>
 </div>
@@ -1451,7 +1270,7 @@ d = \sqrt{\frac{2(1-r)}{n}}\cdot t'_\nu(\lambda)\quad\text{mit}\quad \lambda = \
 <div>
 <ul>
 <li>Laut dem Autor Denis Cousineau der Forschungsarbeit ist damit Cohen’s d exakt vergleichbar zwischen abhängigen und unabhängigen Messungen.</li>
-<li>Weiterer nützlicher Link zu Effektstärken bei abhängigen Messungen: <a href="#/footnotes" class="footnote-ref" id="fnref12" role="doc-noteref" data-footnote-href="#/fn12" onclick=""><sup>12</sup></a></li>
+<li>Weiterer nützlicher Link zu Effektstärken bei abhängigen Messungen: <a href="#/footnotes" class="footnote-ref" id="fnref11" role="doc-noteref" data-footnote-href="#/fn11" onclick=""><sup>11</sup></a></li>
 </ul>
 </div>
 <!----------------->
@@ -1464,7 +1283,7 @@ d = \sqrt{\frac{2(1-r)}{n}}\cdot t'_\nu(\lambda)\quad\text{mit}\quad \lambda = \
 <div>
 <ul>
 <li>Wie erwähnt, impliziert die Formel <span class="math inline">\(d=\frac{2\hat{\rho}}{\sqrt{1-\hat{\rho}^2}}\)</span> eigentlich, dass eine der beiden Variablen als <em>unabhängige Variable</em> festgelegt wurde. Cohen’s <span class="math inline">\(d\)</span> bemisst dabei die Effektstärke in der Variablen <span class="math inline">\(Y\)</span>, die mit einer Erhöhung der unabhängigen Variablen <span class="math inline">\(X\)</span> um zwei Standardabweichungen <span class="math inline">\(\sigma_{\mkern-2mu\scriptscriptstyle{X}}\)</span> verbunden ist.</li>
-<li>Tatsächlich ist die angebene Formel lediglich ein Spezialfall folgender allgemeiner Formel<a href="#/footnotes" class="footnote-ref" id="fnref13" role="doc-noteref" data-footnote-href="#/fn13" onclick=""><sup>13</sup></a>:</li>
+<li>Tatsächlich ist die angebene Formel lediglich ein Spezialfall folgender allgemeiner Formel<a href="#/footnotes" class="footnote-ref" id="fnref12" role="doc-noteref" data-footnote-href="#/fn12" onclick=""><sup>12</sup></a>:</li>
 </ul>
 </div>
 <div style="margin-top: -35px">
@@ -1572,8 +1391,178 @@ QS_\text{Gesamt} = QS_\text{Bedingungen} + QS_\text{Personen x Bedingungen}
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style=" color: darkred !important;">Empfehlungen nach Lakens (2013)<a href="#/footnotes" class="footnote-ref" id="fnref14" role="doc-noteref" data-footnote-href="#/fn14" onclick=""><sup>14</sup></a></span></h2>
+<h2><span style=" color: darkred !important;">Empfehlungen nach Lakens (2013)<a href="#/footnotes" class="footnote-ref" id="fnref13" role="doc-noteref" data-footnote-href="#/fn13" onclick=""><sup>13</sup></a></span></h2>
 <p><img data-src="images/effectsizes_recommendation_lakens2013.png"></p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<aside></aside></section>
+<section id="other_effect_sizes" class="slide level2">
+<h2><span style=" color: darkred !important;">Weitere Effektmaße</span></h2>
+<div>
+<ul>
+<li>Im Bereich klinischer Studien finden sich weitere Effektmaße, die in der Regel zum Ziel haben, die Wirksamkeit einer Intervention (Behandlung) zu quantifizieren.</li>
+<li>Folgende drei Effektmaße aus diesem Kontext betrachten wir:
+<ul>
+<li>Absolute Risikoreduktion (ARR)</li>
+<li>Numbers Needed to Treat (NNT)</li>
+<li>Odds ratio (OR)</li>
+</ul></li>
+</ul>
+</div>
+<div class="vspace-large">
+
+</div>
+<p><img data-src="images/clinical_effect_sizes.png" height="300"></p>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Absolute Risikoreduktion (ARR)</span></h2>
+<p>Sind beide Variablen dichotom, sind weder der Korrelationskoeffizient noch Cohen’s d intuitive Effektmaße.</p>
+<!---  Example --->
+<div class="example">
+<table>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img data-src="images/example.png" height="70"></td>
+<td>Sie untersuchen, ob ein neues Medikament die Heilungsrate (Erfolgsrate) einer Krankheit verbessert. Die Treatmentgruppe erhält das Medikament, die Kontrollgruppe Placebo.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Eine sinnnvolles Effektmaß ist hier, <em>um wie viel</em> die Erfolgsrate in der Treatmentgruppe die Erfolgsrate in der Kontrollgruppe übersteigt. Dies lässt sich einfach aus einer Vierfeldertafel ableiten:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/vierfeldertafel.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/arr.png"></p>
+</div>
+</div>
+<div>
+<ul>
+<li><span class="math inline">\(ARR\)</span> ist die <span style=" color: navy !important;"><strong>Absolute Risikoreduktion</strong></span>.</li>
+</ul>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Numbers Needed to Treat (NNT)</span></h2>
+<div>
+<ul>
+<li>Noch gängiger als die Absolute Risikoreduktion ist die inverse Größe, die als <span style=" color: navy !important;"><strong>Numbers Needed to Treat (NNT)</strong></span> bezeichnet wird.</li>
+</ul>
+</div>
+<div class="definition">
+<!---  Definition--->
+<table>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
+<td><strong>Number Needed to Treat:</strong> Anzahl der Personen, die behandelt werden müssten, damit eine zusätzliche Person einen Nutzen hat.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Mathematisch ist <span class="math inline">\(NNT\)</span> das Inverse der <span class="math inline">\(ARR\)</span>:</p>
+<p><span class="math display">\[
+NNT = \frac{1}{ARR}
+\]</span></p>
+<div>
+<ul>
+<li>Da es um Personen geht, wird die NNT immer aufgerundet.</li>
+</ul>
+</div>
+<!---  Example --->
+<div class="example" style="border-width: 0 !important">
+<table>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 30%">
+<col style="width: 60%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><img data-src="images/example.png" height="60"></td>
+<td><img data-src="images/vierfeldertafel_numbers.png"></td>
+<td><span class="math inline">\(ARR = \frac{90}{90+10} - \frac{35}{35+35}=0{,}9-0{,}5=0{,}4\quad\rightarrow\quad NRR=\frac{1}{0{,}4}=2{,}5\)</span><br>
+⇒ Drei weitere Personen müssten behandelt werden, damit eine zusätzliche Person einen Nutzen hat (d.h. die andernfalls nicht geheilt würde).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Odds Ratio (OR)</span></h2>
+<div>
+<ul>
+<li>Das <span style=" color: navy !important;"><strong>Odds Ratio</strong></span> (<span class="math inline">\(OR\)</span>) vergleicht das <em>Heilerfolgsverhältnis in der Treatmentgruppe</em> zum <em>Heilerfolgsverhältnis in der Kontrollgruppe</em>:</li>
+</ul>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/vierfeldertafel.png"></p>
+</div><div class="column" style="width:50%;">
+<p><span class="math display">\[
+\text{OR} = \frac{\frac{a}{b}}{\frac{c}{d}} = \frac{a\cdot d}{b\cdot c}
+\]</span></p>
+<p><span style="font-size: 20px; line-height: 1.05 !important; display: block; margin-top: 40px; color:#777">Beachte: Als Heilerfolgsverhältnis wird hier das Verhältnis der Zahl der geheilten Patienten gegenüber der Zahl der nicht geheilten Patienten verstanden.</span></p>
+</div>
+</div>
+<ul>
+<li class="fragment">Hat das Treatment keine Auswirkung, so sind die Heilerfolgsverhältnisse in beiden Gruppen gleich, d.h. <span class="math inline">\(OR=1\)</span>.</li>
+<li class="fragment">Ist das Treatment erfolgreich, ist das Heilerfolgsverhältnis in der Treatmentgruppen höher als in der Kontrollgruppe, d.h. <span class="math inline">\(OR&gt;1\)</span>.</li>
+<li class="fragment">Ist das Treatment sogar nachteilig, ist das Heilerfolgsverhältnis in der Treatmentgruppen <em>kleiner</em> als in der Kontrollgruppe, d.h. <span class="math inline">\(OR&lt;1\)</span>.</li>
+</ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">ARR, NNT, OR: Caveat</span></h2>
+<div>
+<ul>
+<li>Auch wenn das Ziel der Effektmaße <span class="math inline">\(ARR\)</span>, <span class="math inline">\(NNT\)</span>, <span class="math inline">\(OR\)</span> eine einfache laienverständliche Kommunikation der Treatmenteffizienz ist, darf angezweifelt werden, ob dies immer der Fall ist, wie durch folgendes Beispiel demonstriert<a href="#/footnotes" class="footnote-ref" id="fnref14" role="doc-noteref" data-footnote-href="#/fn14" onclick=""><sup>14</sup></a>:</li>
+</ul>
+</div>
+<p><img data-src="images/quote_NNT.png"></p>
+<div>
+<ul>
+<li>Hinweis: <span class="math inline">\(ARR\)</span> und <span class="math inline">\(OR\)</span> haben das gleiche Problem.</li>
+</ul>
+</div>
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Vorlesung 11: Effektstärke</p>
@@ -1589,13 +1578,13 @@ QS_\text{Gesamt} = QS_\text{Bedingungen} + QS_\text{Personen x Bedingungen}
 <li id="fn5"><p>Lovakov A, Agadullina ER (2021) Empirically derived guidelines for effect size interpretation in social psychology. Eur J Soc Psychol 51:485–504.</p></li>
 <li id="fn6"><p>https://twitter.com/ceptional/status/1687577019629142017</p></li>
 <li id="fn7"><p>Baguley T (2009) Standardized or simple effect size: What should be reported? British Journal of Psychology 100:603–617.</p></li>
-<li id="fn8"><p>Andrade C (2015) The Numbers Needed to Treat and Harm (NNT, NNH) Statistics: What They Tell Us and What They Do Not: (Practical Psychopharmacology). J Clin Psychiatry 76:e330–e333.</p></li>
-<li id="fn9"><p>Cumming G (2013) Cohen’s d needs to be readily interpretable: Comment on Shieh (2013). Behav Res 45:968–971.</p></li>
-<li id="fn10"><p>Delacre M, Lakens D, Ley C, Liu L, Leys C (2023) Why Hedges’ g*s based on the non-pooled standard deviation should be reported with Welch’s t-test. Open Science Framework. Available at: https://osf.io/tu6mp. Hinweis: der Terminus “ungepoolte” Varianz meint hier, dass die Daten nicht implizit in einen Pool geworfen werden und dann die Gesamtvarianz berechnet wird; stattdessen wird unabhängig von möglicherweise unterschiedlich großen Gruppengrößen <span class="math inline">\(n_A\)</span> und <span class="math inline">\(n_B\)</span> der Mittelwert der beiden Einzelvarianzen berechnet.</p></li>
-<li id="fn11"><p>Cousineau D (2020) Approximating the distribution of Cohen’s d_p in within-subject designs. TQMP 16:418–421.</p></li>
-<li id="fn12"><p>http://jakewestfall.org/blog/index.php/2016/03/25/five-different-cohens-d-statistics-for-within-subject-designs/</p></li>
-<li id="fn13"><p>Mathur MB, VanderWeele TJ (2020) A Simple, Interpretable Conversion from Pearson’s Correlation to Cohen’s d for Continuous Exposures. Epidemiology 31:e16–e18.</p></li>
-<li id="fn14"><p>Lakens D (2013) Calculating and reporting effect sizes to facilitate cumulative science: a practical primer for t-tests and ANOVAs. Frontiers in Psychology 4 Available at: https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00863</p></li>
+<li id="fn8"><p>Cumming G (2013) Cohen’s d needs to be readily interpretable: Comment on Shieh (2013). Behav Res 45:968–971.</p></li>
+<li id="fn9"><p>Delacre M, Lakens D, Ley C, Liu L, Leys C (2023) Why Hedges’ g*s based on the non-pooled standard deviation should be reported with Welch’s t-test. Open Science Framework. Available at: https://osf.io/tu6mp. Hinweis: der Terminus “ungepoolte” Varianz meint hier, dass die Daten nicht implizit in einen Pool geworfen werden und dann die Gesamtvarianz berechnet wird; stattdessen wird unabhängig von möglicherweise unterschiedlich großen Gruppengrößen <span class="math inline">\(n_A\)</span> und <span class="math inline">\(n_B\)</span> der Mittelwert der beiden Einzelvarianzen berechnet.</p></li>
+<li id="fn10"><p>Cousineau D (2020) Approximating the distribution of Cohen’s d_p in within-subject designs. TQMP 16:418–421.</p></li>
+<li id="fn11"><p>http://jakewestfall.org/blog/index.php/2016/03/25/five-different-cohens-d-statistics-for-within-subject-designs/</p></li>
+<li id="fn12"><p>Mathur MB, VanderWeele TJ (2020) A Simple, Interpretable Conversion from Pearson’s Correlation to Cohen’s d for Continuous Exposures. Epidemiology 31:e16–e18.</p></li>
+<li id="fn13"><p>Lakens D (2013) Calculating and reporting effect sizes to facilitate cumulative science: a practical primer for t-tests and ANOVAs. Frontiers in Psychology 4 Available at: https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00863</p></li>
+<li id="fn14"><p>Andrade C (2015) The Numbers Needed to Treat and Harm (NNT, NNH) Statistics: What They Tell Us and What They Do Not: (Practical Psychopharmacology). J Clin Psychiatry 76:e330–e333.</p></li>
 </ol>
 </section>
     </div>

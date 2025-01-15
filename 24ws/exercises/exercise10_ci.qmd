@@ -1,0 +1,82 @@
+---
+title: "Übung 10: Konfidenzintervalle"
+---
+
+<!----------------->
+<!---- Aufgabe ---->
+<!----------------->
+# Aufgabe
+
+In einer Studie zu therapieresistenter Depression wird ein neuartiger Ansatz mit einem Psychedelikum untersucht. Die Interventionsgruppe ($\text{int}$; N=14) erhält das Psychedelikum, die Kontrollgruppe ($\text{ctr}$; N=18) ein Placebopräparat. Der Behandlungserfolg wird in beiden Gruppen mit einem Heilungsindex $X$ gemessen:
+
+$$
+\bar{x}_\text{int} = 1.6,\quad \hat{\sigma}_\text{int} = 0.5
+$$
+
+$$
+\bar{x}_\text{ctr} = 1.5,\quad \hat{\sigma}_\text{ctr} = 0.4
+$$
+
+Der Unterschied im Behandlungserfolg beträgt also $\Delta\bar{x}=0.1$. Wie lautet das 95%-Konfidenzintervall und lässt das Intervall auf einen signifikanten Gruppenunterschied schließen?
+
+::: {.callout-tip .hide collapse=true title="Lösung"}
+
+Formel Konfidenzintervall:
+
+$$
+CI_{95} = \hat{\theta}\pm t_{(1-\frac{\alpha}{2},\;\text{df})}\cdot\hat{se}\qquad\text{Hinweis:}\;\hat{\theta} = \Delta\bar{x}
+$$
+
+Für den kritischen t-Wert wird die Zahl der Freiheitsgrade benötigt. Für unabhängige Stichproben und ähnliche Varianzen (Verhältnis kleiner 2) gilt:
+
+$$
+\text{df} = n_\text{int} + n_\text{ctr} - 2 = 14 + 18 - 2 = 30
+$$
+
+Somit lässt sich der kritische t-Wert der t-Tabelle entnehmen (Fläche 0.975):
+$$
+t_{(1-\frac{\alpha}{2},\;\text{df})} = t_{(0.975,\;30)} = 2.042
+$$
+
+Der Standardfehler bei unabhängigen Stichproben berechnet sich zu:
+
+$$
+\hat{se} = \hat{\sigma}_\text{pooled}\sqrt{\frac{1}{n_\text{int}}+\frac{1}{n_\text{ctr}}} = \hat{\sigma}_\text{pooled}\sqrt{\frac{1}{14}+\frac{1}{18}} = 0.356\cdot\hat{\sigma}_\text{pooled}
+$$
+
+$$
+\begin{aligned}
+\hat{\sigma}_\text{pooled} &= \sqrt{\frac{(n_\text{int}-1)\hat{\sigma}^2_\text{int} + (n_\text{ctr}-1)\hat{\sigma}^2_\text{ctr}}{n_\text{int}+n_\text{ctr}-2}} = \sqrt{\frac{(14-1)\cdot 0.5^2 + (18-1)\cdot 0.4^2}{14+18-2}} = \\
+&= \sqrt{\frac{13\cdot 0.25 + 17\cdot 0.16}{30}} = \sqrt{\frac{5.97}{30}} = 0.446
+\end{aligned}
+$$
+
+$$
+\hat{se} = 0.356\cdot\hat{\sigma}_\text{pooled} = 0.356\cdot0.446 = 0.159
+$$
+
+Damit lautet das Konfidenzintervall:
+
+$$
+CI_{95} = \hat{\theta}\pm t_{(1-\frac{\alpha}{2},\;\text{df})}\cdot\hat{se} = 0.1 \pm 2.042\cdot 0.159 = 0.1 \pm 0.325
+$$
+
+Intervalldarstellung:
+
+$$
+CI_{95} = [-0.225; 0.425]
+$$
+
+Das Konfidenzintervall enthält also die $0$ &mdash; der Gruppenunterschied ist **nicht signifikant**.
+
+:::
+
+
+
+
+<!----------------->
+<!---- Aufgabe ---->
+<!----------------->
+# Aufgabe
+
+In besagter Studie untersuchen Sie innerhalb der Interventionsgruppe den Zusammenhang von Offenheit gegenüber Psychedelika $Y$ und Heilungsindex $X$. Sie erhalten eine Korrelation von $\hat{\rho}=0.3$. Bestimmen Sie das 95%-Konfidenzintervall im Korrelationsraum und treffen Sie eine Aussage zur Signifikanz des Zusammenhangs.
