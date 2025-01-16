@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Übungen im Wintersemester 2024 / 2025 - Quiz 05: Regression</title>
+<title>Übungen im Wintersemester 2024 / 2025 - Übung 11: Effektstärke</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Quiz 05: Regression</h1>
+          <h1 class="quarto-secondary-nav-title">Übung 11: Effektstärke</h1>
         </a>     
     </div>
   </nav>
@@ -161,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercise11_effectsize.html" class="sidebar-item-text sidebar-link">
+  <a href="./exercise11_effectsize.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Übung 11: Effektstärke</span></a>
   </div>
 </li>
@@ -208,7 +208,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quiz05_regression.html" class="sidebar-item-text sidebar-link active">
+  <a href="./quiz05_regression.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quiz 05: Regression</span></a>
   </div>
 </li>
@@ -255,7 +255,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Quiz 05: Regression</h1>
+<h1 class="title d-none d-lg-block">Übung 11: Effektstärke</h1>
 </div>
 
 
@@ -272,13 +272,19 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <!----------------->
-<!---- Quizfrage ---->
+<!---- Aufgabe ---->
 <!----------------->
-<section id="quizfrage" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Quizfrage</h1>
-<p>Sie haben für den Zusammenhang von monatlichem Haushaltseinkommen (UV) und monatlichen Konsumausgaben (AV) eine Regression <span class="math inline">\(\hat{y} = \hat{b}_0 + \hat{b}_1x\)</span> anhand einer Stichprobe von <span class="math inline">\(n = 22\)</span> Haushalten berechnet. Im Nachhinein stellen Sie fest, dass der einkommensreichste Haushalt seinen Konsum fälschlicherweise um 800 Euro zu hoch angegeben hatte. Was geschieht, wenn das Modell erneut mit den korrigierten Daten geschätzt wird? Geben Sie an, welche der folgenden Aussagen in jedem Falle richtig sind:</p>
-<p><label class="checkbox-container"><input type="checkbox" name="einkommen"> Die Steigung <span class="math inline">\(\,\hat{b}_1\,\)</span> wird kleiner. </label> <label class="checkbox-container"><input type="checkbox" name="einkommen"> Die Regressionsgerade verschiebt sich um 800 Einheiten nach oben. </label> <label class="checkbox-container"><input type="checkbox" name="einkommen"> Die Regressionsgerade verschiebt sich um 800 Einheiten nach unten. </label> <label class="checkbox-container"><input type="checkbox" name="einkommen"> Die Regressionsgerade dreht sich im Uhrzeigersinn. </label> <label class="checkbox-container"><input type="checkbox" name="einkommen"> <span class="math inline">\(R^2\,\)</span> verbessert sich. </label> <label class="checkbox-container"><input type="checkbox" name="einkommen"> Die Korrelation zwischen Prädiktor und abhängiger Variable wird kleiner. </label></p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<section id="aufgabe" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Aufgabe</h1>
+<p>Sie untersuchen die Jobzufriedenheit von Psychologieabsolventen, die in einer psychotherapeutischen Profession (<span class="math inline">\(n_P = 40\)</span>) versus anderen Profession (<span class="math inline">\(n_A=37\)</span>) gelandet sind. Auf einer Zufriedenheitsskala von 1 (<em>überhaupt nicht zufrieden</em>) bis 10 (<em>sehr zufrieden</em>) erhalten Sie folgende Kennwerte:</p>
+<p><span class="math display">\[
+\bar{x}_P = 6.7,\quad\hat{\sigma}_P = 2
+\]</span></p>
+<p><span class="math display">\[
+\bar{x}_A = 7.5,\quad\hat{\sigma}_A = 1
+\]</span></p>
+<p>Berechnen Sie die standardisierte Effektstärke für den Gruppenunterschied der Jobzufriedenheit.</p>
+<div class="hide callout callout-style-default callout-tip callout-titled" title="Lösung">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -290,7 +296,21 @@ Lösung
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><label class="checkbox-container"><input type="checkbox" name="einkommen_s" checked=""> <strong>Die Steigung <span class="math inline">\(\,\hat{b}_1\,\)</span> wird kleiner.</strong> </label> <label class="checkbox-container"><input type="checkbox" name="einkommen_s"> Die Regressionsgerade verschiebt sich um 800 Einheiten nach oben. </label> <label class="checkbox-container"><input type="checkbox" name="einkommen_s"> Die Regressionsgerade verschiebt sich um 800 Einheiten nach unten. </label> <label class="checkbox-container"><input type="checkbox" name="einkommen_s" checked=""> <strong>Die Regressionsgerade dreht sich im Uhrzeigersinn.</strong> </label> <label class="checkbox-container"><input type="checkbox" name="einkommen_s"> <span class="math inline">\(R^2\,\)</span> verbessert sich. </label> <label class="checkbox-container"><input type="checkbox" name="einkommen_s"> Die Korrelation zwischen Prädiktor und abhängiger Variable wird kleiner. </label></p>
+<p>Für unabhängige Gruppen gilt:</p>
+<p><span class="math display">\[
+d = \frac{\Delta\bar{x}}{\hat{\sigma}_\text{pooled}} = \frac{\bar{x}_A-\bar{x}_P}{\hat{\sigma}_\text{pooled}} = \frac{7.5-6.7}{\hat{\sigma}_\text{pooled}} = \frac{0.8}{\hat{\sigma}_\text{pooled}}
+\]</span></p>
+<p>Die gepoolte Standardabweichung <span class="math inline">\(\hat{\sigma}_\text{pooled}\)</span> entspricht der gewichteten Varianz der beiden Gruppen:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\hat{\sigma}_\text{pooled} &amp;= \sqrt{\frac{(n_A-1)\hat{\sigma}_A^2+(n_P-1)\hat{\sigma}_P^2}{n_A+n_P-2}} = \sqrt{\frac{(37-1)\cdot 1^2+(40-1)\cdot 2^2}{37+40-2}} = \\
+&amp;= \sqrt{\frac{36\cdot 1+39\cdot 4}{75}} = \sqrt{\frac{192}{75}} = \sqrt{2.56} = 1.6
+\end{aligned}
+\]</span></p>
+<p>Eingesetzt:</p>
+<p><span class="math display">\[
+d = \frac{0.8}{\hat{\sigma}_\text{pooled}} = \frac{0.8}{1.6} = 0.5
+\]</span></p>
 </div>
 </div>
 </div>
