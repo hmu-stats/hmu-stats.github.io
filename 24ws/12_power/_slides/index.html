@@ -363,19 +363,25 @@
 </div>
 <div class="columns">
 <div class="column" style="width:70%;">
-<p>Sie wollen in einer Stichprobe die Hypothese <span class="math inline">\(H_1\)</span> untersuchen, dass der Mittelwert <span class="math inline">\(\mu_\text{med}\)</span> von Medizinernasenlängen größer ist, als der Bundesdurchschnitt <span class="math inline">\(\mu_0=5cm\)</span>.</p>
+<p>Sie wollen in einer Stichprobe die Hypothese <span class="math inline">\(H_1\)</span> untersuchen, dass der Mittelwert <span class="math inline">\(\mu_\text{med}\)</span> von Medizinernasenlängen größer ist, als der Bundesdurchschnitt <span class="math inline">\(\mu_0=5cm\)</span>. Es gilt:</p>
+<div class="vspace-small">
+
+</div>
 <p><span class="math display">\[
-H_1: \mu_\text{med} &gt; \mu_0\qquad H_0: \mu_\text{med} \le \mu_0
+H_1: \mu_\text{med} &gt; \mu_0\quad \text{oder}\quad \theta = \mu_\text{med} - \mu_0 &gt; 0
+\]</span></p>
+<p><span class="math display">\[
+H_0: \mu_\text{med} \le \mu_0\quad \text{oder}\quad \theta = \mu_\text{med} - \mu_0 \le 0
 \]</span></p>
 </div><div class="column" style="width:30%;">
 <p><img data-src="images/med.png" style="margin-top: -50px !important" height="200"></p>
 </div>
 </div>
-<div class="vspace-medium">
+<div class="vspace-small">
 
 </div>
 <div class="greybox fragment">
-<p><strong>Nehmen wir an</strong>, dass es den Effekt gibt, <span class="math inline">\(H_1\)</span> also korrekt ist. Wie groß ist die Wahrscheinlichkeit, die Nullhypothese <span class="math inline">\(H_0\)</span> auch tatsächlich ablehnen zu können?</p>
+<p><strong>Nehmen wir an</strong>, dass es den Effekt <span class="math inline">\(\theta &gt; 0\)</span> gibt, <span class="math inline">\(H_1\)</span> also korrekt ist. Wie groß ist die Wahrscheinlichkeit, die Nullhypothese <span class="math inline">\(H_0\)</span> auch tatsächlich ablehnen zu können?</p>
 </div>
 <div class="vspace-medium">
 
@@ -453,8 +459,7 @@ H_1: \mu_\text{med} &gt; \mu_0\qquad H_0: \mu_\text{med} \le \mu_0
 <ul>
 <li class="fragment">Über mögliche konkrete (Mittel-)Werte der <span class="math inline">\(H_1\)</span> haben wir uns im Framework der Nullhypothesen- testung keine Gedanken gemacht — hier reichte es, die Nullhypothese zu spezifizieren.</li>
 <li class="fragment">Für die Berechnung der statistischen Power sind Annahmen über die <span class="math inline">\(H_1\)</span> nun allerdings notwendig, denn um Wahrscheinlichkeiten unter der <span class="math inline">\(H_1\)</span>-Wahrscheinlichkeitsverteilung zu berechnen, muss ein konkreter Wert für den Mittelwert <span class="math inline">\(z_1\)</span> dieser Verteilung angenommen werden.</li>
-<li class="fragment">Im Nasenlängenbeispiel ist der betrachtete Effekt die Differenz <span class="math inline">\(\mu_1-\mu_0\)</span> und damit <span class="math inline">\(z_1 = \frac{\mu_1-\mu_0}{se}\)</span>.</li>
-<li class="fragment">Wir verwenden an dieser Stelle das allgemeinere Symbol <span class="math inline">\(\theta\)</span> als Platzhalter für unstandardisierte Effekte jeder Art:</li>
+<li class="fragment">Wir erinnern uns an die Definition des z-Wertes:</li>
 </ul>
 <div style="margin-top: -30px">
 <p><span class="math display">\[
@@ -462,7 +467,9 @@ z_1 = \frac{\theta}{se}
 \]</span></p>
 </div>
 <ul>
-<li class="fragment">Bei Einzelmessung an einer Stichprobe wie im Nasenlängenbeispiel gilt <span class="math inline">\(se=\sigma / \sqrt{n}\)</span> und damit:</li>
+<li class="fragment"><p>Wir verwenden <span class="math inline">\(\theta\)</span> und nicht <span class="math inline">\(\hat{\theta}\)</span>, da es sich um einen angenommenen und nicht um einen gemessenen Effekt handelt.</p></li>
+<li class="fragment"><p>Im Nasenlängenbeispiel etwa ist der betrachtete Effekt <span class="math inline">\(\theta\)</span> die Differenz <span class="math inline">\(\mu_\text{med} - \mu_0\)</span>.</p></li>
+<li class="fragment"><p>Bei Einzelmessung an einer Stichprobe wie im Nasenlängenbeispiel gilt <span class="math inline">\(se=\sigma / \sqrt{n}\)</span> und damit:</p></li>
 </ul>
 <div class="vspace-small">
 
@@ -482,7 +489,7 @@ z_1 = \frac{\theta}{\sigma / \sqrt{n}} = \frac{\theta}{\sigma}\sqrt{n}
 <p><span class="math display">\[
 z_1 = \frac{\theta}{\sigma}\sqrt{n} = d\sqrt{n}
 \]</span></p>
-<p>… mit anderen Worten: wir können die <span class="math inline">\(H_1\)</span> nicht nur durch Angabe eines unstandardisierten Effektes <span class="math inline">\(\theta\)</span> definieren, sondern auch durch Angabe einer Effektstärke <span class="math inline">\(d\)</span>!</p>
+<p>… mit anderen Worten: wir können die <span class="math inline">\(H_1\)</span> nicht nur durch Annahme eines unstandardisierten Effektes <span class="math inline">\(\theta\)</span> definieren, sondern auch durch Angabe einer standardisierten Effektstärke <span class="math inline">\(d\)</span>.</p>
 </div><div class="column" style="width:40%;">
 <p><img data-src="images/power2.png"></p>
 </div>
@@ -508,8 +515,8 @@ z_1 = \frac{\theta}{\sigma}\sqrt{n} = d\sqrt{n}
 </div>
 </div>
 <ul>
-<li class="fragment">Statistische Power ist also die Fläche <strong>rechts</strong> von <span class="math inline">\(z_\text{crit}\)</span> unter der <span class="math inline">\(H_1\)</span>-Verteilung.</li>
-<li class="fragment">Die Fläche <strong>links</strong> von <span class="math inline">\(z_\text{crit}\)</span> wird als <span class="math inline">\(\beta\)</span> bezeichnet (zur Bedeutung von <span class="math inline">\(\beta\)</span> kommen wir gleich). Entsprechend gilt für die statistische Power:</li>
+<li class="fragment">Statistische Power ist also die Fläche <strong>rechts</strong> von <span class="math inline">\(z_\text{crit}\)</span> unter der <span class="math inline">\(H_1\)</span>-Verteilung — in der Abbildung der blaugefärbte Bereich.</li>
+<li class="fragment">Die Fläche <strong>links</strong> von <span class="math inline">\(z_\text{crit}\)</span> unter der <span class="math inline">\(H_1\)</span>-Verteilung wird als <span class="math inline">\(\beta\)</span> bezeichnet (zur Bedeutung von <span class="math inline">\(\beta\)</span> kommen wir gleich). Entsprechend gilt für die statistische Power:</li>
 </ul>
 <p><span class="math display">\[
 \text{Power} = P(z &gt; z_\text{crit}\mid H_1) = 1-\beta
@@ -591,7 +598,7 @@ se = \sigma\sqrt{\frac{2}{n}}
 \]</span></p>
 <div class="colorbox" style="margin-top:0; padding-top: 0px; padding-bottom: 0px">
 <p><span class="math display">\[
-\text{Power (unabh. Messungen)} = 1-\Phi\left(z_\text{crit}-d\sqrt{\frac{n}{2}}\right)
+\text{Power (unabh. Messungen)} = 1-\Phi(z_\text{crit}-z_1) = 1-\Phi\left(z_\text{crit}-d\sqrt{\frac{n}{2}}\right)
 \]</span></p>
 </div>
 <!----------------->
@@ -599,14 +606,15 @@ se = \sigma\sqrt{\frac{2}{n}}
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Berechnung der statistischen Power (t-Test)</h2>
+<h2><span style=" color: darkred !important;">Berechnung der statistischen Power (t-Test)</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 95px; "></p>
 <div class="vspace-large">
 
 </div>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
-<li class="fragment">Die statistische Power für einen t-Test berechnet sich analog, indem wir den kritischen z-Wert <span class="math inline">\(z_\text{crit}\)</span> durch einen kritischen t-Wert <span class="math inline">\(t_\text{crit}\)</span> ersetzen und die kumulative Normalverteilungsfunktion <span class="math inline">\(\Phi(x)\)</span> durch die kumulative<br>t-Verteilungsfunktion <span class="math inline">\(F_t(x\mid\small\text{df})\)</span>:</li>
+<li class="fragment">Die statistische Power für einen t-Test berechnet sich analog, indem wir den kritischen z-Wert <span class="math inline">\(z_\text{crit}\)</span> durch einen kritischen t-Wert <span class="math inline">\(t_\text{crit}\)</span> ersetzen und die kumulative Standardnormalverteilungsfunktion <span class="math inline">\(\Phi(x)\)</span> durch die kumulative t-Verteilungsfunktion <span class="math inline">\(F_t(x\mid\small\text{df})\)</span>:</li>
 </ul>
 <p><span class="math display">\[
 \text{Power} = 1-F_t(t_\text{crit}-d\sqrt{n}\,|\,\small\text{df}\normalsize)
@@ -661,47 +669,15 @@ se = \sigma\sqrt{\frac{2}{n}}
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style=" color: darkred !important;">Power bei der Pearson-Korrelation: exakte Formel</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 100px; "></p>
-<ul>
-<li class="fragment">Wir erinnern uns, dass bei der Pearson-Korrelation der t-Wert wie folgt definiert war:</li>
-</ul>
-<div style="margin-top: -20px">
-<p><span class="math display">\[
-t = \rho\sqrt{\frac{n-2}{1-\rho^2}} = t_1
-\]</span></p>
-</div>
-<ul>
-<li class="fragment">Hierbei ergibt sich eine Komplikation: die Annahme, dass der t-Wert der Korrelation einer t-Verteilung folgt, gilt nur für die Nullhypothese <span class="math inline">\(H_0\)</span> (<span class="math inline">\(\rho=0\)</span>). Falls <span class="math inline">\(\rho\ne0\)</span>, also bei der Alternativhypothse <span class="math inline">\(H_1\)</span>, folgt der t-Wert der Korrelation dagegen der sog. <strong>nicht-zentralen t-Verteilung</strong> <span class="math inline">\(\tilde{f}_t\)</span> mit einem zusätzlichen Nicht-Zentralitätsparameter <span class="math inline">\(\lambda\)</span>, der auf der angenommenen Populationskorrelation <span class="math inline">\(\rho\)</span> basiert:</li>
-</ul>
-<div style="margin-top: -35px">
-<p><span class="math display">\[
-\lambda = \rho\sqrt{\frac{n}{1-\rho^2}}
-\]</span></p>
-</div>
-<ul>
-<li class="fragment">Nun muss wie gewohnt mithilfe der Verteilungsfunktion (hier <span class="math inline">\(\tilde{F}_t\)</span>) die kritische Fläche unter der angenommenen <span class="math inline">\(H_1\)</span>-Verteilung berechnet werden. Zu beachten ist, dass <span class="math inline">\(\tilde{F}_t\)</span> nicht zuvor bei <span class="math inline">\(t_\text{crit}-t_1\)</span> ausgewertet werden muss, sondern bei <span class="math inline">\(t_\text{crit}\)</span>, da die nicht-zentrale t-Verteilung die Verschiebung um <span class="math inline">\(t_1\)</span> bereits durch den Parameter <span class="math inline">\(\lambda\)</span> enthält (beachte, dass <span class="math inline">\(\lambda\approx t_1\)</span>!). Es gilt daher:</li>
-</ul>
-<div style="margin-top: -12px">
-<p><span class="math display">\[
-\textbf{Korrelation:}\quad\text{Power} = 1-\tilde{F}_t(t_\text{crit}\,|\,\small\text{df}\normalsize,\,\lambda)
-\]</span></p>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>Power bei der Pearson-Korrelation: vereinfachte Formeln</h2>
+<h2>Power bei der Pearson-Korrelation: vereinfachte Form</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
-<li class="fragment">Bei größeren Stichproben kann auch bei der Korrelation für die <span class="math inline">\(H_0\)</span>- und <span class="math inline">\(H_1\)</span>-Verteilung eine Normalverteilung angenommen werden.</li>
-<li class="fragment">Es gilt dann:</li>
+<li class="fragment">Kann angenommen werden, dass die <span class="math inline">\(H_1\)</span>-Verteilung des Pearson-Korrelationskoeffizienten normalverteilt ist (*), gilt:</li>
 </ul>
 <div style="margin-top: -8px">
 <p><span class="math display">\[
-t_1 = \rho\sqrt{\frac{n-2}{1-\rho^2}} \approx z_1
+z_1 = \rho\sqrt{\frac{n-2}{1-\rho^2}}
 \]</span></p>
 </div>
 </div><div class="column" style="width:40%;">
@@ -716,6 +692,9 @@ t_1 = \rho\sqrt{\frac{n-2}{1-\rho^2}} \approx z_1
 \textbf{Korrelation:}\quad\text{Power} = 1-\Phi(z_\text{crit}-z_1) = 1-\Phi(z_\text{crit}-\rho\sqrt{\frac{n-2}{1-\rho^2}} )
 \]</span></p>
 </div>
+<ul>
+<li class="fragment">(*) gilt nur für große Stichproben und wenn <span class="math inline">\(\rho\)</span> nicht zu extreme Werte aufweist. Siehe <a href="#/pearson_exact" style="color: darkred">Bonuscontent</a> für die exakte Powerberechnung der Pearson-Korrelation.</li>
+</ul>
 <!----------------->
 <!--- New slide --->
 <!----------------->
@@ -904,50 +883,10 @@ n = \left(\frac{z_\text{crit} + z_{1-\beta}}{d}\right)^2
 <p>gibt die notwendige Stichprobenzahl für einen <strong>z-Test bei abhängigen Messungen oder Einzelmessungen</strong>.</p>
 <p>Die Werte <span class="math inline">\(z_\text{crit}\)</span> und <span class="math inline">\(z_{1-\beta}\)</span> können beispielsweise in der z-Tabelle nachgeschlagen werden. Wie immer gilt bei einseitigen Tests <span class="math inline">\(z_\text{crit}=1-\alpha\)</span> und bei zweiseitigen Tests <span class="math inline">\(z_\text{crit}=1-\frac{\alpha}{2}\)</span>.</p>
 <p>Anhand der Formel zeigt sich der <strong>enge Zusammenhang der Fehlerraten <span class="math inline">\(\alpha\)</span> und <span class="math inline">\(\beta\)</span> und der Stichprobengröße <span class="math inline">\(n\)</span></strong>.</p>
-</section>
-<section class="slide level2">
-<h2>Abhängige Messungen: Einfluss der Korrelation <span class="math inline">\(\rho\)</span></h2>
-<p>Beim Vergleich zweier abhängigen Messungen <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> nimmt die Formel <span class="math inline">\(n = \left(\frac{z_\text{crit} + z_{1-\beta}}{d}\right)^2\)</span> an, dass die Effektstärke anhand der Differenzenstandardabweichung <span class="math inline">\(\sigma_\Delta\)</span> standardisiert ist:</p>
-<p><span class="math display">\[
-d = \frac{\theta}{\sigma_\Delta}
-\]</span></p>
-<p>Unter Annahme gleicher Varianzen <span class="math inline">\(\sigma_A^2=\sigma_B^2=\sigma^2\)</span> gilt für <span class="math inline">\(\sigma_\Delta\)</span>:</p>
-<p><span class="math display">\[
-\sigma_\Delta = \sqrt{\sigma_A^2+\sigma_B^2-2\rho\sigma_A\sigma_B} = \sqrt{2\sigma^2-2\rho\sigma^2} = \sigma\sqrt{2(1-\rho)}
-\]</span></p>
-<p>Damit gilt:</p>
-<p><span class="math display">\[
-d = \frac{\theta}{\sigma_\Delta} = \frac{\theta}{\sigma\sqrt{2(1-\rho)}} = \frac{\theta}{\sigma}\frac{1}{\sqrt{2(1-\rho)}}
-\]</span></p>
-<p>Und:</p>
-<p><span class="math display">\[
-n = \left(\frac{z_\text{crit} + z_{1-\beta}}{\frac{\theta}{\sigma}\frac{1}{\sqrt{2(1-\rho)}}}\right)^2 =  2(1-\rho)\left(\frac{z_\text{crit} + z_{1-\beta}}{\frac{\theta}{\sigma}}\right)^2
-\]</span></p>
-</section>
-<section class="slide level2">
-<h2>Abhängige Messungen: Einfluss der Korrelation <span class="math inline">\(\rho\)</span></h2>
-<ul>
-<li class="fragment">In der Form</li>
-</ul>
-<div style="margin-top: -55px">
-<p><span class="math display">\[
-n = 2(1-\rho)\left(\frac{z_\text{crit} + z_{1-\beta}}{\frac{\theta}{\sigma}}\right)^2
-\]</span></p>
+<div class="vspace-large">
+
 </div>
-<ul>
-<li class="fragment">… verdeutlicht die Formel einen wichtigen Aspekt bei abhängigen Messungen: <strong>bei gegebener <u>unstandardisierter</u> Effektstärke <span class="math inline">\(\theta\)</span>, hängt die Stichprobengröße von der Korrelation <span class="math inline">\(\rho\)</span> der beiden abhängigen Messungen ab</strong>.</li>
-<li class="fragment"><strong>Je höher die Korrelation <span class="math inline">\(\rho\)</span></strong>, also je gleichsinniger sich die Versuchspersonen in den Bedingungen <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> verändern, <strong>desto geringer die erforderliche Stichprobengröße</strong>.</li>
-<li class="fragment">Wie in der Vorlesung zu Effektstärken thematisiert, schlagen manche Autoren vor, die Effektstärke beim Vergleich abhängiger Messungen an der einfachen Standardabweichung <span class="math inline">\(\sigma\)</span> zu standardisieren, also <span class="math inline">\(d^*=\frac{\theta}{\sigma}\)</span>.</li>
-<li class="fragment">In diesem Fall gilt für die Stichprobenschätzung bei abhängigen Messungen:</li>
-</ul>
-<div style="margin-top: -10px">
-<p><span class="math display">\[
-n = 2(1-\rho)\left(\frac{z_\text{crit} + z_{1-\beta}}{d^*}\right)^2
-\]</span></p>
-</div>
-<ul>
-<li class="fragment">Bei Verwendung von <span class="math inline">\(d^*\)</span> ist der Einfluss der Korrelation <span class="math inline">\(\rho\)</span> auf die Fallzahl <span class="math inline">\(n\)</span> transparenter.</li>
-</ul>
+<p><u>Bonuscontent:</u> bei abhängigen Messungen lässt sich zeigen, dass die notwendige Fallzahl <a href="#/dependent_measures_correlation" style="color: darkred">stark von der angenommenen Korrelation zwischen den abhängigen Messungen abhängt.</a></p>
 </section>
 <section class="slide level2">
 <h2>Berechnung der notwendigen Fallzahl (z-Test): Beispiel</h2>
@@ -997,7 +936,8 @@ n(\text{unabh. Messungen}) = 2\left(\frac{z_\text{crit} + z_{1-\beta}}{d}\right)
 </div>
 </section>
 <section class="slide level2">
-<h2>Berechnung der notwendigen Fallzahl (t-Test)</h2>
+<h2><span style=" color: darkred !important;">Berechnung der notwendigen Fallzahl (t-Test)</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 100px; "></p>
 <!-- <div class="vspace-medium"></div> -->
 <p>Beim t-Test abhängiger Messungen gilt analog für ein- und zweiseitige Tests: <span class="math display">\[
 n_\text{einseitig} = \left(\frac{t_{(1-\alpha, \text{df})} + t_{(1-\beta, \text{df})}}{d}\right)^2 \qquad n_\text{zweiseitig} = \left(\frac{t_{(1-\frac{\alpha}{2}, \text{df})} + t_{(1-\beta, \text{df})}}{d}\right)^2
@@ -1036,7 +976,16 @@ n_\text{einseitig} = \left(\frac{t_{(1-\alpha, \text{df})} + t_{(1-\beta, \text{
 <section>
 <section class="title-slide slide level1 center">
 <h1>Festlegung der Effektstärke</h1>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Hinweis</h2>
+<div class="vspace-xlarge">
 
+</div>
+<p>Diesen Abschnitt sollten Sie <u>konzeptuell</u> verstehen, jedoch werden in der Klausur keine Rechnungen verlangt.</p>
 </section>
 <section class="slide level2">
 <h2>Festlegung der Effektstärke <span class="math inline">\(d\)</span></h2>
@@ -1053,7 +1002,7 @@ n_\text{einseitig} = \left(\frac{t_{(1-\alpha, \text{df})} + t_{(1-\beta, \text{
 <ol type="1">
 <li class="fragment"><strong>Schätzung der erwarteten Effektstärke auf Basis vorheriger Forschung</strong>.</li>
 <li class="fragment"><strong>Festlegung einer smallest effect size of interest (SESOI)</strong>, also der minimalen Effektstärke, die noch von wissenschaftlicher (Grundlagenforschung) oder praktischer (Anwendung, klinisch) Relevanz wäre.</li>
-<li class="fragment"><strong>Pilotstudie</strong>: seltener, da Pilotstudien selten groß genug sind, um Effektstärken mit adäquater Präzision bestimmen zu können.</li>
+<li class="fragment"><strong>Festlegung der gewünschten Präzision (Konfidenzintervall) des Effektes</strong> statt Festlegung der Effektstärke per se.</li>
 </ol></li>
 </ul>
 <!----------------->
@@ -1061,7 +1010,7 @@ n_\text{einseitig} = \left(\frac{t_{(1-\alpha, \text{df})} + t_{(1-\beta, \text{
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Schätzung der Effektstärke auf Basis vorheriger Forschung</h2>
+<h2>1. Schätzung der Effektstärke auf Basis vorheriger Forschung</h2>
 <ul>
 <li class="fragment">In manchen Fällen ist es möglich, die erwartete Effektstärke in einer Studie auf Basis früherer identischer oder ähnlicher Studien zu schätzen.</li>
 <li class="fragment">Beispiel: nehmen wir an, es gab bereits drei vorherige Studien, die Mediziner-Nasenlängen mit dem Bevölkerungsdurchschnitt verglichen haben. Die Studien berichten folgende Effektstärken:</li>
@@ -1111,7 +1060,7 @@ n_\text{einseitig} = \left(\frac{t_{(1-\alpha, \text{df})} + t_{(1-\beta, \text{
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Schätzung der Effektstärke auf Basis vorheriger Forschung</h2>
+<h2>1. Schätzung der Effektstärke auf Basis vorheriger Forschung</h2>
 <p>Die Schätzung der Effektstärke auf Basis vorheriger Studien ist häufig problematisch:</p>
 <ul>
 <li class="fragment"><strong>Vergleichbare Studien zu finden ist schwierig</strong>.</li>
@@ -1130,7 +1079,7 @@ n_\text{einseitig} = \left(\frac{t_{(1-\alpha, \text{df})} + t_{(1-\beta, \text{
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Festlegung einer smallest effect size of interest (SESOI)</h2>
+<h2>2. Festlegung einer smallest effect size of interest (SESOI)</h2>
 <ul>
 <li class="fragment">Die <em>smallest effect size of interest</em> (SESOI) ist diejenige Effektstärke, die noch als relevant für eine wissenschaftliche Theorie oder eine praktische Anwendung eingeschätzt wird.</li>
 </ul>
@@ -1174,7 +1123,7 @@ d_\text{SESOI} = \frac{\theta_\text{SESOI}}{\sigma} = \frac{3\,Punkte}{10\,Punkt
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Festlegung einer smallest effect size of interest (SESOI)</h2>
+<h2>2. Festlegung einer smallest effect size of interest (SESOI)</h2>
 <ul>
 <li class="fragment">Häufig ist es allerdings schwer, eine SESOI zu berechnen bzw. zu begründen.
 <ul>
@@ -1234,7 +1183,7 @@ n_\text{SESOI} = \left(\frac{z_{1-\alpha} + z_{1-\beta}}{d_\text{SESOI}}\right)^
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style="font-size: 40px">Festlegung der Stichprobengröße anhand des Konfidenzintervalls</span></h2>
+<h2><span style="font-size: 39px">3. Festlegung der Stichprobengröße anhand des Konfidenzintervalls</span></h2>
 <ul>
 <li class="fragment">Eine weitere Alternative zur Festlegung der Stichprobengröße, ist nicht einen statistischen Test zum Kriterium zu machen, sondern die Präzision des gemessenen Effektes <span class="math inline">\(\hat{\theta}\)</span>.</li>
 </ul>
@@ -1279,72 +1228,6 @@ n = \left(\frac{t_\text{crit}\hat{\sigma}}{x}\right)^2
 </div>
 </div>
 </div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style="font-size: 36px">Fallzahl gegeben: Bestimmung der minimalen detektierbaren Effektstärke</span></h2>
-<p>In manchen Fällen ist die Stichprobengröße durch externe Faktoren vorgegeben:</p>
-<div style="font-size: 23px; margin-top:-10px">
-<ul>
-<li class="fragment">Sie haben nur X Wochen Zeit in Ihrer Bachelorarbeit und können daher nur <span class="math inline">\(n\)</span> Versuchspersonen testen.</li>
-<li class="fragment">Sie untersuchen eine bestimmte Patientengruppe mit seltener Erkrankung X und können von dieser an Ihrem Standort nur <span class="math inline">\(n\)</span> Versuchspersonen testen.</li>
-<li class="fragment">Sie haben nur X Geld in Ihrem Forschungsbudet und können daher nur <span class="math inline">\(n\)</span> Versuchspersonen bezahlen.</li>
-</ul>
-</div>
-<div style="margin-top: -15px">
-<p>In diesem Fall ist es sinnvoll die inverse Frage zu stellen: welche kleinste Effektstärke kann mit der gegebenen Stichprobengröße <span class="math inline">\(n\)</span> mit einer Power von <span class="math inline">\(1-\beta\)</span> und einem Signifikanzniveau <span class="math inline">\(\alpha\)</span> detektiert werden? Man bezeichnet diese Effektstärke als <strong>minimale detektierbare Effektstärke (MDES</strong>).</p>
-</div>
-<p>Wir können hierzu unsere Formel</p>
-<div style="margin-top: -50px">
-<p><span class="math display">\[
-n = \left(\frac{z_{1-\alpha} + z_{1-\beta}}{d}\right)^2
-\]</span></p>
-</div>
-<p>nach <span class="math inline">\(d\)</span> auflösen:</p>
-<div class="colorbox" style="margin-top: -40px; margin-right: auto; width: fit-content;margin-left: auto;padding: 0px 70px;">
-<p><span class="math display">\[
-d=d_\text{MDES} = \frac{z_{1-\alpha} + z_{1-\beta}}{\sqrt{n}}
-\]</span></p>
-</div>
-<div style="margin-top: -10px">
-<p>Achtung: gilt für Einzelmessungen bzw. abhängige Messungen. Bei unabhängigen Messungen gilt:</p>
-</div>
-<div class="colorbox" style="margin-top: -10px; margin-right: auto; width: fit-content;margin-left: auto;padding: 0px 70px;">
-<p><span class="math display">\[
-d_\text{MDES}(\text{unabh. Messungen}) = \frac{z_{1-\alpha} + z_{1-\beta}}{\sqrt{\frac{n}{2}}}
-\]</span></p>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style="font-size: 36px">Fallzahl gegeben: Bestimmung der minimalen detektierbaren Effektstärke</span></h2>
-<div class="columns">
-<div class="column" style="width:72%;">
-<p><strong>Beispiel</strong></p>
-<ul>
-<li class="fragment">Sie konnten exakt 25 Medizinstudierende innerhalb des Zeitraums Ihrer Bachelorarbeit überzeugen, an Ihrer Nasenlängenstudie teilzunehmen.</li>
-<li class="fragment">Welche Effektstärke können Sie detektieren, wenn Sie bei einem zweiseitigen z-Test <span class="math inline">\(\alpha=0.05\)</span> und <span class="math inline">\(\beta=0.33\)</span> zugrundelegen?</li>
-</ul>
-<p>Kritische z-Werte (aus z-Tabelle):</p>
-<p><span class="math display">\[
-z_{1-\frac{\alpha}{2}} = z_{0.975}=1.96\qquad z_{1-\beta} = z_{0.67} = 0.44
-\]</span></p>
-</div><div class="column" style="width:28%;">
-<p><img data-src="images/med.png" height="200"></p>
-</div>
-</div>
-<p>Einsetzen in die Formel für Einzelmessungen / abh. Messungen:</p>
-<p><span class="math display">\[
-d_\text{MDES} = \frac{z_{1-\frac{\alpha}{2}} + z_{1-\beta}}{\sqrt{n}} = \frac{1.96 + 0.44}{\sqrt{25}} = \frac{2.4}{5} = 0.48
-\]</span></p>
-<div class="vspace-medium">
-
-</div>
-<p>Ihre minimale detektierbare Effektstärke beträgt also <span class="math inline">\(d_\text{MDES}=0.48\)</span> — ein kleiner bis mittlerer Effekt!</p>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
@@ -1385,6 +1268,81 @@ d_\text{MDES} = \frac{z_{1-\frac{\alpha}{2}} + z_{1-\beta}}{\sqrt{n}} = \frac{1.
 <!--- New slide --->
 <!----------------->
 </section>
+<section id="pearson_exact" class="slide level2">
+<h2><span style=" color: darkred !important;">Power bei der Pearson-Korrelation: exakte Formel</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="top: 10px; right: 0px; height: 100px; "></p>
+<ul>
+<li class="fragment">Wir erinnern uns, dass bei der Pearson-Korrelation der t-Wert wie folgt definiert war:</li>
+</ul>
+<div style="margin-top: -20px">
+<p><span class="math display">\[
+t = \rho\sqrt{\frac{n-2}{1-\rho^2}} = t_1
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">Hierbei ergibt sich eine Komplikation: die Annahme, dass der t-Wert der Korrelation einer t-Verteilung folgt, gilt nur für die Nullhypothese <span class="math inline">\(H_0\)</span> (<span class="math inline">\(\rho=0\)</span>). Falls <span class="math inline">\(\rho\ne0\)</span>, also bei der Alternativhypothse <span class="math inline">\(H_1\)</span>, folgt der t-Wert der Korrelation dagegen der sog. <strong>nicht-zentralen t-Verteilung</strong> <span class="math inline">\(\tilde{f}_t\)</span> mit einem zusätzlichen Nicht-Zentralitätsparameter <span class="math inline">\(\lambda\)</span>, der auf der angenommenen Populationskorrelation <span class="math inline">\(\rho\)</span> basiert:</li>
+</ul>
+<div style="margin-top: -35px">
+<p><span class="math display">\[
+\lambda = \rho\sqrt{\frac{n}{1-\rho^2}}
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">Nun muss wie gewohnt mithilfe der Verteilungsfunktion (hier <span class="math inline">\(\tilde{F}_t\)</span>) die kritische Fläche unter der angenommenen <span class="math inline">\(H_1\)</span>-Verteilung berechnet werden. Zu beachten ist, dass <span class="math inline">\(\tilde{F}_t\)</span> nicht zuvor bei <span class="math inline">\(t_\text{crit}-t_1\)</span> ausgewertet werden muss, sondern bei <span class="math inline">\(t_\text{crit}\)</span>, da die nicht-zentrale t-Verteilung die Verschiebung um <span class="math inline">\(t_1\)</span> bereits durch den Parameter <span class="math inline">\(\lambda\)</span> enthält (beachte, dass <span class="math inline">\(\lambda\approx t_1\)</span>!). Es gilt daher:</li>
+</ul>
+<div style="margin-top: -12px">
+<p><span class="math display">\[
+\textbf{Korrelation:}\quad\text{Power} = 1-\tilde{F}_t(t_\text{crit}\,|\,\small\text{df}\normalsize,\,\lambda)
+\]</span></p>
+</div>
+</section>
+<section id="dependent_measures_correlation" class="slide level2">
+<h2><span style=" color: darkred !important;">Abhängige Messungen: Einfluss der Korrelation <span class="math inline">\(\rho\)</span></span></h2>
+<p>Beim Vergleich zweier abhängigen Messungen <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> nimmt die Formel <span class="math inline">\(n = \left(\frac{z_\text{crit} + z_{1-\beta}}{d}\right)^2\)</span> an, dass die Effektstärke anhand der Differenzenstandardabweichung <span class="math inline">\(\sigma_\Delta\)</span> standardisiert ist:</p>
+<p><span class="math display">\[
+d = \frac{\theta}{\sigma_\Delta}
+\]</span></p>
+<p>Unter Annahme gleicher Varianzen <span class="math inline">\(\sigma_A^2=\sigma_B^2=\sigma^2\)</span> gilt für <span class="math inline">\(\sigma_\Delta\)</span>:</p>
+<p><span class="math display">\[
+\sigma_\Delta = \sqrt{\sigma_A^2+\sigma_B^2-2\rho\sigma_A\sigma_B} = \sqrt{2\sigma^2-2\rho\sigma^2} = \sigma\sqrt{2(1-\rho)}
+\]</span></p>
+<p>Damit gilt:</p>
+<p><span class="math display">\[
+d = \frac{\theta}{\sigma_\Delta} = \frac{\theta}{\sigma\sqrt{2(1-\rho)}} = \frac{\theta}{\sigma}\frac{1}{\sqrt{2(1-\rho)}}
+\]</span></p>
+<p>Und:</p>
+<p><span class="math display">\[
+n = \left(\frac{z_\text{crit} + z_{1-\beta}}{\frac{\theta}{\sigma}\frac{1}{\sqrt{2(1-\rho)}}}\right)^2 =  2(1-\rho)\left(\frac{z_\text{crit} + z_{1-\beta}}{\frac{\theta}{\sigma}}\right)^2
+\]</span></p>
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Abhängige Messungen: Einfluss der Korrelation <span class="math inline">\(\rho\)</span></span></h2>
+<ul>
+<li class="fragment">In der Form</li>
+</ul>
+<div style="margin-top: -55px">
+<p><span class="math display">\[
+n = 2(1-\rho)\left(\frac{z_\text{crit} + z_{1-\beta}}{\frac{\theta}{\sigma}}\right)^2
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">… verdeutlicht die Formel einen wichtigen Aspekt bei abhängigen Messungen: <strong>bei gegebener <u>unstandardisierter</u> Effektstärke <span class="math inline">\(\theta\)</span>, hängt die Stichprobengröße von der Korrelation <span class="math inline">\(\rho\)</span> der beiden abhängigen Messungen ab</strong>.</li>
+<li class="fragment"><strong>Je höher die Korrelation <span class="math inline">\(\rho\)</span></strong>, also je gleichsinniger sich die Versuchspersonen in den Bedingungen <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> verändern, <strong>desto geringer die erforderliche Stichprobengröße</strong>.</li>
+<li class="fragment">Wie in der Vorlesung zu Effektstärken thematisiert, schlagen manche Autoren vor, die Effektstärke beim Vergleich abhängiger Messungen an der einfachen Standardabweichung <span class="math inline">\(\sigma\)</span> zu standardisieren, also <span class="math inline">\(d^*=\frac{\theta}{\sigma}\)</span>.</li>
+<li class="fragment">In diesem Fall gilt für die Stichprobenschätzung bei abhängigen Messungen:</li>
+</ul>
+<div style="margin-top: -10px">
+<p><span class="math display">\[
+n = 2(1-\rho)\left(\frac{z_\text{crit} + z_{1-\beta}}{d^*}\right)^2
+\]</span></p>
+</div>
+<ul>
+<li class="fragment">Bei Verwendung von <span class="math inline">\(d^*\)</span> ist der Einfluss der Korrelation <span class="math inline">\(\rho\)</span> auf die Fallzahl <span class="math inline">\(n\)</span> transparenter.</li>
+</ul>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
 <section class="slide level2">
 <h2><span style=" color: darkred !important;">Optimaler <span class="math inline">\(\alpha\)</span>-Fehler</span></h2>
 <div class="vspace-small">
@@ -1412,11 +1370,77 @@ d_\text{MDES} = \frac{z_{1-\frac{\alpha}{2}} + z_{1-\beta}}{\sqrt{n}} = \frac{1.
 <figcaption>Power ist eine konkave Funktion der Stichprobengröße, d.h. jedes 1% Inkrement an Power benötigt ein zunehmendes Inkrement in der Stichprobengröße. Die Abbildung gilt für einen zweiseitigen Zweistichproben-t-Test mit Signifikanzniveau <span class="math inline">\(\alpha=0.05\)</span>. Adaptiert von Lakens 2014<a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a>.</figcaption>
 </figure>
 </div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<aside></aside></section>
+<section class="slide level2">
+<h2><span style="font-size: 36px; color: darkred">Fallzahl gegeben: Bestimmung der minimalen detektierbaren Effektstärke</span></h2>
+<p>In manchen Fällen ist die Stichprobengröße durch externe Faktoren vorgegeben:</p>
+<div style="font-size: 23px; margin-top:-10px">
+<ul>
+<li class="fragment">Sie haben nur X Wochen Zeit in Ihrer Bachelorarbeit und können daher nur <span class="math inline">\(n\)</span> Versuchspersonen testen.</li>
+<li class="fragment">Sie untersuchen eine bestimmte Patientengruppe mit seltener Erkrankung X und können von dieser an Ihrem Standort nur <span class="math inline">\(n\)</span> Versuchspersonen testen.</li>
+<li class="fragment">Sie haben nur X Geld in Ihrem Forschungsbudet und können daher nur <span class="math inline">\(n\)</span> Versuchspersonen bezahlen.</li>
+</ul>
+</div>
+<div style="margin-top: -15px">
+<p>In diesem Fall ist es sinnvoll die inverse Frage zu stellen: welche kleinste Effektstärke kann mit der gegebenen Stichprobengröße <span class="math inline">\(n\)</span> mit einer Power von <span class="math inline">\(1-\beta\)</span> und einem Signifikanzniveau <span class="math inline">\(\alpha\)</span> detektiert werden? Man bezeichnet diese Effektstärke als <strong>minimale detektierbare Effektstärke (MDES</strong>).</p>
+</div>
+<p>Wir können hierzu unsere Formel</p>
+<div style="margin-top: -50px">
+<p><span class="math display">\[
+n = \left(\frac{z_{1-\alpha} + z_{1-\beta}}{d}\right)^2
+\]</span></p>
+</div>
+<p>nach <span class="math inline">\(d\)</span> auflösen:</p>
+<div class="colorbox" style="margin-top: -40px; margin-right: auto; width: fit-content;margin-left: auto;padding: 0px 70px;">
+<p><span class="math display">\[
+d=d_\text{MDES} = \frac{z_{1-\alpha} + z_{1-\beta}}{\sqrt{n}}
+\]</span></p>
+</div>
+<div style="margin-top: -10px">
+<p>Achtung: gilt für Einzelmessungen bzw. abhängige Messungen. Bei unabhängigen Messungen gilt:</p>
+</div>
+<div class="colorbox" style="margin-top: -10px; margin-right: auto; width: fit-content;margin-left: auto;padding: 0px 70px;">
+<p><span class="math display">\[
+d_\text{MDES}(\text{unabh. Messungen}) = \frac{z_{1-\alpha} + z_{1-\beta}}{\sqrt{\frac{n}{2}}}
+\]</span></p>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style="font-size: 36px; color: darkred">Fallzahl gegeben: Bestimmung der minimalen detektierbaren Effektstärke</span></h2>
+<div class="columns">
+<div class="column" style="width:72%;">
+<p><strong>Beispiel</strong></p>
+<ul>
+<li class="fragment">Sie konnten exakt 25 Medizinstudierende innerhalb des Zeitraums Ihrer Bachelorarbeit überzeugen, an Ihrer Nasenlängenstudie teilzunehmen.</li>
+<li class="fragment">Welche Effektstärke können Sie detektieren, wenn Sie bei einem zweiseitigen z-Test <span class="math inline">\(\alpha=0.05\)</span> und <span class="math inline">\(\beta=0.33\)</span> zugrundelegen?</li>
+</ul>
+<p>Kritische z-Werte (aus z-Tabelle):</p>
+<p><span class="math display">\[
+z_{1-\frac{\alpha}{2}} = z_{0.975}=1.96\qquad z_{1-\beta} = z_{0.67} = 0.44
+\]</span></p>
+</div><div class="column" style="width:28%;">
+<p><img data-src="images/med.png" height="200"></p>
+</div>
+</div>
+<p>Einsetzen in die Formel für Einzelmessungen / abh. Messungen:</p>
+<p><span class="math display">\[
+d_\text{MDES} = \frac{z_{1-\frac{\alpha}{2}} + z_{1-\beta}}{\sqrt{n}} = \frac{1.96 + 0.44}{\sqrt{25}} = \frac{2.4}{5} = 0.48
+\]</span></p>
+<div class="vspace-medium">
+
+</div>
+<p>Ihre minimale detektierbare Effektstärke beträgt also <span class="math inline">\(d_\text{MDES}=0.48\)</span> — ein kleiner bis mittlerer Effekt!</p>
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Vorlesung 12: Power und Fallzahlschätzung</p>
 </div>
-<aside></aside></section></section>
+</section></section>
 <section id="footnotes" class="footnotes footnotes-end-of-document smaller scrollable" role="doc-endnotes"><h2>Fußnoten</h2>
 
 <ol>
