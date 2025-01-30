@@ -357,6 +357,47 @@ CI_{95} = [-0.225; 0.425]
 <section id="aufgabe-1" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Aufgabe</h1>
 <p>In besagter Studie untersuchen Sie innerhalb der Interventionsgruppe den Zusammenhang von Offenheit gegenüber Psychedelika <span class="math inline">\(Y\)</span> und Heilungsindex <span class="math inline">\(X\)</span>. Sie erhalten eine Korrelation von <span class="math inline">\(\hat{\rho}=0.3\)</span>. Bestimmen Sie das 95%-Konfidenzintervall im Korrelationsraum und treffen Sie eine Aussage zur Signifikanz des Zusammenhangs.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Fisher Z-Transformation</li>
+</ol>
+<p><span class="math display">\[
+Z = \text{artanh}\left(\hat{\rho}\right) = \text{artanh}\left(0.3\right)\overset{\text{(Fisher Z-Tabelle)}}{=}0.31
+\]</span></p>
+<ol start="2" type="1">
+<li>Berechnung des Konfidenzintervalls</li>
+</ol>
+<p><span class="math display">\[
+CI_Z=Z\pm z_{(1-\frac{\alpha}{2})}\cdot \hat{se}\qquad\text{mit}\quad \hat{se}=\frac{1}{\sqrt{n_\text{int}-3}}==\frac{1}{\sqrt{14-3}}=0.30
+\]</span></p>
+<p>Der kritische z-Wert für ein Konfidenzniveau von 0.95 entspricht dem z-Wert der eine Fläche von 0.975 abschneidet (Konfidenzniveau impliziert immer eine <em>zweiseitige</em> Testung): <span class="math display">\[
+z_{(1-\frac{\alpha}{2})}=z_{(0.975)}=1.96
+\]</span></p>
+<p>Damit gilt:</p>
+<p><span class="math display">\[
+CI_Z=0.31\pm 1.96\cdot 0.30=0.31\pm 0.588\qquad\text{bzw.}\quad CI_Z=[-0.278; 0.898]
+\]</span></p>
+<ol start="3" type="1">
+<li>Rücktransformation in den Korrelationsraum</li>
+</ol>
+<p><span class="math display">\[
+CI = [\tanh{(Z^{u})}; \tanh{(Z^{o})}] = [\tanh{(-0.278)}; \tanh{(0.898)}] = [-0.271; 0.715]
+\]</span></p>
+<p>Da das Konfidenzintervall den Wert <span class="math inline">\(0\)</span> einschließt, ist die Korrelation nicht signifikant.</p>
+</div>
+</div>
+</div>
 
 
 </section>
