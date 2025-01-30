@@ -19,7 +19,7 @@ $$
 
 Der Unterschied im Behandlungserfolg beträgt also $\Delta\bar{x}=0.1$. Wie lautet das 95%-Konfidenzintervall und lässt das Intervall auf einen signifikanten Gruppenunterschied schließen?
 
-::: {.callout-tip .hide collapse=true title="Lösung"}
+::: {.callout-tip collapse=true title="Lösung"}
 
 Formel Konfidenzintervall:
 
