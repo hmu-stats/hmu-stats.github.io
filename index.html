@@ -53,8 +53,14 @@ function change_semester(semester, semester_str) {
         `;
     }
 
+    let excercises = `<tr>
+            <td><a href="${semester}/exercises/_site/index.html" target="_blank" class="uebung" style="color: #caf9bb; font-weight: bold;"><i>&Uuml;bungsaufgaben</i></a></td>
+            <td><a href="${semester}/exercises/_site/index.html" target="_blank" class="nohover"><img src="images/lightbulb.svg" class="img-pdf"></a></td>
+        </tr>`;
+
     let content_lectures = `
         <table class="lectures vorlesungen">
+            ${+semester.slice(0, 2) >= 25 ? excercises : ''}
             <tr>
                 <td><a href="${semester}/Formelsammlung_Tabellen_Statistik1_${semester}.pdf" target="_blank" class="formelsammlung" style="color: #ccc"><i>Formelsammlung und Tabellen Statistik 1</i></a></td>
                 <td><a href="${semester}/Formelsammlung_Tabellen_Statistik1_${semester}.pdf" target="_blank" class="nohover" style="color: #ccc"><img src="images/pdf_black_small_grey.png" class="img-pdf"></a></td>
@@ -64,10 +70,7 @@ function change_semester(semester, semester_str) {
     `;
 
     if (lectures.seminars[semester].length > 0) {
-        let seminar_list = `<tr>
-                <td><a href="${semester}/exercises/_site/index.html" target="_blank" class="uebung" style="color: #caf9bb; font-weight: bold;"><i>&Uuml;bungsaufgaben</i></a></td>
-                <td><a href="${semester}/exercises/_site/index.html" target="_blank" class="nohover"><img src="images/lightbulb.svg" class="img-pdf"></a></td>
-            </tr>`;
+        let seminar_list = excercises;
         for (let i = 0; i < lectures.seminars[semester].length; i++) {
             seminar_list += `
                 <tr>
@@ -155,13 +158,15 @@ function change_semester_onload() {
         
             <option value='24ws'>Wintersemester 2024/2025</option>
         
+            <option value='25ss'>Sommersemester 2025</option>
+        
     </select>
 </div>
 </div>
 
 <table class="paradoxia-table"><tr>
-    <td><img id="img_paradoxia" src="images/paradoxia_group_of_scientists_flat_ws.png" class="paradoxia"></td>
-    <td style="font-size: 1.1rem;"><img id="img_semester" src="images/wintersemester.png" height="22px"><div id="semester">2024/2025</div></td>
+    <td><img id="img_paradoxia" src="images/paradoxia_group_of_scientists_flat_ss.png" class="paradoxia"></td>
+    <td style="font-size: 1.1rem;"><img id="img_semester" src="images/sommersemester.png" height="22px"><div id="semester">2025</div></td>
 </tr></table>
 
 <div id="content"></div>

@@ -44,6 +44,21 @@
             "11_effectsize",
             "12_power",
             "13_metaanalysis"
+        ],
+        "25ss": [
+            "01_intro",
+            "02_measurement",
+            "03_location_dispersion",
+            "04_correlation",
+            "05_regression",
+            "06_inference",
+            "07_probability_dist",
+            "08_significance_testing",
+            "09_ttest",
+            "10_confidence_intervals",
+            "11_effectsize",
+            "12_power",
+            "13_metaanalysis"
         ]
     },
     "titles": {
@@ -91,14 +106,30 @@
             "Vorlesung 11: Effektst&auml;rke",
             "Vorlesung 12: Power und Fallzahlsch&auml;tzung",
             "Vorlesung 13: Metaanalyse"
+        ],
+        "25ss": [
+            "Vorlesung 01: Einf&uuml;hrung",
+            "Vorlesung 02: Messen in der Psychologie",
+            "Vorlesung 03: Lage- und Streuungsma&szlig;e",
+            "Vorlesung 04: Korrelation",
+            "Vorlesung 05: Regression",
+            "Vorlesung 06: Inferenzstatistik",
+            "Vorlesung 07: Wahrscheinlichkeitsdichte",
+            "Vorlesung 08: Signifikanztestung",
+            "Vorlesung 09: t-Test",
+            "Vorlesung 10: Konfidenzintervalle",
+            "Vorlesung 11: Effektst&auml;rke",
+            "Vorlesung 12: Power und Fallzahlsch&auml;tzung",
+            "Vorlesung 13: Metaanalyse"
         ]
     },
     "semester_dict": {
         "23ws": "Wintersemester 2023/2024",
         "24ss": "Sommersemester 2024",
-        "24ws": "Wintersemester 2024/2025"
+        "24ws": "Wintersemester 2024/2025",
+        "25ss": "Sommersemester 2025"
     },
-    "default_semester": "24ws",
+    "default_semester": "25ss",
     "seminars": {
         "23ws": [],
         "24ss": [],
@@ -115,8 +146,10 @@
             "seminar_09_ttest",
             "seminar_10_confidence_intervals",
             "seminar_11_effectsize",
-            "seminar_12_power"
-        ]
+            "seminar_12_power",
+            "seminar_13_metaanalysis"
+        ],
+        "25ss": []
     },
     "titles_seminars": {
         "23ws": [],
@@ -134,7 +167,9 @@
             "Seminar 09: t-Test",
             "Seminar 10: Konfidenzintervalle",
             "Seminar 11: Effektst&auml;rke",
-            "Seminar 12: Power und Fallzahlsch&auml;tzung"
-        ]
+            "Seminar 12: Power und Fallzahlsch&auml;tzung",
+            "Seminar 13: Metaanalyse"
+        ],
+        "25ss": []
     }
 }
