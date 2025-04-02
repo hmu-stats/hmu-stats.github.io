@@ -333,7 +333,7 @@ Lösung
 <section id="aufgabe-2" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Aufgabe</h1>
 <p>In einer großen chronobiologischen Studie untersuchen Sie den Zusammenhang von Chronotypen und Depressivität. Sie legen sich für die Hypothesentestung auf ein Signifikanzniveau <span class="math inline">\(\alpha=0.05\)</span> fest.</p>
-<p><strong>a)</strong> In einer ersten Teilstudie untersuchen Sie die Hypothese, dass “Eulen” (nachtaktiv) eine höhere Depressivität aufweisen als “Lärchen” (werden Abends früh müde, aber sind morgens fit). In beiden Gruppen messen Sie 16 Versuchspersonen. Für die Eulen-Gruppe erhalten Sie einen Depressivitäts-Mittelwert <span class="math inline">\(\bar{x}_\text{E}=26.0\)</span> und für die Lärchen-Gruppe <span class="math inline">\(\bar{x}_\text{L}=24.4\)</span>. Die Standardabweichungen sind bekannt als <span class="math inline">\(\sigma_\text{E}=4\)</span> und <span class="math inline">\(\sigma_\text{L}=3\)</span>. Bestätigt sich Ihre Hypothese aus statistischer Sicht?</p>
+<p><strong>a)</strong> <!--In einer ersten Teilstudie untersuchen Sie--> Sie untersuchen die Hypothese, dass “Eulen” (nachtaktiv) eine höhere Depressivität aufweisen als “Lärchen” (werden Abends früh müde, aber sind morgens fit). In beiden Gruppen messen Sie 16 Versuchspersonen. Für die Eulen-Gruppe erhalten Sie einen Depressivitäts-Mittelwert <span class="math inline">\(\bar{x}_\text{E}=26.0\)</span> und für die Lärchen-Gruppe <span class="math inline">\(\bar{x}_\text{L}=24.4\)</span>. Der Standardfehler der Mittelwertdifferenz ist bekannt als <span class="math inline">\(se=1.25\)</span>. Bestätigt sich Ihre Hypothese aus statistischer Sicht?</p>
 <div class="hide callout callout-style-default callout-tip callout-titled" title="Lösung">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -354,17 +354,7 @@ z_\text{crit} = z_{1-\alpha} = z_{0.95} = 1.65
 <p>Hinweis: in der z-Tabelle im Zweifel den <em>höheren</em> kritischen z-Wert wählen, wenn die Fläche nicht exakt in der Tabelle enthalten ist.</p>
 <p>Empirischer z-Wert:</p>
 <p><span class="math display">\[
-z = \frac{\Delta\bar{x}}{se}
-\]</span></p>
-<p><span class="math display">\[
-\Delta x= \bar{x}_\text{E}-\bar{x}_\text{L} = 26.0-24.4 = 1.6
-\]</span></p>
-<p><span class="math display">\[
-se \overset{\text{(Varianzen ähnlich!)}}{=} \sqrt{\frac{\sigma_E^2+\sigma_L^2}{n}} = \sqrt{\frac{4^2+3^2}{16}} = \sqrt{\frac{25}{16}} = \frac{5}{4} = 1.25
-\]</span></p>
-<p>Und damit:</p>
-<p><span class="math display">\[
-z = \frac{1.6}{1.25} = 1.28
+z = \frac{\Delta\bar{x}}{se} = \frac{\bar{x}_\text{E}-\bar{x}_\text{L}}{se} = \frac{26.0-24.4}{1.25} = 1.28
 \]</span></p>
 <p>Da der empirische z-Wert (<span class="math inline">\(z=1.28\)</span>) unter dem kritischen z-Wert (<span class="math inline">\(z_\text{crit}=1.6\)</span>) liegt, ist der Gruppenunterschied nicht signifikant.</p>
 <p>Darüber hinaus wäre es möglich (aber nicht gefordert), den p-Wert zu bestimmen. Er ergibt sich aus der z-Tabelle wie folgt:</p>
@@ -375,7 +365,7 @@ p = 1-\Phi(z) = 1-\Phi(1.28) = 1-0.8997 = 0.1003
 </div>
 </div>
 </div>
-<p><strong>b)</strong> Liegt die Depressivität der Lärchen-Gruppe signifikant unter dem Bevölkerungsdurchschnitt <span class="math inline">\(\mu_0 = 25\)</span> (zweiseitige Testung)?</p>
+<p><strong>b)</strong> Liegt die Depressivität der Lärchen-Gruppe signifikant unter dem Bevölkerungsdurchschnitt <span class="math inline">\(\mu_0 = 25\)</span> (zweiseitige Testung)? Der Standardfehler des Mittelwertes der Lärchen-Gruppe beträgt <span class="math inline">\(se_L=0.75\)</span>.</p>
 <div class="hide callout callout-style-default callout-tip callout-titled" title="Lösung">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -392,39 +382,35 @@ Lösung
 z_\text{crit} = z_{1-\frac{\alpha}{2}} = z_{0.975} = 1.96
 \]</span></p>
 <p><span class="math display">\[
-z = \frac{\Delta\bar{x}}{se_L} = \frac{\bar{x}_L-\mu_0}{\sigma_L/\sqrt{n_L}} = \frac{24.4-25}{3/\sqrt{16}} = \frac{-0.6}{3/4} = \frac{-0.6}{0.75} = -0.8
+z = \frac{\Delta\bar{x}}{se_L} = \frac{\bar{x}_L-\mu_0}{se_L} = \frac{24.4-25}{0.75} = -0.8
 \]</span></p>
 <p>Achtung: da getestet wird, ob der Lärchen-Mittelwert <strong>kleiner</strong> als der Bundesdurchschnitt ist, muss überprüft werden, ob <span class="math inline">\(z\)</span> kleiner ist, als <span class="math inline">\(-z_\text{crit}=-1.96\)</span>! Das ist nicht der Fall, die Depressivität der Lärchen-Gruppe ist also nicht signifikant unter dem Bevölkerungsdurchschnitt.</p>
 </div>
 </div>
 </div>
-<p><strong>c)</strong> In der zweiten Teilstudie überprüfen Sie die Hypothese, dass Eulen- und Lärchen-ähnliche Schlafpläne eine unterschiedliche Auswirkung auf Depressivität haben. Eine Gruppe von <span class="math inline">\(n=100\)</span> gesunden Versuchspersonen hält sich in einer ersten Versuchsphase an einen Eulen-typischen Schlafplan und in der zweiten Versuchsphase an einen Lärchen-typischen Schlafplan. Nach beiden Phasen wird anschließend die Depressivität gemessen. Es ergeben sich die Mittelwerte <span class="math inline">\(\bar{x}_E=25.05\)</span> (Versuchsphase 1 mit Eulen-Schlafplan) und <span class="math inline">\(\bar{x}_L=24.95\)</span> (Versuchsphase 2 mit Lärchen-Schlafplan). Die Standardabweichung ist in beiden Phasen gleich und bekannt als <span class="math inline">\(\sigma=1\)</span>. Die Werte in den beiden Versuchsphasen korrelieren mit <span class="math inline">\(\rho=0.5\)</span>. Bestätigt sich Ihre Hypothese aus statistischer Sicht?</p>
-<div class="hide callout callout-style-default callout-tip callout-titled" title="Lösung">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösung
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Da es sich um eine zweiseitige Testung handelt, gilt wieder <span class="math inline">\(z_\text{crit} = z_{1-\frac{\alpha}{2}} = z_{0.975} = 1.96\)</span>.</p>
-<p><span class="math display">\[
+<!-- **c)** In der zweiten Teilstudie überprüfen Sie die Hypothese, dass Eulen- und Lärchen-ähnliche Schlafpläne eine unterschiedliche Auswirkung auf Depressivität haben. Eine Gruppe von $n=100$ gesunden Versuchspersonen hält sich in einer ersten Versuchsphase an einen Eulen-typischen Schlafplan und in der zweiten Versuchsphase an einen Lärchen-typischen Schlafplan. Nach beiden Phasen wird anschließend die Depressivität gemessen. Es ergeben sich die Mittelwerte $\bar{x}_E=25.05$ (Versuchsphase 1 mit Eulen-Schlafplan) und $\bar{x}_L=24.95$ (Versuchsphase 2 mit Lärchen-Schlafplan). Die Standardabweichung ist in beiden Phasen gleich und bekannt als $\sigma=1$. Die Werte in den beiden Versuchsphasen korrelieren mit $\rho=0.5$. Bestätigt sich Ihre Hypothese aus statistischer Sicht?
+
+::: {.callout-tip collapse=true title="Lösung"}
+
+
+Da es sich um eine zweiseitige Testung handelt, gilt wieder $z_\text{crit} = z_{1-\frac{\alpha}{2}} = z_{0.975} = 1.96$.
+
+$$
 z = \frac{\Delta\bar{x}}{se} = \frac{\bar{x}_E-\bar{x}_L}{\sigma_\Delta/\sqrt{n}}
-\]</span></p>
-<p><span class="math display">\[
+$$
+
+$$
 \sigma_\Delta=\sqrt{\sigma_E^2+\sigma_L^2-2\,\rho\sigma_E\sigma_L}=\sqrt{1^2+1^2-2\cdot 0.5\cdot 1\cdot 1} = \sqrt{1} = 1
-\]</span></p>
-<p><span class="math display">\[
+$$
+
+
+$$
 z = \frac{\bar{x}_E-\bar{x}_L}{\sigma_\Delta/\sqrt{n_L}} = \frac{25.05-24.95}{1/\sqrt{100}} = \frac{0.1}{1/10} = \frac{0.1}{0.1} = 1
-\]</span></p>
-<p>Auch dieser Mittelwertvergleich ist also nicht signifikant, da gilt <span class="math inline">\(z &lt; z_\text{crit}\)</span>.</p>
-</div>
-</div>
-</div>
+$$
+
+Auch dieser Mittelwertvergleich ist also nicht signifikant, da gilt $z < z_\text{crit}$.
+
+::: -->
 
 
 </section>
