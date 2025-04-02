@@ -752,41 +752,7 @@ Formel für die Dichtefunktion der Normalverteilung mit Mittelwert $0$ und gesch
 <div>
 <ul>
 <li>In einem ersten Schritt betrachten wir den <strong>vereinfachten Fall, dass die Streuung <span class="math inline">\(se\)</span> bekannt ist</strong>.</li>
-</ul>
-</div>
-<div class="fragment" style="margin-top: -12px">
-<ul>
-<li class="fragment">Entweder ist <span class="math inline">\(se\)</span> selbst bekannt, oder aber die Streuungen <span class="math inline">\(\sigma\)</span> der Merkmale, die dem Effekt zugrunde liegen, denn aus diesen lässt sich <span class="math inline">\(se\)</span> ableiten.</li>
-</ul>
-</div>
-<div class="fragment" style="margin-top: -12px">
-<div>
-<ul>
-<li>Im Nasenlängenbeispiel etwa können wir annehmen, dass die Populationsstreuungen <span class="math inline">\(\sigma_\text{med}\)</span> und <span class="math inline">\(\sigma_\text{psych}\)</span> des Merkmals Nasenlänge bekannt sind. Der Standardfehler <span class="math inline">\(se\)</span> der Mittelwertdifferenz lässt sich aus diesen Populationsstreuungen wie folgt ableiten (siehe <a href="#/cheatsheet" style="color: navy">Cheatsheet</a>):</li>
-</ul>
-</div>
-<p><span class="math display">\[
-se=\sqrt{\frac{\sigma_\text{med}^2}{n_\text{med}} + \frac{\sigma_\text{psych}^2}{n_\text{psych}}}
-\]</span></p>
-</div>
-</div><div class="column" style="width:34%;">
-<div class="vspace-medium">
-
-</div>
-<p><img data-src="images/nulldist2c.png"></p>
-</div>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>Vereinfachung: Populationsstreuungen bekannt</h2>
-<div class="columns">
-<div class="column" style="width:65%;">
-<div>
-<ul>
-<li>Nehmen wir an, der Standardfehler der Mittelwertdifferenz von Psychologen- und Medizinernasenlängen ist als <span class="math inline">\(se=0.1\)</span> bekannt.</li>
+<li>Konkret sei der Standardfehler der Mittelwertdifferenz von Psychologen- und Medizinernasenlängen als <span class="math inline">\(se=0.1\)</span> bekannt.</li>
 <li>Mit dieser Information können wir können unseren ersten p-Wert berechnen!</li>
 <li>Der p-Wert ist im Beispiel die Wahrscheinlichkeit der gemessenen Nasenlängendifferenz <span class="math inline">\(\Delta\bar{x}\)</span> <em>oder eines noch größeren Effektes</em> unter der Nullhypothesenverteilung.</li>
 <li>Dazu muss die Fläche unter der Nullhypothesenverteilung <u>rechts</u> von <span class="math inline">\(\hat{\theta}=\Delta\bar{x}=\bar{x}_\text{med}-\bar{x}_\text{psych}\)</span> berechnet werden.</li>
@@ -921,70 +887,37 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(z) = 1 - \Phi(2) \overset{(Computer)}
 <!----------------->
 <!--- New slide --->
 <!----------------->
-</section>
-<section id="cheatsheet" class="slide level2">
-<h2>z-Test: Cheat Sheet für Mittelwertdifferenzen</h2>
-<div class="vspace-small">
+<!-- ## z-Test: Cheat Sheet für Mittelwertdifferenzen{#cheatsheet}
 
-</div>
-<p>Der z-Test kann auf alle Arten von Mittelwertsvergleichen angewendet werden:</p>
-<div class="vspace-small">
+<div class="vspace-small"></div>
 
-</div>
+Der z-Test kann auf alle Arten von Mittelwertsvergleichen angewendet werden:
+
+<div class="vspace-small"></div> -->
 <!---  Table --->
-<table>
-<colgroup>
-<col style="width: 35%">
-<col style="width: 17%">
-<col style="width: 13%">
-<col style="width: 35%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Fall</th>
-<th>z-Wert</th>
-<th style="text-align: center;">Bekannt</th>
-<th>Standardfehler</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Einzelmessung:</strong> Vergleich von <span class="math inline">\(\bar{x}\)</span> mit einem Referenzwert <span class="math inline">\(\mu_0\)</span></td>
-<td><span class="math inline">\(z=\frac{\bar{x}-\mu_0}{se}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\sigma\)</span></td>
-<td><span class="math inline">\(se=\frac{\sigma}{\sqrt{n}}\)</span></td>
-</tr>
-<tr class="even">
-<td><strong>Abhängige Messungen:</strong> Vergleich der Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> von <em>zwei Bedingungen A und B in einer Gruppe</em></td>
-<td><span class="math inline">\(z=\frac{\bar{x}_A-\bar{x}_B}{se}=\frac{\Delta \bar{x}}{se}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\sigma_A, \sigma_B, \rho\)</span></td>
-<td><span class="math inline">\(se=\frac{\sigma_\Delta}{\sqrt{n}}\;\;\)</span> mit <span class="math inline">\(\;\;\scriptsize{\sigma_\Delta=\sqrt{\sigma_A^2+\sigma_B^2-2\,\rho\sigma_A\sigma_B}}\)</span></td>
-</tr>
-<tr class="odd">
-<td><strong>Unabhängige Messungen:</strong> Vergleich der Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> von <em>zwei unabhängigen Gruppen A und B</em></td>
-<td><span class="math inline">\(z=\frac{\bar{x}_A-\bar{x}_B}{se}=\frac{\Delta \bar{x}}{se}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\sigma_A, \sigma_B\)</span></td>
-<td><span class="math inline">\(se=\sqrt{\frac{\sigma_A^2}{n_A}+\frac{\sigma_B^2}{n_B}}\)</span></td>
-</tr>
-</tbody>
-</table>
-<div class="vspace-xlarge">
+<!-- |Fall|z-Wert|Bekannt|Standardfehler|
+|-|-|:-:|-|
+| **Einzelmessung:** Vergleich von $\bar{x}$ mit einem Referenzwert $\mu_0$ | $z=\frac{\bar{x}-\mu_0}{se}$ |$\sigma$|$se=\frac{\sigma}{\sqrt{n}}$|
+| **Abhängige Messungen:** Vergleich der Mittelwerte $\bar{x}_A$ und $\bar{x}_B$ von *zwei Bedingungen A und B in einer Gruppe* | $z=\frac{\bar{x}_A-\bar{x}_B}{se}=\frac{\Delta \bar{x}}{se}$ |$\sigma_A, \sigma_B, \rho$|$se=\frac{\sigma_\Delta}{\sqrt{n}}\;\;$ mit $\;\;\scriptsize{\sigma_\Delta=\sqrt{\sigma_A^2+\sigma_B^2-2\,\rho\sigma_A\sigma_B}}$|
+| **Unabhängige Messungen:** Vergleich der Mittelwerte $\bar{x}_A$ und $\bar{x}_B$ von *zwei unabhängigen Gruppen A und B* |  $z=\frac{\bar{x}_A-\bar{x}_B}{se}=\frac{\Delta \bar{x}}{se}$  |$\sigma_A, \sigma_B$ |$se=\sqrt{\frac{\sigma_A^2}{n_A}+\frac{\sigma_B^2}{n_B}}$|
 
-</div>
-<div class="fragment">
-<div class="merke" style="font-size: 24px">
-<div class="columns">
-<div class="column" style="width:5%;">
-<div style="margin-top: 18px">
-<p><img data-src="images/merke.png" height="55"></p>
-</div>
-</div><div class="column" style="width:95%;">
-<p>Die Formeln für die Standardfehler gelten für den Fall, dass die <strong>Varianzen <span class="math inline">\(\sigma_A^2\)</span> bzw. <span class="math inline">\(\sigma_B^2\)</span> in den Populationen bekannt sind</strong> (wie beim z-Test). Siehe Bonuscontent für eine <a href="#/sem" style="color: darkred">Herleitung der Standardfehler von Mittelwertdifferenzen</a>.</p>
-<p>Sind die Populationsstreuungen nicht bekannt, sehen die Standardfehlerformeln aufgrund der Besselkorrektur etwas anders aus (→ siehe t-Test in Vorlesung 11).</p>
-</div>
-</div>
-</div>
-</div>
+: {tbl-colwidths="[35, 17, 13, 35]"} -->
+<!-- <div class="vspace-xlarge"></div> -->
+<!-- :::{.fragment}
+::: {.merke style="font-size: 24px"}
+:::: {.columns}
+::: {.column width="5%"}
+::: {style="margin-top: 18px"}
+![](images/merke.png){height="55px"}
+:::
+:::
+::: {.column width="95%"}
+Die Formeln für die Standardfehler gelten für den Fall, dass die **Varianzen $\sigma_A^2$ bzw. $\sigma_B^2$ in den Populationen bekannt sind** (wie beim z-Test). Siehe Bonuscontent für eine [Herleitung der Standardfehler von Mittelwertdifferenzen](#sem){style="color: darkred"}. -->
+<!-- Sind die Populationsstreuungen nicht bekannt, sehen die Standardfehlerformeln aufgrund der Besselkorrektur etwas anders aus (&rarr; siehe t-Test in Vorlesung 11).
+:::
+::::
+:::
+::: -->
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
@@ -1281,7 +1214,7 @@ Dies wirkt sich auf die Flächen unter der Nullverteilung aus, die wir betrachte
 <li class="fragment">Bei der <strong>Nullhypothesentestung</strong> nach Fisher wird die Wahrscheinlichkeit geprüft, mit der ein beobachteter Effekt <span class="math inline">\(\hat{\theta}\)</span> (oder ein noch extremerer Effekt) durch Zufall entstanden sein könnte — d.h. für die Annahme dass die <em>Nullhypothese tatsächlich zutreffend</em> ist.</li>
 <li class="fragment">Diese Wahrscheinlichkeit wird als <strong>p-Wert</strong> bezeichnet — je kleiner der p-Wert, desto weniger haltbar ist die Nullhypothese, desto stärker die <strong>statistische Signifikanz</strong>.</li>
 <li class="fragment">Ein Effekt wird als statistisch signifikant gewertet, wenn der p-Wert unterhalb eines festgelegten <strong>Signifikanzniveaus α</strong> liegt (in diesem Fall wird die “Nullhypothese abgelehnt”).</li>
-<li class="fragment">Sind die Populationsstreuungen bekannt, so erfolgt die statistische Testung anhand der <strong>Prüfgröße <span class="math inline">\(z\)</span></strong> (<strong>z-Wert</strong>) in Verbindung mit der <strong>Standardnormalverteilung</strong>.</li>
+<li class="fragment">Ist der Standardfehler <span class="math inline">\(se\)</span> bekannt, so erfolgt die statistische Testung anhand der <strong>Prüfgröße <span class="math inline">\(z\)</span></strong> (<strong>z-Wert</strong>) in Verbindung mit der <strong>Standardnormalverteilung</strong>.</li>
 <li class="fragment">Abhängig davon ob die untesuchte Hypothese <strong>gerichtet</strong> oder <strong>ungerichtet</strong> ist, erfolgt die statistische Testung entweder als <strong>einseitiger Test</strong> oder als <strong>zweiseitiger Test</strong>.</li>
 </ul>
 </div>
@@ -1306,33 +1239,33 @@ Dies wirkt sich auf die Flächen unter der Nullverteilung aus, die wir betrachte
 <div class="column" style="width:68%;">
 <p>Sie erstellen sich eine Tabelle mit den relevanten Parametern für den z-Test:</p>
 <!---  Table --->
-<table style="width:93%;">
+<!-- |[TikTok]{.underline}|Fallzahl $n$ |Mittelwert $\bar{x}$|Standardabweichung $\sigma$|
+|-|-|-|-|
+| Kontroll | 50 | $1.022$ | ${0.545}$ |
+| Paradoxia | 50 |$1.599$ | ${0.677}$ | -->
+<table style="width:60%;">
 <colgroup>
 <col style="width: 20%">
 <col style="width: 20%">
 <col style="width: 20%">
-<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
 <th><u>TikTok</u></th>
 <th>Fallzahl <span class="math inline">\(n\)</span></th>
 <th>Mittelwert <span class="math inline">\(\bar{x}\)</span></th>
-<th>Standardabweichung <span class="math inline">\(\sigma\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Kontroll</td>
 <td>50</td>
-<td><span class="math inline">\(1{,}022\)</span></td>
-<td><span class="math inline">\({0{,}545}\)</span></td>
+<td><span class="math inline">\(1.022\)</span></td>
 </tr>
 <tr class="even">
 <td>Paradoxia</td>
 <td>50</td>
-<td><span class="math inline">\(1{,}599\)</span></td>
-<td><span class="math inline">\({0{,}677}\)</span></td>
+<td><span class="math inline">\(1.599\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1340,33 +1273,33 @@ Dies wirkt sich auf die Flächen unter der Nullverteilung aus, die wir betrachte
 
 </div>
 <!---  Table --->
-<table style="width:93%;">
+<!-- |[Entzündung]{.underline}|Fallzahl $n$ |Mittelwert $\bar{x}$|Standardabweichung $\sigma$|
+|-|-|-|-|
+| Kontroll | 50 | $0.1233$ | $0.0682$ |
+| Paradoxia | 50 |$0.1477$ | $0.0783$ | -->
+<table style="width:60%;">
 <colgroup>
 <col style="width: 20%">
 <col style="width: 20%">
 <col style="width: 20%">
-<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
 <th><u>Entzündung</u></th>
 <th>Fallzahl <span class="math inline">\(n\)</span></th>
 <th>Mittelwert <span class="math inline">\(\bar{x}\)</span></th>
-<th>Standardabweichung <span class="math inline">\(\sigma\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Kontroll</td>
 <td>50</td>
-<td><span class="math inline">\(0{,}1233\)</span></td>
-<td><span class="math inline">\(0{,}0682\)</span></td>
+<td><span class="math inline">\(0.1233\)</span></td>
 </tr>
 <tr class="even">
 <td>Paradoxia</td>
 <td>50</td>
-<td><span class="math inline">\(0{,}1477\)</span></td>
-<td><span class="math inline">\(0{,}0783\)</span></td>
+<td><span class="math inline">\(0.1477\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1386,21 +1319,32 @@ Dies wirkt sich auf die Flächen unter der Nullverteilung aus, die wir betrachte
 </div>
 <div class="columns">
 <div class="column" style="width:68%;">
-<p>Um den z-Wert zu bestimmen, benötigen Sie den Standardfehler. Da es sich um unabhängige Messungen in zwei Gruppen handelt, verwenden Sie die Formel, die auf der mittleren Varianz beider Gruppen basiert:</p>
-<p><span class="math display">\[
+<!-- Um den z-Wert zu bestimmen, benötigen Sie den Standardfehler. Da es sich um unabhängige Messungen in zwei Gruppen handelt, verwenden Sie die Formel, die auf der mittleren Varianz beider Gruppen basiert:
+
+$$
 se=\sqrt{\frac{\sigma_\text{control}^2}{n_\text{control}}+\frac{\sigma_\text{paradox}^2}{n_\text{paradox}}}
+$$ -->
+<p>Um die z-Werte <span class="math inline">\(z=\frac{\Delta\bar{x}}{se}\)</span> beider Effekte zu bestimmen, benötigen Sie jeweils die Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span> und den Standardfehler <span class="math inline">\(se\)</span> der Mittelwertdifferenz.</p>
+<p>Es gilt:</p>
+<p><span class="math display">\[
+\scriptsize{
+\text{TikTok:}\quad\; \Delta\bar{x} = \bar{x}_\text{paradox} - \bar{x}_\text{control} = 1.599-1.022 = 0.577 \\
+\text{Entzündung:}\quad\; \Delta\bar{x} = \bar{x}_\text{paradox} - \bar{x}_\text{control} = 0.1477-0.1233 = 0.0243
+}
 \]</span></p>
 </div><div class="column" style="width:32%;">
 <p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important" height="200"></p>
 </div>
 </div>
-<p>Sie erhalten:</p>
-<p><span class="math display">\[
+<!-- Sie erhalten:
+
+$$
 \scriptsize{
-\text{TikTok:}\quad\; se=\sqrt{\frac{0{,545}^2}{50}+\frac{0{,}677^2}{50}}=0{,}123\qquad \Delta\bar{x} = \bar{x}_\text{paradox} - \bar{x}_\text{control} = 1{,}599-1{,}022 = 0{,}577 \\
-\text{Entzündung:}\quad\; se=\sqrt{\frac{0{,}0682^2}{50}+\frac{0{,}0783^2}{50}}=0{,}0147\qquad \Delta\bar{x} = \bar{x}_\text{paradox} - \bar{x}_\text{control} = 0{,}1477-0{,}1233 = 0{,}0243
+\text{TikTok:}\quad\; se=\sqrt{\frac{0{,545}^2}{50}+\frac{0.677^2}{50}}=0.123\qquad \Delta\bar{x} = \bar{x}_\text{paradox} - \bar{x}_\text{control} = 1.599-1.022 = 0.577 \\
+\text{Entzündung:}\quad\; se=\sqrt{\frac{0.0682^2}{50}+\frac{0.0783^2}{50}}=0.0147\qquad \Delta\bar{x} = \bar{x}_\text{paradox} - \bar{x}_\text{control} = 0.1477-0.1233 = 0.0243
 }
-\]</span></p>
+$$ -->
+<p>Außerdem sei Ihnen bekannt, dass der Standardfehler des TikTok-Effektes <span class="math inline">\(se=0.123\)</span> beträgt und der Standardfehler des Entzündungseffektes <span class="math inline">\(se=0.0147\)</span>.</p>
 </section>
 <section class="slide level2 blackslide center">
 <h2></h2>
@@ -1409,10 +1353,11 @@ se=\sqrt{\frac{\sigma_\text{control}^2}{n_\text{control}}+\frac{\sigma_\text{par
 </div>
 <div class="columns">
 <div class="column" style="width:68%;">
-<p>Der z-Wert ergibt sich als das Verhältnis aus dem “Effekt” (hier <span class="math inline">\(\Delta\bar{x}\)</span>) und dem Standardfehler:</p>
+<!-- Der z-Wert ergibt sich als das Verhältnis aus dem "Effekt" (hier $\Delta\bar{x}$) und dem Standardfehler: -->
+<p>Damit können Sie die z-Werte berechnen:</p>
 <p><span class="math display">\[
-\text{TikTok:}\qquad z=\frac{\hat{\theta}}{se}=\frac{\Delta\bar{x}}{se} = \frac{0{,}577}{0{,}123} = 4{,}69\\
-\text{Entzündung:}\qquad z=\frac{\hat{\theta}}{se}=\frac{\Delta\bar{x}}{se} = \frac{0{,}0243}{0{,}0147} = 1{,}65
+\text{TikTok:}\qquad z=\frac{\hat{\theta}}{se}=\frac{\Delta\bar{x}}{se} = \frac{0.577}{0.123} = 4.69\\
+\text{Entzündung:}\qquad z=\frac{\hat{\theta}}{se}=\frac{\Delta\bar{x}}{se} = \frac{0.0243}{0.0147} = 1.65
 \]</span></p>
 </div><div class="column" style="width:32%;">
 <p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important" height="200"></p>
@@ -1441,19 +1386,19 @@ p=\int_{z}^{\infty}\varphi(x)dx = 1 - \Phi(z)
 
 </div>
 <p><span class="math display">\[
-\text{TikTok:}\qquad p= 1 - \Phi(4{,}69) \overset{\text{(Computer)}}{=} 0{,}000001
+\text{TikTok:}\qquad p= 1 - \Phi(4.69) \overset{\text{(Computer)}}{=} 0.000001
 \]</span></p>
 <div class="vspace-small">
 
 </div>
 <p><span class="math display">\[
-\text{Entzündung:}\qquad p= 1 - \Phi(1{,}67) \overset{\text{(Computer)}}{=} 0{,}049
+\text{Entzündung:}\qquad p= 1 - \Phi(1.67) \overset{\text{(Computer)}}{=} 0.049
 \]</span></p>
 </div><div class="column" style="width:32%;">
 <p><img data-src="images/paradoxia_group_of_scientists.png" class="hcenter-image" style="margin-top:-20px !important" height="200"></p>
 </div>
 </div>
-<p>Dieser erste Signifikanztest ergibt also, dass die TikTok-Hypothese mit überwältigender Signifikanz bestätigt wird. Aber auch die Entzündungs-Hypothese wird mit einem p-Wert von <span class="math inline">\(0{,}049\)</span> — und einem Signifikanzniveau von <span class="math inline">\(\alpha=0{,}05\)</span> — um Haaresbreite bestätigt.</p>
+<p>Dieser erste Signifikanztest ergibt also, dass die TikTok-Hypothese mit überwältigender Signifikanz bestätigt wird. Aber auch die Entzündungs-Hypothese wird mit einem p-Wert von <span class="math inline">\(0.049\)</span> — und einem Signifikanzniveau von <span class="math inline">\(\alpha=0.05\)</span> — um Haaresbreite bestätigt.</p>
 <p>Noch genießen Sie die Ergebnisse aber mit Vorsicht, da Ihnen bewusst ist, dass der z-Test nicht der ideale Test für Ihre Studie ist.</p>
 </section>
 <section class="slide level2 blackslide center">
@@ -1509,8 +1454,8 @@ sns.stripplot(data=df, x='group', y='hours_tiktok_per_day', color='#bbb', jitter
 color = 'k'
 plt.errorbar([0], [np.mean(data_tiktok_control)], yerr=[sem(data_tiktok_control)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
 plt.errorbar([1], [np.mean(data_tiktok_paradoxia)], yerr=[sem(data_tiktok_paradoxia)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
-plt.text(0.25, 0.85, r'$\bar{x}=' + f'{np.mean(data_tiktok_control):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
-plt.text(0.75, 0.85, r'$\bar{x}=' + f'{np.mean(data_tiktok_paradoxia):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.text(0.25, 0.85, r'$\bar{x}=' + f'{np.mean(data_tiktok_control):.2f}$', ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.text(0.75, 0.85, r'$\bar{x}=' + f'{np.mean(data_tiktok_paradoxia):.2f}$', ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
 plt.plot([0, 1], [2.4, 2.4], 'k-', lw=2, zorder=4)
 plt.text(0.5, 2.32, '***', ha='center', va='center', fontsize=15, color='k', backgroundcolor='#eee', zorder=5)
 
@@ -1528,8 +1473,8 @@ sns.stripplot(data=df, x='group', y='inflammation', color='#bbb', jitter=0.25)
 color = 'k'
 plt.errorbar([0], [np.mean(data_inflam_control)], yerr=[sem(data_inflam_control)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
 plt.errorbar([1], [np.mean(data_inflam_paradoxia)], yerr=[sem(data_inflam_paradoxia)], fmt='o', markersize=4, capsize=10, capthick=1.5, elinewidth=1.5, ecolor=color, mfc=color, mec=color, zorder=3)
-plt.text(0.25, 0.85, r'$\bar{x}=' + f'{np.mean(data_inflam_control):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
-plt.text(0.75, 0.85, r'$\bar{x}=' + f'{np.mean(data_inflam_paradoxia):.2f}$'.replace('.', '{,}'), ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.text(0.25, 0.85, r'$\bar{x}=' + f'{np.mean(data_inflam_control):.2f}$', ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
+plt.text(0.75, 0.85, r'$\bar{x}=' + f'{np.mean(data_inflam_paradoxia):.2f}$', ha='center', color='k', fontsize=fontsize-1, transform=ax.transAxes)
 plt.plot([0, 1], [0.25, 0.25], 'k-', lw=2, zorder=4)
 plt.text(0.5, 0.24, '*', ha='center', va='center', fontsize=15, color='k', backgroundcolor='#eee', zorder=5)
 
@@ -1545,78 +1490,7 @@ plt.tight_layout()
 
 plt.savefig('images/paradoxia_histogram_inflammation_sem_sig.png', bbox_inches='tight')
 ``` -->
-</section></section>
-<section>
-<section class="title-slide slide level1 center">
-<h1><span style=" color: darkred !important;">Bonuscontent</span></h1>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section id="sem" class="slide level2">
-<h2><span style="font-size: 41px; color: darkred">z-Test: Herleitung der Standardfehler von Mittelwertdifferenzen</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<div class="vspace-small">
-
-</div>
-<p>Sind die Populationsstreuungen <span class="math inline">\(\sigma_A\)</span> und <span class="math inline">\(\sigma_B\)</span> bekannt (wie beim z-Test vorausgesetzt), lässt sich der Standardfehler <span class="math inline">\(se\)</span> mit den Formeln aus dem <a href="#/cheatsheet" style="color: navy">Cheatsheet</a> berechnen. Hier betrachten wir die Herleitung dieser Formeln.</p>
-<div class="vspace-small">
-
-</div>
-<p><u><strong>Abhängige Messungen in einer Stichprobe</strong></u></p>
-<p>Werden die Messungen <span class="math inline">\(X_A\)</span> und <span class="math inline">\(X_B\)</span> in denselben Versuchspersonen durchgeführt, können wir — wie schon bei der Effektstärke — die Standardabweichung <span class="math inline">\(\sigma_\Delta\)</span> der Differenzenvariable <span class="math inline">\(\Delta X = X_A - X_B\)</span> bestimmen:</p>
-<div style="margin-top: -20px">
-<p><span class="math display">\[
-\sigma_\Delta=\sqrt{\sigma_A^2+\sigma_B^2-2\,\rho\sigma_A\sigma_B}
-\]</span></p>
-</div>
-<p>Da <span class="math inline">\(\sigma_\Delta\)</span> in diesem Fall bereits die Standardabweichung des Effektes ist, folgt direkt der Standardfehler:</p>
-<div class="colorbox">
-<p><span class="math display">\[
-se = \frac{\sigma_\Delta}{\sqrt{n}}\qquad\text{mit}\qquad \sigma_\Delta=\sqrt{\sigma_A^2+\sigma_B^2-2\,\rho\sigma_A\sigma_B}
-\]</span></p>
-</div>
-<p>Wichtig: bei abhängigen Messungen ist, zusätzlich zu den Populationsstreuungen <span class="math inline">\(\sigma_A\)</span>/<span class="math inline">\(\sigma_B\)</span>, auch <strong>Kenntnis über die Populationskorrelation <span class="math inline">\(\rho\)</span></strong> der beiden Variablen <span class="math inline">\(X_A\)</span> und <span class="math inline">\(X_B\)</span> notwendig.</p>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style="font-size: 41px; color: darkred">z-Test: Herleitung der Standardfehler von Mittelwertdifferenzen</span></h2>
-<div class="vspace-large">
-
-</div>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 240px; right: 0px; height: 110px; "></p>
-<p><u><strong>Unabhängige Messungen in zwei Stichproben</strong></u></p>
-<div>
-<ul>
-<li>Bei unabhängigen Gruppen sind die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> der beiden Stichproben <u>unabhängige</u> Zufallsvariablen.</li>
-<li>Für die Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}=\bar{x}_A - \bar{x}_B\)</span> gilt daher die allgemeine Varianzsummenformel, der zufolge sich bei der Differenzbildung zweier unabhängiger Zufallsvariablen die Varianzen addieren.</li>
-<li>Die Varianz von Mittelwerten ist nichts anderes als der quadrierte Standardfehler, hier <span class="math inline">\(se_A^2\)</span> und <span class="math inline">\(se_B^2\)</span>.</li>
-<li>Für die Varianz <span class="math inline">\(se^2\)</span> der Mittelwertdifferenz <span class="math inline">\(\Delta\bar{x}\)</span> gilt also:</li>
-</ul>
-</div>
-<p><span class="math display">\[
-se^2 = se_A^2 + se_B^2 = \frac{\sigma_A^2}{n_A} + \frac{\sigma_B^2}{n_B}
-\]</span></p>
-<div style="margin-top: -20px">
-<p>Wurzel ziehen:</p>
-</div>
-<div class="colorbox">
-<p><span class="math display">\[
-se=\sqrt{\frac{\sigma_A^2}{n_A} + \frac{\sigma_B^2}{n_B}}
-\]</span></p>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2><span style="font-size: 37px; color: darkred">z-Test: Veranschaulichung der Standardfehler von Mittelwertdifferenzen</span></h2>
-<div class="vspace-small">
-
-</div>
-<p><img data-src="images/stichprobenverteilung_diff_z.png"></p>
+<!--  -->
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Vorlesung 08: Signifikanztestung</p>

@@ -954,25 +954,50 @@ t=\frac{\hat{\theta}}{\hat{se}}
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>t-Test für Mittelwertdifferenzen</h2>
-<div>
-<ul>
-<li>Zur Erinnerung, bei einem statistischen Test zu Mittelwertdifferenzen stellen wir folgende Fragen:
-<ul>
-<li>Unterscheidet sich ein Mittelwert signifikant von einem Referenzwert? (Einstichprobentest mit Einzelmessung)<br>
-</li>
-<li>Unterscheiden sich die Mittelwerte von zwei abhängigen Bedingungen signifikant voneinander? (Einstichprobentest mit zwei abhängigen Messungen)</li>
-<li>Unterscheiden sich die Mittelwerte von zwei unabhängigen Stichproben signifikant voneinander? (Zweistichprobentest)</li>
-</ul></li>
-</ul>
+<h2>Typologie der Mittelwertdifferenzen</h2>
+<div class="vspace-medium">
+
 </div>
-<div style="margin-top: -15px">
+<!---  Table --->
+<table>
+<caption><em>Drei Arten von Mittelwertdifferenzen</em> <span class="math inline">\(\Delta\bar{x}\)</span></caption>
+<colgroup>
+<col style="width: 45%">
+<col style="width: 20%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Formel</th>
+<th>Test</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Fall 1</strong>: <em>Mittelwert einer Stichprobe <u>minus</u> Referenzwert</em></td>
+<td><span class="math inline">\(\Delta\bar{x} = \bar{x}-\mu_0\)</span></td>
+<td>Einstichprobentest mit Einzelmessung</td>
+</tr>
+<tr class="even">
+<td><strong>Fall 2</strong>: <em>Mittelwert Bedingung A <u>minus</u> Mittelwert Bedingung B (gleiche Stichprobe)</em></td>
+<td><span class="math inline">\(\Delta\bar{x} = \bar{x}_A-\bar{x}_B\)</span></td>
+<td>Einstichprobentest mit zwei abhängigen Messungen</td>
+</tr>
+<tr class="odd">
+<td><strong>Fall 3</strong>: <em>Mittelwert Stichprobe A <u>minus</u> Mittelwert Stichprobe B</em></td>
+<td><span class="math inline">\(\Delta\bar{x} = \bar{x}_A-\bar{x}_B\)</span></td>
+<td>Zweistichprobentest</td>
+</tr>
+</tbody>
+</table>
+<div style="margin-top: 15px">
 <ul>
-<li class="fragment">Beispiel Paradoxia (Zweistichprobentest):</li>
+<li class="fragment">Beispiel: <em>Mittelwert Paradoxiagruppe <u>minus</u> Mittelwert Kontrollgruppe</em> (Fall 3):</li>
 </ul>
 </div>
 <div class="fragment" style="margin-top: 15px">
-<p><img data-src="images/mittelwertdifferenz_paradoxia.png" height="300"></p>
+<p><img data-src="images/mittelwertdifferenz_paradoxia.png" height="250"></p>
 </div>
 <!----------------->
 <!--- New slide --->
@@ -1007,72 +1032,10 @@ t=\frac{\hat{\theta}}{\hat{se}}
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style="font-size:37px">t-Test: Veranschaulichung der Standardfehler von Mittelwertdifferenzen</span></h2>
+<h2>Cheat Sheet: Freiheitsgrade</h2>
 <div class="vspace-small">
 
 </div>
-
-<!----------------->
-<!--- New slide --->
-<!----------------->
-<img data-src="images/stichprobenverteilung_diff_v2.png" class="r-stretch"></section>
-<section class="slide level2">
-<h2><span style="font-size:38px">Standardfehler bei Mittelwertdifferenzen (<span class="math inline">\(\sigma\)</span> unbekannt): Cheat sheet</span></h2>
-<p>Das folgende Cheat sheet gibt Ihnen eine Übersicht über die Berechnung des Standardfehlers <span class="math inline">\(\hat{se}\)</span> von Mittelwertdifferenzen im Nenner der Prüfgröße <span class="math inline">\(t=\frac{\Delta\bar{x}}{\hat{se}}\)</span>:</p>
-<!---  Table --->
-<table style="width:90%;">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 40%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Fall</th>
-<th>Berechnung des Standardfehlers <span class="math inline">\(\hat{se}\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Differenz des Mittelwertes <u>einer Stichprobe</u> und einem Referenzwert</strong> <span class="math inline">\(\mu_0\)</span><br>(→ Einstichproben-t-Test)</td>
-<td><span class="math inline">\(\hat{se}=\frac{\hat{\sigma}}{\sqrt{n}}\)</span></td>
-</tr>
-<tr class="even">
-<td><strong>Mittelwertdifferenz abhängiger Messungen A und B in <u>einer Stichprobe</u></strong><br>(→ Differenzen-t-Test)</td>
-<td><span class="math inline">\(\hat{se} = \frac{\hat{\sigma}_\Delta}{\sqrt{n}}\qquad\text{mit}\)</span><br>
-<span class="math inline">\(\hat{\sigma}_\Delta=\sqrt{\hat{\sigma}_A^2+\hat{\sigma}_B^2-2\,\hat{\rho}\hat{\sigma}_A\hat{\sigma}_B}\)</span><br>
-<span class="math inline">\(\text{oder}\qquad\hat{\sigma}_\Delta=\sqrt{\frac{1}{n-1}\sum\left(\Delta x_i-\Delta\bar{x}\right)^2}\)</span></td>
-</tr>
-<tr class="odd">
-<td><strong>Mittelwertdifferenz unabhängiger Messungen in <u>zwei Stichproben A und B</u> (ähnliche Varianzen)</strong><br>(→ Klassischer Zweistichproben-t-Test)</td>
-<td><span class="math inline">\(\hat{se} = \hat{\sigma}_\text{pooled}\sqrt{\frac{1}{n_A}+\frac{1}{n_B}}\quad\)</span><a href="#/pooledvariance" style="color: darkred">(siehe Herleitung)</a><br>
-<span class="math inline">\(\text{mit}\quad \hat{\sigma}_\text{pooled}=\sqrt{\frac{(n_A-1)\hat{\sigma}^2_A + (n_B-1)\hat{\sigma}^2_B}{n_A+n_B-2}}\)</span></td>
-</tr>
-<tr class="even">
-<td><strong>Mittelwertdifferenz unabhängiger Messungen in <u>zwei Stichproben A und B</u> (unähnliche Varianzen)</strong><br>(→ Welch’s Zweistichproben-t-Test)</td>
-<td><span class="math inline">\(\hat{se}= \sqrt{\frac{\hat{\sigma}_A^2}{n_A} + \frac{\hat{\sigma}_B^2}{n_B}}\)</span></td>
-</tr>
-</tbody>
-</table>
-<div class="vspace-small">
-
-</div>
-<div class="merke" style="font-size: 23px !important">
-<div class="columns">
-<div class="column" style="width:5%;">
-<div style="margin-top: 10px">
-<p><img data-src="images/merke.png" height="55"></p>
-</div>
-</div><div class="column" style="width:95%;">
-<p>Dieses Cheat Sheet gilt für den Fall, dass die Populationsvarianzen <span class="math inline">\(\sigma^2_A\)</span> bzw. <span class="math inline">\(\sigma^2_B\)</span> <strong>nicht bekannt</strong> sind. In diesem Sinne ist es das in der Praxis relevante Cheat Sheet, da die Populationsvarianzen nahezu nie bekannt sind.</p>
-</div>
-</div>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>Zahl der Freiheitsgrade für t-Tests von Mittelwertdifferenzen</h2>
 <!-- <div class="vspace-medium"></div> -->
 <!---  Table --->
 <table>
@@ -1084,29 +1047,29 @@ t=\frac{\hat{\theta}}{\hat{se}}
 <thead>
 <tr class="header">
 <th>Test</th>
-<th>Frage</th>
+<th>Fall</th>
 <th>Zahl der Freiheitsgrade</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Einstichprobentest mit Einzelmessung</strong></td>
-<td>Ist <span class="math inline">\(\bar{x}\)</span> größer als ein Referenzwert <span class="math inline">\(\mu_0\)</span>?</td>
+<td><strong>Einstichproben-t-Test</strong></td>
+<td><strong>Fall 1</strong>: ist <span class="math inline">\(\bar{x}\)</span> größer als ein Referenzwert <span class="math inline">\(\mu_0\)</span>?</td>
 <td><span class="math inline">\(\text{df} = n - 1\)</span>, da für die Berechnung von <span class="math inline">\(t\)</span> genau ein Zwischenparameter bestimmt werden muss (der Mittelwert <span class="math inline">\(\bar{x}\)</span>)</td>
 </tr>
 <tr class="even">
-<td><strong>Einstichprobentest mit zwei abhängigen Messungen</strong></td>
-<td>Unterscheiden sich die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> zwischen zwei Bedingungen A und B? In diesem Fall kann man auch fragen: ist der Mittelwert der Differenzvariable (<span class="math inline">\(\Delta\bar{x}=\overline{X_A-X_B}\)</span>) verschieden von Null?</td>
-<td><span class="math inline">\(\text{df} = n - 1\)</span>, da für die Berechnung von <span class="math inline">\(t\)</span> genau ein Zwischenparameter bestimmt werden muss (der Mittelwert <span class="math inline">\(\overline{X_A-X_B}\)</span>)</td>
+<td><strong>Einstichproben-t-Test mit zwei abhängigen Messungen<br>(aka Differenzen-t-Test)</strong></td>
+<td><strong>Fall 2</strong>: unterscheiden sich die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> zwischen zwei Bedingungen A und B?</td>
+<td><span class="math inline">\(\text{df} = n - 1\)</span>, da für die Berechnung von <span class="math inline">\(t\)</span> genau ein Zwischenparameter bestimmt werden muss (der Differenzenmittelwert <span class="math inline">\(\Delta\bar{x}\)</span>)</td>
 </tr>
 <tr class="odd">
-<td><strong>Zweistichprobentest (ähnliche Varianzen)</strong></td>
-<td>Unterscheiden sich die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> zwischen zwei Gruppen A und B? (<span class="math inline">\(\Delta\bar{x}=\bar{x}_A-\bar{x}_B\)</span>)</td>
+<td><strong>Zweistichproben-t-Test (ähnliche Varianzen)</strong></td>
+<td><strong>Fall 3a</strong>: unterscheiden sich die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> zwischen zwei Stichproben A und B mit ähnlichen Streuungen?</td>
 <td><span class="math inline">\(\text{df} = n_A + n_B - 2\)</span>, da für die Berechnung von <span class="math inline">\(t\)</span> genau zwei Zwischenparameter bestimmt werden müssen (die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span>)</td>
 </tr>
 <tr class="even">
-<td><strong>Zweistichprobentest (unähnliche Varianzen, aka Welch’s t-Test)</strong></td>
-<td>Unterscheiden sich die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> zwischen zwei Gruppen A und B? (<span class="math inline">\(\Delta\bar{x}=\bar{x}_A-\bar{x}_B\)</span>)</td>
+<td><strong>Zweistichproben-t-Test (unähnliche Varianzen, aka Welch’s t-Test)</strong></td>
+<td><strong>Fall 3b</strong>: unterscheiden sich die Mittelwerte <span class="math inline">\(\bar{x}_A\)</span> und <span class="math inline">\(\bar{x}_B\)</span> zwischen zwei Stichproben A und B mit unähnlichen Streuungen?</td>
 <td><strong>Welch–Satterthwaite-Gleichung:</strong><br>
 <span class="math inline">\(\text{df} = \frac{\left(\frac{\hat{\sigma}_A^2}{n_A}+\frac{\hat{\sigma}_B^2}{n_B}\right)^2}{\frac{\left(\hat{\sigma}_A^2/n_A\right)^2}{n_A-1}+\frac{\left(\hat{\sigma}_B^2/n_B\right)^2}{n_B-1}}\)</span><br>
 Falls <span class="math inline">\(n_A=n_B=n:\quad\)</span><a href="#/welchsatterthwaiteintuition" style="color: darkred">(siehe Intuition)</a> <span class="math inline">\(\text{df}=(n-1)\Big(1+\frac{2}{\left(\frac{\hat{\sigma}_A}{\hat{\sigma}_B}\right)^2+\left(\frac{\hat{\sigma}_B}{\hat{\sigma}_A}\right)^2}\Big)\)</span></td>
@@ -1118,7 +1081,152 @@ Falls <span class="math inline">\(n_A=n_B=n:\quad\)</span><a href="#/welchsatter
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Beispiel: t-Test für unabhängige Gruppen</h2>
+<h2>Cheat Sheet: Standardfehler</h2>
+<div class="vspace-medium">
+
+</div>
+<p>Berechnung des Standardfehlers <span class="math inline">\(\hat{se}\)</span> von Mittelwertdifferenzen im Nenner der Prüfgröße <span class="math inline">\(t=\frac{\Delta\bar{x}}{\hat{se}}\)</span>.</p>
+<div class="vspace-medium">
+
+</div>
+<!---  Table --->
+<table style="width:90%;">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 10%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>Fall</th>
+<th>Berechnung des Standardfehlers <span class="math inline">\(\hat{se}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Einstichproben-t-Test</strong></td>
+<td>Fall 1</td>
+<td><span class="math inline">\(\hat{se}=\frac{\hat{\sigma}}{\sqrt{n}}\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Einstichproben-t-Test mit zwei abhängigen Messungen<br>(aka Differenzen-t-Test)</strong></td>
+<td>Fall 2</td>
+<td><span class="math inline">\(\hat{se} = \frac{\hat{\sigma}_\Delta}{\sqrt{n}}\qquad\text{mit}\)</span><br>
+<span class="math inline">\(\hat{\sigma}_\Delta=\sqrt{\hat{\sigma}_A^2+\hat{\sigma}_B^2-2\,\hat{\rho}\hat{\sigma}_A\hat{\sigma}_B}\)</span><br>
+<span class="math inline">\(\text{oder}\qquad\hat{\sigma}_\Delta=\sqrt{\frac{1}{n-1}\sum\left(\Delta x_i-\Delta\bar{x}\right)^2}\)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Zweistichproben-t-Test (ähnliche Varianzen)</strong></td>
+<td>Fall 3a</td>
+<td><span class="math inline">\(\hat{se} = \hat{\sigma}_\text{pooled}\sqrt{\frac{1}{n_A}+\frac{1}{n_B}}\quad\)</span><a href="#/pooledvariance" style="color: darkred">(siehe Herleitung)</a><br>
+<span class="math inline">\(\text{mit}\quad \hat{\sigma}_\text{pooled}=\sqrt{\frac{(n_A-1)\hat{\sigma}^2_A + (n_B-1)\hat{\sigma}^2_B}{n_A+n_B-2}}\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Zweistichproben-t-Test (unähnliche Varianzen, aka Welch’s t-Test)</strong></td>
+<td>Fall 3b</td>
+<td><span class="math inline">\(\hat{se}= \sqrt{\frac{\hat{\sigma}_A^2}{n_A} + \frac{\hat{\sigma}_B^2}{n_B}}\)</span></td>
+</tr>
+</tbody>
+</table>
+<!-- 
+<div class="vspace-small"></div>
+
+::: {.merke style="font-size: 23px !important"}
+:::: {.columns}
+::: {.column width="5%"}
+::: {style="margin-top: 10px"}
+![](images/merke.png){height="55px"}
+:::
+:::
+::: {.column width="95%"}
+Dieses Cheat Sheet gilt für den Fall, dass die Populationsvarianzen $\sigma^2_A$ bzw. $\sigma^2_B$ **nicht bekannt** sind. In diesem Sinne ist es das in der Praxis relevante Cheat Sheet, da die Populationsvarianzen nahezu nie bekannt sind.
+:::
+::::
+::: -->
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style="font-size:37px">t-Test: Veranschaulichung der Standardfehler von Mittelwertdifferenzen</span></h2>
+<div class="vspace-small">
+
+</div>
+
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<img data-src="images/stichprobenverteilung_diff_v3.png" class="r-stretch"></section>
+<section class="slide level2">
+<h2>Beispiel: Differenzen-t-Test</h2>
+<div class="columns">
+<div class="column" style="width:80%;">
+<p>Sie führen ein Experiment <em>innerhalb der Med-Gruppe</em> (n=32) durch. In einer experimentellen Intervention stellen Sie den Med-Studierenden die Frage</p>
+<blockquote>
+<p>Studieren Sie Medizin, weil es der Wunsch Ihrer Eltern ist?</p>
+</blockquote>
+<p>Sie messen die Nasenlängen dabei sowohl vor (“pre”), als auch nach (“post”) der Intervention. Ihre <u>ungerichtete</u> Hypothese ist, dass sich die Nasenlängen vor und nach der Intervention auf einem Signifikanzniveau <span class="math inline">\(\alpha=0.05\)</span> unterscheiden.</p>
+</div><div class="column" style="width:20%;">
+<p><img data-src="images/med.png"></p>
+</div>
+</div>
+<div class="fragment">
+<p>Die Mittelwertdifferenz betrage <span class="math inline">\(\Delta\bar{x} = \bar{x}_\text{post} - \bar{x}_\text{pre} = 0.1cm\)</span>.</p>
+</div>
+<div class="vspace-small">
+
+</div>
+<div class="fragment">
+<p>Wir nehmen der Einfachheit halber an, dass die beiden Messungen <span class="math inline">\(X_\text{pre}\)</span> und <span class="math inline">\(X_\text{post}\)</span> unkorreliert sind, d.h. <span class="math inline">\(\hat{\rho}=0\)</span>. Die Standardabweichungen seien <span class="math inline">\(\hat{\sigma}_\text{pre}=\hat{\sigma}_\text{post}=0.5\)</span>. Die Standardabweichung <span class="math inline">\(\hat{\sigma}_\Delta\)</span> der Differenzvariable <span class="math inline">\(\Delta X\)</span> ist damit:</p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+\hat{\sigma}_\Delta=\sqrt{\hat{\sigma}_\text{pre}^2+\hat{\sigma}_\text{post}^2-2\,\hat{\rho}\hat{\sigma}_\text{pre}\hat{\sigma}_\text{post}} = \sqrt{(0.5)^2+(0.5)^2-0} = \frac{1}{\sqrt{2}}
+\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+\text{Standardfehler:}\qquad \hat{se}=\frac{\hat{\sigma}_\Delta}{\sqrt{n}} = \frac{1}{\sqrt{2}\sqrt{32}}=\frac{1}{8}
+\]</span></p>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Beispiel: Differenzen-t-Test</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Nun können wir den t-Wert berechnen:</p>
+<p><span class="math display">\[
+t = \frac{\Delta\bar{x}}{\hat{se}} = \frac{0.1}{1/8} = 0.8
+\]</span></p>
+<div class="fragment">
+<p>Aufgrund der ungerichteten Hypothese ist der p-Wert die Summe der Flächen unter der t-Verteilung links von <span class="math inline">\(-|t|=-0.8\)</span> <u>und</u> rechts von <span class="math inline">\(+|t|=0.8\)</span>.</p>
+<p>Bei <span class="math inline">\(\text{df}=n-1=31\)</span> Freiheitsgraden gilt:</p>
+</div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/ttest1_example2_v2.png"></p>
+</div>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+\begin{aligned}
+p&amp;=\int_{-\infty}^{-t}f_t(x|\scriptsize\text{df}\normalsize)dx + \int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx \overset{(Symmetrie)}{=} 2\cdot\int_{-\infty}^{-t}f_t(x|\scriptsize\text{df}\normalsize)dx  = \\
+&amp;= 2\cdot F_t(-t|\scriptsize\text{df}\normalsize) \overset{(einsetzen)}{=} 2\cdot F_t(-0.8|31) \overset{(Computer)}{=} 0.43
+\end{aligned}
+\]</span></p>
+</div>
+<div class="fragment" style="margin-top:60px">
+<p>Der p-Wert ist also deutlich größer als unser Signifikanzniveau <span class="math inline">\(\alpha=0.05\)</span> und wir können die Nullhypothese <span class="math inline">\(\Delta\bar{x}=0\)</span> nicht ablehnen. More research is needed!</p>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2>Beispiel: Zweistichproben-t-Test</h2>
 <div class="columns">
 <div class="column" style="width:80%;">
 <p>Betrachten wir das Beispiel Med- versus Psych-Nasen für den Fall, dass wir die Standardabweichungen <span class="math inline">\(\sigma_\text{med}\)</span> und <span class="math inline">\(\sigma_\text{psych}\)</span> von Nasenlängen in der Med- und Psych-Population <u>nicht</u> kennen.</p>
@@ -1148,7 +1256,7 @@ Falls <span class="math inline">\(n_A=n_B=n:\quad\)</span><a href="#/welchsatter
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>Beispiel: t-Test für unabhängige Gruppen</h2>
+<h2>Beispiel: Zweistichproben-t-Test</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p>Mit dem Standardfehler bewaffnet, können wir nun den t-Wert berechnen:</p>
@@ -1190,7 +1298,7 @@ p=\int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx = \int_{2.03}^{\inft
 <!----------------->
 </section>
 <section class="slide level2">
-<h2>t-Test für unabhängige Stichproben</h2>
+<h2>Zweistichproben-t-Test</h2>
 <p><strong>Klassischer Zweistichproben-t-Test (ähnliche Varianzen) versus Welch’s t-Test (unähnliche Varianzen) — welcher der beiden Tests sollte nun verwendet werden?</strong></p>
 <div>
 <ul>
@@ -1220,74 +1328,7 @@ p=\int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx = \int_{2.03}^{\inft
 </div>
 </div>
 </div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-<aside></aside></section>
-<section class="slide level2">
-<h2>Beispiel: t-Test für abhängige Messungen</h2>
-<div class="columns">
-<div class="column" style="width:80%;">
-<p>Sie führen ein Experiment <em>innerhalb der Med-Gruppe</em> (n=32) durch. In einer experimentellen Intervention stellen Sie den Med-Studierenden die Frage</p>
-<blockquote>
-<p>Studieren Sie Medizin, weil es der Wunsch Ihrer Eltern ist?</p>
-</blockquote>
-<p>Sie messen die Nasenlängen dabei sowohl vor (“pre”), als auch nach (“post”) der Intervention. Ihre <u>ungerichtete</u> Hypothese ist, dass sich die Nasenlängen vor und nach der Intervention auf einem Signifikanzniveau <span class="math inline">\(\alpha=0.05\)</span> unterscheiden.</p>
-</div><div class="column" style="width:20%;">
-<p><img data-src="images/med.png"></p>
-</div>
-</div>
-<div class="fragment">
-<p>Die Mittelwertdifferenz betrage <span class="math inline">\(\Delta\bar{x} = \bar{x}_\text{post} - \bar{x}_\text{pre} = 0.1cm\)</span>.</p>
-</div>
-<div class="vspace-small">
-
-</div>
-<div class="fragment">
-<p>Wir nehmen der Einfachheit halber an, dass die beiden Messungen <span class="math inline">\(X_\text{pre}\)</span> und <span class="math inline">\(X_\text{post}\)</span> unkorreliert sind, d.h. <span class="math inline">\(\hat{\rho}=0\)</span>. Die Standardabweichungen seien <span class="math inline">\(\hat{\sigma}_\text{pre}=\hat{\sigma}_\text{post}=0.5\)</span>. Die Standardabweichung <span class="math inline">\(\hat{\sigma}_\Delta\)</span> der Differenzvariable <span class="math inline">\(\Delta X\)</span> ist damit:</p>
-</div>
-<div class="fragment">
-<p><span class="math display">\[
-\hat{\sigma}_\Delta=\sqrt{\hat{\sigma}_\text{pre}^2+\hat{\sigma}_\text{post}^2-2\,\hat{\rho}\hat{\sigma}_\text{pre}\hat{\sigma}_\text{post}} = \sqrt{(0.5)^2+(0.5)^2-0} = \frac{1}{\sqrt{2}}
-\]</span></p>
-</div>
-<div class="fragment">
-<p><span class="math display">\[
-\text{Standardfehler:}\qquad \hat{se}=\frac{\hat{\sigma}_\Delta}{\sqrt{n}} = \frac{1}{\sqrt{2}\sqrt{32}}=\frac{1}{8}
-\]</span></p>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>Beispiel: t-Test für abhängige Messungen</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Nun können wir den t-Wert berechnen:</p>
-<p><span class="math display">\[
-t = \frac{\Delta\bar{x}}{\hat{se}} = \frac{0.1}{1/8} = 0.8
-\]</span></p>
-<div class="fragment">
-<p>Aufgrund der ungerichteten Hypothese ist der p-Wert die Summe der Flächen unter der t-Verteilung links von <span class="math inline">\(-|t|=-0.8\)</span> <u>und</u> rechts von <span class="math inline">\(+|t|=0.8\)</span>.</p>
-<p>Bei <span class="math inline">\(\text{df}=n-1=31\)</span> Freiheitsgraden gilt:</p>
-</div>
-</div><div class="column" style="width:40%;">
-<p><img data-src="images/ttest1_example2_v2.png"></p>
-</div>
-</div>
-<div class="fragment">
-<p><span class="math display">\[
-\begin{aligned}
-p&amp;=\int_{-\infty}^{-t}f_t(x|\scriptsize\text{df}\normalsize)dx + \int_{t}^{\infty}f_t(x|\scriptsize\text{df}\normalsize)dx \overset{(Symmetrie)}{=} 2\cdot\int_{-\infty}^{-t}f_t(x|\scriptsize\text{df}\normalsize)dx  = \\
-&amp;= 2\cdot F_t(-t|\scriptsize\text{df}\normalsize) \overset{(einsetzen)}{=} 2\cdot F_t(-0.8|31) \overset{(Computer)}{=} 0.43
-\end{aligned}
-\]</span></p>
-</div>
-<div class="fragment" style="margin-top:60px">
-<p>Der p-Wert ist also deutlich größer als unser Signifikanzniveau <span class="math inline">\(\alpha=0.05\)</span> und wir können die Nullhypothese <span class="math inline">\(\Delta\bar{x}=0\)</span> nicht ablehnen. More research is needed!</p>
-</div>
-</section></section>
+<aside></aside></section></section>
 <section>
 <section class="title-slide slide level1 center">
 <h1>t-Test für die Korrelation</h1>

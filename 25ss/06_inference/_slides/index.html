@@ -675,7 +675,7 @@ plt.savefig('images/noselength_example.png', bbox_inches='tight')
 <ul>
 <li>Obwohl es nur einen <em>wahren Mittelwer</em>t gibt, weichen die <em>einzelnen Studienergebnisse</em> mehr oder weniger davon ab. Die Studienergebnisse haben eine <em>Bandbreite</em>.</li>
 <li>Die Bandbreite gibt einen Anhaltspunkt für die Genauigkeit der Schätzung des Populationsmittelwertes, die mit einer einzelnen Stichprobe erzielt werden kann.</li>
-<li>Ein wichtiges Ziel der Inferenzstatistik ist, diese Bandbreite mit mathematischen Methoden abzuschätzen, so dass nicht wie im Gedankenexperiment tatsächlich viele Wiederholungen einer Studie notwendig sind.</li>
+<li>Ein wichtiges Ziel der Inferenzstatistik ist, diese Bandbreite mit mathematischen Methoden abzuschätzen, so dass nicht wie im Gedankenexperiment tatsächlich viele Wiederholungen einer Studie notwendig sind. <span style=" color: navy !important;"><strong>→ Theoretische Stichprobenverteilung</strong></span></li>
 </ul>
 </div>
 <div class="quarto-figure quarto-figure-center">
@@ -687,69 +687,64 @@ plt.savefig('images/noselength_example.png', bbox_inches='tight')
 <!----------------->
 <!--- New slide --->
 <!----------------->
-</section>
-<section class="slide level2">
-<h2>Stichprobenverteilung</h2>
-<div class="vspace-medium">
+<!-- ## Stichprobenverteilung
 
-</div>
-<p><strong>Übertragen wir nun das Gedankenexperiment auf die Realität:</strong></p>
-<ul>
-<li class="fragment">Population seien nun <strong>alle Männer in Deutschland</strong>.</li>
-<li class="fragment">Sie haben eine einzelne Studie durchgeführt (also eine Stichprobe aus der Population gezogen).</li>
-</ul>
-<div class="columns fragment">
-<div class="column" style="width:60%;">
-<p><img data-src="images/noselength_sample_absolute.png" height="300"></p>
-</div><div class="column caption-style" style="width:40%;">
-<p>Das Histogramm zeigt nun wieder die Verteilung der Daten in einer <u>einzelnen Studie</u>!</p>
-</div>
-</div>
-<ul>
-<li class="fragment">Als Mittelwert erhalten Sie <span class="math inline">\(\bar{x}=5.5cm\)</span>.</li>
-<li class="fragment">Ihnen ist nun klar, dass das dieser Mittelwert nur <em>eines von vielen möglichen Ergebnissen</em> ist.</li>
-<li class="fragment">Beim Wiederholen derselben Studie würde also – rein zufallsbedingt – einen etwas anderen Mittelwert erhalten.</li>
-</ul>
+<div class="vspace-medium"></div>
+
+**Übertragen wir nun das Gedankenexperiment auf die Realität:**
+
+- Population seien nun **alle Männer in Deutschland**.
+- Sie haben eine einzelne Studie durchgeführt (also eine Stichprobe aus der Population gezogen).
+
+:::: {.columns .fragment}
+::: {.column width="60%"}
+![](images/noselength_sample_absolute.png){height=300px}
+:::
+::: {.column .caption-style width="40%"}
+Das Histogramm zeigt nun wieder die Verteilung der Daten in einer [einzelnen Studie]{.underline}!
+:::
+::::
+
+- Als Mittelwert erhalten Sie $\bar{x}=5.5cm$.
+- Ihnen ist nun klar, dass das dieser Mittelwert nur *eines von vielen möglichen Ergebnissen* ist.
+- Beim Wiederholen derselben Studie würde also – rein zufallsbedingt – einen etwas anderen Mittelwert erhalten. -->
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<!-- ## Theoretische Stichprobenverteilung
+
+<div class="vspace-small"></div>
+Wie sieht die zu erwartende Stichprobenverteilung aus, wenn ich, anders als im Gedankenexperiment, nicht *alle möglichen* Stichproben betrachten kann?
+
+:::{.fragment}
+Mit anderen Worten: kann man abschätzen, wie die Verteilung von Stichprobenkennwerten erwartbar aussehen würde, würden wir die Studie &ndash; rein hypothetisch &ndash; **unendlich oft wiederholen**? Die Antwort lautet JA und führt über die mathematischer Herleitung der [**theoretischen Stichprobenverteilung**]{color="navy"}.
+
+<div class="vspace-medium"></div>
+
+![](images/inference6.png)
+::: -->
 <!----------------->
 <!--- New slide --->
 <!----------------->
 </section>
 <section class="slide level2">
 <h2>Theoretische Stichprobenverteilung</h2>
-<div class="vspace-small">
-
-</div>
-<p>Wie sieht die zu erwartende Stichprobenverteilung aus, wenn ich, anders als im Gedankenexperiment, nicht <em>alle möglichen</em> Stichproben betrachten kann?</p>
-<div class="fragment">
-<p>Mit anderen Worten: kann man abschätzen, wie die Verteilung von Stichprobenkennwerten erwartbar aussehen würde, würden wir die Studie – rein hypothetisch – <strong>unendlich oft wiederholen</strong>? Die Antwort lautet JA und führt über die mathematischer Herleitung der <span style=" color: navy !important;"><strong>theoretischen Stichprobenverteilung</strong></span>.</p>
-<div class="vspace-medium">
-
-</div>
-<p><img data-src="images/inference6.png"></p>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-</section>
-<section class="slide level2">
-<h2>Theoretische Stichprobenverteilung</h2>
 <ul>
-<li class="fragment">Als erste Frage stellt sich: durch welche grundlegende <strong>mathematische Funktion</strong> lässt sich die theoretische Stichprobenverteilung beschreiben?</li>
-<li class="fragment">Die Antwort auf diese Frage lässt sich aus dem <strong>zentralen Grenzwertsatz</strong> ableiten, demzufolge viele natürliche Merkmale normalverteilt sind, weil sie sich aus einer <strong>Summe von Zufallseffekten</strong> (Genetik, Umwelt, Erziehung, usw.) zusammensetzen.</li>
-<li class="fragment">Die zentrale Erkenntnis ist nun, dass sich die gleiche Logik — <strong>Summe von Zufallseffekten</strong> — auf statistische Kennwerte <span class="math inline">\(\hat{\theta}\)</span> wie den Mittelwert übertragen lässt!</li>
-<li class="fragment"><strong>Häufig kann als Stichprobenverteilung daher die Normalverteilung angenommen werden</strong>.</li>
+<li class="fragment">Die theoretische Stichprobenverteilung vieler Kennwerte hat die Form einer <strong>Normalverteilung</strong>.</li>
+<li class="fragment">Grund: der <strong>zentrale Grenzwertsatz</strong> besagt, dass ein Kennwert normalverteilt ist, wenn er sich aus einer <strong>Summe von sehr vielen Zufallseffekten</strong> zusammensetzt.</li>
+<li class="fragment">Für statistische Kennwerte — wie etwa der Mittelwert — gilt diese Logik, da sie sich ebenfalls aus einer <strong>Summe von Zufallsvariablen</strong> zusammensetzen (andernfalls wäre keine Statistik notwendig).</li>
 </ul>
 <div class="colorbox2 fragment">
 <div class="columns">
 <div class="column" style="width:75%;">
 <p><strong>Beispiel: statistischer Kennwert <span class="math inline">\(\hat{\theta}\)</span> = Mittelwert <span class="math inline">\(\bar{x}\)</span></strong></p>
-<p>Nehmen wir <span class="math inline">\(j=1..k\)</span> hypothetische Studien an, die jeweils einen Mittelwert <span class="math inline">\(\bar{x}^{(j)}\)</span> berechnen. Jeder Mittelwert basiert auf der <strong>Summe</strong> (<span class="math inline">\(\Sigma\)</span>) von <strong>zufällig gezogenen Daten</strong> (<span class="math inline">\(x_i^{(j)}\)</span>) aus einer Stichprobe. Gemäß dem zentralen Grenzwertsatz erwarten wir daher im Grenzfall (d.h. Stichprobengröße gegen ∞), dass die Mittelwerte einer <strong>Normalverteilung</strong> folgen.</p>
+<p>Ein Mittelwert <span class="math inline">\(\bar{x}\)</span> basiert auf der Summe von <strong>zufällig gezogenen Daten</strong> <span class="math inline">\(x_1 ... x_n\)</span> aus einer Population und ist damit eine <strong>Zufallsvariable</strong>. Gemäß dem zentralen Grenzwertsatz erwarten wir daher im Grenzfall (d.h. Stichprobengröße <span class="math inline">\(n\rightarrow\infty\)</span>), dass hypothetische zukünftige Mittelwerte von <span class="math inline">\(n\)</span> Datenpunkten aus dieser Population einer <strong>Normalverteilung</strong> folgen.</p>
 </div><div class="column" style="width:23%;">
 <div class="vspace-xlarge">
 
 </div>
 <p><span class="math display">\[
-\quad\bar{x}^{(j)} = \frac{1}{n}\sum x^{(j)}_i
+\quad\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i
 \]</span></p>
 </div>
 </div>

@@ -447,13 +447,14 @@ plt.savefig('images/probability_density_demo2.png', bbox_inches='tight')
 <div>
 <ul>
 <li>Wir nehmen nun an, dass wir das Histogramm auf Basis einer <strong>unendlich großen</strong> Population bilden, in der die theoretische Häufigkeitsverteilung von Nasenlängen durch eine <strong>Normalverteilung</strong> beschrieben wird (im Beispiel: <span class="math inline">\(\mu=5cm, \sigma=1.5cm\)</span>).</li>
-<li>Egal, wie fein wir die Kategorienbreite wählen, gibt es aufgrund der unendlich großen Population genug Datenpunkte für eine präzise Schätzung der relativen Häufigkeit in einer Säule.</li>
-<li>Es gilt: je kleiner die Kategorienbreite, desto mehr Säulen gibt es, desto kleiner die relativen Häufigkeitswerte jeder einzelnen Säule.</li>
+<li>Da wir die theoretische Häufigkeitsverteilung zugrunde legen, können wir von <a href="#/probfreq" style="color: darkred">Wahrscheinlichkeiten statt von relativen Häufigkeiten</a> sprechen. Wie fein wir auch die Kategorienbreite wählen — die exakte Wahrscheinlichkeit jeder Säule ist bekannt.</li>
 </ul>
 </div>
 
-<img data-src="images/probability_density_demo2.png" style="margin-bottom:-3px" class="r-stretch"><ul>
-<li class="fragment">Es zeigt sich: mit feiner werdender Kategorienbreite nähert sich das Histogramm einer Normalverteilung — und damit der theoretische Häufigkeitsverteilung — an!<br>(→ Gesetz der großen Zahlen)</li>
+<img data-src="images/probability_density_unnorm.png" style="margin-bottom:-3px" class="r-stretch"><p>Wir stellen zwei Punkte fest:</p>
+<ul>
+<li class="fragment">Je kleiner die Kategorienbreite, desto mehr Säulen gibt es, desto kleiner die relativen Häufigkeitswerte jeder einzelnen Säule.</li>
+<li class="fragment">Mit feiner werdender Kategorienbreite nähert sich das Histogramm einer Normalverteilung an — und damit derselben Form wie die theoretische Häufigkeitsverteilung!</li>
 </ul>
 <!-- - Beispiel: 
     - Im ersten Plot gilt $d=2cm$. Die relative Häufigkeit, dass ein Merkmal etwa im Intervall $[6cm; 8cm]$ liegt ist ca. $0.22$ (oder 22%).
@@ -465,95 +466,45 @@ plt.savefig('images/probability_density_demo2.png', bbox_inches='tight')
 <li class="fragment">Nun scheint ein Brückenschlag naheliegend: ist die theoretische Häufigkeitsverteilung <span class="math inline">\(f(x)\)</span>, die Funktionswerte für beliebige <span class="math inline">\(x\)</span>-Werte ausgibt, gleich einem Histogramm, bei dem die Kategorienbreite gegen Null geht?</li>
 </ul>
 
-<img data-src="images/probability_density_demo2.png" style="margin-bottom:-3px" class="r-stretch"><ul>
-<li class="fragment">Im Prinzip ja, allerdings gibt es noch ein Problem: geht die Kategorienbreite <span class="math inline">\(d\)</span> gegen <span class="math inline">\(0\)</span>, gehen die relativen Häufigkeitswerte des Histogramms ebenfalls gegen Null!</li>
-<li class="fragment">Würde die theoretische Häufigkeitsverteilung <span class="math inline">\(f(x)\)</span> also relative Häufigkeiten angeben, so wäre <span class="math inline">\(f(x)\)</span> für jedes <span class="math inline">\(x\)</span> Null. Das ist natürlich sinnlos.</li>
-<li class="fragment"><strong>Theoretische Häufigkeitsverteilungen <span class="math inline">\(f(x)\)</span> geben aus diesem Grund keine relative Häufigkeit an</strong>.</li>
+<img data-src="images/probability_density_unnorm.png" style="margin-bottom:-3px" class="r-stretch"><ul>
+<li class="fragment">Noch nicht ganz, denn es bleibt ein Problem: geht die Kategorienbreite <span class="math inline">\(d\)</span> gegen <span class="math inline">\(0\)</span>, gehen auch die Wahrscheinlichkeiten des Histogramms gegen Null.</li>
+<li class="fragment">Würde die theoretische Häufigkeitsverteilung <span class="math inline">\(f(x)\)</span> für beliebig feine <span class="math inline">\(x\)</span> also Wahrscheinlichkeiten angeben, so wäre <span class="math inline">\(f(x)\)</span> für jedes <span class="math inline">\(x\)</span> Null. Das ist natürlich sinnlos.</li>
+<li class="fragment"><strong>Theoretische Häufigkeitsverteilungen <span class="math inline">\(f(x)\)</span> geben aus diesem Grund keine Wahrscheinlichkeiten (oder relativen Häufigkeiten) an</strong>.</li>
 <li class="fragment">Bleibt die Frage: was stattdessen?</li>
 </ul>
 <!-- - Beispiel: die Wahrscheinlichkeit ist **Null**, dass Nasen eine bestimmte, bis auf die "unendlichste" Nachkommastelle angegebene, Länge haben (z.B. $4.318264812357218735....cm$). -->
-<!----------------->
-<!--- New slide --->
-<!----------------->
 </section>
 <section class="slide level2">
 <h2>Von der Wahrscheinlichkeit zur Wahrscheinlichkeitsdichte</h2>
-<p>Zunächst ein Hinweis zur Nomenklatur:</p>
-<div class="definition">
-<!---  Definition--->
-<table>
-<colgroup>
-<col style="width: 10%">
-<col style="width: 90%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
-<td>Wir verwenden den Begriff <strong>relative Häufigkeiten</strong> bei empirischen Daten und meinen damit den Anteil einer Merkmalsausprägung relativ zu allen Datenpunkten. Beispiel: in einer Stichprobe von 100 Würfelversuchen lag die relative Häufigkeit von Zahlen größer 3 bei <span class="math inline">\(0.48\)</span> oder <span class="math inline">\(48 \%\)</span>.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="definition">
-<!---  Definition--->
-<table>
-<colgroup>
-<col style="width: 10%">
-<col style="width: 90%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
-<td>Wir verwenden den Begriff <strong>Wahrscheinlichkeit</strong>, wenn die theoretische Häufigkeitsverteilung eines Merkmals bekannt ist, und meinen damit den Anteil einer Merkmalsausprägung laut Theorie. Beispiel: bei einem perfekten Würfel ist die Wahrscheinlichkeit einer Zahl größer 3 exakt <span class="math inline">\(0.5\)</span>.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li class="fragment">Im Kontext von theoretischen Häufigkeitsverteilungen können wir daher von <strong>Wahrscheinlichkeiten</strong> sprechen.</li>
-<li class="fragment">Klar ist auch: durch die Nomenklaturänderung <em>relative Häufigkeit</em> → <em>Wahrscheinlichkeit</em> ist noch nichts gewonnen.</li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>Von der Wahrscheinlichkeit zur Wahrscheinlichkeitsdichte</h2>
-<div class="vspace-large">
+<div class="vspace-middle">
 
 </div>
-<p>Der entscheidende Trick theoretischer Häufigkeitsverteilungen ist der <strong>Übergang von Wahrscheinlichkeiten zu Wahrscheinlichkeitsdichten</strong>.</p>
+<ul>
+<li class="fragment">Glücklicherweise gibt es einen einfachen Trick: wir teilen die Wahrscheinlichkeiten auf der y-Achse durch die Kategorienbreite <span class="math inline">\(d\)</span>. Man spricht dann von <span style=" color: navy !important;"><strong>Wahrscheinlichkeitsdichte <span class="math inline">\(p\)</span></strong></span>.</li>
+<li class="fragment">Die Wahrscheinlichkeitsdichte gibt die <em>Wahrscheinlichkeit pro 1 Zentimeter</em> an.</li>
+<li class="fragment">Die Wahrscheinlichkeitsdichte verringert sich nicht systemtisch mit kleiner werdender Kategorienbreite, denn sie gibt weiterhin immer die Wahrscheinlichkeit <em>pro 1 Zentimeter</em> an.</li>
+</ul>
+
+<img data-src="images/probability_density_norm.png" style="margin-bottom:-3px" class="r-stretch"><ul>
+<li class="fragment">Beispiel:
+<ul>
+<li class="fragment">Bei Kategorienbreite 2cm war innerhalb des Nasenlängenintervalls <span class="math inline">\([2cm;4cm]\)</span> die Wahrscheinlichkeit <span class="math inline">\(P\approx0.2\)</span>.</li>
+<li class="fragment">Die Wahrscheinlichkeits<em>dichte</em> ist <span class="math inline">\(p=\frac{P}{d}\approx\frac{0.2}{2cm}=0.1cm^{-1}\)</span> und sagt aus, dass innerhalb dieses Intervalls die <em>Wahrscheinlichkeit pro 1 Zentimeter</em> ungefähr gleich <span class="math inline">\(0.1\)</span> ist.</li>
+</ul></li>
+</ul>
+<div style="margin-top: -12px">
+<p>→ <strong>Theoretische Häufigkeitsverteilungen <span class="math inline">\(f(x)\)</span> geben Wahrscheinlichkeitsdichten an</strong>, mit der Einheit <em>Wahrscheinlichkeit</em> pro <em>Maßeinheit</em> (z.B. <em>Wahrscheinlichkeit</em> pro <em>cm</em>).</p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Von der Wahrscheinlichkeit zur Wahrscheinlichkeitsdichte</h2>
+<div class="vspace-medium">
+
+</div>
+<p>Wir halten fest:</p>
 <div class="colorbox fragment">
 <p>Ist das Merkmal <span class="math inline">\(X\)</span> eine kontinuierliche Variable (z.B. Nasenlänge in <span class="math inline">\(cm\)</span>), so geben theoretische Häufigkeitsverteilungen <span class="math inline">\(f(x)\)</span> eine <span style=" color: navy !important;"><strong>Wahrscheinlichkeitsdichte</strong></span> an.</p>
 </div>
-<div class="vspace-large">
-
-</div>
-<p>Wie kann man sich “Wahrscheinlichkeitsdichte” vorstellen?</p>
-<ul>
-<li class="fragment">Wir kennen das Konzept der “Dichte” bei Stoffen: z.B. ist die Dichte von Eis ist ca. <span class="math inline">\(1\stackrel{g}{}\!\!\unicode{x2215}_{\!\unicode{x202f}cm^3}\)</span>, d.h. dass sich eine Masse von <span class="math inline">\(1g\)</span> in einem Kubikzentimeter (<span class="math inline">\(1cm^3\)</span>) befindet.</li>
-<li class="fragment">Eine Dichte ist also immer eine bestimmte Masse <em>pro</em> Maßeinheit.</li>
-</ul>
-</section>
-<section class="slide level2">
-<h2>Von der Wahrscheinlichkeit zur Wahrscheinlichkeitsdichte</h2>
-<div class="vspace-large">
-
-</div>
-<p>Wir können daher Wahrscheinlichkeitsdichte wie folgt definieren:</p>
 <div class="definition fragment">
 <!---  Definition--->
 <table>
@@ -568,7 +519,7 @@ plt.savefig('images/probability_density_demo2.png', bbox_inches='tight')
 </tr>
 <tr class="even">
 <td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
-<td><span class="math inline">\(\text{Wahrscheinlichkeitsdichte} = \text{Wahrscheinlichkeits(masse) }pro\text{ Maßeinheit}\)</span></td>
+<td><span class="math inline">\(\text{Wahrscheinlichkeitsdichte} = \text{Wahrscheinlichkeit }pro\text{ Maßeinheit}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"></td>
@@ -577,15 +528,14 @@ plt.savefig('images/probability_density_demo2.png', bbox_inches='tight')
 </tbody>
 </table>
 </div>
-<div class="vspace-large">
+<div class="vspace-medium">
 
 </div>
+<p>Wie kann man sich “Wahrscheinlichkeitsdichte” vorstellen?</p>
 <ul>
-<li class="fragment">In Abgrenzung zur Wahrscheinlichkeits<em>dichte</em> wird die Wahrscheinlichkeit selbst tatsächlich auch als Wahrscheinlichkeits<em>masse</em> bezeichnet (engl. <em>probability mass</em>).
-<ul>
-<li class="fragment">Jedoch ist Wahrscheinlichkeit bzw. Wahrscheinlichkeitsmasse im Gegensatz zur physikalischen Masse einheitslos.</li>
-</ul></li>
-<li class="fragment">Die Einheit der Wahrscheinlichkeitsdichte wiederum ist Wahrscheinlichkeit pro Maßeinheit: Wahrscheinlichkeit <em>pro</em> Zentimeter Nasenlänge, Wahrscheinlichkeit <em>pro</em> IQ-Punkt, Wahrscheinlichkeit <em>pro</em> Fragebogenpunkt.</li>
+<li class="fragment">Wir kennen das Konzept der “Dichte” bei Stoffen: z.B. ist die Dichte von Eis ist ca. <span class="math inline">\(1\stackrel{g}{}\!\!\unicode{x2215}_{\!\unicode{x202f}cm^3}\)</span>, d.h. dass sich eine Masse von <span class="math inline">\(1g\)</span> in einem Kubikzentimeter (<span class="math inline">\(1cm^3\)</span>) befindet.</li>
+<li class="fragment">Eine Dichte ist also immer eine bestimmte Masse <em>pro</em> Maßeinheit.</li>
+<li class="fragment">Tatsächlich wird die Wahrscheinlichkeit in Abgrenzung zur Wahrscheinlichkeits<em>dichte</em> manchmal auch als Wahrscheinlichkeits<em>masse</em> bezeichnet (engl. <em>probability mass</em>).</li>
 </ul>
 <!----------------->
 <!--- New slide --->
@@ -595,8 +545,7 @@ plt.savefig('images/probability_density_demo2.png', bbox_inches='tight')
 <h2>Wahrscheinlichkeitsdichte</h2>
 <ul>
 <li class="fragment">Theoretische Häufigkeitsverteilungen <span class="math inline">\(f(x)\)</span> für kontinulierliche Merkmale <span class="math inline">\(X\)</span> werden auch als <span style=" color: navy !important;"><strong>Wahrscheinlichkeitsdichtefunktion</strong></span> bezeichnet (engl. <em>probability density function</em>).</li>
-<li class="fragment">Wie bei Histogrammen mit relativen Häufigkeiten ist die <em>gesamte Wahrscheinlichkeitsmasse</em> von Wahrscheinlichkeitsdichtefunktionen <span class="math inline">\(f(x)\)</span> immer 1.</li>
-<li class="fragment">Anders gesagt: Wahrscheinlichkeitsdichtefunktion <span class="math inline">\(f(x)\)</span> sind immer so normalisiert, dass ihr Flächeninhalt den Wert 1 hat.</li>
+<li class="fragment">Wahrscheinlichkeitsdichtefunktion <span class="math inline">\(f(x)\)</span> haben den Flächeninhalt 1 — analog dazu, wie sich bei Histogrammen mit relativen Häufigkeiten die Säulen auf den Wert 1 summieren.</li>
 </ul>
 <p>Beispiel Normalverteilung: <span class="math display">\[
 f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
@@ -971,11 +920,71 @@ Es gilt: <span class="math inline">\(\quad F(x) = \Phi\left(\frac{x-\mu}{\sigma}
 
 </div>
 <p><img data-src="images/stichprobenverteilung.png" height="370"></p>
+</section>
+<section>
+<section class="title-slide slide level1 center">
+<h1><span style=" color: darkred !important;">Bonuscontent</span></h1>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section id="probfreq" class="slide level2">
+<h2><span style=" color: darkred !important;">Relative Häufigkeit versus Wahrscheinlichkeitsdichte</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 130px; "></p>
+<div class="vspace-large">
+
+</div>
+<div class="definition">
+<!---  Definition--->
+<table>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
+<td>Wir verwenden den Begriff <strong>relative Häufigkeiten</strong> bei empirischen Daten und meinen damit den Anteil einer Merkmalsausprägung relativ zu allen Datenpunkten. Beispiel: in einer Stichprobe von 100 Würfelversuchen lag die relative Häufigkeit von Zahlen größer 3 bei <span class="math inline">\(0.48\)</span> oder <span class="math inline">\(48 \%\)</span>.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="definition">
+<!---  Definition--->
+<table>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><img data-src="images/definition.svg" height="70"></td>
+<td>Wir verwenden den Begriff <strong>Wahrscheinlichkeit</strong>, wenn die theoretische Häufigkeitsverteilung eines Merkmals bekannt ist, und meinen damit den Anteil einer Merkmalsausprägung laut Theorie. Beispiel: bei einem perfekten Würfel ist die Wahrscheinlichkeit einer Zahl größer 3 exakt <span class="math inline">\(0.5\)</span>.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Vorlesung 07: Wahrscheinlichkeitsdichte</p>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
