@@ -463,12 +463,12 @@ plt.savefig('images/probability_density_demo2.png', bbox_inches='tight')
 <section class="slide level2">
 <h2>Rückblick: das Histogramm</h2>
 <ul>
-<li class="fragment">Nun scheint ein Brückenschlag naheliegend: ist die theoretische Häufigkeitsverteilung <span class="math inline">\(f(x)\)</span>, die Funktionswerte für beliebige <span class="math inline">\(x\)</span>-Werte ausgibt, gleich einem Histogramm, bei dem die Kategorienbreite gegen Null geht?</li>
+<li class="fragment">Nun scheint ein Brückenschlag naheliegend: ist die theoretische Häufigkeitsverteilung <span class="math inline">\(f(x)\)</span>, die Funktionswerte für beliebige <span class="math inline">\(x\)</span>-Werte ausgibt, gleich einem Histogramm, bei dem die Kategorienbreite <span class="math inline">\(d\)</span> gegen Null geht?</li>
 </ul>
 
 <img data-src="images/probability_density_unnorm.png" style="margin-bottom:-3px" class="r-stretch"><ul>
-<li class="fragment">Noch nicht ganz, denn es bleibt ein Problem: geht die Kategorienbreite <span class="math inline">\(d\)</span> gegen <span class="math inline">\(0\)</span>, gehen auch die Wahrscheinlichkeiten des Histogramms gegen Null.</li>
-<li class="fragment">Würde die theoretische Häufigkeitsverteilung <span class="math inline">\(f(x)\)</span> für beliebig feine <span class="math inline">\(x\)</span> also Wahrscheinlichkeiten angeben, so wäre <span class="math inline">\(f(x)\)</span> für jedes <span class="math inline">\(x\)</span> Null. Das ist natürlich sinnlos.</li>
+<li class="fragment"><span class="math inline">\(d\rightarrow 0\)</span> ist zutreffend, allerdings bleibt hierbei das Problem, dass die Wahrscheinlichkeiten des Histogramms für <span class="math inline">\(d\rightarrow 0\)</span> ebenfalls gegen Null gehen.</li>
+<li class="fragment">Würde die theoretische Häufigkeitsverteilung <span class="math inline">\(f(x)\)</span> für beliebig feine <span class="math inline">\(x\)</span> also <u>Wahrscheinlichkeiten</u> angeben, so wäre <span class="math inline">\(f(x)\)</span> für jedes <span class="math inline">\(x\)</span> Null. Das ist natürlich sinnlos.</li>
 <li class="fragment"><strong>Theoretische Häufigkeitsverteilungen <span class="math inline">\(f(x)\)</span> geben aus diesem Grund keine Wahrscheinlichkeiten (oder relativen Häufigkeiten) an</strong>.</li>
 <li class="fragment">Bleibt die Frage: was stattdessen?</li>
 </ul>
@@ -493,7 +493,7 @@ plt.savefig('images/probability_density_demo2.png', bbox_inches='tight')
 </ul></li>
 </ul>
 <div style="margin-top: -12px">
-<p>→ <strong>Theoretische Häufigkeitsverteilungen <span class="math inline">\(f(x)\)</span> geben Wahrscheinlichkeitsdichten an</strong>, mit der Einheit <em>Wahrscheinlichkeit</em> pro <em>Maßeinheit</em> (z.B. <em>Wahrscheinlichkeit</em> pro <em>cm</em>).</p>
+<p>→ <strong>Theoretische Häufigkeitsverteilungen <span class="math inline">\(f(x)\)</span> geben Wahrscheinlichkeitsdichten an</strong>, mit <span class="math inline">\(d\rightarrow 0\)</span> und der Einheit <em>Wahrscheinlichkeit</em> pro <em>Maßeinheit</em> (z.B. <em>Wahrscheinlichkeit</em> pro <em>cm</em>).</p>
 </div>
 </section>
 <section class="slide level2">
