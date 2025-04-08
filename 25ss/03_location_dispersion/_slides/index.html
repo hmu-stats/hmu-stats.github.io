@@ -1068,7 +1068,7 @@ Range = x_{max} - x_{min}
 <p><span style="font-size: 21px">   (Die Varianz ist gleich der quadrierten Standardabweichung <span class="math inline">\(\sigma\)</span> – letztere lernen wir noch kennen)</span></p>
 </div>
 <ul>
-<li class="fragment"><strong>Hinweis:</strong> hierbei handelt es sich um die Formel für die <span style=" color: #c89f00 !important;">inferentielle Varianz</span>. Soll kein Rückschluss auf eine Population gezogen werden, ändert sich der Nenner von <span class="math inline">\(n-1\)</span> zu <span class="math inline">\(n\)</span>.</li>
+<li class="fragment"><strong>Hinweis:</strong> hierbei handelt es sich um die Formel für die <span style=" color: #c89f00 !important;">inferenzielle Varianz</span>. Soll kein Rückschluss auf eine Population gezogen werden, ändert sich der Nenner von <span class="math inline">\(n-1\)</span> zu <span class="math inline">\(n\)</span>.</li>
 <li class="fragment">Beispiel:
 <div class="vspace-small">
 
@@ -1095,7 +1095,7 @@ Range = x_{max} - x_{min}
 <h2>Besselkorrektur</h2>
 <ul>
 <li class="fragment">Streng genommen stellt die gezeigte Varianzformel nicht exakt das <em>mittlere</em> Abstandsquadrat aller Werte vom Mittelwert dar, da im Nenner durch <span class="math inline">\(n-1\)</span> und nicht durch <span class="math inline">\(n\)</span> geteilt wird.</li>
-<li class="fragment">Die Korrektur von <span class="math inline">\(n\;\longrightarrow n-1\)</span> heißt <strong>Besselkorrektur</strong> und tritt häufig auf, wenn <strong>inferentielle Kennwerte</strong> bestimmt werden sollen.</li>
+<li class="fragment">Die Korrektur von <span class="math inline">\(n\;\longrightarrow n-1\)</span> heißt <strong>Besselkorrektur</strong> und tritt häufig auf, wenn <strong>inferenzielle Kennwerte</strong> bestimmt werden sollen.</li>
 <li class="fragment">Die Korrektur wird notwendig, weil die Schätzung der Populationsvarianz eigentlich erfordert, dass die Abstandsquadrate der <span class="math inline">\(x_i\)</span> <em>um den wahren Populationsmittelwert</em> <span class="math inline">\(\mu\)</span> berechnet werden.</li>
 <li class="fragment">Das wahre <span class="math inline">\(\mu\)</span> ist jedoch nicht bekannt, sondern lediglich die Schätzung <span class="math inline">\(\hat{\mu}=\bar{x}\)</span> auf Basis der Stichprobe.</li>
 <li class="fragment">Es stellt sich heraus, dass die Streuung der <span class="math inline">\(x_i\)</span> um den Mittelwert <span class="math inline">\(\bar{x}\)</span> der Stichprobe immer etwas kleiner ist, als es die Streuung der <span class="math inline">\(x_i\)</span> um den wahren Wert <span class="math inline">\(\mu\)</span> wäre.</li>
@@ -1865,7 +1865,7 @@ plt.savefig('images/paradoxia_histogram_inflammation_mean_std.png', bbox_inches=
 </div>
 </div>
 <ul>
-<li class="fragment">Die Größe <span class="math inline">\(\hat{\sigma}^2\)</span> ist die <strong>Schätzung der Populationsvarianz auf Basis der Stichprobe</strong> und wird in dieser Vorlesungsreihe als <span style=" color: navy !important;"><strong>inferentielle Varianz</strong></span> bezeichnet.</li>
+<li class="fragment">Die Größe <span class="math inline">\(\hat{\sigma}^2\)</span> ist die <strong>Schätzung der Populationsvarianz auf Basis der Stichprobe</strong> und wird in dieser Vorlesungsreihe als <span style=" color: navy !important;"><strong>inferenz ielle Varianz</strong></span> bezeichnet.</li>
 <li class="fragment">Intution: die Varianz wird im Fall von <span class="math inline">\(\frac{1}{n-1}\)</span> <em>durch weniger geteilt</em> als beim ursprünglichen Faktor <span class="math inline">\(\frac{1}{n}\)</span>, d.h. die resultierende Varianz wird <em>zu einem größeren Wert hin</em> korrigiert.</li>
 <li class="fragment">Die “<span class="math inline">\(n-1\)</span>”-Korrektur für Stichproben wird als <span style=" color: navy !important;"><strong>Besselkorrektur</strong></span> bezeichnet.</li>
 <li class="fragment">Ab ca. <span class="math inline">\(n=30\)</span> spielt die Besselkorrektur kaum eine Rolle mehr (<span class="math inline">\(\frac{1}{30}=0.033\)</span> vs.&nbsp;<span class="math inline">\(\frac{1}{29}=0.034\)</span>)</li>
