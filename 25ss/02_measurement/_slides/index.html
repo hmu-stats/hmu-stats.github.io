@@ -1156,11 +1156,16 @@ setup:
 <section class="slide level2">
 <h2>Darstellung kategorialer Daten: die Häufigkeitstabelle</h2>
 <ul>
-<li class="fragment"><strong>Reminder:</strong> Kategoriale Variable = qualitative Ausprägungen; keine natürliche Reihenfolge</li>
+<li class="fragment"><strong>Reminder:</strong> bei kategorialen Variablen keine Mittelwertbildung möglich</li>
 </ul>
 <div class="fragment">
 <div class="columns">
 <div class="column" style="width:75%;">
+<div style="margin-top: -20px">
+<ul>
+<li class="fragment">Stattdessen: Häufigkeiten</li>
+</ul>
+</div>
 <!---  Table --->
 <table style="width:99%;">
 <caption>Häufigkeitsverteilung von Haarfarben unter Paradoxikern (N=800)</caption>
@@ -1578,96 +1583,6 @@ plt.savefig('images/normal_sigma.png', bbox_inches='tight')
 <!----------------->
 </section>
 <section class="slide level2">
-<h2><span style=" color: darkred !important;">Eine kurze Geschichte der Normalverteilung</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
-<div class="columns">
-<div class="column" style="width:80%;">
-<ul>
-<li class="fragment">Die Normalverteilung wurde mehrmals, zum Teil unabhängig, und für verschiedene Zwecke hergeleitet.</li>
-<li class="fragment">Die erste Herleitung der Normalverteilung stammt aus dem Jahr <strong>1733</strong> von <strong>Abraham de Moivre</strong>, der nach einer <strong>Approximationsfunktion für die Binomialverteilung</strong> <span class="math inline">\(f(k)=\frac{n!}{k!(n-k)!}p^k(1-p)^{n-k}\)</span> suchte, da ihm die Berechnung der Fakultäten (z.B. <span class="math inline">\(n!\)</span>) bei großen Zahlen mühselig wurde.
-<ul>
-<li class="fragment">Tatsächlich ist diese Herleitung bereits ein Spezialfall des zentralen Grenzwertsatzes, da die Summe von binären Zufallsvariablen behandelt wird (z.B. wie oft “Kopf” bei “Kopf oder Zahl”).</li>
-<li class="fragment">Link zu einer Herleitung<a href="#/footnotes" class="footnote-ref" id="fnref10" role="doc-noteref" data-footnote-href="#/fn10" onclick=""><sup>10</sup></a></li>
-</ul></li>
-<li class="fragment">Der <strong>zentrale Grenzwertsatz</strong> in seiner allgemeinen Form (beliebige Verteilungen) wurde <strong>1778</strong> von <strong>Pierre-Simon Laplace</strong> hergeleitet.
-<ul>
-<li class="fragment">Link zu einer Herleitung<a href="#/footnotes" class="footnote-ref" id="fnref11" role="doc-noteref" data-footnote-href="#/fn11" onclick=""><sup>11</sup></a></li>
-</ul></li>
-<li class="fragment">Im Jahr <strong>1808 gelang Robert Adrain</strong> der Nachweis, dass die Normalverteilung eine <strong>valide Beschreibung von zufälligen Messfehlern</strong> ist.</li>
-</ul>
-</div><div class="column" style="width:20%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/portrait_moivre.png" width="160"></p>
-<figcaption>Abraham de Moivre</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/portrait_laplace.png" width="160"></p>
-<figcaption>Pierre-Simon Laplace</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/portrait_adrain.png" width="160"></p>
-<figcaption>Robert Adrain</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-<aside></aside></section>
-<section class="slide level2">
-<h2><span style=" color: darkred !important;">Eine kurze Geschichte der Normalverteilung</span></h2>
-<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 355px; right: 0px; height: 110px; "></p>
-<div class="columns">
-<div class="column" style="width:86%;">
-<ul>
-<li class="fragment">Erst im Jahr <strong>1809 tritt Carl Friedrich Gauß</strong> auf die Bildfläche und erbringt ebenfalls den Beweis für die Allgemeingültigkeit der Normalverteilung für Messfehler (daher wird die Normalverteilung auch zuweilen <strong>Fehlergesetz</strong> genannt).</li>
-</ul>
-</div><div class="column" style="width:14%;">
-<div class="quarto-figure quarto-figure-center" style="margin-top:-30px !important">
-<figure>
-<p><img data-src="images/portrait_gauss.png" width="160"></p>
-<figcaption>Carl Friedrich Gauß</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div style="margin-top: -33px">
-<ul>
-<li class="fragment">Ein wichtige Motivation für Gauß’ Arbeit an Fehlerverteilungen waren astronomische Messungen, die häufig ungenau waren und viele Messwiederholungen erforderten. Eine zentrale Frage war: welcher Geseztmäßigkeit folgen diese Messfehler?</li>
-<li class="fragment">Der Beweis von Gauß war von besonderer Eleganz und basierte auf drei Annahmen:
-<ol type="1">
-<li class="fragment"><span style="font-size:22px;display:block;margin-bottom:-12px; margin-top:-10px">Messfehler sind symmetrisch (Fehler in -X und +X Richtung sind gleich wahrscheinlich)</span></li>
-<li class="fragment"><span style="font-size:22px;display:block;margin-bottom:-12px">Kleinere Fehler sind häufiger als größere Fehler</span></li>
-<li class="fragment"><span style="font-size:22px;display:block;line-height:1">Der Mittelwert ist der beste Schätzer für den Lageparameter der wahren theoretischen Verteilung, oder anders gesagt: der beste Schätzer für die unbekannten Fehler <span class="math inline">\(x_i - \mu\)</span> (<span class="math inline">\(\mu\)</span> ist nicht bekannt!) ist <span class="math inline">\(x_i - \bar{x}\)</span>.</span></li>
-</ol></li>
-<li class="fragment">Mit diesen wenigen Annahmen konnte Gauß zeigen, dass <em>die Funktion die mit größter Wahrscheinlichkeit Fehler dieser Art erzeugt</em><a href="#/footnotes" class="footnote-ref" id="fnref12" role="doc-noteref" data-footnote-href="#/fn12" onclick=""><sup>12</sup></a>, die Normalverteilung ist. Herleitung<a href="#/footnotes" class="footnote-ref" id="fnref13" role="doc-noteref" data-footnote-href="#/fn13" onclick=""><sup>13</sup></a></li>
-</ul>
-</div>
-<div class="columns">
-<div class="column" style="width:87%;">
-<ul>
-<li class="fragment">Eine <strong>heute populäre und intuitive Herleitung</strong> basiert auf einem Gedankenexperiment, in dem Würfe von Dartpfeilen auf ein Bull’s Eye betrachtet werden, wobei Wurffehler in x- und y-Richtung als unabhängig angenommen werden. Sie geht auf <strong>John Herschel (1850)</strong> zurück. Instruktives Video zur Herleitung<a href="#/footnotes" class="footnote-ref" id="fnref14" role="doc-noteref" data-footnote-href="#/fn14" onclick=""><sup>14</sup></a></li>
-</ul>
-</div><div class="column" style="width:13%;">
-<div class="quarto-figure quarto-figure-center" style="margin-top:-22px !important">
-<figure>
-<p><img data-src="images/portrait_herschel.png" width="160"></p>
-<figcaption>John Herschel</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<!----------------->
-<!--- New slide --->
-<!----------------->
-<aside></aside></section>
-<section class="slide level2">
 <h2>Charakteristiken von Verteilungen</h2>
 <div class="vspace-medium">
 
@@ -1675,7 +1590,7 @@ plt.savefig('images/normal_sigma.png', bbox_inches='tight')
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/rechtsschief.png" height="550"></p>
-<figcaption>Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref15" role="doc-noteref" data-footnote-href="#/fn15" onclick=""><sup>15</sup></a></figcaption>
+<figcaption>Bildnachweis<a href="#/footnotes" class="footnote-ref" id="fnref10" role="doc-noteref" data-footnote-href="#/fn10" onclick=""><sup>10</sup></a></figcaption>
 </figure>
 </div>
 <!----------------->
@@ -1733,11 +1648,105 @@ plt.savefig('images/normal_sigma.png', bbox_inches='tight')
 </ul></li>
 </ul>
 <!-- **Studie 3**: In einem *Experiment* untersuchen Sie eine "Offline"-Gruppe, die für den Experimentalzeitraum auf Internetzugang verzichtet, und eine Kontrollgruppe, für die sich nichts ändert. Abhängige Variable, ist die Erkrankungshäufigkeit in beiden Gruppen. -->
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1><span style=" color: darkred !important;">Bonuscontent</span></h1>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+</section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Eine kurze Geschichte der Normalverteilung</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 0px; right: 0px; height: 110px; "></p>
+<div class="columns">
+<div class="column" style="width:80%;">
+<ul>
+<li class="fragment">Die Normalverteilung wurde mehrmals, zum Teil unabhängig, und für verschiedene Zwecke hergeleitet.</li>
+<li class="fragment">Die erste Herleitung der Normalverteilung stammt aus dem Jahr <strong>1733</strong> von <strong>Abraham de Moivre</strong>, der nach einer <strong>Approximationsfunktion für die Binomialverteilung</strong> <span class="math inline">\(f(k)=\frac{n!}{k!(n-k)!}p^k(1-p)^{n-k}\)</span> suchte, da ihm die Berechnung der Fakultäten (z.B. <span class="math inline">\(n!\)</span>) bei großen Zahlen mühselig wurde.
+<ul>
+<li class="fragment">Tatsächlich ist diese Herleitung bereits ein Spezialfall des zentralen Grenzwertsatzes, da die Summe von binären Zufallsvariablen behandelt wird (z.B. wie oft “Kopf” bei “Kopf oder Zahl”).</li>
+<li class="fragment">Link zu einer Herleitung<a href="#/footnotes" class="footnote-ref" id="fnref11" role="doc-noteref" data-footnote-href="#/fn11" onclick=""><sup>11</sup></a></li>
+</ul></li>
+<li class="fragment">Der <strong>zentrale Grenzwertsatz</strong> in seiner allgemeinen Form (beliebige Verteilungen) wurde <strong>1778</strong> von <strong>Pierre-Simon Laplace</strong> hergeleitet.
+<ul>
+<li class="fragment">Link zu einer Herleitung<a href="#/footnotes" class="footnote-ref" id="fnref12" role="doc-noteref" data-footnote-href="#/fn12" onclick=""><sup>12</sup></a></li>
+</ul></li>
+<li class="fragment">Im Jahr <strong>1808 gelang Robert Adrain</strong> der Nachweis, dass die Normalverteilung eine <strong>valide Beschreibung von zufälligen Messfehlern</strong> ist.</li>
+</ul>
+</div><div class="column" style="width:20%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/portrait_moivre.png" width="160"></p>
+<figcaption>Abraham de Moivre</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/portrait_laplace.png" width="160"></p>
+<figcaption>Pierre-Simon Laplace</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/portrait_adrain.png" width="160"></p>
+<figcaption>Robert Adrain</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<!----------------->
+<!--- New slide --->
+<!----------------->
+<aside></aside></section>
+<section class="slide level2">
+<h2><span style=" color: darkred !important;">Eine kurze Geschichte der Normalverteilung</span></h2>
+<p><img data-src="images/kein_klausurstoff.png" class="absolute" style="bottom: 355px; right: 0px; height: 110px; "></p>
+<div class="columns">
+<div class="column" style="width:86%;">
+<ul>
+<li class="fragment">Erst im Jahr <strong>1809 tritt Carl Friedrich Gauß</strong> auf die Bildfläche und erbringt ebenfalls den Beweis für die Allgemeingültigkeit der Normalverteilung für Messfehler (daher wird die Normalverteilung auch zuweilen <strong>Fehlergesetz</strong> genannt).</li>
+</ul>
+</div><div class="column" style="width:14%;">
+<div class="quarto-figure quarto-figure-center" style="margin-top:-30px !important">
+<figure>
+<p><img data-src="images/portrait_gauss.png" width="160"></p>
+<figcaption>Carl Friedrich Gauß</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div style="margin-top: -33px">
+<ul>
+<li class="fragment">Ein wichtige Motivation für Gauß’ Arbeit an Fehlerverteilungen waren astronomische Messungen, die häufig ungenau waren und viele Messwiederholungen erforderten. Eine zentrale Frage war: welcher Geseztmäßigkeit folgen diese Messfehler?</li>
+<li class="fragment">Der Beweis von Gauß war von besonderer Eleganz und basierte auf drei Annahmen:
+<ol type="1">
+<li class="fragment"><span style="font-size:22px;display:block;margin-bottom:-12px; margin-top:-10px">Messfehler sind symmetrisch (Fehler in -X und +X Richtung sind gleich wahrscheinlich)</span></li>
+<li class="fragment"><span style="font-size:22px;display:block;margin-bottom:-12px">Kleinere Fehler sind häufiger als größere Fehler</span></li>
+<li class="fragment"><span style="font-size:22px;display:block;line-height:1">Der Mittelwert ist der beste Schätzer für den Lageparameter der wahren theoretischen Verteilung, oder anders gesagt: der beste Schätzer für die unbekannten Fehler <span class="math inline">\(x_i - \mu\)</span> (<span class="math inline">\(\mu\)</span> ist nicht bekannt!) ist <span class="math inline">\(x_i - \bar{x}\)</span>.</span></li>
+</ol></li>
+<li class="fragment">Mit diesen wenigen Annahmen konnte Gauß zeigen, dass <em>die Funktion die mit größter Wahrscheinlichkeit Fehler dieser Art erzeugt</em><a href="#/footnotes" class="footnote-ref" id="fnref13" role="doc-noteref" data-footnote-href="#/fn13" onclick=""><sup>13</sup></a>, die Normalverteilung ist. Herleitung<a href="#/footnotes" class="footnote-ref" id="fnref14" role="doc-noteref" data-footnote-href="#/fn14" onclick=""><sup>14</sup></a></li>
+</ul>
+</div>
+<div class="columns">
+<div class="column" style="width:87%;">
+<ul>
+<li class="fragment">Eine <strong>heute populäre und intuitive Herleitung</strong> basiert auf einem Gedankenexperiment, in dem Würfe von Dartpfeilen auf ein Bull’s Eye betrachtet werden, wobei Wurffehler in x- und y-Richtung als unabhängig angenommen werden. Sie geht auf <strong>John Herschel (1850)</strong> zurück. Instruktives Video zur Herleitung<a href="#/footnotes" class="footnote-ref" id="fnref15" role="doc-noteref" data-footnote-href="#/fn15" onclick=""><sup>15</sup></a></li>
+</ul>
+</div><div class="column" style="width:13%;">
+<div class="quarto-figure quarto-figure-center" style="margin-top:-22px !important">
+<figure>
+<p><img data-src="images/portrait_herschel.png" width="160"></p>
+<figcaption>John Herschel</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <p><img src="images/hmu_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Vorlesung 02: Messen in der Psychologie</p>
 </div>
-</section></section>
+<aside></aside></section></section>
 <section id="footnotes" class="footnotes footnotes-end-of-document smaller scrollable" role="doc-endnotes"><h2>Fußnoten</h2>
 
 <ol>
@@ -1750,12 +1759,12 @@ plt.savefig('images/normal_sigma.png', bbox_inches='tight')
 <li id="fn7"><p>https://www.holleewoodhair.com/rainbow-hair-color/</p></li>
 <li id="fn8"><p>https://stats.stackexchange.com/questions/430621/why-is-the-normal-distribution-called-normal</p></li>
 <li id="fn9"><p>https://alanhdu.github.io/posts/2019-10-21-normal-distribution-derivation/</p></li>
-<li id="fn10"><p>http://www.stat.yale.edu/~pollard/Courses/241.fall2014/notes2014/Bin.Normal.pdf</p></li>
-<li id="fn11"><p>https://towardsdatascience.com/central-limit-theorem-proofs-actually-working-through-the-math-a994cd582b33</p></li>
-<li id="fn12"><p>In diesem Kontext erfand Gauß direkt auch das Prinzip der Maximum-Likelihood-Schätzung</p></li>
-<li id="fn13"><p>https://notarocketscientist.xyz/posts/2023-01-27-how-gauss-derived-the-normal-distribution/</p></li>
-<li id="fn14"><p>https://www.youtube.com/watch?v=cy8r7WSuT1I</p></li>
-<li id="fn15"><p>https://matheguru.com/stochastik/schiefe-linksschief-rechtsschief-symmetrisch.html</p></li>
+<li id="fn10"><p>https://matheguru.com/stochastik/schiefe-linksschief-rechtsschief-symmetrisch.html</p></li>
+<li id="fn11"><p>http://www.stat.yale.edu/~pollard/Courses/241.fall2014/notes2014/Bin.Normal.pdf</p></li>
+<li id="fn12"><p>https://towardsdatascience.com/central-limit-theorem-proofs-actually-working-through-the-math-a994cd582b33</p></li>
+<li id="fn13"><p>In diesem Kontext erfand Gauß direkt auch das Prinzip der Maximum-Likelihood-Schätzung</p></li>
+<li id="fn14"><p>https://notarocketscientist.xyz/posts/2023-01-27-how-gauss-derived-the-normal-distribution/</p></li>
+<li id="fn15"><p>https://www.youtube.com/watch?v=cy8r7WSuT1I</p></li>
 </ol>
 </section>
     </div>
