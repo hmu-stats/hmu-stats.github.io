@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="101.5528mm"
+   height="78.822098mm"
+   viewBox="0 0 101.55279 78.822097"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4-dev (1:1.2.0-alpha1+devel+202308081135+c38551a022)"
+   sodipodi:docname="regression_sports.svg"
+   inkscape:export-filename="regression_sports.png"
+   inkscape:export-xdpi="250"
+   inkscape:export-ydpi="250"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.4652129"
+     inkscape:cx="198.60594"
+     inkscape:cy="233.75442"
+     inkscape:window-width="2560"
+     inkscape:window-height="1367"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="Triangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-39.300381,-53.805186)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.700824;marker-end:url(#Triangle)"
+       d="M 47.431729,124.64466 V 56.293864"
+       id="path1" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.808011;marker-end:url(#Triangle)"
+       d="M 47.126125,124.24993 H 137.98387"
+       id="path2" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;line-height:90%;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke-width:0.999999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       x="248.20602"
+       y="524.25458"
+       id="text2"
+       transform="matrix(0.26458333,0,0,0.26458333,12.588613,-7.3357525)"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         x="248.20602"
+         y="524.25458"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Calibri;-inkscape-font-specification:Calibri">Sportliche Aktivität</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6667px;line-height:90%;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke-width:0.999999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       x="248.20602"
+       y="524.25458"
+       id="text3"
+       transform="matrix(0,-0.26458333,0.26458333,0,-94.585501,183.73712)"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         x="248.20602"
+         y="524.25458"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Calibri;-inkscape-font-specification:Calibri">Lebenszufriedenheit</tspan></text>
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="path3"
+       cx="76.135536"
+       cy="106.08553"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle3"
+       cx="65.346748"
+       cy="96.496208"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle4"
+       cx="87.835716"
+       cy="87.030273"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle5"
+       cx="75.913589"
+       cy="88.706688"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle6"
+       cx="88.772491"
+       cy="100.30788"
+       r="2.0083668" />
+    <path
+       style="fill:none;stroke:#b10000;stroke-width:0.93686;stroke-dasharray:none;stroke-opacity:1"
+       d="M 54.414894,113.74157 137.03449,61.420641"
+       id="path6" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle7"
+       cx="65.346748"
+       cy="96.496208"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle8"
+       cx="76.135536"
+       cy="106.08553"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle9"
+       cx="88.772491"
+       cy="100.30788"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle10"
+       cx="69.343887"
+       cy="109.16571"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle11"
+       cx="61.289696"
+       cy="102.36229"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle12"
+       cx="94.728142"
+       cy="67.682129"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle13"
+       cx="87.691002"
+       cy="77.19265"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle14"
+       cx="118.67496"
+       cy="88.78212"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle15"
+       cx="104.63734"
+       cy="94.062515"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle16"
+       cx="104.41159"
+       cy="74.725616"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle17"
+       cx="109.69897"
+       cy="85.000511"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle18"
+       cx="111.84396"
+       cy="68.433144"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle19"
+       cx="126.32076"
+       cy="78.383987"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle20"
+       cx="120.67173"
+       cy="67.582893"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle21"
+       cx="120.67173"
+       cy="67.582893"
+       r="2.0083668" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1"
+       d="m 77.699456,107.68916 4.083177,3.25418"
+       id="path21" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6592px;line-height:90%;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke-width:0.999999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       x="248.20602"
+       y="524.25458"
+       id="text21"
+       transform="matrix(0.22377657,0,0,0.22377657,29.281109,-4.2348228)"><tspan
+         sodipodi:role="line"
+         x="248.20602"
+         y="524.25458"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6592px;font-family:Calibri;-inkscape-font-specification:Calibri"
+         id="tspan22">Daten (jeder Punkt =</tspan><tspan
+         sodipodi:role="line"
+         x="248.20602"
+         y="548.93445"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.6592px;font-family:Calibri;-inkscape-font-specification:Calibri"
+         id="tspan23">Versuchpersonen)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.8976px;line-height:90%;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;opacity:1;vector-effect:none;fill:#b00000;fill-opacity:0.959066;stroke-width:0.999999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       x="248.20602"
+       y="524.25458"
+       id="text24"
+       transform="matrix(0.31568508,0,0,0.31568508,7.5012323,-103.48755)"><tspan
+         sodipodi:role="line"
+         id="tspan24"
+         x="248.20602"
+         y="524.25458"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.8976px;font-family:Calibri;-inkscape-font-specification:Calibri;fill:#b00000;fill-opacity:0.959066">Regressionsgerade</tspan></text>
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle24"
+       cx="53.996967"
+       cy="97.556999"
+       r="2.0083668" />
+    <circle
+       style="fill:#8c8c8c;fill-opacity:1;stroke:#ffffff;stroke-width:0.546329;stroke-opacity:1"
+       id="circle25"
+       cx="60.183296"
+       cy="119.49355"
+       r="2.0083668" />
+  </g>
+</svg>
