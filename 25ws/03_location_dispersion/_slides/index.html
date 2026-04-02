@@ -1621,6 +1621,7 @@ plt.savefig('images/IQ_blond_brunette_means_sds_nobar.png', bbox_inches="tight")
 </ul></li>
 </ul>
 </div>
+<p>´</p>
 <aside></aside></section>
 <section class="slide level2">
 <h2>Der Box-Plot</h2>
@@ -1632,15 +1633,15 @@ plt.savefig('images/IQ_blond_brunette_means_sds_nobar.png', bbox_inches="tight")
 <ol type="1">
 <li class="fragment"><strong>Median (als einfache Linie)</strong></li>
 <li class="fragment"><strong>Box:</strong> die “mittleren 50% der Daten” (25% über dem Median, 25% unter dem Median)</li>
-<li class="fragment"><strong>Antennen (“Whiskers”):</strong> zeigen Grenzen der Ausreißer-Definition an (Ausreißer = alle Punkte unter- und überhalb der Antennen). Häufig ist hier das Kriterium, dass die Daten im Bereich <span class="math inline">\([Q_1-1.5\cdot IQR; Q_3+1.5\cdot IQR]\)</span> liegen müssen.</li>
+<li class="fragment"><strong>Antennen (“Whiskers”):</strong> reichen bis zu den extremsten Datenpunktenzeigen, die (noch) keine Ausreißer sind. Alle Punkte außerhalb der Antennen gelten daher als Ausreißer. Häufiges Kriterium für Ausreißer: Wert liegt außerhalb des Intervalls <span class="math inline">\([Q_1-1.5\cdot IQR; Q_3+1.5\cdot IQR]\)</span>.</li>
 </ol></li>
 </ul>
 </div><!-- Begin second column --><div class="column" style="width:35%;">
-<p><img data-src="images/boxplot.png"></p>
+<p><img data-src="images/boxplot_v2.png"></p>
 </div>
 </div>
 <ul>
-<li class="fragment">Der Boxplot gibt eine schnelle Übersicht über wesentliche Kennwerte eines Datensatzen</li>
+<li class="fragment">Der Boxplot gibt eine schnelle Übersicht über wesentliche Kennwerte eines Datensatzes</li>
 <li class="fragment">Zu beachten ist, dass zahlreiche Varianten des Boxplots existieren
 <ul>
 <li class="fragment">Bei einer weiteren häufigen Variante zeigen die Antennen das absolute Maximum und Minimum der Daten an (also <em>inklusive</em> möglicher Ausreißer)</li>

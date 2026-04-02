@@ -1991,6 +1991,16 @@ plt.savefig('images/normal_sigma.png', bbox_inches='tight')
             document.querySelector('div.reveal').style.backgroundColor = 'white'
           }
         });
+
+        // We smuglle this one here in to disable controls on non-mobile devises
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (!isMobile) {
+          Reveal.configure({controls: false});
+          document.getElementById('zoom').style.display = 'none';
+        } else {
+          document.getElementById('print').style.display = 'none';
+          document.getElementById('print-pdf').style.display = 'none';
+        }
       }
       // identifystring
 
