@@ -337,7 +337,7 @@
 </style>
 
 <section data-background-color="black" class="titlesection quarto-title-block center">
-  <p class="semester">M24 Statistik 1:&nbsp;&nbsp;Wintersemester 2025/2026</p>
+  <p class="semester">M24 Statistik 1:&nbsp;&nbsp;Sommersemester 2026</p>
   <h1 class="title">Vorlesung 02: Messen in der Psychologie</h1>
   
   <p class="subtitle">&nbsp;</p>
@@ -2000,6 +2000,16 @@ plt.savefig('images/normal_sigma.png', bbox_inches='tight')
             document.querySelector('div.reveal').style.backgroundColor = 'white'
           }
         });
+
+        // We smuglle this one here in to disable controls on non-mobile devises
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (!isMobile) {
+          Reveal.configure({controls: false});
+          document.getElementById('zoom').style.display = 'none';
+        } else {
+          document.getElementById('print').style.display = 'none';
+          document.getElementById('print-pdf').style.display = 'none';
+        }
       }
       // identifystring
 
