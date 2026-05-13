@@ -547,7 +547,7 @@ setup:
 <div class="fragment" style="margin-top: -15px">
 <p><span class="math display">\[
 \small{
-\hat{\rho} = \frac{\hat{Cov}(X,Y)}{\color{darkgreen}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}\,\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}} = \cdot\cdot\cdot = \frac{\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\color{darkgreen}{\sqrt{\sum_{i=1}^n(x_i-\bar{x})\sum_{i=1}^n(y_i-\bar{y})}}}
+\hat{\rho} = \frac{\hat{Cov}(X,Y)}{\color{darkgreen}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}\,\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}}} = \cdot\cdot\cdot = \frac{\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\color{darkgreen}{\sqrt{\sum_{i=1}^n(x_i-\bar{x})^2\sum_{i=1}^n(y_i-\bar{y})^2}}}
 }
 \]</span></p>
 </div>
@@ -587,7 +587,7 @@ setup:
 <p><span class="math display">\[
 \small{
 \begin{aligned}
-\frac{\hat{Cov}(X,Y)}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}\,\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}} = \frac{\frac{1}{n-1}\sum(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\frac{1}{n-1}\sum(x_i-\bar{x})}\sqrt{\frac{1}{n-1}\sum(y_i-\bar{y})}}
+\frac{\hat{Cov}(X,Y)}{\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{X}}\,\hat{\sigma}_{\mkern-2mu\scriptscriptstyle{Y}}} = \frac{\frac{1}{n-1}\sum(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\frac{1}{n-1}\sum(x_i-\bar{x})^2}\sqrt{\frac{1}{n-1}\sum(y_i-\bar{y})^2}}
 \end{aligned}
 }
 \]</span></p>
@@ -596,7 +596,7 @@ setup:
 <p><span class="math display">\[
 \small{
 \begin{aligned}
-\frac{Cov(X,Y)}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}\,\sigma_{\mkern-2mu\scriptscriptstyle{Y}}} = \frac{\frac{1}{n}\sum(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\frac{1}{n}\sum(x_i-\bar{x})}\sqrt{\frac{1}{n}\sum(y_i-\bar{y})}}
+\frac{Cov(X,Y)}{\sigma_{\mkern-2mu\scriptscriptstyle{X}}\,\sigma_{\mkern-2mu\scriptscriptstyle{Y}}} = \frac{\frac{1}{n}\sum(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\frac{1}{n}\sum(x_i-\bar{x})^2}\sqrt{\frac{1}{n}\sum(y_i-\bar{y})^2}}
 \end{aligned}
 }
 \]</span></p>
