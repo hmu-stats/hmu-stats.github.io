@@ -59,6 +59,21 @@
             "11_effectsize",
             "12_power",
             "13_metaanalysis"
+        ],
+        "26ws": [
+            "01_intro",
+            "02_measurement",
+            "03_location_dispersion",
+            "04_correlation",
+            "05_regression",
+            "06_inference",
+            "07_probability_dist",
+            "08_significance_testing",
+            "09_ttest",
+            "10_confidence_intervals",
+            "11_effectsize",
+            "12_power",
+            "13_metaanalysis"
         ]
     },
     "titles": {
@@ -121,15 +136,31 @@
             "Vorlesung 11: Effektst&auml;rke",
             "Vorlesung 12: Power und Fallzahlsch&auml;tzung",
             "Vorlesung 13: Metaanalyse"
+        ],
+        "26ws": [
+            "Vorlesung 01: Einf&uuml;hrung",
+            "Vorlesung 02: Messen in der Psychologie",
+            "Vorlesung 03: Lage- und Streuungsma&szlig;e",
+            "Vorlesung 04: Korrelation",
+            "Vorlesung 05: Regression",
+            "Vorlesung 06: Inferenzstatistik",
+            "Vorlesung 07: Wahrscheinlichkeitsdichte",
+            "Vorlesung 08: Signifikanztestung",
+            "Vorlesung 09: t-Test",
+            "Vorlesung 10: Konfidenzintervalle",
+            "Vorlesung 11: Effektst&auml;rke",
+            "Vorlesung 12: Power und Fallzahlsch&auml;tzung",
+            "Vorlesung 13: Metaanalyse"
         ]
     },
     "semester_dict": {
         "24ws": "Wintersemester 2024/2025",
         "25ss": "Sommersemester 2025",
         "25ws": "Wintersemester 2025/2026",
-        "26ss": "Sommersemester 2026"
+        "26ss": "Sommersemester 2026",
+        "26ws": "Wintersemester 2026/2027"
     },
-    "default_semester": "26ss",
+    "default_semester": "26ws",
     "seminars": {
         "24ws": [
             "seminar_00_intro",
@@ -149,7 +180,8 @@
         ],
         "25ss": [],
         "25ws": [],
-        "26ss": []
+        "26ss": [],
+        "26ws": []
     },
     "titles_seminars": {
         "24ws": [
@@ -170,6 +202,7 @@
         ],
         "25ss": [],
         "25ws": [],
-        "26ss": []
+        "26ss": [],
+        "26ws": []
     }
 }
